@@ -1,0 +1,33 @@
+gruppe,angriffsklasse,severity,noch_bypassbar,befund
+V3,forged-v2-no-hmac,NONE,nein,verify_v2=ATTESTATION_TAMPERED; _attested_green=False. Blockiert.
+V3,forged-v2-wrong-key,NONE,nein,verify_v2=ATTESTATION_TAMPERED; kein Gruen. Blockiert.
+V3,record-edit-flip-result,NONE,nein,verify_v2=ATTESTATION_TAMPERED. Blockiert (HMAC deckt result/status ab).
+V3,all-zeros-tree,NONE,nein,verify_v2=ATTESTATION_TAMPERED. Blockiert.
+V3,replay-onto-other-commit,NONE,nein,verify_v2=ATTESTATION_SCHEMA_MISMATCH; _attested_green=False. Tree-Bindung schlaegt Replay ab. Blockiert.
+V3,forged-parent-post-sign,NONE,nein,verify_v2=ATTESTATION_TAMPERED. Blockiert.
+V3,forged-v1-only-record,HIGH,ja,"cmd_verify druckt woertlich 'VERIFY: HEAD ddeeb9348d69 GRUEN attestiert.' exit=0. _attested_green nimmt V1-Fallback, wei"
+V3,forged-v1-only-record,HIGH,ja,_attested_green=True; identischer Bypass wie A7 (gleiche Wurzel).
+V3,unsigned-v2-minimal,NONE,nein,verify_v2=ATTESTATION_TAMPERED. Blockiert.
+V3,test-mode-claimed-green,NONE,nein,verify_v2=ATTESTED_TEST_MODE; _attested_green=False. Blockiert (Punkt (b)/(3) haelt).
+V3,hmac-key-replacement,LOW,nein,verify_v2=ATTESTATION_STALE (gate_code_hash/test_manifest_hash passen nicht) -> kein Gruen; zudem tamper-evident. Kein s
+V3,audit-whitewash-via-v1,HIGH,ja,"'AUDIT: 2 Commit(s) geprueft, 0 ohne gruene Attestierung. AUDIT: alle Commits gruen attestiert.' exit=0. Audit als Detek"
+V2,gate-commit-decoupling / lying-gate different tree,NONE,nein,"broker=FAIL, reason=VALIDATED_TREE_MISMATCH (Gate validierte 36392342e165, Broker-Tree bfd...); HEAD not advanced; no at"
+V2,in-process gate-result forgery (trust-boundary probe),NONE,nein,With the gate function replaced in-proc it commits+attests ATTESTED_GREEN_FOR_EXACT_TREE (BYPASS=True) — but this is onl
+V2,TOCTOU: index mutation after validation (window B),NONE,nein,"broker=FAIL, reason=CANDIDATE_TREE_CHANGED (Index nach Validierung mutiert); HEAD not advanced; no evil committed; no gr"
+V2,TOCTOU: index mutation before gate write-tree (window A,NONE,nein,"broker=FAIL, reason=VALIDATED_TREE_MISMATCH (Gate validierte 7f6af122ef2d, Broker-Tree 2eb...); HEAD not advanced; no at"
+V2,"TOCTOU: index mutation after recheck, before commit-tre",NONE,nein,broker=GREEN but committed tree is BENIGN (evil_committed=False); ATTESTED_GREEN_FOR_EXACT_TREE binds the benign tree on
+V2,TOCTOU: HEAD/parent move before update-ref CAS,NONE,nein,"broker=FAIL (CANDIDATE_TREE_CHANGED); the only HEAD advance is the legitimate concurrent commit (evil_committed=False, a"
+V2,parallel broker / concurrency,NONE,nein,"broker=FAIL, reason=LOCK: Gate laeuft bereits (PID ...) — paralleler Commit blockiert; HEAD not advanced."
+V2,evil index straight through the real gate (control),NONE,nein,"broker=RED, reason=Staged-Tree-Gate ROT; HEAD unchanged (b8692707...); no .v2.json attestation written. Confirms the leg"
+V4,scope-guard product-fachlogik coverage gap,HIGH,partial,"scope-guard 7/7 PASS (blind), 0 von ~40 check_006d_*-Guards gefangen, Produkttest 137/137 PASS. Ursache: is_product() ve"
+V4,scope-guard blind spot enumeration,HIGH,partial,"6/10 abgedeckt (is_product ODER forbidden), 4/10 BLIND. A13 (gelistete Datei) korrekt gefangen (6/7) — bestaetigt, dass "
+V4,phase_offswitch security_guard_suppression,NONE,nein,"phase_lifecycle() erzwingt ACTIVE_CURRENT, gibt [PHASE-DEMOTION-IGNORED] aus; DEMOTABLE_PHASES ist frozenset({'S11-PS861"
+V4,phase_offswitch staged-tree-binding suppression,NONE,nein,"ACTIVE_CURRENT erzwungen, DEMOTION-IGNORED geloggt."
+V4,phase_offswitch attestation-durability suppression,NONE,nein,"beide Varianten ACTIVE_CURRENT erzwungen, DEMOTION-IGNORED."
+V4,phase_offswitch verifikator suppression,NONE,nein,ACTIVE_CURRENT erzwungen; zudem werden 'verifikator.py check' + 's11_core.cli check' in _build_phases() UNBEDINGT nach d
+V4,scope-guard forbidden literal (exact-path) modify,NONE,nein,FAIL test_no_product_fachlogic_changed_vs_reference (6/7) — gefangen.
+V4,scope-guard forbidden prefix (check_006d_) modify,NONE,nein,"FAIL (test_no_new_unlisted_product_file + test_no_product_fachlogic, 5/7) — Praefix-Matching greift."
+V4,scope-guard unlisted new product file,NONE,nein,alle FAIL via test_no_new_unlisted_product_file — Basename-Erkennung greift.
+V4,scope-guard subfolder basename evasion,NONE,nein,FAIL via Basename-Check is_product (startswith check_006d_) — trotz Pfad-Praefix-Miss gefangen.
+V4,scope-guard stray non-product file,LOW,partial,"scope-guard 7/7 PASS (nicht markiert); manifest-Guard laesst .csv/.json (nicht in FORBIDDEN_OUTPUT_EXT, kein SPEC-Basena"
+V4,scope-guard registry-file is control-plane (double defe,NONE,nein,beide sind CONTROL_PLANE_FILES -> jede Abweichung ggue. HEAD => GREEN_PENDING_GATECODE_REVIEW (kein Auto-Green). Zweite 

@@ -1,0 +1,23 @@
+Verification stopped at item 9 due to a defect in my verifier’s classification logic, not a demonstrated R8 defect.
+
+It incorrectly classified:
+
+- Quoted defect text in replicated `verification/selftest_runtime/automation` modules.
+- Earlier verifier scripts that inspect the phrase.
+
+Consequently, items 10–30 and 33–35 remain unverified. Items 1–8, 27, 31, and 32 passed. Measured facts include:
+
+- Manifest: 724 entries, digest `6dfd1af689754be61f2ea6ef77f01d2e5bdb8929ef8c0799e15db203755b945a`
+- ORIGINAL paths changed: 0
+- ORIGINAL metadata/content inventory unchanged: all 1,362 paths
+- Overall status: `VERIFICATION_FAIL_PRE_FREEZE_R8_FINAL`
+
+Outputs:
+
+- [VERIFICATION_RESULT.json](/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_6/codex_output/VERIFICATION_RESULT.json)
+- [MEASUREMENTS.json](/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_6/codex_output/MEASUREMENTS.json)
+- [VERIFICATION_REPORT.md](/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_6/codex_output/VERIFICATION_REPORT.md)
+- [COMMAND_LOG.jsonl](/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_6/codex_output/COMMAND_LOG.jsonl)
+- [VERIFICATION_MANIFEST.sha256](/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_6/codex_output/VERIFICATION_MANIFEST.sha256)
+
+No R8 defect has been established by this attempt.

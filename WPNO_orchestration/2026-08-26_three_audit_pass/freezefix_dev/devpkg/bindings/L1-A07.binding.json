@@ -1,0 +1,54 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A07",
+  "binding_status": "TARGET_CONFIRMED",
+  "logical_targets": [
+    "Output-guard regression from v1 to v3"
+  ],
+  "candidate_paths": [
+    "/Users/martinotten/WPNO/authoring/AP17_output_guardrail_VERALTET.py.txt",
+    "/Users/martinotten/WPNO/authoring/AP17_output_guardrail_v2_VERALTET.py.txt",
+    "/Users/martinotten/WPNO/authoring/AP17_output_guardrail_v3.py"
+  ],
+  "productive_target": "/Users/martinotten/WPNO/authoring/AP17_output_guardrail_VERALTET.py.txt",
+  "productive_target_sha256": "555ee5164da201864833506a7f9f6f61885f18ff506b1ed4f5f6cddd70f37d37",
+  "productive_target_evidence": [
+    {
+      "claim": "File identity confirmed by name, symbol match and SHA-256.",
+      "note": "File identity is NOT production identity. No execution-path evidence establishes that this file is the copy invoked in production. See discovery_reconciliation/04_PRODUCTION_PATH_RECONCILIATION.md."
+    }
+  ],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [],
+  "external_evidence_required": [],
+  "unresolved_questions": [],
+  "discovery_drift": [],
+  "source_evidence": [
+    {
+      "source_path": "/Users/martinotten/WPNO/authoring/AP17_output_guardrail_VERALTET.py.txt",
+      "sha256": "555ee5164da201864833506a7f9f6f61885f18ff506b1ed4f5f6cddd70f37d37",
+      "locator": "v1",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/authoring/AP17_output_guardrail_v2_VERALTET.py.txt",
+      "sha256": "5f6b3dd78dcb76a924d5961dfc2cfafbc91eccd76ac6f2e0cef22d43b3d8a6d8",
+      "locator": "v2",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/authoring/AP17_output_guardrail_v3.py",
+      "sha256": "dd60dc63437691082b821fe219a7599c1561c757214a0e38eac97367ab2a09ca",
+      "locator": "v3",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    }
+  ],
+  "replications": 1,
+  "risk": "CRITICAL",
+  "execution_order": 11
+}

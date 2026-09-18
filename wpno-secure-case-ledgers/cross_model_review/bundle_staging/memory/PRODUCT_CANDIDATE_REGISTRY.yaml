@@ -1,0 +1,21 @@
+# S11 Produkt-/Kontrollschicht-Kandidatenregister (versioniert, Supersession-Kette).
+# Ersetzt das statische CAND-Pinning in gate-registrierten Selbsttests.
+product_reference_candidate: "670e362"   # aktueller PRODUKT-Referenzstand (006D); NICHT L99-akzeptiert
+control_plane_candidate: "HEAD"          # dieser P0-Kontrollschicht-Lauf
+forbidden_product_paths:                  # in Kontrollschicht-Tickets unveraenderlich (Fachlogik)
+  - zitate_register/_s11_006d_spec_validator.py
+  - zitate_register/visualization/S11_PS861_006D_SPEC_ONLY_SCHEMA.json
+  - zitate_register/check_s11_tax_sv_visualization_model_spec_only.py
+  - zitate_register/_f9r1_common.py
+  - reports/TAX_LIABILITIES_VISUALIZATION_REGISTER.csv
+  - reports/S11_SV_CONTRIBUTION_VISUALIZATION_REGISTER.csv
+  - reports/S11_TAX_SV_VISUALIZATION_SPEC.csv
+  - reports/S11_TAX_SV_VALUATION_FIELD_DECISION_CLASS_MAP.csv
+  - tests/test_s11_ps861006d_tax_sv_public_creditor_visualization_model.py
+  - tests/test_s11_ps861_006d_allowlist_hardening.py
+  - zitate_register/check_006d_
+rules:
+  - alte Kandidaten bleiben historisch (nie stilles Umpinnen)
+  - neuer Kandidat superseded den alten ausdruecklich
+  - Reviewtests pruefen den im Registry-Eintrag genannten Kandidaten
+  - Registry-Aenderung braucht eigenen Diff- und Guard-Nachweis

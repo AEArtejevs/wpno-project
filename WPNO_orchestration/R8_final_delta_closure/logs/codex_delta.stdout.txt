@@ -1,0 +1,12 @@
+Verification passed: all 35 items are covered exactly once, with 29 carried forward and 6 freshly measured. No unresolved findings were found, and ORIGINAL remained unchanged across all 1,362 paths.
+
+Key outputs:
+
+- [VERIFICATION_RESULT.json](/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/codex_output/VERIFICATION_RESULT.json)
+- [VERIFICATION_REPORT.md](/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/codex_output/VERIFICATION_REPORT.md)
+- [MEASUREMENTS.json](/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/codex_output/MEASUREMENTS.json)
+- [ITEM_RESULTS.jsonl](/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/codex_output/ITEM_RESULTS.jsonl)
+- [COMMAND_LOG.jsonl](/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/codex_output/COMMAND_LOG.jsonl)
+- [VERIFICATION_MANIFEST.sha256](/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/codex_output/VERIFICATION_MANIFEST.sha256)
+
+Final status: `VERIFICATION_PASS_PRE_FREEZE_R8_FINAL`. No real freeze token was computed.

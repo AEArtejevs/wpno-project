@@ -1,0 +1,31 @@
+{
+  "corpus_path": "corpora/R5_REF01_COUNTRY_RULES.jsonl",
+  "corpus_sha256": "d2739c4e221e5b1f4b23b6215a630b47487aef84193b5bc5a8865b395798d0e0",
+  "country_count": 89,
+  "derived_from": "references/REF-01-swift-iban-registry-release-102.txt",
+  "fields": [
+    "bban_length",
+    "bban_structure",
+    "country_code",
+    "country_name",
+    "effective_date",
+    "iban_electronic_example",
+    "iban_length",
+    "iban_print_example",
+    "iban_structure"
+  ],
+  "immutable": true,
+  "invented_data": false,
+  "registry_release": "Release 102, Jun 2026",
+  "schema": "wpno.level1.ref01_country_rules/1",
+  "self_consistency": {
+    "examples_matching_declared_length": 89,
+    "examples_passing_mod97_10": 89,
+    "examples_prefixed_with_country_code": 89,
+    "print_form_matches_electronic_form": 89,
+    "problems": []
+  },
+  "source_encoding": "cp1252",
+  "source_encoding_note": "Decoded read-only. The source bytes are never rewritten and nothing is written inside references/.",
+  "source_sha256": "a98aae4d7b59544973415491accb1345cb449bfd75a67c8bc704fbe6e161c303"
+}

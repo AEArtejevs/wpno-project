@@ -1,0 +1,100 @@
+model_list:
+  - model_name: triage
+    litellm_params:
+      model: anthropic/claude-haiku-4-5-20251001
+      api_key: os.environ/ANTHROPIC_API_KEY
+      rpm: 400
+  - model_name: schriftsatz
+    litellm_params:
+      model: anthropic/claude-sonnet-5
+      api_key: os.environ/ANTHROPIC_API_KEY
+      rpm: 200
+  - model_name: endredaktion
+    litellm_params:
+      model: anthropic/claude-opus-4-8
+      api_key: os.environ/ANTHROPIC_API_KEY
+      rpm: 100
+
+  - model_name: libra-analyse-statement-a
+    litellm_params:
+      model: openai/eb3b990d-4b19-469e-b711-65cfd58ce2db
+      api_base: https://app.libratech.ai/api/v1/assistants
+      api_key: os.environ/LIBRA_API_KEY
+  - model_name: libra-analyse-statement-b
+    litellm_params:
+      model: openai/bf308535-4edf-4e08-aaa9-5a608c7852e1
+      api_base: https://app.libratech.ai/api/v1/assistants
+      api_key: os.environ/LIBRA_API_KEY
+  - model_name: libra-analyse-statement-c
+    litellm_params:
+      model: openai/f9cc3557-9e39-4ed9-ae9a-33ad4b1a8f3d
+      api_base: https://app.libratech.ai/api/v1/assistants
+      api_key: os.environ/LIBRA_API_KEY
+  - model_name: libra-milchhof
+    litellm_params:
+      model: openai/61bdacf1-3f66-46a2-9ecd-c94d4306c069
+      api_base: https://app.libratech.ai/api/v1/assistants
+      api_key: os.environ/LIBRA_API_KEY
+  - model_name: libra-gesellschafts-wirtschaftsrecht
+    litellm_params:
+      model: openai/771fd002-5974-453b-9edf-887cf188e327
+      api_base: https://app.libratech.ai/api/v1/assistants
+      api_key: os.environ/LIBRA_API_KEY
+  - model_name: libra-zivilrecht-zpo
+    litellm_params:
+      model: openai/1368507d-3237-4a74-9c0c-669fe49551e6
+      api_base: https://app.libratech.ai/api/v1/assistants
+      api_key: os.environ/LIBRA_API_KEY
+  - model_name: libra-steuer-wirtschaftsstrafrecht
+    litellm_params:
+      model: openai/d169159d-58fa-4d8c-97f3-e37a6d515683
+      api_base: https://app.libratech.ai/api/v1/assistants
+      api_key: os.environ/LIBRA_API_KEY
+  - model_name: libra-starug-inso
+    litellm_params:
+      model: openai/b081639a-aa8a-41c2-bf03-4df2fde97b0e
+      api_base: https://app.libratech.ai/api/v1/assistants
+      api_key: os.environ/LIBRA_API_KEY
+  - model_name: libra-bfh-fg-rechtsprechung
+    litellm_params:
+      model: openai/e2ca2db8-c8de-427a-90e8-86e17d10e0a4
+      api_base: https://app.libratech.ai/api/v1/assistants
+      api_key: os.environ/LIBRA_API_KEY
+  - model_name: libra-insolvenzrecht
+    litellm_params:
+      model: openai/1186cc9a-0ac2-43e1-aa51-e9bf3d4bf660
+      api_base: https://app.libratech.ai/api/v1/assistants
+      api_key: os.environ/LIBRA_API_KEY
+
+router_settings:
+  routing_strategy: simple-shuffle
+  num_retries: 3
+  timeout: 120
+  fallbacks: [{"endredaktion": ["schriftsatz"]}, {"schriftsatz": ["triage"]}]
+  allowed_fails: 2
+  cooldown_time: 30
+
+litellm_settings:
+  drop_params: true
+  set_verbose: false
+  callbacks: ["custom_callback.proxy_handler_instance"]
+  cache: true
+  cache_params:
+    type: redis
+    host: os.environ/REDIS_HOST
+    port: 6379
+    ttl: 86400
+    supported_call_types: ["acompletion", "completion"]
+  # Langfuse-Callback entfernt 2026-07-27: Stack (docker/langfuse/) war nie
+  # gestartet (keine Container/Volumes) -> Callback lief bei jedem Call in
+  # einen Fehler. Observability gem. Paper §8.E laeuft ueber Postgres.
+  # Reaktivierung erst, wenn der Langfuse-Stack real deployed ist.
+  success_callback: ["postgres"]
+  failure_callback: ["postgres"]
+
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
+  database_url: os.environ/DATABASE_URL
+  max_budget: 150.0   # F-002: Realguthaben 200 EUR, Cap mit Puffer darunter (K9)
+  budget_duration: 30d
+  enforce_user_param: true

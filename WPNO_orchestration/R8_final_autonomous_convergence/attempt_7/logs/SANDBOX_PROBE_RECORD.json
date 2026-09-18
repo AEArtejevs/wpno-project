@@ -1,0 +1,42 @@
+{
+ "BARRIER_PROVED": true,
+ "arms": [
+  {
+   "arm": "writable workspace",
+   "exit_code": 0,
+   "expected": "succeeds",
+   "observed": "succeeded",
+   "target": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_7/temporary/probe_inside.txt"
+  },
+  {
+   "arm": "writable clone (via --add-dir)",
+   "exit_code": 0,
+   "expected": "succeeds",
+   "observed": "succeeded",
+   "target": "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_7_662915/probe_clone.txt"
+  },
+  {
+   "arm": "ORIGINAL R8, outside every writable root",
+   "exit_code": 1,
+   "expected": "refused by the kernel",
+   "observed": "/bin/bash: line 1: /home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/PROBE_MUST_NOT_EXIST.txt: Read-only file system",
+   "target": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/PROBE_MUST_NOT_EXIST.txt"
+  }
+ ],
+ "both_arms_fired": true,
+ "clone_root_mtime_restored_after_probe": {
+  "mtime_ns_after_probe": 1787944279939556769,
+  "mtime_ns_now": 1787935798654343409,
+  "mtime_ns_restored_to": 1787935798654343409,
+  "r8_touched": false,
+  "restored": true,
+  "why": "the permitted arm created and removed a file at the clone root, moving that directory's mtime. Left alone it would read as a difference between clone and R8 in the comparison that exists to say the clone is faithful -- the instrument's own footprint mistaken for a finding. Restored inside the disposable clone only, and recorded here rather than left silent."
+ },
+ "method": "one fresh 'codex exec --sandbox workspace-write -C <workspace> --add-dir <clone>' process, asked to attempt three writes exactly once, and told not to retry or route around a refusal",
+ "probe_artefacts_removed": true,
+ "r8_probe_file_exists": false,
+ "recorded_utc": "2026-08-28T19:11:20Z",
+ "schema": "wpno.r8.attempt7-sandbox-probe/1",
+ "what_this_does_not_prove": "that no write to R8 occurred during the verification. That is item 32's full pre/post inventory over all 1362 paths. This says only that the instrument which would have to refuse such a write does refuse one, and that the permitted arm is not refused -- a barrier that refused everything would pass the negative arm while proving nothing.",
+ "why": "A control that is never shown to fire proves nothing. CLAUDE.md section 6: a sabotage must be demonstrated effective or the test is void. So the write barrier was made to refuse a write BEFORE any measurement rested on it."
+}

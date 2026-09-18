@@ -1,0 +1,261 @@
+{
+  "audit_id": "L1-A13",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Determine whether invented case references are blocked, using the five mandatory exact cases plus systematic variants, and separate 'blocked' from 'never examined'. Those two outcomes look identical from the outside and mean opposite things.",
+  "static_analysis": "The checker is parsed, never imported. Its recognised senate set and its citation grammar are extracted, because the decisive question is whether an input it does not recognise is reported as passed or as not examined.\n\nCLAUDE.md section 10 records the failure this audit measures directly: a BGH senate rule applied to every court declared 20 F 15/22, I-25 U 75/25 and 16 U 139/23 impossible. Those three real forms are in the matrix by name.\n\nThe five mandatory cases are fabrications by construction: XY ZR 999/99; ABC ZR 1/20; IIII ZR 1/20; 0 ZR 1/20; 14 StR 1/20. Their status as fabrications does not depend on any lookup, which is what makes them usable as an oracle.\n\nThe binding records an open question - whether the checker has a distinct output state for 'not examined'. It is answered from the parse and from the run, and if no such state exists that absence is itself the finding.\n\nPYTHON_SCRIPT_RUN_SANDBOX runs a script under work/ and nowhere else, so the approved phase first copies the checker to work/<audit>/RUN-A/sandbox/ and records the copy's digest beside the original's. The original in authoring/ is read and never written to.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/authoring/AP18_referenzpruefung.py"
+      },
+      "purpose": "Extract the recognised senate set, the citation grammar and the output states the checker can produce.",
+      "step_id": "parse_checker_grammar",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--cases",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A13/RUN-A/cases/mandatory.jsonl"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A13/RUN-A/sandbox/AP18_referenzpruefung.py"
+      },
+      "purpose": "The five mandatory fabricated citations, exactly as specified.",
+      "step_id": "run_five_mandatory_cases",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--cases",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A13/RUN-A/cases/variants.jsonl"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A13/RUN-A/sandbox/AP18_referenzpruefung.py"
+      },
+      "purpose": "Each mandatory case with leading and trailing punctuation, single, double and no spaces, split across a line break, with non-breaking and narrow no-break space, in upper and lower case, with a malformed separator, and with a vgl. prefix and a Rn. suffix.",
+      "step_id": "run_systematic_variants",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--cases",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A13/RUN-A/cases/court_coverage.jsonl"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A13/RUN-A/sandbox/AP18_referenzpruefung.py"
+      },
+      "purpose": "OLG, LG, BAG, BSG, BFH and EuGH forms, plus the three real forms a BGH senate rule wrongly declared impossible.",
+      "step_id": "run_court_coverage_set",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--cases",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A13/RUN-A/cases/real_citation.jsonl"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A13/RUN-A/sandbox/AP18_referenzpruefung.py"
+      },
+      "purpose": "A real, well-formed BGH citation of a form the checker handles must be examined and pass. This proves the checker is evaluating.",
+      "step_id": "positive_control_real_wellformed_citation",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--cases",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A13/RUN-A/cases/plain_prose.jsonl"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A13/RUN-A/sandbox/AP18_referenzpruefung.py"
+      },
+      "purpose": "Ordinary prose containing no citation must produce no verdicts at all.",
+      "step_id": "negative_control_prose_without_citations",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--cases",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A13/RUN-A/cases/outside_senate.jsonl"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A13/RUN-A/sandbox/AP18_referenzpruefung.py"
+      },
+      "purpose": "A citation the checker flags, altered to a form outside its recognised senate set. If it changes from flagged to passed rather than to never examined, the silent-skip defect is demonstrated directly.",
+      "step_id": "mutation_control_outside_senate_set",
+      "timeout_seconds": 300
+    }
+  ],
+  "target": {
+    "identity_evidence": "The binding records this path as a candidate with this digest. It is bound as the anchor; which copy is productive is L1-A10's question and a filename does not answer it.",
+    "path": "/home/ubuntu/project/WPNO/authoring/AP18_referenzpruefung.py",
+    "sha256": "f5eb5a9cbeb37cada9186ba305b9a307ea40e3012ca0e2e6dd0b2560f4352d74"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "/home/ubuntu/project/WPNO/authoring/AP18_referenzpruefung.py",
+        "/home/ubuntu/project/WPNO/authoring/bgh_referenz.json"
+      ],
+      "allowed_writes": [
+        "work/L1-A13/RUN-A/",
+        "evidence/L1-A13/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A13 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A13",
+      "candidate_template_identity": "L1-A13/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A13/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "/usr/bin/python3 -I -B against a sandbox copy",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "ARBITRARY_SHELL",
+        "CHANGE_PERMISSION",
+        "DATABASE_CONNECTION",
+        "DATABASE_WRITE",
+        "DELETE_SOURCE",
+        "DOCKER_BUILD",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_SOCKET_ACCESS",
+        "GIT_MUTATION",
+        "INSTALL_PACKAGE",
+        "LAUNCH_AGENT_MUTATION",
+        "MCP_MUTATION",
+        "MODIFY_SOURCE",
+        "N8N_MUTATION",
+        "NETWORK_REQUEST",
+        "NETWORK_UPLOAD",
+        "SERVICE_MUTATION"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [],
+      "independent_oracle": "The structural rules of German case-reference formation, stated by this audit in advance per input, together with the fact that the five mandatory cases are fabrications by construction. Not the checker's own verdict.",
+      "limitations": [],
+      "method": "fabricated-citation matrix with blocked and never-examined kept apart",
+      "notes": [
+        "PYTHON_SCRIPT_RUN_SANDBOX runs a script under work/ and nowhere else, so the approved phase first copies the checker to work/<audit>/RUN-A/sandbox/ and records the copy's digest beside the original's. The original in authoring/ is read and never written to.",
+        "The five mandatory cases are fabrications by construction, so their expected classification does not depend on any lookup succeeding."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [],
+      "references": [],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": null,
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "check_id": "blocked_versus_never_examined",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Does the checker distinguish blocked from never examined?",
+      "required_result": "Answered from the parse and from the run. If no distinct state exists, that absence is the finding.",
+      "step_id": "parse_checker_grammar",
+      "why": "A fabricated citation that was never examined and one that was examined and passed produce the same silence, and mean opposite things."
+    },
+    {
+      "cases": [
+        "XY ZR 999/99",
+        "ABC ZR 1/20",
+        "IIII ZR 1/20",
+        "0 ZR 1/20",
+        "14 StR 1/20"
+      ],
+      "check_id": "five_mandatory_cases",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "What does the checker do with each fabrication?",
+      "required_result": "One classification per case: blocked, passed, or never examined.",
+      "step_id": "run_five_mandatory_cases"
+    },
+    {
+      "check_id": "court_coverage",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Which courts does the checker actually cover?",
+      "real_forms_that_must_not_be_declared_impossible": [
+        "20 F 15/22",
+        "I-25 U 75/25",
+        "16 U 139/23"
+      ],
+      "required_result": "Per court family: covered, not covered, or wrongly rejected.",
+      "specification_reference": "CLAUDE.md section 10: the BGH senate rule applied to all courts declared these three real forms impossible",
+      "step_id": "run_court_coverage_set"
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_result": "EXAMINED_AND_PASSED",
+      "question": "Is a real well-formed citation examined and passed?",
+      "step_id": "positive_control_real_wellformed_citation",
+      "why": "This is what proves the checker is evaluating at all."
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_failure_reason": "there is no citation to examine; verdicts here would mean the checker is matching ordinary prose",
+      "expected_result": "NO_VERDICTS_AT_ALL",
+      "question": "Does prose without citations produce verdicts?",
+      "step_id": "negative_control_prose_without_citations"
+    },
+    {
+      "check_id": "mutation_control",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_result": "CHANGES_TO_NEVER_EXAMINED_NOT_TO_PASSED",
+      "expected_status": "COMPLETED_OUTCOME_IS_SUBSTANTIVE",
+      "fixture": "work/L1-A13/RUN-A/cases/outside_senate.jsonl",
+      "fixture_construction": "a citation the checker flags, altered only in its senate designation",
+      "proof_the_fixture_differs": "the altered citation differs from the flagged one in exactly the recorded characters",
+      "question": "What happens to a citation outside the senate set?",
+      "step_id": "mutation_control_outside_senate_set",
+      "verdict_effect": "A change to 'passed' demonstrates the silent-skip defect directly and forbids PASS.",
+      "why": "The control distinguishes 'passed' from 'never examined', which is a distinction in the output and not in the exit code.",
+      "zero_changed_results_is": "a measurement error, not a pass"
+    }
+  ]
+}

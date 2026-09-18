@@ -1,0 +1,12 @@
+{
+  "builder": "build/freeze_plan_attempt_1/build_r8_freeze_plan.py",
+  "builder_return_code": 0,
+  "builder_sha256_after": "2b40acb215ce62e11ed7bc077be8ed1142f18f70e4b98e311d7f6474489d875a",
+  "builder_sha256_before": "2b40acb215ce62e11ed7bc077be8ed1142f18f70e4b98e311d7f6474489d875a",
+  "builder_unchanged": true,
+  "override_reason": "the builder's constant named attempt 3, whose manifest is superseded; editing the package was not authorised, so the constant was overridden at run time and the builder's bytes were proved unchanged",
+  "runner": "run_freeze_plan_builder.py",
+  "runner_sha256": "b0115334b246c967b53e67e409fe9564883d25ec541ba42f829ca28e72b2f6c2",
+  "schema": "wpno.r8.freeze-plan-runner/1",
+  "verification_directory_bound": "verification_codex_final_pre_freeze_attempt_4"
+}

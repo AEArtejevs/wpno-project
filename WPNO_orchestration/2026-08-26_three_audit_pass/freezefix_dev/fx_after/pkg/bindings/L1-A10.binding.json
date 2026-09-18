@@ -1,0 +1,51 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A10",
+  "binding_status": "TARGET_PARTIAL",
+  "logical_targets": [
+    "Productive reference-checker copy and SHA-256"
+  ],
+  "candidate_paths": [
+    "/Users/martinotten/WPNO/authoring/AP18_referenzpruefung.py",
+    "/Users/martinotten/WPNO/authoring/AP18_referenzpruefung_test.py",
+    "/Users/martinotten/WPNO/authoring/bgh_referenz.json"
+  ],
+  "productive_target": null,
+  "productive_target_sha256": null,
+  "productive_target_evidence": [],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [],
+  "external_evidence_required": [],
+  "unresolved_questions": [
+    "No caller exists in-tree, so 'productive' may be unprovable from this machine."
+  ],
+  "discovery_drift": [],
+  "source_evidence": [
+    {
+      "source_path": "/Users/martinotten/WPNO/authoring/AP18_referenzpruefung.py",
+      "sha256": "f5eb5a9cbeb37cada9186ba305b9a307ea40e3012ca0e2e6dd0b2560f4352d74",
+      "locator": "whole file",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/authoring/AP18_referenzpruefung_test.py",
+      "sha256": "5bfc3fa48809d3c55f4287928987dd2e58982af558ddad8941fc5d8f6775b071",
+      "locator": "its test",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/authoring/bgh_referenz.json",
+      "sha256": "d2451fa5720643cceb84605538a7979709ef90a44de4770e7aee06cc33579880",
+      "locator": "reference data",
+      "evidence_type": "data",
+      "confidence": "HIGH"
+    }
+  ],
+  "replications": 1,
+  "risk": "HIGH",
+  "execution_order": 14
+}

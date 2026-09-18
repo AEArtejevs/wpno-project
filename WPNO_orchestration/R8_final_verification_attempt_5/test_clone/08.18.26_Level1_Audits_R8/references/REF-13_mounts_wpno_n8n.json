@@ -1,0 +1,12 @@
+[
+  {
+    "Destination": "/home/node/.n8n",
+    "Driver": "local",
+    "Mode": "rw",
+    "Name": "n8n_wpno_n8n_data",
+    "Propagation": "",
+    "RW": true,
+    "Source": "n8n_wpno_n8n_data",
+    "Type": "volume"
+  }
+]

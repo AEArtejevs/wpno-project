@@ -1,0 +1,467 @@
+{
+ "DELTA_VERIFIER_SELF_TEST": "PASS",
+ "PREDICATES_TESTED": "42/42",
+ "UNRESOLVED_KEY_LOOKUPS": 0,
+ "case_count": 14,
+ "cases": [
+  {
+   "PASS": true,
+   "case": 1,
+   "expected": "PASS",
+   "name": "correct prefixed key accepted",
+   "observed": "PASS"
+  },
+  {
+   "PASS": true,
+   "case": 6,
+   "expected": "PASS",
+   "name": "169 against expected 169 accepted",
+   "observed": "PASS"
+  },
+  {
+   "PASS": true,
+   "case": "1b",
+   "expected": "PASS",
+   "name": "second prefixed key accepted",
+   "observed": "PASS"
+  },
+  {
+   "PASS": true,
+   "case": 2,
+   "detail": "build/IN_PROCESS_COUNT_RECONCILIATION.json has no key 'R8_IN_PROCESS_HANDLER_INVOCATIONS'; it has []",
+   "expected": "INVALID_EVIDENCE",
+   "name": "missing key rejected as INVALID_EVIDENCE",
+   "observed": "INVALID_EVIDENCE"
+  },
+  {
+   "PASS": true,
+   "case": 3,
+   "detail": "build/IN_PROCESS_COUNT_RECONCILIATION.json has no key 'R8_IN_PROCESS_HANDLER_INVOCATIONS'; it has ['IN_PROCESS_HANDLER_INVOCATIONS']",
+   "expected": "INVALID_EVIDENCE",
+   "name": "attempt 8's unprefixed key name rejected",
+   "observed": "INVALID_EVIDENCE"
+  },
+  {
+   "PASS": true,
+   "case": 4,
+   "detail": "build/IN_PROCESS_COUNT_RECONCILIATION.json['R8_IN_PROCESS_HANDLER_INVOCATIONS'] is str, expected int",
+   "expected": "INVALID_EVIDENCE",
+   "name": "string where an int is required is rejected",
+   "observed": "INVALID_EVIDENCE"
+  },
+  {
+   "PASS": true,
+   "case": "4b",
+   "detail": "build/IN_PROCESS_COUNT_RECONCILIATION.json['R8_IN_PROCESS_HANDLER_INVOCATIONS'] is a bool, expected int",
+   "expected": "INVALID_EVIDENCE",
+   "name": "bool where an int is required is rejected",
+   "observed": "INVALID_EVIDENCE"
+  },
+  {
+   "PASS": true,
+   "case": "4c",
+   "detail": "build/IN_PROCESS_COUNT_RECONCILIATION.json is str, not an object; cannot read 'R8_IN_PROCESS_HANDLER_INVOCATIONS'",
+   "expected": "INVALID_EVIDENCE",
+   "name": "a string where an object is required is rejected",
+   "observed": "INVALID_EVIDENCE"
+  },
+  {
+   "PASS": true,
+   "case": 5,
+   "detail": {
+    "expected": 169,
+    "measured": 168
+   },
+   "expected": "FAIL",
+   "name": "168 against expected 169 rejected",
+   "observed": "FAIL"
+  },
+  {
+   "PASS": true,
+   "case": 7,
+   "expected": [],
+   "name": "predicates raising an uncontrolled exception on an empty document",
+   "observed": []
+  },
+  {
+   "PASS": true,
+   "case": "7b",
+   "expected": [],
+   "name": "predicates raising an uncontrolled exception on a list where an object belongs",
+   "observed": []
+  },
+  {
+   "PASS": true,
+   "case": 8,
+   "expected": 42,
+   "name": "every predicate evaluated once against a schema-valid fixture",
+   "observed": 42
+  },
+  {
+   "PASS": true,
+   "case": "8b",
+   "expected": [],
+   "name": "predicates returning INVALID_EVIDENCE on the real documents",
+   "observed": []
+  },
+  {
+   "PASS": true,
+   "case": "9",
+   "expected": [],
+   "name": "keys named by predicates that the schema map does not prove present",
+   "observed": []
+  }
+ ],
+ "cases_passed": 14,
+ "live_predicate_results": [
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": false,
+   "measured": false,
+   "predicate": "build_baseline_from_predecessor raised",
+   "source": "automation/freeze.py"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": true,
+   "measured": true,
+   "predicate": "baseline discovery members > 0",
+   "source": "automation/freeze.py"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": true,
+   "measured": true,
+   "predicate": "baseline project members > 0",
+   "source": "automation/freeze.py"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": [],
+   "measured": [],
+   "predicate": "in-process operations without a handler",
+   "source": "automation.operation_catalog.IN_PROCESS vs automation.in_process_ops.HANDLERS"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": [],
+   "measured": [],
+   "predicate": "in-process rehearsal steps not executed",
+   "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports[*].steps[*]"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": "UBUNTU",
+   "measured": "UBUNTU",
+   "predicate": "freeze.PACKAGE_PLATFORM",
+   "source": "automation/freeze.py"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": "R8",
+   "measured": "R8",
+   "predicate": "freeze.PACKAGE_REVISION",
+   "source": "automation/freeze.py"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": "GENERATED_UNVERIFIED",
+   "measured": "GENERATED_UNVERIFIED",
+   "predicate": "MODE",
+   "source": "MODE"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": 0,
+   "measured": 0,
+   "predicate": "processes holding a writable descriptor below R8",
+   "source": "/proc/<pid>/fd + fdinfo"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": 0,
+   "measured": 0,
+   "predicate": "recorded freeze attempts",
+   "source": "state/freeze_attempts.jsonl"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": [],
+   "measured": [],
+   "predicate": "rehearsal steps carrying the note-only fallback",
+   "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports[*].steps[*]"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": 43,
+   "measured": 43,
+   "predicate": "rehearsal phase records",
+   "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": 169,
+   "measured": 169,
+   "predicate": "sum of per-phase IN_PROCESS_HANDLER_INVOCATIONS",
+   "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports[*]"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": [],
+   "measured": [],
+   "predicate": "phases marked HOLLOW",
+   "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports[*]"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": 0,
+   "measured": 0,
+   "predicate": "sum of per-phase NOTE_ONLY_IN_PROCESS_STEPS",
+   "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports[*]"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": 169,
+   "measured": 169,
+   "predicate": "sum of per-phase IN_PROCESS_STEP_COUNT",
+   "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports[*]"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": 0,
+   "measured": 0,
+   "predicate": "sum of per-phase IN_PROCESS_STEPS_WITHOUT_EVIDENCE",
+   "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports[*]"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": 169,
+   "measured": 169,
+   "predicate": "in-process steps derived from the 43 plans",
+   "source": "build/candidate_plans_r8/*/*/plan.json + automation.operation_catalog.IN_PROCESS"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": "0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d",
+   "measured": "0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d",
+   "predicate": "predecessor baseline digest equals lineage r7 record",
+   "source": "automation/freeze.py PREDECESSOR_BASELINE_REL vs lineage/R8_LINEAGE.json $.r7.baseline_manifest_sha256"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": false,
+   "measured": false,
+   "predicate": "08.18.26_Level1_Audits_R9 exists",
+   "source": "the directory beside the package"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": [],
+   "measured": [],
+   "predicate": "in-process rows not executed in the R8 rehearsal",
+   "source": "build/IN_PROCESS_COUNT_RECONCILIATION.json$.steps[*]"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": 169,
+   "measured": 169,
+   "predicate": "recon.R8_IN_PROCESS_HANDLER_INVOCATIONS",
+   "source": "build/IN_PROCESS_COUNT_RECONCILIATION.json"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": 0,
+   "measured": 0,
+   "note": "the two counts must reconcile with nothing left over",
+   "predicate": "recon.explanation.UNEXPLAINED_COUNT_DIFFERENCE",
+   "source": "build/IN_PROCESS_COUNT_RECONCILIATION.json"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": 169,
+   "measured": 169,
+   "predicate": "recon rows -> handler invocations",
+   "source": "build/IN_PROCESS_COUNT_RECONCILIATION.json$.steps[*]"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": 169,
+   "measured": 169,
+   "note": "derived from the rows; a summary that quotes itself is not evidence",
+   "predicate": "recon rows -> unique in-process plan steps",
+   "source": "build/IN_PROCESS_COUNT_RECONCILIATION.json$.steps[*]"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": 311,
+   "measured": 311,
+   "predicate": "recon.R8_TOTAL_PLAN_STEPS",
+   "source": "build/IN_PROCESS_COUNT_RECONCILIATION.json"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": 169,
+   "measured": 169,
+   "predicate": "recon.R8_UNIQUE_IN_PROCESS_PLAN_STEPS",
+   "source": "build/IN_PROCESS_COUNT_RECONCILIATION.json"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": 169,
+   "measured": 169,
+   "predicate": "rehearsal.IN_PROCESS_HANDLER_INVOCATIONS",
+   "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": 169,
+   "measured": 169,
+   "predicate": "rehearsal.IN_PROCESS_STEP_COUNT",
+   "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": [],
+   "measured": [],
+   "predicate": "rehearsal.HOLLOW_PHASES",
+   "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": 0,
+   "measured": 0,
+   "predicate": "rehearsal.NOTE_ONLY_IN_PROCESS_STEPS",
+   "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": 0,
+   "measured": 0,
+   "predicate": "rehearsal.REQUIRED_IN_PROCESS_STEPS_WITHOUT_EVIDENCE",
+   "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": [],
+   "measured": [],
+   "predicate": "VERIFICATION_RESULT.json labelled as a verifier",
+   "source": "TOOL_INVENTORY.json"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": 5,
+   "measured": 5,
+   "predicate": "dummy token field count",
+   "source": "automation/freeze.py token_for"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": true,
+   "measured": true,
+   "predicate": "token_for/parse_freeze_token round-trip on DUMMY digests",
+   "source": "automation/freeze.py"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": false,
+   "measured": false,
+   "predicate": "dummy token ends with a newline",
+   "source": "automation/freeze.py"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": [],
+   "measured": [],
+   "predicate": "tool inventory rows whose digest does not match disk",
+   "source": "TOOL_INVENTORY.json"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": [],
+   "measured": [],
+   "predicate": "required tool roles absent from the inventory",
+   "source": "TOOL_INVENTORY.json"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": 0,
+   "measured": 0,
+   "predicate": "TOOL_INVENTORY.UNIDENTIFIED_TOOLS",
+   "source": "TOOL_INVENTORY.json"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": [
+    "init-revision"
+   ],
+   "measured": [
+    "init-revision"
+   ],
+   "predicate": "transition routes",
+   "source": "state/transitions.jsonl"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": 1,
+   "measured": 1,
+   "predicate": "state/transitions.jsonl rows",
+   "source": "state/transitions.jsonl"
+  },
+  {
+   "OUTCOME": "PASS",
+   "PASS": true,
+   "expected": false,
+   "measured": false,
+   "predicate": "writer inspection used pgrep -f",
+   "source": "/proc/<pid>/fd + fdinfo"
+  }
+ ],
+ "schema": "wpno.r8.delta-verifier-selftest/1",
+ "schema_map": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/VERIFIER_SCHEMA_MAP.json",
+ "schema_map_sha256": "85d9e8730f4e4f1011336a9c50b2295d0ed6f98f0275845950feb5056940a0c6",
+ "tool_inventory": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/TOOL_INVENTORY.json",
+ "tool_inventory_sha256": "92dfbc3984b3ecf3503e406f948ff167db5b92984d6110e59d2b261b09a3d96d",
+ "writer_inspection": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/preflight/WRITER_INSPECTION_PRE.json",
+ "writer_inspection_sha256": "79bb9e973a41c9e100e608942bb988008924332bb6a51d19cbadf32e8ef9b9df"
+}

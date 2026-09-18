@@ -1,0 +1,10 @@
+{
+  "attempt_id": "L1-A18/RUN-B/attempt-1",
+  "attempt_number": 1,
+  "audit_id": "L1-A18",
+  "manifest_sha256": "5e472a3738f3799cfa996cc546ad869ddbd8bd2b59cdcede3711a576a03ee11a",
+  "run_phase": "RUN-B",
+  "sealed_at": 1787900000,
+  "synthetic_rehearsal_fixture": true,
+  "verdict": "UNVERIFIED"
+}

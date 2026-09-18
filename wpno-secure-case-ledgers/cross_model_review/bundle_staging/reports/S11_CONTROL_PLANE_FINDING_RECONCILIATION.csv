@@ -1,0 +1,17 @@
+finding_id,klasse,status,verweis
+RCK2-01,staged_blob,CLOSED_BY_INDEPENDENT_EVIDENCE,staged-tree gate + broker commit-tree binding
+RCK2-02,toctou,CLOSED_BY_INDEPENDENT_EVIDENCE,validated_tree==tree0 + update-ref CAS + re-check
+RCK2-13,staged_remove,CLOSED_BY_INDEPENDENT_EVIDENCE,Index autoritativ (materialisierter Tree)
+RCK2-22,gate_attestation_durability,CLOSED_BY_INDEPENDENT_EVIDENCE,V2 HMAC tree-gebunden + Gate-Phase-Registry + DEMOTABLE_PHASES
+RTfix-selfref,self_referential_validator,CLOSED_IN_REPAIR_CYCLE,gate_code_changed_vs_head -> GREEN_PENDING_GATECODE_REVIEW
+RTfix-testhook,test_gate_injection,CLOSED_IN_REPAIR_CYCLE,WPNO_STAGEDTREE_TEST_MODE-Gate + ATTESTED_TEST_MODE
+RTfix-decouple,gate_commit_decoupling,CLOSED_IN_REPAIR_CYCLE,Broker validated_tree_oid==tree0
+RTfix-forgery,attestation_forgery,CLOSED_IN_REPAIR_CYCLE,HMAC-SHA256 off-git + V2-only _attested_green
+RTfix-offswitch,phase_offswitch,CLOSED_IN_REPAIR_CYCLE,DEMOTABLE_PHASES code-gepinnt
+RTfix-scopeprefix,scope_guard_prefix,CLOSED_IN_REPAIR_CYCLE,Praefix-Matching + unlisted-product-file
+RTres-intent-add,intent_to_add_noop,RESIDUAL_DOCUMENTED,plain git commit umgeht Broker; Pre-Commit-Hook bleibt Auffangnetz (MEDIUM)
+RTres-lock,lock_stealing_forgery,RESIDUAL_DOCUMENTED,"Dateisystem-Eigentuemer kann Lockfile entfernen (== --no-verify; lokale Grenze, MEDIUM)"
+RTres-hmackey,hmac_key_same_machine,RESIDUAL_DOCUMENTED,Angreifer mit Lesezugriff auf den off-git-Key kann faelschen (ehrliche lokale Tamper-Evidenz-Grenze)
+RTv1-selfref-full,self_referential_validator_full_surface,CLOSED_IN_REPAIR_CYCLE_3,gate_code_changed_vs_head strukturell: JEDE Validierungsdatei (scripts/tests/zitate_register/s11_core *.py + Hooks + Steuer-CSV/YAML) -> GREEN_PENDING_GATECODE_REVIEW; verifiziert (case 12 + unabh. Reproduktion)
+RTv1-forgedv1,forged_v1_audit_bypass,CLOSED_IN_REPAIR_CYCLE_2,"V1-Record HMAC-gesichert; unsignierter/gefaelschter V1 -> _attested_green=False, cmd_verify/audit rc=1 (V1 lief vor diesem Fix)"
+RTv1-brokerreturn,broker_return_testmode_wording,RESIDUAL_LOW,"Broker-Rueckgabestring unterscheidet Testmodus nicht, ABER durable Attestierung=ATTESTED_TEST_MODE + verify rc=1 (kein Produktionsgruen); nur irrefuehrend fuer naive Aufrufer"

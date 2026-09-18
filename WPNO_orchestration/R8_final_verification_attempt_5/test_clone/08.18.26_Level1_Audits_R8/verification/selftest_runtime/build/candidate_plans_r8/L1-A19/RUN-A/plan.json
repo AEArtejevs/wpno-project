@@ -1,0 +1,316 @@
+{
+  "audit_id": "L1-A19",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "ISO/IEC 7064 MOD 11,10 correctness of the payload scanner's German tax-identifier validator, checked in Python against the official ELSTER calculation and vectors derived from REF-04, over the full 34-vector set, with the empty string and a non-string both counted as inputs, and with two sabotage controls. Check-digit correctness and structural validity are two questions and are answered separately.",
+  "static_analysis": "payload_scan.py is parsed with PYTHON_AST_PARSE, never imported: a top-level import executes code. _validate_steuid11 is recorded verbatim, step by step, and the pattern that feeds it is recorded with its length and boundary constructs.\n\nThe scheme is identified before any test: country Germany, identifier the steuerliche Identifikationsnummer, variant ISO/IEC 7064 MOD 11,10, eleven digits, check digit in position eleven, separators ' -./,' stripped before validation. Each with its source recorded.\n\nThe structural repetition rule - exactly one of the first ten digits repeating, twice or three times - is part of validity and is not part of the check digit. Whether the implementation enforces it is a distinct question from whether its check digit is right, and both are answered.\n\nRUN-A computes in the generation form: fold the first ten digits, produce the eleventh, compare. RUN-B uses the verification form in another language. The two are equivalent in arithmetic and different in expression, so a defect in one does not reproduce itself in the other.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/anonymization/payload_scan.py"
+      },
+      "purpose": "Parse, do not import.",
+      "step_id": "parse_target",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-03_ELSTER_Pruefung_Steueridentifikationsnummer_2026-04-15.pdf"
+      },
+      "purpose": "Bind the official specification the calculation is taken from, so the formula's source is on the record.",
+      "step_id": "bind_elster_specification",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-03_ISO_IEC_7064_2003.pdf"
+      },
+      "purpose": "Bind the ISO preview, which identifies the variant and is not the source of the calculation.",
+      "step_id": "bind_iso_preview",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "AUDIT_MODULE_RUN",
+      "params": {
+        "args": [
+          "--vectors",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/corpora/R7_REF04_IDNR_VECTORS.jsonl",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A19/RUN-A/run_a_results.json"
+        ],
+        "module": "automation.a19_run_a_cli"
+      },
+      "purpose": "The full vector set through the Python generation form.",
+      "step_id": "run_a_validation",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "AUDIT_MODULE_RUN",
+      "params": {
+        "args": [
+          "--vectors",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/corpora/R7_REF04_IDNR_VECTORS.jsonl",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A19/RUN-A/sabotage_modulus.json",
+          "--sabotage",
+          "mod_11_10"
+        ],
+        "module": "automation.a19_run_a_cli"
+      },
+      "purpose": "A deliberately wrong modulus must change the answers. A sabotage that changes nothing is a measurement error, not a passing control.",
+      "step_id": "sabotage_modulus",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "AUDIT_MODULE_RUN",
+      "params": {
+        "args": [
+          "--vectors",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/corpora/R7_REF04_IDNR_VECTORS.jsonl",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A19/RUN-A/sabotage_repetition.json",
+          "--sabotage",
+          "repetition"
+        ],
+        "module": "automation.a19_run_a_cli"
+      },
+      "purpose": "A structural rule that accepts everything must change the answers of exactly the structural vectors. This separates the two verdict dimensions by showing they can be broken independently.",
+      "step_id": "sabotage_repetition_rule",
+      "timeout_seconds": 300
+    }
+  ],
+  "target": {
+    "identity_evidence": "bindings/L1-A19.binding.json records productive_target_sha256 for the operator's own copy; the file on this machine hashes to the same value, so the two are the same bytes. Which copy is productive is L1-A20's question and is not decided here.",
+    "path": "/home/ubuntu/project/WPNO/anonymization/payload_scan.py",
+    "sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "references/REF-03*",
+        "references/REF-04*",
+        "corpora/R7_REF04_IDNR_VECTORS.jsonl",
+        "/home/ubuntu/project/WPNO/anonymization/payload_scan.py"
+      ],
+      "allowed_writes": [
+        "work/L1-A19/RUN-A/",
+        "evidence/L1-A19/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A19 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A19",
+      "candidate_template_identity": "L1-A19/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A19/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "/usr/bin/python3 -I -B via the frozen launcher run_audit_module.py",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "ARBITRARY_SHELL",
+        "CHANGE_PERMISSION",
+        "DATABASE_CONNECTION",
+        "DATABASE_WRITE",
+        "DELETE_SOURCE",
+        "DOCKER_BUILD",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_SOCKET_ACCESS",
+        "GIT_MUTATION",
+        "INSTALL_PACKAGE",
+        "LAUNCH_AGENT_MUTATION",
+        "MCP_MUTATION",
+        "MODIFY_SOURCE",
+        "N8N_MUTATION",
+        "NETWORK_REQUEST",
+        "NETWORK_UPLOAD",
+        "SERVICE_MUTATION"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [],
+      "independent_oracle": "The official specification of the scheme (REF-03 ELSTER) plus independent vectors derived from REF-04 plus manual computation. Never the implementation under audit: a corpus derived from the target would agree with the target by construction.",
+      "limitations": [
+        "The REF-03 ISO/IEC 7064 item is an eleven-page iTeh preview containing normative pages 1-5. It establishes that MOD 11,10 is the designated hybrid system with one check digit; it does not contain clauses 9 and 10 and must not be described as the complete ISO standard. The operational calculation is taken from the official ELSTER specification and corroborated by REF-04's independent implementation."
+      ],
+      "method": "Python ISO/IEC 7064 MOD 11,10 generation form over vectors derived from REF-04",
+      "notes": [
+        "The vector corpus records per vector whether its expected answer is REF-04's own or derived by a named rule from REF-04. No expected value came from the implementation under audit."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [
+        "REF-03",
+        "REF-04"
+      ],
+      "references": [
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-03_ELSTER_Pruefung_Steueridentifikationsnummer_2026-04-15.pdf",
+          "sha256": "f5f8a41beabb469851e26b47cdd4eb6641a9bdbc68c34a589edaa90631b37f41"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-03_ISO_IEC_7064_2003.pdf",
+          "sha256": "b88b0f84a0f1e121ff49a7640a62a4c9057e5cfedcaf790eff86c0fa5f1c31f8"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-03_BZSt_German_IdNr_Issuer_Specification.pdf",
+          "sha256": "b2ec9da8ae160d548d46eebebe0ef9ccfc9f9db204a25cea4ff3f04fc7609a0f"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-03_SOURCE_MAP.txt",
+          "sha256": "5dcd16b464c8d950f88f1ef78730379966df2d1d907f4d28db6dc0a4db9a9a0b"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-04_idnr.py",
+          "sha256": "406499181359159d39185b2703e32764c13be54c30834a7b0f172e68af76aa77"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-04_test_de_idnr.doctest",
+          "sha256": "95d71ea0dee4276908f2d32a1adf05c938164ecd836ee384dc4ffc7439a58ecd"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/corpora/R7_REF04_IDNR_VECTORS.jsonl",
+          "sha256": "6eba579879d929d0c6fe94ef05143cabca9d588a21ea33240e4e706f34e2bd5c"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/corpora/R7_REF04_IDNR_VECTORS.meta.json",
+          "sha256": "beba35ff571f55572c306fc4e10d5033bf51a4ba35ccb61e01e93b20c34e0d5a"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/manifest.json",
+          "sha256": "4c1e9a706a5ba2a3c6f25f7ffc37963efadbe529f907865f516982ce3b54f1b4"
+        }
+      ],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": "The target set is re-derived rather than adopted from the binding, and every candidate is hashed and compared against the binding. A mismatch is BUILD_CONTAMINATED_SOURCE_CHANGED and the run stops. Production identity requires execution-path evidence; filename and version suffix are excluded by rule.",
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "check_id": "scheme_identity",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Which scheme is the implementation supposed to compute?",
+      "recorded_before": "any test is run",
+      "required_result": "Country, identifier type, ISO 7064 variant, modulus, radix, character mapping, check-digit position and preprocessing rules, each with its source. If any cannot be established: BLOCKED_SCHEME_IDENTITY_UNCERTAIN and stop.",
+      "specification_reference": "REF-03 ELSTER section 2.2, document pages 6-8"
+    },
+    {
+      "check_id": "vector_coverage",
+      "derived_vectors": 23,
+      "documented_vectors": 11,
+      "empty_input_counted_as_an_input": true,
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_total_inputs_answered": 34,
+      "non_string_input_counted_as_an_input": true,
+      "question": "What does the corpus cover?",
+      "scopes_covered": [
+        "REF04_DOCUMENTED",
+        "CHECK_DIGIT_PLUS_ONE",
+        "REPETITION_VIOLATED_CHECK_DIGIT_CORRECT",
+        "WRONG_LENGTH_10",
+        "WRONG_LENGTH_12",
+        "SEPARATORS_HYPHEN",
+        "SEPARATORS_DOT",
+        "SEPARATORS_SLASH",
+        "SEPARATORS_COMMA",
+        "SURROUNDING_WHITESPACE",
+        "LEADING_TEXT",
+        "TRAILING_TEXT",
+        "EMPTY_INPUT",
+        "NONE_INPUT",
+        "VERY_LONG_INPUT",
+        "ALL_IDENTICAL_DIGITS",
+        "MAX_ALLOWED_REPETITION",
+        "CHECK_DIGIT_COMPUTES_TO_ZERO",
+        "LEADING_ZERO",
+        "FOREIGN_SCHEME_SAME_LENGTH",
+        "OTHER_ISO7064_VARIANT"
+      ],
+      "step_id": "run_a_validation",
+      "vectors_in_corpus": 34,
+      "why": "The edge cases the specification names are each present as their own scope, so a missing one is visible rather than absorbed into a total."
+    },
+    {
+      "check_id": "two_verdict_dimensions",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Are check-digit correctness and structural validity separated?",
+      "required_result": "Reported separately. Every record carries structurally_valid, computed_check_digit, carried_check_digit and check_digit_correct, and the deciding rule is named.",
+      "why": "A value can fail the repetition rule while carrying a correct check digit. Collapsing the two would report that as a check-digit defect."
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "question": "Do known-valid identifiers validate?",
+      "references": "REF-04 documented vectors 36574261809, 11234567890, 11123456786",
+      "required_result": "All three are answered VALID."
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expected_failure_reason": "the eleventh digit is not the one MOD 11,10 produces for the first ten",
+      "expected_result": "INVALID_CHECKSUM",
+      "fixture": "the CHECK_DIGIT_PLUS_ONE vectors, each a documented-valid identifier with its check digit stepped by one and its repetition structure intact",
+      "question": "Do identifiers with a wrong check digit fail?"
+    },
+    {
+      "check_id": "mutation_control_modulus",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_result": "AT_LEAST_ONE_ANSWER_CHANGES",
+      "expected_result_differs_from": "run_a_validation",
+      "fixture": "--sabotage mod_11_10, recorded in the argv",
+      "fixture_construction": "the same single implementation with the modulus changed from 11 to 10; there is no second copy of the validator",
+      "question": "Does a wrong modulus change the answers?",
+      "step_id": "sabotage_modulus",
+      "why": "If nothing changes, the validator is not on the measured path.",
+      "zero_changed_results_is": "a measurement error and an invalid control, never a pass"
+    },
+    {
+      "check_id": "mutation_control_repetition",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_result": "THE_STRUCTURAL_VECTORS_CHANGE_ANSWER",
+      "expected_result_differs_from": "run_a_validation",
+      "fixture": "--sabotage repetition, recorded in the argv",
+      "question": "Does neutralising the structural rule change the answers?",
+      "step_id": "sabotage_repetition_rule",
+      "why": "The two sabotages break the two dimensions independently, which is what shows they are two.",
+      "zero_changed_results_is": "a measurement error, not a pass"
+    }
+  ]
+}

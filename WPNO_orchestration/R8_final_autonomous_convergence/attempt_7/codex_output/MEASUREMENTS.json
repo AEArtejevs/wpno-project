@@ -1,0 +1,9 @@
+{
+  "abort": {"item": 13, "exception": "KeyError: 'step_id'", "location": "temporary/verify.py:97", "classification": "VERIFICATION_DEFECT"},
+  "preflight": {"checks": 8, "failed_checks": [], "PREFLIGHT_PASS": true, "clone": "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_7_662915"},
+  "original_inventory_after_abort": {"entry_count": 1362, "dir_count": 401, "file_count": 961, "inventory_sha256": "e685461c0b24180bf9520d3f5fc453f805a3ea72362b7054ca7e9cbd84747032"},
+  "original_inventory_comparison": {"EQUAL": true, "paths_added": 0, "paths_removed": 0, "paths_differing": 0, "written_paths": 0, "mtimes_changed": 0, "modes_changed": 0, "symlink_targets_changed": 0, "contents_changed": 0, "uid_changed": 0, "gid_changed": 0, "compare_record_sha256": "4fb75bb45ef941b9292aeb81f68d7cef5326c85fd6b4a38c3e9adc63f083c2a9"},
+  "suite_totals": {"controller": "NOT RUN", "package": "NOT RUN", "static_safety": "NOT RUN"},
+  "manifest": {"digest": null, "entries_independently_verified": 0},
+  "unverified_items": [1,2,3,4,5,6,7,8,9,10,11,12,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,33,34,35]
+}

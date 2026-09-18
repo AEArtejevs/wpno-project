@@ -1,0 +1,270 @@
+{
+  "audit_id": "L1-A09",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "For every pattern in the productive rule set, test boundary behaviour on both sides against the full delimiter inventory, and record false positives and false negatives separately. The expected verdict per case is stated by this audit in advance from the pattern semantics, never read off the guard's output.",
+  "static_analysis": "Both the guard and the payload scanner are parsed, never imported, and every pattern is extracted with its boundary constructs recorded verbatim. 'Every relevant article' is not a defined set; the pattern enumeration defines it, and the enumeration is the first thing recorded.\n\nCLAUDE.md section 10 records both failures this audit measures: a bare *bea* matching Projektbeauftragung, Beanstandung and Bearbeitung; and a regex without a quantifier failing to see /F1+0. The German compound set is therefore explicit in the matrix rather than left to the cross product.\n\nPYTHON_SCRIPT_RUN_SANDBOX runs a script under work/ and nowhere else, so the approved phase first copies the guard to work/<audit>/RUN-A/sandbox/ and records the copy's digest beside the original's. The original in authoring/ is read and never written to. Where a rule has to be neutralised to attribute a rejection, it is neutralised in that copy and the neutralised line is recorded.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/authoring/AP17_output_guardrail_v3.py"
+      },
+      "purpose": "Enumerate every pattern with its boundary constructs. This enumeration defines the set.",
+      "step_id": "parse_guard_patterns",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/anonymization/payload_scan.py"
+      },
+      "purpose": "The same, for the payload scanner's pattern set.",
+      "step_id": "parse_scanner_patterns",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--cases",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A09/RUN-A/cases/cross_product.jsonl"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A09/RUN-A/sandbox/boundary_matrix.py"
+      },
+      "purpose": "Every pattern preceded by each delimiter, followed by each delimiter, and both. The expected verdict per case was stated in advance.",
+      "step_id": "run_delimiter_cross_product",
+      "timeout_seconds": 900
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--cases",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A09/RUN-A/cases/german_compounds.jsonl"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A09/RUN-A/sandbox/boundary_matrix.py"
+      },
+      "purpose": "The pattern embedded in a longer German compound word. This is the case that produced twelve false hits and no real ones.",
+      "step_id": "run_german_compound_set",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--cases",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A09/RUN-A/cases/own_literal.jsonl"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A09/RUN-A/sandbox/boundary_matrix.py"
+      },
+      "purpose": "Each pattern must match its own literal surrounded by plain spaces. A pattern that does not is broken independently of boundaries.",
+      "step_id": "positive_control_pattern_matches_own_literal",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--cases",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A09/RUN-A/cases/disjoint.jsonl"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A09/RUN-A/sandbox/boundary_matrix.py"
+      },
+      "purpose": "Each pattern must not match a string sharing no substring with it. This proves the harness is not reporting matches indiscriminately.",
+      "step_id": "negative_control_disjoint_string",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--cases",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A09/RUN-A/cases/german_compounds.jsonl"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A09/RUN-A/sandbox/boundary_matrix_no_boundary.py"
+      },
+      "purpose": "For a pattern using a word boundary, the boundary construct is removed in a sandbox copy and the compound cases are re-run. The false-positive count must rise. This proves the boundary construct is what is being measured.",
+      "step_id": "mutation_control_boundary_removed",
+      "timeout_seconds": 600
+    }
+  ],
+  "target": {
+    "identity_evidence": "bindings records this path with this digest. Which guardrail version is productive is an open question in this audit's binding and a version suffix is excluded by rule from answering it. The payload scanner is parsed as well, because the binding names both and the pattern set spans them.",
+    "path": "/home/ubuntu/project/WPNO/authoring/AP17_output_guardrail_v3.py",
+    "sha256": "dd60dc63437691082b821fe219a7599c1561c757214a0e38eac97367ab2a09ca"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "/home/ubuntu/project/WPNO/authoring/AP17_output_guardrail_v3.py",
+        "/home/ubuntu/project/WPNO/anonymization/payload_scan.py"
+      ],
+      "allowed_writes": [
+        "work/L1-A09/RUN-A/",
+        "evidence/L1-A09/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A09 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A09",
+      "candidate_template_identity": "L1-A09/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A09/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "/usr/bin/python3 -I -B against a sandbox copy",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "ARBITRARY_SHELL",
+        "CHANGE_PERMISSION",
+        "DATABASE_CONNECTION",
+        "DATABASE_WRITE",
+        "DELETE_SOURCE",
+        "DOCKER_BUILD",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_SOCKET_ACCESS",
+        "GIT_MUTATION",
+        "INSTALL_PACKAGE",
+        "LAUNCH_AGENT_MUTATION",
+        "MCP_MUTATION",
+        "MODIFY_SOURCE",
+        "N8N_MUTATION",
+        "NETWORK_REQUEST",
+        "NETWORK_UPLOAD",
+        "SERVICE_MUTATION"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [],
+      "independent_oracle": "The expected verdict per case, stated by this audit before the run from the pattern semantics. Labels produced by the tool under test are not labels.",
+      "limitations": [],
+      "method": "pattern-by-delimiter cross product with verdicts stated in advance",
+      "notes": [
+        "Every textual search is anchored with a word boundary. CLAUDE.md section 10 records the cost of omitting one: a bare *bea* matched Projektbeauftragung, Beanstandung and Bearbeitung - twelve hits, none real. A search whose boundary handling is not stated is not a search.",
+        "PYTHON_SCRIPT_RUN_SANDBOX runs a script under work/ and nowhere else, so the approved phase first copies the guard to work/<audit>/RUN-A/sandbox/ and records the copy's digest beside the original's. The original in authoring/ is read and never written to. Where a rule has to be neutralised to attribute a rejection, it is neutralised in that copy and the neutralised line is recorded."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [],
+      "references": [],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": null,
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "check_id": "delimiter_inventory",
+      "delimiter_count": 28,
+      "delimiters": [
+        "start of string",
+        "end of string",
+        "ASCII space",
+        "non-breaking space U+00A0",
+        "narrow no-break space U+202F",
+        "newline LF",
+        "newline CRLF",
+        "comma",
+        "period",
+        "colon",
+        "semicolon",
+        "opening parenthesis",
+        "closing parenthesis",
+        "double quote",
+        "German opening quotation mark",
+        "German closing quotation mark",
+        "apostrophe",
+        "typographic apostrophe",
+        "hyphen-minus",
+        "en dash",
+        "em dash",
+        "soft hyphen",
+        "digit",
+        "uppercase letter",
+        "lowercase letter",
+        "non-ASCII Unicode letter (umlaut)",
+        "non-ASCII Unicode letter (sharp s)",
+        "direct concatenation"
+      ],
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "question": "What is the delimiter inventory?",
+      "required_result": "The full inventory, applied on both sides and on both sides at once."
+    },
+    {
+      "check_id": "false_positives_and_negatives_separately",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "How are the two error kinds reported?",
+      "required_result": "Two counts, never one score. A pattern that is both overbroad and incomplete would show as neither under a single number.",
+      "step_id": "run_delimiter_cross_product"
+    },
+    {
+      "check_id": "german_compounds",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Does the pattern match inside a longer German word?",
+      "required_result": "Reported per pattern with the compound used.",
+      "specification_reference": "CLAUDE.md section 10: a bare *bea* matched Projektbeauftragung, Beanstandung and Bearbeitung - twelve hits, none real",
+      "step_id": "run_german_compound_set"
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_result": "EVERY_PATTERN_MATCHES_ITS_OWN_LITERAL",
+      "question": "Does each pattern match its own literal?",
+      "step_id": "positive_control_pattern_matches_own_literal"
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_failure_reason": "the string shares no substring with the pattern; a match here would mean the harness reports matches indiscriminately",
+      "expected_result": "NO_MATCHES",
+      "question": "Does a disjoint string stay unmatched?",
+      "step_id": "negative_control_disjoint_string"
+    },
+    {
+      "check_id": "mutation_control",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_result": "THE_FALSE_POSITIVE_COUNT_RISES",
+      "fixture": "work/L1-A09/RUN-A/sandbox/boundary_matrix_no_boundary.py",
+      "fixture_construction": "the same matrix runner against a pattern set with the word-boundary construct removed",
+      "proof_the_fixture_differs": "its SHA-256 differs and the removed construct is recorded verbatim",
+      "question": "Is the boundary construct what is being measured?",
+      "step_id": "mutation_control_boundary_removed",
+      "zero_changed_results_is": "proof the boundary construct was not what produced the earlier counts, not a passing control"
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "attempt_4_files": {
+    "CODEX_LAST_MESSAGE.txt": {
+      "path": "verification_codex_final_pre_freeze_attempt_4/CODEX_LAST_MESSAGE.txt",
+      "sha256": "783caeb6e4e7769db3091adf83ee466933291daaa3bc5f79c2ea11e6944020c8"
+    },
+    "COMMAND_LOG.jsonl": {
+      "path": "verification_codex_final_pre_freeze_attempt_4/COMMAND_LOG.jsonl",
+      "sha256": "0b15c27d85fe7177700be635e20a32c4ae39bca77ffcc4b8cc5a15e54ff94088"
+    },
+    "MEASUREMENTS.json": {
+      "path": "verification_codex_final_pre_freeze_attempt_4/MEASUREMENTS.json",
+      "sha256": "1e4a83f3313c88246ef2486702b8878b525c0f2a32fc5bfa1a285388054314ab"
+    },
+    "VERIFICATION_BRIEF.md": {
+      "path": "verification_codex_final_pre_freeze_attempt_4/VERIFICATION_BRIEF.md",
+      "sha256": "0ce10343fee7e1b0e75e69b4a388bc6f26f65fda26b9be6c343e908cdd1122b3"
+    },
+    "VERIFICATION_MANIFEST.sha256": {
+      "path": "verification_codex_final_pre_freeze_attempt_4/VERIFICATION_MANIFEST.sha256",
+      "sha256": "3d09b8086f91f9cfdbc0e8e10f6eee8b178c8db28a0b5c11e19e5472e711f67b"
+    },
+    "VERIFICATION_REPORT.md": {
+      "path": "verification_codex_final_pre_freeze_attempt_4/VERIFICATION_REPORT.md",
+      "sha256": "2084ab7baf56b1bb34e8b54b8918da39bb291634cf3e67e0e0a60ac15ab4ea97"
+    },
+    "VERIFICATION_RESULT.json": {
+      "path": "verification_codex_final_pre_freeze_attempt_4/VERIFICATION_RESULT.json",
+      "sha256": "a5970ff4b49b6d39e5268c29ccb1a378760aebf2201acffeecb71f8b24239e10"
+    },
+    "codex_stdout.txt": {
+      "path": "verification_codex_final_pre_freeze_attempt_4/codex_stdout.txt",
+      "sha256": "bb2ee3bdb26d0119102e8b338533d18013f726ffb76e152f7baae54f9bcb48a5"
+    }
+  },
+  "attempt_4_measured_build_manifest_entry_count": 15752,
+  "attempt_4_measured_build_manifest_sha256": "4fa47432bf98a960676e4de16d04176436cc664a2fdad6302463638a12088d66",
+  "attempt_4_overall_pass": false,
+  "attempt_4_status": "VERIFICATION_FAIL_PRE_FREEZE_R7_FINAL",
+  "findings": [
+    {
+      "classification": "PRE_FREEZE_VERIFICATION_FAILURE",
+      "exact_measurement": {
+        "ast_imports": {
+          "automation/a19_run_b.py": [
+            "json",
+            "os",
+            "subprocess",
+            ":hashing",
+            ":path_policy",
+            ":policy"
+          ],
+          "automation/a19_run_b_cli.py": [
+            "argparse",
+            "json",
+            "sys",
+            ":a19_run_b",
+            ":hashing",
+            ":path_policy"
+          ]
+        },
+        "comparison_names_both": true,
+        "imports_or_reaches_run_a": [],
+        "run_a_computation": "folds first ten digits, produces eleventh, compares carried digit",
+        "run_b_computation": "folds all eleven digits, requires final intermediate 1, produces no check digit",
+        "run_b_cross_phase_paths": [
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/work/L1-A19/RUN-B"
+        ],
+        "sabotage_argv_count": 2,
+        "sabotage_controls_distinct": true,
+        "source_assertions": {
+          "run_a_generation_form": true,
+          "run_b_verification_form": true
+        }
+      },
+      "executable_bytes_must_change": false,
+      "finding_id": "FPF4-V15",
+      "internally_repairable_before_freeze": true,
+      "item": "V15",
+      "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7"
+    },
+    {
+      "classification": "PRE_FREEZE_VERIFICATION_FAILURE",
+      "exact_measurement": {
+        "changed_manifest_entries": 54,
+        "closure_counts_found": {
+          "errors": [
+            0,
+            0
+          ],
+          "failures": [
+            0,
+            0
+          ],
+          "skips": [
+            0,
+            0
+          ]
+        },
+        "malformed_rows": [],
+        "rehash_failures": [],
+        "static_clean": true,
+        "static_finding_count": 0
+      },
+      "executable_bytes_must_change": false,
+      "finding_id": "FPF4-V19",
+      "internally_repairable_before_freeze": true,
+      "item": "V19",
+      "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7"
+    }
+  ],
+  "item_verdicts": {
+    "V1": "PASS",
+    "V10": "PASS",
+    "V11": "PASS",
+    "V12": "PASS",
+    "V13": "PASS",
+    "V14": "PASS",
+    "V15": "FAIL",
+    "V16": "PASS",
+    "V17": "PASS",
+    "V18": "PASS",
+    "V19": "FAIL",
+    "V2": "PASS",
+    "V20": "PASS",
+    "V21": "PASS",
+    "V22": "PASS",
+    "V3": "PASS",
+    "V4": "PASS",
+    "V5": "PASS",
+    "V6": "PASS",
+    "V7": "PASS",
+    "V8": "PASS",
+    "V9": "PASS"
+  },
+  "outputs_revised_after_first_write": false,
+  "outputs_written_utc": "2026-08-28T07:44:54Z",
+  "read_after_subprocess_exit": true,
+  "recovered_predicates": {
+    "V15": "wrongb = [s for s in bs if '/L1-A19/' in s and '/RUN-B/' not in s and not s.endswith('R7_REF04_IDNR_VECTORS.jsonl')]  ; decide('V15', all(source_assertions) and not reach and not wrongb and comparison_names_both and sabotage_argv_count>=2 and sabotage_controls_distinct)",
+    "V19": "okcounts = 503 in vals.get('controller_tests',[]) and 312 in vals.get('package_tests',[]) and 0 in vals.get('failures',[]) and 0 in vals.get('errors',[]) and 0 in vals.get('skips',[])  ; decide('V19', not cmal and not cbad and finding_count==0 and clean is True and okcounts)  ; findvals harvests only the key names controller_tests, package_tests, failures, errors, skips",
+    "codex_stdout_sha256": "bb2ee3bdb26d0119102e8b338533d18013f726ffb76e152f7baae54f9bcb48a5",
+    "recovered_from": "verification_codex_final_pre_freeze_attempt_4/codex_stdout.txt"
+  },
+  "schema": "wpno.level1.attempt4-finding-inputs/1",
+  "sources_inspected": {
+    "automation/a19_run_a.py": "8facdab607990d38b2139507543f3427709ba38f56828e19882169ebfaa316f0",
+    "automation/a19_run_a_cli.py": "4b15e2caf927d3ddb43ace8fc2f7960fa374a18b6e0c2a225dd88dfb4f08260e",
+    "automation/a19_run_b.py": "7386eec4ba262d96d23e70e9cc9a6ba87f81e3bee0dc8a2e83b52f5077bfb275",
+    "automation/a19_run_b_cli.py": "041e3d9b9f3ee2d501159cc229b4a7db8de0a76a5eb3c972fdf591f229c57dfa",
+    "automation/operation_catalog.py": "5c08386b2d2a528f55dcbabf4f5940f6250632ccd7d19a37d0b9c41ed3b54a7e",
+    "build/R7_CHANGED_FILES.sha256": "e564ad992eeb180fecd14ae516bc930bca316b870a87df47e3f9024cf7370b68",
+    "build/R7_FINAL_PRE_FREEZE_CLOSURE.json": "5f3b63213a48b2cfb8d1ed8d48c68d69e0d3c8dede0974a5f051514837190a4a",
+    "build/R7_STATIC_SAFETY_REPORT.json": "ae91b0d70d4ef33674a3c09ec79686b43986cf218d5b0daefd1b655155c3cf64",
+    "build/candidate_plans_r7/L1-A19/COMPARISON/plan.json": "8309af557f974eb8478670082e9f85952868f094204754006b073977e7471893",
+    "build/candidate_plans_r7/L1-A19/RUN-A/plan.json": "b859f146c489aae46d95f133706f6250547ecc4d7605db5a04cd415eadb215ed",
+    "build/candidate_plans_r7/L1-A19/RUN-B/plan.json": "b54a57d960e8735835821d603649aec9b360e4549d2eccef1bdea027eae78e87",
+    "tools/a19_run_b/src/WpnoIdnrValidateRunB.java": "7b9c0fadfaaf1e09cc9d61f4e2d2f0dbd29f234b0daee4fe29a8c2fd314364fc",
+    "work/L1-A19/RUN-A/run_a_results.json": "18dff9db3c7f56b24bb9e3ad44b1d27a5b6c541fed38c1cbb0fd370a1c5c9ba2",
+    "work/L1-A19/RUN-A/sabotage_mod.json": "474e9d07aa436dcf9d3eb6c61844a7f98909aac08a5bf7ec20810097fd76f51e",
+    "work/L1-A19/RUN-A/sabotage_rep.json": "98c2991bc5910bb6c05215040e1b59b04844951585fff72a35ac571234052a4a",
+    "work/_rehearsal_r7/REHEARSAL_REPORT.json": "0227cfb40f3ee54effc10c7e353440d731f3b0aca21dd555eba26082c189662f"
+  },
+  "subprocess_exit_code": 0,
+  "subprocess_exited_utc": "2026-08-28T07:51:11Z"
+}

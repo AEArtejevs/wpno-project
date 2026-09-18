@@ -1,0 +1,22 @@
+WPNO JANIS-RUNTIME OWNERSHIP TRANSFER
+
+Date: 2026-09-01
+Lane: /home/ubuntu/project/WPNO-lanes/janis-runtime
+Baseline: /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime
+New human owner: Andris
+Writing agent: Codex
+Authorized scope: plan sections J1-J9 only
+
+Basis:
+- Andris explicitly instructed Codex to take over and complete Janis's part.
+- Read-only process inspection found no process using the Janis lane.
+- The working lane matched the read-only baseline by ordinary directory comparison.
+- JANIS_BASELINE_SHA256.txt and JANIS_WORKING_INITIAL_SHA256.txt had identical SHA-256:
+  6854ec3c178139961dbb949efd3bf95fab55e25023e20c56e37503384568a043
+- R9 verify-evidence reported ok=true, tampered=[], and all 63 sealed attempts intact.
+
+Restrictions preserved:
+- No Git commands or .git access.
+- No writes to live WPNO, baseline mirrors, R9, Andris's lane, raw/, or tools/.
+- No package installation, Internet download, credentials, service start, container start, or deployment.
+- Receipts are redacted and written outside R9.

@@ -1,0 +1,349 @@
+{
+  "audit_id": "L1-A04",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Compare the generated table of contents against the headings actually present in the generated document, extracted independently of the generator. Under no circumstances does the exporter's internal heading list serve as the reference side.",
+  "static_analysis": "The exporter is parsed, never imported. How the TOC is built and from what data structure is recorded, and then the decisive structural question: whether the TOC is a static list of paragraphs or an OOXML TOC field. A field is resolved by Word rather than by the generator, and that changes the comparison entirely.\n\nThe heading style names the generator uses are recorded, together with whether it recognises any other heading style. A generator that emits one style and reads another would produce exactly the disagreement this audit measures.\n\nAny existing self-check that compares the TOC against the generator's own list is named as the circular check it is.\n\nThe target depends on L1-A03. If A03 returned BLOCKED_TARGET_IDENTITY_UNCERTAIN, this audit runs against a named candidate and says so in every conclusion rather than presenting the result as being about the productive exporter.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/authoring/AP16_export_with_toc_v4.py"
+      },
+      "purpose": "How the TOC is built, from what structure, and which heading styles are used and recognised.",
+      "step_id": "parse_exporter",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--source",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/fixtures/T1.json",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/generated/T1.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/sandbox/AP16_export_with_toc_v4.py"
+      },
+      "purpose": "T1: baseline. A separate generation.",
+      "step_id": "generate_t1",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--source",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/fixtures/T2.json",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/generated/T2.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/sandbox/AP16_export_with_toc_v4.py"
+      },
+      "purpose": "T2: a heading removed from the source after the TOC list is built. A separate generation.",
+      "step_id": "generate_t2",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--source",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/fixtures/T3.json",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/generated/T3.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/sandbox/AP16_export_with_toc_v4.py"
+      },
+      "purpose": "T3: a duplicate heading with identical text. A separate generation.",
+      "step_id": "generate_t3",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--source",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/fixtures/T4.json",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/generated/T4.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/sandbox/AP16_export_with_toc_v4.py"
+      },
+      "purpose": "T4: a renamed heading. A separate generation.",
+      "step_id": "generate_t4",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--source",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/fixtures/T5.json",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/generated/T5.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/sandbox/AP16_export_with_toc_v4.py"
+      },
+      "purpose": "T5: a hidden heading with the vanish property set. A separate generation.",
+      "step_id": "generate_t5",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--source",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/fixtures/T6.json",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/generated/T6.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/sandbox/AP16_export_with_toc_v4.py"
+      },
+      "purpose": "T6: a heading-styled paragraph in the body that the TOC omits. A separate generation.",
+      "step_id": "generate_t6",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "ORACLE",
+      "operation": "DOCX_PARSE_SANDBOX",
+      "params": {
+        "load_dtd": false,
+        "no_network": true,
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/generated/T1.docx",
+        "resolve_entities": false
+      },
+      "purpose": "Extract the real heading set from the generated document independently: parse word/document.xml with entities and DTD disabled, select paragraphs by style, and record text, order and nesting level.",
+      "step_id": "extract_real_headings",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "ORACLE",
+      "operation": "DOCX_PARSE_SANDBOX",
+      "params": {
+        "load_dtd": false,
+        "no_network": true,
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/generated/T1.docx",
+        "resolve_entities": false,
+        "select": "toc"
+      },
+      "purpose": "Extract the TOC entries from the generated document, not from the generator's memory.",
+      "step_id": "extract_toc_entries",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--source",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/fixtures/no_headings.json",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/generated/no_headings.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/sandbox/AP16_export_with_toc_v4.py"
+      },
+      "purpose": "A document with zero headings must yield an empty TOC and an empty heading set, agreeing trivially. This proves the comparison does not manufacture entries.",
+      "step_id": "negative_control_no_headings",
+      "timeout_seconds": 600
+    }
+  ],
+  "target": {
+    "identity_evidence": "bindings/L1-A04.binding.json names this candidate with this digest. It is a named candidate, not a proven productive version: L1-A03 owns that question and a version suffix is excluded by rule from answering it.",
+    "path": "/home/ubuntu/project/WPNO/authoring/AP16_export_with_toc_v4.py",
+    "sha256": "b204a8e5e9bd7a7489bd2d69c61242ec9da8c929186b4b3393599a3d120ebdb7"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "/home/ubuntu/project/WPNO/authoring/AP16_export_with_toc_v4.py"
+      ],
+      "allowed_writes": [
+        "work/L1-A04/RUN-A/",
+        "evidence/L1-A04/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A04 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A04",
+      "candidate_template_identity": "L1-A04/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A04/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "/usr/bin/python3 -I -B against a sandbox copy",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "ARBITRARY_SHELL",
+        "CHANGE_PERMISSION",
+        "DATABASE_CONNECTION",
+        "DATABASE_WRITE",
+        "DELETE_SOURCE",
+        "DOCKER_BUILD",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_SOCKET_ACCESS",
+        "GIT_MUTATION",
+        "INSTALL_PACKAGE",
+        "LAUNCH_AGENT_MUTATION",
+        "MCP_MUTATION",
+        "MODIFY_SOURCE",
+        "N8N_MUTATION",
+        "NETWORK_REQUEST",
+        "NETWORK_UPLOAD",
+        "SERVICE_MUTATION"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [],
+      "independent_oracle": "An independent OOXML reader written for this audit. Under no circumstances may the exporter's internal heading list serve as the reference side of the comparison.",
+      "limitations": [
+        "The target depends on L1-A03's identity result. If A03 could not prove which exporter is productive, every conclusion here names the candidate it was run against and is not presented as a finding about the productive exporter."
+      ],
+      "method": "independent heading extraction compared against the generated TOC",
+      "notes": [
+        "All fixtures are synthetic and built inside the audit work directory."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [],
+      "references": [],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": "Production identity requires execution-path evidence: an import, an invocation in a script, a container command, a workflow node or a scheduler entry. Filename, version suffix, modification time, file size, documentation, comments and proximity to another file are excluded by rule. If production identity cannot be proven the answer is that it cannot be proven from this machine; no most-likely candidate is nominated.",
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "check_id": "toc_kind",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Is the TOC a static list or an OOXML field?",
+      "required_result": "Decided from the parse. A field is resolved by Word rather than by the generator, which changes what the comparison can conclude.",
+      "step_id": "parse_exporter",
+      "why": "Comparing a field's placeholder against real headings would report a disagreement that says nothing about the generator."
+    },
+    {
+      "check_id": "circular_self_check_named",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "question": "Does an existing self-check compare the TOC against the generator's own list?",
+      "required_result": "If one exists it is named as the circular check it is, and it is not used as evidence."
+    },
+    {
+      "check_id": "comparison_dimensions",
+      "dimensions": [
+        "text equality",
+        "order",
+        "hierarchy level",
+        "anchor or bookmark mapping where the format carries one"
+      ],
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_boolean": true,
+      "expected_exit_code": 0,
+      "question": "On what is the TOC compared against the headings?",
+      "required_result": "All four, reported separately.",
+      "step_id": "extract_toc_entries",
+      "why": "The oracle must parse the generated document."
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_result": "COMPLETE_AGREEMENT",
+      "question": "Does the baseline agree completely?",
+      "step_id": "generate_t1",
+      "why": "If the baseline disagrees, the extractor is wrong and must be fixed before anything else is interpreted."
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_failure_reason": "there are no headings to list; entries here would mean the comparison manufactures them",
+      "expected_result": "EMPTY_TOC_AND_EMPTY_HEADING_SET",
+      "question": "Does a document with no headings agree trivially?",
+      "step_id": "negative_control_no_headings"
+    },
+    {
+      "check_id": "mutation_control",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expected_result": "EACH_MUST_BE_DETECTED",
+      "fixture_construction": "T2 a heading removed after the TOC list is built; T4 a heading renamed; T6 a heading-styled body paragraph the TOC omits",
+      "proof_the_fixture_differs": "each source fixture differs from T1's and the change is recorded",
+      "question": "Does the comparison detect a real divergence?",
+      "step_ids": [
+        "generate_t2",
+        "generate_t4",
+        "generate_t6"
+      ],
+      "verdict_effect": "If a removed heading, a renamed heading and a body-only heading all compare equal, the comparison is not comparing.",
+      "zero_changed_results_is": "a measurement error, not a pass"
+    },
+    {
+      "check_id": "control_expectation_generate_t2",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_exit_code": 0,
+      "question": "What must this control step do for its measurement to count?",
+      "step_id": "generate_t2",
+      "why": "This generates the mutated fixture the later checks read. Generation must succeed; what the document then contains is substantive."
+    },
+    {
+      "check_id": "control_expectation_generate_t4",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_exit_code": 0,
+      "question": "What must this control step do for its measurement to count?",
+      "step_id": "generate_t4",
+      "why": "As generate_t2."
+    },
+    {
+      "check_id": "control_expectation_generate_t6",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_exit_code": 0,
+      "question": "What must this control step do for its measurement to count?",
+      "step_id": "generate_t6",
+      "why": "As generate_t2."
+    },
+    {
+      "check_id": "control_expectation_extract_real_headings",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_boolean": true,
+      "expected_exit_code": 0,
+      "question": "What must this control step do for its measurement to count?",
+      "step_id": "extract_real_headings",
+      "why": "The oracle must parse the generated document."
+    }
+  ]
+}

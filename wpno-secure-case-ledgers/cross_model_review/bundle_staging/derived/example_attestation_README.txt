@@ -1,0 +1,1 @@
+Diese V2-Beispielattestierung ist mit einem SYNTHETISCHEN Review-Key signiert (nicht dem Produktions-HMAC-Key). Sie zeigt Format + Feldbindung; der record_hmac ist NUR gegen den synthetischen Key gueltig.

@@ -1,0 +1,3 @@
+# Control-Plane Root Cause — Staged-Tree-Bindung
+
+22 Komponenten geprueft. **15 lesen ausschliesslich den Working Tree** (kein Tree-Objekt) -> P0-Klasse. Kernbefund: die 006D-Guards beziehen Inhalte ueber B.repdir()/os.walk aus dem Working Tree; write_green_marker hinterlegt aber `git write-tree` (Index-Tree). Validiert wird also NICHT, was committet wird. Zusaetzlich: recheck_protocol-Test mit statischem CAND-Pin (STALE_BASELINE_PIN). Fix: Gate gegen materialisierten Index-Tree; Commit via commit-tree aus exakt diesem Tree; Attestierung tree-gebunden; Gate-Phasen-Lebenszyklus fuer historische Tests.

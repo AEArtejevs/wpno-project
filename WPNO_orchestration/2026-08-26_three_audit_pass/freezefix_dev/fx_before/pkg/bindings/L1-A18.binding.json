@@ -1,0 +1,59 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A18",
+  "binding_status": "TARGET_CONFIRMED",
+  "logical_targets": [
+    "IBAN Mod-97 correctness"
+  ],
+  "candidate_paths": [
+    "/Users/martinotten/WPNO/anonymization/payload_scan.py",
+    "/Users/martinotten/WPNO/docker/litellm/payload_scan.py",
+    "/Users/martinotten/WPNO/anonymization/golden/payload_scan.py"
+  ],
+  "productive_target": "/Users/martinotten/WPNO/anonymization/payload_scan.py",
+  "productive_target_sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b",
+  "productive_target_evidence": [
+    {
+      "claim": "File identity confirmed by name, symbol match and SHA-256.",
+      "note": "File identity is NOT production identity. No execution-path evidence establishes that this file is the copy invoked in production. See discovery_reconciliation/04_PRODUCTION_PATH_RECONCILIATION.md."
+    }
+  ],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [],
+  "external_evidence_required": [
+    "REF-01",
+    "REF-02"
+  ],
+  "unresolved_questions": [],
+  "discovery_drift": [
+    "D-07"
+  ],
+  "source_evidence": [
+    {
+      "source_path": "/Users/martinotten/WPNO/anonymization/payload_scan.py",
+      "sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b",
+      "locator": "_validate_iban_intl at line 238; iban pattern line 132; iban_intl pattern line 147",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/docker/litellm/payload_scan.py",
+      "sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b",
+      "locator": "byte-identical copy",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/anonymization/golden/payload_scan.py",
+      "sha256": "ab29a4fa3e972f865f0f3dfb10887888a0464922070454e02584a34a4c54ba0a",
+      "locator": "differing copy — check separately",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    }
+  ],
+  "replications": 2,
+  "risk": "CRITICAL",
+  "execution_order": 3
+}

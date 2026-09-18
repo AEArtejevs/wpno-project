@@ -1,0 +1,19 @@
+Verification finished with status `VERIFICATION_FAIL_PRE_FREEZE_R8_FINAL`.
+
+The failure is attributable to the verifier instrument, not an established R8 defect:
+
+- Item 23’s measured R8 values satisfy the claim: 0 missing evidence, 0 note-only steps, and 169 handler invocations equal 169 in-process steps.
+- My completed predicate compared against incorrectly named reconciliation keys and durably recorded `pass: false`. Per the instructions, that adverse result was not rerun.
+- Items 28–30 and 34–35 remain unverified after the required stop.
+- ORIGINAL remained completely unchanged across all 1,362 paths.
+- The live write-isolation control succeeded.
+- Build manifest verified at 724 entries with digest `6dfd1af689754be61f2ea6ef77f01d2e5bdb8929ef8c0799e15db203755b945a`.
+
+Artifacts:
+
+- [VERIFICATION_RESULT.json](/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/VERIFICATION_RESULT.json)
+- [VERIFICATION_REPORT.md](/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/VERIFICATION_REPORT.md)
+- [ITEM_RESULTS.jsonl](/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl)
+- [MEASUREMENTS.json](/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/MEASUREMENTS.json)
+- [COMMAND_LOG.jsonl](/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/COMMAND_LOG.jsonl)
+- [VERIFICATION_MANIFEST.sha256](/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/VERIFICATION_MANIFEST.sha256)

@@ -1,0 +1,23 @@
+component_id,input_source,reads_working_tree,reads_index,reads_tree_object,toctou_risk,lifecycle_status,finding
+check_006d_all_known_bypasses_regression_tested.py,WORKING_TREE_ONLY,false,false,false,MED,ACTIVE_CURRENT,-
+check_006d_allowed_output_manifest.py,WORKING_TREE_ONLY,true,false,false,HIGH,ACTIVE_CURRENT,P0: validiert Working-Tree statt Staged-/Commit-Tree
+check_006d_amount_axis_and_partition_integrity.py,WORKING_TREE_ONLY,true,false,false,HIGH,ACTIVE_CURRENT,P0: validiert Working-Tree statt Staged-/Commit-Tree
+check_006d_closed_spec_schema.py,WORKING_TREE_ONLY,true,false,false,HIGH,ACTIVE_CURRENT,P0: validiert Working-Tree statt Staged-/Commit-Tree
+check_006d_content_type_and_magic.py,WORKING_TREE_ONLY,true,false,false,HIGH,ACTIVE_CURRENT,P0: validiert Working-Tree statt Staged-/Commit-Tree
+check_006d_decision_class_single_truth.py,WORKING_TREE_ONLY,true,false,false,HIGH,ACTIVE_CURRENT,P0: validiert Working-Tree statt Staged-/Commit-Tree
+check_006d_generic_tests_use_synthetic_fixtures.py,WORKING_TREE_ONLY,false,false,false,MED,ACTIVE_CURRENT,-
+check_006d_meta_fields_strict.py,WORKING_TREE_ONLY,true,false,false,HIGH,ACTIVE_CURRENT,P0: validiert Working-Tree statt Staged-/Commit-Tree
+check_006d_no_binary_or_render_output.py,WORKING_TREE_ONLY,true,false,false,HIGH,ACTIVE_CURRENT,P0: validiert Working-Tree statt Staged-/Commit-Tree
+check_006d_no_case_values_in_spec.py,WORKING_TREE_ONLY,true,false,false,HIGH,ACTIVE_CURRENT,P0: validiert Working-Tree statt Staged-/Commit-Tree
+check_006d_no_embedded_payload.py,WORKING_TREE_ONLY,true,false,false,HIGH,ACTIVE_CURRENT,P0: validiert Working-Tree statt Staged-/Commit-Tree
+check_006d_no_nested_git_directory.py,WORKING_TREE_ONLY,true,false,false,HIGH,ACTIVE_CURRENT,P0: validiert Working-Tree statt Staged-/Commit-Tree
+check_006d_paths_and_symlinks.py,WORKING_TREE_ONLY,true,false,false,HIGH,ACTIVE_CURRENT,P0: validiert Working-Tree statt Staged-/Commit-Tree
+check_006d_public_creditor_not_hidden_or_unverified_ranked.py,WORKING_TREE_ONLY,true,false,false,HIGH,ACTIVE_CURRENT,P0: validiert Working-Tree statt Staged-/Commit-Tree
+check_006d_view_crosswalk_referential_integrity.py,WORKING_TREE_ONLY,true,false,false,HIGH,ACTIVE_CURRENT,P0: validiert Working-Tree statt Staged-/Commit-Tree
+_s11_006d_spec_validator.py,WORKING_TREE_ONLY,false,false,false,MED,ACTIVE_CURRENT,-
+_bl02_common.py,WORKING_TREE_ONLY,true,false,false,HIGH,ACTIVE_CURRENT,P0: validiert Working-Tree statt Staged-/Commit-Tree
+run_precommit_quality_gate.py,INDEX_AWARE,false,true,false,MED,ACTIVE_CURRENT,"marker=Index-Tree, aber Validierung=Working-Tree (Divergenz moeglich)"
+ci_gate.py,COMMIT_TREE_BOUND,false,false,false,MED,ACTIVE_CURRENT,"marker=Index-Tree, aber Validierung=Working-Tree (Divergenz moeglich)"
+precommit_hook.sh,INDEX_AWARE,false,true,false,MED,ACTIVE_CURRENT,-
+postcommit_hook.sh,WORKING_TREE_ONLY,false,false,false,MED,ACTIVE_CURRENT,-
+test_s11_ps861_006d_recheck_protocol.py,WORKING_TREE_ONLY,true,false,false,HIGH,STALE_BASELINE_PIN,P0: validiert Working-Tree statt Staged-/Commit-Tree

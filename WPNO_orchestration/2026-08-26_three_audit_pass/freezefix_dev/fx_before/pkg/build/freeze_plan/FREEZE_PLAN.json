@@ -1,0 +1,19 @@
+{
+  "attempt_number": 2,
+  "baseline_preview_sha256": "be0fe9726d4ad1964f4f38b87f2c9f1fe7660cde3cbe1f1ba13bcda6a524f3c3",
+  "bound_artifacts": {
+    "audit_registry.json": "d20f70d9c3ef61228de1e091bebb029f40635fb91edd5093a62dc0db51bb52c7",
+    "lineage/R4_EXECUTION/BASELINE_MANIFEST.json": "022d568574e8deeac2ca5aab5ec011332087f09c6bb23f352ab06d93d514b950",
+    "lineage/R4_EXECUTION_MANIFEST.sha256": "ddba904bc527cb7b6189126f4ac7fb658f7021dbcbb2e6a9f236c8c31e52e288"
+  },
+  "expected_discovery_baseline_count": 2,
+  "expected_project_baseline_count": 3,
+  "independence_limitation": "FIXTURE",
+  "package_sha256": "ddba904bc527cb7b6189126f4ac7fb658f7021dbcbb2e6a9f236c8c31e52e288",
+  "platform": "UBUNTU",
+  "predecessor_baseline_manifest_path": "lineage/R4_EXECUTION/BASELINE_MANIFEST.json",
+  "predecessor_baseline_manifest_sha256": "022d568574e8deeac2ca5aab5ec011332087f09c6bb23f352ab06d93d514b950",
+  "revision": "R5",
+  "schema": "wpno.level1.freeze-plan/2",
+  "verification_result_sha256": "022d568574e8deeac2ca5aab5ec011332087f09c6bb23f352ab06d93d514b950"
+}

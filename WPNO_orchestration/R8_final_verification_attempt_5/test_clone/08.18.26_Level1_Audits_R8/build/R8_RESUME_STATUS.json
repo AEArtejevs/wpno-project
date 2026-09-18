@@ -1,0 +1,83 @@
+{
+  "digests_deliberately_unbound": [
+    "build/R8_CHANGED_FILES.sha256",
+    "build/R8_STATIC_SAFETY_REPORT.json",
+    "build/R8_TEST_SUITE_RESULTS.json",
+    "work/_rehearsal_r8/REHEARSAL_REPORT.json"
+  ],
+  "execution_engine_repair": {
+    "controller": "automation/controller.py",
+    "controller_sha256": "167b5cf6f43bdead8314c10d9296dd462e4622d3a01a9e3c9db9498a5c972a08",
+    "operation_catalogue": "automation/operation_catalog.py",
+    "operation_catalogue_sha256": "305c4e2b6cb8bcdda8818ffd5156e2043b8a04924a249a37d4b59df94c689858",
+    "operations": "automation/in_process_ops.py",
+    "operations_sha256": "1e39e3e0fa09d88411d4e2d634f463abf2cb68b32fe94de80ee7624d601a4f72",
+    "shared_executor": "automation/in_process_executor.py",
+    "shared_executor_sha256": "d4fb45186aa620f09e534dc4757a11259926439db0eef2c5b42496fa20835670"
+  },
+  "lineage": {
+    "compact_lineage_digest": "lineage/R8_LINEAGE.sha256",
+    "compact_lineage_digest_sha256": "eb26a89a718f7384449827638623762b6e70ece0679810e170d7f98448d1f926",
+    "compact_lineage_record": "lineage/R8_LINEAGE.json",
+    "compact_lineage_record_sha256": "c4c12173f877dc5f998a4f24a5661a87cfdf356ab3ea8558786d9f7716f467cc",
+    "predecessor_baseline": "lineage/R7_BASELINE_MANIFEST.json",
+    "predecessor_baseline_sha256": "0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d",
+    "predecessor_incident": "lineage/R7_POST_FREEZE_INCIDENT/INCIDENT_MANIFEST.sha256",
+    "predecessor_incident_sha256": "6d3ab746e0f221a7d83d055c81356f7dd013976a4c94f04cb4cc66fa7a5f8ab6"
+  },
+  "measurement_records": {
+    "control_expectation_coverage": "build/CONTROL_EXPECTATION_COVERAGE.json",
+    "control_expectation_coverage_sha256": "53c1998bee4bb65f96cb0a746c664f8bee6656ba7c06365ac790df7a620f891e",
+    "control_expectation_table": "build/control_expectations.py",
+    "control_expectation_table_sha256": "c4f4dc9b76997024aa661137f53bb5a86baeb63e14e7d52c7983867b8cd90086",
+    "in_process_count_reconciliation": "build/IN_PROCESS_COUNT_RECONCILIATION.json",
+    "in_process_count_reconciliation_sha256": "1450107c54936e3a90151b666e9f75d7a9dd765a21cf926a6325ee01183fc124"
+  },
+  "migration": {
+    "builder": "build/build_migration_plan.py",
+    "builder_sha256": "07a609197b8d38e4d14fcff5824d42a40c7a8c045c0951a0ab65e7f1f51cbb14",
+    "plan": "build/migration_plan_r7_to_r8/MIGRATION_PLAN.json",
+    "plan_digest": "build/migration_plan_r7_to_r8/MIGRATION_PLAN.sha256",
+    "plan_digest_sha256": "91fe666aac187d187f441c393d5fd9b7a9c32a0af83ae2e1587d9e864f841bb6",
+    "plan_sha256": "805a5e34b2f703b94c80c5789db1498c8395796c2da27617cfdd50cf61a7b82b",
+    "route": "automation/migration.py",
+    "route_sha256": "65b3db95c3bf9d012195ee81c946f95bae08aea0cc7545134cf1f76d0d6ba93f",
+    "tests": "automation/package_tests/test_r8_migration.py",
+    "tests_sha256": "5fd2e6750365db287959654434518787da7d7502ffd88870eaa61446aedc6970"
+  },
+  "mode_at_record": "GENERATED_UNVERIFIED",
+  "plans": {
+    "coverage_manifest": "build/candidate_plans_r8/PLAN_COVERAGE_MANIFEST.json",
+    "coverage_manifest_digest": "build/candidate_plans_r8/PLAN_COVERAGE_MANIFEST.sha256",
+    "coverage_manifest_digest_sha256": "22a2cad6fb1a4d9746f4d9d07d56a348f89f07fc187acc54edf3e8b7bc4e981a",
+    "coverage_manifest_sha256": "0de8b726edc5de9248d8983edecd7b22841e3eda03d0ce317d6b853610b1ad3c",
+    "library": "build/plan_library.py",
+    "library_sha256": "3c8a2180477973d108828f4259d1203992ba6419efa122f94cede8fb953a9744",
+    "specifications": "build/candidate_plan_specs.py",
+    "specifications_sha256": "e13179b1936f5154d5f736813872d8ca324e04dc15fec9c23cf30f875fe10964"
+  },
+  "predecessor": "R7",
+  "recorded_utc": "2026-08-28T16:04:10Z",
+  "rehearsal": {
+    "fixture_staging_record": "work/_rehearsal_r8/FIXTURE_STAGING_RECORD.json",
+    "fixture_staging_record_sha256": "b02a01b3627499750bbd0499b9901b82565cbc62b4bd8da3801c373b879cbc7d",
+    "harness": "build/rehearse_candidate_plans.py",
+    "harness_sha256": "ebe776a5ea858b819b8e1c745b93a2d82d418de898118c1d03ee0fd9908835d3",
+    "input_stager": "build/stage_r8_rehearsal_inputs.py",
+    "input_stager_sha256": "04d90f759f687c10f7b82c52906f5d23eb0d6bed6e2c100aa59331d600fcead9",
+    "input_substitutions": "work/_rehearsal_r8/REHEARSAL_INPUT_SUBSTITUTIONS.json",
+    "input_substitutions_sha256": "54a525ba80c9a538e9bb88bfe45b7a042a312e53f5927023e1fea1a023c06d8f",
+    "report": "work/_rehearsal_r8/REHEARSAL_REPORT.json"
+  },
+  "revision": "R8",
+  "schema": "wpno.level1.resume-status/1",
+  "tests_and_safety": {
+    "results": "build/R8_TEST_SUITE_RESULTS.json",
+    "runner": "build/run_test_suites.py",
+    "runner_sha256": "ba031b51914fe147e668c8aebf8de5bb8a7666700ed47d4f6ffd4b156ae5514f",
+    "static_safety_report": "build/R8_STATIC_SAFETY_REPORT.json",
+    "static_safety_review": "build/r8_static_safety_review.py",
+    "static_safety_review_sha256": "eba333a6a75cba8f7c9fd21c036909a170b666206f12ecebe4f850b93feb4231"
+  },
+  "why_some_digests_are_unbound": "these files are written by the run that validates this record; binding their digests would make the record valid only until the next run of the suite that checks it"
+}

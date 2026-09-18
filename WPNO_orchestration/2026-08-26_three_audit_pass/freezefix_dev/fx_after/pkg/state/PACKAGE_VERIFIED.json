@@ -1,0 +1,34 @@
+{
+  "attempt_number": 2,
+  "baseline_preview_sha256": "be0fe9726d4ad1964f4f38b87f2c9f1fe7660cde3cbe1f1ba13bcda6a524f3c3",
+  "baseline_provenance": {
+    "discovery_members": 2,
+    "discovery_root": "/home/ubuntu/project/WPNO_orchestration/2026-08-26_three_audit_pass/freezefix_dev/fx_after/discovery_root",
+    "every_member_equals_predecessor_digest": true,
+    "every_member_rehashed_on_ubuntu": true,
+    "members_added_beyond_predecessor": 0,
+    "members_dropped": 0,
+    "membership_source": "PREDECESSOR_VERIFIED_BASELINE",
+    "predecessor_baseline_path": "lineage/R4_EXECUTION/BASELINE_MANIFEST.json",
+    "predecessor_baseline_sha256": "022d568574e8deeac2ca5aab5ec011332087f09c6bb23f352ab06d93d514b950",
+    "project_members": 3,
+    "project_root": "/home/ubuntu/project/WPNO_orchestration/2026-08-26_three_audit_pass/freezefix_dev/fx_after/project_root"
+  },
+  "control_manifest_covers_mode": true,
+  "control_manifest_entries": 161,
+  "freeze_plan_sha256": "df55b25ae972dd46199dd75ee708bceca6727cc17e326458b71a281e0265ed06",
+  "frozen_at_utc": "2026-08-26T18:05:16Z",
+  "independence_limitation": "FIXTURE",
+  "manifest_generation": "FINAL_STATE_STAGED_BYTES",
+  "package_sha256": "ddba904bc527cb7b6189126f4ac7fb658f7021dbcbb2e6a9f236c8c31e52e288",
+  "platform": "UBUNTU",
+  "publication_order": [
+    "BASELINE_MANIFEST.json",
+    "CONTROL_MANIFEST.sha256",
+    "state/PACKAGE_VERIFIED.json",
+    "MODE"
+  ],
+  "revision": "R5",
+  "schema": "wpno.level1.package-verified/1",
+  "verification_result_sha256": "022d568574e8deeac2ca5aab5ec011332087f09c6bb23f352ab06d93d514b950"
+}

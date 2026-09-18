@@ -1,0 +1,337 @@
+[
+  {
+    "canonical_path": "/Users/martinotten",
+    "evidence_sources": [
+      {
+        "source": "/Users/martinotten/.codex/sessions/2026/08/27/rollout-2026-08-27T14-44-35-01a04340-32d1-7500-8930-153af738f833.jsonl",
+        "source_sha256": "4cf689d97b64ea4a8ecaa92201ccc883e5f06b1d9bcb639511a15d6360e8f936",
+        "timestamp": "2026-08-27T15:24:43.547538"
+      },
+      {
+        "source": "/Users/martinotten/.codex/sessions/2026/08/27/rollout-2026-08-27T14-44-35-01a04340-32d1-7500-8930-153af738f833.jsonl",
+        "source_sha256": "4cf689d97b64ea4a8ecaa92201ccc883e5f06b1d9bcb639511a15d6360e8f936",
+        "timestamp": "2026-08-27T15:24:43.547538"
+      },
+      {
+        "source": "/Users/martinotten/.codex/sessions/2026/08/27/rollout-2026-08-27T14-44-35-01a04340-32d1-7500-8930-153af738f833.jsonl",
+        "source_sha256": "4cf689d97b64ea4a8ecaa92201ccc883e5f06b1d9bcb639511a15d6360e8f936",
+        "timestamp": "2026-08-27T15:24:43.547538"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/ef1aa330-2a9b-4eff-b894-bbc665987ef1.jsonl",
+        "source_sha256": "2cdefcc1ad502e6b00aa05fc8148a3626ee0e46c0a871c93efc9331f0e8d225f",
+        "timestamp": "2026-08-27T15:05:38.489000"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/ef1aa330-2a9b-4eff-b894-bbc665987ef1.jsonl",
+        "source_sha256": "2cdefcc1ad502e6b00aa05fc8148a3626ee0e46c0a871c93efc9331f0e8d225f",
+        "timestamp": "2026-08-27T15:05:38.489000"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/ef1aa330-2a9b-4eff-b894-bbc665987ef1.jsonl",
+        "source_sha256": "2cdefcc1ad502e6b00aa05fc8148a3626ee0e46c0a871c93efc9331f0e8d225f",
+        "timestamp": "2026-08-27T15:05:38.489000"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/ef1aa330-2a9b-4eff-b894-bbc665987ef1.jsonl",
+        "source_sha256": "2cdefcc1ad502e6b00aa05fc8148a3626ee0e46c0a871c93efc9331f0e8d225f",
+        "timestamp": "2026-08-27T15:05:38.489000"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/ef1aa330-2a9b-4eff-b894-bbc665987ef1.jsonl",
+        "source_sha256": "2cdefcc1ad502e6b00aa05fc8148a3626ee0e46c0a871c93efc9331f0e8d225f",
+        "timestamp": "2026-08-27T15:05:38.489000"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten/3ae2db79-ca34-4bce-8d5e-c4a0ba2b4290.jsonl",
+        "source_sha256": "f137179023ee2c7bebac096af68962e5570522c186493363f15c8fc81514770d",
+        "timestamp": "2026-08-27T10:22:43.794101"
+      }
+    ],
+    "directory_exists": true,
+    "directory_symlink_status": false,
+    "expected_global_CLAUDE_md_path": "/Users/martinotten/.claude/CLAUDE.md",
+    "project_CLAUDE_md_exists": false,
+    "bounded_file_count": 2000,
+    "bounded_total_size": 1195796896,
+    "bounded_count_truncated": true,
+    "why_may_be_relevant": "Session metadata or shell history records this directory as a Claude/Codex cwd outside WPNO_ROOT."
+  },
+  {
+    "canonical_path": "/Users/martinotten/wpno-wiki-dav-insolvenzrecht",
+    "evidence_sources": [
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten-WPNO/ee29b4e3-be92-4ee9-8304-5cf7b369a937/tool-results/ba5e0r2zn.txt",
+        "source_sha256": "a7321ed7447c36783cbcafc67a0d46f8c1988c183a9546f9c7bb8da058b1f271",
+        "timestamp": "2026-08-27T10:55:51.141613"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten-WPNO/ee29b4e3-be92-4ee9-8304-5cf7b369a937/tool-results/ba5e0r2zn.txt",
+        "source_sha256": "a7321ed7447c36783cbcafc67a0d46f8c1988c183a9546f9c7bb8da058b1f271",
+        "timestamp": "2026-08-27T10:55:51.141613"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten-WPNO/ee29b4e3-be92-4ee9-8304-5cf7b369a937/tool-results/ba5e0r2zn.txt",
+        "source_sha256": "a7321ed7447c36783cbcafc67a0d46f8c1988c183a9546f9c7bb8da058b1f271",
+        "timestamp": "2026-08-27T10:55:51.141613"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten-WPNO/ee29b4e3-be92-4ee9-8304-5cf7b369a937/tool-results/ba5e0r2zn.txt",
+        "source_sha256": "a7321ed7447c36783cbcafc67a0d46f8c1988c183a9546f9c7bb8da058b1f271",
+        "timestamp": "2026-08-27T10:55:51.141613"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten-WPNO/ee29b4e3-be92-4ee9-8304-5cf7b369a937/tool-results/ba5e0r2zn.txt",
+        "source_sha256": "a7321ed7447c36783cbcafc67a0d46f8c1988c183a9546f9c7bb8da058b1f271",
+        "timestamp": "2026-08-27T10:55:51.141613"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten-WPNO/ee29b4e3-be92-4ee9-8304-5cf7b369a937/tool-results/ba5e0r2zn.txt",
+        "source_sha256": "a7321ed7447c36783cbcafc67a0d46f8c1988c183a9546f9c7bb8da058b1f271",
+        "timestamp": "2026-08-27T10:55:51.141613"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten-WPNO/ee29b4e3-be92-4ee9-8304-5cf7b369a937/tool-results/ba5e0r2zn.txt",
+        "source_sha256": "a7321ed7447c36783cbcafc67a0d46f8c1988c183a9546f9c7bb8da058b1f271",
+        "timestamp": "2026-08-27T10:55:51.141613"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten-WPNO/ee29b4e3-be92-4ee9-8304-5cf7b369a937/tool-results/ba5e0r2zn.txt",
+        "source_sha256": "a7321ed7447c36783cbcafc67a0d46f8c1988c183a9546f9c7bb8da058b1f271",
+        "timestamp": "2026-08-27T10:55:51.141613"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten-WPNO/ee29b4e3-be92-4ee9-8304-5cf7b369a937/tool-results/ba5e0r2zn.txt",
+        "source_sha256": "a7321ed7447c36783cbcafc67a0d46f8c1988c183a9546f9c7bb8da058b1f271",
+        "timestamp": "2026-08-27T10:55:51.141613"
+      }
+    ],
+    "directory_exists": true,
+    "directory_symlink_status": false,
+    "expected_global_CLAUDE_md_path": "/Users/martinotten/.claude/CLAUDE.md",
+    "project_CLAUDE_md_exists": true,
+    "bounded_file_count": 113,
+    "bounded_total_size": 765130,
+    "bounded_count_truncated": false,
+    "why_may_be_relevant": "Session metadata or shell history records this directory as a Claude/Codex cwd outside WPNO_ROOT."
+  },
+  {
+    "canonical_path": "/Users/martinotten/Downloads",
+    "evidence_sources": [
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten-WPNO/ee29b4e3-be92-4ee9-8304-5cf7b369a937/tool-results/ba5e0r2zn.txt",
+        "source_sha256": "a7321ed7447c36783cbcafc67a0d46f8c1988c183a9546f9c7bb8da058b1f271",
+        "timestamp": "2026-08-27T10:55:51.141613"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten-WPNO/ee29b4e3-be92-4ee9-8304-5cf7b369a937/tool-results/ba5e0r2zn.txt",
+        "source_sha256": "a7321ed7447c36783cbcafc67a0d46f8c1988c183a9546f9c7bb8da058b1f271",
+        "timestamp": "2026-08-27T10:55:51.141613"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten-WPNO/ee29b4e3-be92-4ee9-8304-5cf7b369a937/tool-results/ba5e0r2zn.txt",
+        "source_sha256": "a7321ed7447c36783cbcafc67a0d46f8c1988c183a9546f9c7bb8da058b1f271",
+        "timestamp": "2026-08-27T10:55:51.141613"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten-WPNO/ee29b4e3-be92-4ee9-8304-5cf7b369a937/tool-results/ba5e0r2zn.txt",
+        "source_sha256": "a7321ed7447c36783cbcafc67a0d46f8c1988c183a9546f9c7bb8da058b1f271",
+        "timestamp": "2026-08-27T10:55:51.141613"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten-WPNO/ee29b4e3-be92-4ee9-8304-5cf7b369a937/tool-results/ba5e0r2zn.txt",
+        "source_sha256": "a7321ed7447c36783cbcafc67a0d46f8c1988c183a9546f9c7bb8da058b1f271",
+        "timestamp": "2026-08-27T10:55:51.141613"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten-WPNO/ee29b4e3-be92-4ee9-8304-5cf7b369a937/tool-results/ba5e0r2zn.txt",
+        "source_sha256": "a7321ed7447c36783cbcafc67a0d46f8c1988c183a9546f9c7bb8da058b1f271",
+        "timestamp": "2026-08-27T10:55:51.141613"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten-WPNO/ee29b4e3-be92-4ee9-8304-5cf7b369a937/tool-results/ba5e0r2zn.txt",
+        "source_sha256": "a7321ed7447c36783cbcafc67a0d46f8c1988c183a9546f9c7bb8da058b1f271",
+        "timestamp": "2026-08-27T10:55:51.141613"
+      }
+    ],
+    "directory_exists": true,
+    "directory_symlink_status": false,
+    "expected_global_CLAUDE_md_path": "/Users/martinotten/.claude/CLAUDE.md",
+    "project_CLAUDE_md_exists": false,
+    "bounded_file_count": 2000,
+    "bounded_total_size": 6124757857,
+    "bounded_count_truncated": true,
+    "why_may_be_relevant": "Session metadata or shell history records this directory as a Claude/Codex cwd outside WPNO_ROOT."
+  },
+  {
+    "canonical_path": "/Users/martinotten/wpno-llm-wiki",
+    "evidence_sources": [
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten-WPNO/ee29b4e3-be92-4ee9-8304-5cf7b369a937/tool-results/ba5e0r2zn.txt",
+        "source_sha256": "a7321ed7447c36783cbcafc67a0d46f8c1988c183a9546f9c7bb8da058b1f271",
+        "timestamp": "2026-08-27T10:55:51.141613"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten-WPNO/ee29b4e3-be92-4ee9-8304-5cf7b369a937/tool-results/ba5e0r2zn.txt",
+        "source_sha256": "a7321ed7447c36783cbcafc67a0d46f8c1988c183a9546f9c7bb8da058b1f271",
+        "timestamp": "2026-08-27T10:55:51.141613"
+      }
+    ],
+    "directory_exists": true,
+    "directory_symlink_status": false,
+    "expected_global_CLAUDE_md_path": "/Users/martinotten/.claude/CLAUDE.md",
+    "project_CLAUDE_md_exists": true,
+    "bounded_file_count": 722,
+    "bounded_total_size": 1086073196,
+    "bounded_count_truncated": false,
+    "why_may_be_relevant": "Session metadata or shell history records this directory as a Claude/Codex cwd outside WPNO_ROOT."
+  },
+  {
+    "canonical_path": "/Users/martinotten/wpno-llm-wiki-dryrun",
+    "evidence_sources": [
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten-WPNO/ee29b4e3-be92-4ee9-8304-5cf7b369a937/tool-results/ba5e0r2zn.txt",
+        "source_sha256": "a7321ed7447c36783cbcafc67a0d46f8c1988c183a9546f9c7bb8da058b1f271",
+        "timestamp": "2026-08-27T10:55:51.141613"
+      },
+      {
+        "source": "/Users/martinotten/.claude/projects/-Users-martinotten-WPNO/ee29b4e3-be92-4ee9-8304-5cf7b369a937/tool-results/ba5e0r2zn.txt",
+        "source_sha256": "a7321ed7447c36783cbcafc67a0d46f8c1988c183a9546f9c7bb8da058b1f271",
+        "timestamp": "2026-08-27T10:55:51.141613"
+      }
+    ],
+    "directory_exists": false,
+    "directory_symlink_status": null,
+    "expected_global_CLAUDE_md_path": "/Users/martinotten/.claude/CLAUDE.md",
+    "project_CLAUDE_md_exists": false,
+    "bounded_file_count": 0,
+    "bounded_total_size": 0,
+    "bounded_count_truncated": false,
+    "why_may_be_relevant": "Session metadata or shell history records this directory as a Claude/Codex cwd outside WPNO_ROOT."
+  }
+]

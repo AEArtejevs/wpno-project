@@ -1,0 +1,248 @@
+{
+  "carried_forward_from_r6": [
+    {
+      "byte_identical_to_r6": true,
+      "name": "vhn_leaf_from_sealed_p7s_parse_evidence.pem",
+      "path": "work/L1-A31/preparation_r8_2026-08-28/certs/vhn_leaf_from_sealed_p7s_parse_evidence.pem",
+      "sha256": "0f314f471bd3658e4164edd8c534f74b741055022c15ca29b50f272c194c6f3e",
+      "source": "../08.18.26_Level1_Audits_R7/lineage/R6_EXECUTION/work/L1-A31/preparation_2026-08-26/staged/certs/vhn_leaf_from_sealed_p7s_parse_evidence.pem"
+    },
+    {
+      "byte_identical_to_r6": true,
+      "name": "vhn_intermediate_selected_manual_pem.pem",
+      "path": "work/L1-A31/preparation_r8_2026-08-28/certs/vhn_intermediate_selected_manual_pem.pem",
+      "sha256": "55cbcb2b1c367b7e01c3cfff38663edbf23409f7c2dfd8222529133562007b17",
+      "source": "../08.18.26_Level1_Audits_R7/lineage/R6_EXECUTION/work/L1-A31/preparation_2026-08-26/staged/certs/vhn_intermediate_selected_manual_pem.pem"
+    },
+    {
+      "byte_identical_to_r6": true,
+      "name": "vhn_intermediate_unselected_duplicate_crt.pem",
+      "path": "work/L1-A31/preparation_r8_2026-08-28/certs/vhn_intermediate_unselected_duplicate_crt.pem",
+      "sha256": "55cbcb2b1c367b7e01c3cfff38663edbf23409f7c2dfd8222529133562007b17",
+      "source": "../08.18.26_Level1_Audits_R7/lineage/R6_EXECUTION/work/L1-A31/preparation_2026-08-26/staged/certs/vhn_intermediate_unselected_duplicate_crt.pem"
+    },
+    {
+      "byte_identical_to_r6": true,
+      "name": "vhn_root.pem",
+      "path": "work/L1-A31/preparation_r8_2026-08-28/certs/vhn_root.pem",
+      "sha256": "ff7f2c632312dcd799d69780a23bfc11a0f6ad8423e84f524d89481722130929",
+      "source": "../08.18.26_Level1_Audits_R7/lineage/R6_EXECUTION/work/L1-A31/preparation_2026-08-26/staged/certs/vhn_root.pem"
+    },
+    {
+      "byte_identical_to_r6": true,
+      "name": "document_leaf_from_sealed_p7s_parse_evidence.pem",
+      "path": "work/L1-A31/preparation_r8_2026-08-28/certs/document_leaf_from_sealed_p7s_parse_evidence.pem",
+      "sha256": "dfefa6644f6a894752b1a7e788bfa3b23a4c3d99b16485cfa483ae70772ae4f3",
+      "source": "../08.18.26_Level1_Audits_R7/lineage/R6_EXECUTION/work/L1-A31/preparation_2026-08-26/staged/certs/document_leaf_from_sealed_p7s_parse_evidence.pem"
+    },
+    {
+      "byte_identical_to_r6": true,
+      "name": "document_intermediate.pem",
+      "path": "work/L1-A31/preparation_r8_2026-08-28/certs/document_intermediate.pem",
+      "sha256": "e104242cc9554ec821b8e9c4e975f8318245d699d5ba98d2af8b15d5b8122088",
+      "source": "../08.18.26_Level1_Audits_R7/lineage/R6_EXECUTION/work/L1-A31/preparation_2026-08-26/staged/certs/document_intermediate.pem"
+    },
+    {
+      "byte_identical_to_r6": true,
+      "name": "document_root.pem",
+      "path": "work/L1-A31/preparation_r8_2026-08-28/certs/document_root.pem",
+      "sha256": "2efdae019319b4135cca35090fe66975768022379cffc1e357f60c3805be2ff0",
+      "source": "../08.18.26_Level1_Audits_R7/lineage/R6_EXECUTION/work/L1-A31/preparation_2026-08-26/staged/certs/document_root.pem"
+    }
+  ],
+  "controls": {
+    "mutations": {
+      "cert_parse_refusal": {
+        "byte_from": 48,
+        "byte_to": 4,
+        "der_offset": 0,
+        "expected_failure_reason": "PARSE_REFUSAL",
+        "fixture_sha256": "42170303b4376942f26825c853421bc3c727d62aa7a8ca139bb292cbbb0e0730",
+        "kind": "CERT_PARSE_REFUSAL",
+        "layer": "DER_outer_tag",
+        "note": "This is NOT a signature-failure control and must never be scored as one. R6 conflated the two and recorded a parse refusal as a passing mutation control.",
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/controls/vhn_leaf_unparseable_der.pem",
+        "proven_unparseable": true,
+        "source": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_leaf_from_sealed_p7s_parse_evidence.pem",
+        "source_sha256": "0f314f471bd3658e4164edd8c534f74b741055022c15ca29b50f272c194c6f3e"
+      },
+      "cert_signature": {
+        "byte_from": 137,
+        "byte_to": 138,
+        "der_length_after": 1553,
+        "der_length_before": 1553,
+        "der_offset": 1297,
+        "differing_der_bytes": 1,
+        "expected_failure_reason": "CERT_SIGNATURE_FAILURE",
+        "fixture_sha256": "7e77b0073ec98168627d4f69f0297648614167691f23f997a1f9c0fe355e49a3",
+        "kind": "CERT_SIGNATURE_MUTATION",
+        "layer": "DER_signatureValue_BIT_STRING",
+        "observed_reason": "certificate signature failure",
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/controls/vhn_leaf_der_signature_mutated.pem",
+        "proven_parseable": true,
+        "proven_signature_fails": true,
+        "signature_value_span": [
+          1041,
+          1553
+        ],
+        "source": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_leaf_from_sealed_p7s_parse_evidence.pem",
+        "source_sha256": "0f314f471bd3658e4164edd8c534f74b741055022c15ca29b50f272c194c6f3e"
+      },
+      "content": {
+        "byte_from": 60,
+        "byte_to": 61,
+        "differing_bytes": 1,
+        "digest_differs": true,
+        "expected_failure_reason": "CONTENT_DIGEST_FAILURE",
+        "fixture_sha256": "dc2911b87f1c6d2e389b549c25f3fc2b357e461d82ec05018131001c5b9928e5",
+        "kind": "CONTENT_ONE_BYTE_MUTATION",
+        "layer": "detached_content_bytes",
+        "length_after": 1924,
+        "length_before": 1924,
+        "offset": 0,
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/controls/vhn_covered_content_one_byte_mutated.xml",
+        "source": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn-covered-content.xml",
+        "source_sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23"
+      }
+    },
+    "notes": {
+      "synthetic_validation_time": 1787927885,
+      "synthetic_validation_time_source": "derived from the moment the fixture certificates were issued"
+    },
+    "synthetic": {
+      "cms_detached": "work/L1-A31/preparation_r8_2026-08-28/synthetic/content.p7s",
+      "content": "work/L1-A31/preparation_r8_2026-08-28/synthetic/content.bin",
+      "content_mutated": "work/L1-A31/preparation_r8_2026-08-28/synthetic/content_one_byte_mutated.bin",
+      "dir": "work/L1-A31/preparation_r8_2026-08-28/synthetic",
+      "intermediate_pem": "work/L1-A31/preparation_r8_2026-08-28/synthetic/intermediate.pem",
+      "leaf_facts": "notBefore=Aug 28 13:38:05 2026 GMT\nnotAfter=Nov 30 13:38:05 2028 GMT\nX509v3 Key Usage: critical\n    Digital Signature, Non Repudiation\nX509v3 Extended Key Usage: \n    E-mail Protection\n",
+      "leaf_pem": "work/L1-A31/preparation_r8_2026-08-28/synthetic/leaf.pem",
+      "other_root_pem": "work/L1-A31/preparation_r8_2026-08-28/synthetic/other_root.pem",
+      "root_der": "work/L1-A31/preparation_r8_2026-08-28/synthetic/root.der",
+      "root_pem": "work/L1-A31/preparation_r8_2026-08-28/synthetic/root.pem",
+      "sha256": {
+        "cms_detached": "55ada0f2a1a6547fcb3d27e88f4704b8e5fc9dff3287fd9fe378405664ad133b",
+        "content": "e380a7ae3609bf27a11346f76b860c6976819a2a030a2a9a213184976fbcfa7d",
+        "intermediate_pem": "820f88596db93ab1457db07354dd2ab949fa352443cbd2b1d56914ee8fbe70a4",
+        "leaf_pem": "5e25f21540e9b9d462b80a128c873672809669a3e6936052e7d42ec4fe014a7d",
+        "root_pem": "9d2e47d460e7309096d9367609967c3bc19c0fa425649d001d2265a6b06eaf81",
+        "wrong_content": "40dbbf5a66533b3c9c3769d492c81bf0fe5704f0f780b63c86d63732244af5cd"
+      },
+      "wrong_content": "work/L1-A31/preparation_r8_2026-08-28/synthetic/wrong_content.bin"
+    }
+  },
+  "official_material_cross_check": [
+    {
+      "identical_in_der": true,
+      "official": "BNotK_rqSigt_CA_2020.cer",
+      "official_der_sha256": "9bca87c417df1e33391ee76f277119e892395a7eb9d90592bb2fb3746c76fb68",
+      "official_file_sha256": "9bca87c417df1e33391ee76f277119e892395a7eb9d90592bb2fb3746c76fb68",
+      "result": "EQUAL",
+      "staged": "document_intermediate.pem",
+      "staged_der_sha256": "9bca87c417df1e33391ee76f277119e892395a7eb9d90592bb2fb3746c76fb68"
+    },
+    {
+      "identical_in_der": true,
+      "official": "bnotkrootca2017.crt",
+      "official_der_sha256": "8a03cce7ad27669a687b16c5e15a4eb9e853b38fe7d7b6e849e8a12ef1e5ba50",
+      "official_file_sha256": "8a03cce7ad27669a687b16c5e15a4eb9e853b38fe7d7b6e849e8a12ef1e5ba50",
+      "result": "EQUAL",
+      "staged": "document_root.pem",
+      "staged_der_sha256": "8a03cce7ad27669a687b16c5e15a4eb9e853b38fe7d7b6e849e8a12ef1e5ba50"
+    },
+    {
+      "identical_in_der": true,
+      "official": "2021-09-09-bea-vhn-ca-2017.pem",
+      "official_der_sha256": "9102ab0a167d599b4e1a0da6601afd12775bf0f64dbbe37013177b896e6f2924",
+      "official_file_sha256": "55cbcb2b1c367b7e01c3cfff38663edbf23409f7c2dfd8222529133562007b17",
+      "result": "EQUAL",
+      "staged": "vhn_intermediate_selected_manual_pem.pem",
+      "staged_der_sha256": "9102ab0a167d599b4e1a0da6601afd12775bf0f64dbbe37013177b896e6f2924"
+    },
+    {
+      "identical_in_der": true,
+      "official": "2021-09-09-safe-root-ca-2017.crt.der",
+      "official_der_sha256": "1abddfa573cf1dcd5a75f164bc828e6d4177c448849535912eed3c7825bfc9fc",
+      "official_file_sha256": "1abddfa573cf1dcd5a75f164bc828e6d4177c448849535912eed3c7825bfc9fc",
+      "result": "EQUAL",
+      "staged": "vhn_root.pem",
+      "staged_der_sha256": "1abddfa573cf1dcd5a75f164bc828e6d4177c448849535912eed3c7825bfc9fc"
+    }
+  ],
+  "official_material_disagreements": [],
+  "openssl": "OpenSSL 3.5.5 27 Jan 2026 (Library: OpenSSL 3.5.5 27 Jan 2026)",
+  "operator_intake_official_chain_material": {
+    "intake_directory": "work/operator_intake/L1-A31/official_chain_material_r7_2026-08-26",
+    "members": [
+      {
+        "bytes": 2130,
+        "name": "2021-09-09-bea-vhn-ca-2017.crt",
+        "path": "work/operator_intake/L1-A31/official_chain_material_r7_2026-08-26/2021-09-09-bea-vhn-ca-2017.crt",
+        "sha256": "55cbcb2b1c367b7e01c3cfff38663edbf23409f7c2dfd8222529133562007b17",
+        "source": "/home/ubuntu/project/2026-08-21_L1-A31_Official_Chain_Material/2021-09-09-bea-vhn-ca-2017.crt"
+      },
+      {
+        "bytes": 2130,
+        "name": "2021-09-09-bea-vhn-ca-2017.pem",
+        "path": "work/operator_intake/L1-A31/official_chain_material_r7_2026-08-26/2021-09-09-bea-vhn-ca-2017.pem",
+        "sha256": "55cbcb2b1c367b7e01c3cfff38663edbf23409f7c2dfd8222529133562007b17",
+        "source": "/home/ubuntu/project/2026-08-21_L1-A31_Official_Chain_Material/2021-09-09-bea-vhn-ca-2017.pem"
+      },
+      {
+        "bytes": 1533,
+        "name": "2021-09-09-safe-root-ca-2017.crt.der",
+        "path": "work/operator_intake/L1-A31/official_chain_material_r7_2026-08-26/2021-09-09-safe-root-ca-2017.crt.der",
+        "sha256": "1abddfa573cf1dcd5a75f164bc828e6d4177c448849535912eed3c7825bfc9fc",
+        "source": "/home/ubuntu/project/2026-08-21_L1-A31_Official_Chain_Material/2021-09-09-safe-root-ca-2017.crt.der"
+      },
+      {
+        "bytes": 1745,
+        "name": "BNotK_rqSigt_CA_2020.cer",
+        "path": "work/operator_intake/L1-A31/official_chain_material_r7_2026-08-26/BNotK_rqSigt_CA_2020.cer",
+        "sha256": "9bca87c417df1e33391ee76f277119e892395a7eb9d90592bb2fb3746c76fb68",
+        "source": "/home/ubuntu/project/2026-08-21_L1-A31_Official_Chain_Material/BNotK_rqSigt_CA_2020.cer"
+      },
+      {
+        "bytes": 5355449,
+        "name": "TL-DE.XML",
+        "path": "work/operator_intake/L1-A31/official_chain_material_r7_2026-08-26/TL-DE.XML",
+        "sha256": "93d0a212a03ede4411d6d9ebb54b886c013a4a2f48aa666b7c493ca3b13a4549",
+        "source": "/home/ubuntu/project/2026-08-21_L1-A31_Official_Chain_Material/TL-DE.XML"
+      },
+      {
+        "bytes": 64,
+        "name": "TL-DE.sha2.txt",
+        "path": "work/operator_intake/L1-A31/official_chain_material_r7_2026-08-26/TL-DE.sha2.txt",
+        "sha256": "97367e808eeabdef3ba800995056b2019868d4e0c531bdf0cfae3db1a3f7e5f9",
+        "source": "/home/ubuntu/project/2026-08-21_L1-A31_Official_Chain_Material/TL-DE.sha2.txt"
+      },
+      {
+        "bytes": 1743,
+        "name": "bnotkrootca2017.crt",
+        "path": "work/operator_intake/L1-A31/official_chain_material_r7_2026-08-26/bnotkrootca2017.crt",
+        "sha256": "8a03cce7ad27669a687b16c5e15a4eb9e853b38fe7d7b6e849e8a12ef1e5ba50",
+        "source": "/home/ubuntu/project/2026-08-21_L1-A31_Official_Chain_Material/bnotkrootca2017.crt"
+      }
+    ],
+    "source_directory": "/home/ubuntu/project/2026-08-21_L1-A31_Official_Chain_Material",
+    "supplied_by": "operator, during the R7 build",
+    "trusted_list_self_check": {
+      "checked": true,
+      "matches": true,
+      "measured_digest": "93d0a212a03ede4411d6d9ebb54b886c013a4a2f48aa666b7c493ca3b13a4549",
+      "published_digest": "93d0a212a03ede4411d6d9ebb54b886c013a4a2f48aa666b7c493ca3b13a4549"
+    },
+    "used_as": "an independent second opinion on the identity of the staged CA certificates; NOT as the source of any staged byte, which remains R6's completed acquisition"
+  },
+  "preparation_dir": "work/L1-A31/preparation_r8_2026-08-28",
+  "revision": "R8",
+  "schema": "wpno.level1.l1a31-staging/1",
+  "staged_anchor": {
+    "identity_equal": true,
+    "source_der_sha256": "1abddfa573cf1dcd5a75f164bc828e6d4177c448849535912eed3c7825bfc9fc",
+    "source_reference_unchanged": true,
+    "staged": true,
+    "staged_pem_path": "work/L1-A31/preparation_r8_2026-08-28/staged_anchors/vhn_root_from_der.pem",
+    "staged_pem_sha256": "ff7f2c632312dcd799d69780a23bfc11a0f6ad8423e84f524d89481722130929"
+  }
+}

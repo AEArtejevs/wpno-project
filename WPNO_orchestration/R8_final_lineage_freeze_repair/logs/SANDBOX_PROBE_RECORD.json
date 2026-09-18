@@ -1,0 +1,38 @@
+{
+ "BARRIER_PROVED": true,
+ "arms": [
+  {
+   "arm": "writable workspace",
+   "exit_code": 0,
+   "expected": "succeeds",
+   "observed": "succeeded"
+  },
+  {
+   "arm": "writable clone via --add-dir",
+   "exit_code": 0,
+   "expected": "succeeds",
+   "observed": "succeeded"
+  },
+  {
+   "arm": "ORIGINAL R8, outside every writable root",
+   "exit_code": 1,
+   "expected": "refused by the kernel",
+   "observed": "/bin/bash: line 1: /home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/PROBE_MUST_NOT_EXIST.txt: Read-only file system"
+  }
+ ],
+ "both_arms_fired": true,
+ "clone": "/home/ubuntu/project/WPNO/.r8_lineage_verify_clone_711053",
+ "clone_root_mtime_restored_after_probe": {
+  "mtime_ns_after_probe": 1787954221678976434,
+  "mtime_ns_restored_to": 1787948767013349870,
+  "r8_touched": false,
+  "restored": true,
+  "why": "the permitted arm created and removed a file at the clone root, moving that directory's mtime; left alone it would read as a difference between clone and R8 in the comparison that exists to say the clone is faithful. Restored inside the disposable clone only, and recorded rather than left silent."
+ },
+ "probe_artefacts_removed": true,
+ "r8_probe_file_exists": false,
+ "recorded_utc": "2026-08-28T22:26:11Z",
+ "schema": "wpno.r8.lineage-repair-sandbox-probe/1",
+ "what_this_does_not_prove": "that no write to R8 occurred during the verification. That is item E11's full pre/post inventory. This says only that the instrument which would have to refuse such a write does refuse one, and that the permitted arm is not refused -- a barrier refusing everything would pass the negative arm while proving nothing.",
+ "why": "A control never shown to fire proves nothing. CLAUDE.md section 6: a sabotage must be demonstrated effective or the test is void. The write barrier was made to refuse a write BEFORE any measurement rested on it."
+}

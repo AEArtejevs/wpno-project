@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "A recorded human approval",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["audit_id", "run_phase", "plan_sha256", "target_sha256",
+               "recorded_at"],
+  "properties": {
+    "audit_id": {"type": "string", "pattern": "^L1-A[0-3][0-9]$"},
+    "run_phase": {"enum": ["RUN-A", "RUN-B", "COMPARISON"]},
+    "plan_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "target_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "recorded_at": {"type": "number"}
+  }
+}

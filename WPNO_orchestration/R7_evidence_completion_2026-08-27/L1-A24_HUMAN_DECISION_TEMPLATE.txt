@@ -1,0 +1,16 @@
+L1-A24 EXTERNAL LAUNCH DIRECTORY HUMAN DECISION (DO NOT EXECUTE UNTIL APPROVED)
+
+Mac host identity: ____________________
+Approved existing external launch directory (absolute path): ____________________
+Canonical path after resolution: ____________________
+Purpose: ____________________
+Expected CLAUDE.md path/resolution from that directory: ____________________
+Directory exists: YES / NO
+Directory is a symlink: YES / NO
+Directory is outside PROJECT_ROOT and LEVEL1_ROOT: YES / NO
+Pre-execution per-file SHA-256 manifest path/hash: ____________________
+Authorized approver: ____________________
+Decision date: ____________________
+Approval scope/token reference (do not place secret token here): ____________________
+
+This template does not choose or approve a directory and does not authorize an audit phase.

@@ -1,0 +1,320 @@
+{
+  "audit_id": "L1-A33",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Compare the OSCI container's declared metadata against what the container actually holds - names, timestamps, declared and actual hashes, manifests, signed artefacts, sender and recipient references and chronology - and give byte-level evidence for every contradiction. The container's own metadata is one side of each comparison and is never the arbiter of it.",
+  "static_analysis": "No module under PROJECT_ROOT is imported. The container and 563203462.xml are located in references/ as REF-11 and digest-checked against references/manifest.json.\n\nThe XML reader is configured before anything is read: external entities disabled, DTD processing disabled, network access disabled, XInclude disabled. The configuration is recorded in the evidence, because a parse performed without it is not usable and would have to be redone.\n\nThe container's entries are listed without extracting, and the manifest is parsed so that every declared entry, with its declared hash, size and name, is on the record before any actual value is computed.\n\nTimestamps come from three sources and are kept apart throughout: the XML metadata, the archive entry headers and the filesystem. A copy operation rewrites one and not the others, and the difference is informative - merging them would destroy exactly the evidence this audit needs.\n\nPreparation the approved phase performs: a sandbox copy of one entry with a single byte altered, and a sandbox copy of the manifest with one declared hash altered, so that both sides of the comparison can be shown to be live.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-563203462.xml"
+      },
+      "purpose": "Bind the container metadata document being parsed.",
+      "step_id": "hash_container_xml",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "MIME_EXTRACT_XML_PART_SANDBOX",
+      "params": {
+        "no_network": true,
+        "out": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A33/RUN-A/extracted/REF-11-563203462.part.xml",
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-563203462.xml",
+        "resolve_entities": false,
+        "select_content_id": "<osci@message>",
+        "select_content_type": "text/xml"
+      },
+      "purpose": "Decode the intended text/xml part of the MIME entity into the writable work area, leaving the accepted reference byte-identical.",
+      "step_id": "extract_container_xml_part",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "XML_PARSE_SANDBOX",
+      "params": {
+        "load_dtd": false,
+        "no_network": true,
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A33/RUN-A/extracted/REF-11-563203462.part.xml",
+        "resolve_entities": false,
+        "xinclude": false
+      },
+      "purpose": "Parse the extracted XML part with external entities, DTD, network and XInclude disabled, and record the reader configuration in the evidence.",
+      "step_id": "parse_container_xml_safely",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "XML_PARSE_SANDBOX",
+      "params": {
+        "load_dtd": false,
+        "no_network": true,
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-xjustiz_nachricht.xml",
+        "resolve_entities": false,
+        "xinclude": false
+      },
+      "purpose": "Read the message metadata carrying sender and recipient references, under the same reader configuration.",
+      "step_id": "parse_xjustiz_message",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "ZIP_LIST",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip"
+      },
+      "purpose": "List the transport archive's entries and their stored header timestamps, without extracting.",
+      "step_id": "list_container_entries",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "ORACLE",
+      "operation": "COMPARE_HASHES",
+      "params": {
+        "algorithms": [
+          "sha256"
+        ],
+        "expected_sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23",
+        "left": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn-covered-content.xml",
+        "right": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/outputs/vhn_verified_content.bin"
+      },
+      "purpose": "Compute the actual hash of a declared entry over the byte range the manifest states, and compare it with the declared value. Matches and mismatches are reported as two lists, never as a score.",
+      "step_id": "declared_versus_actual",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "COMPARE_HASHES",
+      "params": {
+        "algorithms": [
+          "sha256"
+        ],
+        "expected_sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23",
+        "left": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn-covered-content.xml",
+        "right": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/outputs/vhn_verified_content.bin"
+      },
+      "purpose": "An entry whose declared and actual hash agree must be reported as agreeing.",
+      "step_id": "positive_control_agreeing_entry",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "COMPARE_BINARY_FILES",
+      "params": {
+        "left": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn-covered-content.xml",
+        "right": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A33/RUN-A/controls/entry_one_byte_mutated.xml"
+      },
+      "purpose": "One altered byte in a sandbox copy of an entry must be reported as a mismatch.",
+      "step_id": "negative_control_altered_entry",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "COMPARE_BINARY_FILES",
+      "params": {
+        "left": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-563203462.xml",
+        "right": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A33/RUN-A/controls/manifest_declared_hash_altered.xml"
+      },
+      "purpose": "One altered declared hash in a sandbox copy of the manifest must be reported as a mismatch too. This proves the declaration side of the comparison is live and not merely echoed.",
+      "step_id": "mutation_control_altered_declaration",
+      "timeout_seconds": 300
+    }
+  ],
+  "target": {
+    "identity_evidence": "references/manifest.json binds 563203462.xml as REF-11",
+    "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-563203462.xml",
+    "sha256": "8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "references/REF-11-*",
+        "work/L1-A33/RUN-A/extracted/",
+        "work/L1-A31/preparation_r8_2026-08-28/outputs/vhn_verified_content.bin"
+      ],
+      "allowed_writes": [
+        "work/L1-A33/RUN-A/",
+        "evidence/L1-A33/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A33 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A33",
+      "candidate_template_identity": "L1-A33/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A33/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "none; every step is in-process",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "NETWORK_REQUEST"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [],
+      "independent_oracle": "The container's own bytes read with a safely configured parser, and independent hash computation. The container's metadata is one side of the comparison and never the arbiter.",
+      "limitations": [
+        "REF-11 is operator-supplied material. Its chain of custody is the operator's statement recorded in references/manifest.json. Hash identity against that record is what is verified here; it is not proof of how the bytes came to exist before intake, and is not reported as such."
+      ],
+      "method": "safely configured XML read plus independent hash computation over stated byte ranges",
+      "notes": [
+        "A parse performed without the recorded reader configuration is not usable and is redone rather than interpreted."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [
+        "REF-11"
+      ],
+      "references": [
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip",
+          "sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn.xml.p7s",
+          "sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn-covered-content.xml",
+          "sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-563203462.xml",
+          "sha256": "8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/manifest.json",
+          "sha256": "4c1e9a706a5ba2a3c6f25f7ffc37963efadbe529f907865f516982ce3b54f1b4"
+        }
+      ],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": null,
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "check_id": "mime_part_extracted",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_boolean": true,
+      "expected_exit_code": 0,
+      "measured_field": "source_unchanged",
+      "question": "Was the intended XML part decoded, deterministically, leaving the reference unchanged?",
+      "r8_repair": "REF-11-563203462.xml is a MIME multipart entity, not raw XML at byte zero; XML_PARSE_SANDBOX refused it at line 1 column 0",
+      "required_result": "Exactly one text/xml part with Content-ID <osci@message>; the outer entity's digest unchanged; the decoded part written below work/ and its digest recorded.",
+      "step_id": "extract_container_xml_part",
+      "why_compat32": "the entity's boundary is unquoted and contains '/', a tspecial; email.policy.default truncates it there, finds no part and reports success with zero parts"
+    },
+    {
+      "check_id": "reader_configuration_recorded",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": 0,
+      "question": "Was the XML reader configured and was it recorded?",
+      "required_result": "External entities disabled, DTD disabled, network disabled, XInclude disabled, all four recorded in the evidence.",
+      "step_id": "parse_container_xml_safely"
+    },
+    {
+      "check_id": "declared_versus_actual",
+      "degenerate_operands": "left and right name the same path, as in L1-A28. No outcome expectation is bound. Recorded for the human.",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_exit_code": 0,
+      "question": "Does every declared hash match the actual bytes?",
+      "required_result": "Two lists - matches and mismatches - with the byte range each was computed over stated.",
+      "step_id": "declared_versus_actual",
+      "why": "The comparison must complete."
+    },
+    {
+      "check_id": "names_and_normal_form",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Do declared names match stored names?",
+      "required_result": "Compared including Unicode normal form, with the form used stated."
+    },
+    {
+      "check_id": "three_timestamp_sources",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "What do the three timestamp sources say?",
+      "required_result": "Reported separately and never merged. A copy operation rewrites one and not the others, and that difference is evidence.",
+      "sources": [
+        "XML metadata",
+        "archive entry headers",
+        "filesystem"
+      ],
+      "step_id": "list_container_entries"
+    },
+    {
+      "check_id": "chronology",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Is any ordering impossible?",
+      "required_result": "The chronology is built from the recorded timestamps and any impossible ordering is named with both sides and their sources."
+    },
+    {
+      "check_id": "contradiction_form",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "question": "How is a contradiction reported?",
+      "required_result": "Both sides, their sources, their byte-level values, and why they cannot both be true."
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": 0,
+      "question": "Does the method report agreement where it exists?",
+      "step_id": "positive_control_agreeing_entry"
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_boolean": false,
+      "expected_exit_code": 0,
+      "expected_failure_reason": "the entry's bytes no longer match its declaration",
+      "expected_result": "MISMATCH_REPORTED",
+      "fixture": "work/L1-A33/RUN-A/controls/entry_one_byte_mutated.xml",
+      "fixture_construction": "a copy of an entry with one byte altered",
+      "proof_the_fixture_differs": "its SHA-256 differs from the original's",
+      "question": "Does one altered content byte surface as a mismatch?",
+      "step_id": "negative_control_altered_entry",
+      "why": "MISMATCH_REPORTED: the altered entry must not compare equal."
+    },
+    {
+      "check_id": "mutation_control",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_boolean": false,
+      "expected_exit_code": 0,
+      "expected_result": "MISMATCH_REPORTED_FROM_THE_DECLARATION_SIDE",
+      "fixture": "work/L1-A33/RUN-A/controls/manifest_declared_hash_altered.xml",
+      "fixture_construction": "a copy of the metadata document with one declared hash character altered",
+      "proof_the_fixture_differs": "its SHA-256 differs from the original's",
+      "question": "Is the declaration side of the comparison live?",
+      "step_id": "mutation_control_altered_declaration",
+      "why": "A comparison that only reacts to content changes is reading the declaration and echoing it back.",
+      "zero_changed_results_is": "a measurement error, not a pass"
+    }
+  ]
+}

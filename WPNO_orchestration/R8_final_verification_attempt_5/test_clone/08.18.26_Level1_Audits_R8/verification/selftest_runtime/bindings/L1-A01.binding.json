@@ -1,0 +1,38 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A01",
+  "binding_status": "TARGET_CONFIRMED",
+  "logical_targets": [
+    "assemble_long_document deterministic two-run hash verification"
+  ],
+  "candidate_paths": [
+    "/Users/martinotten/WPNO/authoring/AP16_assemble_long_document.py"
+  ],
+  "productive_target": "/Users/martinotten/WPNO/authoring/AP16_assemble_long_document.py",
+  "productive_target_sha256": "4bcde78f0220eaf07a70c6a9ba20c98d66ee4d65f38a998762c30c9bd5b09932",
+  "productive_target_evidence": [
+    {
+      "claim": "File identity confirmed by name, symbol match and SHA-256.",
+      "note": "File identity is NOT production identity. No execution-path evidence establishes that this file is the copy invoked in production. See discovery_reconciliation/04_PRODUCTION_PATH_RECONCILIATION.md."
+    }
+  ],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [],
+  "external_evidence_required": [],
+  "unresolved_questions": [],
+  "discovery_drift": [],
+  "source_evidence": [
+    {
+      "source_path": "/Users/martinotten/WPNO/authoring/AP16_assemble_long_document.py",
+      "sha256": "4bcde78f0220eaf07a70c6a9ba20c98d66ee4d65f38a998762c30c9bd5b09932",
+      "locator": "whole file",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    }
+  ],
+  "replications": 1,
+  "risk": "HIGH",
+  "execution_order": 21
+}

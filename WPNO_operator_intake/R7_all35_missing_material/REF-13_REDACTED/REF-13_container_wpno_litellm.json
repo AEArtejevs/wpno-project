@@ -1,0 +1,302 @@
+[
+  {
+    "AppArmorProfile": "",
+    "Args": [
+      "--config",
+      "/app/config.yaml",
+      "--port",
+      "4000"
+    ],
+    "Config": {
+      "AttachStderr": true,
+      "AttachStdin": false,
+      "AttachStdout": true,
+      "Cmd": [
+        "--config",
+        "/app/config.yaml",
+        "--port",
+        "4000"
+      ],
+      "Domainname": "",
+      "Entrypoint": [
+        "docker/prod_entrypoint.sh"
+      ],
+      "Env": [
+        "REDIS_HOST=redis",
+        "ANTHROPIC_API_KEY=[REDACTED:API_KEY]",
+        "LITELLM_MASTER_KEY=[REDACTED:MASTER_KEY]",
+        "DATABASE_URL=[REDACTED:DATABASE_URL]",
+        "LANGFUSE_PUBLIC_KEY=pk-lf-a55f4878-746c-4830-90db-1369e85209e1",
+        "LANGFUSE_SECRET_KEY=[REDACTED:SECRET]",
+        "LANGFUSE_HOST=http://host.docker.internal:3000",
+        "PATH=/app/.venv/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/bin",
+        "SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt"
+      ],
+      "ExposedPorts": {
+        "4000/tcp": {}
+      },
+      "Hostname": "089559a9cb9c",
+      "Image": "ghcr.io/berriai/litellm:main-latest",
+      "Labels": {
+        "com.docker.compose.config-hash": "6d3aa7722af6c3337568b8408459d2a905764ff4c5073b52c396403d80b08616",
+        "com.docker.compose.container-number": "1",
+        "com.docker.compose.depends_on": "redis:service_started:false",
+        "com.docker.compose.image": "sha256:2fdd90b14e3d9244ce297f418b983d8cfd90ba6e72a10a8ddb30f7cf64852390",
+        "com.docker.compose.oneoff": "False",
+        "com.docker.compose.project": "litellm",
+        "com.docker.compose.project.config_files": "C:\\WPNO\\docker\\litellm\\docker-compose.yml",
+        "com.docker.compose.project.working_dir": "C:\\WPNO\\docker\\litellm",
+        "com.docker.compose.replace": "wpno_litellm",
+        "com.docker.compose.service": "litellm",
+        "com.docker.compose.version": "5.2.0",
+        "dev.chainguard.image.title": "wolfi-base",
+        "dev.chainguard.package.main": "",
+        "org.opencontainers.image.authors": "Chainguard Team https://www.chainguard.dev/",
+        "org.opencontainers.image.created": "2026-07-02T22:43:55Z",
+        "org.opencontainers.image.revision": "10d5804b3ef4ead5abb77c3f5fafdd0c0159de0f",
+        "org.opencontainers.image.source": "https://github.com/BerriAI/litellm",
+        "org.opencontainers.image.title": "wolfi-base",
+        "org.opencontainers.image.url": "https://images.chainguard.dev/directory/image/wolfi-base/overview",
+        "org.opencontainers.image.vendor": "Chainguard"
+      },
+      "OpenStdin": false,
+      "StdinOnce": false,
+      "Tty": false,
+      "User": "root",
+      "Volumes": null,
+      "WorkingDir": "/app"
+    },
+    "Created": "2026-07-15T15:59:36.004777485Z",
+    "Driver": "overlayfs",
+    "ExecIDs": null,
+    "HostConfig": {
+      "AutoRemove": false,
+      "Binds": [
+        "C:\\WPNO\\docker\\litellm\\tool_registry_gate.py:/app/tool_registry_gate.py:rw",
+        "C:\\WPNO\\docker\\litellm\\mcp.registry.json:/app/mcp.registry.json:rw",
+        "C:\\WPNO\\docker\\litellm\\ledger.db:/app/ledger.db:rw",
+        "C:\\WPNO\\docker\\litellm\\config.yaml:/app/config.yaml:rw",
+        "C:\\WPNO\\docker\\litellm\\custom_callback.py:/app/custom_callback.py:rw",
+        "C:\\WPNO\\docker\\litellm\\payload_scan.py:/app/payload_scan.py:rw"
+      ],
+      "BlkioDeviceReadBps": null,
+      "BlkioDeviceReadIOps": null,
+      "BlkioDeviceWriteBps": null,
+      "BlkioDeviceWriteIOps": null,
+      "BlkioWeight": 0,
+      "BlkioWeightDevice": null,
+      "CapAdd": null,
+      "CapDrop": null,
+      "Cgroup": "",
+      "CgroupParent": "",
+      "CgroupnsMode": "private",
+      "ConsoleSize": [
+        0,
+        0
+      ],
+      "ContainerIDFile": "",
+      "CpuCount": 0,
+      "CpuPercent": 0,
+      "CpuPeriod": 0,
+      "CpuQuota": 0,
+      "CpuRealtimePeriod": 0,
+      "CpuRealtimeRuntime": 0,
+      "CpuShares": 0,
+      "CpusetCpus": "",
+      "CpusetMems": "",
+      "DeviceCgroupRules": null,
+      "DeviceRequests": null,
+      "Devices": null,
+      "Dns": [],
+      "DnsOptions": [],
+      "DnsSearch": [],
+      "ExtraHosts": [],
+      "GroupAdd": null,
+      "IOMaximumBandwidth": 0,
+      "IOMaximumIOps": 0,
+      "IpcMode": "private",
+      "Isolation": "",
+      "Links": null,
+      "LogConfig": {
+        "Config": {},
+        "Type": "json-file"
+      },
+      "MaskedPaths": [
+        "/proc/acpi",
+        "/proc/asound",
+        "/proc/interrupts",
+        "/proc/kcore",
+        "/proc/keys",
+        "/proc/latency_stats",
+        "/proc/sched_debug",
+        "/proc/scsi",
+        "/proc/timer_list",
+        "/proc/timer_stats",
+        "/sys/devices/virtual/powercap",
+        "/sys/firmware"
+      ],
+      "Memory": 0,
+      "MemoryReservation": 0,
+      "MemorySwap": 0,
+      "MemorySwappiness": null,
+      "NanoCpus": 0,
+      "NetworkMode": "litellm_default",
+      "OomKillDisable": null,
+      "OomScoreAdj": 0,
+      "PidMode": "",
+      "PidsLimit": null,
+      "PortBindings": {
+        "4000/tcp": [
+          {
+            "HostIp": "",
+            "HostPort": "4000"
+          }
+        ]
+      },
+      "Privileged": false,
+      "PublishAllPorts": false,
+      "ReadonlyPaths": [
+        "/proc/bus",
+        "/proc/fs",
+        "/proc/irq",
+        "/proc/sys",
+        "/proc/sysrq-trigger"
+      ],
+      "ReadonlyRootfs": false,
+      "RestartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "unless-stopped"
+      },
+      "Runtime": "runc",
+      "SecurityOpt": null,
+      "ShmSize": 67108864,
+      "UTSMode": "",
+      "Ulimits": null,
+      "UsernsMode": "",
+      "VolumeDriver": "",
+      "VolumesFrom": null
+    },
+    "HostnamePath": "/var/lib/docker/containers/089559a9cb9c59039e11f8f941a606c219ecd8878dd997ed474c5870dfa6c55f/hostname",
+    "HostsPath": "/var/lib/docker/containers/089559a9cb9c59039e11f8f941a606c219ecd8878dd997ed474c5870dfa6c55f/hosts",
+    "Id": "089559a9cb9c59039e11f8f941a606c219ecd8878dd997ed474c5870dfa6c55f",
+    "Image": "sha256:2fdd90b14e3d9244ce297f418b983d8cfd90ba6e72a10a8ddb30f7cf64852390",
+    "ImageManifestDescriptor": {
+      "digest": "sha256:3e22769c3c07c8fcd003f56cb21adbbd1078d65ea6619ea5e8c70ce5e544a79e",
+      "mediaType": "application/vnd.oci.image.manifest.v1+json",
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "size": 4293
+    },
+    "LogPath": "/var/lib/docker/containers/089559a9cb9c59039e11f8f941a606c219ecd8878dd997ed474c5870dfa6c55f/089559a9cb9c59039e11f8f941a606c219ecd8878dd997ed474c5870dfa6c55f-json.log",
+    "MountLabel": "",
+    "Mounts": [
+      {
+        "Destination": "/app/tool_registry_gate.py",
+        "Mode": "rw",
+        "Propagation": "rprivate",
+        "RW": true,
+        "Source": "C:\\WPNO\\docker\\litellm\\tool_registry_gate.py",
+        "Type": "bind"
+      },
+      {
+        "Destination": "/app/config.yaml",
+        "Mode": "rw",
+        "Propagation": "rprivate",
+        "RW": true,
+        "Source": "C:\\WPNO\\docker\\litellm\\config.yaml",
+        "Type": "bind"
+      },
+      {
+        "Destination": "/app/custom_callback.py",
+        "Mode": "rw",
+        "Propagation": "rprivate",
+        "RW": true,
+        "Source": "C:\\WPNO\\docker\\litellm\\custom_callback.py",
+        "Type": "bind"
+      },
+      {
+        "Destination": "/app/ledger.db",
+        "Mode": "rw",
+        "Propagation": "rprivate",
+        "RW": true,
+        "Source": "C:\\WPNO\\docker\\litellm\\ledger.db",
+        "Type": "bind"
+      },
+      {
+        "Destination": "/app/mcp.registry.json",
+        "Mode": "rw",
+        "Propagation": "rprivate",
+        "RW": true,
+        "Source": "C:\\WPNO\\docker\\litellm\\mcp.registry.json",
+        "Type": "bind"
+      },
+      {
+        "Destination": "/app/payload_scan.py",
+        "Mode": "rw",
+        "Propagation": "rprivate",
+        "RW": true,
+        "Source": "C:\\WPNO\\docker\\litellm\\payload_scan.py",
+        "Type": "bind"
+      }
+    ],
+    "Name": "/wpno_litellm",
+    "NetworkSettings": {
+      "Networks": {
+        "litellm_default": {
+          "Aliases": [
+            "wpno_litellm",
+            "litellm"
+          ],
+          "DNSNames": [
+            "wpno_litellm",
+            "litellm",
+            "089559a9cb9c"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "",
+          "IPPrefixLen": 0,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "",
+          "NetworkID": "59e92f7874448967177edad333740e4eaa47dda4b535437569177887c9a5a7fa"
+        }
+      },
+      "Ports": {},
+      "SandboxID": "",
+      "SandboxKey": ""
+    },
+    "Path": "docker/prod_entrypoint.sh",
+    "Platform": "linux",
+    "ProcessLabel": "",
+    "ResolvConfPath": "/var/lib/docker/containers/089559a9cb9c59039e11f8f941a606c219ecd8878dd997ed474c5870dfa6c55f/resolv.conf",
+    "RestartCount": 0,
+    "State": {
+      "Dead": false,
+      "Error": "",
+      "ExitCode": 137,
+      "FinishedAt": "2026-07-15T18:35:33.819525428Z",
+      "OOMKilled": false,
+      "Paused": false,
+      "Pid": 0,
+      "Restarting": false,
+      "Running": false,
+      "StartedAt": "2026-07-15T15:59:48.970700374Z",
+      "Status": "exited"
+    },
+    "Storage": {
+      "RootFS": {
+        "Snapshot": {
+          "Name": "overlayfs"
+        }
+      }
+    }
+  }
+]

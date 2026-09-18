@@ -1,0 +1,26 @@
+======================================================================
+FAIL: test_the_resume_status_record_names_only_paths_that_exist (automation.package_tests.test_r7_section8_records.StatusRecordPaths.test_the_resume_status_record_names_only_paths_that_exist)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/automation/package_tests/test_r7_section8_records.py", line 217, in test_the_resume_status_record_names_only_paths_that_exist
+    self.assertTrue(result["ok"],
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+                    "dangling or mismatched paths: %s"
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                    % json.dumps(result["problems"], indent=2))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : dangling or mismatched paths: [
+  {
+    "json_pointer": "execution_engine_repair/controller",
+    "value": "automation/controller.py",
+    "exists": true,
+    "recorded_sha256": "167b5cf6f43bdead8314c10d9296dd462e4622d3a01a9e3c9db9498a5c972a08",
+    "measured_sha256": "3570204ae58c86bc7e2e4c9ff088c9f7f2131fcb7e7a03a0477f5bfa27f0588a",
+    "problem": "NAMED_PATH_DIGEST_DOES_NOT_MATCH"
+  }
+]
+
+----------------------------------------------------------------------
+Ran 404 tests in 131.992s
+
+FAILED (failures=1)

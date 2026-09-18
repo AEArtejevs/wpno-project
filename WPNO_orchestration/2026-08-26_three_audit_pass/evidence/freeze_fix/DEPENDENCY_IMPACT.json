@@ -1,0 +1,58 @@
+{
+  "schema": "wpno.level1.dependency-impact/1",
+  "prepared_for_revision": "R6",
+  "changed_executables": [
+    {"path": "automation/freeze.py", "change": "added final-state manifesting: in_manifest_scope, final_state_manifest, serialize_manifest, parse_manifest, verify_manifest_from_disk", "lines_added": 151, "lines_removed": 1, "existing_behaviour_altered": false},
+    {"path": "automation/controller.py", "change": "_freeze_write made atomic (temp + fsync + rename); cmd_freeze_level1 write stage rebuilt: stage final bytes, manifest over final state, publish MODE last, post-publication verification from disk, accurate freeze ledger outcomes", "lines_added": 106, "lines_removed": 29, "existing_behaviour_altered": true}
+  ],
+  "must_run": {
+    "focused_freeze_order_regression": {
+      "module": "automation/package_tests/test_freeze_order_regression.py",
+      "reason": "the new regression; holds the repair in place",
+      "status": "WRITTEN_AND_GREEN_IN_DEVELOPMENT"
+    },
+    "full_controller_suite": {
+      "count_in_r5": 413,
+      "reason": "controller.py is shared controller code and it changed. The governing rule runs the full controller suite exactly once in that case.",
+      "status": "PENDING_R6"
+    },
+    "affected_package_tests": {
+      "modules": ["automation/package_tests/test_r5_freeze_repair.py", "automation/package_tests/test_r5_initialisation.py"],
+      "reason": "both exercise the freeze validator or the controller-owned revision route directly",
+      "status": "PENDING_R6"
+    }
+  },
+  "must_not_rerun": {
+    "modules": [
+      "automation/package_tests/test_r5_ref01_ref02.py",
+      "automation/package_tests/test_r5_a18_validators.py",
+      "automation/package_tests/test_r5_a34_der_staging.py",
+      "automation/package_tests/test_r5_independent_cms.py",
+      "automation/tests/test_r5_a31_harness.py",
+      "automation/tests/test_r5_run_b_isolation.py"
+    ],
+    "reason": "none of these import or exercise freeze.py or controller.py. Their dependency manifests contain no changed executable, so rerunning them would re-prove REF-01, REF-02, the Bouncy Castle CMS verifier and the A31/A34/A18 pass-readiness fixtures against bytes that did not move.",
+    "inherited_evidence_remains_valid": true,
+    "inherited_readiness": {"L1-A31": "READY", "L1-A34": "READY", "L1-A18": "READY"}
+  },
+  "verification_status": {
+    "negative_control": {
+      "description": "the new suite run against the unmodified R5 automation",
+      "result": "FAILED (failures=2, errors=8)",
+      "load_bearing_failure": "test_sha256sum_c_reports_no_failure: sha256sum: WARNING: 1 computed checksum did NOT match",
+      "meaning": "the suite detects the R5 defect; it is not a suite that passes either way"
+    },
+    "positive_control": {
+      "description": "the same suite run against the repaired automation",
+      "result": "OK",
+      "tests_run": 26, "failures": 0, "errors": 0, "skipped": 0
+    },
+    "fixture_freeze_measured": {
+      "manifest_entries": 161,
+      "before_fix_failed": 1, "before_fix_failed_entry": "MODE",
+      "after_fix_failed": 0,
+      "mode_published_last": true,
+      "external_check": "sha256sum -c CONTROL_MANIFEST.sha256 exits 0"
+    }
+  }
+}

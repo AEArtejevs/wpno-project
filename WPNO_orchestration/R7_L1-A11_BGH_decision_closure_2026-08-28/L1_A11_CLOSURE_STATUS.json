@@ -1,0 +1,39 @@
+{
+  "schema": "wpno.r7.l1-a11-bgh-decision-closure/1",
+  "mode": "TARGETED_L1_A11_DELTA_ONLY",
+  "human_decision_valid": true,
+  "bgh_reference_manifest_valid": true,
+  "bgh_plan_status": "ACCEPTED",
+  "bgh_praesidium_decisions_status": "PARTIAL",
+  "approved_period": {
+    "start": "2026-01-01",
+    "end": "2026-08-27",
+    "inclusive": true
+  },
+  "documented_coverage_end": "2026-08-18",
+  "missing_coverage": {
+    "start": "2026-08-19",
+    "end": "2026-08-27",
+    "inclusive": true,
+    "required_material": "Hash-bound official BGH publication or amendment statement establishing complete coverage for the missing range."
+  },
+  "organigram_excluded": true,
+  "ref05_status": "PARTIAL",
+  "l1_a11_readiness": "BLOCKED",
+  "focused_rehearsal": "NOT_REQUIRED",
+  "audits_ready_for_planning": {
+    "ready": 33,
+    "total": 35
+  },
+  "remaining_gates": [
+    "L1-A11 — official BGH documentary coverage for 2026-08-19 through 2026-08-27",
+    "L1-A24 — human external launch-directory decision"
+  ],
+  "shared_controller_executable_changed": false,
+  "full_controller_suite_rerun": false,
+  "r7_modified": false,
+  "r7_frozen": false,
+  "live_audit_phase_advanced": false,
+  "next_required_action": "Provide a hash-bound official BGH publication or amendment statement establishing complete coverage for 2026-08-19 through 2026-08-27, inclusive.",
+  "final_status": "R7_L1_A11_STILL_BLOCKED"
+}

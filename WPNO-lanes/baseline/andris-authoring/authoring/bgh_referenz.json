@@ -1,0 +1,30 @@
+{
+  "_hinweis": "Referenzbestand fuer die Pruefung zitierter Aktenzeichen. Quelle: oeffentliche Entscheidungsdatenbank des Bundesgerichtshofs (bundesgerichtshof.de). Gerichtsentscheidungen geniessen nach § 5 UrhG keinen urheberrechtlichen Schutz; die Uebernahme der Aktenzeichen ist damit unbedenklich.",
+  "_stand": "2026-08-04",
+  "_pruefweg": "https://www.bundesgerichtshof.de/SiteGlobals/Forms/Suche/EntscheidungssucheBGH_Formular.html?resourceId=373186&input_=373178&pageLocale=de&templateQueryString=%22AKTENZEICHEN%22&submit=Senden&nn=373178&Aktenzeichen=true",
+  "_pruefweg_hinweis": "AKTENZEICHEN im Platzhalter URL-kodiert einsetzen, Anfuehrungszeichen beibehalten. Antwort 'Resultate 1 bis N von insgesamt N' = vorhanden; 'Keine Treffer' = nicht vorhanden.",
+
+  "belegt": {
+    "I ZR 130/25":       { "senat": "I. Zivilsenat",            "datum": "2026-07-30", "geprueft": "2026-08-04", "weg": "Einzelabfrage" },
+    "IX ZR 35/25":       { "senat": "IX. Zivilsenat",           "datum": "2026-07-16", "geprueft": "2026-08-04", "weg": "Trefferliste" },
+    "5 StR 125/26":      { "senat": "5. Strafsenat",            "datum": "2026-07-16", "geprueft": "2026-08-04", "weg": "Trefferliste" },
+    "AnwZ (Brfg) 24/24": { "senat": "Senat fuer Anwaltssachen", "datum": "2026-06-29", "geprueft": "2026-08-04", "weg": "Trefferliste" },
+    "VIa ZR 782/23":     { "senat": "VIa. Zivilsenat",          "datum": "2026-07-28", "geprueft": "2026-08-04", "weg": "Trefferliste" },
+    "VIII ZR 329/25":    { "senat": "VIII. Zivilsenat",         "datum": "2026-07-07", "geprueft": "2026-08-04", "weg": "Trefferliste" },
+    "2 StR 572/25":      { "senat": "2. Strafsenat",            "datum": "2026-05-06", "geprueft": "2026-08-04", "weg": "Trefferliste" },
+    "2 StR 516/24":      { "senat": "2. Strafsenat",            "datum": "2026-06-02", "geprueft": "2026-08-04", "weg": "Trefferliste" },
+    "3 StR 166/26":      { "senat": "3. Strafsenat",            "datum": "2026-06-09", "geprueft": "2026-08-04", "weg": "Trefferliste" },
+    "3 StR 79/26":       { "senat": "3. Strafsenat",            "datum": "2026-04-29", "geprueft": "2026-08-04", "weg": "Trefferliste" },
+    "6 StR 258/26":      { "senat": "6. Strafsenat",            "datum": "2026-07-21", "geprueft": "2026-08-04", "weg": "Trefferliste" },
+    "IV ZB 30/25":       { "senat": "IV. Zivilsenat",           "datum": "2026-07-22", "geprueft": "2026-08-04", "weg": "Trefferliste" },
+    "EnVR 36/23":        { "senat": "Kartellsenat",             "datum": "2026-07-13", "geprueft": "2026-08-04", "weg": "Trefferliste" },
+    "EnVZ 50/23":        { "senat": "Kartellsenat",             "datum": "2026-07-13", "geprueft": "2026-08-04", "weg": "Trefferliste" },
+    "EnVR 20/23":        { "senat": "Kartellsenat",             "datum": "2026-07-13", "geprueft": "2026-08-04", "weg": "Trefferliste" },
+    "IX ZR 45/09":       { "senat": "IX. Zivilsenat",           "datum": "2011-06-09", "geprueft": "2026-08-04", "weg": "Einzelabfrage" }
+  },
+
+  "nachweislich_nicht_vorhanden": {
+    "XY ZR 999/99":  { "geprueft": "2026-08-04", "weg": "Einzelabfrage", "antwort": "Keine Treffer" },
+    "VII ZR 100/12": { "geprueft": "2026-08-04", "weg": "Einzelabfrage", "antwort": "Keine Treffer" }
+  }
+}

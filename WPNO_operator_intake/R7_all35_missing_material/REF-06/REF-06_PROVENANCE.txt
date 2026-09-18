@@ -1,0 +1,22 @@
+REF-06 recovered from Martin's Mac.
+
+Three byte-identical copies were found.
+
+S01 checker input:
+REF-06_S01.docx
+
+AFNA uploaded source:
+REF-06_original_upload.docx
+
+iCloud source copy:
+REF-06_iCloud_original.docx
+
+Expected SHA-256 for all three:
+9f7ee8caebee9345b54dd535a2681789512f68dfc2e4bf7b0652c5cc48722675
+
+Stored Word page count:
+111
+
+The unrelated 1-page file
+/Users/martinotten/Downloads/Schriftsatz_AFNA_Widerspruch_und_Zurueckweisung_5.docx
+was intentionally excluded.

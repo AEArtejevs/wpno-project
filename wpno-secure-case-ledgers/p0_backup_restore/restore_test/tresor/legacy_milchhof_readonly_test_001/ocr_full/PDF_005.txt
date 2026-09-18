@@ -1,0 +1,1032 @@
+Seite von 2
+
+- Ausdruck fiir die eigenen Unterlagen -
+Agrarantrag online — Mecklenburg-Vorpommern
+Quittung zum eingereichten Sammelantrag
+
+Antragsdokumente zum Agrar-Antrag 2023 (1)
+
+Name: Milchhof Alt Sührkow GmbH BEA
+Anschrift: Schloßstraße 10, 17166 Alt Sührkow —
+Unternehmensnummer: 139530020002
+
+Datum des Einreichens: 12.05.2023 17:33:16 tut gut.
+
+Eingereichte Dokumente (Versionsnummer)
+
+I
+
+Stammdaten (1)
+
+Betriebsprofil (1)
+
+IZusatzangaben aktiver Landwirt (1)
+
+=
+
+Anlage Tierhaltung (1)
+
+[Einkommensgrund- und Umverteilungseinkommensstützung (1)
+
+Anträge Öko-Regelungen (1)
+
+|Tabelle Nutzungsnachweis (1)
+
+Flächen in anderen Bundesländern (1)
+
+IKonditionalitätenrechner (1)
+
+Referenzhinweise (1)
+
+|Summen (1)
+
+erstellt mit profil inet Version 1.94
+
+Seite 2von 2
+
+- Ausdruck für die eigenen Unterlagen -
+Agrarantrag online — Mecklenburg-Vorpommern
+
+Quittung zum eingereichten Sammelantrag
+Antragsdokumente zum Agrar-Antrag 2023 (1)
+Name: Milchhof Alt Sührkow GmbH Ewa
+Anschrift: Schloßstraße 10, 17166 Alt Sührkow —
+Unternehmensnummer: 139530020002
+Datum des Einreichens: 12.05.2023 17:33:16 tut gut.
+
+Eingereichte Dokumente (Versionsnummer)
+
+lÄnderungsübersicht (1)
+
+erstellt mit profil inet Version 1.94
+
+
+Übersicht der Summen im Nutzungsnachweis 2023
+
+Summen pro Bundesland und Nutzung 139530020002
+EU-Betriebsnummer
+Betrieb: Milchhof Alt Sührkow GmbH Ort: Alt Sührkow Seite: 1
+vn 1
+Nutzungsart Summe der Nettosumme der
+Bundesland BSE bewirtschafteten Fläche | bewirtschafteten Anzahl der Darunter
+Code Bezeichnung (ha) Fläche (ha) Teilflächen HNF
+MV 115 Winterweichweizen 273,5817 271,3185 39 16
+7 I
+MV 131 Wintergerste 95,2176 95,0219 11 7
+MV 143 Sommerhafer 3,2787 3,2732 3 2
+N
+MV 156 Wintertriticale 39,9524 39,9088 2 1
+—
+MV 311 Winterraps 201,1115 200,2580 21 10
+MV 411 Silomais (als Hauptfutter) 238,6397 236,7716 30 14
+MV 451 Wiesen 73,6014 72,3828 17 10
+MV 452 Mähweiden 277,9997 274,7258 79 19
+_—— —
+MV 453 Weiden und Almen 9,1994 9,1496 6 2
+if |
+MV 591 Ackerland aus der Erzeugung genommen 74,8554 74,3838 16 12
+MV 592 Dauergrünland aus der Erzeugung genommen 1,3679 1,1763 8 2
+MV 603 Zuckerrüben 46,3061 46,1073 ‘| 1
+MV 910 Wildäsungsfläche 1,4076 1,4076 1 1
+MV 915 Ackerrandstreifen und Blühflächen 2,4683 2,4683 >| 3
+MV 983 Weihnachtsbäume 2,6656 2,6656 1 1
+Vorübergehende, unbefestigte Mieten, Stroh-,
+wv 994 Futter- oder Dunglagerplatze auf DGL 91421 01421 ‘| 1
+Vorübergehende, unbefestigte Mieten, Stroh-,
+Mv 996 Futter oder Dunglagerplatze auf AL 0,7584 0,7584 2 2
+Gesamt-Brutto-Fläche! _ 1342,5535 |
+Gesamt-Netto-Fläche] 1331,9196
+Anzahl der Brutto-Schläge: 104 Anzahl der Netto-Schläge: 104
+Brutto-Referenzflächen (einmalig vorkommende Fliks): 85 Netto-Referenzflachen (einmalig vorkommende Fliks): 85
+Summe FFH: 6,2277 ha
+Summe SPA: 1110,3236 ha
+
+profil inet-Webclient Version 1.94 am 12.05.2023 17:33:14 Uhr
+
+Milchhof Alt Sührkow GmbH,
+
+vollständige/r Name, Vorname/ Betriebs-
+bezeichnung der Antrag stellenden Person
+
+139530020002
+EU (Betriebs-)Nummer (BNRZD, 12 Stellen)
+
+1. Stammdaten
+
+Titel
+
+Mitchhof Alt Sührkow GmbH
+
+Antragsteller/in Name
+17.11.1992
+
+Geburts- bzw. Griindungsdatum
+
+1.1 Postanschrift
+
+Schloßstraße 10
+
+Straße
+DE 17166 Alt Sührkow.
+Land PLZ on
+Ortsteil
+1.2 Kommunikationsverbindungen
+
+Stammdaten
+
+GmbH
+
+Rechtsform
+
+Vomame
+
+Geburtsort
+
+MV =
+
+tut gut.
+
+Gemischtbetrieb
+Untemehmenstyp
+keine Angabe
+
+Geschlecht
+
+Im Rahmen der Antragstellung haben Sie Zugriff auf ein Antragsteller-Postfach. In dieses Postfach kann die Landwirtschaftsverwaltung
+Nachrichten ablegen. Zusätzlich werden in dem Antragsteller- Postfach Bescheide eingestellt. Damit die Landwirtschaftsverwaltung Sle bei
+einem Posteingang in einem Benachrichtigungsverfahren informieren kann, müssen Sie eine gültige E-Mail Adresse angeben.
+
+Art der Verbindung Nummer oder Adresse
+Telefon 03996-174796
+
+Telefon 03996-172328
+
+Mobil 0151 12619399
+
+Email milchhof-as@t-online.de
+
+1.3 Ich betreibe eine gewerbl/ institutionell genutzte Website?
+Als gewerbliche /institutionelle Website gilt jede Website, welche der Impressumspflicht gemäß § 5 Telemediengesetz unterliegt.
+
+© Ja © Nein
+
+Webadresse www.milchhof-as.de
+
+1.4 Bankverbindung
+
+Ich habe eine ausländische Bankverbin- oO
+dung
+
+DE47150616180007145675
+
+IBAN
+
+Programmversion:
+
+BIC (deutsch)
+
+Formularversion: 1
+
+(Bei Ja Webadresse angeben.)
+
+GENODEFIWRN
+
+GENODEFIWRN
+
+BIC
+
+Druckzeitpunkt: 12.05.2023 17:33:11 Seite: 1 von 3
+
+Mitchhof Alt Sührkow GmbH,
+
+- Stammdaten
+vollständige/r Name, Vorname/ Betriebs-
+bezeichnung der Antrag stellenden Person tu t t
+ut.
+139530020002 8
+EU (Betriebs-)Nummer (BNRZD, 12 Stellen)
+Raiffbk Mecklenb Seenplatte Milchhof Alt Suehrkow GmbH
+Name der Bank Name des/der Kontoinhaber/s/in
+
+. Bei allen von mir/uns angegebenen Bankverbindungen (in diesem Dokument und/oder im Doku-
+Ja © Nein ment "Anlage abweichende Bankverbindung”) handelt es sich um von mir/uns geführte Geschäfts-
+konten.
+
+1.5 Angaben zur Feststellung des Betriebssitzes
+
+Zuständiges Finanzamt: Güstrow - 4086
+
+ine Ui -1D-
+Umsatzsteuer-ID-Nummer. DE153570973 Miet keine Umsatzsteuer-ID-Nummer oO
+persönliche Steueridentifikati-
+onsnummer.
+1.6 Zuständige(s) Behörde/Amt
+
+Staatliches Amt für Landwirtschaft und Umwelt Mittleres Mecklenburg
+
+2. Abweichende Untemehmensanschrift
+
+Name
+
+Straße
+
+Land PLZ on
+Onsteil
+
+3. Betriebsstätten
+
+Zum Untemehmen gehören folgende Betriebsstätten auf denen Tiere gem. § 26 der Viehverkehrsverordnung gehalten werden. Fehlende Betriebsstätten
+sind zu ergänzen.
+
+Wenn Sie eine neue Betriebsstätte erfassen möchten, geben Sie die ViehVerkV-Nr. und die Tierarten an. Die Angaben zu PLZ, Ort, Straße, Ortsteil und
+Bundesland geben Sie bei Ihrem zuständigen Veterinäramt an. Dies gilt auch für Änderungen bei schon bestehenden Betriebsstätten.
+
+Sofern Sie in der HI-Tier-Datenbank nur als Futtermittel-Unternehmen bzw. Lebensmittel-Unternehmen registriert sind, ist die entsprechende ViehVerkV-
+Nr. hier ebenfalls anzugeben.
+
+i : : f
+Hauptbetriebsstätte ! ViehVerkV-Nr. . PLZ on ' Straße Onsteil ; Bundesland
+130530021001 17166 Alt Sührkow Dorfstraße 29 Mecklenburg-
+IM : Vorpommern
+
+4. Beteiligte
+
+An dem oben bezeichneten Unternehmen sind folgende Personen beteiligt:
+
+Programmversion: Formularversion: 1 Druckzeitpunkt: 12.05.2023 17:33:11 Seite: 2 von 3
+
+Milchhof Alt Sihrkow GmbH,
+
+vollständige/r Name, Vorname/ Betriebs-
+bezeichnung der Antrag stellenden Person
+
+139530020002
+
+EU (Betriebs-)Nummer (BNRZD, 12 Stellen)
+
+BNRZD Name Vorname PLZ Ort
+
+5. Angaben zu verbundenen Unternehmen
+
+Gruppenzugehörigkeit
+
+6. Bevollmächtigte gem. BGB 8 167
+
+Ich habe der folgenden Person eine Vollmacht erteilt:
+
+Unternehmensbezeichnung
+
+Stammdaten MV u
+|
+tut gut.
+i ae Ge Anteil %
+Straße Ortsteil Geb. Datum schäfts amBe-
+schlecht A
+führung trieb
+a
+Umsatzsteuer-ID-Nummer Finanzamt Steuernummer
+
+Achtung: Eine Eintragung an dieser Stelle bewirkt, dass jeglicher Schriftverkehr zu Ihren Anträgen (inkl. Bescheid) ausschließlich über diesen Vertretungs-
+
+befugten geführt wird!
+
+Name
+
+Straße
+
+PLZ Ort
+Telefon Mobil
+Email
+
+7. Verantwortliche Leiter
+
+Verantwortliche/r Leiter/in bzw. Vertretungsbefugte/r des Betriebes, wenn von obigen Angaben abweichend
+
+(Vollmacht ist beizufügen; sie soll nicht älter als 3 Monate sein)
+
+Hantel, Matthias
+
+Programmversion
+
+Formularversion: 1
+
+Druckzeitpunkt: 12.05.2023 17:33:11
+
+Seite: 3 von 3
+
+Milchhof Alt Sührkow GmbH, fl
+St BE Zusatzangaben aktiver Landwirt Nest
+vollständige/r Name, Vorname/ Betriebs- |
+
+bezeichnung der Antrag stellenden Person
+
+tut gut.
+139530020002
+
+EU (Betriebs-)Nummer (BNRZD, 12 Stellen)
+
+Zusätzliche Angaben zur Prüfung der Eigenschaft „aktiver Landwirt”
+
+Hinweis:
+
+Alle Bezugnahmen auf den Antragsteller bzw. Betriebsinhaber gelten unabhängig von der Zahl und dem Geschlecht der Antrag stellenden Person
+
+Ich beantrage erstmalig Direktzahlungen © Ja ® Nein
+
+Datum der Gründung oder das Datum der Übernahme des Betriebes:
+
+Ich weise meine Eigenschaft als „aktiver Landwirt” anhand einer der drei folgenden Kriterien aus:
+durch Mitgliedschaft in einer Unfallversicherung
+
+@ durch die Mitgliedschaft in der landwirtschaftlichen Unfallversicherung (SVLFG)
+© durch die Mitgliedschaft in der Unfallversicherung Bund und Bahn
+© durch die Mitgliedschaft bei einem Unfallversicherungsträger im Landesbereich
+
+Unfallversicherungsträger:
+
+Ich füge den jüngsten Beitragsbescheid bei. Ja Nein
+
+Wenn der Beitragsbescheid noch nicht vorliegt, füge ich den Bescheid über den Beginn der Zuständigkeit bei. Ja Nein
+
+Datum der Gründung oder Übernahme des Betriebes:
+
+Hochgeladene Dateien:
+1 hochgeladene Datei
+
+o durch die Anwendbarkeit der Verordnung (EG) Nr. 883/2004
+Ich bin aufgrund der Verordnung (EG) Nr. 883/2004 kein Mitglied einer landwirtschaftlichen Unfallversicherung in Deutschland.
+
+Staat der Unfallversicherung
+
+Ich füge geeignete Nachweise bei, z. B. die Al-Bescheinigung. Ja Nein
+
+Keine Dateien hochgeladen.
+
+oO durch einen Höchstbetrag der Direktzahlungen von 5000 Euro,
+
+indem ich einen Anspruch auf Direktzahlungen für das Vorjahr in Höhe von höchstens von 5000 Euro hatte (vor An-
+wendung von Sanktionen).
+
+Höhe der Direktzahlungen im Vorjahr 403353,97
+
+Bei einem Umzug aus einem anderen Bundesland füge ich den Bescheid über die Direktzahlungen für das Vorjahr
+
+bei O sa © Nein
+
+Keine Dateien hochgeladen.
+
+indem ich im Vorjahr keinen Antrag auf Direktzahlungen gestellt habe und im aktuellen Jahr der Betrag der
+
+Multiplikation der förderfähigen Fläche im Sammelantrag mit dem Betrag von 225 Euro höchstens 5000
+Euro ergibt.
+
+Die förderfähige Fläche im aktuellen Antragsjahr (s. Nutzungsnach- h
+weis)
+multipliziert mit 225 Euro ergibt einen Betrag von
+
+Programmversion: Formularversion: 1 Druckzeitpunkt: 12.05.2023 17:33:04 Seite: 1 von 2
+
+Milchhof Alt Sührkow GmbH,
+
+Seren nern nn ng Zusatzangaben aktiver Landwirt
+vollständige/r Name, Vorname/ Betriebs-
+
+bezeichnung der Antrag stellenden Person
+
+139530020002
+
+EU (Betriebs-)Nummer (BNRZD, 12 Stellen)
+
+u Ich bestätige, dass die von mir gemachten Angaben richtig und vollständig sind und dass die Verpflichtungen und Erklärungen gelesen
+& wurden und anerkannt werden.
+
+Programmversion: Formularversion: 1 Druckzeitpunkt: 12.05.2023 17:33:04 Seite: 2 von 2
+
+Milchhof Alt Sührkow GmbH,
+
+Betriebsprofil VU =a
+vollstandige/r Name, Vorname/ Betriebs- aes)
+bezeichnung der Antrag stellenden Person
+
+tut gut.
+
+139530020002
+
+EU (Betriebs-)Nummer (BNRZD, 12 Stellen)
+
+Angaben zum Betriebsprofil
+
+Ich bitte um Zusendung des Bescheides / der Bescheide in Papierform.
+
+Die Bescheide werden in elektronischer Form in Ihrem Antragstellerpostfach zugestellt. © Nein O sa
+
+Möchten Sie Ihren Bescheid weiterhin in Papierform erhalten, müssen Sie dieses erklären.
+
+Wurden oder werden in Ihrem Unternehmen Wirtschaftsdünger oder sonstige organische bzw. organisch-
+
+mineralische Düngemittel (z. B. Klärschlamm) aus anderen Unternehmen aufgenommen? 6) Nein © =
+Wird in Ihrem Unternehmen Gemüse angebaut? @ Nein © ya
+Werden in Ihrem Unternehmen Obst, Dauerkulturen und/oder Wein angebaut? ® nein © sa
+Werden in Ihrem Unternehmen Pflanzenschutzmittel eingesetzt? © nein © sa
+Beziehen Sie organische Düngemittel oder Bodenverbesserungsmittel aus Materialien tierischen Ursprungs oder
+
+solche, die Materialien tierischen Ursprungs enthalten, außer Gülle, Jauche oder Stallmist, oder wenden Sie diese © nen O va
+
+an?
+
+Sind Sie Futtermittelproduzent im Sinne der VO (EG) Nr. 183/2005? Sie müssen sich beim Landesamt für Landwirt-
+schaft, Lebensmittelsicherheit und Fischerei (LALLF) nach VO (EG) Nr. 183/2005 registrieren lassen. Formblätter © Nein © sa
+zur Registrierung sind auf der LALLF-Homepage (www.lallf.de) erhältlich
+
+Betreiben Sie Lagerstätten für Mineralöle/Treibstoffe und/oder Pflanzenschutzmittel? © Nein © Ja
+Entnehmen Sie Wasser zur Beregnung/Bewässerung? Oo Nein @) Ja
+Bewirtschaften Sie Ihren gesamten Betrieb nach den Anforderungen für die ökologisch/biologische Landwirt-
+
+schaft? (Wenn ja, die weiteren Fragen zur Bescheinigung der Kontrollstelle Ökologischer Anbau beantworten!) © nen O va
+
+Bewirtschaften Sie Teile Ihres Betriebes nach den Anforderungen für die ökologisch/biologische Landwirtschaft?
+(Wenn ja, die weiteren Fragen zur Bescheinigung der Kontrollstelle Ökologischer Anbau beantworten und die Be- @ Nein © Ja
+triebsteile nachfolgend aufführen!)
+
+Folgende Produktionseinheiten werden nach den Anforderungen der ökologisch/biologischen Landwirtschaft be-
+wirtschaftet:
+
+Als Nachweis reiche ich das gesamte Antragsjahr umfassende Kopien oder gültige Bescheinigungen der privaten
+Kontrollstelle gemäß Art. 35 der Verordnung (EU) 2018/848 ein. oO Nein Oo Ja
+
+Liegen mir für einen Teil des Antragsjahres Bescheinigungen nach Art. 35 der Verordnung (EU) 2018/848 zum
+Schlusstermin für die Antragstellung (15.05.2023) noch nicht vor, reiche ich die Bescheinigungen unverzüglich © nen O ve
+nach deren Ausstellung nach
+
+Sind Sie Mitglied in einer Erzeugerorganisation Obst und Gemü-
+se
+
+® Nein © Ja
+
+Verpflichtungen und Erklärungen
+
+= Ich/Wir bestätige/n, dass die von mir/uns gemachten Angaben richtig und vollständig sind und die Ver-
+pflichtungen und Erklärungen gelesen wurden und anerkannt werden.
+
+Programmversion Formularversion: 1 Druckzeitpunkt: 12.05.2023 17:33:10 Seite: 1 von 1
+
+Milchhof Alt Sihrkow GmbH, EEE
+Zusatzangaben aktiver Landwirt et
+vollständige/r Name, Vorname? Betriebs- et]
+
+bezeichnung der Antrag stellenden Person
+tut gut.
+139530020002
+
+EU (Betriebs-)Nummer (BNRZD, 12 Stellen)
+
+Zusätzliche Angaben zur Prüfung der Eigenschaft „aktiver Landwirt”
+
+Hinweis:
+Alle Bezugnahmen auf den Antragsteller bzw. Betriebsinhaber gelten unabhängig von der Zahl und dem Geschlecht der Antrag stellenden Person.
+
+Ich beantrage erstmalig Direktzahlungen. oO Ja (@) Nein
+
+Datum der Gründung oder das Datum der Übernahme des Betriebes:
+
+Ich weise meine Eigenschaft als „aktiver Landwirt“ anhand einer der drei folgenden Kriterien aus:
+& durch Mitgliedschaft in einer Unfallversicherung
+
+@ durch die Mitgliedschaft in der landwirtschaftlichen Unfallversicherung (SVLFG)
+© durch die Mitgliedschaft in der Unfallversicherung Bund und Bahn
+© durch die Mitgliedschaft bei einem Unfallversicherungstrager im Landesbereich
+
+Unfallversicherungsträger:
+
+Ich füge den jüngsten Beitragsbescheid bei Ja Nein
+Wenn der Beitragsbescheid noch nicht vorliegt, füge ich den Bescheid über den Beginn der Zuständigkeit bei, Ja Nein
+
+Datum der Gründung oder Übernahme des Betriebes:
+
+Hochgeladene Dateien:
+1 hochgeladene Datei
+
+oO durch die Anwendbarkeit der Verordnung (EG) Nr. 883/2004
+Ich bin aufgrund der Verordnung (EG) Nr. 883/2004 kein Mitglied einer landwirtschaftlichen Unfallversicherung in Deutschland.
+Staat der Unfallversicherung
+Ich füge geeignete Nachweise bei, z. B. die Al-Bescheinigung. Ja Nein
+Keine Dateien hochgeladen.
+
+D
+
+durch einen Höchstbetrag der Direktzahlungen von 5000 Euro,
+
+indem ich einen Anspruch auf Direktzahlungen für das Vorjahr in Höhe von höchstens von 5000 Euro hatte (vor An-
+wendung von Sanktionen).
+
+oO
+
+Höhe der Direktzahlungen im Vorjahr 403353,97
+
+Bei einem Umzug aus einem anderen Bundesland füge ich den Bescheid über die Direktzahlungen für das Vorjahr
+
+bei. © sa © Nein
+
+Keine Dateien hochgeladen.
+
+indem ich im Vorjahr keinen Antrag auf Direktzahlungen gestellt habe und im aktuellen Jahr der Betrag der
+Multiplikation der förderfähigen Fläche im Sammelantrag mit dem Betrag von 225 Euro höchstens 5000
+Euro ergibt.
+
+O
+
+=
+
+Die förderfähige Fläche im aktuellen Antragsjahr (s. Nutzungsnach- ha
+weis)
+multipliziert mit 225 Euro ergibt einen Betrag von EURO
+
+Programmversion‘ Formularversion: 1 Druckzeitpunkt: 12.05.2023 17:33:04 Seite: 1 von 2
+
+Milchhof Alt Sührkow GmbH,
+
+Bu . ; Zusatzangaben aktiver Landwirt
+vollstandige/r Name, Vorname/ Betriebs-
+bezeichnung der Antrag stellenden Person
+
+139530020002 tut gut.
+
+EU (Betriebs-)Nummer (BNRZD, 12 Stellen)
+
+u Ich bestätige, dass die von mir gemachten Angaben richtig und vollständig sind und dass die Verpflichtungen und Erklärungen gelesen
+wurden und anerkannt werden.
+
+Programmversion: Formularversion: 1 Druckzeitpunkt: 12.05.2023 17:33:04 Seite: 2 von 2
+
+Milchhof Alt Sührkow GmbH,
+
+Anträge Öko-Regelungen MV pL
+vollstandige/r Name, Vorname/ Betriebs- ° selung |
+
+bezeichnung der Antrag stellenden Person
+
+139530020002
+
+tut gut.
+
+EU (Betriebs-)Nummer (BNRZD, 12 Stellen)
+
+Antrag auf Zahlungen für Öko-Regelungen
+
+Ich beantrage gem. GAP-Direktzahlungen-Gesetz § 18 eine Unterstützung für die freiwillig übernommenen Verpflichtungen zur Ein-
+hattung folgender Öko-Regeln:
+
+M
+
+ÖR1a - nichtproduktive Flächen auf Ackerland.
+Mir ist bekannt, dass die Düngemittel und Pflanzenschutzmittel nicht angewandt werden dürfen.
+
+OR1b - Blühstreifen/-flächen auf Ackerland.
+Mir ist bekannt, dass die Öko-Regelung OR1b nur zusätzlich zu ÖR1a beantragt werden darf.
+
+ORic - Blühstreifen/-flächen in Dauerkulturen.
+Mir ist bekannt, dass die Düngemittel und Pflanzenschutzmittel nicht angewandt werden dürfen.
+
+ÖR1d - Altgrasstreifen/-Flächen in Dauergriinland.
+Mir ist bekannt, dass die Düngemittel nach Düngeverordnung (DüV) i.d.R nicht angewandt werden dürfen.
+
+ÖR2 - Anbau vielfältiger Kulturen,
+mit mindestens fünf Hauptfruchtarten im Ackerbau einschließlich des Anbaus von Legumiosen mit einem Mindestanteil
+von 10 Prozent.
+
+ÖR3 - Agroforst
+Beibehaltung einer agroforstlichen Bewirtschaftungsweise auf Ackerland und Dauergrünland.
+
+OR4 - Dauergrünland-Extensivierung
+
+Extensivierung des gesamten Dauergrünlandes des Betriebes unter Einhaltung von mindestens 0,3 und höchstens 1,4 vom
+1. Januar bis 30. September des Antragsjahres durchschnittlich Rauhfutterfressende Großvieheinheiten (RGV) je Hektar
+Dauergrünland. Die RGV sind in der "Anlage Tierhaltung‘ bzw. "Tierbestandsnachweis" einzutragen.
+
+Mir ist bekannt, dass die Pflanzenschutzmittel nicht ohne Genehmigung angewandt werden dürfen.
+
+ÖRS - Kennarten in Dauergrünland,
+Ich erkläre, dass mindestens vier der zulässigen Pflanzenarten oder Artengruppen aus der vom Belegenheitsland der Flä-
+che geregelten Liste der Kennarten oder Kennartengruppen des artenreichen Grünlands auf diesen Flächen vorkommen
+
+OR6 - Verzicht auf chemisch-synthetische Pflanzenschutzmittel.
+Mir ist bekannt, dass auf den von mir beantragten Flächen die Anwendung der chemisch-synthetische Pflanzenschutzmit-
+tel nach rechtlichen Vorgaben nicht bereits verboten ist.
+
+6R7 - Natura 2000
+
+Anwendung von durch die Schutzziele bestimmten Landbewirtschaftungsmethoden auf landwirtschaftlichen Flächen in
+Natura 2000-Gebieten.
+
+Mir ist bekannt, dass die Öko-Regelung OR7 nur zusätzlich zu der Einkommensgrundstützung beantragt werden darf.
+
+Hinweise
+
+Die für die Öko-Regelungen beantragten Flächen sind mit Ausnahme der ÖR2 und ÖR4 im Flächennachweis zusätzlich zu kennzeichnen.
+Bitte beachten Sie, dass bestimmte Kombinationen von Öko-Regelungen mit den Interventionen der 2. Säule zu Ausschlüssen oder Kür-
+zungen bei den Zahlungen der 2. Säule führen können.
+
+Programmversion: Formularversion: 1 Druckzeitpunkt: 12.05.2023 17:33:13 Seite: 1 von 1
+
+Milchhof Alt Sührkow GmbH,
+
+. Anlage Tierhaltung
+vollständige/r Name, Vorname/ Betriebs-
+bezeichnung der Antrag stellenden Person
+139530020002
+EU (Betriebs-)Nummer (BNRZD, 12 Stellen)
+Anlage Tierhaltung zum Sammelantrag 2023
+Diese Anlage ist von jedern Tierhalter auszufüllen.
+Code GVE Ant Durchschnitts-
+Schlüssel Haltung tierbestand im
+Antragsjahr 2023
+Tierart Prognose
+Rindvieh
+F- Auf-
+Kälber unter 3 Monate (ohne Mastkälber) 01 04 stallung
+auf Fest-
+mist
+Mastkälber unter 3 Monate 02 0,4
+F- Auf-
+Kälber über 3 Monate bis 6 Monate (ohne 03 04 staltung
+Mastkälber) , auf Fest-
+mist
+Mastkälber über 3 Monate bis 6 Monate 04 0,4
+Männliche Rinder über 6 Monate bis 1 Jahr 05 0,6
+Männliche Rinder über 1 Jahr bis 2 Jahre 06 0,6
+Männliche Rinder über 2 Jahre (ohne 07 1,0
+Zuchtbullen)
+G- Auf-
+Zuchtbullen über 2 Jahre 08 10 stalling
+Gülle
+Zugochsen über 2 Jahre 09 10
+Weibliche Mastrinder über 6 Monate bis 1 Jahr 10 0,6
+F- Auf-
+Weibliche Zuchtrinder über 6 Monate bis 1 Jahr " 06 stellung
+auf Fest-
+mist
+Weibliche Mastrinder über 1 Jahr bis 2 Jahre 12 0,6
+F- Auf-
+Weibliche Zuchtrinder über 1 bis 2 Jahre 13 0,6 staltung
+auf Fest-
+mist
+Weibliche Mastrinder über 2 Jahre 14 10
+F- Auf-
+Weibliche Zuchtrinder über 2 Jahre 15 1,0 stalling
+auf Fest-
+mist
+G- Auf-
+Milchkühe (einschließlich Trockensteher und zur 16 1,0 stallung
+Merzung vorgesehene Milchkühe) ‘ a
+le
+
+MV &
+
+10
+
+10
+
+35
+
+7”
+
+Programmversion: Formularversion: 1 Druckzeitpunkt: 12.05.2023 17:33:12
+
+tut gut.
+
+Durchschnitts-
+tierbestand
+
+im Zeitraum
+
+01.01. bis 30.09. des
+Antragsjahres 2023
+fürÖR4
+
+Seite: 1 von 3
+
+Milchhof Alt Sührkow GmbH,
+
+vollständige/r Name, Vorname/ Betriebs-
+bezeichnung der Antrag stellenden Person
+
+139530020002
+
+EU (Betriebs-)Nummer (BNRZD, 12 Stellen)
+
+Mutter- und Ammenkühe
+Andere weibliche Rinder über 2 Jahre
+
+Schafe und Ziegen
+
+Mutterschafe (mind. 1 x abgelammt oder mind.
+1 Jahr alt)
+
+Andere Schafe über 1 Jahr
+Mutterziegen
+
+Andere Ziegen
+
+Pfer-
+de
+
+Pferde bis 6 Monate (einschl. Ponys)
+
+Pferde über 6 Monate bis unter 3 Jahre (einschl
+Ponys)
+
+Pferde über 3 Jahre und älter (einschl. Ponys)
+
+Schwei-
+ne
+
+Zuchtsauen ab 1. Wurf ohne Ferkel
+Zuchtsauen ab 1. Wurf, Ferkel führend
+
+Ferkel vom Absetzen bis 20 kg
+
+Jungsauen ab 1. Belegung bis 1. Wurf
+
+Andere Zuchtschweine (ab 50 kg)
+Jungschweine zur Zucht (20 kg bis unter 50 kg)
+Jungschweine zur Mast (20 kg bis unter 50 kg)
+
+Mastschweine (ab 50 kg) aus eigenem Bestand
+
+Mastschweine (ab 50 kg) aus zugekauften Ferkeln
+
+Geflügel
+Küken über 3 Tage bis 6 Wochen
+
+Zur Aufzucht als Legehennen bestimmte
+Junghennen über 6 Wochen bis 6 Monate
+
+Legehennen
+
+Masthähnchen
+
+Programmversion
+
+17
+
+18
+
+22
+
+23
+
+31
+
+32
+
+40
+
+41
+
+42
+
+51
+
+52
+
+53
+
+54
+
+55
+
+56
+
+57
+
+58
+
+59
+
+61
+
+62
+
+63
+
+64
+
+Formularversion: 1
+
+Anlage Tierhaltung
+
+1,0
+
+1,0
+
+0,5
+
+1,0
+
+0,3
+
+0,3
+
+0,02
+
+0,3
+
+0,3
+
+0,06
+
+0,06
+
+0,16
+
+0,16
+
+0,003
+
+0,003
+
+0,003
+
+0,003
+
+F-Auf-
+stallung
+
+auf Fest-
+
+mist
+
+F - Auf-
+stallung
+
+auf Fest-
+
+mist
+
+Druckzeitpunkt: 12.05.2023 17:33:12
+
+MV &
+
+tut gut.
+
+Seite: 2 von 3
+
+Milchhof Alt Sührkow GmbH,
+
+vollständige/r Name, Vorname/ Betriebs-
+bezeichnung der Antrag stellenden Person
+
+139530020002
+EU (Betriebs-)Nummer (BNRZD, 12 Stellen)
+
+Enten zur Zucht
+
+Enten zur Mast
+
+Gänse zur Zucht
+
+Gänse zur Mast
+
+Puten zur Zucht
+
+Puten zur Mast
+
+Perlhühner und Wachteln
+Sonstige Tierarten
+Bienenvölker
+
+Kaninchen - Zucht
+Kaninchen- Mast
+
+Damwild
+
+Rotwild
+
+Alpaka
+
+Strauße bis 2 Jahre
+
+StrauBe Uber 2 Jahre
+
+* Erläuterung:
+
+Hinsichtlich der Art der Haltung ist anzugeben, ob
+ganzjahrige Weidehaltung (= W)
+Aufstallung auf Gülle (= G)
+oder
+
+Aufstallung auf Festmist (= F)
+
+vorliegt.
+
+Programmversion:
+
+65
+
+66
+
+67
+
+69
+
+70
+
+95
+
+96
+
+Formularversion: 1
+
+Anlage Tierhaltung
+
+0,014
+0,014
+0,014
+0,014
+0,014
+0,014
+
+0,014
+
+0,08
+0,16
+0,16
+0,15
+
+0,3
+
+Druckzeitpunkt: 12.05.2023 17:33:12
+
+MV
+
+tut gut.
+
+Seite: 3 von 3
+
+Milchhof Alt Sührkow GmbH, BEA
+
+Einkommensgrund- und Umverteilungsein- ==
+
+vollstandige/r Name, Vorname/ Betriebs- kommensstützung [en
+bezeichnung der Antrag stellenden Person
+
+tut gut.
+
+139530020002
+
+EU (Betriebs-)Nummer (BNRZD, 12 Stellen)
+
+Anlage zum Sammelantrag 2023
+Antrag auf Gewährung der Einkommensgrundstützung sowie Antrag auf Gewährung der Umverteilungseinkommensstützung
+gemäß Verordnung (EU) 2021/2115 des Europäischen Parlamentes und des Rates vom 02.12.2021
+
+Ich/Wir beantrage/n die Einkommensgrundstützung für die förderfähigen Flächen, die in der Anlage Nutzungsnachweis gekennzeichnet sind und
+die mir am 15.05.2023 zur Verfügung stehen.
+
+Zusätzlich zur Einkommensgrundstützung beantrage/n ich/wir für die gekennzeichneten förderfähigen Flächen die Umverteilungseinkommens-
+= stützung
+
+Mir/Uns ist bekannt, dass die Umverteilungsprämie für maximal 60 ha gewährt werden
+
+kann.
+Für den Fall, dass sich mein/unser Betrieb nach dem 1. Juni 2018 aufgespalten hat oder mein/unser Betrieb aus einer solchen
+Aufspaltung hervorgegangen ist, erkläre/n ich/wir, dass dies nicht einzig zu dem Zweck erfolgt ist, um in den Genuss der Umver-
+teilungseinkommensstützung zu kommen.
+Anbau von Hanf
+
+oO Ich/Wir habe/n Hanf angebaut.
+Aussaatmengen: Hanf in kg/ha
+
+Ich/Wir bestätige/n, dass das verwendete Saatgut gemäß der Richtlinie 2002/57/EG des Rates (insbesondere Art. 12) zertifiziert ist. Die Originaletiketten
+des verwendeten Saatgutes gem. 8 15 Abs. 1 GAPInVeKoS-Verordnung habe/n ich/wir beigefügt bzw. werden bei späterer Aussaat fristgerecht einge-
+reicht (Termine siehe "Merkblatt-Ausfüllhinweise Direktzahlungen_2023").
+
+‚Anbau von Hopfen
+
+Oo Ich/Wir habe/n Hopfen angebaut.
+© Ich/Wir gehöre/n der HVG Hopfenverwertungsgenossenschaft e. G. in 85283 Wolnzach an.
+© Ich/Wir gehöre/n der HVG Spalt e. G. in 91174 Spalt an
+© Ich/Wir gehöre/n keiner anerkannten Erzeugergemeinschaft für Hopfen an
+Verpflichtungen und Erklärungen
+
+Ich/Wir erkläre/n, dass
++ die Anbauflächen, für die eine Einkommensgrundstützung beantragt wird, in der Spalte "Kennz. EGS" mit „1” gekennzeichnet wurden.
+
+Mir/Uns ist bekannt, dass
+
++ die Einkommensgrundstützung nur für Flächen gewährt wird, die ganzjährig beihilfefähig sind.
+
++ beim Anbau von Nutzhanf die Aussaatflachenerklarung mit dem Sammelantrag einzureichen ist.
+
++ ich/wir beim Anbau von Nutzhanf als Betriebsinhaber den Beginn der Blüte unverzüglich schriftlich der Bundesanstalt für Landwirtschaft und Ernährung
+(BLE) mitzuteilen habe/n.
+
++ für die korrekte Ausweisung der Flächensummen (z. B. GLOZ) vorab das Betriebsprofil und die Flächenangaben korrekt und vollständig bearbeitet und
+gespeichert werden müssen.
+
+Siehe auch "Merkblatt-Ausfüllhinweise Direktzahlungen_2023"!
+
+= Ich/Wir bestätige/n, dass die von mir/uns gemachten Angaben richtig und vollständig sind und dass die Verpflichtungen und Erklärungen gelesen
+wurden und anerkannt werden.
+
+Programmversion Formularversion: 1 Druckzeitpunkt: 12.05.2023 17:33:03 Seite: 1 von 1

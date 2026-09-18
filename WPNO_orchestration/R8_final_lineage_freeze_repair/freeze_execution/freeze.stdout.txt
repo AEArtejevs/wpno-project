@@ -1,0 +1,22 @@
+{
+  "artefacts": {
+    "BASELINE_MANIFEST.json": "0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d",
+    "CONTROL_MANIFEST.sha256": "62deca0b61f2810bf73bbb9b336cb52761e5ab773334e78a4285921aab2fba65",
+    "MODE": "67885f01edc72c2991b2ae9be04afc14a743b79c9d382262620be8ac154fa5fa",
+    "state/PACKAGE_VERIFIED.json": "a1d0ddbc433c45cb6354ec11336ef6585e20a66811cf4db6ee3861aa01eeb707"
+  },
+  "attempt_number": 3,
+  "control_manifest_verified_from_disk": {
+    "entries": 914,
+    "failed": 0,
+    "missing": 0,
+    "mode_entry_ok": true,
+    "ok": 914,
+    "unlisted": 0
+  },
+  "discovery_baseline_count": 26,
+  "freeze_plan_sha256": "19c16de22e04f3d1539f7c8c6ff438ee4cfeb192d49af78555af9d95a771b282",
+  "frozen": true,
+  "project_baseline_count": 33,
+  "revision": "R8"
+}

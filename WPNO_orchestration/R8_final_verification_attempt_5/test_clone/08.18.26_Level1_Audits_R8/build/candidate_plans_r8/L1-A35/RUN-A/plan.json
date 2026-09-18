@@ -1,0 +1,300 @@
+{
+  "audit_id": "L1-A35",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Test the hypothesis that the copy operation on 17.08 caused the damage, by measuring six byte layers separately and testing each against the signature's actual cryptographic coverage boundary. The two conclusions - what the signature proves and what it does not prove - are stated separately, and the second is the substance of this audit.",
+  "static_analysis": "No module under PROJECT_ROOT is imported. The layers are enumerated in advance and kept apart throughout: (1) raw file bytes; (2) container bytes; (3) signed content bytes; (4) archive metadata - central directory, entry order, compression parameters, stored timestamps; (5) filesystem metadata - mtime, ctime, extended attributes, resource forks, quarantine attributes; (6) post-signing container additions such as AppleDouble entries.\n\nFor each layer, how it is measured and what a difference in it would and would not imply is stated before any measurement is taken.\n\nThe hypothesis needs a source copy and a destination copy. REF-11 supplies one copy of the mail attachment. Where the second side is absent the layer comparison for that pair is reported BLOCKED for want of the other side, and is never answered from one side alone.\n\nThe coverage boundary comes from L1-A34. Without it no layer can be classified as inside or outside coverage and the audit cannot conclude; that dependency is stated rather than worked around.\n\nPreparation the approved phase performs: a byte-preserving copy and a recompressing copy of a synthetic archive, a synthetic copy with one byte altered inside the signed content, and a synthetic copy with one byte of archive metadata altered outside coverage.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip"
+      },
+      "purpose": "Layer 1: the raw file bytes as they lie.",
+      "step_id": "layer_1_raw_bytes",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn-covered-content.xml"
+      },
+      "purpose": "Layer 3: the bytes the signature actually covers.",
+      "step_id": "layer_3_signed_content",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "ZIP_LIST",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip"
+      },
+      "purpose": "Layer 4: central directory, entry order, compression method and compressed size per entry, stored timestamps.",
+      "step_id": "layer_4_archive_metadata",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "STAT_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip"
+      },
+      "purpose": "Layer 5: filesystem metadata, recorded separately.",
+      "step_id": "layer_5_filesystem_metadata",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "COMPARE_BINARY_FILES",
+      "params": {
+        "left": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A35/RUN-A/controls/synthetic_source.zip",
+        "right": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A35/RUN-A/controls/synthetic_copy_preserving.zip"
+      },
+      "purpose": "A copy made by a method known to preserve bytes must compare equal at every layer. This proves the comparison does not manufacture differences.",
+      "step_id": "positive_control_byte_preserving_copy",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "COMPARE_BINARY_FILES",
+      "params": {
+        "left": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A35/RUN-A/controls/synthetic_source.zip",
+        "right": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A35/RUN-A/controls/synthetic_copy_recompressed.zip"
+      },
+      "purpose": "A copy made by a method known to recompress must differ at the container layer while the content layer stays equal. This proves the layers are genuinely separated.",
+      "step_id": "negative_control_recompressing_copy",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "OPENSSL_VERIFY_CMS",
+      "params": {
+        "anchor": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/root.pem",
+        "attime": 1787927885,
+        "cms": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A35/RUN-A/controls/synthetic_detached.p7s",
+        "content": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A35/RUN-A/controls/content_inside_coverage_mutated.bin",
+        "out": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A35/RUN-A/outputs/inside_coverage_mutation.bin",
+        "purpose": "any"
+      },
+      "purpose": "One byte altered inside the signed content: the content layer must differ and the signature must fail.",
+      "step_id": "mutation_control_inside_coverage",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "OPENSSL_VERIFY_CMS",
+      "params": {
+        "anchor": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/root.pem",
+        "attime": 1787927885,
+        "cms": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A35/RUN-A/controls/synthetic_detached.p7s",
+        "content": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/content.bin",
+        "out": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A35/RUN-A/outputs/outside_coverage_mutation.bin",
+        "purpose": "any"
+      },
+      "purpose": "One byte of archive metadata altered outside coverage: the content layer must be unchanged and the signature must still verify. Together with the step above this locates the coverage boundary.",
+      "step_id": "mutation_control_outside_coverage",
+      "timeout_seconds": 300
+    }
+  ],
+  "target": {
+    "identity_evidence": "references/manifest.json binds this archive as REF-11; it is the copy that exists",
+    "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip",
+    "sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "references/REF-11-*",
+        "work/L1-A31/preparation_r8_2026-08-28/synthetic/"
+      ],
+      "allowed_writes": [
+        "work/L1-A35/RUN-A/",
+        "evidence/L1-A35/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A35 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A35",
+      "candidate_template_identity": "L1-A35/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A35/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "/usr/bin/openssl for the coverage controls; the layer measurements are in-process",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "ARBITRARY_SHELL",
+        "CHANGE_PERMISSION",
+        "DATABASE_CONNECTION",
+        "DATABASE_WRITE",
+        "DELETE_SOURCE",
+        "DOCKER_BUILD",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_SOCKET_ACCESS",
+        "GIT_MUTATION",
+        "INSTALL_PACKAGE",
+        "LAUNCH_AGENT_MUTATION",
+        "MCP_MUTATION",
+        "MODIFY_SOURCE",
+        "N8N_MUTATION",
+        "NETWORK_REQUEST",
+        "NETWORK_UPLOAD",
+        "SERVICE_MUTATION"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [],
+      "independent_oracle": "Layer-by-layer independent hashing plus the coverage boundary from L1-A34. The signature's verification result is one input to the analysis and never its conclusion.",
+      "limitations": [
+        "REF-11 is operator-supplied material. Its chain of custody is the operator's statement recorded in references/manifest.json. Hash identity against that record is what is verified here; it is not proof of how the bytes came to exist before intake, and is not reported as such.",
+        "REF-11 supplies one copy of the mail attachment. Where a source-and-destination pair is required and only one side exists, that layer comparison is BLOCKED for want of the other side and is not answered from one side alone.",
+        "The coverage boundary is established by L1-A34. Until it exists, no layer is classified as inside or outside coverage."
+      ],
+      "method": "layer-by-layer independent hashing against the coverage boundary",
+      "notes": [],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [
+        "REF-11"
+      ],
+      "references": [
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip",
+          "sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn.xml.p7s",
+          "sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn-covered-content.xml",
+          "sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-563203462.xml",
+          "sha256": "8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/manifest.json",
+          "sha256": "4c1e9a706a5ba2a3c6f25f7ffc37963efadbe529f907865f516982ce3b54f1b4"
+        }
+      ],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": null,
+      "trust_mode": "-purpose any, with every default trust source refused",
+      "validation_time": "1772232925 (2026-02-27T22:55:25Z) for the operator-supplied material; the synthetic chain's own staged validation time for the synthetic coverage controls, whose control CA is valid from 2026-08-26. A control evaluated outside its own certificate's validity would fail on the dates and the failure would read as a verification defect."
+    },
+    {
+      "check_id": "layers_measured_separately",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "layers": [
+        "raw file bytes",
+        "container bytes",
+        "signed content bytes",
+        "archive metadata",
+        "filesystem metadata",
+        "post-signing additions"
+      ],
+      "question": "Are all six layers measured and kept apart?",
+      "required_result": "A table of layer, source value, destination value, equal, inside coverage. Twelve values for a pair, not two.",
+      "why": "A single overall comparison cannot distinguish a change that breaks the signature from one that cannot."
+    },
+    {
+      "check_id": "second_side_availability",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Is there a destination copy to compare against?",
+      "required_result": "Stated per layer. Where the second side is absent the answer is BLOCKED for want of it, not an inference from one side.",
+      "verdict_effect": "The hypothesis cannot be confirmed or refuted from one side, and the audit says so rather than choosing."
+    },
+    {
+      "check_id": "recompression_detection",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Was the container recompressed?",
+      "required_result": "Compression method and compressed size compared per entry. Identical content with different compressed sizes is recompression: it changes the container and leaves the content intact.",
+      "step_id": "layer_4_archive_metadata"
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_boolean": true,
+      "expected_difference_count": 0,
+      "expected_exit_code": 0,
+      "expected_result": "EQUAL_AT_EVERY_LAYER",
+      "fixture": "work/L1-A35/RUN-A/controls/synthetic_copy_preserving.zip",
+      "fixture_construction": "a byte-for-byte copy of the synthetic source archive",
+      "question": "Does a byte-preserving copy compare equal everywhere?",
+      "step_id": "positive_control_byte_preserving_copy",
+      "why": "EQUAL_AT_EVERY_LAYER, as the plan states."
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_boolean": false,
+      "expected_exit_code": 0,
+      "expected_failure_reason": "recompression rewrites the container, not the content",
+      "expected_result": "CONTAINER_LAYER_DIFFERS_CONTENT_LAYER_EQUAL",
+      "fixture": "work/L1-A35/RUN-A/controls/synthetic_copy_recompressed.zip",
+      "fixture_construction": "the same entries rewritten with a different compression setting",
+      "proof_the_fixture_differs": "its SHA-256 differs from the source's while every entry's uncompressed content hashes the same",
+      "question": "Does a recompressing copy differ only at the container layer?",
+      "step_id": "negative_control_recompressing_copy",
+      "why": "CONTAINER_LAYER_DIFFERS: recompression rewrites the container, so the two containers must not compare identical."
+    },
+    {
+      "check_id": "mutation_control_inside",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expected_exit_code": "NONZERO",
+      "expected_failure_reason": "the content no longer digests to the value the signature covers",
+      "expected_failure_reason_canonical": "CONTENT_DIGEST_FAILURE",
+      "expected_result": "CONTENT_LAYER_DIFFERS_AND_SIGNATURE_FAILS",
+      "fixture": "work/L1-A35/RUN-A/controls/content_inside_coverage_mutated.bin",
+      "proof_the_fixture_differs": "its SHA-256 differs from the signed content's",
+      "question": "Does a change inside coverage break the signature?",
+      "step_id": "mutation_control_inside_coverage"
+    },
+    {
+      "check_id": "mutation_control_outside",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_result": "CONTENT_LAYER_UNCHANGED_AND_SIGNATURE_VERIFIES",
+      "question": "Does a change outside coverage leave the signature intact?",
+      "step_id": "mutation_control_outside_coverage",
+      "why": "Together with the step above, this is the demonstration that the coverage boundary is real and correctly located. Either alone proves nothing about where the boundary lies."
+    },
+    {
+      "check_id": "two_conclusions_stated_separately",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "What does the signature prove, and what does it not?",
+      "required_result": "Two statements, explicitly separate. The second is the substance of this audit and is not left implied."
+    }
+  ]
+}

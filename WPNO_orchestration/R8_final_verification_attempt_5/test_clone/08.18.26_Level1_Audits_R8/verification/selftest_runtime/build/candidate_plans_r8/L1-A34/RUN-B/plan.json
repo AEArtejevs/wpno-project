@@ -1,0 +1,58 @@
+{
+  "audit_id": "L1-A34",
+  "run_phase": "RUN-B",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Independent verification of vhn.xml.p7s with the JDK PKIX validator and Bouncy Castle, taking the REF-08 anchor in its original DER so that no staging step is shared with RUN-A.",
+  "static_analysis": "RUN-B needs no DER-to-PEM staging: the JDK reads DER directly, so the one preparation step RUN-A depends on is absent here. That is part of what makes the second opinion independent rather than a second pass over the same preparation.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "AUDIT_MODULE_RUN",
+      "params": {
+        "args": [
+          "--cms",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn.xml.p7s",
+          "--content",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn-covered-content.xml",
+          "--leaf",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_leaf_from_sealed_p7s_parse_evidence.pem",
+          "--intermediate",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_intermediate_selected_manual_pem.pem",
+          "--root",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-08-safe-root-ca-2017.der",
+          "--validation-time",
+          "1772232925",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A34/RUN-B/a34_independent_vhn.json"
+        ],
+        "module": "automation.independent_cms_cli"
+      },
+      "purpose": "JDK PKIX and Bouncy Castle, DER anchor read directly.",
+      "step_id": "independent_vhn_verification",
+      "timeout_seconds": 300
+    }
+  ],
+  "target": {
+    "identity_evidence": "bound by references/manifest.json",
+    "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn.xml.p7s",
+    "sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a"
+  },
+  "test_matrix": [
+    {
+      "independence": {
+        "der_staging_required": false,
+        "library": "Bouncy Castle 1.85",
+        "path_engine": "JDK PKIX"
+      }
+    },
+    {
+      "isolation": {
+        "run_a_conclusions_supplied": false
+      }
+    },
+    {
+      "expected_exit_code": 0,
+      "step_id": "independent_vhn_verification"
+    }
+  ]
+}

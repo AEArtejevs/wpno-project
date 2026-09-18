@@ -1,0 +1,185 @@
+{
+  "audit_id": "L1-A19",
+  "run_phase": "RUN-B",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "The same 34 inputs through an independent implementation: a Java program that uses the ISO/IEC 7064 verification form - fold all eleven digits and require the final intermediate to be 1 - and never produces a check digit at all.",
+  "static_analysis": "RUN-B contains no Python validation logic. automation/a19_run_b.py writes the values out, launches the Java validator in one bounded process and reads back what it said; its import list is the evidence that it does not reach a19_run_a. The Java program implements the structural repetition rule independently as well, so both dimensions are answered twice by two different code paths.\n\nA non-string input has no representation on the Java boundary. It is answered NOT_A_STRING before the boundary and recorded as decided there, so RUN-A and RUN-B answer the same 34 inputs and the comparison has something to compare. An input that quietly disappeared would make the two runs incomparable while both looked complete.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "AUDIT_MODULE_RUN",
+      "params": {
+        "args": [
+          "--vectors",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/corpora/R7_REF04_IDNR_VECTORS.jsonl",
+          "--work-dir",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A19/RUN-B",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A19/RUN-B/run_b_results.json"
+        ],
+        "module": "automation.a19_run_b_cli"
+      },
+      "purpose": "The full vector set through the Java verification form.",
+      "step_id": "run_b_validation",
+      "timeout_seconds": 300
+    }
+  ],
+  "target": {
+    "identity_evidence": "bindings/L1-A19.binding.json records productive_target_sha256 for the operator's own copy; the file on this machine hashes to the same value, so the two are the same bytes. Which copy is productive is L1-A20's question and is not decided here.",
+    "path": "/home/ubuntu/project/WPNO/anonymization/payload_scan.py",
+    "sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "corpora/R7_REF04_IDNR_VECTORS.jsonl",
+        "tools/a19_run_b/classes/"
+      ],
+      "allowed_writes": [
+        "work/L1-A19/RUN-B/",
+        "evidence/L1-A19/RUN-B/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A19 RUN=RUN-B PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A19",
+      "candidate_template_identity": "L1-A19/RUN-B/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A19/RUN-B/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "/usr/bin/java, class WpnoIdnrValidateRunB under tools/a19_run_b/classes",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "ARBITRARY_SHELL",
+        "CHANGE_PERMISSION",
+        "DATABASE_CONNECTION",
+        "DATABASE_WRITE",
+        "DELETE_SOURCE",
+        "DOCKER_BUILD",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_SOCKET_ACCESS",
+        "GIT_MUTATION",
+        "INSTALL_PACKAGE",
+        "LAUNCH_AGENT_MUTATION",
+        "MCP_MUTATION",
+        "MODIFY_SOURCE",
+        "N8N_MUTATION",
+        "NETWORK_REQUEST",
+        "NETWORK_UPLOAD",
+        "SERVICE_MUTATION"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [],
+      "independent_oracle": "The official specification of the scheme (REF-03 ELSTER) plus independent vectors derived from REF-04 plus manual computation. Never the implementation under audit: a corpus derived from the target would agree with the target by construction.",
+      "limitations": [
+        "The REF-03 ISO/IEC 7064 item is an eleven-page iTeh preview containing normative pages 1-5. It establishes that MOD 11,10 is the designated hybrid system with one check digit; it does not contain clauses 9 and 10 and must not be described as the complete ISO standard. The operational calculation is taken from the official ELSTER specification and corroborated by REF-04's independent implementation."
+      ],
+      "method": "Java ISO/IEC 7064 MOD 11,10 verification form: fold all eleven digits, require the final intermediate to be 1",
+      "notes": [
+        "RUN-B reads nothing belonging to the other run: not its work area, not its evidence, not its results. The step list is the evidence - the only directory any step names is this phase's own.",
+        "This plan deliberately spells out no path belonging to the other run, not even to deny reading it. The independent pre-freeze verification searched the plan document for such a path and matched the sentence that promised the path was not used, which is the same mistake as a grep that finds its own invocation. A claim that cannot be told apart from what it denies is worth removing."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [
+        "REF-03",
+        "REF-04"
+      ],
+      "references": [
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-03_ELSTER_Pruefung_Steueridentifikationsnummer_2026-04-15.pdf",
+          "sha256": "f5f8a41beabb469851e26b47cdd4eb6641a9bdbc68c34a589edaa90631b37f41"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-03_ISO_IEC_7064_2003.pdf",
+          "sha256": "b88b0f84a0f1e121ff49a7640a62a4c9057e5cfedcaf790eff86c0fa5f1c31f8"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-03_BZSt_German_IdNr_Issuer_Specification.pdf",
+          "sha256": "b2ec9da8ae160d548d46eebebe0ef9ccfc9f9db204a25cea4ff3f04fc7609a0f"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-03_SOURCE_MAP.txt",
+          "sha256": "5dcd16b464c8d950f88f1ef78730379966df2d1d907f4d28db6dc0a4db9a9a0b"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-04_idnr.py",
+          "sha256": "406499181359159d39185b2703e32764c13be54c30834a7b0f172e68af76aa77"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-04_test_de_idnr.doctest",
+          "sha256": "95d71ea0dee4276908f2d32a1adf05c938164ecd836ee384dc4ffc7439a58ecd"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/corpora/R7_REF04_IDNR_VECTORS.jsonl",
+          "sha256": "6eba579879d929d0c6fe94ef05143cabca9d588a21ea33240e4e706f34e2bd5c"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/corpora/R7_REF04_IDNR_VECTORS.meta.json",
+          "sha256": "beba35ff571f55572c306fc4e10d5033bf51a4ba35ccb61e01e93b20c34e0d5a"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/manifest.json",
+          "sha256": "4c1e9a706a5ba2a3c6f25f7ffc37963efadbe529f907865f516982ce3b54f1b4"
+        }
+      ],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-B",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": null,
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "check_id": "independence",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": 0,
+      "independence": "a different language, a different runtime and the opposite formulation of the same scheme: RUN-A produces a check digit and compares it, RUN-B produces none and tests a fold invariant",
+      "isolation": "automation/a19_run_b.py imports hashing, path_policy and policy only. It does not import a19_run_a and reads no RUN-A directory.",
+      "question": "Is RUN-B independent of RUN-A?",
+      "step_id": "run_b_validation",
+      "why": "Two runs that share an implementation agree for reasons that have nothing to do with the answer being right."
+    },
+    {
+      "check_id": "same_inputs_answered",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_total_inputs_answered": 34,
+      "inputs_decided_before_the_boundary": 1,
+      "inputs_passed_to_java": 33,
+      "question": "Does RUN-B answer the same inputs as RUN-A?",
+      "required_result": "34 answers. The non-string input is answered before the Java boundary and recorded as decided there rather than dropped.",
+      "why": "A comparison over different input sets compares nothing, and a dropped input makes both runs look complete while they are not."
+    },
+    {
+      "check_id": "no_suppression",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "question": "Is any answer suppressed or defaulted?",
+      "required_result": "Every input receives an explicit category. The Java program writes one result line per input and the bridge refuses a result count that differs from the input count."
+    }
+  ]
+}

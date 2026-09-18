@@ -1,0 +1,268 @@
+{
+  "audit_id": "L1-A21",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Determine which payload scanner copy is inside the productive image or container, with image ID, digest, creation timestamps, mounts, entrypoint, command, build-context evidence and container mapping, and determine whether the image was rebuilt after the 04.08 change. Every answer comes from the operator-produced export; the Docker socket is never touched and no container command is run.",
+  "static_analysis": "No module under PROJECT_ROOT is imported and no container command is executed. The compose file and the Dockerfile are read as declarations of intent. They state what was meant to be built and mounted; only the export describes what exists, and where the two differ the difference is the finding.\n\nREF-13 supplies the operator-produced Docker metadata export, redacted before intake. Its redaction manifest records that structural evidence - image IDs and digests, timestamps, mount destinations, source paths, entrypoint, command, working directory, labels - is retained and that only secret-bearing values were replaced by category placeholders. The structural questions this audit asks are therefore answerable from it.\n\nThe image creation timestamp is compared against 2026-08-04, the date of the change in question. An image created before that date cannot contain the change, whatever the source tree now says.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "READ_FILE_RANGE",
+      "params": {
+        "length": 262144,
+        "path": "/home/ubuntu/project/WPNO/docker/litellm/docker-compose.yml",
+        "start": 0
+      },
+      "purpose": "The declared services, mounts, entrypoint and command.",
+      "step_id": "read_compose_declaration",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "READ_FILE_RANGE",
+      "params": {
+        "length": 262144,
+        "path": "/home/ubuntu/project/WPNO/docker/litellm/Dockerfile",
+        "start": 0
+      },
+      "purpose": "The declared build context and copy instructions.",
+      "step_id": "read_dockerfile_declaration",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "DOCKER_METADATA_IMPORT",
+      "params": {
+        "export": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-13_image_wpno_litellm.json",
+        "no_socket": true
+      },
+      "purpose": "Image ID, digest and creation timestamp from the operator-produced export.",
+      "step_id": "import_image_metadata",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "DOCKER_METADATA_IMPORT",
+      "params": {
+        "export": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-13_container_wpno_litellm.json",
+        "no_socket": true
+      },
+      "purpose": "Container creation timestamp, state, effective entrypoint and command.",
+      "step_id": "import_container_metadata",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "DOCKER_METADATA_IMPORT",
+      "params": {
+        "export": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-13_mounts_wpno_litellm.json",
+        "no_socket": true
+      },
+      "purpose": "Mounts as actually attached, for comparison against the compose declaration.",
+      "step_id": "import_attached_mounts",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "DOCKER_METADATA_IMPORT",
+      "params": {
+        "export": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-13_image_history_wpno_litellm.txt",
+        "no_socket": true
+      },
+      "purpose": "Build-context evidence and layer history, for the rebuild question.",
+      "step_id": "import_image_history",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "PARSE_JSON_READONLY",
+      "params": {
+        "expect_contains": "wpno_litellm",
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-13_CONTAINER_INDEX.json"
+      },
+      "purpose": "Confirm the export describes the expected image and service by name, so the evidence is about the right container.",
+      "step_id": "positive_control_export_names_expected_service",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "COUNT_TEXT_MATCHES",
+      "params": {
+        "normal_form": "NFC",
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-13_all_containers.txt",
+        "patterns": [
+          "not_a_wpno_project"
+        ],
+        "word_boundary": true
+      },
+      "purpose": "Confirm the export does not describe a different project's container. The listing is plain text, so the marker is counted in it rather than sought through a JSON parser that refuses the file.",
+      "step_id": "negative_control_export_is_not_another_project",
+      "timeout_seconds": 120
+    }
+  ],
+  "target": {
+    "identity_evidence": "bindings/L1-A21.binding.json records this path as a candidate. It is bound as the declaration side of the comparison; the export is the other side and the export is what describes reality.",
+    "path": "/home/ubuntu/project/WPNO/docker/litellm/docker-compose.yml",
+    "sha256": "cdd162fa4145c4617f8c71956cc570c50e1c9a4a1da69007b6cbd2c034281329"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "/home/ubuntu/project/WPNO/docker/litellm",
+        "references/REF-13_*"
+      ],
+      "allowed_writes": [
+        "work/L1-A21/RUN-A/",
+        "evidence/L1-A21/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A21 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A21",
+      "candidate_template_identity": "L1-A21/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A21/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "none; every step is in-process",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "DOCKER_SOCKET_ACCESS",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_BUILD",
+        "SERVICE_MUTATION"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [],
+      "independent_oracle": "The operator-produced Docker metadata export. Compose and Dockerfile are declarations of intent; only the export describes what exists.",
+      "limitations": [
+        "REF-13 was redacted before intake. Secret-bearing values are category placeholders; field names, image IDs and digests, timestamps, mount destinations, source paths, entrypoint, command, working directory and labels are retained. Every question here is structural and is answerable from what was retained.",
+        "The export describes the host at the moment it was taken. It is not a live read and does not establish the present state of a running container."
+      ],
+      "method": "operator-produced Docker metadata export, read offline",
+      "notes": [
+        "No docker, docker compose or docker inspect command is run at any point."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [
+        "REF-13"
+      ],
+      "references": [
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-13_CONTAINER_INDEX.json",
+          "sha256": "9a27a8e16b71a5fac39b3822f3264f87a48a0d65998d6760de1349ab7b019845"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-13_image_wpno_litellm.json",
+          "sha256": "89a2015a6144c760162063cb1d69acadd3c952b7a4c5244b9485fcf78fecc481"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-13_container_wpno_litellm.json",
+          "sha256": "fc1fa17077c691223ef0e3e6408ce85fde2ad917918346951e0ceb01a170ec74"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-13_mounts_wpno_litellm.json",
+          "sha256": "d2eafacf3001e5fd075fea6b087dde5176481f19b94962e20f8219fd292cfd4f"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-13_REDACTION_MANIFEST.json",
+          "sha256": "54361fb78163fca7fef3e3bef568ee06062d9a715b22d3c6d575e6f7c60dc7d4"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-13_REDACTED_MANIFEST.sha256",
+          "sha256": "3974e31db485e6e82632d61d3c7c693ba12dbd6443790fa7d4f080bc8abf9deb"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/manifest.json",
+          "sha256": "4c1e9a706a5ba2a3c6f25f7ffc37963efadbe529f907865f516982ce3b54f1b4"
+        }
+      ],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": null,
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "check_id": "declared_versus_attached_mounts",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Do the attached mounts match the compose declaration?",
+      "required_result": "Compared entry by entry. A difference between declared and attached is a finding.",
+      "step_id": "import_attached_mounts"
+    },
+    {
+      "check_id": "rebuild_after_the_change",
+      "comparison_date": "2026-08-04",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Was the image rebuilt after 2026-08-04?",
+      "required_result": "The image creation timestamp is compared against the date of the change. An image created before it cannot carry the change.",
+      "step_id": "import_image_metadata",
+      "why": "A corrected source file and an unrebuilt image is exactly the condition where the tree looks fixed and production is not."
+    },
+    {
+      "check_id": "which_copy_is_inside",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Which scanner copy is in the image?",
+      "required_result": "Answered from the export's build-context and layer evidence, or reported unanswerable from the export supplied."
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_boolean": true,
+      "expected_exit_code": 0,
+      "expected_result": "THE_EXPECTED_IMAGE_AND_SERVICE_ARE_NAMED",
+      "question": "Does the export describe the expected container?",
+      "step_id": "positive_control_export_names_expected_service",
+      "why": "The index must parse, and `expect_contains` is enforced by the handler, which fails the operation if the name is absent."
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_count": 0,
+      "expected_exit_code": 0,
+      "expected_failure_reason": "the export is scoped to this project's containers; a non-zero count names the foreign container found",
+      "expected_result": "NO_FOREIGN_PROJECT_CONTAINER_DESCRIBED",
+      "measured_field": "total_matches",
+      "question": "Does the export describe some other project?",
+      "r8_repair": "PARSE_JSON_READONLY refused this plain-text listing before evaluating expect_absent; the control measured nothing",
+      "sabotage_control": "A copy of the listing carrying the marker must make this control fail. Proven in automation/package_tests/test_r8_plan_defect_repairs.py.",
+      "step_id": "negative_control_export_is_not_another_project",
+      "why": "R8 repair. The step now counts the foreign-project marker in the plain-text listing instead of handing it to a JSON parser that refused it before the assertion was reached."
+    },
+    {
+      "check_id": "mutation_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "question": "Is a mutation control applicable?",
+      "reason": "A mutation control here would require socket access to change and re-read container state, which is forbidden. Recorded rather than omitted, as the specification requires.",
+      "required_result": "NOT_APPLICABLE"
+    }
+  ]
+}

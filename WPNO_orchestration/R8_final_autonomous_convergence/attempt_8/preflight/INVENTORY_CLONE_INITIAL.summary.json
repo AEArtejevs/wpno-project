@@ -1,0 +1,10 @@
+{
+ "counts_by_type": {
+  "dir": 401,
+  "file": 961
+ },
+ "entry_count": 1362,
+ "inventory_sha256": "39b4826a7140a8bbd7941a501609b88ad38f85d7a6b6ba184755e53dcd03d78e",
+ "out": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/preflight/INVENTORY_CLONE_INITIAL.json",
+ "root": "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_8_667636"
+}

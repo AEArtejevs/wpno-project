@@ -1,0 +1,124 @@
+{
+  "argv": [
+    "/usr/bin/java",
+    "-cp",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/tools/cms_verifier/classes:/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/tools/bouncycastle/bcprov-jdk18on-1.85.2.jar:/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/tools/bouncycastle/bcpkix-jdk18on-1.85.jar:/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/tools/bouncycastle/bcutil-jdk18on-1.85.jar",
+    "WpnoCmsVerify",
+    "--cms",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn.xml.p7s",
+    "--content",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn-covered-content.xml",
+    "--leaf",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_leaf_from_sealed_p7s_parse_evidence.pem",
+    "--root",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-08-safe-root-ca-2017.der",
+    "--validation-time",
+    "1772232925",
+    "--intermediate",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_intermediate_selected_manual_pem.pem"
+  ],
+  "exit_code": 0,
+  "inputs": {
+    "cms_sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a",
+    "content_sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23",
+    "leaf_sha256": "0f314f471bd3658e4164edd8c534f74b741055022c15ca29b50f272c194c6f3e",
+    "root_sha256": "1abddfa573cf1dcd5a75f164bc828e6d4177c448849535912eed3c7825bfc9fc"
+  },
+  "result": {
+    "all_certificates_valid_at_validation_time": {
+      "detail": {
+        "C=DE,O=BNotK,CN=SAFE Root CA 2017": "VALID_AT_VALIDATION_TIME",
+        "C=DE,O=BNotK,CN=beA VHN CA 2017": "VALID_AT_VALIDATION_TIME",
+        "C=DE,ST=Berlin,L=Berlin,O=Bundesrechtsanwaltskammer,OU=besonderes Anwaltspostfach,2.5.4.5=#13053030303031,CN=vertrauenswuerdiger Herkunftsnachweis beA": "VALID_AT_VALIDATION_TIME"
+      },
+      "passed": true
+    },
+    "bc_version": "1.8502",
+    "certificate_path_validates_against_explicit_anchor": {
+      "detail": {
+        "anchor_subject": "C=DE,O=BNotK,CN=SAFE Root CA 2017",
+        "anchors_supplied": 1,
+        "path_length": 2,
+        "revocation_checking": "DISABLED_EXPLICITLY_NO_NETWORK"
+      },
+      "passed": true
+    },
+    "checks_not_reached": [],
+    "checks_reported": [
+      "cms_parses",
+      "is_detached_signature",
+      "exactly_one_signer",
+      "signer_id_matches_supplied_leaf",
+      "signed_attributes_present",
+      "message_digest_attribute_present",
+      "message_digest_matches_content",
+      "signature_verifies",
+      "certificate_path_validates_against_explicit_anchor",
+      "all_certificates_valid_at_validation_time"
+    ],
+    "cms_parses": {
+      "detail": "SignedData parsed",
+      "passed": true
+    },
+    "cms_sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a",
+    "content_bytes": 1924,
+    "content_sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23",
+    "exactly_one_signer": {
+      "detail": "signer count 1",
+      "passed": true
+    },
+    "exit_code": 0,
+    "failed_checks": [],
+    "implementation": "Bouncy Castle + JDK PKIX",
+    "input_sha256": {
+      "cms": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a",
+      "content": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23",
+      "intermediate": "55cbcb2b1c367b7e01c3cfff38663edbf23409f7c2dfd8222529133562007b17",
+      "leaf": "0f314f471bd3658e4164edd8c534f74b741055022c15ca29b50f272c194c6f3e",
+      "root": "1abddfa573cf1dcd5a75f164bc828e6d4177c448849535912eed3c7825bfc9fc"
+    },
+    "inputs_unchanged": true,
+    "intermediate_subject": "C=DE,O=BNotK,CN=beA VHN CA 2017",
+    "is_detached_signature": {
+      "detail": "no encapsulated content, content supplied separately",
+      "passed": true
+    },
+    "java_version": "21.0.12",
+    "leaf_subject": "C=DE,ST=Berlin,L=Berlin,O=Bundesrechtsanwaltskammer,OU=besonderes Anwaltspostfach,2.5.4.5=#13053030303031,CN=vertrauenswuerdiger Herkunftsnachweis beA",
+    "message_digest_attribute_present": {
+      "detail": "present",
+      "passed": true
+    },
+    "message_digest_matches_content": {
+      "detail": {
+        "computed_over_supplied_content": "0c5452b7168fa7215543e990ffc947b208a778e9206212e76e513fe5de2af6d7fc59c5af0ecbf05b89565ecb18781bf9bf27991e07d1da7402174141f5adeef4",
+        "declared_in_signature": "0c5452b7168fa7215543e990ffc947b208a778e9206212e76e513fe5de2af6d7fc59c5af0ecbf05b89565ecb18781bf9bf27991e07d1da7402174141f5adeef4",
+        "digest_algorithm_oid": "2.16.840.1.101.3.4.2.3"
+      },
+      "passed": true
+    },
+    "network_used": false,
+    "openssl_used": false,
+    "root_subject": "C=DE,O=BNotK,CN=SAFE Root CA 2017",
+    "signature_verifies": {
+      "detail": "signature verifies against --leaf",
+      "passed": true
+    },
+    "signed_attributes_present": {
+      "detail": "4 attributes",
+      "passed": true
+    },
+    "signer_id_matches_supplied_leaf": {
+      "detail": "SignerInfo SID matches --leaf",
+      "passed": true
+    },
+    "subprocess_launched": false,
+    "system_default_trust_used": false,
+    "validation_time_epoch": 1772232925,
+    "validation_time_utc": "2026-02-27T22:55:25Z",
+    "verified": true,
+    "verifier": "WpnoCmsVerify"
+  },
+  "schema": "wpno.level1.independent-cms/1",
+  "validation_time": 1772232925
+}

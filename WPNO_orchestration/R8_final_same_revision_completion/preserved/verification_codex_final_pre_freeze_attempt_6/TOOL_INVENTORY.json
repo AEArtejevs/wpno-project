@@ -1,0 +1,282 @@
+{
+ "MISSING_TOOLS": [],
+ "UNIDENTIFIED_TOOLS": 0,
+ "clone": "/home/ubuntu/project/WPNO/.r8_lineage_verify_clone_711053",
+ "r8_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+ "rule": "a result is not a verifier. VERIFICATION_RESULT.json appears in no producing role here.",
+ "schema": "wpno.r8.lineage-repair-tool-inventory/1",
+ "tool_count": 30,
+ "tools": [
+  {
+   "BOUND_BY": "installed into the R8 verifier directory; bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/measure_path.py",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "one observation per file carrying requested path, resolved absolute path and owning root; refuses a backwards mtime",
+   "MANIFEST_COVERED": false,
+   "ROLE": "ABSOLUTE_PATH_MEASUREMENT_HELPER",
+   "SHA256": "282e62794045d6c1d2f6cc49ed2efd9aa26bdfb49dd84ca1086fc550024ea535"
+  },
+  {
+   "BOUND_BY": "covered by the build manifest; bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/build_r8_build_manifest.py",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "build/R8_BUILD_MANIFEST.sha256",
+   "MANIFEST_COVERED": true,
+   "ROLE": "BUILD_MANIFEST_BUILDER",
+   "SHA256": "51c68fe2f8d6ad798ff10f09df4ad62ac563c7ae822fb720cc2e62894a20ba2b"
+  },
+  {
+   "BOUND_BY": "installed into the R8 verifier directory; bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/make_clone.sh",
+   "EXECUTABLE": true,
+   "EXPECTED_OUTPUT": "the disposable sibling clone",
+   "MANIFEST_COVERED": false,
+   "ROLE": "CLONE_BUILDER",
+   "SHA256": "b2de81126c9165b5ae49bc46469432a2cc9aeb2365b8ac093c62ef86bb3c8897"
+  },
+  {
+   "BOUND_BY": "installed into the R8 verifier directory; bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/preflight_clone.py",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "preflight/PREFLIGHT.json",
+   "MANIFEST_COVERED": false,
+   "ROLE": "CLONE_PREFLIGHT",
+   "SHA256": "96f043d35c5e7f9296adf9d641a45e09f88851d1dd3b46e52f822defd8eab7fc"
+  },
+  {
+   "BOUND_BY": "covered by the build manifest; bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/build_r8_closure_record.py",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "build/R8_FINAL_PRE_FREEZE_CLOSURE.json",
+   "MANIFEST_COVERED": true,
+   "ROLE": "CLOSURE_RECORD_BUILDER",
+   "SHA256": "f6ed334044610df03e41250e0b8ec5f09161af78b51c07b4d4e0c47b2068777e"
+  },
+  {
+   "BOUND_BY": "installed into the R8 verifier directory; bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/inspect_writers.py",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "WRITER_INSPECTION_*.json from /proc/<pid>/fd and fdinfo",
+   "MANIFEST_COVERED": false,
+   "ROLE": "CONCURRENT_WRITER_INSPECTOR",
+   "SHA256": "4dc539cafa3d6f909cb94017425d4f25bd60681f6fa4af17f9bf7cbf1fd1e2b0"
+  },
+  {
+   "BOUND_BY": "installed into the R8 verifier directory; bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/VERIFY_PROMPT_LINEAGE_FINAL.md",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "the exact text handed to the fresh Codex process on stdin",
+   "MANIFEST_COVERED": false,
+   "ROLE": "FINAL_VERIFICATION_INSTRUCTIONS",
+   "SHA256": "9c5357fb350e2e759b48499a6e7b9c4c23566dc258da922c7e7cdeb6cb413a55"
+  },
+  {
+   "BOUND_BY": "installed into the R8 verifier directory; bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/fixed_target_check.py",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "the fixed-state check taken before any write",
+   "MANIFEST_COVERED": false,
+   "ROLE": "FIXED_TARGET_CHECK",
+   "SHA256": "0e1a2317af0714f28e07d4aa58bc51ba8aa2fc3ec84d192014ccf5569bbfe1a9"
+  },
+  {
+   "BOUND_BY": "covered by the build manifest; bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/automation/package_tests/test_freeze_order_regression.py",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "the end-to-end freeze-ordering suite, with its fixture no longer deriving the impossible lineage filename",
+   "MANIFEST_COVERED": true,
+   "ROLE": "FREEZE_ORDER_REGRESSION_SUITE",
+   "SHA256": "a3a58653afbdebdc52630fac17349fcdb65fe12b52cd78b88401e4a70b5e8513"
+  },
+  {
+   "BOUND_BY": "binds itself into the plan it writes",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/freeze_output/build_r8_freeze_plan_attempt_3.py",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "build/freeze_plan_attempt_3/FREEZE_PLAN_R8_ATTEMPT_3.json and the exact token text; issues no token of its own",
+   "MANIFEST_COVERED": false,
+   "ROLE": "FREEZE_PLAN_BUILDER",
+   "SHA256": "f84d287992d063ebd3a2203c2f680ef2c2899df273b8a5ae6787274019ab08c7"
+  },
+  {
+   "BOUND_BY": "bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/freeze_output/validate_freeze_plan_attempt_3.py",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "an independent validation record over the completed plan, and the token digest by two methods",
+   "MANIFEST_COVERED": false,
+   "ROLE": "FREEZE_PLAN_VALIDATOR",
+   "SHA256": "d59a1ee6963a6fac8b6a08c60fb11c174927ee6c015566c340f15216a3e3505a"
+  },
+  {
+   "BOUND_BY": "declared NOT_USED in the plan, so its absence is recorded rather than merely true",
+   "CANONICAL_PATH": "NOT_USED",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "none. No wrapper stands between the builder and the plan; the builder is invoked directly.",
+   "MANIFEST_COVERED": false,
+   "ROLE": "FREEZE_PLAN_WRAPPER",
+   "SHA256": "NOT_USED"
+  },
+  {
+   "BOUND_BY": "covered by the build manifest; bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/automation/controller.py",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "the only route permitted to freeze; carries the repaired step-9 gate",
+   "MANIFEST_COVERED": true,
+   "ROLE": "FREEZE_ROUTE",
+   "SHA256": "3570204ae58c86bc7e2e4c9ff088c9f7f2131fcb7e7a03a0477f5bfa27f0588a"
+  },
+  {
+   "BOUND_BY": "installed into the R8 verifier directory; bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/compare_inventories.py",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "the before/after comparison that proves write isolation",
+   "MANIFEST_COVERED": false,
+   "ROLE": "INVENTORY_COMPARATOR",
+   "SHA256": "62eaf61acd9af308e4eb91869c54a5f88c3c77604449ae2a8aa0d9c2279637e2"
+  },
+  {
+   "BOUND_BY": "installed into the R8 verifier directory; bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/inventory_r8.py",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "a full path/type/size/sha256/symlink/mode/uid/gid/mtime_ns inventory of a tree",
+   "MANIFEST_COVERED": false,
+   "ROLE": "INVENTORY_SCRIPT",
+   "SHA256": "f091a105ccb4fbd8dd508a50e9328c841eeafdca62c84db22848a985c76b1a59"
+  },
+  {
+   "BOUND_BY": "the freeze plan's predecessor_lineage block and the module digest",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/automation/freeze.py::assert_lineage_bound",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "the tuple of lineage artefacts it checked, or a FreezeError naming the exact failure",
+   "MANIFEST_COVERED": true,
+   "ROLE": "LINEAGE_GATE_FUNCTION_SOURCE",
+   "SHA256": "5b91e16dfc7899834cb11faeb93efa422c3e633bc6fc588fd0ffac41c395fc56"
+  },
+  {
+   "BOUND_BY": "covered by the build manifest; bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/automation/package_tests/test_r8_freeze_lineage.py",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "the focused lineage tests and the end-to-end run of the actual cmd_freeze_level1 route in a disposable package",
+   "MANIFEST_COVERED": true,
+   "ROLE": "LINEAGE_REGRESSION_SUITE",
+   "SHA256": "43d605265d80396ca72af9d8020b4e7ec6d80bfd196e6b01ac4f6be1683264e7"
+  },
+  {
+   "BOUND_BY": "covered by the build manifest; bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/automation/freeze.py",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "PACKAGE_LINEAGE_MODEL, required_predecessor_lineage_artifacts and assert_lineage_bound -- the one source of truth the controller, the builder and the validator all read",
+   "MANIFEST_COVERED": true,
+   "ROLE": "LINEAGE_RULE_DECLARATION",
+   "SHA256": "de8c76e4f7d139fa14b7b2cd879ccb321e1b5873ee955b6c3e22cf4c57a39df4"
+  },
+  {
+   "BOUND_BY": "covered by the build manifest; bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/automation/migration.py",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "applies the pre-freeze-bound R7 to R8 packet exactly once",
+   "MANIFEST_COVERED": true,
+   "ROLE": "MIGRATION_ROUTE",
+   "SHA256": "65b3db95c3bf9d012195ee81c946f95bae08aea0cc7545134cf1f76d0d6ba93f"
+  },
+  {
+   "BOUND_BY": "covered by the build manifest; bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/run_test_suites.py",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "build/R8_TEST_SUITE_RESULTS.json",
+   "MANIFEST_COVERED": true,
+   "ROLE": "PACKAGE_TEST_RUNNER_IN_PACKAGE",
+   "SHA256": "ba031b51914fe147e668c8aebf8de5bb8a7666700ed47d4f6ffd4b156ae5514f"
+  },
+  {
+   "BOUND_BY": "installed into the R8 verifier directory; bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/VERIFIER_SCHEMA_MAP.json",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "every key any check names, proved present in the real bytes",
+   "MANIFEST_COVERED": false,
+   "ROLE": "SCHEMA_MAP",
+   "SHA256": "a58d76a0d55a3ba6ca059e10e12a43d544b784aff1942fbda1f3f757a7653461"
+  },
+  {
+   "BOUND_BY": "installed into the R8 verifier directory; bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/build_lineage_schema_map.py",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "VERIFIER_SCHEMA_MAP.json",
+   "MANIFEST_COVERED": false,
+   "ROLE": "SCHEMA_MAP_BUILDER",
+   "SHA256": "f21e62727886b0400c34189fa82f23097ef60d52194195f4c9f4e7e6e4c3f190"
+  },
+  {
+   "BOUND_BY": "covered by the build manifest; bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/r8_static_safety_review.py",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "build/R8_STATIC_SAFETY_REPORT.json",
+   "MANIFEST_COVERED": true,
+   "ROLE": "STATIC_SAFETY_RUNNER",
+   "SHA256": "eba333a6a75cba8f7c9fd21c036909a170b666206f12ecebe4f850b93feb4231"
+  },
+  {
+   "BOUND_BY": "bound by attempt 1's own plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/freeze_plan_attempt_1/build_r8_freeze_plan.py",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "attempt 1's builder; preserved unchanged and NOT used here",
+   "MANIFEST_COVERED": false,
+   "ROLE": "SUPERSEDED_FREEZE_PLAN_BUILDER_ATTEMPT_1",
+   "SHA256": "2b40acb215ce62e11ed7bc077be8ed1142f18f70e4b98e311d7f6474489d875a"
+  },
+  {
+   "BOUND_BY": "bound by attempt 2's own plan, which is superseded",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/freeze_plan_attempt_2/build_r8_freeze_plan_attempt_2.py",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "attempt 2's builder; its plan was valid and its token validated byte-exact, but the controller refused the freeze unconsumed. Preserved unchanged and NOT used here",
+   "MANIFEST_COVERED": false,
+   "ROLE": "SUPERSEDED_FREEZE_PLAN_BUILDER_ATTEMPT_2",
+   "SHA256": "9a7fdb70d0e8d8a2a9aa7d613c3553764bc4048f4ecb9237c026213c17430342"
+  },
+  {
+   "BOUND_BY": "installed into the R8 verifier directory; bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/run_package_suite.py",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "the two-pass package-suite runner: the suite in the clone, plus in-situ re-measurement of any location-bound failure with a full inventory proof that the re-measurement wrote nothing",
+   "MANIFEST_COVERED": false,
+   "ROLE": "TEST_RUNNER",
+   "SHA256": "53580905bba7a9720fd6e34320d5395bca0ae39dab10f60dce05755d6d93c4b2"
+  },
+  {
+   "BOUND_BY": "the freeze plan's token_generation.function_source_sha256, separately from the module digest",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/automation/freeze.py::token_for",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "the exact token string; five whitespace-separated fields, no trailing newline",
+   "MANIFEST_COVERED": true,
+   "ROLE": "TOKEN_GENERATION_FUNCTION_SOURCE",
+   "SHA256": "1f9b38c4809cf59bbfd321e61940d4c0617e4fb5b2172a4aa7457a77db180360"
+  },
+  {
+   "BOUND_BY": "covered by the build manifest; bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/automation/policy.py",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "the token prefix and suffix",
+   "MANIFEST_COVERED": true,
+   "ROLE": "TOKEN_GRAMMAR_CONSTANTS",
+   "SHA256": "9b4f97e5aec7d49d35a80d5b60efe69b3263bfb6b064bd5d8f721cd58ca3e001"
+  },
+  {
+   "BOUND_BY": "installed into the R8 verifier directory; bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/build_tool_inventory.py",
+   "EXECUTABLE": false,
+   "EXPECTED_OUTPUT": "this file",
+   "MANIFEST_COVERED": false,
+   "ROLE": "TOOL_INVENTORY_BUILDER",
+   "SHA256": "f466c49bf4db914705f62ad857dc425d213e8418fd915107f557be5fa3dcb52d"
+  },
+  {
+   "BOUND_BY": "installed into the R8 verifier directory; bound by the freeze plan",
+   "CANONICAL_PATH": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/run_lineage_verification.sh",
+   "EXECUTABLE": true,
+   "EXPECTED_OUTPUT": "launches one fresh Codex process and waits on its exact PID",
+   "MANIFEST_COVERED": false,
+   "ROLE": "VERIFICATION_RUNNER",
+   "SHA256": "a2a988815efe640de7de19d69e06994e4f9a3b1056e63c21918e97bd022d85f5"
+  }
+ ],
+ "workspace": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair"
+}

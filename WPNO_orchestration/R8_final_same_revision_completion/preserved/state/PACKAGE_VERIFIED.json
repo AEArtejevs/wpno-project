@@ -1,0 +1,39 @@
+{
+  "attempt_number": 3,
+  "baseline_preview_sha256": "0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d",
+  "baseline_provenance": {
+    "discovery_members": 26,
+    "discovery_root": "/home/ubuntu/project/WPNO/08.18.26_Discovery",
+    "every_member_equals_predecessor_digest": true,
+    "every_member_rehashed_on_ubuntu": true,
+    "members_added_beyond_predecessor": 0,
+    "members_dropped": 0,
+    "membership_source": "PREDECESSOR_VERIFIED_BASELINE",
+    "predecessor_baseline_path": "lineage/R7_BASELINE_MANIFEST.json",
+    "predecessor_baseline_sha256": "0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d",
+    "project_members": 33,
+    "project_root": "/home/ubuntu/project/WPNO"
+  },
+  "control_manifest_covers_mode": true,
+  "control_manifest_entries": 914,
+  "freeze_plan_sha256": "19c16de22e04f3d1539f7c8c6ff438ee4cfeb192d49af78555af9d95a771b282",
+  "frozen_at_utc": "2026-08-28T22:52:50Z",
+  "independence_limitation": null,
+  "manifest_generation": "FINAL_STATE_STAGED_BYTES",
+  "package_sha256": "f7e181a21c902a401c55cd9f97d50c55711fbcef6c5fdf16845ab94bc8db95bb",
+  "platform": "UBUNTU",
+  "predecessor_lineage_artifacts": [
+    "lineage/R7_BASELINE_MANIFEST.json",
+    "lineage/R8_LINEAGE.sha256"
+  ],
+  "predecessor_lineage_kind": "COMPACT_DIRECT_FILE",
+  "publication_order": [
+    "BASELINE_MANIFEST.json",
+    "CONTROL_MANIFEST.sha256",
+    "state/PACKAGE_VERIFIED.json",
+    "MODE"
+  ],
+  "revision": "R8",
+  "schema": "wpno.level1.package-verified/1",
+  "verification_result_sha256": "b16ee28273c6fcc2577a9bcfd957f1e90fd6e6a496bf83b82ebfbc611bcf493a"
+}

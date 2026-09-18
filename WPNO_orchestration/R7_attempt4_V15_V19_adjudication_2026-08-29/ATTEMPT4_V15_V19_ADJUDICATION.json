@@ -1,0 +1,107 @@
+{
+  "V15": {
+    "allegation": "run_b_cross_phase_paths contained <R7>/work/L1-A19/RUN-B",
+    "corrected_predicate": "cross_phase_predicate.py, beside this record",
+    "corrected_predicate_is_generic": "it names no audit and no phase pair; it compares path components against the phase's own territory and permits a COMPARISON to read the two runs it compares",
+    "corrected_predicate_self_check": "12 cases, 0 disagreeing",
+    "disposition": "VERIFIER_PATH_CLASSIFICATION_FALSE_POSITIVE",
+    "finding": "FPF4-V15, L1-A19 independence",
+    "r7_bytes_changed_for_this_finding": "NONE",
+    "requirements": {
+      "1_no_import_or_call_into_run_a": {
+        "held": true,
+        "measured": "read from the AST: a19_run_b.py imports json, os, subprocess, hashing, path_policy, policy; a19_run_b_cli.py imports argparse, json, sys, a19_run_b, hashing, path_policy. Neither imports a19_run_a, references it as an attribute, or calls it."
+      },
+      "2_no_read_of_run_a_results_findings_reports_verdicts_or_evidence": {
+        "held": true,
+        "measured": "the RUN-B plan's steps name three absolute paths: the REF-04 vector corpus, this phase's own work directory, and its own output inside it. No path touches a RUN-A work, result or evidence location. Across all 43 plans, 534 absolute step paths were classified and 0 cross-phase reads were found."
+      },
+      "3_inputs_are_only_the_approved_packet_and_sequencing_facts": {
+        "held": true,
+        "measured": "--vectors corpora/R7_REF04_IDNR_VECTORS.jsonl, --work-dir work/L1-A19/RUN-B, --out work/L1-A19/RUN-B/run_b_results.json"
+      },
+      "4_mathematically_distinct_forms": {
+        "held": true,
+        "measured": "RUN-A (Python) defines mod_11_10_check_digit and compares computed against carried; the Java RUN-B defines finalIntermediate and requires it to be 1, and produces no check digit at all. Different language, different runtime, opposite formulation of the same scheme."
+      },
+      "5_two_sabotage_controls_distinct_and_effective": {
+        "evidence": {
+          "work/L1-A19/RUN-A/run_a_results.json": "18dff9db3c7f56b24bb9e3ad44b1d27a5b6c541fed38c1cbb0fd370a1c5c9ba2",
+          "work/L1-A19/RUN-A/sabotage_mod.json": "474e9d07aa436dcf9d3eb6c61844a7f98909aac08a5bf7ec20810097fd76f51e",
+          "work/L1-A19/RUN-A/sabotage_rep.json": "98c2991bc5910bb6c05215040e1b59b04844951585fff72a35ac571234052a4a"
+        },
+        "held": true,
+        "limitation": "These three outputs were produced by running the frozen modules through the frozen launcher during the build, not by the rehearsal. The rehearsal did not execute the two sabotage steps - see the separate observation below - so effectiveness is demonstrated by these files and by the plan's own stated expectation, and is required again of the approved live run.",
+        "measured": "a19_run_a_cli.py defines _sabotaged_check_digit, which replaces mod_11_10_check_digit with modulus 10, and _sabotaged_repetition, which replaces repetition_rule_satisfied with a constant True. Against the 34-vector corpus the first changes 11 answers and the second changes 8, on disjoint input sets: 11 modulus-only, 8 repetition-only, 0 in common. Zero changed answers would have been a measurement error rather than a passing control."
+      },
+      "6_comparison_receives_both_sealed_outputs_after_both_runs": {
+        "held": true,
+        "measured": "the COMPARISON plan reads state/progress.json, evidence/L1-A19/RUN-A/SEAL.json and evidence/L1-A19/RUN-B/SEAL.json, and computes nothing substantive itself."
+      }
+    },
+    "verifier_predicate": "wrongb = [s for s in bs if '/L1-A19/' in s and '/RUN-B/' not in s and not s.endswith('R7_REF04_IDNR_VECTORS.jsonl')]",
+    "why_it_fired": "the flagged string is the phase's own working directory and ends at RUN-B, so it contains no '/RUN-B/' substring. A directory path can never satisfy a test written for a path with a separator after the phase name. The anchor is wrong, which is the same defect as a search without a word boundary."
+  },
+  "V19": {
+    "discrepancy_found_and_recorded": "The closure record reports the package suite as 281. The suite collects 312. The figure is a stale literal in the closure record's generator, which was not updated when the last two test modules were added; it understates the suite and does not describe a different run. Correcting it would mean editing an executable, which this invocation forbids, so it is recorded rather than changed.",
+    "disposition": "SUBSTANTIVE_COVERAGE_EXISTS_BUT_MACHINE_READABLE_MAP_MISSING",
+    "finding": "FPF4-V19, executable test and static-safety coverage",
+    "independent_per_file_result": {
+      "by_role": {
+        "AUDIT_SPECIFIC_IMPLEMENTATION": 9,
+        "BUILD_TOOL": 13,
+        "EXTERNAL_HOST_EVIDENCE_IMPLEMENTATION": 1,
+        "JAVA_IMPLEMENTATION": 3,
+        "PLAN_BUILDER": 5,
+        "SHARED_CONTROL_PLANE_IMPLEMENTATION": 9,
+        "STATIC_SAFETY_TOOL": 1,
+        "TEST_SOURCE": 13
+      },
+      "entries": 54,
+      "hash_matches_reviewed": 54,
+      "reference_inputs_wrongly_counted_as_executables": 0,
+      "requirements": {
+        "1_current_hash_equals_reviewed_hash": true,
+        "2_test_evidence_against_that_hash": "the suites ran after the last executable edit and before the static-safety review that recorded these digests",
+        "3_shared_changes_covered_by_full_controller_suite": true,
+        "4_audit_specific_changes_covered_by_focused_or_affected_evidence": true,
+        "4_note": "An audit entry point is covered by the rehearsal executing it through the frozen launcher, with argv, exit code and result recorded, where no unit test imports it. That is affected-test evidence of the kind such a module has; it is recorded as rehearsal execution and not described as a unit test.",
+        "5_static_safety_covers_every_changed_executable": true,
+        "6_no_executable_changed_after_the_anchor": true
+      },
+      "uncovered_executables": []
+    },
+    "record_created": "build/FINAL_EXECUTABLE_TEST_SAFETY_COVERAGE.json",
+    "record_derivation": "deterministic, from the three records it names, by a generator held beside this adjudication",
+    "record_is_non_executable": true,
+    "record_sha256": "b30b8fc53c7f283c1b685d454e7b011fb20c6916b1989644efc53d22d908952f",
+    "tests_rerun": "NONE. Suite sizes were established by collection, not execution.",
+    "verifier_predicate": "okcounts = 503 in vals.get('controller_tests',[]) and 312 in vals.get('package_tests',[]) and 0 in vals.get('failures',[]) and 0 in vals.get('errors',[]) and 0 in vals.get('skips',[])",
+    "why_it_fired": "the harvester collected only values stored under the key names controller_tests and package_tests. The closure record stores them under unit_suite.ran and package_suite.ran, so both lists came back empty and okcounts was false. Every substantive sub-measurement it recorded passed: rehash_failures [], malformed_rows [], static_clean true, finding_count 0."
+  },
+  "not_a_replacement_pass": "This adjudication is not a verification. A fresh Codex attempt remains mandatory and must re-measure both items with the corrected predicates rather than adopt these conclusions.",
+  "package_state": {
+    "accepted_reference_bytes_changed": "NONE",
+    "candidate_plans_changed": "NONE",
+    "executable_bytes_changed": "NONE",
+    "human_decisions_changed": "NONE",
+    "predecessor_integrity_record_touched": "NO",
+    "r7_bytes_changed": [
+      "build/FINAL_EXECUTABLE_TEST_SAFETY_COVERAGE.json",
+      "build/FINAL_EXECUTABLE_TEST_SAFETY_COVERAGE.sha256",
+      "build/R7_FINAL_PRE_FREEZE_CLOSURE.json (pointer only)",
+      "build/R7_BUILD_MANIFEST.sha256 (regenerated once)"
+    ]
+  },
+  "recorded_at_utc": "2026-08-29",
+  "schema": "wpno.level1.attempt4-v15-v19-adjudication/1",
+  "scope": "attempt-4 findings FPF4-V15 and FPF4-V19 only",
+  "separate_observation_not_an_attempt_4_finding": {
+    "action_taken": "none. This invocation forbids executable changes. Reported so the operator can decide whether to require it before the freeze.",
+    "cause": "build/rehearse_candidate_plans.py treats every absolute string in a step's args as an input, including the value after --out.",
+    "effect_on_the_freeze": "none that this adjudication can demonstrate. The plans are correct, the two sabotage controls are correct and demonstrably effective, and the live phase executes them under the plan's own stated expectation. PASS_READY was never a claim that every step ran; the record states per step whether it ran and why not.",
+    "repair_would_require": "an executable change to build/rehearse_candidate_plans.py",
+    "scale": "2 of the 96 steps recorded LIVE_PHASE_MATERIAL_NOT_STAGED were skipped only because an output path did not exist. The other 94 were skipped for genuine reasons.",
+    "what": "the rehearsal did not execute L1-A19's two sabotage steps. It recorded them LIVE_PHASE_MATERIAL_NOT_STAGED with absent_inputs naming work/L1-A19/RUN-A/sabotage_modulus.json and sabotage_repetition.json - which are those steps' own --out targets, not inputs."
+  }
+}

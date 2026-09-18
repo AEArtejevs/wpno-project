@@ -1,0 +1,1205 @@
+{
+  "BASE_ATTEMPT": 8,
+  "CARRIED_FORWARD_ITEMS": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    24,
+    25,
+    26,
+    27,
+    31,
+    32,
+    33
+  ],
+  "DELTA_ITEMS": [
+    23,
+    28,
+    29,
+    30,
+    34,
+    35
+  ],
+  "EVIDENCE_MODEL": "ATTEMPT_8_BASE_PLUS_FRESH_DELTA_CLOSURE",
+  "items": [
+    {
+      "claim": "R4 CONTROL_MANIFEST verifies with zero mismatches.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 1,
+      "measured": "entries=1915; mismatching_paths=[]; malformed=[]; duplicates=[]",
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "R5 control manifest has exactly one mismatch and it is MODE.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 2,
+      "measured": "entries=14160; mismatching_paths=['MODE']; malformed=[]; duplicates=[]",
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "R6 CONTROL_MANIFEST verifies with zero mismatches.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 3,
+      "measured": "entries=14781; mismatching_paths=[]; malformed=[]; duplicates=[]",
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "R7 CONTROL_MANIFEST has 15804 entries and zero mismatches.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 4,
+      "measured": "entries=15804; mismatching_paths=[]; malformed=[]; duplicates=[]",
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "R8 carries and verifies the R7 incident record and accurately discloses the immutability break and restoration.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 5,
+      "measured": "incident_entries=15; incident_mismatches=0; malformed=[]; duplicates=[]; continuous=False; restored=True; contrary_files=[]",
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "R8 contains no full predecessor copy and generation_root resolves R4 through R8.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 6,
+      "measured": "R6_EXECUTION_exists=False; predecessor_package_like_dirs=[]; resolved={'R4': '/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/lineage/R6_EXECUTION/lineage/R5_EXECUTION/lineage/R4_EXECUTION', 'R5': '/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/lineage/R6_EXECUTION/lineage/R5_EXECUTION', 'R6': '/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/lineage/R6_EXECUTION', 'R7': '/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7', 'R8': '/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8'}; errors={}",
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "No active R8 file shares an inode with an active R7 file.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 7,
+      "measured": "active_same_path_files_compared=330; shared_inode_paths=[]",
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "Both controller and rehearsal call in_process_executor.execute.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 8,
+      "measured": "call_occurrences={'automation/controller.py': 2, 'build/rehearse_candidate_plans.py': 1}",
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "No live code path substitutes a worker-note outcome for an in-process operation.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 9,
+      "measured": {
+        "occurrence_count": 16,
+        "occurrences": [
+          {
+            "evidence": {
+              "ast_node_kinds": [
+                "Constant"
+              ]
+            },
+            "line": 798,
+            "matched_text": "\"note\": \"in-process; performed by the worker\"})",
+            "path": "automation/controller.py",
+            "rule": "a_quoted_text"
+          },
+          {
+            "evidence": {
+              "ast_node_kinds": [
+                "Constant"
+              ]
+            },
+            "line": 6,
+            "matched_text": "controller appended the note \"in-process; performed by the worker\" and moved",
+            "path": "automation/in_process_executor.py",
+            "rule": "a_quoted_text"
+          },
+          {
+            "evidence": {
+              "ast_node_kinds": [
+                "Constant"
+              ]
+            },
+            "line": 6,
+            "matched_text": "\"in-process; performed by the worker\" and continued to the next step. There",
+            "path": "automation/in_process_ops.py",
+            "rule": "a_quoted_text"
+          },
+          {
+            "evidence": {
+              "ast_node_kinds": [
+                "Constant"
+              ],
+              "exception": "MigrationError"
+            },
+            "line": 363,
+            "matched_text": "if \"performed by the worker\" in note:",
+            "path": "automation/migration.py",
+            "rule": "b_guard_refusal"
+          },
+          {
+            "evidence": {
+              "assertion": "assertRaises(MigrationError)",
+              "ast_node_kinds": [
+                "Constant"
+              ]
+            },
+            "line": 324,
+            "matched_text": "\"note\": \"in-process; performed by the worker\"}) + \"\\n\")",
+            "path": "automation/package_tests/test_r8_migration.py",
+            "rule": "b_guard_test"
+          },
+          {
+            "evidence": {
+              "ast_node_kinds": [
+                "Constant"
+              ]
+            },
+            "line": 414,
+            "matched_text": "\"note\": \"in-process; performed by the worker\"})",
+            "path": "automation/tests/fixtures/r3_control_plane/automation/controller.py",
+            "rule": "e_read_only_fixture_or_lineage"
+          },
+          {
+            "evidence": {
+              "ast_node_kinds": [
+                "Constant"
+              ]
+            },
+            "line": 772,
+            "matched_text": "\"in-process; performed by the worker\"})",
+            "path": "lineage/R7_POST_FREEZE_INCIDENT/dirty_repair_files/automation/controller.py",
+            "rule": "e_read_only_fixture_or_lineage"
+          },
+          {
+            "evidence": {
+              "ast_node_kinds": [
+                "Constant"
+              ]
+            },
+            "line": 6,
+            "matched_text": "\"in-process; performed by the worker\" and continued to the next step. There",
+            "path": "lineage/R7_POST_FREEZE_INCIDENT/dirty_repair_files/automation/in_process_ops.py",
+            "rule": "e_read_only_fixture_or_lineage"
+          },
+          {
+            "evidence": {
+              "ast_node_kinds": [
+                "Constant"
+              ],
+              "original": "automation/controller.py",
+              "shared_sha256": "167b5cf6f43bdead8314c10d9296dd462e4622d3a01a9e3c9db9498a5c972a08"
+            },
+            "line": 798,
+            "matched_text": "\"note\": \"in-process; performed by the worker\"})",
+            "path": "verification/selftest_runtime/automation/controller.py",
+            "rule": "c_byte_identical_duplicate"
+          },
+          {
+            "evidence": {
+              "ast_node_kinds": [
+                "Constant"
+              ],
+              "original": "automation/in_process_executor.py",
+              "shared_sha256": "d4fb45186aa620f09e534dc4757a11259926439db0eef2c5b42496fa20835670"
+            },
+            "line": 6,
+            "matched_text": "controller appended the note \"in-process; performed by the worker\" and moved",
+            "path": "verification/selftest_runtime/automation/in_process_executor.py",
+            "rule": "c_byte_identical_duplicate"
+          },
+          {
+            "evidence": {
+              "ast_node_kinds": [
+                "Constant"
+              ],
+              "original": "automation/in_process_ops.py",
+              "shared_sha256": "1e39e3e0fa09d88411d4e2d634f463abf2cb68b32fe94de80ee7624d601a4f72"
+            },
+            "line": 6,
+            "matched_text": "\"in-process; performed by the worker\" and continued to the next step. There",
+            "path": "verification/selftest_runtime/automation/in_process_ops.py",
+            "rule": "c_byte_identical_duplicate"
+          },
+          {
+            "evidence": {
+              "ast_node_kinds": [
+                "Constant"
+              ],
+              "original": "automation/migration.py",
+              "shared_sha256": "65b3db95c3bf9d012195ee81c946f95bae08aea0cc7545134cf1f76d0d6ba93f"
+            },
+            "line": 363,
+            "matched_text": "if \"performed by the worker\" in note:",
+            "path": "verification/selftest_runtime/automation/migration.py",
+            "rule": "c_byte_identical_duplicate"
+          },
+          {
+            "evidence": {
+              "ast_node_kinds": [
+                "Constant"
+              ]
+            },
+            "line": 414,
+            "matched_text": "\"note\": \"in-process; performed by the worker\"})",
+            "path": "verification/selftest_runtime/automation/tests/fixtures/r3_control_plane/automation/controller.py",
+            "rule": "e_read_only_fixture_or_lineage"
+          },
+          {
+            "evidence": {
+              "ast_node_kinds": [
+                "Constant"
+              ]
+            },
+            "line": 86,
+            "matched_text": "if 'performed by the worker' in line and not any(a<=no<=b for a,b in docspans): phrase.append(f'{rel}:{no}')",
+            "path": "verification_codex_final_pre_freeze_attempt_1/verify.py",
+            "rule": "d_verifier_search"
+          },
+          {
+            "evidence": {
+              "ast_node_kinds": [
+                "Constant"
+              ]
+            },
+            "line": 120,
+            "matched_text": "if \"performed by the worker\" not in src: continue",
+            "path": "verification_codex_final_pre_freeze_attempt_2/verify.py",
+            "rule": "d_verifier_search"
+          },
+          {
+            "evidence": {
+              "ast_node_kinds": [
+                "Constant"
+              ]
+            },
+            "line": 124,
+            "matched_text": "if isinstance(n,(ast.Assign,ast.AnnAssign,ast.AugAssign,ast.Return,ast.Call)) and \"performed by the worker\" in ast.get_source_segment(src,n): bad_note.append(f\"{rel}:{n.lineno}\")",
+            "path": "verification_codex_final_pre_freeze_attempt_2/verify.py",
+            "rule": "d_verifier_search"
+          }
+        ],
+        "replica_imports_from_live_paths": 0,
+        "unclassified": [],
+        "verifier_dirs_manifest_excluded": true
+      },
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "IN_PROCESS, HANDLERS, and ARGUMENT_SCHEMA contain identical operation sets.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 10,
+      "measured": "catalog=18; handlers=18; schemas=18; catalog-handler=[]; handler-catalog=[]; catalog-schema=[]; schema-catalog=[]",
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "L1-A16 uses the specified corpus novelty proof and all three novelty controls rehearsed AS_EXPECTED.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 11,
+      "measured": "operation=PROVE_SET_NOVELTY; reference_root=/home/ubuntu/project/WPNO/ap18/korpus_docx; expected_reference_entry_count=7; novelty_controls=[('positive_control_novel_case_accepted', 'AS_EXPECTED'), ('negative_control_duplicate_rejected', 'AS_EXPECTED'), ('negative_control_renamed_duplicate_rejected', 'AS_EXPECTED')]",
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "No degenerate unhashed COMPARE_HASHES exists and rehearsals record no outside-allowance reads.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 12,
+      "measured": "degenerate_compare_hashes=[]; rehearsal_steps_with_outside_reads=[]",
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "L1-A21 negative control uses boundary COUNT_TEXT_MATCHES with expected count zero.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 13,
+      "measured": "operation=COUNT_TEXT_MATCHES; word_boundary=True; expected_count=0",
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "REF-11 XML remains MIME-wrapped and R7-identical; L1-A33 extracts to work before parsing.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 14,
+      "measured": "prefix=b'MIME-Version:'; R8_sha256=8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a; R7_sha256=8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a; extract_out=/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A33/RUN-A/extracted/REF-11-563203462.part.xml; parse_path=/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A33/RUN-A/extracted/REF-11-563203462.part.xml",
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "Every control-role step has an authoritative machine-checkable expectation and coverage agrees.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 15,
+      "measured": "rederived_control_count=122; unenforced=[]; coverage_count=122; coverage_unenforced=0; coverage_machine=122/122",
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "The R7-to-R8 migration plan contains exactly the specified migrations/exclusion and matching route digest.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 16,
+      "measured": "migratable=[('L1-A31', 'RUN-A'), ('L1-A31', 'RUN-B')]; excluded=[('L1-A31', 'COMPARISON', 'EXECUTED_UNSEALED_ZERO_EVIDENCE_FROZEN_CONTROLLER_DEFECT')]; applied_before_freeze=False; recorded_route_sha256=65b3db95c3bf9d012195ee81c946f95bae08aea0cc7545134cf1f76d0d6ba93f; measured_route_sha256=65b3db95c3bf9d012195ee81c946f95bae08aea0cc7545134cf1f76d0d6ba93f",
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "R7 L1-A31 COMPARISON is EXECUTED, unsealed, and has zero evidence files.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 17,
+      "measured": "state=EXECUTED; SEAL_exists=False; evidence_files=0",
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "Controller suite passes with 0 failures, 0 errors, 0 skips.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 18,
+      "measured": {
+        "errors": 0,
+        "exit_status": 0,
+        "failures": 0,
+        "skips": 0,
+        "tests_run": 503
+      },
+      "pass": true,
+      "root": "CLONE",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "All package tests pass in the root where each assertion means what it says.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 19,
+      "measured": {
+        "EFFECTIVE_FAILURES": 0,
+        "EFFECTIVE_PASSED": 361,
+        "SUITE_CLEAN": true,
+        "clone": "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_8_667636",
+        "errors": 0,
+        "pass_a_exit_code": 0,
+        "pass_a_in_clone": {
+          "errors": 0,
+          "expected_failures": 0,
+          "failures": 1,
+          "ran": 361,
+          "skips": 0,
+          "unexpected_successes": 0
+        },
+        "pass_a_stderr_tail": [
+          "FAIL: test_no_plan_in_the_package_names_an_unconfined_output (automation.package_tests.test_r7_rehearsal_output_paths.OutputsStayInsideTheWorkArea.test_no_plan_in_the_package_names_an_unconfined_output)",
+          "----------------------------------------------------------------------",
+          "Traceback (most recent call last):",
+          "  File \"/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_8_667636/automation/package_tests/test_r7_rehearsal_output_paths.py\", line 133, in test_no_plan_in_the_package_names_an_unconfined_output",
+          "    self.assertEqual(",
+          "    ~~~~~~~~~~~~~~~~^",
+          "        self.h.unconfined_outputs(step), [],",
+          "        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+          "        \"%s/%s step %r writes outside work/\"",
+          "        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+          "        % (audit_id, phase, step[\"step_id\"]))",
+          "        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+          "AssertionError: Lists differ: ['/home/ubuntu/project/WPNO/08.18.26_Level[43 chars]ocx'] != []",
+          "",
+          "First list contains 1 additional elements.",
+          "First extra element 0:",
+          "'/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN1/output.docx'",
+          "",
+          "- ['/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN1/output.docx']",
+          "+ [] : L1-A01/RUN-A step 'run1' writes outside work/",
+          "",
+          "----------------------------------------------------------------------",
+          "Ran 361 tests in 134.176s",
+          "",
+          "FAILED (failures=1)"
+        ],
+        "pass_b_in_situ": [
+          {
+            "CLASSIFICATION": "RELOCATION_ARTEFACT_RESOLVED_IN_SITU",
+            "in_situ_passed": true,
+            "in_situ_result": {
+              "detail": [],
+              "errors": 0,
+              "failures": 0,
+              "ran": 1,
+              "skips": 0
+            },
+            "in_situ_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+            "in_situ_wrote_nothing": true,
+            "inventory_after": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/temporary/insitu_after_automation.package_tests.test_r7_rehearsal_output_paths.OutputsStayInsideTheWorkArea.test_no_plan_in_the_package_names_an_unconfined_output.json",
+            "inventory_before": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/temporary/insitu_before_automation.package_tests.test_r7_rehearsal_output_paths.OutputsStayInsideTheWorkArea.test_no_plan_in_the_package_names_an_unconfined_output.json",
+            "inventory_compare": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/temporary/insitu_compare_automation.package_tests.test_r7_rehearsal_output_paths.OutputsStayInsideTheWorkArea.test_no_plan_in_the_package_names_an_unconfined_output.json",
+            "inventory_delta": {
+              "contents_changed": 0,
+              "gid_changed": 0,
+              "modes_changed": 0,
+              "mtimes_changed": 0,
+              "paths_added": 0,
+              "paths_differing": 0,
+              "paths_removed": 0,
+              "symlink_targets_changed": 0,
+              "uid_changed": 0
+            },
+            "pass_a_outcome": "FAILURE",
+            "pass_a_trace_tail": [
+              "First list contains 1 additional elements.",
+              "First extra element 0:",
+              "'/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN1/output.docx'",
+              "",
+              "- ['/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN1/output.docx']",
+              "+ [] : L1-A01/RUN-A step 'run1' writes outside work/"
+            ],
+            "test_id": "automation.package_tests.test_r7_rehearsal_output_paths.OutputsStayInsideTheWorkArea.test_no_plan_in_the_package_names_an_unconfined_output"
+          }
+        ],
+        "r8_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+        "schema": "wpno.r8.attempt8-package-suite/1",
+        "skips": 0,
+        "tests_failing_in_clone": 1,
+        "tests_resolved_in_situ": 1,
+        "tests_run": 361,
+        "tests_unresolved": 0,
+        "unresolved": []
+      },
+      "pass": true,
+      "root": "CLONE + ORIGINAL for location-bound failure",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "Static safety reports zero findings and matches the recorded report except location/time.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 20,
+      "measured": {
+        "clean": true,
+        "exit_status": 0,
+        "fields_match_except_allowed": true,
+        "finding_count": 0,
+        "output_files": [
+          "R8_STATIC_SAFETY_REPORT.json"
+        ],
+        "predecessor_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7"
+      },
+      "pass": true,
+      "root": "CLONE (compared with ORIGINAL)",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "43 plans exist and coverage reports no missing, duplicate, or unknown plan.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 21,
+      "measured": {
+        "duplicate_count": 0,
+        "duplicates": [],
+        "missing": [],
+        "missing_count": 0,
+        "plans": 43,
+        "unknown": [],
+        "unknown_count": 0
+      },
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "Rehearsal reports 43 of 43 phases PASS_READY.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 22,
+      "measured": {
+        "per_phase_ready": 43,
+        "reported": 43,
+        "required": 43
+      },
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "In-process evidence is complete and invocation count equals step count.",
+      "evidence_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/IN_PROCESS_COUNT_RECONCILIATION.json",
+      "evidence_sha256": "1450107c54936e3a90151b666e9f75d7a9dd765a21cf926a6325ee01183fc124",
+      "id": 23,
+      "measured": {
+        "phase_records": 43,
+        "plan_files": 43,
+        "predicates": [
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": [],
+            "measured": [],
+            "predicate": "in-process operations without a handler",
+            "source": "automation.operation_catalog.IN_PROCESS vs automation.in_process_ops.HANDLERS"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": [],
+            "measured": [],
+            "predicate": "in-process rehearsal steps not executed",
+            "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports[*].steps[*]"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": [],
+            "measured": [],
+            "predicate": "rehearsal steps carrying the note-only fallback",
+            "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports[*].steps[*]"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": 43,
+            "measured": 43,
+            "predicate": "rehearsal phase records",
+            "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": 169,
+            "measured": 169,
+            "predicate": "sum of per-phase IN_PROCESS_HANDLER_INVOCATIONS",
+            "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports[*]"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": [],
+            "measured": [],
+            "predicate": "phases marked HOLLOW",
+            "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports[*]"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": 0,
+            "measured": 0,
+            "predicate": "sum of per-phase NOTE_ONLY_IN_PROCESS_STEPS",
+            "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports[*]"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": 169,
+            "measured": 169,
+            "predicate": "sum of per-phase IN_PROCESS_STEP_COUNT",
+            "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports[*]"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": 0,
+            "measured": 0,
+            "predicate": "sum of per-phase IN_PROCESS_STEPS_WITHOUT_EVIDENCE",
+            "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports[*]"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": 169,
+            "measured": 169,
+            "predicate": "in-process steps derived from the 43 plans",
+            "source": "build/candidate_plans_r8/*/*/plan.json + automation.operation_catalog.IN_PROCESS"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": [],
+            "measured": [],
+            "predicate": "in-process rows not executed in the R8 rehearsal",
+            "source": "build/IN_PROCESS_COUNT_RECONCILIATION.json$.steps[*]"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": 169,
+            "measured": 169,
+            "predicate": "recon.R8_IN_PROCESS_HANDLER_INVOCATIONS",
+            "source": "build/IN_PROCESS_COUNT_RECONCILIATION.json"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": 0,
+            "measured": 0,
+            "note": "the two counts must reconcile with nothing left over",
+            "predicate": "recon.explanation.UNEXPLAINED_COUNT_DIFFERENCE",
+            "source": "build/IN_PROCESS_COUNT_RECONCILIATION.json"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": 169,
+            "measured": 169,
+            "predicate": "recon rows -> handler invocations",
+            "source": "build/IN_PROCESS_COUNT_RECONCILIATION.json$.steps[*]"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": 169,
+            "measured": 169,
+            "note": "derived from the rows; a summary that quotes itself is not evidence",
+            "predicate": "recon rows -> unique in-process plan steps",
+            "source": "build/IN_PROCESS_COUNT_RECONCILIATION.json$.steps[*]"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": 311,
+            "measured": 311,
+            "predicate": "recon.R8_TOTAL_PLAN_STEPS",
+            "source": "build/IN_PROCESS_COUNT_RECONCILIATION.json"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": 169,
+            "measured": 169,
+            "predicate": "recon.R8_UNIQUE_IN_PROCESS_PLAN_STEPS",
+            "source": "build/IN_PROCESS_COUNT_RECONCILIATION.json"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": 169,
+            "measured": 169,
+            "predicate": "rehearsal.IN_PROCESS_HANDLER_INVOCATIONS",
+            "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": 169,
+            "measured": 169,
+            "predicate": "rehearsal.IN_PROCESS_STEP_COUNT",
+            "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": [],
+            "measured": [],
+            "predicate": "rehearsal.HOLLOW_PHASES",
+            "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": 0,
+            "measured": 0,
+            "predicate": "rehearsal.NOTE_ONLY_IN_PROCESS_STEPS",
+            "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": 0,
+            "measured": 0,
+            "predicate": "rehearsal.REQUIRED_IN_PROCESS_STEPS_WITHOUT_EVIDENCE",
+            "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json"
+          }
+        ],
+        "reconciliation_rows": 311
+      },
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "FRESH_DELTA"
+    },
+    {
+      "claim": "No hollow phases and live state unchanged.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 24,
+      "measured": {
+        "HOLLOW_PHASES": [],
+        "LIVE_STATE_UNCHANGED": true
+      },
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "Progress contains 35 audits and 43 NOT_STARTED phases.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 25,
+      "measured": {
+        "audits": 35,
+        "phases": 43,
+        "state_counts": {
+          "NOT_STARTED": 43
+        }
+      },
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "No approvals, results, evidence, or approval token text exists.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 26,
+      "measured": {
+        "approval_rows": 0,
+        "evidence_files": 0,
+        "result_files": 0,
+        "token_files": []
+      },
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "Build manifest verifies and exactly equals builder scope.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 27,
+      "measured": {
+        "duplicates": [],
+        "entries": 724,
+        "listed_not_physical": [],
+        "malformed": [],
+        "manifest_sha256": "6dfd1af689754be61f2ea6ef77f01d2e5bdb8929ef8c0799e15db203755b945a",
+        "mismatches": [],
+        "physical_not_listed": []
+      },
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "Freeze mechanism capability and dummy-token round trip.",
+      "evidence_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/automation/freeze.py",
+      "evidence_sha256": "ef874c59beede91b676caafbe4b14779a04c275487e5c015fe2df8c2fbd5457d",
+      "id": 28,
+      "measured": {
+        "baseline_discovery_members": 26,
+        "baseline_project_members": 33,
+        "dummy_token_field_count": 5,
+        "predicates": [
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": "R8",
+            "measured": "R8",
+            "predicate": "freeze.PACKAGE_REVISION",
+            "source": "automation/freeze.py"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": "UBUNTU",
+            "measured": "UBUNTU",
+            "predicate": "freeze.PACKAGE_PLATFORM",
+            "source": "automation/freeze.py"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": "0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d",
+            "measured": "0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d",
+            "predicate": "predecessor baseline digest equals lineage r7 record",
+            "source": "automation/freeze.py PREDECESSOR_BASELINE_REL vs lineage/R8_LINEAGE.json $.r7.baseline_manifest_sha256"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": false,
+            "measured": false,
+            "predicate": "build_baseline_from_predecessor raised",
+            "source": "automation/freeze.py"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": true,
+            "measured": true,
+            "predicate": "baseline project members > 0",
+            "source": "automation/freeze.py"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": true,
+            "measured": true,
+            "predicate": "baseline discovery members > 0",
+            "source": "automation/freeze.py"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": true,
+            "measured": true,
+            "predicate": "token_for/parse_freeze_token round-trip on DUMMY digests",
+            "source": "automation/freeze.py"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": 5,
+            "measured": 5,
+            "predicate": "dummy token field count",
+            "source": "automation/freeze.py token_for"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": false,
+            "measured": false,
+            "predicate": "dummy token ends with a newline",
+            "source": "automation/freeze.py"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": 0,
+            "measured": 0,
+            "predicate": "recorded freeze attempts",
+            "source": "state/freeze_attempts.jsonl"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": "GENERATED_UNVERIFIED",
+            "measured": "GENERATED_UNVERIFIED",
+            "predicate": "MODE",
+            "source": "MODE"
+          }
+        ],
+        "real_token_computed": false
+      },
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "FRESH_DELTA"
+    },
+    {
+      "claim": "No sibling R9 exists.",
+      "evidence_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/MODE",
+      "evidence_sha256": "0dba1cc2928ed5a2a3259b8d9aa4188feb6b775c91d7eab990bb75fa49cd6eee",
+      "id": 29,
+      "measured": {
+        "predicates": [
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": false,
+            "measured": false,
+            "predicate": "08.18.26_Level1_Audits_R9 exists",
+            "source": "the directory beside the package"
+          }
+        ]
+      },
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "FRESH_DELTA"
+    },
+    {
+      "claim": "Exactly one init-revision transition exists.",
+      "evidence_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/transitions.jsonl",
+      "evidence_sha256": "76fc0d6eb5706456c9af3142115edd67aa3536139791e35d80fb42dff1129313",
+      "id": 30,
+      "measured": {
+        "predicates": [
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": 1,
+            "measured": 1,
+            "predicate": "state/transitions.jsonl rows",
+            "source": "state/transitions.jsonl"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": [
+              "init-revision"
+            ],
+            "measured": [
+              "init-revision"
+            ],
+            "predicate": "transition routes",
+            "source": "state/transitions.jsonl"
+          }
+        ]
+      },
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "FRESH_DELTA"
+    },
+    {
+      "claim": "Manifest-covered ORIGINAL bytes are unchanged.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 31,
+      "measured": {
+        "after_fold_sha256": "e7d3d32e70b9782c0da9d04be31ba68b4f1ace29ddae4fbbe2495b5e565b97eb",
+        "before_fold_sha256": "e7d3d32e70b9782c0da9d04be31ba68b4f1ace29ddae4fbbe2495b5e565b97eb",
+        "changed_paths": [],
+        "manifest_entries": 724
+      },
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "No ORIGINAL path metadata or contents changed.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 32,
+      "measured": {
+        "EQUAL": true,
+        "R8 contents changed": 0,
+        "R8 modes changed": 0,
+        "R8 mtimes changed": 0,
+        "R8 paths added": 0,
+        "R8 paths removed": 0,
+        "R8 paths written": 0,
+        "R8 symlink targets changed": 0,
+        "inventory_paths": 1362
+      },
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "The absolute-path write-isolation control is live.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+      "evidence_sha256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+      "id": 33,
+      "measured": {
+        "after": {
+          "exists": true,
+          "mode": "0o664",
+          "mtime_ns": 1787945105532801228,
+          "requested_path": "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_8_667636/verification/selftest_runtime/work/_selftest/unicode_fs_behaviour.txt",
+          "requested_was_absolute": true,
+          "resolved_path": "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_8_667636/verification/selftest_runtime/work/_selftest/unicode_fs_behaviour.txt",
+          "root": "CLONE",
+          "roots_declared": {
+            "CLONE": "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_8_667636",
+            "ORIGINAL": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8"
+          },
+          "schema": "wpno.r8.attempt8-observation/1",
+          "sha256": "a0cc46c89c46df86716561b22e637b0f2e26c52ccef9d5baf1652849a1037210",
+          "size": 49,
+          "type": "file"
+        },
+        "before": {
+          "exists": true,
+          "mode": "0o664",
+          "mtime_ns": 1787935556841911690,
+          "requested_path": "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_8_667636/verification/selftest_runtime/work/_selftest/unicode_fs_behaviour.txt",
+          "requested_was_absolute": true,
+          "resolved_path": "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_8_667636/verification/selftest_runtime/work/_selftest/unicode_fs_behaviour.txt",
+          "root": "CLONE",
+          "roots_declared": {
+            "CLONE": "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_8_667636",
+            "ORIGINAL": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8"
+          },
+          "schema": "wpno.r8.attempt8-observation/1",
+          "sha256": "a0cc46c89c46df86716561b22e637b0f2e26c52ccef9d5baf1652849a1037210",
+          "size": 49,
+          "type": "file"
+        },
+        "bytes_match_original_after": true,
+        "comparison": {
+          "EVIDENCE_VALID": true,
+          "after": {
+            "exists": true,
+            "mode": "0o664",
+            "mtime_ns": 1787945105532801228,
+            "requested_path": "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_8_667636/verification/selftest_runtime/work/_selftest/unicode_fs_behaviour.txt",
+            "requested_was_absolute": true,
+            "resolved_path": "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_8_667636/verification/selftest_runtime/work/_selftest/unicode_fs_behaviour.txt",
+            "root": "CLONE",
+            "roots_declared": {
+              "CLONE": "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_8_667636",
+              "ORIGINAL": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8"
+            },
+            "schema": "wpno.r8.attempt8-observation/1",
+            "sha256": "a0cc46c89c46df86716561b22e637b0f2e26c52ccef9d5baf1652849a1037210",
+            "size": 49,
+            "type": "file"
+          },
+          "before": {
+            "exists": true,
+            "mode": "0o664",
+            "mtime_ns": 1787935556841911690,
+            "requested_path": "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_8_667636/verification/selftest_runtime/work/_selftest/unicode_fs_behaviour.txt",
+            "requested_was_absolute": true,
+            "resolved_path": "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_8_667636/verification/selftest_runtime/work/_selftest/unicode_fs_behaviour.txt",
+            "root": "CLONE",
+            "roots_declared": {
+              "CLONE": "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_8_667636",
+              "ORIGINAL": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8"
+            },
+            "schema": "wpno.r8.attempt8-observation/1",
+            "sha256": "a0cc46c89c46df86716561b22e637b0f2e26c52ccef9d5baf1652849a1037210",
+            "size": 49,
+            "type": "file"
+          },
+          "content_changed": false,
+          "mtime_moved": true,
+          "mtime_unchanged": false,
+          "problems": [],
+          "resolved_path_stable": true,
+          "schema": "wpno.r8.attempt8-observation-compare/1"
+        },
+        "original_sha256": "a0cc46c89c46df86716561b22e637b0f2e26c52ccef9d5baf1652849a1037210"
+      },
+      "pass": true,
+      "root": "CLONE",
+      "source": "ATTEMPT_8_DURABLE"
+    },
+    {
+      "claim": "Every verification and freeze tool is identified and hash-correct.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/TOOL_INVENTORY.json",
+      "evidence_sha256": "aa9ef12c3c6208060fc941084fa26e986f5f492a6a749e38b21b4e9bc73eb710",
+      "id": 34,
+      "measured": {
+        "predicates": [
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": 0,
+            "measured": 0,
+            "predicate": "TOOL_INVENTORY.UNIDENTIFIED_TOOLS",
+            "source": "TOOL_INVENTORY.json"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": [],
+            "measured": [],
+            "predicate": "tool inventory rows whose digest does not match disk",
+            "source": "TOOL_INVENTORY.json"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": [],
+            "measured": [],
+            "predicate": "required tool roles absent from the inventory",
+            "source": "TOOL_INVENTORY.json"
+          },
+          {
+            "OUTCOME": "PASS",
+            "PASS": true,
+            "expected": [],
+            "measured": [],
+            "predicate": "VERIFICATION_RESULT.json labelled as a verifier",
+            "source": "TOOL_INVENTORY.json"
+          }
+        ]
+      },
+      "pass": true,
+      "root": "WORKSPACE",
+      "source": "FRESH_DELTA"
+    },
+    {
+      "claim": "No concurrent writable descriptor exists below ORIGINAL.",
+      "evidence_path": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/codex_output/WRITER_INSPECTION.json",
+      "evidence_sha256": "e039f42618cabbb105eda8cc63c7cffd10ea84541f5fae8cee27514daf40ccc4",
+      "id": 35,
+      "measured": {
+        "BLOCKING_COUNT": 0,
+        "blocking": [],
+        "method": "/proc/<pid>/fd plus /proc/<pid>/fdinfo/<fd>",
+        "own_pid_excluded": 2,
+        "pgrep_used": false,
+        "pids_inspected": 1,
+        "pids_uninspectable": 0,
+        "predicates": [
+          {
+            "PASS": true,
+            "expected": 0,
+            "measured": 0,
+            "predicate": "processes holding a writable descriptor below R8",
+            "source": "/proc/<pid>/fd + fdinfo"
+          },
+          {
+            "PASS": true,
+            "expected": false,
+            "measured": false,
+            "predicate": "writer inspection used pgrep -f",
+            "source": "/proc/<pid>/fd + fdinfo"
+          }
+        ],
+        "uninspectable": []
+      },
+      "pass": true,
+      "root": "ORIGINAL",
+      "source": "FRESH_DELTA"
+    }
+  ],
+  "manifest_entries_verified": 724,
+  "manifest_sha256_verified": "6dfd1af689754be61f2ea6ef77f01d2e5bdb8929ef8c0799e15db203755b945a",
+  "overall_pass": true,
+  "package_unchanged_by_this_verification": true,
+  "r8_paths_written_during_this_closure": 0,
+  "revision": "R8",
+  "schema": "wpno.level1.codex-verification/2",
+  "stage": "PRE_FREEZE_FINAL",
+  "status": "VERIFICATION_PASS_PRE_FREEZE_R8_FINAL",
+  "unresolved_findings": [],
+  "verified_utc": "2026-08-28T20:23:55.547986Z"
+}

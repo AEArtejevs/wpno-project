@@ -1,0 +1,221 @@
+{
+  "audit_id": "L1-A26",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "For each of the nine error classes in section ten, identify its exact definition, the actual detection implementation, the actual caller, the actual test, a positive and a negative example, the false-positive and false-negative risk, and any mismatch with machine reality. Where no implementation exists the class is recorded undetected and the examples are constructed anyway, so a future implementation has a test set.",
+  "static_analysis": "No module under PROJECT_ROOT is imported. The nine classes are enumerated from section ten itself and each is stated in its own terms before anything is searched for: the missing word boundary; the regex without a quantifier; one court's rule applied to all; the test that exits zero without asserting; the counter that counts only what it knows; find without parentheses; the check that counts its own invocation; green tests that never touch the new code; and the same file in several places.\n\nFor each class the detection implementation is looked for by a boundary-anchored search; absence is recorded as absence rather than as a class that does not apply.\n\nPreparation the approved phase performs: for every class, a positive example that must be detected and a negative example that must not be, written under work/L1-A26/RUN-A/examples/, plus a sandbox copy of any detection implementation found so its rule can be neutralised without touching the original.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "READ_FILE_RANGE",
+      "params": {
+        "length": 262144,
+        "path": "/home/ubuntu/project/WPNO/CLAUDE.md",
+        "start": 0
+      },
+      "purpose": "Enumerate the nine classes from the file itself.",
+      "step_id": "read_section_ten",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "COUNT_TEXT_MATCHES",
+      "params": {
+        "include_globs": [
+          "*.py",
+          "*.sh",
+          "*.yml",
+          "*.yaml",
+          "*.json",
+          "*.toml",
+          "*.cfg",
+          "*.ini",
+          "*.plist",
+          "Dockerfile*"
+        ],
+        "normal_form": "NFC",
+        "patterns": [
+          "word_boundary",
+          "\\\\b",
+          "re.compile",
+          "__pycache__",
+          "payload_scan"
+        ],
+        "root": "/home/ubuntu/project/WPNO",
+        "word_boundary": true
+      },
+      "purpose": "Look for a detection implementation for each class. Absence is recorded as absence.",
+      "step_id": "search_detection_implementations",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--mode",
+          "positive"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A26/RUN-A/examples/run_class_examples.py"
+      },
+      "purpose": "Per class, the positive example must be detected by its implementation where one exists.",
+      "step_id": "run_positive_examples",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--mode",
+          "negative"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A26/RUN-A/examples/run_class_examples.py"
+      },
+      "purpose": "Per class, the negative example must not be detected.",
+      "step_id": "run_negative_examples",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--mode",
+          "neutralised"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A26/RUN-A/examples/run_class_examples.py"
+      },
+      "purpose": "Where a detection exists, neutralise its rule in a sandbox copy and confirm the positive example stops being detected. This proves the detection was doing the work.",
+      "step_id": "mutation_control_neutralise_rule",
+      "timeout_seconds": 300
+    }
+  ],
+  "target": {
+    "identity_evidence": "bindings/L1-A23.binding.json records productive_target_sha256 for the operator's own copy and the file on this machine hashes to the same value, so the two are the same bytes. File identity is not production identity.",
+    "path": "/home/ubuntu/project/WPNO/CLAUDE.md",
+    "sha256": "f6734d0d0f7a25933a87efeec89cfdb2ba97f79956a546c13de9a94fac3d1ef8"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "/home/ubuntu/project/WPNO/CLAUDE.md",
+        "/home/ubuntu/project/WPNO"
+      ],
+      "allowed_writes": [
+        "work/L1-A26/RUN-A/",
+        "evidence/L1-A26/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A26 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A26",
+      "candidate_template_identity": "L1-A26/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A26/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "/usr/bin/python3 for the sandbox example runner",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "ARBITRARY_SHELL",
+        "CHANGE_PERMISSION",
+        "DATABASE_CONNECTION",
+        "DATABASE_WRITE",
+        "DELETE_SOURCE",
+        "DOCKER_BUILD",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_SOCKET_ACCESS",
+        "GIT_MUTATION",
+        "INSTALL_PACKAGE",
+        "LAUNCH_AGENT_MUTATION",
+        "MCP_MUTATION",
+        "MODIFY_SOURCE",
+        "N8N_MUTATION",
+        "NETWORK_REQUEST",
+        "NETWORK_UPLOAD",
+        "SERVICE_MUTATION"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [],
+      "independent_oracle": "The class definitions as written in section ten, plus examples constructed by this audit. No prior report under docs/ is an oracle.",
+      "limitations": [],
+      "method": "per-class definition, implementation search and example matrix",
+      "notes": [
+        "Every textual search is anchored with a word boundary. CLAUDE.md section 10 records the cost of omitting one: a bare *bea* matched Projektbeauftragung, Beanstandung and Bearbeitung - twelve hits, none real. A search whose boundary handling is not stated is not a search.",
+        "A class with no implementation is recorded undetected and still receives its two examples."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [],
+      "references": [],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": null,
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "check_id": "nine_classes_enumerated",
+      "classes_expected": 9,
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Are all nine classes covered, each in its own terms?",
+      "required_result": "Definition, implementation, caller, test, positive example, negative example, false-positive risk and false-negative risk per class.",
+      "step_id": "read_section_ten"
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_result": "EACH_POSITIVE_EXAMPLE_DETECTED_BY_ITS_IMPLEMENTATION",
+      "question": "Is each positive example detected where an implementation exists?",
+      "step_id": "run_positive_examples"
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_failure_reason": "the negative example does not instantiate the class; a detection here is a false positive and is reported as one",
+      "expected_result": "NO_NEGATIVE_EXAMPLE_DETECTED",
+      "question": "Is each negative example left undetected?",
+      "step_id": "run_negative_examples"
+    },
+    {
+      "check_id": "mutation_control",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_result": "THE_POSITIVE_EXAMPLE_STOPS_BEING_DETECTED",
+      "fixture": "a sandbox copy of the detection implementation with its rule neutralised",
+      "not_applicable_where": "no implementation exists for a class; recorded as not applicable with that reason",
+      "proof_the_fixture_differs": "the sandbox copy's SHA-256 differs from the original's and the neutralised line is recorded",
+      "question": "Does neutralising a rule stop its detection?",
+      "step_id": "mutation_control_neutralise_rule",
+      "zero_changed_results_is": "a measurement error: the detection was not what produced the result"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "attempt_number": 2,
+  "baseline_discovery_members": 26,
+  "baseline_project_members": 33,
+  "bound_artifacts": 236,
+  "bound_artifacts_all_matched": true,
+  "freeze_plan_path": "build/freeze_plan_attempt_2/FREEZE_PLAN_R8_ATTEMPT_2.json",
+  "freeze_plan_sha256": "8c98adab298c70b9b9c978a55314bfcf09d82e69542f0a805f812085cbe7b309",
+  "package_sha256": "6dfd1af689754be61f2ea6ef77f01d2e5bdb8929ef8c0799e15db203755b945a",
+  "required_human_token": "<REDACTED: printed to the operator once; not recorded>",
+  "token_consumed": false,
+  "token_issued_by_this_script": false,
+  "token_recorded": false,
+  "verification_manifest_sha256": "db10751b497684b5619a2face39545117dce65e7f715a83dda5894aaa1670523",
+  "verification_result_sha256": "c8a09a85f97429a524a2b2a52f6c88b5fc06a844ba9cc0afe241b4adb298924d"
+}

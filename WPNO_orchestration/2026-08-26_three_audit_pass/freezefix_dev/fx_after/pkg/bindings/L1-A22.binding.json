@@ -1,0 +1,56 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A22",
+  "binding_status": "TARGET_CONFIRMED",
+  "logical_targets": [
+    "Pytest golden-test collection failure and expected result if collected"
+  ],
+  "candidate_paths": [
+    "/Users/martinotten/WPNO/pytest.ini",
+    "/Users/martinotten/WPNO/anonymization/golden/payload_scan_golden_test.py",
+    "/Users/martinotten/WPNO/anonymization/golden/payload_scan.py"
+  ],
+  "productive_target": "/Users/martinotten/WPNO/pytest.ini",
+  "productive_target_sha256": "3259aae6b1feea94c78ee30440a63e82f2e4d5a4caa5a291820307c83323f227",
+  "productive_target_evidence": [
+    {
+      "claim": "File identity confirmed by name, symbol match and SHA-256.",
+      "note": "File identity is NOT production identity. No execution-path evidence establishes that this file is the copy invoked in production. See discovery_reconciliation/04_PRODUCTION_PATH_RECONCILIATION.md."
+    }
+  ],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [],
+  "external_evidence_required": [],
+  "unresolved_questions": [],
+  "discovery_drift": [
+    "D-08"
+  ],
+  "source_evidence": [
+    {
+      "source_path": "/Users/martinotten/WPNO/pytest.ini",
+      "sha256": "3259aae6b1feea94c78ee30440a63e82f2e4d5a4caa5a291820307c83323f227",
+      "locator": "whole file",
+      "evidence_type": "config",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/anonymization/golden/payload_scan_golden_test.py",
+      "sha256": "dc83acf66bdb9aab18f03efaa1b292c1f9a6b1f405439ecc4dd928fd069960b0",
+      "locator": "the golden test",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/anonymization/golden/payload_scan.py",
+      "sha256": "ab29a4fa3e972f865f0f3dfb10887888a0464922070454e02584a34a4c54ba0a",
+      "locator": "the golden copy it tests",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    }
+  ],
+  "replications": 1,
+  "risk": "CRITICAL",
+  "execution_order": 8
+}

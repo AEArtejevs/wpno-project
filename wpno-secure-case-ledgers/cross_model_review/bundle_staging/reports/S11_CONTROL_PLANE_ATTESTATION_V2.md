@@ -1,0 +1,3 @@
+# Control-Plane — Attestation V2
+
+S11_GATE_ATTESTATION_V2 (scripts/ci_gate.py) bindet: commit, commit_tree, parent, validated_tree_sha, gate_code_hash, test_manifest_hash, schema_hashes, result. Gruen (ATTESTED_GREEN_FOR_EXACT_TREE) NUR wenn created_commit_tree_sha==validated_tree_sha. `verify_attestation_v2` re-validiert allein aus Commitobjekt + Record: ein spaeter veraenderter Working Tree beeinflusst die Attestierung des Commits NICHT (nur der Commit-Tree zaehlt) -> behebt RCK2-22 (ein einmal gruen attestierter Commit wird nicht nachtraeglich rot). Gate-Code-/Testmanifest-Drift -> ATTESTATION_STALE (historisch gueltig, aber != aktueller Gate-Stand), kein Faelschen: Tree-Mismatch -> ATTESTATION_SCHEMA_MISMATCH.

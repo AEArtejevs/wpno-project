@@ -1,0 +1,44 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A24",
+  "binding_status": "TARGET_UNRESOLVED",
+  "logical_targets": [
+    "CLAUDE.md loading outside the project root"
+  ],
+  "candidate_paths": [
+    "/Users/martinotten/WPNO/CLAUDE.md",
+    "/Users/martinotten/.claude/CLAUDE.md"
+  ],
+  "productive_target": null,
+  "productive_target_sha256": null,
+  "productive_target_evidence": [],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [],
+  "external_evidence_required": [],
+  "unresolved_questions": [
+    "Which instruction files load outside the project root is a runtime property.",
+    "The launch working directory outside PROJECT_ROOT is not chosen by this package. The operator must approve an existing external directory and bind it in the plan before execution; it is hashed before and after and must not change."
+  ],
+  "discovery_drift": [],
+  "source_evidence": [
+    {
+      "source_path": "/Users/martinotten/WPNO/CLAUDE.md",
+      "sha256": "f6734d0d0f7a25933a87efeec89cfdb2ba97f79956a546c13de9a94fac3d1ef8",
+      "locator": "project instruction file",
+      "evidence_type": "documentation",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/.claude/CLAUDE.md",
+      "sha256": null,
+      "locator": "user-level instruction file — read-only, never modified",
+      "evidence_type": "documentation",
+      "confidence": "HIGH"
+    }
+  ],
+  "replications": 1,
+  "risk": "MEDIUM",
+  "execution_order": 26
+}

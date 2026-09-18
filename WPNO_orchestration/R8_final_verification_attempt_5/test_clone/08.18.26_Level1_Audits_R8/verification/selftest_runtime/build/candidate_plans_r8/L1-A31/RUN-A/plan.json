@@ -1,0 +1,407 @@
+{
+  "audit_id": "L1-A31",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "OpenSSL verification of both REF-11 detached CMS objects and their complete explicit certificate chains at the claimed signing times, with parse evidence, an explicit key-usage conformance determination, and positive, negative and mutation controls whose expected failure reason is asserted and not merely their exit code. Revocation is NOT_ASSESSED_OFFLINE because REF-10 is absent.",
+  "static_analysis": "The active target is the immutable REF-11 archive bound by references/manifest.json. Certificate PEM files are byte-for-byte carry-forwards of R6's staged set, each additionally compared in DER against the operator-supplied official material. Control fixtures are rebuilt for R7: the synthetic chain's leaf carries emailProtection and its validation time is derived from its own issue time; the certificate mutation is one byte inside the signatureValue BIT STRING, proved parseable and proved to fail on signature; a malformed certificate is a separate control under its own name. Path validation uses purpose `any` and the application purpose is determined separately; the frozen builder adds -no-CAfile, -no-CApath and -no-CAstore, and cannot emit any suppression flag.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "OPENSSL_PARSE_CERT",
+      "params": {
+        "cert": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_leaf_from_sealed_p7s_parse_evidence.pem"
+      },
+      "purpose": "Record subject, issuer, serial, validity, key usage, extended key usage, algorithms, basic constraints and the SHA-256 fingerprint. PARSE_ONLY_NOT_VERIFICATION.",
+      "step_id": "parse_vhn_leaf",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "OPENSSL_PARSE_CERT",
+      "params": {
+        "cert": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_intermediate_selected_manual_pem.pem"
+      },
+      "purpose": "Record subject, issuer, serial, validity, key usage, extended key usage, algorithms, basic constraints and the SHA-256 fingerprint. PARSE_ONLY_NOT_VERIFICATION.",
+      "step_id": "parse_vhn_intermediate",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "OPENSSL_PARSE_CERT",
+      "params": {
+        "cert": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_root.pem"
+      },
+      "purpose": "Record subject, issuer, serial, validity, key usage, extended key usage, algorithms, basic constraints and the SHA-256 fingerprint. PARSE_ONLY_NOT_VERIFICATION.",
+      "step_id": "parse_vhn_root",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "OPENSSL_PARSE_CERT",
+      "params": {
+        "cert": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/document_leaf_from_sealed_p7s_parse_evidence.pem"
+      },
+      "purpose": "Record subject, issuer, serial, validity, key usage, extended key usage, algorithms, basic constraints and the SHA-256 fingerprint. PARSE_ONLY_NOT_VERIFICATION.",
+      "step_id": "parse_document_leaf",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "OPENSSL_PARSE_CERT",
+      "params": {
+        "cert": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/document_intermediate.pem"
+      },
+      "purpose": "Record subject, issuer, serial, validity, key usage, extended key usage, algorithms, basic constraints and the SHA-256 fingerprint. PARSE_ONLY_NOT_VERIFICATION.",
+      "step_id": "parse_document_intermediate",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "OPENSSL_PARSE_CERT",
+      "params": {
+        "cert": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/document_root.pem"
+      },
+      "purpose": "Record subject, issuer, serial, validity, key usage, extended key usage, algorithms, basic constraints and the SHA-256 fingerprint. PARSE_ONLY_NOT_VERIFICATION.",
+      "step_id": "parse_document_root",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "OPENSSL_VERIFY_CERT_CHAIN",
+      "params": {
+        "anchor": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/root.pem",
+        "attime": 1787927885,
+        "intermediates": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/intermediate.pem",
+        "leaf": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/leaf.pem",
+        "purpose": "smimesign"
+      },
+      "purpose": "Independently constructed chain whose outcome is known by construction. Its leaf carries emailProtection, so smimesign is the purpose it is entitled to; its validation time is derived from its own issue time, not written as a literal. Both were wrong in R6.",
+      "step_id": "synthetic_chain_positive",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "OPENSSL_VERIFY_CERT_CHAIN",
+      "params": {
+        "anchor": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/other_root.pem",
+        "attime": 1787927885,
+        "intermediates": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/intermediate.pem",
+        "leaf": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/leaf.pem",
+        "purpose": "smimesign"
+      },
+      "purpose": "An unrelated anchor must not verify this chain. Proves the command can fail on trust, which is the point.",
+      "step_id": "synthetic_chain_missing_anchor",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "OPENSSL_VERIFY_CERT_CHAIN",
+      "params": {
+        "anchor": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_root.pem",
+        "attime": 1772232925,
+        "intermediates": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_intermediate_selected_manual_pem.pem",
+        "leaf": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_leaf_from_sealed_p7s_parse_evidence.pem",
+        "purpose": "any"
+      },
+      "purpose": "RFC 5280 path validation of the VHN chain at the claimed CMS signingTime 2026-02-27T22:55:25Z, which is not a trusted timestamp. `any` is the path-validation purpose; entitlement is answered separately by vhn_key_usage_conformance.",
+      "step_id": "vhn_chain_path_validation",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "OPENSSL_VERIFY_CERT_CHAIN",
+      "params": {
+        "anchor": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/document_root.pem",
+        "attime": 1772232897,
+        "intermediates": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/document_intermediate.pem",
+        "leaf": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/document_leaf_from_sealed_p7s_parse_evidence.pem",
+        "purpose": "any"
+      },
+      "purpose": "RFC 5280 path validation of the document chain at the claimed CMS signingTime 2026-02-27T22:54:57Z, which is not a trusted timestamp.",
+      "step_id": "document_chain_path_validation",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "OPENSSL_VERIFY_CMS",
+      "params": {
+        "anchor": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_root.pem",
+        "attime": 1772232925,
+        "binary": true,
+        "certfile": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_intermediate_selected_manual_pem.pem",
+        "cms": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn.xml.p7s",
+        "content": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn-covered-content.xml",
+        "inform": "DER",
+        "out": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/outputs/vhn_verified_content.bin",
+        "purpose": "any"
+      },
+      "purpose": "Verify the VHN CMS signature over the exact detached content.",
+      "step_id": "vhn_cms",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "OPENSSL_VERIFY_CMS",
+      "params": {
+        "anchor": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/document_root.pem",
+        "attime": 1772232897,
+        "binary": true,
+        "certfile": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/document_intermediate.pem",
+        "cms": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-berufungsbegruendung-O.pdf.p7s",
+        "content": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-berufungsbegruendung-O.pdf",
+        "inform": "DER",
+        "out": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/outputs/document_verified_content.bin",
+        "purpose": "any"
+      },
+      "purpose": "Verify the document CMS signature over the exact detached content.",
+      "step_id": "document_cms",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "OPENSSL_VERIFY_CERT_CHAIN",
+      "params": {
+        "anchor": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_root.pem",
+        "attime": 1772232925,
+        "intermediates": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_intermediate_selected_manual_pem.pem",
+        "leaf": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/controls/vhn_leaf_der_signature_mutated.pem",
+        "purpose": "any"
+      },
+      "purpose": "One byte inside the signatureValue BIT STRING. The certificate still parses; its signature must fail. R6's fixture could not be parsed at all and therefore proved nothing about signatures.",
+      "step_id": "mutated_vhn_leaf_signature",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "OPENSSL_VERIFY_CERT_CHAIN",
+      "params": {
+        "anchor": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_root.pem",
+        "attime": 1772232925,
+        "intermediates": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_intermediate_selected_manual_pem.pem",
+        "leaf": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/controls/vhn_leaf_unparseable_der.pem",
+        "purpose": "any"
+      },
+      "purpose": "A malformed certificate must be refused at load. A separate control from the signature mutation above, under its own name, so the two are never confused.",
+      "step_id": "unparseable_vhn_leaf",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "OPENSSL_VERIFY_CMS",
+      "params": {
+        "anchor": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_root.pem",
+        "attime": 1772232925,
+        "binary": true,
+        "certfile": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_intermediate_selected_manual_pem.pem",
+        "cms": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn.xml.p7s",
+        "content": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-berufungsbegruendung-O.pdf",
+        "inform": "DER",
+        "out": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/outputs/wrong_content_control.bin",
+        "purpose": "any"
+      },
+      "purpose": "Unrelated detached content must not verify. Under R6's purpose this control never reached the content at all.",
+      "step_id": "wrong_vhn_content",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "OPENSSL_VERIFY_CMS",
+      "params": {
+        "anchor": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_root.pem",
+        "attime": 1772232925,
+        "binary": true,
+        "certfile": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_intermediate_selected_manual_pem.pem",
+        "cms": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn.xml.p7s",
+        "content": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/controls/vhn_covered_content_one_byte_mutated.xml",
+        "inform": "DER",
+        "out": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/outputs/mutated_content_control.bin",
+        "purpose": "any"
+      },
+      "purpose": "One byte of the covered content, length preserved. The content digest must fail.",
+      "step_id": "mutated_vhn_content",
+      "timeout_seconds": 120
+    }
+  ],
+  "target": {
+    "identity_evidence": "references/manifest.json identifies this operator-supplied archive and binds the same SHA-256; its extracted REF-11 members are separately hash-bound.",
+    "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip",
+    "sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+  },
+  "test_matrix": [
+    {
+      "purpose_model": {
+        "entitlement_check": "vhn_key_usage_conformance",
+        "no_suppression_flag_present": true,
+        "path_validation_purpose": "any",
+        "path_validation_purpose_is_not_a_suppression_flag": true,
+        "path_validation_reason": "`any` selects X509_PURPOSE_ANY. Issuer chaining, signature checking, validity at -attime, basic constraints and the absence of any default trust store are all still enforced. It declines to impose an application purpose, and the application purpose is answered by the separate check below.",
+        "why_two_checks": "R6 used one -purpose value for path validation and for signing entitlement at once. The VHN leaf's only extended key usage is id-kp-clientAuth, so smimesign was refused with error 26 and every downstream control failed on the certificate rather than on what it was testing."
+      }
+    },
+    {
+      "expected_exit_code": 0,
+      "required_result": "PASS",
+      "step_id": "synthetic_chain_positive",
+      "why": "if this fails, nothing below is evidence of anything"
+    },
+    {
+      "expected_exit_code": "NONZERO",
+      "expected_failure_reason": "CHAIN_INCOMPLETE",
+      "required_result": "FAILS_AS_DESIGNED",
+      "step_id": "synthetic_chain_missing_anchor"
+    },
+    {
+      "expected_exit_code": 0,
+      "step_id": "vhn_chain_path_validation",
+      "validation_time": "2026-02-27T22:55:25Z",
+      "validation_time_epoch": 1772232925,
+      "validation_time_inside_intermediate_validity": true,
+      "validation_time_inside_leaf_validity": true,
+      "validation_time_inside_root_validity": true,
+      "validation_time_justification": "claimed CMS signingTime; not a trusted timestamp"
+    },
+    {
+      "expected_exit_code": 0,
+      "step_id": "document_chain_path_validation",
+      "validation_time": "2026-02-27T22:54:57Z",
+      "validation_time_epoch": 1772232897,
+      "validation_time_inside_intermediate_validity": true,
+      "validation_time_inside_leaf_validity": true,
+      "validation_time_inside_root_validity": true,
+      "validation_time_justification": "claimed CMS signingTime; not a trusted timestamp"
+    },
+    {
+      "expected_exit_code": 0,
+      "step_id": "vhn_cms"
+    },
+    {
+      "expected_exit_code": 0,
+      "step_id": "document_cms"
+    },
+    {
+      "expected_exit_code": "NONZERO",
+      "expected_failure_reason": "CERT_SIGNATURE_FAILURE",
+      "fixture": {
+        "byte_from": 137,
+        "byte_to": 138,
+        "der_length_after": 1553,
+        "der_length_before": 1553,
+        "der_offset": 1297,
+        "differing_der_bytes": 1,
+        "expected_failure_reason": "CERT_SIGNATURE_FAILURE",
+        "fixture_sha256": "7e77b0073ec98168627d4f69f0297648614167691f23f997a1f9c0fe355e49a3",
+        "kind": "CERT_SIGNATURE_MUTATION",
+        "layer": "DER_signatureValue_BIT_STRING",
+        "observed_reason": "certificate signature failure",
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/controls/vhn_leaf_der_signature_mutated.pem",
+        "proven_parseable": true,
+        "proven_signature_fails": true,
+        "signature_value_span": [
+          1041,
+          1553
+        ],
+        "source": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_leaf_from_sealed_p7s_parse_evidence.pem",
+        "source_sha256": "0f314f471bd3658e4164edd8c534f74b741055022c15ca29b50f272c194c6f3e"
+      },
+      "required_result": "FAILS_AS_DESIGNED",
+      "step_id": "mutated_vhn_leaf_signature"
+    },
+    {
+      "distinct_from": "mutated_vhn_leaf_signature",
+      "expected_exit_code": "NONZERO",
+      "expected_failure_reason": "PARSE_REFUSAL",
+      "fixture": {
+        "byte_from": 48,
+        "byte_to": 4,
+        "der_offset": 0,
+        "expected_failure_reason": "PARSE_REFUSAL",
+        "fixture_sha256": "42170303b4376942f26825c853421bc3c727d62aa7a8ca139bb292cbbb0e0730",
+        "kind": "CERT_PARSE_REFUSAL",
+        "layer": "DER_outer_tag",
+        "note": "This is NOT a signature-failure control and must never be scored as one. R6 conflated the two and recorded a parse refusal as a passing mutation control.",
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/controls/vhn_leaf_unparseable_der.pem",
+        "proven_unparseable": true,
+        "source": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_leaf_from_sealed_p7s_parse_evidence.pem",
+        "source_sha256": "0f314f471bd3658e4164edd8c534f74b741055022c15ca29b50f272c194c6f3e"
+      },
+      "required_result": "FAILS_AS_DESIGNED",
+      "step_id": "unparseable_vhn_leaf"
+    },
+    {
+      "expected_exit_code": "NONZERO",
+      "expected_failure_reason": "CONTENT_DIGEST_FAILURE",
+      "required_result": "FAILS_AS_DESIGNED",
+      "step_id": "wrong_vhn_content"
+    },
+    {
+      "expected_exit_code": "NONZERO",
+      "expected_failure_reason": "CONTENT_DIGEST_FAILURE",
+      "fixture": {
+        "byte_from": 60,
+        "byte_to": 61,
+        "differing_bytes": 1,
+        "digest_differs": true,
+        "expected_failure_reason": "CONTENT_DIGEST_FAILURE",
+        "fixture_sha256": "dc2911b87f1c6d2e389b549c25f3fc2b357e461d82ec05018131001c5b9928e5",
+        "kind": "CONTENT_ONE_BYTE_MUTATION",
+        "layer": "detached_content_bytes",
+        "length_after": 1924,
+        "length_before": 1924,
+        "offset": 0,
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/controls/vhn_covered_content_one_byte_mutated.xml",
+        "source": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn-covered-content.xml",
+        "source_sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23"
+      },
+      "required_result": "FAILS_AS_DESIGNED",
+      "step_id": "mutated_vhn_content"
+    },
+    {
+      "check_id": "vhn_key_usage_conformance",
+      "criterion_extended_key_usage": "an S/MIME signing purpose requires id-kp-emailProtection or anyExtendedKeyUsage",
+      "criterion_key_usage": "RFC 5652 requires digitalSignature or nonRepudiation for a CMS signing key",
+      "evaluated_from": [
+        "parse_vhn_leaf"
+      ],
+      "expected_extended_key_usage_result": "NOT_SATISFIED_FOR_SMIME",
+      "expected_key_usage_result": "SATISFIED",
+      "measured_extended_key_usage": [
+        "id-kp-clientAuth (1.3.6.1.5.5.7.3.2)"
+      ],
+      "measured_key_usage": [
+        "digitalSignature",
+        "nonRepudiation",
+        "keyEncipherment",
+        "dataEncipherment"
+      ],
+      "question": "Is the VHN signer certificate entitled to produce the CMS signature it produced?",
+      "specification_reference": "prompts/L1-A31.md EDGE CASES: 'a certificate whose extended key usage does not include the purpose in question'",
+      "verdict_effect": "REPORTED_AS_A_FINDING. This plan does not decide what verdict follows. Whether a beA VHN certificate carrying only clientAuth is conforming for its own profile is not answerable from the material bound here, and a run that answers it anyway would be asserting rather than measuring."
+    },
+    {
+      "check_id": "document_key_usage_conformance",
+      "criterion_extended_key_usage": "RFC 5280: an absent EKU extension imposes no purpose restriction",
+      "evaluated_from": [
+        "parse_document_leaf"
+      ],
+      "expected_extended_key_usage_result": "NO_RESTRICTION_ASSERTED",
+      "expected_key_usage_result": "SATISFIED",
+      "measured_extended_key_usage": [],
+      "measured_key_usage": [
+        "nonRepudiation"
+      ]
+    },
+    {
+      "never_reported_as": "not revoked",
+      "reason": "REF-10 is absent from the accepted reference manifest",
+      "revocation": "NOT_ASSESSED_OFFLINE"
+    },
+    {
+      "anchor_provenance": {
+        "corroboration": "each of the four CA certificates was compared in DER against the operator-supplied official chain material taken in at work/operator_intake/L1-A31/official_chain_material_r7_2026-08-26; all four are identical, and TL-DE.XML matches its own published SHA-256",
+        "document_root": "BNotK Root CA 2017 \u2014 REF-08",
+        "not_thereby_trusted": "presence in the supplied material is not trust; the provenance recorded here is where the bytes came from",
+        "vhn_root": "SAFE Root CA 2017, O=BNotK \u2014 REF-08"
+      }
+    }
+  ]
+}

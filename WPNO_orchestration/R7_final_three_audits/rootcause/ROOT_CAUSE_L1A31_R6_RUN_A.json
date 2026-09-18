@@ -1,0 +1,106 @@
+{
+  "schema": "wpno.r7.rootcause/1",
+  "source": "R6 sealed evidence, read byte-for-byte; no prose relied upon",
+  "r6_plan_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R6/results/L1-A31/RUN-A/plan.json",
+  "r6_plan_sha256": "794a7d588112ad4a68ee594378611ad196f71f7c05b7fc1c71c6d0baa4ea7be8",
+  "r6_evidence_manifest_sha256": "4a185eefb4f4221419a6cc7e53c2fe9b59c721c2def2bbb26864752013c1a85e",
+  "r6_seal_sha256": "fcfeb8947fdb9c2bf01e6d0007a7adddbf4f5ec5138a78580e2dead622323edc",
+  "openssl_version": "OpenSSL 3.5.5 27 Jan 2026 (Library: OpenSSL 3.5.5 27 Jan 2026)",
+  "openssl_binary": "/usr/bin/openssl",
+
+  "defects": [
+    {
+      "id": "F1",
+      "label": "INCOMPATIBLE_OPENSSL_PURPOSE",
+      "normalized_fingerprint": "L1A31/PURPOSE/smimesign-vs-clientAuth-EKU",
+      "plan_parameter": "purpose=smimesign",
+      "affected_steps": ["synthetic_chain_positive", "vhn_chain", "vhn_cms", "wrong_vhn_content", "mutated_vhn_content"],
+      "failed_argv_example": ["/usr/bin/openssl","verify","-no-CAfile","-no-CApath","-no-CAstore","-CAfile",".../certs/vhn_root.pem","-untrusted",".../certs/vhn_intermediate_selected_manual_pem.pem","-attime","1772232925","-purpose","smimesign",".../certs/vhn_leaf_from_sealed_p7s_parse_evidence.pem"],
+      "exact_error_output": "error 26 at 0 depth lookup: unsuitable certificate purpose",
+      "cms_error_output": "CMS routines:cms_signerinfo_verify_cert:certificate verify error:../crypto/cms/cms_smime.c:290:Verify error: unsuitable certificate purpose",
+      "measured_certificate_facts": {
+        "vhn_leaf": {
+          "subject": "CN=vertrauenswuerdiger Herkunftsnachweis beA, serialNumber=00001, OU=besonderes Anwaltspostfach, O=Bundesrechtsanwaltskammer, L=Berlin, ST=Berlin, C=DE",
+          "issuer": "CN=beA VHN CA 2017, O=BNotK, C=DE",
+          "notBefore": "Aug 17 11:33:07 2023 GMT",
+          "notAfter": "Aug 15 11:33:07 2030 GMT",
+          "extendedKeyUsage": ["TLS Web Client Authentication"],
+          "keyUsage": ["Digital Signature", "Non Repudiation", "Key Encipherment", "Data Encipherment"],
+          "basicConstraints": "CA:FALSE (critical)",
+          "openssl_purpose_table_smime_signing": "No",
+          "openssl_purpose_table_ssl_client": "Yes",
+          "openssl_purpose_table_any_purpose": "Yes"
+        },
+        "synthetic_leaf": {
+          "extendedKeyUsage": ["TLS Web Client Authentication"],
+          "keyUsage": ["Digital Signature"],
+          "note": "The intended POSITIVE control could never satisfy -purpose smimesign either: it carries clientAuth EKU only. The positive control fixture did not match the purpose the live plan used."
+        },
+        "document_leaf": {
+          "subject": "UID=DE.BRAK.6aeb9a2c-b12e-45b0-92a9-e466ba908021.cd01, CN=Achim Reinknecht, serialNumber=FS-10057573, GN=Achim, SN=Reinknecht, C=DE",
+          "extendedKeyUsage": [],
+          "keyUsage": ["Non Repudiation"],
+          "note": "No EKU present, so -purpose smimesign was not rejected. This is why the document path passed (E0010 exit 0, E0012 exit 0) while the VHN path failed. The plan's single overloaded purpose was silently correct for one chain and wrong for the other."
+        }
+      },
+      "true_cause": "The plan overloaded one OpenSSL -purpose value across two structurally different certificate populations. The beA VHN certificate is not an S/MIME certificate: its only EKU is id-kp-clientAuth. RFC 5280 purpose checking therefore refuses it under smimesign with error 26. The certificate is not defective; the plan parameter was wrong for the operation under test.",
+      "classification": "INTERNAL_REPAIRABLE_DEFECT"
+    },
+    {
+      "id": "F2",
+      "label": "INCOMPATIBLE_VALIDATION_EPOCH",
+      "normalized_fingerprint": "L1A31/EPOCH/synthetic-control-attime-before-notBefore",
+      "plan_parameter": "attime=1787000000 on synthetic_chain_positive and synthetic_chain_missing_intermediate",
+      "attime_epoch": 1787000000,
+      "attime_utc": "2026-08-17T20:53:20+00:00",
+      "synthetic_cert_validity": {"notBefore": "Aug 24 15:05:24 2026 GMT", "notAfter": "Aug 24 15:05:24 2027 GMT"},
+      "gap_seconds": 585924,
+      "exact_error_output": "error 9 at 2 depth lookup: certificate is not yet valid",
+      "true_cause": "The synthetic control epoch predates the synthetic fixture's own notBefore by 585924 seconds (6 days 18 h 45 min 24 s). The epoch was written into the plan as a literal and never checked against the fixture it validates.",
+      "scope_limitation_measured": "The two substantive epochs are NOT defective: attime=1772232925 (2026-02-27T22:55:25Z) and attime=1772232897 (2026-02-27T22:54:57Z) both fall inside the VHN leaf window 2023-08-17..2030-08-15, the VHN CA window 2017-11-14..2037-11-09, the SAFE Root window 2017-11-14..2037-11-09, the document leaf window 2022-11-17..2027-11-16 and both document CA windows. Only the synthetic control epoch is wrong.",
+      "classification": "INTERNAL_REPAIRABLE_DEFECT"
+    },
+    {
+      "id": "F3",
+      "label": "MALFORMED_MUTATION_FIXTURE",
+      "normalized_fingerprint": "L1A31/MUTATION/pem-base64-byte-flip-yields-parse-refusal",
+      "fixture": "work/L1-A31/preparation_2026-08-26/staged/controls/vhn_leaf_one_byte_mutated.pem",
+      "construction_measured": {
+        "source": "certs/vhn_leaf_from_sealed_p7s_parse_evidence.pem",
+        "source_length_bytes": 2159,
+        "fixture_length_bytes": 2159,
+        "differing_offsets": [28],
+        "old_byte_decimal": 77,
+        "old_byte_ascii": "M",
+        "new_byte_decimal": 65,
+        "new_byte_ascii": "A",
+        "layer_mutated": "PEM base64 text, not DER"
+      },
+      "exact_error_output": "Could not find certificate file from .../vhn_leaf_one_byte_mutated.pem\nSTORE routines:ossl_store_handle_load_result:unsupported:../crypto/store/store_result.c:160:provider=default",
+      "true_cause": "A single base64 character was flipped inside the PEM body. Base64 decoding then produced corrupted DER in the outer header region, so OpenSSL refused to load the file at all. The step recorded a nonzero exit and was scored FAILS_AS_DESIGNED, but what it actually demonstrated was a parse refusal, not a certificate signature failure. A mutation control that cannot be parsed proves nothing about signature verification.",
+      "conflation_created": ["parse refusal", "signature failure"],
+      "classification": "INTERNAL_REPAIRABLE_DEFECT"
+    },
+    {
+      "id": "F4",
+      "label": "NEGATIVE_CONTROLS_FAILED_FOR_THE_WRONG_REASON",
+      "normalized_fingerprint": "L1A31/CONTROL/negative-masked-by-purpose-error",
+      "affected_steps": ["wrong_vhn_content", "mutated_vhn_content"],
+      "observed": "Both scored FAILS_AS_DESIGNED on exit code 4, but both stderr records read 'Verify error: unsuitable certificate purpose' — the same F1 error, raised before any content digest was compared.",
+      "true_cause": "The controls were scored on exit code alone. Because F1 aborted CMS verification at the certificate check, neither control ever reached the content-digest comparison it was designed to test. A control that fails before it measures anything is not a control.",
+      "detection_gap": "The R6 test matrix asserted only expected_exit_code NONZERO, with no assertion on the failure reason.",
+      "classification": "INTERNAL_REPAIRABLE_DEFECT"
+    },
+    {
+      "id": "F5",
+      "label": "NO_LAWFUL_ATTEMPT_RETRY_AFTER_SEALED_INTERNAL_ERROR",
+      "normalized_fingerprint": "R6/STATEMACHINE/sealed-is-terminal-no-attempt-model",
+      "evidence": "automation/state_machine.py TRANSITIONS: 'SEALED': () and TERMINAL includes SEALED. progress.json records L1-A31 RUN-A state=SEALED verdict=ERROR with no attempt dimension at all.",
+      "true_cause": "The R6 phase state machine has exactly one attempt per phase. Sealing an infrastructure ERROR therefore terminated the phase permanently, with no route to a corrected second attempt. This converted three repairable plan-parameter defects into a dead revision.",
+      "classification": "CONTROL_PLANE_DESIGN_DEFECT_REQUIRING_NEW_REVISION"
+    }
+  ],
+
+  "why_pre_freeze_readiness_missed_all_of_it": "The R6 pre-freeze readiness fixture exercised the operation catalogue generically. It never executed the exact live-plan tuple (purpose=smimesign, attime=1787000000, mutation fixture bytes) against the exact staged certificates. Every one of F1-F4 is invisible to a generic fixture and visible on the first exact-parameter rehearsal.",
+  "r7_countermeasure": "Section 9 exact live-plan rehearsal: build the real candidate plan for all nine phases and run it with the exact argv builder and exact parameters before freeze."
+}

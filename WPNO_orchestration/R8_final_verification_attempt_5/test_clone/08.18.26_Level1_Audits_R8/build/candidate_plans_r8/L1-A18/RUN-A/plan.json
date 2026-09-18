@@ -1,0 +1,89 @@
+{
+  "audit_id": "L1-A18",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "IBAN Mod-97 correctness of the payload scanner's validator, checked in Python against the REF-01 SWIFT registry and REF-02, over the full 217-vector set, with empty input counted as an input and with a sabotage control.",
+  "static_analysis": "payload_scan.py is parsed, never imported: a top-level import executes code. The country rules come from REF-01 by way of corpora/R5_REF01_COUNTRY_RULES.jsonl. The MOD97-10 fold is a streaming remainder that never materialises the ~30-digit integer, which is deliberately a different shape of computation from RUN-B's big-integer modulus.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/anonymization/payload_scan.py"
+      },
+      "purpose": "Parse, do not import.",
+      "step_id": "parse_target",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "AUDIT_MODULE_RUN",
+      "params": {
+        "args": [
+          "--vectors",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/corpora/R5_REF02_IBAN_VECTORS.jsonl",
+          "--rules",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/corpora/R5_REF01_COUNTRY_RULES.jsonl",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A18/RUN-A/run_a_results.json"
+        ],
+        "module": "automation.a18_run_a_cli"
+      },
+      "purpose": "217 vectors through the Python method.",
+      "step_id": "run_a_validation",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "AUDIT_MODULE_RUN",
+      "params": {
+        "args": [
+          "--vectors",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/corpora/R5_REF02_IBAN_VECTORS.jsonl",
+          "--rules",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/corpora/R5_REF01_COUNTRY_RULES.jsonl",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A18/RUN-A/sabotage_results.json",
+          "--sabotage",
+          "mod97"
+        ],
+        "module": "automation.a18_run_a_cli"
+      },
+      "purpose": "A deliberately broken modulus must change the results. A sabotage that changes nothing is a measurement error, not a passing control.",
+      "step_id": "sabotage_control",
+      "timeout_seconds": 300
+    }
+  ],
+  "target": {
+    "identity_evidence": "bindings/L1-A18.binding.json records productive_target_sha256 = 99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b for the operator's own copy; the file on this machine hashes to the same value, so the two are the same bytes",
+    "path": "/home/ubuntu/project/WPNO/anonymization/payload_scan.py",
+    "sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b"
+  },
+  "test_matrix": [
+    {
+      "applicable_vectors": 217,
+      "empty_input_counted_as_an_input": true,
+      "vectors_in_corpus": 219,
+      "why": "an empty IBAN is one input with one answer; dropping it from the count makes 217 look like 216 and hides which one went missing"
+    },
+    {
+      "expected_applicable_vector_count": 217,
+      "expected_exit_code": 0,
+      "expected_total_inputs_answered": 218,
+      "step_id": "run_a_validation"
+    },
+    {
+      "expected_exit_code": 0,
+      "expected_result_differs_from": "run_a_validation",
+      "required_result": "SABOTAGE_PROVEN_EFFECTIVE",
+      "step_id": "sabotage_control",
+      "zero_changed_results_is": "A MEASUREMENT ERROR, NOT A PASS"
+    },
+    {
+      "references": {
+        "REF-01": "swift-iban-registry-release-102",
+        "REF-02": "python-stdnum-2.2"
+      }
+    }
+  ]
+}

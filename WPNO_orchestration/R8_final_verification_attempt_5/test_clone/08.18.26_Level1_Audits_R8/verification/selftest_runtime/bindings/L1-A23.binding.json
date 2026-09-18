@@ -1,0 +1,61 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A23",
+  "binding_status": "TARGET_CONFIRMED",
+  "logical_targets": [
+    "CLAUDE.md rules versus actual Mac reality"
+  ],
+  "candidate_paths": [
+    "/Users/martinotten/WPNO/CLAUDE.md"
+  ],
+  "productive_target": "/Users/martinotten/WPNO/CLAUDE.md",
+  "productive_target_sha256": "f6734d0d0f7a25933a87efeec89cfdb2ba97f79956a546c13de9a94fac3d1ef8",
+  "productive_target_evidence": [
+    {
+      "claim": "File identity confirmed by name, symbol match and SHA-256.",
+      "note": "File identity is NOT production identity. No execution-path evidence establishes that this file is the copy invoked in production. See discovery_reconciliation/04_PRODUCTION_PATH_RECONCILIATION.md."
+    }
+  ],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [
+    "references/REF-14_MAC_REALITY.json",
+    "references/REF-14_MAC_REALITY.md",
+    "references/REF-14_MAC_EVIDENCE_STATUS.json",
+    "references/REF-14_MAC_EVIDENCE_SEARCH_REPORT.md",
+    "references/REF-14_MAC_MANIFEST.sha256"
+  ],
+  "external_evidence_required": [
+    "REF-14"
+  ],
+  "unresolved_questions": [],
+  "discovery_drift": [],
+  "source_evidence": [
+    {
+      "source_path": "/Users/martinotten/WPNO/CLAUDE.md",
+      "sha256": "f6734d0d0f7a25933a87efeec89cfdb2ba97f79956a546c13de9a94fac3d1ef8",
+      "locator": "11 sections; § 8 'Diese Maschine' lines 98–131 is the primary factual surface",
+      "evidence_type": "documentation",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "references/REF-14_MAC_REALITY.json",
+      "sha256": "8c4c580db8d191a95e1ecc913da1c5acf70373433411d170b33769501a28063e",
+      "locator": "files, crosswalk, session_metadata and l1_a23_status",
+      "evidence_type": "operator_measured_mac_reality",
+      "confidence": "HIGH"
+    }
+  ],
+  "mac_reality_status": "ACCEPTED",
+  "mac_evidence_package_manifest_sha256": "85a35beda513939934966fd08190c8593d40262785a09a35572b803ce4e3fe57",
+  "mac_reality_limitations": [
+    "Current Mac reality is measured evidence, not proof of historical production identity.",
+    "Historical byte identity and continued production use remain unprovable from the transferred package.",
+    "Session metadata establishes recorded Claude/Codex working directories; it does not convert every historical path into a production path.",
+    "Secret-bearing field names are recorded only as booleans; secret values are not imported into the binding."
+  ],
+  "replications": 1,
+  "risk": "MEDIUM",
+  "execution_order": 25
+}

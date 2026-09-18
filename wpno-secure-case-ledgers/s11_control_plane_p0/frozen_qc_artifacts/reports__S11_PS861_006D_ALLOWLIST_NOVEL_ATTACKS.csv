@@ -1,0 +1,23 @@
+attack_id,attack_class,independent_oracle,bypass_successful,severity,affected_component
+A2,ID_FIELD_CASE_SMUGGLE,"Eigener Falldaten-Detektor (scratchpad/oracle.py case_hits) mit unabhaengigen Betrags-/Datumsregexen, ohne Import des Pr",ja,CRITICAL,zitate_register/_s11_006d_spec_validator.py:validate_cell (I
+A3,META_PAREN_FREETEXT_SMUGGLE,oracle.case_hits (eigene Regexe fuer Tausenderbetrag/Dezimalbetrag/de_date/Steuernr),ja,CRITICAL,zitate_register/_s11_006d_spec_validator.py:META_RULES['beru
+A1,CSV_DUP_HEADER_LAST_WINS,Eigener zeilenorientierter Header-Parser (oracle.duplicate_headers) ohne DictReader-Dedup + case_hits auf Erstinstanz,ja,HIGH,zitate_register/_s11_006d_spec_validator.py:validate_artifac
+A21,UNVALIDATED_SIBLING_CSV,case_hits auf beliebige reports/*.csv (nicht nur die 10 kanonischen Namen),ja,CRITICAL,zitate_register/check_006d_closed_spec_schema.py (nur V.SPEC
+A5,MD_TWIN_CASE_DATA,case_hits (Betrag/de_date/IBAN) auf .md-Inhalt,ja,HIGH,zitate_register/check_006d_content_type_and_magic.py + valid
+A6,TIFF_MAGIC_GAP,"Eigene Magic-Byte-Pruefung (oracle.magic_of) inkl. TIFF-LE/BE, BMP, CUR",ja,MEDIUM,"zitate_register/_s11_006d_spec_validator.py:MAGIC (L25-32, T"
+A7,BMP_MAGIC_GAP,oracle.magic_of erkennt 'BM' als BMP,ja,MEDIUM,zitate_register/_s11_006d_spec_validator.py:MAGIC (BMP fehlt
+A25,CUR_MAGIC_GAP,oracle.magic_of erkennt 0x00000200 als CUR (Produkt kennt nur 0x00000100=ICO),ja,MEDIUM,zitate_register/_s11_006d_spec_validator.py:MAGIC (nur ICO 0
+A8,ID_NOPREFIX_SMUGGLE,case_hits auf ID-Wert (big_int/amount/de_date),ja,HIGH,zitate_register/_s11_006d_spec_validator.py:validate_cell (I
+A26,ID_IBAN_SMUGGLE,oracle.case_hits IBAN-Regex,ja,HIGH,zitate_register/_s11_006d_spec_validator.py:validate_cell ID
+A28,ID_SMUGGLE_OTHER_ARTIFACT,case_hits (amount/de_date),ja,HIGH,zitate_register/_s11_006d_spec_validator.py:validate_cell ID
+A29,ID_SMUGGLE_RECON,case_hits (Dezimalbetrag/de_date),ja,HIGH,zitate_register/_s11_006d_spec_validator.py:validate_cell ID
+A31,UNVALIDATED_JSON_SIBLING,case_hits auf .json-Inhalt,ja,HIGH,zitate_register/check_006d_closed_spec_schema.py (Namensbind
+A32,UNVALIDATED_SUBDIR_CSV,case_hits auf Unterordner-CSV,ja,HIGH,zitate_register/check_006d_closed_spec_schema.py (kein rekur
+A41,UNVALIDATED_MD_SIBLING,case_hits auf beliebige .md,ja,HIGH,zitate_register/check_006d_content_type_and_magic.py (text_s
+A42,UNVALIDATED_DEEP_SUBDIR,case_hits auf tief verschachtelte Datei,ja,HIGH,zitate_register/check_006d_closed_spec_schema.py
+A23,META_PAREN_COVERT_BASE64,Eigener Base64-Run-Detektor (>=120 zusammenhaengende Base64-Zeichen in einer Zelle = Covert-Channel),ja,MEDIUM,zitate_register/_s11_006d_spec_validator.py:content_type_vio
+A16,NOMINAL_REFERENTIAL_INTEGRITY,Eigener Bindungscheck: Mapping-Inhalt muss zu Registern passen (nicht nur len>=1),ja,MEDIUM,zitate_register/check_006d_view_crosswalk_referential_integr
+A24,HARDLINK_EVADES_SYMLINK_GUARD,"Eigene Pruefung: Datei mit st_nlink>1 / Falldateninhalt (Hardlink), unabhaengig von islink",ja,MEDIUM,zitate_register/_s11_006d_spec_validator.py:path_symlink_vio
+N1,NEG_CONTROL_UNKNOWN_COLUMN,case_hits + Header-Vergleich,nein,NONE,Negativkontrolle: Guards funktionieren; Oracle diskriminiert
+N3,NEG_CONTROL_MD_TWIN_SVG,oracle Magic/Markup-Erkennung,nein,NONE,Negativkontrolle bestaetigt: nur Nicht-SPEC-Namen sind das L
+N5,NEG_CONTROL_SYMLINK,oracle: islink True,nein,NONE,Negativkontrolle bestaetigt Symlink-Sperre

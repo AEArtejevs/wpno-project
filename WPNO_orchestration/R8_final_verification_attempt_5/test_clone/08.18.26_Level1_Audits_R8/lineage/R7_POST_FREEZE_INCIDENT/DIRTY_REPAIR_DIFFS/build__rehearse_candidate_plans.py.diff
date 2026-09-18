@@ -1,0 +1,139 @@
+frozen original: /home/ubuntu/R7_repair_backup_2026-08-28/build/rehearse_candidate_plans.py (sha256 acfab6efed4d08c540b261269fe379a54a7b045e3bfb122cb3e29dbb1e219199)
+dirty current  : build/rehearse_candidate_plans.py (sha256 4b164c6beefd006ebd499619a52d1bdbcfb8bde9f63ffccab182bcfbc9e51f3d)
+
+--- frozen/build/rehearse_candidate_plans.py
++++ dirty/build/rehearse_candidate_plans.py
+@@ -50,8 +50,9 @@
+ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ sys.path.insert(0, ROOT)
+ 
+-from automation import (hashing, mutation_fixtures, operation_catalog,  # noqa: E402
+-                        path_policy, policy, schema_validation)
++from automation import (hashing, in_process_ops, mutation_fixtures,  # noqa: E402
++                        operation_catalog, path_policy, policy,
++                        schema_validation)
+ 
+ PLANS = os.path.join(ROOT, "build", "candidate_plans_r7")
+ COVERAGE = os.path.join(PLANS, "PLAN_COVERAGE_MANIFEST.json")
+@@ -69,6 +70,48 @@
+ NOT_RUN_OPERATOR_HOST = "OPERATOR_PERFORMED_ON_ANOTHER_HOST"
+ NOT_RUN_GIT = "GIT_OPERATION_NOT_RUN_IN_THIS_SESSION"
+ NOT_RUN_UNCONFINED_OUTPUT = "OUTPUT_PATH_OUTSIDE_THE_WRITABLE_WORK_AREA"
++NOT_RUN_MISSING_UPSTREAM = "INPUT_PRODUCED_BY_AN_EARLIER_STEP_NOT_RUN_HERE"
++
++# Parameter keys that name a file an in-process operation reads.
++INPUT_PARAM_KEYS = ("path", "left", "right", "root", "export")
++
++
++def _deferred_input_reason(step):
++    """Why an in-process step could not run here, when that is legitimate.
++
++    Two absences are expected during a rehearsal and neither is a defect:
++
++      * an intermediate under `work/`, written by an earlier subprocess step
++        of the same phase, which the rehearsal does not run;
++      * live-phase material under `evidence/` or `results/`, which only
++        exists once the phase it belongs to has actually been executed and
++        sealed.
++
++    Everything else -- a missing reference, tool or target -- is a real
++    finding and must fail the step. The exemption is returned by name so the
++    report says which of the two applied rather than swallowing both into a
++    silent pass, because a blanket "the input was not there, so never mind"
++    is precisely how the defect this accompanies stayed invisible.
++    """
++    deferred = {
++        os.path.join(ROOT, "work") + os.sep: NOT_RUN_MISSING_UPSTREAM,
++        os.path.join(ROOT, "evidence") + os.sep: NOT_RUN_LIVE_MATERIAL,
++        os.path.join(ROOT, "results") + os.sep: NOT_RUN_LIVE_MATERIAL,
++    }
++    params = step.get("params") or {}
++    found = None
++    for key in INPUT_PARAM_KEYS:
++        value = params.get(key)
++        if not isinstance(value, str) or os.path.exists(value):
++            continue
++        canonical = os.path.abspath(value)
++        for prefix, reason in deferred.items():
++            if canonical.startswith(prefix):
++                found = reason
++                break
++        else:
++            return None
++    return found
+ 
+ GIT_OPERATIONS = {"GIT_STATUS_READONLY", "GIT_LOG_READONLY",
+                   "GIT_SHOW_READONLY"}
+@@ -252,11 +295,57 @@
+                   "control_role": step.get("control_role")}
+ 
+         if name in operation_catalog.IN_PROCESS:
+-            record["argv"] = None
+-            record["note"] = "in-process; performed by the worker"
+-            record["executed"] = False
+-            record["not_executed_reason"] = "IN_PROCESS_NO_SUBPROCESS"
+-            record["ok"] = True
++            # This branch used to set executed False and ok True together and
++            # move on. That combination is what let twelve phases -- every one
++            # of them built entirely from in-process steps -- rehearse as
++            # PASS_READY without a single operation having run, and it is why
++            # the 43/43 result reported before the freeze meant less than it
++            # appeared to. An unexecuted step is not a passing step.
++            #
++            # The operation is now really performed. The one failure that is
++            # still tolerated here is a missing artefact that an earlier
++            # subprocess step of the same phase would have produced, because
++            # the rehearsal does not run those. That exemption is narrow and
++            # is recorded by name; every other failure fails the step.
++            deferred = _deferred_input_reason(step)
++            if deferred:
++                record["argv"] = []
++                record["executed"] = False
++                record["not_executed_reason"] = deferred
++                record["ok"] = True
++                report["steps"].append(record)
++                continue
++
++            record["argv"] = []
++            record["note"] = ("in-process; performed by the controller with "
++                              "the standard library, no subprocess")
++            code, result = in_process_ops.perform(name, step.get("params", {}))
++            record["executed"] = True
++            record["exit_code"] = code
++            record["result_sha256"] = hashing.sha256_text(
++                json.dumps(result, sort_keys=True, default=str))
++
++            # A control is judged against what the plan said it would do. A
++            # negative control that fails has behaved correctly, and treating
++            # its non-zero exit as a phase failure would be the mirror image
++            # of the defect being repaired: reporting a result the run did
++            # not actually have.
++            entry = by_step.get(step["step_id"]) or {}
++            expected = entry.get("expected_exit_code")
++            record["expected_exit_code"] = expected
++            if expected is None:
++                record["ok"] = code == 0
++                record["result"] = "NO_EXPECTATION_STATED"
++            elif expected == "NONZERO":
++                record["ok"] = code != 0
++                record["result"] = ("FAILS_AS_DESIGNED" if record["ok"]
++                                    else "DID_NOT_FAIL")
++            else:
++                record["ok"] = code == expected
++                record["result"] = ("AS_EXPECTED" if record["ok"]
++                                    else "UNEXPECTED_EXIT")
++            if code != 0:
++                record["failure_reason"] = str(result.get("reason", ""))[:400]
+             report["steps"].append(record)
+             continue
+ 
+@@ -451,7 +540,8 @@
+                         if s.get("not_executed_reason") == reason)
+             for reason in (NOT_RUN_LIVE_MATERIAL, NOT_RUN_WOULD_BE_LIVE,
+                            NOT_RUN_OPERATOR_HOST, NOT_RUN_GIT,
+-                           "IN_PROCESS_NO_SUBPROCESS")},
++                           NOT_RUN_UNCONFINED_OUTPUT,
++                           NOT_RUN_MISSING_UPSTREAM)},
+         "coverage_manifest_sha256": hashing.sha256_file(COVERAGE),
+         "reports": reports,
+     }

@@ -1,0 +1,200 @@
+{
+  "schema": "wpno.level1.codex-verification/1",
+  "revision": "R8",
+  "stage": "PRE_FREEZE_FINAL",
+  "verified_utc": "2026-08-28T16:49:52Z",
+  "items": [
+    {
+      "id": 1,
+      "claim": "R4 CONTROL_MANIFEST verifies with zero mismatches.",
+      "measured": "entries=1915; mismatching_paths=[]; malformed=[]; duplicates=[]",
+      "pass": true
+    },
+    {
+      "id": 2,
+      "claim": "R5 control manifest has exactly one mismatch and it is MODE.",
+      "measured": "entries=14160; mismatching_paths=['MODE']; malformed=[]; duplicates=[]",
+      "pass": true
+    },
+    {
+      "id": 3,
+      "claim": "R6 CONTROL_MANIFEST verifies with zero mismatches.",
+      "measured": "entries=14781; mismatching_paths=[]; malformed=[]; duplicates=[]",
+      "pass": true
+    },
+    {
+      "id": 4,
+      "claim": "R7 CONTROL_MANIFEST has 15804 entries and zero mismatches.",
+      "measured": "entries=15804; mismatching_paths=[]; malformed=[]; duplicates=[]",
+      "pass": true
+    },
+    {
+      "id": 5,
+      "claim": "R8 carries and verifies the R7 incident record and accurately discloses the immutability break and restoration.",
+      "measured": "incident_entries=15; incident_mismatches=0; malformed=[]; duplicates=[]; continuous=False; restored=True; contrary_files=[]",
+      "pass": true
+    },
+    {
+      "id": 6,
+      "claim": "R8 contains no full predecessor copy and generation_root resolves R4 through R8.",
+      "measured": "R6_EXECUTION_exists=False; predecessor_package_like_dirs=[]; resolved={'R4': '/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/lineage/R6_EXECUTION/lineage/R5_EXECUTION/lineage/R4_EXECUTION', 'R5': '/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/lineage/R6_EXECUTION/lineage/R5_EXECUTION', 'R6': '/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/lineage/R6_EXECUTION', 'R7': '/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7', 'R8': '/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8'}; errors={}",
+      "pass": true
+    },
+    {
+      "id": 7,
+      "claim": "No active R8 file shares an inode with an active R7 file.",
+      "measured": "active R8 files=890; active R7 files=954; full cross-path (device,inode) intersection=0",
+      "pass": true
+    },
+    {
+      "id": 8,
+      "claim": "Both controller and rehearsal call in_process_executor.execute.",
+      "measured": "call_occurrences={'automation/controller.py': 2, 'build/rehearse_candidate_plans.py': 1}",
+      "pass": true
+    },
+    {
+      "id": 9,
+      "claim": "No live code path substitutes a worker-note outcome for an in-process operation.",
+      "measured": "14 package occurrences classified: live in_process_ops.py:6, in_process_executor.py:6, and controller.py:798 are defect-quoting docstrings; migration.py:363 is the rejecting guard; package_tests/test_r8_migration.py:324 tests that guard; lineage incident occurrences (2) are archived evidence; fixtures occurrences (2) are inert read-only fixture data, imported by no module and referenced only by test_prepare_execution.py as a fixture directory; selftest-runtime duplicates (5) have the same classifications. No executable live-path substitution found. Verifier-script self-references were excluded as verification outputs, not package code.",
+      "pass": true
+    },
+    {
+      "id": 10,
+      "claim": "IN_PROCESS, HANDLERS, and ARGUMENT_SCHEMA contain identical operation sets.",
+      "measured": "catalog=18; handlers=18; schemas=18; catalog-handler=[]; handler-catalog=[]; catalog-schema=[]; schema-catalog=[]",
+      "pass": true
+    },
+    {
+      "id": 11,
+      "claim": "L1-A16 uses the specified corpus novelty proof and all three novelty controls rehearsed AS_EXPECTED.",
+      "measured": "measurement operation=PROVE_SET_NOVELTY; reference_root=/home/ubuntu/project/WPNO/ap18/korpus_docx; expected_reference_entry_count=7; exactly 3 FURTHER POSITIVE/NEGATIVE novelty controls; all four rehearsal rows (measurement plus controls) status=EXECUTED and expectation_result=AS_EXPECTED",
+      "pass": true
+    },
+    {
+      "id": 12,
+      "claim": "No degenerate unhashed COMPARE_HASHES exists and rehearsals record no outside-allowance reads.",
+      "measured": "degenerate_compare_hashes=[]; rehearsal_steps_with_outside_reads=[]",
+      "pass": true
+    },
+    {
+      "id": 13,
+      "claim": "L1-A21 negative control uses boundary COUNT_TEXT_MATCHES with expected count zero.",
+      "measured": "operation=COUNT_TEXT_MATCHES; word_boundary=True; expected_count=0",
+      "pass": true
+    },
+    {
+      "id": 14,
+      "claim": "REF-11 XML remains MIME-wrapped and R7-identical; L1-A33 extracts to work before parsing.",
+      "measured": "prefix=b'MIME-Version:'; R8_sha256=8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a; R7_sha256=8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a; extract_out=/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A33/RUN-A/extracted/REF-11-563203462.part.xml; parse_path=/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A33/RUN-A/extracted/REF-11-563203462.part.xml",
+      "pass": true
+    },
+    {
+      "id": 15,
+      "claim": "Every control-role step has an authoritative machine-checkable expectation and coverage agrees.",
+      "measured": "rederived_control_count=122; unenforced=[]; coverage_count=122; coverage_unenforced=0; coverage_machine=122/122",
+      "pass": true
+    },
+    {
+      "id": 16,
+      "claim": "The R7-to-R8 migration plan contains exactly the specified migrations/exclusion and matching route digest.",
+      "measured": "migratable=[('L1-A31', 'RUN-A'), ('L1-A31', 'RUN-B')]; excluded=[('L1-A31', 'COMPARISON', 'EXECUTED_UNSEALED_ZERO_EVIDENCE_FROZEN_CONTROLLER_DEFECT')]; applied_before_freeze=False; recorded_route_sha256=65b3db95c3bf9d012195ee81c946f95bae08aea0cc7545134cf1f76d0d6ba93f; measured_route_sha256=65b3db95c3bf9d012195ee81c946f95bae08aea0cc7545134cf1f76d0d6ba93f",
+      "pass": true
+    },
+    {
+      "id": 17,
+      "claim": "R7 L1-A31 COMPARISON is EXECUTED, unsealed, and has zero evidence files.",
+      "measured": "state=EXECUTED; SEAL_exists=False; evidence_files=0",
+      "pass": true
+    },
+    {
+      "id": 18,
+      "claim": "Controller suite passes with no failures, errors, or skips.",
+      "measured": "argv=['/usr/bin/python3', '-B', '-m', 'unittest', 'discover', '-s', '.', '-t', '.']; exit=0; tests=503; failures=0; errors=0; skips=0",
+      "pass": true
+    },
+    {
+      "id": 19,
+      "claim": "Package suite passes with no failures, errors, or skips.",
+      "measured": "argv=['/usr/bin/python3', '-B', '-m', 'unittest', 'discover', '-s', 'automation/package_tests', '-t', '.']; exit=0; tests=361; failures=0; errors=0; skips=0",
+      "pass": true
+    },
+    {
+      "id": 20,
+      "claim": "Static safety review is clean with zero findings.",
+      "measured": "argv=['/usr/bin/python3', '-B', 'build/r8_static_safety_review.py', '--out-dir', 'verification_codex_final_pre_freeze_attempt_4/static']; exit=0; report_files=['R8_STATIC_SAFETY_REPORT.json']; finding_count=0; clean=True",
+      "pass": true
+    },
+    {
+      "id": 21,
+      "claim": "All 43 plans exist and coverage has no missing, duplicate, or unknown plans.",
+      "measured": "plans=43; required=43; missing=[]; duplicates=[]; unknown=[]",
+      "pass": true
+    },
+    {
+      "id": 22,
+      "claim": "Rehearsal reports 43/43 PASS_READY.",
+      "measured": "PHASES_PASS_READY=43; phases_required=43; per_phase_PASS_READY=43",
+      "pass": true
+    },
+    {
+      "id": 23,
+      "claim": "Rehearsal has complete in-process evidence, no note-only steps, and equal invocation/step counts.",
+      "measured": "without_evidence=0; note_only=0; handler_invocations=169; in_process_steps=169",
+      "pass": true
+    },
+    {
+      "id": 24,
+      "claim": "Rehearsal has no hollow phases and live state was unchanged.",
+      "measured": "HOLLOW_PHASES=[]; LIVE_STATE_UNCHANGED=True",
+      "pass": true
+    },
+    {
+      "id": 25,
+      "claim": "Progress has 35 audits and 43 phase records, all NOT_STARTED.",
+      "measured": "audits=35; phases=43; state_counts={'NOT_STARTED': 43}",
+      "pass": true
+    },
+    {
+      "id": 26,
+      "claim": "Approvals are empty, results/evidence have no files, and state contains no approval-token text.",
+      "measured": "approval_rows=0; result_files=0; evidence_files=0; state_token_files=[]",
+      "pass": true
+    },
+    {
+      "id": 27,
+      "claim": "R8 build manifest is syntactically valid, unique, hash-correct, and exactly covers builder scope.",
+      "measured": "entries=724; malformed=[]; duplicates=[]; mismatches=[]; physical_not_listed=[]; listed_not_physical=[]",
+      "pass": true
+    },
+    {
+      "id": 28,
+      "claim": "Freeze is pinned to R8, its confined predecessor baseline matches lineage, and baseline construction succeeds.",
+      "measured": "PACKAGE_REVISION=R8; rel=lineage/R7_BASELINE_MANIFEST.json; resolved=/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R7_BASELINE_MANIFEST.json; inside_R8=True; recorded_sha256=0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d; measured_sha256=0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d; baseline_entries=4; error=None",
+      "pass": true
+    },
+    {
+      "id": 29,
+      "claim": "No sibling R9 directory exists.",
+      "measured": "path=/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R9; exists=False",
+      "pass": true
+    },
+    {
+      "id": 30,
+      "claim": "Transitions contains exactly one init-revision route row.",
+      "measured": "rows=1; routes=['init-revision']",
+      "pass": true
+    },
+    {
+      "id": 31,
+      "claim": "Nothing done by this verification changed any manifest-named package file.",
+      "measured": "pre_folded_sha256=e7d3d32e70b9782c0da9d04be31ba68b4f1ace29ddae4fbbe2495b5e565b97eb; post_folded_sha256=e7d3d32e70b9782c0da9d04be31ba68b4f1ace29ddae4fbbe2495b5e565b97eb; files_before=724; files_after=724; changed_paths=[]",
+      "pass": true
+    }
+  ],
+  "overall_pass": true,
+  "unresolved_findings": [],
+  "status": "VERIFICATION_PASS_PRE_FREEZE_R8_FINAL",
+  "manifest_sha256_verified": "6dfd1af689754be61f2ea6ef77f01d2e5bdb8929ef8c0799e15db203755b945a",
+  "manifest_entries_verified": 724,
+  "package_unchanged_by_this_verification": true
+}

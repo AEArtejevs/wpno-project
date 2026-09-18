@@ -1,0 +1,225 @@
+{
+  "audit_id": "L1-A15",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Establish how many tests are collected, how many execute, how many meaningful assertions run, and whether the test can fail at all - then prove it detects a controlled mutation. An exit code of zero from a file that only defines functions is the defect, not the result.",
+  "static_analysis": "The test file is parsed, never imported, and its assertions are counted statically. CLAUDE.md section 10 records the exact shape this audit looks for: two test functions, no __main__ block, and a direct invocation that defines them and runs nothing while exiting zero.\n\nThe static assertion count is the number that the runtime behaviour is checked against. A suite reporting passes with fewer assertions executed than the file contains is reporting on code it did not reach.\n\nAll pytest work happens in a sandbox copy of the tree under the audit work directory. A collection run creates __pycache__ and .pytest_cache, and creating those in PROJECT_ROOT would be a write into a root this package treats as read-only.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/ap18/AP18_test_injection.py"
+      },
+      "purpose": "Count assertions statically and record whether a __main__ block exists. Parse, do not import.",
+      "step_id": "parse_test_file",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTEST_COLLECT_SANDBOX",
+      "params": {
+        "rootdir": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A15/RUN-A/tree",
+        "target": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A15/RUN-A/tree/ap18/AP18_test_injection.py"
+      },
+      "purpose": "Collected count and the complete collection report, including collection errors.",
+      "step_id": "collect_in_sandbox",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTEST_RUN_SANDBOX",
+      "params": {
+        "rootdir": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A15/RUN-A/tree",
+        "target": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A15/RUN-A/tree/ap18/AP18_test_injection.py"
+      },
+      "purpose": "Collected, executed, passed, failed, skipped, xfailed and errored, each recorded separately.",
+      "step_id": "run_in_sandbox",
+      "timeout_seconds": 900
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A15/RUN-A/tree/ap18/AP18_test_injection.py"
+      },
+      "purpose": "Invoke the file the way a person would. An exit 0 that only defines functions is the finding.",
+      "step_id": "invoke_directly",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "PYTEST_RUN_SANDBOX",
+      "params": {
+        "rootdir": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A15/RUN-A/tree_failing",
+        "target": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A15/RUN-A/tree_failing/ap18/AP18_test_injection.py"
+      },
+      "purpose": "A deliberately failing assertion added to a sandbox copy must cause a failure and a non-zero exit. This proves the harness reports failure at all.",
+      "step_id": "positive_control_failing_assertion",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "PYTEST_RUN_SANDBOX",
+      "params": {
+        "rootdir": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A15/RUN-A/tree",
+        "target": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A15/RUN-A/tree/ap18/AP18_test_injection.py"
+      },
+      "purpose": "The unmutated tree must pass, so that the mutation result is attributable to the mutation.",
+      "step_id": "negative_control_unmutated_tree",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "PYTEST_RUN_SANDBOX",
+      "params": {
+        "rootdir": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A15/RUN-A/tree_inverted",
+        "target": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A15/RUN-A/tree_inverted/ap18/AP18_test_injection.py"
+      },
+      "purpose": "The detection condition inverted in a sandbox copy of the filter. The test must fail. This is the decisive control of this audit: a test that passes against an inverted detector is not testing the detector.",
+      "step_id": "mutation_control_inverted_detection",
+      "timeout_seconds": 900
+    }
+  ],
+  "target": {
+    "identity_evidence": "bindings/L1-A15.binding.json records this path with this digest and the file on disk hashes to the same value.",
+    "path": "/home/ubuntu/project/WPNO/ap18/AP18_test_injection.py",
+    "sha256": "f01e65bc9eff2efec3cac2f55ef5238ea5a28139fec2080e6004816c7181eb9d"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "/home/ubuntu/project/WPNO/ap18/AP18_test_injection.py",
+        "/home/ubuntu/project/WPNO/ap18/AP18_eingangsfilter.py",
+        "/home/ubuntu/project/WPNO/pytest.ini"
+      ],
+      "allowed_writes": [
+        "work/L1-A15/RUN-A/",
+        "evidence/L1-A15/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A15 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A15",
+      "candidate_template_identity": "L1-A15/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A15/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "/usr/bin/python3 -m pytest inside a sandbox tree",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "ARBITRARY_SHELL",
+        "CHANGE_PERMISSION",
+        "DATABASE_CONNECTION",
+        "DATABASE_WRITE",
+        "DELETE_SOURCE",
+        "DOCKER_BUILD",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_SOCKET_ACCESS",
+        "GIT_MUTATION",
+        "INSTALL_PACKAGE",
+        "LAUNCH_AGENT_MUTATION",
+        "MCP_MUTATION",
+        "MODIFY_SOURCE",
+        "N8N_MUTATION",
+        "NETWORK_REQUEST",
+        "NETWORK_UPLOAD",
+        "SERVICE_MUTATION"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [],
+      "independent_oracle": "The static assertion count, the collection report, and the mutation outcome. The test suite's own exit code is the thing under test and is never the oracle.",
+      "limitations": [],
+      "method": "static assertion count cross-checked against runtime behaviour",
+      "notes": [
+        "All pytest work happens in a sandbox copy of the tree under the audit work directory. A collection run creates __pycache__ and .pytest_cache, and creating those in PROJECT_ROOT would be a write into a root this package treats as read-only.",
+        "CLAUDE.md section 10: two test functions, no __main__ block, exit 0 and nothing executed."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [],
+      "references": [],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": null,
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "check_id": "four_counts",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Collected, executed, assertions run, can it fail?",
+      "required_result": "Collected, executed, passed, failed, skipped, xfailed and errored, each its own number. Zero collected is itself the primary finding and the run continues to establish why.",
+      "step_id": "run_in_sandbox"
+    },
+    {
+      "check_id": "direct_invocation",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "What happens when the file is run directly?",
+      "required_result": "Exit code recorded together with whether anything actually ran.",
+      "step_id": "invoke_directly",
+      "verdict_effect": "An exit 0 that only defines functions is the vacuous-success pattern and is a finding."
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": "NONZERO",
+      "expected_failure_reason": "the deliberately failing assertion",
+      "expected_result": "FAILURE_REPORTED_AND_NONZERO_EXIT",
+      "fixture": "work/L1-A15/RUN-A/tree_failing/",
+      "fixture_construction": "a sandbox tree with one assertion altered so it must fail",
+      "question": "Can the harness report a failure at all?",
+      "step_id": "positive_control_failing_assertion"
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_failure_reason": "none expected; a failure here would make the mutation result unattributable",
+      "expected_result": "PASSES",
+      "question": "Does the unmutated tree pass?",
+      "step_id": "negative_control_unmutated_tree"
+    },
+    {
+      "check_id": "mutation_control",
+      "decisive": true,
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expected_exit_code": "NONZERO",
+      "expected_failure_reason": "the inverted detection condition",
+      "expected_result": "THE_TEST_FAILS",
+      "fixture": "work/L1-A15/RUN-A/tree_inverted/",
+      "fixture_construction": "a sandbox tree with the filter's detection condition inverted",
+      "proof_the_fixture_differs": "the inverted file's SHA-256 differs from the original's and the inverted line is recorded verbatim",
+      "question": "Does the test detect an inverted detector?",
+      "step_id": "mutation_control_inverted_detection",
+      "zero_changed_results_is": "proof the test does not test the detector, not a passing control"
+    }
+  ]
+}

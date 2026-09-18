@@ -1,0 +1,242 @@
+{
+  "audit_id": "L1-A05",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Prove that the productive output guard rejects the known-bad report, and that the rejection is caused by the rule intended to catch it rather than by an unrelated failure. Exit code and semantic verdict are recorded separately: a guard that prints REJECT and exits 0 is a finding.",
+  "static_analysis": "The guard is parsed with PYTHON_AST_PARSE, never imported. Its rule set is enumerated from the parse - each rule with its pattern, its boundary constructs and the verdict it produces - because attribution needs the rule list before it needs any output.\n\nThe binding records two open questions and neither is resolved by assumption: what 'report_bad' is on this machine, and which guardrail version is productive. The known-bad input is identified from the enumerated rules by constructing an input that violates one named rule, so that the audit does not depend on an identifier that does not exist here.\n\nPYTHON_SCRIPT_RUN_SANDBOX runs a script under work/ and nowhere else, so the approved phase first copies the guard to work/<audit>/RUN-A/sandbox/ and records the copy's digest beside the original's. The original in authoring/ is read and never written to. Where a rule has to be neutralised to attribute a rejection, it is neutralised in that copy and the neutralised line is recorded.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/authoring/AP17_output_guardrail_v3.py"
+      },
+      "purpose": "Enumerate the rule set. Parse, do not import.",
+      "step_id": "parse_guard",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/authoring/AP17_output_guardrail_v3.py"
+      },
+      "purpose": "Bind the exact guard bytes under test.",
+      "step_id": "hash_guard",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A05/RUN-A/inputs/known_bad.md"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A05/RUN-A/sandbox/AP17_output_guardrail_v3.py"
+      },
+      "purpose": "Run the sandbox copy against the known-bad input. Record argv, exit code and complete stdout and stderr.",
+      "step_id": "run_against_known_bad",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A05/RUN-A/inputs/known_bad_reformatted.md"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A05/RUN-A/sandbox/AP17_output_guardrail_v3.py"
+      },
+      "purpose": "The same input trivially reformatted - whitespace and line endings - to confirm the rejection is of the content and not of the formatting.",
+      "step_id": "run_against_known_bad_reformatted",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A05/RUN-A/inputs/isolating_one_rule.md"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A05/RUN-A/sandbox/AP17_output_guardrail_v3.py"
+      },
+      "purpose": "A minimal input constructed to violate exactly one enumerated rule must be rejected, and the rejection must be attributable to that rule.",
+      "step_id": "positive_control_single_rule_violation",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A05/RUN-A/inputs/clean_minimal.md"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A05/RUN-A/sandbox/AP17_output_guardrail_v3.py"
+      },
+      "purpose": "A minimal clean input must be accepted. If everything is rejected, rejecting the bad input carries no information.",
+      "step_id": "negative_control_clean_input",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A05/RUN-A/inputs/known_bad.md"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A05/RUN-A/sandbox/AP17_output_guardrail_v3_rule_neutralised.py"
+      },
+      "purpose": "With the triggering rule neutralised in the sandbox copy, the known-bad input must be accepted. If it is still rejected, the rejection came from somewhere else and the attribution was wrong.",
+      "step_id": "mutation_control_neutralise_the_rule",
+      "timeout_seconds": 300
+    }
+  ],
+  "target": {
+    "identity_evidence": "bindings records this path with this digest. Which guardrail version is productive is an open question in this audit's binding and a version suffix is excluded by rule from answering it.",
+    "path": "/home/ubuntu/project/WPNO/authoring/AP17_output_guardrail_v3.py",
+    "sha256": "dd60dc63437691082b821fe219a7599c1561c757214a0e38eac97367ab2a09ca"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "/home/ubuntu/project/WPNO/authoring/AP17_output_guardrail_v3.py"
+      ],
+      "allowed_writes": [
+        "work/L1-A05/RUN-A/",
+        "evidence/L1-A05/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A05 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A05",
+      "candidate_template_identity": "L1-A05/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A05/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "/usr/bin/python3 -I -B against a sandbox copy",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "ARBITRARY_SHELL",
+        "CHANGE_PERMISSION",
+        "DATABASE_CONNECTION",
+        "DATABASE_WRITE",
+        "DELETE_SOURCE",
+        "DOCKER_BUILD",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_SOCKET_ACCESS",
+        "GIT_MUTATION",
+        "INSTALL_PACKAGE",
+        "LAUNCH_AGENT_MUTATION",
+        "MCP_MUTATION",
+        "MODIFY_SOURCE",
+        "N8N_MUTATION",
+        "NETWORK_REQUEST",
+        "NETWORK_UPLOAD",
+        "SERVICE_MUTATION"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [],
+      "independent_oracle": "The enumerated rule set from the AST parse, plus inputs constructed by this audit to isolate one rule each. The guard's own report files in authoring/ are prior artefacts, not oracles.",
+      "limitations": [],
+      "method": "rule enumeration by AST, then attribution by selective neutralisation",
+      "notes": [
+        "PYTHON_SCRIPT_RUN_SANDBOX runs a script under work/ and nowhere else, so the approved phase first copies the guard to work/<audit>/RUN-A/sandbox/ and records the copy's digest beside the original's. The original in authoring/ is read and never written to. Where a rule has to be neutralised to attribute a rejection, it is neutralised in that copy and the neutralised line is recorded.",
+        "The binding's two open questions - what report_bad is here, and which version is productive - are carried into the result rather than resolved by assumption."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [],
+      "references": [],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": "Production identity requires execution-path evidence: an import, an invocation in a script, a container command, a workflow node or a scheduler entry. Filename, version suffix, modification time, file size, documentation, comments and proximity to another file are excluded by rule. If production identity cannot be proven the answer is that it cannot be proven from this machine; no most-likely candidate is nominated.",
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "check_id": "exit_code_and_verdict_separately",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "What did the guard return, and what did it say?",
+      "required_result": "Exit code and semantic verdict recorded as two values.",
+      "step_id": "run_against_known_bad",
+      "verdict_effect": "A guard that prints REJECT and exits 0 is a finding: a caller reading the exit code would proceed."
+    },
+    {
+      "check_id": "attribution",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "method": "from the guard's own output if it identifies the rule; otherwise by selectively neutralising rules in the sandbox copy and observing which change makes the rejection disappear",
+      "question": "Which rule caused the rejection?",
+      "required_result": "One named rule, with the evidence for it."
+    },
+    {
+      "check_id": "reformatting_invariance",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Does trivial reformatting change the verdict?",
+      "required_result": "Recorded. A rejection that disappears under whitespace changes is matching formatting rather than content.",
+      "step_id": "run_against_known_bad_reformatted"
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": "NONZERO",
+      "expected_failure_reason": "the one rule the input was built to violate",
+      "expected_result": "REJECTED_AND_ATTRIBUTED_TO_THAT_RULE",
+      "fixture": "work/L1-A05/RUN-A/inputs/isolating_one_rule.md",
+      "fixture_construction": "minimal text violating exactly one enumerated rule and nothing else",
+      "question": "Is a single-rule violation rejected and attributed?",
+      "step_id": "positive_control_single_rule_violation"
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_failure_reason": "none expected; a rejection here would mean the guard rejects everything and its rejection of the bad input carries no information",
+      "expected_result": "ACCEPTED",
+      "question": "Is a clean input accepted?",
+      "step_id": "negative_control_clean_input"
+    },
+    {
+      "check_id": "mutation_control",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_result": "THE_KNOWN_BAD_INPUT_IS_NOW_ACCEPTED",
+      "fixture": "work/L1-A05/RUN-A/sandbox/AP17_output_guardrail_v3_rule_neutralised.py",
+      "fixture_construction": "the sandbox copy with the attributed rule disabled and nothing else changed",
+      "proof_the_fixture_differs": "its SHA-256 differs from the sandbox copy's and the neutralised line is recorded verbatim",
+      "question": "Does neutralising the rule change the verdict?",
+      "step_id": "mutation_control_neutralise_the_rule",
+      "zero_changed_results_is": "proof that the attribution was wrong, not a passing control"
+    }
+  ]
+}

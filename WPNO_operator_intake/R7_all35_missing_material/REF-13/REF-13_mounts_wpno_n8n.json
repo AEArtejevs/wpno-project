@@ -1,0 +1,1 @@
+[{"Type":"volume","Name":"n8n_wpno_n8n_data","Source":"n8n_wpno_n8n_data","Destination":"/home/node/.n8n","Driver":"local","Mode":"rw","RW":true,"Propagation":""}]

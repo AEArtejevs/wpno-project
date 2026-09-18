@@ -1,0 +1,39 @@
+{
+  "project": "S11-Automatisierung",
+  "date": "2026-07-12",
+  "difficulty": "9.5/10",
+  "current_product_reference": {
+    "commit": "670e362",
+    "status": "NOT_ACCEPTED_L99_BLOCKED"
+  },
+  "current_control_plane_candidate": {
+    "commit": "5ebc7adb934e2a57e507e2d767f3b4d0cbec475e",
+    "tree": "2aa02bba3f45829de1601472740d0cbb276f041a",
+    "parent": "670e362",
+    "attestation": "ATTESTED_GREEN_PENDING_GATECODE_REVIEW",
+    "quality_confirmed": false
+  },
+  "invariants": {
+    "official_count": 27,
+    "release_decisions": 0,
+    "court_ready": "GESPERRT",
+    "freigabe": "OFFEN",
+    "ppt_001": "NOT_STARTED",
+    "remote_count": 0,
+    "product_work_allowed": false,
+    "cross_model_dual_control_required": true,
+    "single_model_decision_prohibited": true,
+    "deterministic_reference_calculation_required": true,
+    "human_double_review_required": true,
+    "organ_decision_outside_ai": true
+  },
+  "next_claude_trigger": "S11_CONTROL_PLANE_V3_TRUST_ROOT_AND_CROSS_MODEL_REMEDIATION",
+  "next_chatgpt_trigger_after_candidate": "S11_CONTROL_PLANE_V3_CHATGPT_INDEPENDENT_RECHECK",
+  "blocked_until": [
+    "Control Plane V3 independent ChatGPT review",
+    "S11 Safety Constitution",
+    "dual independent calculation engines",
+    "manual control calculation",
+    "historical shadow mode"
+  ]
+}

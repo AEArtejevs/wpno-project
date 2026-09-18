@@ -1,0 +1,274 @@
+19:59:51:635 INFO  de.governikus.updater.client.Updater.getLocalAppFolder(Updater.java:186) - using user's home directory
+19:59:51:640 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1025) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs
+19:59:51:644 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/dss-utils-6.0.jar
+19:59:51:644 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_validate_svp-4.3.0.jar
+19:59:51:644 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/cxf-rt-features-logging-4.2.0.jar
+19:59:51:645 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/httpcore-4.4.16.jar
+19:59:51:645 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/xmlschema-core-2.3.2.jar
+19:59:51:645 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/java-support-8.4.2.jar
+19:59:51:646 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/vibilia-businesscard-10.18.3.jar
+19:59:51:646 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_base-4.3.0.jar
+19:59:51:647 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/wss4j-bindings-3.0.5.jar
+19:59:51:649 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/dvdv-api-2.18.0.jar
+19:59:51:649 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_pades_validate-4.3.0.jar
+19:59:51:650 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/bcpkix-jdk18on-1.84.jar
+19:59:51:651 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_zip-4.3.0.jar
+19:59:51:651 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/fontbox-2.0.36.jar
+19:59:51:651 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/jackson-databind-2.21.3.jar
+19:59:51:652 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/wss4j-ws-security-dom-3.0.5.jar
+19:59:51:652 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/jul-to-slf4j-2.0.17.jar
+19:59:51:653 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/freemarker-2.3.34.jar
+19:59:51:653 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/jaxb-core-4.0.8.jar
+19:59:51:654 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_pades_validate_dss-4.3.0.jar
+19:59:51:654 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/fop-core-2.11.jar
+19:59:51:654 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_asic_validate-4.3.0.jar
+19:59:51:655 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_setup-4.3.0.jar
+19:59:51:655 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/ts_102918v010301_xsd-2.1.0-Streaming.jar
+19:59:51:656 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/safe-client-impl-2.0.6.jar
+19:59:51:658 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/bcprov-jdk18on-1.84.jar
+19:59:51:659 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/ci-2.0.1.jar
+19:59:51:659 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/vibilia-directoryservice-10.18.3.jar
+19:59:51:659 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/angus-mail-2.0.5.jar
+19:59:51:659 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/polyglot-25.0.3.jar
+19:59:51:660 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/wss4j-policy-3.0.5.jar
+19:59:51:661 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/opensaml-core-4.3.2.jar
+19:59:51:661 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/algorithm_identifier-2.0.0.0.jar
+19:59:51:661 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/dss-enumerations-6.0.jar
+19:59:51:662 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/soap-envelope-2.1.0-Streaming.jar
+19:59:51:662 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/wss4j-ws-security-common-3.0.5.jar
+19:59:51:662 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/opensaml-xmlsec-impl-4.3.2.jar
+19:59:51:663 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/dss-model-6.0.jar
+19:59:51:663 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/vibilia-framework-10.18.3.jar
+19:59:51:663 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/log4j-slf4j2-impl-2.26.0.jar
+19:59:51:663 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/osci-bibliothek-2.4.8.jar
+19:59:51:663 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/oasis-dss-core-schema-v1.0-os-2.1.0-Streaming.jar
+19:59:51:664 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/cxf-rt-databinding-jaxb-4.2.0.jar
+19:59:51:664 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/cxf-rt-wsdl-4.2.0.jar
+19:59:51:664 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/woodstox-core-7.1.1.jar
+19:59:51:664 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/log4j-over-slf4j-2.0.17.jar
+19:59:51:665 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/jakarta.mail-api-2.1.5.jar
+19:59:51:665 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/jaxb-runtime-4.0.8.jar
+19:59:51:665 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/guava-33.6.0-jre.jar
+19:59:51:665 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_algo_catalog-4.3.0.jar
+19:59:51:666 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/ecard-2.1.0-Streaming.jar
+19:59:51:666 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_jce-4.3.0.jar
+19:59:51:666 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_inspect_fo-4.3.0.jar
+19:59:51:666 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/jakarta.xml.ws-api-4.0.3.jar
+19:59:51:666 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_utilities-4.3.0.jar
+19:59:51:666 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_validate_model_base-4.3.0.jar
+19:59:51:666 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_xades_validate-4.3.0.jar
+19:59:51:666 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/dss-pades-6.0.jar
+19:59:51:667 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/regex-25.0.3.jar
+19:59:51:667 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/fop-util-2.11.jar
+19:59:51:667 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/okhttp-4.12.0.jar
+19:59:51:667 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/dss-pades-pdfbox-6.0.jar
+19:59:51:667 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/vhn-issuer-2.4.0.jar
+19:59:51:667 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/xjustiz-2.1.21.jar
+19:59:51:667 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_ocsp_requester-4.3.0.jar
+19:59:51:667 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_osci-4.3.0.jar
+19:59:51:668 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/XAdES-1-4-1-2.1.0-Streaming.jar
+19:59:51:668 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/opensaml-xmlsec-api-4.3.2.jar
+19:59:51:668 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/commons-collections4-4.4.jar
+19:59:51:668 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/xmlers-schema-draft-v0.3-2.1.0-Streaming.jar
+19:59:51:668 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/vibilia-xoev-2.1.0.jar
+19:59:51:668 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_validate_cvp-4.3.0.jar
+19:59:51:671 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/opensaml-security-api-4.3.2.jar
+19:59:51:671 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/cxf-core-4.2.0.jar
+19:59:51:671 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/opensaml-saml-impl-4.3.2.jar
+19:59:51:672 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/cxf-rt-bindings-xml-4.2.0.jar
+19:59:51:672 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/xom-1.4.1.jar
+19:59:51:673 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_xades_core-4.3.0.jar
+19:59:51:673 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/collections-25.0.3.jar
+19:59:51:673 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/jacob-1.21.jar
+19:59:51:673 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/lombok-1.18.46.jar
+19:59:51:673 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/wsdl4j-1.6.3.jar
+19:59:51:674 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/bcutil-jdk18on-1.84.jar
+19:59:51:674 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/cxf-rt-frontend-jaxws-4.2.0.jar
+19:59:51:674 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/commons-lang3-3.20.0.jar
+19:59:51:674 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/ComponentInfo-1.0.6.jar
+19:59:51:675 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/cxf-rt-bindings-soap-4.2.0.jar
+19:59:51:675 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/opensaml-xacml-saml-api-4.3.2.jar
+19:59:51:675 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/dss-crl-parser-6.0.jar
+19:59:51:675 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/dss-cades-6.0.jar
+19:59:51:675 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/opensaml-soap-impl-4.3.2.jar
+19:59:51:676 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/jasypt-1.9.3.jar
+19:59:51:676 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_uom-4.3.0.jar
+19:59:51:676 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_transport-4.3.0.jar
+19:59:51:676 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/cryptacular-1.3.0.jar
+19:59:51:676 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/default-converter-2.1.0-Streaming.jar
+19:59:51:676 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/config-beSt.jar
+19:59:51:677 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/truffle-compiler-25.0.3.jar
+19:59:51:677 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/stax2-api-4.2.2.jar
+19:59:51:677 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_inspect_core-4.3.0.jar
+19:59:51:678 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/xml-resolver-1.2.jar
+19:59:51:678 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/jackson-annotations-2.21.jar
+19:59:51:678 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/opensaml-messaging-api-4.3.2.jar
+19:59:51:678 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/xmlgraphics-commons-2.11.jar
+19:59:51:678 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/security_utils-2.2.1.jar
+19:59:51:679 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/istack-commons-runtime-4.2.0.jar
+19:59:51:679 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/jna-5.18.1.jar
+19:59:51:680 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/mcard-3.3.1.jar
+19:59:51:680 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/Mac
+19:59:51:681 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/vibilia-csl-10.18.3.jar
+19:59:51:681 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/cxf-rt-ws-security-4.2.0.jar
+19:59:51:681 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/ts_102231v030102_xsd-2.1.0-Streaming.jar
+19:59:51:681 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/commons-text-1.15.0.jar
+19:59:51:682 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/log4j-core-2.26.0.jar
+19:59:51:682 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_cades_validate-4.3.0.jar
+19:59:51:682 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/vibilia-osci-10.18.3.jar
+19:59:51:682 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/vibilia-project-10.18.3.jar
+19:59:51:682 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/jakarta.annotation-api-3.0.0.jar
+19:59:51:683 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/wss4j-ws-security-policy-stax-3.0.5.jar
+19:59:51:683 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/stax-ex-2.1.0.jar
+19:59:51:683 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/jakarta.activation-api-2.1.4.jar
+19:59:51:683 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/beSt-2.7.1.jar
+19:59:51:683 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/dss-utils-apache-commons-6.0.jar
+19:59:51:683 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/slf4j-api-2.0.17.jar
+19:59:51:683 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_cvs_client-4.3.0.jar
+19:59:51:684 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/jakarta.servlet-api-6.1.0.jar
+19:59:51:685 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/commons-collections-3.2.2.jar
+19:59:51:685 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_validate_policy-4.3.0.jar
+19:59:51:685 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/vibilia-observable-server-10.18.3.jar
+19:59:51:685 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_inspect_html-4.3.0.jar
+19:59:51:686 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_algo_catalog_files-4.3.0.jar
+19:59:51:686 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/opensaml-soap-api-4.3.2.jar
+19:59:51:686 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/opensaml-storage-api-4.3.2.jar
+19:59:51:686 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/icu4j-25.0.3.jar
+19:59:51:686 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/oasis-sstc-saml-schema-assertion-1.1-2.1.0-Streaming.jar
+19:59:51:687 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/opensaml-profile-api-4.3.2.jar
+19:59:51:688 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/nativeimage-25.0.3.jar
+19:59:51:688 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/cxf-rt-security-saml-4.2.0.jar
+19:59:51:688 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/ts_11910202v010202-2.1.0-Streaming.jar
+19:59:51:688 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/XAdES-1-3-2-2.1.0-Streaming.jar
+19:59:51:688 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/oasis-saml-schema-assertion-2.0-2.1.0-Streaming.jar
+19:59:51:688 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_output_sig_val_report-4.3.0.jar
+19:59:51:689 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/jakarta.xml.soap-api-3.0.2.jar
+19:59:51:689 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/vibilia-safe-10.18.3.jar
+19:59:51:689 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/batik-all-1.19.jar
+19:59:51:689 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/cxf-rt-frontend-simple-4.2.0.jar
+19:59:51:689 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/jcl-over-slf4j-2.0.17.jar
+19:59:51:689 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/xmldsig-core-schema-2.1.0-Streaming.jar
+19:59:51:689 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/cxf-rt-ws-policy-4.2.0.jar
+19:59:51:689 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/commons-io-2.22.0.jar
+19:59:51:690 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/safe-client-wsdl-2.0.6.jar
+19:59:51:691 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/commons-compress-1.28.0.jar
+19:59:51:692 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/truffle-runtime-25.0.3.jar
+19:59:51:692 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/jakarta.xml.bind-api-4.0.5.jar
+19:59:51:692 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/opensaml-saml-api-4.3.2.jar
+19:59:51:692 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/dss-spi-6.0.jar
+19:59:51:693 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/jackson-core-2.21.3.jar
+19:59:51:693 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/saaj-impl-3.0.4.jar
+19:59:51:694 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/truffle-api-25.0.3.jar
+19:59:51:694 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/cxf-rt-ws-addr-4.2.0.jar
+19:59:51:694 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/neethi-3.2.2.jar
+19:59:51:694 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/asm-9.9.1.jar
+19:59:51:694 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/regserver-wsdl-3.6.0.jar
+19:59:51:694 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/oasis-dss-x-1.0-profiles-verification-report-cd02-2.1.0-Streaming.jar
+19:59:51:695 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/opensaml-xacml-saml-impl-4.3.2.jar
+19:59:51:695 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/jniutils-25.0.3.jar
+19:59:51:695 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/ts_119612v020201_xsd-2.1.0-Streaming.jar
+19:59:51:695 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/xmlers-schema-2.1.0-Streaming.jar
+19:59:51:695 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/log4j-api-2.26.0.jar
+19:59:51:695 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/beSt-help-2.7.0.jar
+19:59:51:695 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/wss4j-ws-security-stax-3.0.5.jar
+19:59:51:695 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/xmpbox-2.0.36.jar
+19:59:51:695 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/fop-events-2.11.jar
+19:59:51:696 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/cxf-rt-transports-http-4.2.0.jar
+19:59:51:696 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/ci_view-2.0.1.jar
+19:59:51:696 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_validate-4.3.0.jar
+19:59:51:697 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_ers_validate-4.3.0.jar
+19:59:51:697 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/pdfbox-2.0.36.jar
+19:59:51:697 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/velocity-engine-core-2.4.1.jar
+19:59:51:697 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/commons-codec-1.22.0.jar
+19:59:51:697 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/xml-apis-ext-1.3.04.jar
+19:59:51:697 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/vibilia-search-10.18.3.jar
+19:59:51:697 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/angus-activation-2.0.3.jar
+19:59:51:697 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/csl_validate_core-4.3.0.jar
+19:59:51:697 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/httpclient-4.5.14.jar
+19:59:51:697 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/jakarta.jws-api-3.0.0.jar
+19:59:51:697 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/js-language-25.0.3.jar
+19:59:51:697 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/dss-document-6.0.jar
+19:59:51:698 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/zip4j-2.11.5.jar
+19:59:51:698 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/dss-alert-6.0.jar
+19:59:51:698 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/xml-2.1.0-Streaming.jar
+19:59:51:698 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/opensaml-xacml-api-4.3.2.jar
+19:59:51:698 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/opensaml-security-impl-4.3.2.jar
+19:59:51:699 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/xmlsec-3.0.6.jar
+19:59:51:699 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/cxf-rt-security-4.2.0.jar
+19:59:51:699 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/opensaml-xacml-impl-4.3.2.jar
+19:59:51:699 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/xz-25.0.3.jar
+19:59:51:699 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1036) - /Users/martinotten/Governikus KG/COM Vibilia beSt/libs/xenc-schema-2.1.0-Streaming.jar
+19:59:51:699 INFO  de.governikus.updater.client.Updater.canWrite(Updater.java:1025) - /Users/martinotten/Governikus KG/COM Vibilia beSt/best.xml
+19:59:51:700 INFO  de.governikus.updater.client.Updater.getLocalAppFolder(Updater.java:211) - application folder: /Users/martinotten/Governikus KG/COM Vibilia beSt
+19:59:51:718 INFO  de.governikus.updater.client.Nettings.<init>(Nettings.java:54) - Using de.governikus.updater.client.Nettings$1 as ProxySelector
+#
+#Sun Aug 16 19:59:51 CEST 2026
+download.server.url=https\://appl.governikus-asp.de/update/best/installer/
+java.specification.version=17
+updater.output.console=true
+sun.jnu.encoding=UTF-8
+java.class.path=\:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/jaxb-api-2.3.1.jar\:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/js-22.3.2.jar\:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/jaxb-runtime-2.3.6.jar\:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/gov-updater-application.jar\:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/gov-updater-client.jar\:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/gov-updater-schema.jar\:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/jakarta.activation-api-1.2.2.jar\:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/istack-commons-runtime-3.0.12.jar\:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/gov-updater-best.jar\:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/truffle-api-22.3.2.jar\:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/graal-sdk-22.3.2.jar\:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/icu4j-71.1.jar\:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/js-scriptengine-22.3.2.jar\:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/regex-22.3.2.jar
+java.vm.vendor=Eclipse Adoptium
+sun.arch.data.model=64
+controller.classname=de.governikus.updater.best.BestProject
+java.vendor.url=https\://adoptium.net/
+user.timezone=Europe/Madrid
+java.vm.specification.version=17
+os.name=Mac OS X
+sun.net.client.defaultReadTimeout=30000
+sun.java.launcher=SUN_STANDARD
+user.country=DE
+sun.boot.library.path=/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/PlugIns/temurin-17.jre/Contents/Home/lib
+sun.java.command=de.governikus.updater.client.Updater
+http.nonProxyHosts=local|*.local|169.254/16|*.169.254/16
+jdk.debug=release
+application.folderName=COM Vibilia beSt
+sun.cpu.endian=little
+user.home=/Users/martinotten
+user.language=de
+jdk.http.auth.tunneling.disabledSchemes=
+manufacturer.name=Governikus KG
+installer.version=3.2.4
+java.specification.vendor=Oracle Corporation
+java.version.date=2026-01-20
+java.home=/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/PlugIns/temurin-17.jre/Contents/Home
+file.separator=/
+java.vm.compressedOopsMode=Zero based
+line.separator=\n
+java.vm.specification.vendor=Oracle Corporation
+java.specification.name=Java Platform API Specification
+jdk.http.auth.proxying.disabledSchemes=
+updater.debug=false
+sun.management.compiler=HotSpot 64-Bit Tiered Compilers
+ftp.nonProxyHosts=local|*.local|169.254/16|*.169.254/16
+java.runtime.version=17.0.18+8
+user.name=martinotten
+sun.net.client.defaultConnectTimeout=30000
+path.separator=\:
+os.version=26.2
+java.runtime.name=OpenJDK Runtime Environment
+file.encoding=UTF-8
+java.vm.name=OpenJDK 64-Bit Server VM
+java.vendor.version=Temurin-17.0.18+8
+java.vendor.url.bug=https\://github.com/adoptium/adoptium-support/issues
+java.io.tmpdir=./Governikus_Logs
+update.filename=best.xml
+java.version=17.0.18
+user.dir=/Users/martinotten
+os.arch=x86_64
+java.vm.specification.name=Java Virtual Machine Specification
+native.encoding=UTF-8
+java.library.path=/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/MacOS
+java.vm.info=mixed mode
+java.vendor=Eclipse Adoptium
+java.vm.version=17.0.18+8
+java.specification.maintenance.version=1
+sun.io.unicode.encoding=UnicodeBig
+socksNonProxyHosts=local|*.local|169.254/16|*.169.254/16
+java.class.version=61.0
+19:59:51:741 INFO  de.governikus.updater.client.gui.DefaultGUIUpdateController.isLocked(DefaultGUIUpdateController.java:468) - Lock file: /Users/martinotten/Governikus KG/COM Vibilia beSt/STARTLOCK
+19:59:51:747 INFO  de.governikus.updater.client.gui.DefaultGUIUpdateController.lock(DefaultGUIUpdateController.java:454) - Lock file: /Users/martinotten/Governikus KG/COM Vibilia beSt/STARTLOCK
+19:59:59:815 INFO  de.governikus.updater.client.Updater.runUpdate(Updater.java:327) - locale version: 2.7.1.0
+19:59:59:816 INFO  de.governikus.updater.client.Updater.runUpdate(Updater.java:329) - remote version: 2.7.1.0
+19:59:59:817 INFO  de.governikus.updater.client.Updater.runUpdate(Updater.java:354) - can run local version?true
+CHECK_LOCAL, INFLATE and COPY not needed from Controller.

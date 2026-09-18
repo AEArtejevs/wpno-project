@@ -1,0 +1,59 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A24",
+  "binding_status": "TARGET_PARTIAL",
+  "logical_targets": [
+    "CLAUDE.md loading outside the project root"
+  ],
+  "candidate_paths": [
+    "/Users/martinotten/WPNO/CLAUDE.md",
+    "/Users/martinotten/.claude/CLAUDE.md"
+  ],
+  "productive_target": null,
+  "productive_target_sha256": null,
+  "productive_target_evidence": [],
+  "execution_path_evidence": [],
+  "test_candidates": [
+    "/Users/martinotten/Downloads"
+  ],
+  "related_components": [],
+  "independent_reference_candidates": [],
+  "external_evidence_required": [],
+  "unresolved_questions": [
+    "Which instruction files load outside the project root is a runtime property to be established during the approved live audit."
+  ],
+  "discovery_drift": [],
+  "source_evidence": [
+    {
+      "source_path": "/Users/martinotten/WPNO/CLAUDE.md",
+      "sha256": "f6734d0d0f7a25933a87efeec89cfdb2ba97f79956a546c13de9a94fac3d1ef8",
+      "locator": "project instruction file",
+      "evidence_type": "documentation",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/.claude/CLAUDE.md",
+      "sha256": null,
+      "locator": "user-level instruction file — read-only, never modified",
+      "evidence_type": "documentation",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/MAC_EVIDENCE/L1_A24_EXTERNAL_DIRECTORY_CANDIDATES.json",
+      "sha256": "5935e0f1ff7e82b90fbe9620a2ff285b616448f08d90b7487b3b2a9f84cdef0c",
+      "locator": "canonical_path=/Users/martinotten/Downloads; directory_exists=true; directory_symlink_status=false",
+      "evidence_type": "data",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/HUMAN_DECISIONS/L1-A24/L1-A24_EXTERNAL_DIRECTORY_DECISION.json",
+      "sha256": "10621111ac174c283b4b429e5bc3b60c8b091a343cd2f59026733c116a293d4f",
+      "locator": "decision=APPROVED; selected_directory=/Users/martinotten/Downloads",
+      "evidence_type": "artifact",
+      "confidence": "HIGH"
+    }
+  ],
+  "replications": 1,
+  "risk": "MEDIUM",
+  "execution_order": 26
+}

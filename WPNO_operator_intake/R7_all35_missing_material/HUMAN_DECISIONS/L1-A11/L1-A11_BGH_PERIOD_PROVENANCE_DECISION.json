@@ -1,0 +1,35 @@
+{
+  "schema": "wpno.r7.human-decision/1",
+  "revision": "R7",
+  "audit_id": "L1-A11",
+  "decision_type": "BGH_REGISTER_PERIOD_AND_PROVENANCE",
+  "decision": "APPROVED",
+  "validity_period": {
+    "start": "2026-01-01",
+    "end": "2026-08-27",
+    "inclusive": true
+  },
+  "reference_set": [
+    {
+      "role": "BGH_GESCHAEFTSVERTEILUNGSPLAN_2026",
+      "path": "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/REF-05/REF-05_BGH_Geschaeftsverteilungsplan_2026.pdf",
+      "sha256": "b103cc8b193fcfef62d9d57f5c809c925ba170394a1fe2badba9c66305d27ed5",
+      "operator_provenance": "BUNDESGERICHTSHOF_PUBLICATION"
+    },
+    {
+      "role": "BGH_PRAESIDIUMSBESCHLUESSE_2026",
+      "path": "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/REF-05/REF-05_BGH_Praesidiumsbeschluesse_2026.pdf",
+      "sha256": "da9f847e6532bfacfc6f3a8f55edba9c3ad5f346b2242f5918668c938e7b6d18",
+      "operator_provenance": "BUNDESGERICHTSHOF_PUBLICATION"
+    }
+  ],
+  "excluded_material": [
+    {
+      "name": "2026_07_01_Externe_Organigramm_GV.pdf",
+      "reason": "Issuer not established as Bundesgerichtshof; previous evidence classified it as unrelated."
+    }
+  ],
+  "coverage_rule": "The audit must independently verify the issuer, internal date or Stand date, and substantive coverage of the supplied BGH documents. This human decision does not waive a documentary coverage gap. If the supplied Präsidium decisions do not cover the approved period, L1-A11 remains blocked or non-PASS under its authoritative specification.",
+  "operator": "Andris",
+  "recorded_utc": "2026-08-27T21:55:14+00:00"
+}

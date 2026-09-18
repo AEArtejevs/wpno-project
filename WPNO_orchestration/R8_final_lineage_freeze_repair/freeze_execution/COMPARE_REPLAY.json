@@ -1,0 +1,47 @@
+{
+ "EQUAL": false,
+ "a": {
+  "entry_count": 1516,
+  "path": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/freeze_execution/INVENTORY_BEFORE_REPLAY.json",
+  "root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8"
+ },
+ "b": {
+  "entry_count": 1516,
+  "path": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/freeze_execution/INVENTORY_AFTER_REPLAY.json",
+  "root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8"
+ },
+ "compared_fields": [
+  "type",
+  "size",
+  "sha256",
+  "symlink_target",
+  "mode",
+  "uid",
+  "gid",
+  "mtime_ns"
+ ],
+ "contents_changed": 0,
+ "differences": [
+  {
+   "fields": {
+    "mtime_ns": [
+     1787957572274041705,
+     1787957616419332049
+    ]
+   },
+   "path": "state"
+  }
+ ],
+ "gid_changed": 0,
+ "modes_changed": 0,
+ "mtimes_changed": 1,
+ "paths_added": 0,
+ "paths_differing": 1,
+ "paths_only_in_a": [],
+ "paths_only_in_b": [],
+ "paths_removed": 0,
+ "schema": "wpno.r8.lineage-inventory-compare/1",
+ "symlink_targets_changed": 0,
+ "uid_changed": 0,
+ "written_paths": 0
+}

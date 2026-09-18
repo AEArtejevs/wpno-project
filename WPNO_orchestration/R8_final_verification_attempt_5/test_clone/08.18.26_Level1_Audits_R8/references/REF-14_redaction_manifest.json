@@ -1,0 +1,79 @@
+{
+  ".env_files_read": 0,
+  "files": [
+    {
+      "current_source_sha256": "cdd162fa4145c4617f8c71956cc570c50e1c9a4a1da69007b6cbd2c034281329",
+      "package_file": "docker__litellm__docker-compose.yml",
+      "package_sha256": "cdd162fa4145c4617f8c71956cc570c50e1c9a4a1da69007b6cbd2c034281329",
+      "redaction_count": 0,
+      "source_capture_method": "read-only current-server file copy with secret-bearing assignment redaction",
+      "source_relative_path": "docker/litellm/docker-compose.yml"
+    },
+    {
+      "current_source_sha256": "05fbf2c570ce65d64fdd7e62920293bda8a1c0cc13c5d2d64961bfabf072692a",
+      "package_file": "docker__litellm__Dockerfile",
+      "package_sha256": "05fbf2c570ce65d64fdd7e62920293bda8a1c0cc13c5d2d64961bfabf072692a",
+      "redaction_count": 0,
+      "source_capture_method": "read-only current-server file copy with secret-bearing assignment redaction",
+      "source_relative_path": "docker/litellm/Dockerfile"
+    },
+    {
+      "current_source_sha256": "ac59d2aa9f9a950ebfd356817b962f6eaf180edf5699a9df87cbf39d41236793",
+      "package_file": "docker__litellm__config.yaml",
+      "package_sha256": "f5dd86718491faec1b054f602fd24b807ca90f46475810fa963a0967b366e655",
+      "redaction_count": 15,
+      "source_capture_method": "read-only current-server file copy with secret-bearing assignment redaction",
+      "source_relative_path": "docker/litellm/config.yaml"
+    },
+    {
+      "current_source_sha256": "6c83c40064c1727d0753bcaa6230314c2a4510858427542cfa5bd1ef2231b44b",
+      "package_file": "docker__litellm__custom_callback.py",
+      "package_sha256": "7512ef4493c9f9651ebdd89326a291cf831d08f1f0924af19f88459991e33384",
+      "redaction_count": 3,
+      "source_capture_method": "read-only current-server file copy with secret-bearing assignment redaction",
+      "source_relative_path": "docker/litellm/custom_callback.py"
+    },
+    {
+      "current_source_sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b",
+      "package_file": "docker__litellm__payload_scan.py",
+      "package_sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b",
+      "redaction_count": 0,
+      "source_capture_method": "read-only current-server file copy with secret-bearing assignment redaction",
+      "source_relative_path": "docker/litellm/payload_scan.py"
+    },
+    {
+      "current_source_sha256": "96dbde61dc20fa90d2a9cb6c1562a4877128c12811631684d5840758f5662347",
+      "package_file": "docker__litellm__tool_registry_gate.py",
+      "package_sha256": "96dbde61dc20fa90d2a9cb6c1562a4877128c12811631684d5840758f5662347",
+      "redaction_count": 0,
+      "source_capture_method": "read-only current-server file copy with secret-bearing assignment redaction",
+      "source_relative_path": "docker/litellm/tool_registry_gate.py"
+    },
+    {
+      "current_source_sha256": "a209b6b0d70ab001025312c540e33a399435abb09fa3c0528cc7b6aa8e1d21c5",
+      "package_file": "docker__n8n__docker-compose.yml",
+      "package_sha256": "508b5ef17641f34d5e3d97218a94d660632d96d4ef4162ef214914c00ccb55e3",
+      "redaction_count": 1,
+      "source_capture_method": "read-only current-server file copy with secret-bearing assignment redaction",
+      "source_relative_path": "docker/n8n/docker-compose.yml"
+    },
+    {
+      "current_source_sha256": "12753d2feb9f8b36b7f6bfedb05a69f7eb569eee773a0dbe194fdf2183ec8cbb",
+      "package_file": "docker__postgres__docker-compose.yml",
+      "package_sha256": "013491b4f669f03568d3cdbd7e17f14ad872ce975ee3ab406940b4db3d4b4462",
+      "redaction_count": 1,
+      "source_capture_method": "read-only current-server file copy with secret-bearing assignment redaction",
+      "source_relative_path": "docker/postgres/docker-compose.yml"
+    },
+    {
+      "current_source_sha256": "ceae751125f270e50e0e24c298c3dd50dd294c7f4cc96eb0bca83121c15e810b",
+      "package_file": "mcp__mcp.registry.json",
+      "package_sha256": "7550fca2cbbc37cb32415de8623b4689b85ea830cb4e2bb8290f9fe97e67e212",
+      "redaction_count": 0,
+      "source_capture_method": "read-only current-server file copy with secret-bearing assignment redaction",
+      "source_relative_path": "mcp/mcp.registry.json"
+    }
+  ],
+  "schema": "wpno.r7.ref14-redaction/1",
+  "secret_values_printed": 0
+}

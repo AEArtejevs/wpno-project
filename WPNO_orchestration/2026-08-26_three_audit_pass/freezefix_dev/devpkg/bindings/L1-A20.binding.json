@@ -1,0 +1,80 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A20",
+  "binding_status": "TARGET_CONFIRMED",
+  "logical_targets": [
+    "All discovered payload_scan copies and semantic equality"
+  ],
+  "candidate_paths": [
+    "/Users/martinotten/WPNO/anonymization/payload_scan.py",
+    "/Users/martinotten/WPNO/docker/litellm/payload_scan.py",
+    "/Users/martinotten/WPNO/anonymization/golden/payload_scan.py",
+    "/Users/martinotten/WPNO/anonymization/payload_scan.py.ALT.2026-08-05.bak",
+    "/Users/martinotten/WPNO/docker/litellm/payload_scan.py.ALT.2026-08-05.bak",
+    "/Users/martinotten/WPNO/docs/Test_07.28.26/AP-03/logs/payload_scan.py.before_F-AP03"
+  ],
+  "productive_target": "/Users/martinotten/WPNO/anonymization/payload_scan.py",
+  "productive_target_sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b",
+  "productive_target_evidence": [
+    {
+      "claim": "File identity confirmed by name, symbol match and SHA-256.",
+      "note": "File identity is NOT production identity. No execution-path evidence establishes that this file is the copy invoked in production. See discovery_reconciliation/04_PRODUCTION_PATH_RECONCILIATION.md."
+    }
+  ],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [],
+  "external_evidence_required": [],
+  "unresolved_questions": [],
+  "discovery_drift": [
+    "D-03"
+  ],
+  "source_evidence": [
+    {
+      "source_path": "/Users/martinotten/WPNO/anonymization/payload_scan.py",
+      "sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b",
+      "locator": "21564 bytes",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/docker/litellm/payload_scan.py",
+      "sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b",
+      "locator": "21564 bytes, byte-identical to the above",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/anonymization/golden/payload_scan.py",
+      "sha256": "ab29a4fa3e972f865f0f3dfb10887888a0464922070454e02584a34a4c54ba0a",
+      "locator": "22831 bytes",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/anonymization/payload_scan.py.ALT.2026-08-05.bak",
+      "sha256": "7ca517779fbd05a1bf8381b57edac3a15c2b6ccbe00dd06b8dfcc9950cf2aca3",
+      "locator": "16350 bytes",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/docker/litellm/payload_scan.py.ALT.2026-08-05.bak",
+      "sha256": "7ca517779fbd05a1bf8381b57edac3a15c2b6ccbe00dd06b8dfcc9950cf2aca3",
+      "locator": "16350 bytes",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/docs/Test_07.28.26/AP-03/logs/payload_scan.py.before_F-AP03",
+      "sha256": "9f466036804d49d0e986d111ea253046dec15e3c8fee2482e42c7ff349744f77",
+      "locator": "15524 bytes",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    }
+  ],
+  "replications": 1,
+  "risk": "CRITICAL",
+  "execution_order": 6
+}

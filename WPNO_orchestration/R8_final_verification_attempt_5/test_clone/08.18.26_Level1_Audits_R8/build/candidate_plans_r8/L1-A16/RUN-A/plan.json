@@ -1,0 +1,419 @@
+{
+  "audit_id": "L1-A16",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Build five synthetic DOCX cases absent from the existing corpus, covering run-split XML text, hidden or alternate text, Unicode homoglyphs, an external relationship reference and nested or obfuscated instruction text; run them against the filter and record the result. No external relationship is ever resolved.",
+  "static_analysis": "The filter is parsed, never imported, and the text it actually reads is established: whether it reconstructs a paragraph from its runs or matches run by run decides whether N1 can be seen at all.\n\nAll five files are built inside the audit work directory with zipfile and hand-written OOXML. Synthetic content only, no client document, no macro, no GUI application. The external relationship in N4 is present in the file and must never be fetched - the audit records that the reference exists, not what it points at.\n\nThe five cases must not repeat W1 to W5 from the existing corpus. That is established by comparison against the existing corpus before the run, not asserted.\n\nAll pytest work happens in a sandbox copy of the tree under the audit work directory. A collection run creates __pycache__ and .pytest_cache, and creating those in PROJECT_ROOT would be a write into a root this package treats as read-only.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/ap18/AP18_eingangsfilter.py"
+      },
+      "purpose": "Establish what text the filter reads: reconstructed paragraphs or individual runs.",
+      "step_id": "parse_filter",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PROVE_SET_NOVELTY",
+      "params": {
+        "candidate_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases",
+        "expected_reference_entry_count": 7,
+        "include_globs": [
+          "*.docx"
+        ],
+        "reference_root": "/home/ubuntu/project/WPNO/ap18/korpus_docx",
+        "reference_set_id": "AP18_KORPUS_DOCX_W1_W5_PLUS_TWO_CLEAN",
+        "require_non_empty_reference": true
+      },
+      "purpose": "Prove per case that none of the five repeats W1 to W5, by content digest against the existing corpus.",
+      "step_id": "prove_cases_are_novel",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "PROVE_SET_NOVELTY",
+      "params": {
+        "candidate_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/novelty_controls/novel",
+        "expected_reference_entry_count": 7,
+        "include_globs": [
+          "*.docx"
+        ],
+        "reference_root": "/home/ubuntu/project/WPNO/ap18/korpus_docx",
+        "reference_set_id": "AP18_KORPUS_DOCX_W1_W5_PLUS_TWO_CLEAN",
+        "require_non_empty_reference": true
+      },
+      "purpose": "A case known to be absent from the corpus must be reported novel. If it is not, the measurement cannot recognise novelty and no result from it means anything.",
+      "step_id": "positive_control_novel_case_accepted",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "PROVE_SET_NOVELTY",
+      "params": {
+        "candidate_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/novelty_controls/duplicate",
+        "expected_reference_entry_count": 7,
+        "include_globs": [
+          "*.docx"
+        ],
+        "reference_root": "/home/ubuntu/project/WPNO/ap18/korpus_docx",
+        "reference_set_id": "AP18_KORPUS_DOCX_W1_W5_PLUS_TWO_CLEAN",
+        "require_non_empty_reference": true
+      },
+      "purpose": "A byte-identical copy of a corpus member must be reported as a duplicate. A measurement that called it novel would call anything novel.",
+      "step_id": "negative_control_duplicate_rejected",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "PROVE_SET_NOVELTY",
+      "params": {
+        "candidate_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/novelty_controls/renamed",
+        "expected_reference_entry_count": 7,
+        "include_globs": [
+          "*.docx"
+        ],
+        "reference_root": "/home/ubuntu/project/WPNO/ap18/korpus_docx",
+        "reference_set_id": "AP18_KORPUS_DOCX_W1_W5_PLUS_TWO_CLEAN",
+        "require_non_empty_reference": true
+      },
+      "purpose": "The same duplicate under a different filename must still be reported as a duplicate. Renaming is the evasion a name-based novelty check would miss, and this control is what proves the comparison is on content.",
+      "step_id": "negative_control_renamed_duplicate_rejected",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/N1.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/sandbox/AP18_eingangsfilter.py"
+      },
+      "purpose": "N1 (RUN_SPLIT): instruction text split across several w:r runs so no single run contains a matching substring, while the rendered paragraph reads as one sentence",
+      "step_id": "run_case_n1",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/N2.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/sandbox/AP18_eingangsfilter.py"
+      },
+      "purpose": "N2 (HIDDEN_OR_ALTERNATE_TEXT): instruction text placed where an alternate-content or fallback branch renders it, distinct from W1's vanish property",
+      "step_id": "run_case_n2",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/N3.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/sandbox/AP18_eingangsfilter.py"
+      },
+      "purpose": "N3 (UNICODE_HOMOGLYPH): instruction text using visually identical characters from another script",
+      "step_id": "run_case_n3",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/N4.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/sandbox/AP18_eingangsfilter.py"
+      },
+      "purpose": "N4 (EXTERNAL_RELATIONSHIP): an external relationship reference present in the file; it is never fetched",
+      "step_id": "run_case_n4",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/N5.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/sandbox/AP18_eingangsfilter.py"
+      },
+      "purpose": "N5 (NESTED_OR_OBFUSCATED): instruction text nested or obfuscated inside another structure",
+      "step_id": "run_case_n5",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "ORACLE",
+      "operation": "DOCX_PARSE_SANDBOX",
+      "params": {
+        "load_dtd": false,
+        "no_network": true,
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/N1.docx",
+        "resolve_entities": false
+      },
+      "purpose": "Reconstruct the rendered text run by run with an independent reader, so that what a human would read is established without the filter.",
+      "step_id": "independent_rendered_text",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/BASE.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/sandbox/AP18_eingangsfilter.py"
+      },
+      "purpose": "Plain, unconcealed instruction text in a normal paragraph must be detected. If the base case is missed the five results mean nothing.",
+      "step_id": "positive_control_plain_instruction",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--corpus",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/clean_forms"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/sandbox/AP18_eingangsfilter.py"
+      },
+      "purpose": "A clean document in each of the five structural forms must not be flagged. A document that is merely run-split, or merely contains a relationship, must not be flagged on structure alone.",
+      "step_id": "negative_control_clean_structural_forms",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--corpus",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/payload_altered"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/sandbox/AP18_eingangsfilter.py"
+      },
+      "purpose": "For each detected case, the payload is altered so it should no longer match. It must not. This proves detection is of the content and not of the structure.",
+      "step_id": "mutation_control_payload_altered",
+      "timeout_seconds": 600
+    }
+  ],
+  "target": {
+    "identity_evidence": "bindings/L1-A16.binding.json records this path as a candidate with this digest.",
+    "path": "/home/ubuntu/project/WPNO/ap18/AP18_eingangsfilter.py",
+    "sha256": "e8ad639cbeb238b16985f240ed1045297c26a9202c603695b29f29a3ea74ffb3"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "/home/ubuntu/project/WPNO/ap18/AP18_eingangsfilter.py",
+        "/home/ubuntu/project/WPNO/ap18",
+        "/home/ubuntu/project/WPNO/ap18/korpus_docx"
+      ],
+      "allowed_writes": [
+        "work/L1-A16/RUN-A/",
+        "evidence/L1-A16/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A16 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A16",
+      "candidate_template_identity": "L1-A16/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A16/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "/usr/bin/python3 -I -B against a sandbox copy",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "NETWORK_REQUEST",
+        "NETWORK_UPLOAD"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [],
+      "independent_oracle": "An independent OOXML reader written for this audit which reconstructs the rendered text run by run, plus an explicit statement per case of what a human reader would see.",
+      "limitations": [],
+      "method": "five authored DOCX cases with structural negatives",
+      "notes": [
+        "All pytest work happens in a sandbox copy of the tree under the audit work directory. A collection run creates __pycache__ and .pytest_cache, and creating those in PROJECT_ROOT would be a write into a root this package treats as read-only.",
+        "N4's external relationship is present in the file and is never resolved. The finding is that the reference exists, not what it points at."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [],
+      "references": [],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": null,
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "cases": [
+        {
+          "case_id": "N1",
+          "description": "instruction text split across several w:r runs so no single run contains a matching substring, while the rendered paragraph reads as one sentence",
+          "vector": "RUN_SPLIT"
+        },
+        {
+          "case_id": "N2",
+          "description": "instruction text placed where an alternate-content or fallback branch renders it, distinct from W1's vanish property",
+          "vector": "HIDDEN_OR_ALTERNATE_TEXT"
+        },
+        {
+          "case_id": "N3",
+          "description": "instruction text using visually identical characters from another script",
+          "vector": "UNICODE_HOMOGLYPH"
+        },
+        {
+          "case_id": "N4",
+          "description": "an external relationship reference present in the file; it is never fetched",
+          "vector": "EXTERNAL_RELATIONSHIP"
+        },
+        {
+          "case_id": "N5",
+          "description": "instruction text nested or obfuscated inside another structure",
+          "vector": "NESTED_OR_OBFUSCATED"
+        }
+      ],
+      "check_id": "five_cases_recorded",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "expected_exit_code": 0,
+      "question": "Are the five cases fully specified and novel?",
+      "r8_repair": "COMPARE_HASHES was bound to two directories, could not run, and could not have answered a per-case question if it had",
+      "reference_corpus": "ap18/korpus_docx",
+      "reference_entry_count": 7,
+      "required_result": "Per case: identifier, structural vector, what a human reader would see, why it is not a repetition of W1 to W5, and the expected verdict with its reason. The novelty is measured per case by content digest, never as one aggregate comparison.",
+      "step_id": "prove_cases_are_novel"
+    },
+    {
+      "check_id": "novelty_positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_boolean": true,
+      "expected_count": 0,
+      "expected_exit_code": 0,
+      "expected_result": "REPORTED_NOVEL",
+      "measured_fields": [
+        "all_novel",
+        "duplicate_count"
+      ],
+      "question": "Is a case known to be absent reported novel?",
+      "step_id": "positive_control_novel_case_accepted"
+    },
+    {
+      "check_id": "novelty_negative_control_duplicate",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expected_boolean": false,
+      "expected_count": 1,
+      "expected_exit_code": 0,
+      "expected_failure_reason": "byte-identical to a reference entry; the candidate is the corpus member it was copied from",
+      "expected_result": "REPORTED_DUPLICATE",
+      "measured_fields": [
+        "all_novel",
+        "duplicate_count"
+      ],
+      "question": "Is a byte-identical corpus member reported duplicate?",
+      "step_id": "negative_control_duplicate_rejected"
+    },
+    {
+      "check_id": "novelty_negative_control_renamed_duplicate",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expected_boolean": false,
+      "expected_count": 1,
+      "expected_exit_code": 0,
+      "expected_failure_reason": "a different filename does not make it a different document; the comparison is on content digest and never on the name",
+      "expected_result": "REPORTED_DUPLICATE_DESPITE_RENAME",
+      "measured_fields": [
+        "all_novel",
+        "duplicate_count"
+      ],
+      "question": "Does renaming a duplicate hide it?",
+      "step_id": "negative_control_renamed_duplicate_rejected"
+    },
+    {
+      "check_id": "run_split_visibility",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Can the filter see text split across runs?",
+      "required_result": "Answered from the parse: whether the filter reconstructs paragraphs from runs or matches run by run. A run-by-run matcher cannot see N1 by construction, and that is a finding about the filter rather than about the case.",
+      "step_id": "parse_filter"
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": "NONZERO",
+      "expected_failure_reason": "the plain instruction text",
+      "expected_result": "DETECTED",
+      "question": "Is plain instruction text detected?",
+      "step_id": "positive_control_plain_instruction"
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_failure_reason": "the documents carry the structure without the payload; a detection here would mean the filter flags structure rather than content",
+      "expected_result": "NO_DETECTIONS",
+      "one_per_vector": true,
+      "question": "Is a clean document in each form left alone?",
+      "step_id": "negative_control_clean_structural_forms"
+    },
+    {
+      "check_id": "mutation_control",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_result": "THE_ALTERED_CASES_ARE_NOT_DETECTED",
+      "expected_status": "COMPLETED_OUTCOME_IS_SUBSTANTIVE",
+      "fixture": "work/L1-A16/RUN-A/cases/payload_altered/",
+      "fixture_construction": "each detected case with its payload altered so it should no longer match, structure unchanged",
+      "proof_the_fixture_differs": "each altered case's SHA-256 differs from its original and the altered payload is recorded",
+      "question": "Is detection of the content or of the structure?",
+      "step_id": "mutation_control_payload_altered",
+      "why": "As L1-A08's specificity control.",
+      "zero_changed_results_is": "proof the filter is matching structure, not content"
+    },
+    {
+      "check_id": "control_expectation_independent_rendered_text",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_boolean": true,
+      "expected_exit_code": 0,
+      "question": "What must this control step do for its measurement to count?",
+      "step_id": "independent_rendered_text",
+      "why": "The oracle must parse the case document."
+    }
+  ]
+}

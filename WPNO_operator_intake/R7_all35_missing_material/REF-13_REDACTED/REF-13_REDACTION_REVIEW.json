@@ -1,0 +1,20 @@
+{
+  "RAW_FILES_MODIFIED": 0,
+  "REDACTED_FILES_MANIFEST_VALID": "YES",
+  "SECRET_VALUES_PRINTED": 0,
+  "STRUCTURAL_EVIDENCE_RETAINED": "YES",
+  "retained": [
+    "field names",
+    "image IDs and digests",
+    "timestamps",
+    "mount destinations",
+    "source paths",
+    "entrypoint",
+    "command",
+    "working directory",
+    "service/container identities",
+    "labels",
+    "structural configuration"
+  ],
+  "review_method": "Parsed JSON recursively; Env NAME=VALUE strings and secret-bearing keyed values replaced by category placeholders. Text lines with secret-bearing assignment names were similarly replaced. No original secret values are included."
+}

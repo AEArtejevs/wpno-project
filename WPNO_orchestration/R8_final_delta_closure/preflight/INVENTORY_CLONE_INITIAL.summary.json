@@ -1,0 +1,10 @@
+{
+ "counts_by_type": {
+  "dir": 401,
+  "file": 961
+ },
+ "entry_count": 1362,
+ "inventory_sha256": "85af258c0f0165e8ab1f87d3de11ec0ed986ab84c17bac1490af5a98d4d131a9",
+ "out": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/preflight/INVENTORY_CLONE_INITIAL.json",
+ "root": "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_8_676767"
+}

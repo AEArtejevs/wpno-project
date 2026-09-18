@@ -1,0 +1,6 @@
+masked_pdf_id,ocr_success,pages,pages_ocred,text_extractable,text_chars,chars_per_page,ocr_tool,quality,human_review_required,error,capped
+PDF_024,yes,5,5,yes,8283,1657,tesseract 5.5.2 deu+eng @200dpi,gut,yes,,no
+PDF_018,yes,1,1,yes,340,340,tesseract 5.5.2 deu+eng @200dpi,mittel,yes,,no
+PDF_004,yes,11,11,yes,20656,1878,tesseract 5.5.2 deu+eng @200dpi,gut,yes,,no
+PDF_009,yes,9,9,yes,48400,5378,tesseract 5.5.2 deu+eng @200dpi,gut,yes,,no
+PDF_016,yes,6,6,yes,8419,1403,tesseract 5.5.2 deu+eng @200dpi,gut,yes,,no

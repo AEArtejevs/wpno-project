@@ -1,0 +1,19 @@
+{
+  "schema": "wpno.level1.references_manifest/1",
+  "note": "Copy to manifest.json and fill in. Every file placed in references/ must appear here with its SHA-256, recorded BEFORE the file is used by any audit, and independently recomputed on arrival. An unhashed reference is not evidence. For a directory or corpus, every file needs its own entry and the sorted inventory needs a collection hash. This file and README_REQUIRED_OFFLINE_REFERENCES_LV.md are the only two files in references/ that belong to the immutable control plane; delivered reference material does not, and is never listed in BUILD_MANIFEST.sha256.",
+  "references": [
+    {
+      "ref_id": "REF-01",
+      "required_by": ["L1-A18"],
+      "description": "IBAN specification and country registry (ISO 13616)",
+      "file": "",
+      "sha256": "",
+      "source": "",
+      "retrieved": "",
+      "version_or_date": "",
+      "format": "",
+      "chain_of_custody": "",
+      "absence_means": "BLOCKED"
+    }
+  ]
+}

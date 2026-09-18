@@ -1,0 +1,110 @@
+{
+ "EQUAL": false,
+ "a": {
+  "entry_count": 1362,
+  "path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_6/original_inventory/INVENTORY_PRE.json",
+  "root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8"
+ },
+ "b": {
+  "entry_count": 1362,
+  "path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_6/logs/INVENTORY_CLONE_AFTER_SMOKE.json",
+  "root": "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_6_651472"
+ },
+ "compared_fields": [
+  "type",
+  "size",
+  "sha256",
+  "symlink_target",
+  "mode",
+  "uid",
+  "gid",
+  "mtime_ns"
+ ],
+ "contents_changed": 0,
+ "differences": [
+  {
+   "fields": {
+    "mtime_ns": [
+     1787935798654343409,
+     1787942418250861701
+    ]
+   },
+   "path": "."
+  },
+  {
+   "fields": {
+    "mtime_ns": [
+     1787935576976971868,
+     1787942579118111185
+    ]
+   },
+   "path": "state"
+  },
+  {
+   "fields": {
+    "mtime_ns": [
+     1787935700844667471,
+     1787942679622631088
+    ]
+   },
+   "path": "work"
+  },
+  {
+   "fields": {
+    "mtime_ns": [
+     1787935567157748477,
+     1787942571205879913
+    ]
+   },
+   "path": "work/_freeze_order_regression"
+  },
+  {
+   "fields": {
+    "mtime_ns": [
+     1787935593497929837,
+     1787942594810043686
+    ]
+   },
+   "path": "work/_r5_selftest"
+  },
+  {
+   "fields": {
+    "mtime_ns": [
+     1787935568079754808,
+     1787942571856714097
+    ]
+   },
+   "path": "work/_r5_selftest/a18"
+  },
+  {
+   "fields": {
+    "mtime_ns": [
+     1787935568696899771,
+     1787942572443582568
+    ]
+   },
+   "path": "work/_r5_selftest/a34_staging"
+  },
+  {
+   "fields": {
+    "mtime_ns": [
+     1787935679200560817,
+     1787942662032966508
+    ]
+   },
+   "path": "work/_selftest"
+  }
+ ],
+ "gid_changed": 0,
+ "modes_changed": 0,
+ "mtimes_changed": 8,
+ "paths_added": 0,
+ "paths_differing": 8,
+ "paths_only_in_a": [],
+ "paths_only_in_b": [],
+ "paths_removed": 0,
+ "schema": "wpno.r8.attempt6-inventory-compare/1",
+ "symlink_targets_changed": 0,
+ "uid_changed": 0,
+ "written_paths": 0
+}

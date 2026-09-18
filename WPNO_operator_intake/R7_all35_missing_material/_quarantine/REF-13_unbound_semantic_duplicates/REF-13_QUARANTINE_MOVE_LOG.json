@@ -1,0 +1,30 @@
+{
+  "deleted_files": 0,
+  "files": [
+    {
+      "byte_identity": "PROVEN",
+      "file": "image_1.json",
+      "post_move_sha256": "197505095ac7442e3c228da1e74a4ad58d4f7db71a6697365205ec2d954addb2",
+      "pre_move_sha256": "197505095ac7442e3c228da1e74a4ad58d4f7db71a6697365205ec2d954addb2"
+    },
+    {
+      "byte_identity": "PROVEN",
+      "file": "image_2.json",
+      "post_move_sha256": "5d619626f6be72166080734401d2c802614b70b4abc178978cd1675b89b178c3",
+      "pre_move_sha256": "5d619626f6be72166080734401d2c802614b70b4abc178978cd1675b89b178c3"
+    },
+    {
+      "byte_identity": "PROVEN",
+      "file": "image_3.json",
+      "post_move_sha256": "ebb0c186b30c28eadd2935c58dac17b54560f3a41c0f1de1ad80634caabbc700",
+      "pre_move_sha256": "ebb0c186b30c28eadd2935c58dac17b54560f3a41c0f1de1ad80634caabbc700"
+    },
+    {
+      "byte_identity": "PROVEN",
+      "file": "image_4.json",
+      "post_move_sha256": "a5b386e066e7fb8a5d32898957325697ce8332f29da14256fb45480a0dc5398b",
+      "pre_move_sha256": "a5b386e066e7fb8a5d32898957325697ce8332f29da14256fb45480a0dc5398b"
+    }
+  ],
+  "schema": "wpno.r7.ref13-quarantine/1"
+}

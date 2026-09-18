@@ -1,0 +1,26 @@
+{
+  "removed": [
+    {
+      "path": "automation/in_process_ops.py",
+      "preserved_at": "dirty_repair_files/automation/in_process_ops.py",
+      "removed_sha256": "4269ad5e3da4892e6660e3b5cae4d031926c9f42bc7638940f6ddbad19f0ea4e"
+    },
+    {
+      "path": "automation/package_tests/test_r7_in_process_ops.py",
+      "preserved_at": "dirty_repair_files/automation/package_tests/test_r7_in_process_ops.py",
+      "removed_sha256": "2f9d06d07b676571ffa4e3d91cd3566ceadca54b9b917e36978ea14d4b9d1aad"
+    }
+  ],
+  "restored": [
+    {
+      "matches_frozen_manifest": true,
+      "path": "automation/controller.py",
+      "restored_sha256": "aff9bc25271e76eda7999b3000bde6479253bf691a7c3bf5508c74a561991f06"
+    },
+    {
+      "matches_frozen_manifest": true,
+      "path": "build/rehearse_candidate_plans.py",
+      "restored_sha256": "acfab6efed4d08c540b261269fe379a54a7b045e3bfb122cb3e29dbb1e219199"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "approval_records": 3,
+  "approval_records_distinct": 3,
+  "backup_hashes_matched_frozen_manifest": true,
+  "bytecode_created_after_freeze": 0,
+  "bytecode_note": "51 bytecode files exist under control-plane directories; all predate frozen_at_utc (newest 2026-08-27T07:22:55Z). None attributable to the repair; none removed. Their absence from the frozen manifest is a pre-existing freeze condition.",
+  "changes_preserved": true,
+  "classification": "POST_FREEZE_CONTROL_PLANE_MODIFICATION_INCIDENT",
+  "final_control_manifest": {
+    "entries": 15804,
+    "failed": 0,
+    "missing": 0,
+    "ok": 15804,
+    "unlisted_bytecode_files": 51,
+    "unlisted_control_plane_source_files": 0
+  },
+  "frozen_at_utc": "2026-08-28T09:14:39Z",
+  "frozen_files_changed": [
+    {
+      "dirty_sha256": "e8be79f3a1748c91eda92ab66405c906b3ed5ad2ba178dde1baaa060144a5e63",
+      "frozen_sha256": "aff9bc25271e76eda7999b3000bde6479253bf691a7c3bf5508c74a561991f06",
+      "path": "automation/controller.py"
+    },
+    {
+      "dirty_sha256": "4b164c6beefd006ebd499619a52d1bdbcfb8bde9f63ffccab182bcfbc9e51f3d",
+      "frozen_sha256": "acfab6efed4d08c540b261269fe379a54a7b045e3bfb122cb3e29dbb1e219199",
+      "path": "build/rehearse_candidate_plans.py"
+    }
+  ],
+  "live_state": {
+    "L1-A31/COMPARISON": {
+      "evidence_files": 0,
+      "finalised": false,
+      "sealed": false,
+      "state": "EXECUTED"
+    },
+    "L1-A31/RUN-A": {
+      "evidence_files": 33,
+      "intact": true,
+      "seal_manifest_sha256": "9bade28eab2ff0a06e849985a77c2ddd2f7d460425d8d4f828a907cf220fedc6",
+      "state": "SEALED",
+      "verdict": "UNVERIFIED"
+    },
+    "L1-A31/RUN-B": {
+      "evidence_files": 5,
+      "intact": true,
+      "seal_manifest_sha256": "20d4ce5fd9780471e0839841fe6d3eb1031bdf0afa889e43f60ebba6ecf8d9b1",
+      "state": "SEALED",
+      "verdict": "UNVERIFIED"
+    }
+  },
+  "mode_entry_matches_frozen_manifest": true,
+  "mode_on_disk": "FROZEN",
+  "mutable_live_evidence_overwritten": false,
+  "new_files_created": [
+    {
+      "path": "automation/in_process_ops.py",
+      "sha256": "4269ad5e3da4892e6660e3b5cae4d031926c9f42bc7638940f6ddbad19f0ea4e"
+    },
+    {
+      "path": "automation/package_tests/test_r7_in_process_ops.py",
+      "sha256": "2f9d06d07b676571ffa4e3d91cd3566ceadca54b9b917e36978ea14d4b9d1aad"
+    }
+  ],
+  "other_phases_started": 0,
+  "preservation_root": "/home/ubuntu/project/WPNO_orchestration/R7_post_freeze_in_place_repair_incident_2026-08-28",
+  "r7_continuous_post_freeze_immutability": false,
+  "r7_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7",
+  "r7_status": "RESTORED PREDECESSOR. No further live execution may occur in R7.",
+  "r7_was_modified_after_freeze": true,
+  "r8_created": false,
+  "r8_lineage_requirement": "This incident must be carried into R8 lineage and named in R8's final verification.",
+  "recorded_at_utc": "2026-08-28T12:31:23Z",
+  "removed_new_files": 2,
+  "restoration_method": "temporary sibling path, fsync, hash verification, atomic os.replace, destination hash re-verification",
+  "restoration_source": "/home/ubuntu/R7_repair_backup_2026-08-28",
+  "restored_files": 2,
+  "schema": "wpno.incident.restoration_record/1",
+  "sibling_revisions": {
+    "R4": {
+      "files_modified_today": 0,
+      "manifest": "1915/1915 OK"
+    },
+    "R5": {
+      "files_modified_today": 0,
+      "manifest": "14158/14159 OK",
+      "pre_existing_mismatch": "MODE, mtime 2026-08-26T17:20:07Z, two days before this incident; the manifest records the pre-freeze value because MODE is published after the manifest that lists it. Not caused by and not touched during this incident."
+    },
+    "R6": {
+      "files_modified_today": 0,
+      "manifest": "14781/14781 OK"
+    }
+  },
+  "token_replayed_or_newly_consumed": false
+}

@@ -1,0 +1,12 @@
+{
+ "EFFECTIVE_FAILURES": 0,
+ "EFFECTIVE_PASSED": 361,
+ "SUITE_CLEAN": true,
+ "errors": 0,
+ "skips": 0,
+ "tests_failing_in_clone": 1,
+ "tests_resolved_in_situ": 1,
+ "tests_run": 361,
+ "tests_unresolved": 0
+}
+  test_no_plan_in_the_package_names_an_unconfined_output FAILURE -> RELOCATION_ARTEFACT_RESOLVED_IN_SITU

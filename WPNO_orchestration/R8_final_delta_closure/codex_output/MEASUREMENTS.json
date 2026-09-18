@@ -1,0 +1,571 @@
+{
+  "23": {
+    "phase_records": 43,
+    "plan_files": 43,
+    "predicates": [
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": [],
+        "measured": [],
+        "predicate": "in-process operations without a handler",
+        "source": "automation.operation_catalog.IN_PROCESS vs automation.in_process_ops.HANDLERS"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": [],
+        "measured": [],
+        "predicate": "in-process rehearsal steps not executed",
+        "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports[*].steps[*]"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": [],
+        "measured": [],
+        "predicate": "rehearsal steps carrying the note-only fallback",
+        "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports[*].steps[*]"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": 43,
+        "measured": 43,
+        "predicate": "rehearsal phase records",
+        "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": 169,
+        "measured": 169,
+        "predicate": "sum of per-phase IN_PROCESS_HANDLER_INVOCATIONS",
+        "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports[*]"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": [],
+        "measured": [],
+        "predicate": "phases marked HOLLOW",
+        "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports[*]"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": 0,
+        "measured": 0,
+        "predicate": "sum of per-phase NOTE_ONLY_IN_PROCESS_STEPS",
+        "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports[*]"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": 169,
+        "measured": 169,
+        "predicate": "sum of per-phase IN_PROCESS_STEP_COUNT",
+        "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports[*]"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": 0,
+        "measured": 0,
+        "predicate": "sum of per-phase IN_PROCESS_STEPS_WITHOUT_EVIDENCE",
+        "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json$.reports[*]"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": 169,
+        "measured": 169,
+        "predicate": "in-process steps derived from the 43 plans",
+        "source": "build/candidate_plans_r8/*/*/plan.json + automation.operation_catalog.IN_PROCESS"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": [],
+        "measured": [],
+        "predicate": "in-process rows not executed in the R8 rehearsal",
+        "source": "build/IN_PROCESS_COUNT_RECONCILIATION.json$.steps[*]"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": 169,
+        "measured": 169,
+        "predicate": "recon.R8_IN_PROCESS_HANDLER_INVOCATIONS",
+        "source": "build/IN_PROCESS_COUNT_RECONCILIATION.json"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": 0,
+        "measured": 0,
+        "note": "the two counts must reconcile with nothing left over",
+        "predicate": "recon.explanation.UNEXPLAINED_COUNT_DIFFERENCE",
+        "source": "build/IN_PROCESS_COUNT_RECONCILIATION.json"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": 169,
+        "measured": 169,
+        "predicate": "recon rows -> handler invocations",
+        "source": "build/IN_PROCESS_COUNT_RECONCILIATION.json$.steps[*]"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": 169,
+        "measured": 169,
+        "note": "derived from the rows; a summary that quotes itself is not evidence",
+        "predicate": "recon rows -> unique in-process plan steps",
+        "source": "build/IN_PROCESS_COUNT_RECONCILIATION.json$.steps[*]"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": 311,
+        "measured": 311,
+        "predicate": "recon.R8_TOTAL_PLAN_STEPS",
+        "source": "build/IN_PROCESS_COUNT_RECONCILIATION.json"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": 169,
+        "measured": 169,
+        "predicate": "recon.R8_UNIQUE_IN_PROCESS_PLAN_STEPS",
+        "source": "build/IN_PROCESS_COUNT_RECONCILIATION.json"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": 169,
+        "measured": 169,
+        "predicate": "rehearsal.IN_PROCESS_HANDLER_INVOCATIONS",
+        "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": 169,
+        "measured": 169,
+        "predicate": "rehearsal.IN_PROCESS_STEP_COUNT",
+        "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": [],
+        "measured": [],
+        "predicate": "rehearsal.HOLLOW_PHASES",
+        "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": 0,
+        "measured": 0,
+        "predicate": "rehearsal.NOTE_ONLY_IN_PROCESS_STEPS",
+        "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": 0,
+        "measured": 0,
+        "predicate": "rehearsal.REQUIRED_IN_PROCESS_STEPS_WITHOUT_EVIDENCE",
+        "source": "work/_rehearsal_r8/REHEARSAL_REPORT.json"
+      }
+    ],
+    "reconciliation_rows": 311
+  },
+  "28": {
+    "baseline_discovery_members": 26,
+    "baseline_project_members": 33,
+    "dummy_token_field_count": 5,
+    "predicates": [
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": "R8",
+        "measured": "R8",
+        "predicate": "freeze.PACKAGE_REVISION",
+        "source": "automation/freeze.py"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": "UBUNTU",
+        "measured": "UBUNTU",
+        "predicate": "freeze.PACKAGE_PLATFORM",
+        "source": "automation/freeze.py"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": "0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d",
+        "measured": "0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d",
+        "predicate": "predecessor baseline digest equals lineage r7 record",
+        "source": "automation/freeze.py PREDECESSOR_BASELINE_REL vs lineage/R8_LINEAGE.json $.r7.baseline_manifest_sha256"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": false,
+        "measured": false,
+        "predicate": "build_baseline_from_predecessor raised",
+        "source": "automation/freeze.py"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": true,
+        "measured": true,
+        "predicate": "baseline project members > 0",
+        "source": "automation/freeze.py"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": true,
+        "measured": true,
+        "predicate": "baseline discovery members > 0",
+        "source": "automation/freeze.py"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": true,
+        "measured": true,
+        "predicate": "token_for/parse_freeze_token round-trip on DUMMY digests",
+        "source": "automation/freeze.py"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": 5,
+        "measured": 5,
+        "predicate": "dummy token field count",
+        "source": "automation/freeze.py token_for"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": false,
+        "measured": false,
+        "predicate": "dummy token ends with a newline",
+        "source": "automation/freeze.py"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": 0,
+        "measured": 0,
+        "predicate": "recorded freeze attempts",
+        "source": "state/freeze_attempts.jsonl"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": "GENERATED_UNVERIFIED",
+        "measured": "GENERATED_UNVERIFIED",
+        "predicate": "MODE",
+        "source": "MODE"
+      }
+    ],
+    "real_token_computed": false
+  },
+  "29": {
+    "predicates": [
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": false,
+        "measured": false,
+        "predicate": "08.18.26_Level1_Audits_R9 exists",
+        "source": "the directory beside the package"
+      }
+    ]
+  },
+  "30": {
+    "predicates": [
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": 1,
+        "measured": 1,
+        "predicate": "state/transitions.jsonl rows",
+        "source": "state/transitions.jsonl"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": [
+          "init-revision"
+        ],
+        "measured": [
+          "init-revision"
+        ],
+        "predicate": "transition routes",
+        "source": "state/transitions.jsonl"
+      }
+    ]
+  },
+  "34": {
+    "predicates": [
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": 0,
+        "measured": 0,
+        "predicate": "TOOL_INVENTORY.UNIDENTIFIED_TOOLS",
+        "source": "TOOL_INVENTORY.json"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": [],
+        "measured": [],
+        "predicate": "tool inventory rows whose digest does not match disk",
+        "source": "TOOL_INVENTORY.json"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": [],
+        "measured": [],
+        "predicate": "required tool roles absent from the inventory",
+        "source": "TOOL_INVENTORY.json"
+      },
+      {
+        "OUTCOME": "PASS",
+        "PASS": true,
+        "expected": [],
+        "measured": [],
+        "predicate": "VERIFICATION_RESULT.json labelled as a verifier",
+        "source": "TOOL_INVENTORY.json"
+      }
+    ]
+  },
+  "35": {
+    "BLOCKING_COUNT": 0,
+    "blocking": [],
+    "method": "/proc/<pid>/fd plus /proc/<pid>/fdinfo/<fd>",
+    "own_pid_excluded": 2,
+    "pgrep_used": false,
+    "pids_inspected": 1,
+    "pids_uninspectable": 0,
+    "predicates": [
+      {
+        "PASS": true,
+        "expected": 0,
+        "measured": 0,
+        "predicate": "processes holding a writable descriptor below R8",
+        "source": "/proc/<pid>/fd + fdinfo"
+      },
+      {
+        "PASS": true,
+        "expected": false,
+        "measured": false,
+        "predicate": "writer inspection used pgrep -f",
+        "source": "/proc/<pid>/fd + fdinfo"
+      }
+    ],
+    "uninspectable": []
+  },
+  "A": {
+    "attempt8_inventory_compare": {
+      "added": [],
+      "gid_changed": [],
+      "mode_changed": [],
+      "mtime_ns_changed": [],
+      "removed": [],
+      "sha256_changed": [],
+      "size_changed": [],
+      "symlink_target_changed": [],
+      "type_changed": [],
+      "uid_changed": []
+    },
+    "audits": 35,
+    "build_manifest": {
+      "duplicates": [],
+      "entries": 724,
+      "malformed": [],
+      "manifest_sha256": "6dfd1af689754be61f2ea6ef77f01d2e5bdb8929ef8c0799e15db203755b945a",
+      "mismatches": [],
+      "missing": []
+    },
+    "clone_live_compare_with_sandbox_mounts_identified": {
+      "added": [
+        ".agents",
+        ".codex",
+        ".git"
+      ],
+      "gid_changed": [],
+      "mode_changed": [],
+      "mtime_ns_changed": [
+        "."
+      ],
+      "removed": [],
+      "sha256_changed": [],
+      "size_changed": [],
+      "symlink_target_changed": [],
+      "type_changed": [],
+      "uid_changed": []
+    },
+    "clone_preflight_compare": {
+      "added": [],
+      "gid_changed": [],
+      "mode_changed": [],
+      "mtime_ns_changed": [],
+      "removed": [],
+      "sha256_changed": [],
+      "size_changed": [],
+      "symlink_target_changed": [],
+      "type_changed": [],
+      "uid_changed": []
+    },
+    "inventory_paths": 1362,
+    "migration_plan_sha256": "805a5e34b2f703b94c80c5789db1498c8395796c2da27617cfdd50cf61a7b82b",
+    "mode": "GENERATED_UNVERIFIED",
+    "phases": 43
+  },
+  "B": {
+    "base_evidence_checks": 51,
+    "base_manifest": {
+      "duplicates": [],
+      "entries": 24,
+      "malformed": [],
+      "manifest_sha256": "8f386ac517bab581e3bd8f89b07d38222c66bdf60dca2b0ea4097d87ac0e9b8f",
+      "mismatches": [],
+      "missing": []
+    },
+    "controller_tests": 503,
+    "matrix_allowed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      24,
+      25,
+      26,
+      27,
+      31,
+      32,
+      33
+    ],
+    "matrix_delta": [
+      23,
+      28,
+      29,
+      30,
+      34,
+      35
+    ],
+    "package_tests": 361,
+    "static_findings": 0
+  },
+  "F": {
+    "cases": 14,
+    "predicates": "42/42",
+    "status": "PASS",
+    "unresolved": 0
+  },
+  "G": {
+    "before_after": {
+      "after_mtime_ns": 1787935798654343409,
+      "after_mtime_ns_less_than_before": false,
+      "after_sha256": "918f3eecec1a7a1148f65c539b0b68be1af2d2f5e1dd0ab49e8f2472b94f3924",
+      "before_mtime_ns": 1787935798654343409,
+      "before_sha256": "1a58749aa6510c8f148eabec126b1926e598af4275afb78f772990ec3ea36dc7",
+      "owning_root": "ORIGINAL",
+      "path_comparison": {
+        "added": [],
+        "gid_changed": [],
+        "mode_changed": [],
+        "mtime_ns_changed": [],
+        "removed": [],
+        "sha256_changed": [],
+        "size_changed": [],
+        "symlink_target_changed": [],
+        "type_changed": [],
+        "uid_changed": []
+      },
+      "requested_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "resolved_absolute_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8"
+    },
+    "comparison": {
+      "added": [],
+      "gid_changed": [],
+      "mode_changed": [],
+      "mtime_ns_changed": [],
+      "removed": [],
+      "sha256_changed": [],
+      "size_changed": [],
+      "symlink_target_changed": [],
+      "type_changed": [],
+      "uid_changed": []
+    },
+    "coverage": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35
+    ],
+    "inventory_paths": 1362
+  }
+}

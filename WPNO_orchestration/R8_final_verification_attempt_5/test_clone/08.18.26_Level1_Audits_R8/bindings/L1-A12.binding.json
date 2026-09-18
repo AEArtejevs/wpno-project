@@ -1,0 +1,37 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A12",
+  "binding_status": "TARGET_PARTIAL",
+  "logical_targets": [
+    "Broad-pattern false positives on a real article corpus"
+  ],
+  "candidate_paths": [
+    "/Users/martinotten/WPNO/authoring/AP18_referenzpruefung.py"
+  ],
+  "productive_target": null,
+  "productive_target_sha256": null,
+  "productive_target_evidence": [],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [],
+  "external_evidence_required": [
+    "REF-07"
+  ],
+  "unresolved_questions": [
+    "No real article corpus is present; ap18/korpus* is synthetic and built for the input filter."
+  ],
+  "discovery_drift": [],
+  "source_evidence": [
+    {
+      "source_path": "/Users/martinotten/WPNO/authoring/AP18_referenzpruefung.py",
+      "sha256": "f5eb5a9cbeb37cada9186ba305b9a307ea40e3012ca0e2e6dd0b2560f4352d74",
+      "locator": "pattern set",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    }
+  ],
+  "replications": 1,
+  "risk": "HIGH",
+  "execution_order": 16
+}

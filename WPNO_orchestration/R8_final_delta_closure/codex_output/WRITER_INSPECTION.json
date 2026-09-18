@@ -1,0 +1,10 @@
+{
+  "BLOCKING_COUNT": 0,
+  "blocking": [],
+  "method": "/proc/<pid>/fd plus /proc/<pid>/fdinfo/<fd>",
+  "own_pid_excluded": 2,
+  "pgrep_used": false,
+  "pids_inspected": 1,
+  "pids_uninspectable": 0,
+  "uninspectable": []
+}

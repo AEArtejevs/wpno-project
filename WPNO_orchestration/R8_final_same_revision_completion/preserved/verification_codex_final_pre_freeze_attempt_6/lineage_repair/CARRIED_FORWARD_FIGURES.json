@@ -1,0 +1,56 @@
+{
+ "ALL_REQUIRED_FIGURES_HOLD": true,
+ "carried_forward_artifact_digests": {
+  "build/CONTROL_EXPECTATION_COVERAGE.json": "53c1998bee4bb65f96cb0a746c664f8bee6656ba7c06365ac790df7a620f891e",
+  "build/IN_PROCESS_COUNT_RECONCILIATION.json": "1450107c54936e3a90151b666e9f75d7a9dd765a21cf926a6325ee01183fc124",
+  "build/candidate_plans_r8/PLAN_COVERAGE_MANIFEST.json": "0de8b726edc5de9248d8983edecd7b22841e3eda03d0ce317d6b853610b1ad3c",
+  "work/_rehearsal_r8/REHEARSAL_REPORT.json": "3c34ac822fe02875a0d1a3b5b59afd89e4245e07978f6b5036f06fb77089b80e"
+ },
+ "control_expectations": {
+  "machine_checkable": "122/122",
+  "steps": 122,
+  "unenforced": 0
+ },
+ "hollow_phases": [],
+ "in_process": {
+  "recon_handler_invocations": 169,
+  "recon_unique_plan_steps": 169,
+  "rehearsal_handler_invocations": 169,
+  "rehearsal_step_count": 169
+ },
+ "note_on_the_first_check": "an earlier run of this check reported false because it compared CONTROL_STEPS_WITH_MACHINE_CHECKABLE_EXPECTATION, which the record holds as the STRING '122/122', against the integer 122. No measured figure changed; the comparison did.",
+ "note_only": 0,
+ "package_tests": {
+  "errors": 0,
+  "failures": 0,
+  "ran": 404,
+  "skips": 0
+ },
+ "plans": {
+  "duplicate": 0,
+  "missing": 0,
+  "present": 43,
+  "required": 43,
+  "unknown": 0
+ },
+ "rehearsals": {
+  "all_pass_ready": true,
+  "per_phase_records": 43,
+  "rehearsed": 43,
+  "required": 43
+ },
+ "schema": "wpno.r8.lineage-repair-carried-figures/2",
+ "static_safety": {
+  "clean": true,
+  "findings": 0,
+  "reviewed": 49,
+  "unpermitted": []
+ },
+ "unit_tests": {
+  "errors": 0,
+  "failures": 0,
+  "ran": 503,
+  "skips": 0
+ },
+ "without_evidence": 0
+}

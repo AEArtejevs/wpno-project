@@ -1,0 +1,1843 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Pr&#252;fprotokoll vom 28.02.2026 00:56:05</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"></meta>
+
+<style type="text/css" media="all">
+/**************************
+ * General layout options *
+ **************************/
+body {
+	padding: 5pt 20pt 20pt 20pt;
+	background: #ffffff;
+	color: #000000;
+	font-family: Verdana, sans-serif;
+	width: 650pt;
+	font-size: 9pt;
+}
+
+a {
+	color: #000000;
+}
+
+table {
+	border-style: hidden;
+	border-width: 0px;
+}
+
+td {
+	font-family: Verdana, sans-serif;
+	font-size: 9pt;
+	border-spacing: 0pt;
+	vertical-align: top;
+}
+
+h4 {
+	font-weight: bold;
+	font-size: 10pt;
+	margin-top: 8pt;
+	margin-bottom: 8pt;
+}
+
+h3 {
+	font-weight: bold;
+	font-size: 12pt;
+	margin-top: 12pt;
+	margin-bottom: 12pt;
+}
+
+h2 {
+	font-weight: bold;
+	font-size: 14pt;
+	margin-top: 25pt;
+	margin-bottom: 5pt;
+}
+
+h1 {
+	font-weight: bold;
+	font-size: 16pt;
+	margin-top: 20pt;
+	margin-bottom: 20pt;
+}
+
+em {
+	font-weight: bold;
+	font-style: normal;
+}
+
+.ul {
+	margin: 0pt;
+	padding: 2pt;
+}
+
+.li_left {
+	padding-right: 2pt;
+}
+
+.li_right {
+	padding-right: 2pt;
+}
+
+.green {
+	color: #227722;
+}
+
+.yellow {
+	color: #777722;
+}
+
+.red {
+	color: #772222;
+}
+
+.signal {
+	width: 8pt; 
+	text-align: center;	
+}
+
+.robotnone {
+	padding: 2pt;
+	font-weight: bold;
+	background-color: #cccccc;
+	border-width: 1pt;
+	border-style: solid;
+	border-color: #777777;
+	color: #777777;
+	margin-right: 4pt;
+}
+
+.robotgreen {
+	padding: 2pt;
+	font-weight: bold;
+	background-color: #ccffcc;
+	border-width: 1pt;
+	border-style: solid;
+	border-color: #227722;
+	color: #227722;
+	margin-right: 4pt;
+}
+
+.robotyellow {
+	padding: 2pt;
+	font-weight: bold;
+	background-color: #ffffcc;
+	border-width: 1pt;
+	border-style: solid;
+	border-color: #777722;
+	color: #777722;
+	margin-right: 4pt;
+}
+
+.robotred {
+	padding: 2pt;
+	font-weight: bold;
+	background-color: #ffcccc;
+	border-width: 1pt;
+	border-style: solid;
+	border-color: #772222;
+	color: #772222;
+	margin-right: 4pt;
+}
+
+.robotred span.reverified {
+	background-color: #772222;
+	color: #ffcccc;
+	margin-left: 2pt;
+}
+
+.robotgreen span.reverified {
+	background-color: #227722;
+	color: #ccffcc;
+	margin-left: 2pt;
+}
+
+.line {
+	width: auto;
+	color: #cccccc;
+}
+
+
+/************************************
+ * Document specific layout options *
+ ************************************/
+ 
+.OSCIEncryptedDataEntry .robotnone {
+	padding: 2pt;
+	font-weight: bold;
+	background-color: #eeeeee;
+	border-width: 1pt;
+	border-style: solid;
+	border-color: #cccccc;
+	color: #aaaaaa;
+}
+
+
+/*******************************************
+ * Chapter/section specific layout options *
+ *******************************************/
+
+.signature,
+.technote,
+.x509,
+.xkmssecurity {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	padding: 4pt;
+	margin-bottom: 10pt;
+}
+
+
+.structure,
+.certificates {
+	margin-bottom: 0pt;
+}
+
+
+.structureentry {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	padding: 0pt;
+	margin-top: 5pt;
+}	
+
+
+.certificateentry,
+.algo_catalog {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	margin-top: 5pt;
+}	
+
+
+.certdetail_left {
+	vertical-align: top;
+	text-align: right;
+	font-weight: bold;
+	color: #777777;
+	padding: 2pt;
+}
+
+.signature_left,
+.signaturetitle_left,
+.structure_left,
+.technoteinfos_left,
+.x509_left,
+.x509title_left,
+.xkmssecurity_left {
+	vertical-align: top;
+	text-align: left;
+	font-weight: bold;
+	color: #777777;
+	padding: 2pt;
+}
+
+.certdetail_right,
+.structure_right,
+.signature_right,
+.technoteinfos_right,
+.x509_right,
+.x509title_right,
+.xkmssecurity_right {
+	vertical-align: top;
+	text-align: left;
+	padding: 2pt;
+	width: auto;
+}
+
+
+.signaturetitle_right {
+	vertical-align: middle;
+	text-align: left;
+	padding-left: 4pt;
+	width: auto;
+	font-weight: bold;
+}
+
+
+.certdetail_rightbold {
+	vertical-align: top;
+	font-weight: bold;
+	white-space: nowrap;
+	text-align: left;
+	padding: 2pt;
+	width: auto;
+}
+
+.certdetail_rightexpired {
+	vertical-align: top;
+	white-space: nowrap;
+	text-align: left;
+	color: #772222;
+	padding: 2pt;
+	width: auto;
+}
+
+.certdetail_section {
+	text-align: right;
+	font-weight: bold;
+	color: #aaaaaa;
+}
+
+
+.structureentry_details,
+.structureentry_children {
+	padding: 0pt;
+	margin: 4pt;
+}
+
+
+.technoteinfos {
+	padding-left: 1pt;
+	padding-top: 2pt;
+	padding-right: 1pt;
+	padding-bottom: 2pt;
+}
+
+
+.structuretitle,
+.technotetitle,
+.xkmssecuritytitle {
+	padding: 6pt;
+	background-color: #dddddd;
+	font-weight: bold;
+	border-color:  #000000;
+	border-width: 1pt;
+}
+
+
+.technotetitle,
+.xkmssecuritytitle {
+	border-style: solid;
+}
+
+
+.OSCIEncryptedDataEntry .structureentry {
+	border-color:  #cccccc;
+}
+
+.OSCIEncryptedDataEntry .structuretitle {
+	background-color: #eeeeee;
+	border-color:  #cccccc;
+	color: #aaaaaa;
+}
+
+
+.structureentry_details td {
+	vertical-align: top;
+}
+
+
+.signaturetitle,
+.x509title {
+	padding: 2pt;
+	background-color: #dddddd;
+	border-color:  #000000;
+	border-width: 1pt;
+	border-style: solid;
+}
+
+
+table.signaturetitle,
+table.x509title {
+	border-width: 0pt;
+	border-style: none;
+}
+
+
+.signaturechecks  {
+	background-color: #eeeeee;
+	border-width: 1pt;
+	border-style: solid;
+	border-color: #777777;
+	margin-top: 2pt;
+	padding: 2pt;
+}
+
+.signatureheader,
+.x509header {
+	color: #777777;
+	font-weight: bold;
+	font-style: normal;
+	margin-top: 10pt;
+}
+
+
+table.signaturechecks  {
+	width: 100%;
+	border-style: none;
+	border-width: 0pt;
+}
+
+
+table.signaturechecks td.signature_left {
+	width: 1pt;
+}
+
+
+table.signaturechecks td.signature_right {
+	width: 50%;
+}
+
+table.signature_algos {
+	text-align: left;
+	width: 100%;
+}
+
+
+.signatureinfo,
+.x509info,
+.xkmssecurityinfo {
+	margin-top: 5pt;
+	margin-bottom: 0pt;
+}
+
+.signature_rightbold {
+	vertical-align: top;
+	text-align: left;
+	font-weight: bold;
+	color: #000000;
+	padding: 2pt;
+	width: auto;
+}
+
+td.signature_algo_abbrev, 
+div.signature_algo_abbrev {
+	font-weight: normal;
+	min-width: 10pt;
+	text-align: left;
+	padding: 4pt;
+	vertical-align: middle;
+}
+
+td.signature_algo_name,
+div.signature_algo_name {
+	min-width: 70pt;
+	padding: 4pt; 
+	text-align: left;
+	vertical-align: middle;
+}
+
+.center {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.algoheader {
+	padding: 2pt 4pt;
+	font-weight: bold;
+	background-color: #dddddd;
+}
+
+.algorow {
+	padding: 0pt 2pt;
+	margin: 2pt;
+}
+.euInfo {
+  	padding-left: 1pt;
+	padding-top: 2pt;
+	padding-right: 1pt;
+	padding-bottom: 2pt;
+}
+</style>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+	<h1>Pr&#252;fprotokoll&nbsp;vom&nbsp;28.02.2026&nbsp;00:56:05</h1>
+
+  <div class="customResultBlock">
+    <div class="structureentry"><div class="structuretitle">Informationen zum &Uuml;bermittlungsweg</div><div class="structureentry_details"><table cellspacing="1" cellpadding="0" summary="">	<tr><td valign="top"><div class="structure_right">Sicherer Übermittlungsweg aus einem besonderen Anwaltspostfach.</td></tr><tr><td valign="top"><div class="structure_right"></td></tr></table></div></div>
+  <div>
+
+
+
+
+<div><h2>Zusammenfassung und Struktur</h2></div>
+	<div class="structure">
+		
+<div class="OSCIMessageEntry">
+<div class="structureentry">
+
+		<div class="structuretitle">OSCI-Nachricht: 563203462.xml</div>
+
+
+																																						
+		<div class="structureentry_details">
+		<table cellspacing="1" cellpadding="0" summary="">
+																				<tr>
+					<td  valign="top"><div class="structure_left">Gesamtpr&#252;fergebnis</div></td>
+					<td  valign="top"><div class="structure_right">
+						<div class="robotgreen" >
+							<table cellspacing="0" cellpadding="0" summary="">
+								<tr>
+									<td valign="middle"><table class="robotgreen" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&#8730;</div></td></tr></table></td>
+																												
+																																																										<td valign="middle">S&#228;mtliche durchgef&#252;hrten Pr&#252;fungen lieferten ein positives Ergebnis.</td>
+								</tr>
+							</table>
+						</div>
+					</div></td>
+				</tr>
+			
+										
+								
+				
+        
+        
+  
+  	<tr>
+					<td valign="top"><div class="structure_left">Betreff</div></td>
+		
+									<td><div class="structure_right">Allgemeine Nachricht</div></td>
+						</tr>
+  
+        
+        
+  
+  	<tr>
+					<td valign="top"><div class="structure_left">Nachrichtenkennzeichen</div></td>
+		
+									<td><div class="structure_right">563203462</div></td>
+						</tr>
+  
+        
+        
+  
+  	<tr>
+					<td valign="top"><div class="structure_left">Absender</div></td>
+		
+									<td><div class="structure_right">
+											<a href="#cert_1572705986">Achim Reinknecht</a>
+									</div></td>
+						</tr>
+  
+        
+        
+  
+  	<tr>
+					<td valign="top"><div class="structure_left">Empf&#228;nger</div></td>
+		
+									<td><div class="structure_right">
+											<a href="#cert_1024076899">Oberlandesgericht Hamm (Rechtsprechung)</a>
+									</div></td>
+						</tr>
+  
+        
+        
+  
+  	<tr>
+					<td valign="top"><div class="structure_left">Eingang auf dem Server</div></td>
+		
+									<td><div class="structure_right">27.02.2026 23:55:25 (lokale Serverzeit)
+									</div></td>
+						</tr>
+  
+		</table>
+	</div>
+	
+
+																																			
+		<div class="structureentry_children">
+		
+			
+														
+<div class="OSCIContentContainerEntry">
+<div class="structureentry">
+
+		<div class="structuretitle">Inhaltsdatencontainer: project_coco</div>
+
+
+																																		
+		<div class="structureentry_details">
+		<table cellspacing="1" cellpadding="0" summary="">
+												
+																															
+																				<tr>
+								<td valign="top"><div class="structure_left">Inhaltsdaten</div></td>
+								<td valign="top"><div class="structure_right"></div></td>
+							</tr>
+														<tr>
+								<td valign="top"><div class="structure_left">Anh&#228;nge</div></td>
+								<td valign="top"><div class="structure_right">Berufungsbegr&#252;ndung_O.pdf, Berufungsbegr&#252;ndung_O.pdf.p7s, xjustiz_nachricht.xml</div></td>
+							</tr>
+													
+						
+		</table>
+	</div>
+	
+
+														            												            												            			
+	</div>
+</div>
+
+									
+			
+														
+<div class="OSCIContentContainerEntry">
+<div class="structureentry">
+
+		<div class="structuretitle">Inhaltsdatencontainer: vhn_coco</div>
+
+
+																																		
+		<div class="structureentry_details">
+		<table cellspacing="1" cellpadding="0" summary="">
+												
+																															
+																				<tr>
+								<td valign="top"><div class="structure_left">Inhaltsdaten</div></td>
+								<td valign="top"><div class="structure_right"></div></td>
+							</tr>
+														<tr>
+								<td valign="top"><div class="structure_left">Anh&#228;nge</div></td>
+								<td valign="top"><div class="structure_right">vhn.xml, vhn.xml.p7s</div></td>
+							</tr>
+													
+						
+		</table>
+	</div>
+	
+
+														            												            			
+	</div>
+</div>
+
+										</div>
+	</div>
+</div>
+
+	</div>
+	<div class="structure">
+		
+<div class="CMSDocumentEntry">
+<div class="structureentry">
+
+		<div class="structuretitle">PKCS#7-Dokument: Berufungsbegr&#252;ndung_O.pdf.p7s</div>
+
+
+																																						
+		<div class="structureentry_details">
+		<table cellspacing="1" cellpadding="0" summary="">
+																				<tr>
+					<td  valign="top"><div class="structure_left">Gesamtpr&#252;fergebnis</div></td>
+					<td  valign="top"><div class="structure_right">
+						<div class="robotgreen" >
+							<table cellspacing="0" cellpadding="0" summary="">
+								<tr>
+									<td valign="middle"><table class="robotgreen" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&#8730;</div></td></tr></table></td>
+																												
+																																																										<td valign="middle">S&#228;mtliche durchgef&#252;hrten Pr&#252;fungen lieferten ein positives Ergebnis.</td>
+								</tr>
+							</table>
+						</div>
+					</div></td>
+				</tr>
+			
+																															                                            
+                <tr>
+    <td valign="top">
+      <div class="structure_left">Autor</div>
+    </td>
+    <td>
+      <table cellspacing="1" cellpadding="0" summary="">
+                                                <tr>
+            <td>
+              <div class="robotgreen">
+                <table cellspacing="0" cellpadding="0" summary="">
+                  <tr>
+                    <td>
+                      <table class="robotgreen" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&#8730;</div></td></tr></table>
+                    </td>
+                    <td>
+                      <a class="green" href="#sig_-1939960036">Achim Reinknecht</a>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+            <td><div class="structure_right">Die Signatur ist g&#252;ltig. Alle notwendigen Pr&#252;fungen sind positiv verlaufen.</div></td>
+          </tr>
+              </table>
+    </td>
+  </tr>
+
+						
+													
+								
+				
+        
+        
+  
+  	<tr>
+					<td valign="top"><div class="structure_left">Signaturformat</div></td>
+		
+									<td><div class="structure_right">Signatur ohne Dokumenteninhalt</div></td>
+						</tr>
+  
+        
+        
+  
+  	<tr>
+					<td valign="top"><div class="structure_left">Inhaltsdaten</div></td>
+		
+									<td><div class="structure_right">Berufungsbegr&#252;ndung_O.pdf</div></td>
+						</tr>
+  
+		</table>
+	</div>
+	
+
+					
+	</div>
+</div>
+
+	</div>
+	<div class="structure">
+		
+<div class="CMSDocumentEntry">
+<div class="structureentry">
+
+		<div class="structuretitle">PKCS#7-Dokument: vhn.xml.p7s</div>
+
+
+																																						
+		<div class="structureentry_details">
+		<table cellspacing="1" cellpadding="0" summary="">
+																				<tr>
+					<td  valign="top"><div class="structure_left">Gesamtpr&#252;fergebnis</div></td>
+					<td  valign="top"><div class="structure_right">
+						<div class="robotgreen" >
+							<table cellspacing="0" cellpadding="0" summary="">
+								<tr>
+									<td valign="middle"><table class="robotgreen" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&#8730;</div></td></tr></table></td>
+																												
+																																																										<td valign="middle">S&#228;mtliche durchgef&#252;hrten Pr&#252;fungen lieferten ein positives Ergebnis.</td>
+								</tr>
+							</table>
+						</div>
+					</div></td>
+				</tr>
+			
+																															                                            
+                <tr>
+    <td valign="top">
+      <div class="structure_left">Autor</div>
+    </td>
+    <td>
+      <table cellspacing="1" cellpadding="0" summary="">
+                                                <tr>
+            <td>
+              <div class="robotgreen">
+                <table cellspacing="0" cellpadding="0" summary="">
+                  <tr>
+                    <td>
+                      <table class="robotgreen" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&#8730;</div></td></tr></table>
+                    </td>
+                    <td>
+                      <a class="green" href="#sig_441919201">vertrauenswuerdiger Herkunftsnachweis beA</a>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </td>
+            <td><div class="structure_right">Die Signatur ist g&#252;ltig. Alle notwendigen Pr&#252;fungen sind positiv verlaufen.</div></td>
+          </tr>
+              </table>
+    </td>
+  </tr>
+
+						
+													
+								
+				
+        
+        
+  
+  	<tr>
+					<td valign="top"><div class="structure_left">Signaturformat</div></td>
+		
+									<td><div class="structure_right">Signatur ohne Dokumenteninhalt</div></td>
+						</tr>
+  
+        
+        
+  
+  	<tr>
+					<td valign="top"><div class="structure_left">Inhaltsdaten</div></td>
+		
+									<td><div class="structure_right">vhn.xml</div></td>
+						</tr>
+  
+		</table>
+	</div>
+	
+
+					
+	</div>
+</div>
+
+	</div>
+
+
+
+
+
+
+	<div><h2>Signaturpr&#252;fungen</h2></div>
+					
+
+		
+
+		
+
+
+		
+
+
+		
+
+
+
+		
+
+		
+
+
+		
+
+
+
+
+					
+						
+		<a id="sig_-1939960036" name ="sig_-1939960036" ></a>
+		<div class="signature">
+			
+																																	
+						<div class="signaturetitle">
+				<table class="signaturetitle" cellspacing="0" cellpadding="0" summary="">
+					<tr>
+						<td class="signaturetitle_left"><div class="signaturetitle_left"><table class="robotgreen" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&#8730;</div></td></tr></table></div></td>
+												<td class="signaturetitle_right"><div class="signaturetitle_right">Signaturpr&#252;fung PKCS#7-Dokument Berufungsbegr&#252;ndung_O.pdf.p7s</div></td>
+					</tr>
+				</table>
+			</div>
+			
+			<div class="signatureinfo">
+				<table cellspacing="0" cellpadding="0" summary="">
+					<tr>
+												
+						<td valign="top"><div class="signature_left">Autor</div></td>
+						<td valign="top"><div class="signature_right"><a href="#cert_1168008948">Achim Reinknecht</a> </div></td>
+					</tr>
+					<tr>
+						<td valign="top"><div class="signature_left">Aussteller des Zertifikats</div></td>
+						<td valign="top"><div class="signature_right">Bundesnotarkammer</div></td>
+					</tr>
+					
+					<tr>
+  					    <td valign="top"><div class="signature_left">Signaturniveau</div></td>
+					    						   <td valign="top"><div class="signature_right">Qualifizierte elektronische Signatur</div></td>
+											</tr>
+					<tr>
+					    						   <td valign="top"><div class="signature_left">Signierzeitpunkt</div></td>
+																															<td valign="top"><div class="signature_right">27.02.2026 23:54:57</div></td>
+											</tr>
+					<tr>
+						<td valign="top"><div class="signature_left">Durchf&#252;hrung der Pr&#252;fung</div></td>
+																																						<td valign="top"><div class="signature_right">28.02.2026 00:56:05</div></td>
+											</tr>
+									</table>
+			</div>			
+			
+			<div class="signatureheader">Signaturpr&#252;fung der Inhaltsdaten</div>
+			<div class="signaturechecks">
+				<table class="signaturechecks" cellspacing="0" cellpadding="0" summary="">
+					<tr>
+						<td class="signature_left"><div class="signature_left"><table class="robotgreen" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&#8730;</div></td></tr></table></div></td>
+						<td colspan="1" class="signature_right"><div class="signature_right">Mathematische Signaturpr&#252;fung der Inhaltsdaten</div></td>
+					</tr>
+					<tr>
+	<td class="signature_left"><div class="signature_left"><table class="robotgreen" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&#8730;</div></td></tr></table></div></td>
+	<td class="signature_right"><div class="signature_right">Eignung des verwendeten Signaturalgorithmus</div></td>
+	<td align="center" class="signature_algo_name">Signierzeitpunkt</td>
+	<td align="center" class="signature_algo_name">Durchf&#252;hrung der Pr&#252;fung</td>
+</tr>
+<tr>
+    <td></td>
+          <td class="signature_right"><div class="signature_right">SHA256 | SHA256 RSA (n = 3072) PSS</div></td>
+    	<td align="center" ><div><table class="robotgreen" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&#8730;</div></td></tr></table></div></td>
+	<td align="center" ><div><table class="robotgreen" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&#8730;</div></td></tr></table></div></td>
+</tr>
+
+				</table>
+				
+								
+    
+				
+			</div>			
+			
+																						
+
+
+	
+
+<div class="signatureheader">Pr&#252;fung des Zertifikats [Seriennummer: 5302145568816532876]</div>
+<div class="signaturechecks">
+	
+	<table cellspacing="0" cellpadding="0" summary="" class="signaturechecks">
+							<tr>
+				<td class="signature_left"><div class="signature_left"><table class="robotgreen" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&#8730;</div></td></tr></table></div></td>
+				<td colspan="2" class="signature_right"><div class="signature_right">Vertrauensw&#252;rdigkeit des Trustcenters (TC)</div></td>
+			</tr>
+							<tr>
+				<td class="signature_left"><div class="signature_left"><table class="robotgreen" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&#8730;</div></td></tr></table></div></td>
+				<td colspan="2" class="signature_right"><div class="signature_right">Mathematische Signaturpr&#252;fung der Zertifikatskette</div></td>				
+			</tr>
+							<tr>
+				<td class="signature_left"><div class="signature_left"><table class="robotgreen" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&#8730;</div></td></tr></table></div></td>
+				<td colspan="2" class="signature_right"><div class="signature_right">G&#252;ltigkeitsintervall des gepr&#252;ften Zertifikats</div></td>
+			</tr>
+							<tr>
+																									    							    																										<td class="signature_left"><div class="signature_left"><table class="robotgreen" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&#8730;</div></td></tr></table></div></td>
+				<td colspan="2" class="signature_right"><div class="signature_right">Sperrstatus des gepr&#252;ften Zertifikats (nicht gesperrt)</div></td>
+			</tr>
+				               
+    <tr>
+	<td class="signature_left"><div class="signature_left"><table class="robotgreen" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&#8730;</div></td></tr></table></div></td>
+	<td class="signature_right"><div class="signature_right">Eignung des verwendeten Signaturalgorithmus</div></td>
+	<td align="center" class="signature_algo_name">Signierzeitpunkt</td>
+	<td align="center" class="signature_algo_name">Durchf&#252;hrung der Pr&#252;fung</td>
+</tr>
+<tr>
+    <td></td>
+          <td class="signature_right"><div class="signature_right">SHA512 RSA (n = 4096) PSS</div></td>
+    	<td align="center" ><div><table class="robotgreen" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&#8730;</div></td></tr></table></div></td>
+	<td align="center" ><div><table class="robotgreen" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&#8730;</div></td></tr></table></div></td>
+</tr>
+
+	</table>
+	
+		
+
+    
+</div>
+
+			<div><a href="#tech_517504608">Technische Informationen zur Pr&#252;fung</a></div>
+													
+			
+			
+									
+		</div>
+	
+
+					
+						
+		<a id="sig_441919201" name ="sig_441919201" ></a>
+		<div class="signature">
+			
+													
+						<div class="signaturetitle">
+				<table class="signaturetitle" cellspacing="0" cellpadding="0" summary="">
+					<tr>
+						<td class="signaturetitle_left"><div class="signaturetitle_left"><table class="robotgreen" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&#8730;</div></td></tr></table></div></td>
+												<td class="signaturetitle_right"><div class="signaturetitle_right">Signaturpr&#252;fung PKCS#7-Dokument vhn.xml.p7s</div></td>
+					</tr>
+				</table>
+			</div>
+			
+			<div class="signatureinfo">
+				<table cellspacing="0" cellpadding="0" summary="">
+					<tr>
+												
+						<td valign="top"><div class="signature_left">Autor</div></td>
+						<td valign="top"><div class="signature_right"><a href="#cert_-1293264414">vertrauenswuerdiger Herkunftsnachweis beA</a> </div></td>
+					</tr>
+					<tr>
+						<td valign="top"><div class="signature_left">Aussteller des Zertifikats</div></td>
+						<td valign="top"><div class="signature_right">BNotK</div></td>
+					</tr>
+					
+					<tr>
+  					    <td valign="top"><div class="signature_left">Signaturniveau</div></td>
+					    						   <td valign="top"><div class="signature_right">Fortgeschrittene elektronische Signatur</div></td>
+											</tr>
+					<tr>
+					    						   <td valign="top"><div class="signature_left">Signierzeitpunkt</div></td>
+																															<td valign="top"><div class="signature_right">27.02.2026 23:55:25</div></td>
+											</tr>
+					<tr>
+						<td valign="top"><div class="signature_left">Durchf&#252;hrung der Pr&#252;fung</div></td>
+																																						<td valign="top"><div class="signature_right">28.02.2026 00:56:05</div></td>
+											</tr>
+									</table>
+			</div>			
+			
+			<div class="signatureheader">Signaturpr&#252;fung der Inhaltsdaten</div>
+			<div class="signaturechecks">
+				<table class="signaturechecks" cellspacing="0" cellpadding="0" summary="">
+					<tr>
+						<td class="signature_left"><div class="signature_left"><table class="robotgreen" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&#8730;</div></td></tr></table></div></td>
+						<td colspan="1" class="signature_right"><div class="signature_right">Mathematische Signaturpr&#252;fung der Inhaltsdaten</div></td>
+					</tr>
+					<tr>
+	<td class="signature_left"><div class="signature_left"><table class="robotnone" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&nbsp;</div></td></tr></table></div></td>
+	<td class="signature_right"><div class="signature_right">Eignung des verwendeten Signaturalgorithmus</div></td>
+	<td align="center" colspan="2"><div class="signature_algo_abbrev"></div></td>
+</tr>
+<tr>
+    <td></td>
+          <td class="signature_right"><div class="signature_right">SHA512 | SHA512 RSA (n = 3072) PSS</div></td>
+    	<td align="center" colspan="2"><div class="signature_algo_abbrev"></div></td>
+</tr>
+
+				</table>
+				
+								
+    
+				
+			</div>			
+			
+																						
+
+
+	
+
+<div class="signatureheader">Pr&#252;fung des Zertifikats [Seriennummer: 6393356727372460981]</div>
+<div class="signaturechecks">
+	
+	<table cellspacing="0" cellpadding="0" summary="" class="signaturechecks">
+							<tr>
+				<td class="signature_left"><div class="signature_left"><table class="robotgreen" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&#8730;</div></td></tr></table></div></td>
+				<td colspan="2" class="signature_right"><div class="signature_right">Vertrauensw&#252;rdigkeit des Trustcenters (TC)</div></td>
+			</tr>
+							<tr>
+				<td class="signature_left"><div class="signature_left"><table class="robotgreen" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&#8730;</div></td></tr></table></div></td>
+				<td colspan="2" class="signature_right"><div class="signature_right">Mathematische Signaturpr&#252;fung der Zertifikatskette</div></td>				
+			</tr>
+							<tr>
+				<td class="signature_left"><div class="signature_left"><table class="robotgreen" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&#8730;</div></td></tr></table></div></td>
+				<td colspan="2" class="signature_right"><div class="signature_right">G&#252;ltigkeitsintervall des gepr&#252;ften Zertifikats</div></td>
+			</tr>
+							<tr>
+																									    							    																										<td class="signature_left"><div class="signature_left"><table class="robotgreen" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&#8730;</div></td></tr></table></div></td>
+				<td colspan="2" class="signature_right"><div class="signature_right">Sperrstatus des gepr&#252;ften Zertifikats (nicht gesperrt)</div></td>
+			</tr>
+				               
+    <tr>
+	<td class="signature_left"><div class="signature_left"><table class="robotnone" cellspacing="0" cellpadding="0"><tr><td><div class="signal">&nbsp;</div></td></tr></table></div></td>
+	<td class="signature_right"><div class="signature_right">Eignung des verwendeten Signaturalgorithmus</div></td>
+	<td align="center" colspan="2"><div class="signature_algo_abbrev"></div></td>
+</tr>
+<tr>
+    <td></td>
+          <td class="signature_right"><div class="signature_right">SHA512 RSA (n = 4096) PSS</div></td>
+    	<td align="center" colspan="2"><div class="signature_algo_abbrev"></div></td>
+</tr>
+
+	</table>
+	
+		
+
+    
+</div>
+
+			<div><a href="#tech_1014428189">Technische Informationen zur Pr&#252;fung</a></div>
+													
+			
+			
+									
+		</div>
+	
+
+	
+
+	<div><h2>Zertifikate</h2></div>
+	<div class="certificates">
+					
+	
+
+
+		
+        
+	
+				
+				<a id="cert_1024076899" name="cert_1024076899"></a>
+		<div><h3>Zertifikat des Empf&#228;ngers Oberlandesgericht Hamm (Rechtsprechung)</h3></div>
+			<div class="certificateentry">
+		<a id="cert_1024076899" name="cert_1024076899"></a>
+		<table cellspacing="0" cellpadding="0">
+																												<tr>
+						<td><div class="certdetail_section">Inhaber</div></td>
+						<td valign="middle"><div class="line">&#8212;&#8212;&#8212;&#8212;&#8212;</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Organisation</div></td>
+						<td><div class="certdetail_right">Oberlandesgerichte NW</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Name</div></td>
+						<td><div class="certdetail_right">Oberlandesgericht Hamm (Rechtsprechung)</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">E-Mail</div></td>
+						<td><div class="certdetail_right">poststelle@olg-hamm.nrw.de</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Land</div></td>
+						<td><div class="certdetail_right">DE</div></td>
+					</tr>
+																																<tr><td>&nbsp;</td></tr>
+																																<tr>
+						<td><div class="certdetail_section">Aussteller</div></td>
+						<td valign="middle"><div class="line">&#8212;&#8212;&#8212;&#8212;&#8212;</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Organisation</div></td>
+						<td><div class="certdetail_right">Oberlandesgerichte NW</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Name</div></td>
+						<td><div class="certdetail_right">Oberlandesgericht Hamm (Rechtsprechung)</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">E-Mail</div></td>
+						<td><div class="certdetail_right">poststelle@olg-hamm.nrw.de</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Land</div></td>
+						<td><div class="certdetail_right">DE</div></td>
+					</tr>
+																																<tr><td>&nbsp;</td></tr>
+																																<tr>
+						<td><div class="certdetail_section">Allgemeines</div></td>
+						<td valign="middle"><div class="line">&#8212;&#8212;&#8212;&#8212;&#8212;</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">G&#252;ltig ab</div></td>
+						<td><div class="certdetail_right">30.11.2023 19:41:51</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">G&#252;ltig bis</div></td>
+						<td><div class="certdetail_right">30.11.2026 19:44:51</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Seriennummer</div></td>
+						<td><div class="certdetail_right">1701369891826</div></td>
+					</tr>
+																																<tr>
+						<td>&nbsp;</td>
+						<td><div class="certdetail_right">01 8c 21 8c 4b f2</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Signaturalgorithmus</div></td>
+						<td><div class="certdetail_right">SHA256withRSA</div></td>
+					</tr>
+																																<tr><td>&nbsp;</td></tr>
+									</table>
+	</div>
+			
+        
+	
+				
+				<a id="cert_1572705986" name="cert_1572705986"></a>
+		<div><h3>Zertifikat des Absenders Achim Reinknecht</h3></div>
+			<div class="certificateentry">
+		<a id="cert_1572705986" name="cert_1572705986"></a>
+		<table cellspacing="0" cellpadding="0">
+																												<tr>
+						<td><div class="certdetail_section">Inhaber</div></td>
+						<td valign="middle"><div class="line">&#8212;&#8212;&#8212;&#8212;&#8212;</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Organisation</div></td>
+						<td><div class="certdetail_right">BRAK</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Organisationseinheit</div></td>
+						<td><div class="certdetail_right">beA</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Name</div></td>
+						<td><div class="certdetail_right">Achim Reinknecht</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">UID</div></td>
+						<td><div class="certdetail_right">DE.BRAK.6aeb9a2c-b12e-45b0-92a9-e466ba908021.cd01</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Seriennummer</div></td>
+						<td><div class="certdetail_right">30000000000001460405</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Land</div></td>
+						<td><div class="certdetail_right">DE</div></td>
+					</tr>
+																																<tr><td>&nbsp;</td></tr>
+																																<tr>
+						<td><div class="certdetail_section">Aussteller</div></td>
+						<td valign="middle"><div class="line">&#8212;&#8212;&#8212;&#8212;&#8212;</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Organisation</div></td>
+						<td><div class="certdetail_right">Bundesnotarkammer</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Organisationseinheit</div></td>
+						<td><div class="certdetail_right">Zertifizierungsstelle</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Name</div></td>
+						<td><div class="certdetail_right">beA OSCI CA 2022</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Land</div></td>
+						<td><div class="certdetail_right">DE</div></td>
+					</tr>
+																																<tr><td>&nbsp;</td></tr>
+																																<tr>
+						<td><div class="certdetail_section">Allgemeines</div></td>
+						<td valign="middle"><div class="line">&#8212;&#8212;&#8212;&#8212;&#8212;</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">G&#252;ltig ab</div></td>
+						<td><div class="certdetail_right">24.10.2025 19:19:54</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">G&#252;ltig bis</div></td>
+						<td><div class="certdetail_right">23.10.2029 19:19:53</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Seriennummer</div></td>
+						<td><div class="certdetail_right">1183738987363782732</div></td>
+					</tr>
+																																<tr>
+						<td>&nbsp;</td>
+						<td><div class="certdetail_right">10 6d 7c 56 58 99 50 4c</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Signaturalgorithmus</div></td>
+						<td><div class="certdetail_right">SHA512withRSA/PSS</div></td>
+					</tr>
+																																<tr><td>&nbsp;</td></tr>
+									</table>
+	</div>
+	
+		
+
+
+
+
+		
+
+
+
+
+		
+
+
+
+
+		
+
+
+
+
+		
+
+
+
+
+		
+
+
+
+
+		
+
+
+
+
+					
+
+
+
+			
+				
+				<a id="cert_1168008948" name="cert_1168008948"></a>
+		<div><h3>Zertifikat des Autors Achim Reinknecht</h3></div>
+			<div class="certificateentry">
+		<a id="cert_1168008948" name="cert_1168008948"></a>
+		<table cellspacing="0" cellpadding="0">
+																												<tr>
+						<td><div class="certdetail_section">Inhaber</div></td>
+						<td valign="middle"><div class="line">&#8212;&#8212;&#8212;&#8212;&#8212;</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Name</div></td>
+						<td><div class="certdetail_right">Achim Reinknecht</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Vorname</div></td>
+						<td><div class="certdetail_right">Achim</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">UID</div></td>
+						<td><div class="certdetail_right">DE.BRAK.6aeb9a2c-b12e-45b0-92a9-e466ba908021.cd01</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Seriennummer</div></td>
+						<td><div class="certdetail_right">FS-10057573</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Familienname</div></td>
+						<td><div class="certdetail_right">Reinknecht</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Land</div></td>
+						<td><div class="certdetail_right">DE</div></td>
+					</tr>
+																																<tr><td>&nbsp;</td></tr>
+																																<tr>
+						<td><div class="certdetail_section">Aussteller</div></td>
+						<td valign="middle"><div class="line">&#8212;&#8212;&#8212;&#8212;&#8212;</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Organisation</div></td>
+						<td><div class="certdetail_right">Bundesnotarkammer</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Organisationseinheit</div></td>
+						<td><div class="certdetail_right">Zertifizierungsstelle</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Name</div></td>
+						<td><div class="certdetail_right">BNotK rqSigt CA 2020</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Organisationskennung</div></td>
+						<td><div class="certdetail_right">DE122788238</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Land</div></td>
+						<td><div class="certdetail_right">DE</div></td>
+					</tr>
+																																<tr><td>&nbsp;</td></tr>
+																																<tr>
+						<td><div class="certdetail_section">Allgemeines</div></td>
+						<td valign="middle"><div class="line">&#8212;&#8212;&#8212;&#8212;&#8212;</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">G&#252;ltig ab</div></td>
+						<td><div class="certdetail_right">17.11.2022 15:10:28</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">G&#252;ltig bis</div></td>
+						<td><div class="certdetail_right">16.11.2027 15:10:28</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Seriennummer</div></td>
+						<td><div class="certdetail_right">5302145568816532876</div></td>
+					</tr>
+																																<tr>
+						<td>&nbsp;</td>
+						<td><div class="certdetail_right">49 95 01 4d 88 b8 8d 8c</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Signaturalgorithmus</div></td>
+						<td><div class="certdetail_right">SHA512withRSA/PSS</div></td>
+					</tr>
+																																<tr><td>&nbsp;</td></tr>
+									</table>
+	</div>
+	
+	
+  
+	
+					
+
+
+
+			
+				
+				<a id="cert_-1293264414" name="cert_-1293264414"></a>
+		<div><h3>Zertifikat des Autors vertrauenswuerdiger Herkunftsnachweis beA</h3></div>
+			<div class="certificateentry">
+		<a id="cert_-1293264414" name="cert_-1293264414"></a>
+		<table cellspacing="0" cellpadding="0">
+																												<tr>
+						<td><div class="certdetail_section">Inhaber</div></td>
+						<td valign="middle"><div class="line">&#8212;&#8212;&#8212;&#8212;&#8212;</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Organisation</div></td>
+						<td><div class="certdetail_right">Bundesrechtsanwaltskammer</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Organisationseinheit</div></td>
+						<td><div class="certdetail_right">besonderes Anwaltspostfach</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Name</div></td>
+						<td><div class="certdetail_right">vertrauenswuerdiger Herkunftsnachweis beA</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Seriennummer</div></td>
+						<td><div class="certdetail_right">00001</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Ort</div></td>
+						<td><div class="certdetail_right">Berlin</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Bundesland</div></td>
+						<td><div class="certdetail_right">Berlin</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Land</div></td>
+						<td><div class="certdetail_right">DE</div></td>
+					</tr>
+																																<tr><td>&nbsp;</td></tr>
+																																<tr>
+						<td><div class="certdetail_section">Aussteller</div></td>
+						<td valign="middle"><div class="line">&#8212;&#8212;&#8212;&#8212;&#8212;</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Organisation</div></td>
+						<td><div class="certdetail_right">BNotK</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Name</div></td>
+						<td><div class="certdetail_right">beA VHN CA 2017</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Land</div></td>
+						<td><div class="certdetail_right">DE</div></td>
+					</tr>
+																																<tr><td>&nbsp;</td></tr>
+																																<tr>
+						<td><div class="certdetail_section">Allgemeines</div></td>
+						<td valign="middle"><div class="line">&#8212;&#8212;&#8212;&#8212;&#8212;</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">G&#252;ltig ab</div></td>
+						<td><div class="certdetail_right">17.08.2023 13:33:07</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">G&#252;ltig bis</div></td>
+						<td><div class="certdetail_right">15.08.2030 13:33:07</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Seriennummer</div></td>
+						<td><div class="certdetail_right">6393356727372460981</div></td>
+					</tr>
+																																<tr>
+						<td>&nbsp;</td>
+						<td><div class="certdetail_right">58 b9 c4 11 f1 63 b3 b5</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Signaturalgorithmus</div></td>
+						<td><div class="certdetail_right">SHA512withRSA/PSS</div></td>
+					</tr>
+																																<tr><td>&nbsp;</td></tr>
+									</table>
+	</div>
+	
+	
+  
+	
+	
+								
+						
+			<a id="cert_-186308623" name="cert_-186308623"></a>
+			<div><h3>Zertifikat des OCSP/CRL-Relays</h3></div>
+				<div class="certificateentry">
+		<a id="cert_-186308623" name="cert_-186308623"></a>
+		<table cellspacing="0" cellpadding="0">
+																												<tr>
+						<td><div class="certdetail_section">Inhaber</div></td>
+						<td valign="middle"><div class="line">&#8212;&#8212;&#8212;&#8212;&#8212;</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Organisation</div></td>
+						<td><div class="certdetail_right">Wesroc</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Name</div></td>
+						<td><div class="certdetail_right">xkms</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Land</div></td>
+						<td><div class="certdetail_right">DE</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Bundesland</div></td>
+						<td><div class="certdetail_right">Berlin</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Ort</div></td>
+						<td><div class="certdetail_right">Berlin</div></td>
+					</tr>
+																																<tr><td>&nbsp;</td></tr>
+																																<tr>
+						<td><div class="certdetail_section">Aussteller</div></td>
+						<td valign="middle"><div class="line">&#8212;&#8212;&#8212;&#8212;&#8212;</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Organisation</div></td>
+						<td><div class="certdetail_right">Wesroc GbR</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Organisationseinheit</div></td>
+						<td><div class="certdetail_right">BRAK</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Name</div></td>
+						<td><div class="certdetail_right">Wesroc PROD CA 1 2020</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Land</div></td>
+						<td><div class="certdetail_right">DE</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Bundesland</div></td>
+						<td><div class="certdetail_right">Berlin</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Ort</div></td>
+						<td><div class="certdetail_right">Berlin</div></td>
+					</tr>
+																																<tr><td>&nbsp;</td></tr>
+																																<tr>
+						<td><div class="certdetail_section">Allgemeines</div></td>
+						<td valign="middle"><div class="line">&#8212;&#8212;&#8212;&#8212;&#8212;</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">G&#252;ltig ab</div></td>
+						<td><div class="certdetail_right">19.08.2021 14:50:00</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">G&#252;ltig bis</div></td>
+						<td><div class="certdetail_right">18.08.2026 14:50:00</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Seriennummer</div></td>
+						<td><div class="certdetail_right">728670081480047123029112273024974933051218865777</div></td>
+					</tr>
+																																<tr>
+						<td>&nbsp;</td>
+						<td><div class="certdetail_right">7f a2 b2 4e fb 86 fa 32 c3 d2 c3 ab 1d 05 a3 0b 67 b0 2e 71</div></td>
+					</tr>
+																																<tr>
+						<td valign="top"><div class="certdetail_left">Signaturalgorithmus</div></td>
+						<td><div class="certdetail_right">SHA256withECDSA</div></td>
+					</tr>
+																																<tr><td>&nbsp;</td></tr>
+									</table>
+	</div>
+				</div>
+
+
+	<div><h2>Technische Informationen</h2></div>
+					
+
+	
+
+
+
+		
+		
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+					
+
+
+
+			
+							
+									
+			<a id="tech_517504608" name="tech_517504608"></a>
+						
+
+	
+
+
+<div class="technote">
+					<div class="technotetitle">Informationen zur Pr&#252;fung des Zertifikats von Achim Reinknecht zum Zeitpunkt 27.02.2026 23:54:57</div>
+	<div class="technoteinfos">
+		<table cellpadding="0" cellspacing="0" summary="">
+		<tr>
+			<td  valign="top"><div class="technoteinfos_left">Staat der Ans&#228;ssigkeit des TC</td>
+							<td  valign="top"><div class="technoteinfos_right">Deutschland</div></td>
+					</tr>
+		<tr>
+			<td  valign="top"><div class="technoteinfos_left">Art der &#220;berwachung des TC</div></td>
+							<td  valign="top"><div class="technoteinfos_right">&#220;berwachung mit externem Compliance-Audit</div></td>
+					</tr>
+		<tr>
+			<td  valign="top"><div class="technoteinfos_left">Zertifikatsniveau gem&#228;&#223; Richtlinie des TC</div></td>
+							<td  valign="top"><div class="technoteinfos_right">Qualifiziertes Zertifikat gem&#228;&#223; der Signaturdirektive oder eIDAS-Verordnung mit privatem Schl&#252;ssel auf Smartcard f&#252;r eine qualifizierte elektronische Signatur</div></td>
+					</tr>
+		<tr>
+			<td  valign="top"><div class="technoteinfos_left">G&#252;ltigkeitsmodell der Zertifikatspr&#252;fung</div></td>
+							<td  valign="top"><div class="technoteinfos_right">EscapeRoute (gem&#228;&#223; CommonPKI)</div></td>
+					</tr>
+		<tr>
+			<td  valign="top"><div class="technoteinfos_left">Art der Statuspr&#252;fung</div></td>
+							<td  valign="top"><div class="technoteinfos_right">OCSP</div></td>
+					</tr>
+		<tr>
+			<td  valign="top"><div class="technoteinfos_left">Pr&#252;finstanz</div></td>
+			<td  valign="top"><div class="technoteinfos_right">https://www.bea-brak.de/CertificateValidationServer/xkms_soap_1_1</div></td>
+		</tr>
+		<tr>
+			<td  valign="top"><div class="technoteinfos_left">Konfiguration der Pr&#252;finstanz</div></td>
+							<td valign="top"><div class="technoteinfos_right">individual configuration</div></td>
+					</tr>
+		<tr>
+			<td  valign="top"><div class="technoteinfos_left">Policy der Pr&#252;finstanz</div></td>
+							<td valign="top"><div class="technoteinfos_right">Qualifizierte elektronische Signatur (qVDA aus DE eIDAS-VO)</div></td>
+					</tr>
+		<tr>
+			<td  valign="top"><div class="technoteinfos_left">Vertrauensw&#252;rdige Liste der ZDA</div></td>
+							<td valign="top"><div class="technoteinfos_right">https://localhost:8443/Filemanager/rest/resources/OFFICIAL_TL_DE/SHA-256_2047a8e3532cdcf3fc8b1e30cf4215bc3b62910db86540337069e8fcdbdff1ca</div></td>
+					</tr>
+		<tr>
+			<td  valign="top"><div class="technoteinfos_left">Ergebnis der XKMS-Verarbeitung</div></td>
+							<td valign="top"><div class="technoteinfos_right">XKMS-Verarbeitung erfolgreich beendet.</div></td>
+					</tr>
+						</table>
+	</div>
+</div>
+
+				
+	
+
+
+
+					
+
+
+
+			
+							
+									
+			<a id="tech_1014428189" name="tech_1014428189"></a>
+						
+
+	
+
+
+<div class="technote">
+					<div class="technotetitle">Informationen zur Pr&#252;fung des Zertifikats von vertrauenswuerdiger Herkunftsnachweis beA zum Zeitpunkt 27.02.2026 23:55:25</div>
+	<div class="technoteinfos">
+		<table cellpadding="0" cellspacing="0" summary="">
+		<tr>
+			<td  valign="top"><div class="technoteinfos_left">Staat der Ans&#228;ssigkeit des TC</td>
+							<td  valign="top"><div class="technoteinfos_right">Deutschland</div></td>
+					</tr>
+		<tr>
+			<td  valign="top"><div class="technoteinfos_left">Art der &#220;berwachung des TC</div></td>
+							<td  valign="top"><div class="technoteinfos_right">Selbstbeurteilung</div></td>
+					</tr>
+		<tr>
+			<td  valign="top"><div class="technoteinfos_left">Zertifikatsniveau gem&#228;&#223; Richtlinie des TC</div></td>
+							<td  valign="top"><div class="technoteinfos_right">Gering</div></td>
+					</tr>
+		<tr>
+			<td  valign="top"><div class="technoteinfos_left">G&#252;ltigkeitsmodell der Zertifikatspr&#252;fung</div></td>
+							<td  valign="top"><div class="technoteinfos_right">EscapeRoute (gem&#228;&#223; CommonPKI)</div></td>
+					</tr>
+		<tr>
+			<td  valign="top"><div class="technoteinfos_left">Art der Statuspr&#252;fung</div></td>
+							<td  valign="top"><div class="technoteinfos_right">OCSP</div></td>
+					</tr>
+		<tr>
+			<td  valign="top"><div class="technoteinfos_left">Pr&#252;finstanz</div></td>
+			<td  valign="top"><div class="technoteinfos_right">https://www.bea-brak.de/CertificateValidationServer/xkms_soap_1_1</div></td>
+		</tr>
+		<tr>
+			<td  valign="top"><div class="technoteinfos_left">Konfiguration der Pr&#252;finstanz</div></td>
+							<td valign="top"><div class="technoteinfos_right">individual configuration</div></td>
+					</tr>
+		<tr>
+			<td  valign="top"><div class="technoteinfos_left">Policy der Pr&#252;finstanz</div></td>
+							<td valign="top"><div class="technoteinfos_right">fortgeschrittene elektronische Signatur (VDA eIDAS-VO oder SigG)</div></td>
+					</tr>
+		<tr>
+			<td  valign="top"><div class="technoteinfos_left">Vertrauensw&#252;rdige Liste der ZDA</div></td>
+							<td valign="top"><div class="technoteinfos_right">https://localhost:8443/Filemanager/rest/resources/GOVERNIKUS_TL_DE/SHA-256_7c03e1bd8e35ca5d3351be8016129c3475ad5d4bb0fbbb920cbd956be7bbe6d5</div></td>
+					</tr>
+		<tr>
+			<td  valign="top"><div class="technoteinfos_left">Ergebnis der XKMS-Verarbeitung</div></td>
+							<td valign="top"><div class="technoteinfos_right">XKMS-Verarbeitung erfolgreich beendet.</div></td>
+					</tr>
+						</table>
+	</div>
+</div>
+
+				
+	
+
+
+
+	
+
+		<div><h2>Auszug aus dem Algorithmenkatalog SOG-IS plus (Bundesnetzagentur 2017/SOG-IS Agreed Cryptographic Mechanisms V1.1) ver&#246;ffentlicht von der Governikus KG am 19.10.2020</h2></div>
+<a id="algos"></a>
+<div class="algo_catalog">
+	<table cellspacing="0" cellpadding="0" width="100%">
+		<tr>
+			<td><div class="algoheader">Algorithmusname</div></td>
+			<td><div class="algoheader">Typ</div></td>
+			<td><div class="algoheader">geeignet f&#252;r</div></td>
+			<td><div class="algoheader">bis</div></td>
+		</tr>
+																																	<tr>
+				<td><div class="algorow">PSS</div></td>
+				<td><div class="algorow">Paddingalgorithmus</div></td>
+				<td><div class="algorow">Anbringung/Pr&#252;fung von Zertifikats- und Inhaltsdatensignaturen</div></td>
+				<td><div class="algorow">Ohne Ablaufdatum</div></td>
+			</tr>
+																																	<tr>
+				<td><div class="algorow">RSA (n = 3072)</div></td>
+				<td><div class="algorow">Schl&#252;sselalgorithmus</div></td>
+				<td><div class="algorow">Anbringung/Pr&#252;fung von Inhaltsdatensignaturen</div></td>
+				<td><div class="algorow">Ohne Ablaufdatum</div></td>
+			</tr>
+																																	<tr>
+				<td><div class="algorow">RSA (n = 4096)</div></td>
+				<td><div class="algorow">Schl&#252;sselalgorithmus</div></td>
+				<td><div class="algorow">Anbringung/Pr&#252;fung von Zertifikatssignaturen</div></td>
+				<td><div class="algorow">Ohne Ablaufdatum</div></td>
+			</tr>
+																																	<tr>
+				<td><div class="algorow">SHA256</div></td>
+				<td><div class="algorow">Hashalgorithmus</div></td>
+				<td><div class="algorow">Anbringung/Pr&#252;fung von Inhaltsdatensignaturen</div></td>
+				<td><div class="algorow">Ohne Ablaufdatum</div></td>
+			</tr>
+																																	<tr>
+				<td><div class="algorow">SHA256withRSA/PSS</div></td>
+				<td><div class="algorow">Signaturalgorithmus</div></td>
+				<td><div class="algorow">Anbringung/Pr&#252;fung von Inhaltsdatensignaturen</div></td>
+				<td><div class="algorow">Ohne Ablaufdatum</div></td>
+			</tr>
+																																	<tr>
+				<td><div class="algorow">SHA512</div></td>
+				<td><div class="algorow">Hashalgorithmus</div></td>
+				<td><div class="algorow">Anbringung/Pr&#252;fung von Zertifikatssignaturen</div></td>
+				<td><div class="algorow">Ohne Ablaufdatum</div></td>
+			</tr>
+																																	<tr>
+				<td><div class="algorow">SHA512withRSA/PSS</div></td>
+				<td><div class="algorow">Signaturalgorithmus</div></td>
+				<td><div class="algorow">Anbringung/Pr&#252;fung von Zertifikatssignaturen</div></td>
+				<td><div class="algorow">Ohne Ablaufdatum</div></td>
+			</tr>
+			</table>
+</div>
+
+
+</body>
+</html>

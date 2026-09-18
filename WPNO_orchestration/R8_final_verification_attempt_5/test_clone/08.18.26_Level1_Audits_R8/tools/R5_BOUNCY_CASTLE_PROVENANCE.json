@@ -1,0 +1,164 @@
+{
+  "all_accepted": true,
+  "checksum_file": {
+    "bytes_preserved": true,
+    "decoded_read_only": true,
+    "encoding": "utf-8",
+    "header": [
+      "Distribution",
+      "SHA-1",
+      "SHA-256"
+    ],
+    "non_ascii_bytes": 0,
+    "path": "/home/ubuntu/project/2026-08-25_R5_Required_Offline_Material/CHECKSUMS-1.85.csv",
+    "row_count": 168,
+    "sha256": "00b47503730705f3b3f7517b34f64c13012025ec27e8a60793dc404d40296b30"
+  },
+  "checksum_mismatches": [],
+  "classes_loaded": false,
+  "jars": [
+    {
+      "accepted": true,
+      "bytes": 10280518,
+      "checksum_csv_row": {
+        "sha1": "aeb3dac02f799ed4783d5ed5900513339880727f",
+        "sha256": "986b0fb92ec10e0c66b43e036ce0077e6150cfaecd1db9fb92b56672e157afe5"
+      },
+      "checksum_csv_sha1_match": true,
+      "checksum_csv_sha256_match": true,
+      "checksum_csv_status": "MATCH",
+      "filename": "bcprov-jdk18on-1.85.2.jar",
+      "identifies_as_bouncy_castle": true,
+      "manifest": {
+        "Bundle-Name": "bcprov",
+        "Bundle-SymbolicName": "bcprov",
+        "Bundle-Version": "1.85.2",
+        "Created-By": "25 (Oracle Corporation)"
+      },
+      "provenance_ok": true,
+      "sha1": "aeb3dac02f799ed4783d5ed5900513339880727f",
+      "sha256": "986b0fb92ec10e0c66b43e036ce0077e6150cfaecd1db9fb92b56672e157afe5",
+      "source_path": "/home/ubuntu/project/2026-08-25_R5_Required_Offline_Material/bcprov-jdk18on-1.85.2.jar",
+      "structure": {
+        "class_entries": 7163,
+        "crc_test": "PASSED",
+        "entries": 7571,
+        "has_manifest": true,
+        "required_classes_missing": [],
+        "required_classes_present": true,
+        "symlink_entries": [],
+        "traversal_or_absolute_entries": []
+      },
+      "structure_ok": true,
+      "version_claimed_by_filename": "1.85.2",
+      "version_consistent": true,
+      "version_in_manifest": "1.85.2"
+    },
+    {
+      "accepted": true,
+      "bytes": 1315409,
+      "checksum_csv_row": {
+        "sha1": "b33d047adc6801a1cfc8ffe1634b23b306a670c1",
+        "sha256": "c9f82b2d4e99c4bbdfccf684e52cc06ea06a0b567bfd0d08f9c5a3f417055996"
+      },
+      "checksum_csv_sha1_match": true,
+      "checksum_csv_sha256_match": true,
+      "checksum_csv_status": "MATCH",
+      "filename": "bcpkix-jdk18on-1.85.jar",
+      "identifies_as_bouncy_castle": true,
+      "manifest": {
+        "Bundle-Name": "bcpkix",
+        "Bundle-SymbolicName": "bcpkix",
+        "Bundle-Version": "1.85",
+        "Created-By": "25 (Oracle Corporation)"
+      },
+      "provenance_ok": true,
+      "sha1": "b33d047adc6801a1cfc8ffe1634b23b306a670c1",
+      "sha256": "c9f82b2d4e99c4bbdfccf684e52cc06ea06a0b567bfd0d08f9c5a3f417055996",
+      "source_path": "/home/ubuntu/project/2026-08-25_R5_Required_Offline_Material/bcpkix-jdk18on-1.85.jar",
+      "structure": {
+        "class_entries": 1029,
+        "crc_test": "PASSED",
+        "entries": 1100,
+        "has_manifest": true,
+        "required_classes_missing": [],
+        "required_classes_present": true,
+        "symlink_entries": [],
+        "traversal_or_absolute_entries": []
+      },
+      "structure_ok": true,
+      "version_claimed_by_filename": "1.85",
+      "version_consistent": true,
+      "version_in_manifest": "1.85"
+    },
+    {
+      "accepted": true,
+      "bytes": 718812,
+      "checksum_csv_row": {
+        "sha1": "c41082d6f61628919b675970563f5615e4427c9f",
+        "sha256": "590f55ed5d68529239898a4a5c4f730b6e37f45d1cfa3fbe51f8485abe32c42d"
+      },
+      "checksum_csv_sha1_match": true,
+      "checksum_csv_sha256_match": true,
+      "checksum_csv_status": "MATCH",
+      "filename": "bcutil-jdk18on-1.85.jar",
+      "identifies_as_bouncy_castle": true,
+      "manifest": {
+        "Bundle-Name": "bcutil",
+        "Bundle-SymbolicName": "bcutil",
+        "Bundle-Version": "1.85",
+        "Created-By": "25 (Oracle Corporation)"
+      },
+      "provenance_ok": true,
+      "sha1": "c41082d6f61628919b675970563f5615e4427c9f",
+      "sha256": "590f55ed5d68529239898a4a5c4f730b6e37f45d1cfa3fbe51f8485abe32c42d",
+      "source_path": "/home/ubuntu/project/2026-08-25_R5_Required_Offline_Material/bcutil-jdk18on-1.85.jar",
+      "structure": {
+        "class_entries": 618,
+        "crc_test": "PASSED",
+        "entries": 678,
+        "has_manifest": true,
+        "required_classes_missing": [],
+        "required_classes_present": true,
+        "symlink_entries": [],
+        "traversal_or_absolute_entries": []
+      },
+      "structure_ok": true,
+      "version_claimed_by_filename": "1.85",
+      "version_consistent": true,
+      "version_in_manifest": "1.85"
+    }
+  ],
+  "maven_or_gradle_used": false,
+  "network_used": false,
+  "schema": "wpno.level1.bouncy_castle_provenance/1",
+  "source_dir": "/home/ubuntu/project/2026-08-25_R5_Required_Offline_Material",
+  "tool_area": {
+    "all_equal_to_source": true,
+    "immutable": true,
+    "jars": [
+      {
+        "equals_source": true,
+        "filename": "bcprov-jdk18on-1.85.2.jar",
+        "mode": "0444",
+        "path": "tools/bouncycastle/bcprov-jdk18on-1.85.2.jar",
+        "sha256": "986b0fb92ec10e0c66b43e036ce0077e6150cfaecd1db9fb92b56672e157afe5"
+      },
+      {
+        "equals_source": true,
+        "filename": "bcpkix-jdk18on-1.85.jar",
+        "mode": "0444",
+        "path": "tools/bouncycastle/bcpkix-jdk18on-1.85.jar",
+        "sha256": "c9f82b2d4e99c4bbdfccf684e52cc06ea06a0b567bfd0d08f9c5a3f417055996"
+      },
+      {
+        "equals_source": true,
+        "filename": "bcutil-jdk18on-1.85.jar",
+        "mode": "0444",
+        "path": "tools/bouncycastle/bcutil-jdk18on-1.85.jar",
+        "sha256": "590f55ed5d68529239898a4a5c4f730b6e37f45d1cfa3fbe51f8485abe32c42d"
+      }
+    ],
+    "path": "tools/bouncycastle"
+  }
+}

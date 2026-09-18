@@ -1,0 +1,44 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A14",
+  "binding_status": "EXTERNAL_EVIDENCE_REQUIRED",
+  "logical_targets": [
+    "davon BGH N accuracy on the recovered source-bound checker input (165 citation occurrences, 64 unique citations)"
+  ],
+  "candidate_paths": [
+    "/Users/martinotten/WPNO/authoring/AP18_referenzpruefung.py"
+  ],
+  "productive_target": null,
+  "productive_target_sha256": null,
+  "productive_target_evidence": [],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [
+    "references/REF-06_S01.docx"
+  ],
+  "external_evidence_required": [
+    "REF-06"
+  ],
+  "unresolved_questions": [],
+  "discovery_drift": [],
+  "source_evidence": [
+    {
+      "source_path": "/Users/martinotten/WPNO/authoring/AP18_referenzpruefung.py",
+      "sha256": "f5eb5a9cbeb37cada9186ba305b9a307ea40e3012ca0e2e6dd0b2560f4352d74",
+      "locator": "the davon BGH counter",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/REF-06/REF-06_S01.docx",
+      "sha256": "9f7ee8caebee9345b54dd535a2681789512f68dfc2e4bf7b0652c5cc48722675",
+      "locator": "Recovered original checker input; three byte-identical copies. Word extended-properties metadata stores 111 pages; prior independent visible-pagination parsing resolves Seite 1 von 138 through Seite 138 von 138. Static OOXML footer PAGE and NUMPAGES fields exist, but both stored field results are stale at 1 and settings.xml contains no updateFields instruction. The unchanged authoritative citation rule measures 165 total occurrences and 64 unique citations. Historical 82/43 expectation is SUPERSEDED_UNSUPPORTED_EXPECTATION because no source-bound DOCX, hash, or measurement provenance was found.",
+      "evidence_type": "artifact",
+      "confidence": "HIGH"
+    }
+  ],
+  "replications": 1,
+  "risk": "CRITICAL",
+  "execution_order": 18
+}

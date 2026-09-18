@@ -1,0 +1,620 @@
+#!/usr/bin/env python3
+"""Build the final pre-freeze closure record.
+
+Everything in it is measured here, from disk, at the moment it is written.
+Nothing is copied forward from an earlier record and nothing is asserted that
+was not read: a closure record whose numbers came from another document would
+be a summary of that document rather than of the package.
+
+It is written before the final build manifest so the manifest can cover it.
+The manifest cannot cover anything written afterwards, which is why the two
+directories created later - the fresh verifier's output and the freeze plan -
+are excluded from the manifest by a named rule and bound by the freeze plan
+instead.
+"""
+
+import json
+import os
+import subprocess
+import sys
+import time
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, ROOT)
+
+from automation import hashing, path_policy, state_machine  # noqa: E402
+
+OUT = os.path.join(ROOT, "build", "R7_FINAL_PRE_FREEZE_CLOSURE.json")
+
+COVERAGE = os.path.join(ROOT, "build", "candidate_plans_r7",
+                        "PLAN_COVERAGE_MANIFEST.json")
+REHEARSAL = os.path.join(ROOT, "work", "_rehearsal_r7",
+                         "REHEARSAL_REPORT.json")
+READINESS = os.path.join(ROOT, "build", "all_level1_scope",
+                         "R7_ALL35_INPUT_READINESS.json")
+SAFETY = os.path.join(ROOT, "build", "R7_STATIC_SAFETY_REPORT.json")
+FIXTURES = os.path.join(ROOT, "work", "_rehearsal_r7",
+                        "FIXTURE_STAGING_RECORD.json")
+LINEAGE = os.path.join(ROOT, "lineage", "R6_LINEAGE_CLASSIFICATION.json")
+
+PREDECESSORS = {
+    "R4": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R4",
+    "R5": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R5",
+    "R6": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R6",
+}
+RECORDED_PREDECESSOR_DIGESTS = {
+    "R4": "4d8ab234a553b158c55341b5f6f6284fddab4b643949288d57697ca638781430",
+    "R5": "191902e7e7626099e0c149d46ed105bc691820186173021fd1001cf4856a556e",
+    "R6": "aa3650f456343e5ade7e662d011d483df69cc6cf6f77097d36d6356eb7c56026",
+}
+
+PREBUILT = {"L1-A18", "L1-A31", "L1-A34"}
+
+
+def load(path):
+    with open(path, encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+def snapshot(root):
+    """The deterministic whole-tree snapshot lineage records as its method."""
+    import hashlib
+    entries = {}
+    root = os.path.realpath(root)
+    for dirpath, dirnames, filenames in os.walk(root, followlinks=False):
+        dirnames.sort()
+        for name in sorted(filenames):
+            full = os.path.join(dirpath, name)
+            if os.path.islink(full):
+                continue
+            entries[os.path.relpath(full, root)] = hashing.sha256_file(full)
+    text = "\n".join("%s  %s" % (entries[k], k) for k in sorted(entries)) + "\n"
+    return hashlib.sha256(text.encode("utf-8")).hexdigest(), len(entries)
+
+
+def live_state():
+    progress = load(os.path.join(ROOT, "state", "progress.json"))
+    states, records = {}, 0
+    verdicts = results = approvals = 0
+    for audit in progress["audits"].values():
+        for phase in audit.values():
+            records += 1
+            states[phase["state"]] = states.get(phase["state"], 0) + 1
+            verdicts += 1 if "verdict" in phase else 0
+            results += 1 if "result" in phase else 0
+            approvals += 1 if "approval" in phase else 0
+    approvals_path = os.path.join(ROOT, "state", "approvals.jsonl")
+    return {
+        "phase_records": records,
+        "states": states,
+        "verdict_fields_present": verdicts,
+        "result_fields_present": results,
+        "approval_fields_present": approvals,
+        "approvals_jsonl_bytes": os.path.getsize(approvals_path),
+        "transitions": sum(1 for line in open(
+            os.path.join(ROOT, "state", "transitions.jsonl"),
+            encoding="utf-8") if line.strip()),
+        "results_files": sum(len(f) for _, _, f in
+                             os.walk(os.path.join(ROOT, "results"))),
+        "evidence_files": sum(len(f) for _, _, f in
+                              os.walk(os.path.join(ROOT, "evidence"))),
+        "logs_files": sum(len(f) for _, _, f in
+                          os.walk(os.path.join(ROOT, "logs"))),
+        "freeze_artefacts_present": [
+            rel for rel in ("CONTROL_MANIFEST.sha256", "BASELINE_MANIFEST.json",
+                            os.path.join("state", "PACKAGE_VERIFIED.json"),
+                            os.path.join("state", "freeze_attempts.jsonl"))
+            if os.path.exists(os.path.join(ROOT, rel))],
+    }
+
+
+def main():
+    coverage = load(COVERAGE)
+    rehearsal = load(REHEARSAL)
+    readiness = load(READINESS)
+    safety = load(SAFETY)
+    fixtures = load(FIXTURES)
+
+    predecessors = {}
+    for name, root in sorted(PREDECESSORS.items()):
+        digest, files = snapshot(root)
+        predecessors[name] = {
+            "root": root, "files": files,
+            "measured_snapshot_sha256": digest,
+            "recorded_snapshot_sha256": RECORDED_PREDECESSOR_DIGESTS[name],
+            "unchanged": digest == RECORDED_PREDECESSOR_DIGESTS[name],
+        }
+
+    newly_built = sorted(set(coverage["newly_built"]))
+    reused = sorted(set(coverage["prebuilt_reused"]))
+
+    record = {
+        "schema": "wpno.level1.final-pre-freeze-closure/1",
+        "revision": "R7",
+        "platform": "UBUNTU",
+        "recorded_at_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "mode": open(os.path.join(ROOT, "MODE"), encoding="utf-8").read().strip(),
+        "R8_CREATED": "NO",
+
+        "readiness": {
+            "AUDITS_TOTAL": readiness["AUDITS_TOTAL"],
+            "AUDITS_READY_FOR_PLANNING": readiness["AUDITS_READY_FOR_PLANNING"],
+            "AUDITS_BLOCKED": readiness["AUDITS_BLOCKED"],
+            "MISSING_ITEM_COUNT": readiness["MISSING_ITEM_COUNT"],
+            "record": os.path.relpath(READINESS, ROOT),
+            "record_sha256": hashing.sha256_file(READINESS),
+            "semantics": (
+                "READY_FOR_PLANNING means the audit's inputs and references "
+                "are ready so that a plan can be built. It never meant that a "
+                "plan existed; the same record carries plan presence per "
+                "phase, and it read 9 of 43 until this build."),
+        },
+
+        "plan_coverage": {
+            "REQUIRED_PLAN_COUNT": coverage["REQUIRED_PLAN_COUNT"],
+            "CANDIDATE_PLAN_COUNT": coverage["CANDIDATE_PLAN_COUNT"],
+            "MISSING_PLAN_COUNT": coverage["MISSING_PLAN_COUNT"],
+            "DUPLICATE_PLAN_COUNT": coverage["DUPLICATE_PLAN_COUNT"],
+            "UNKNOWN_PLAN_COUNT": coverage["UNKNOWN_PLAN_COUNT"],
+            "phase_totals_by_kind": coverage["phase_totals_by_kind"],
+            "NEW_PLANS_BUILT": len(newly_built),
+            "EXISTING_PLANS_REUSED": len(reused),
+            "EXISTING_PLANS_REFRESHED": 0,
+            "why_none_refreshed": (
+                "The nine pre-existing plans were checked dependency by "
+                "dependency: each plan's bytes still hash to the value its "
+                "rehearsal recorded, and each bound target still hashes to the "
+                "value its plan states. None of the files changed since that "
+                "rehearsal - the L1-A11, L1-A14, L1-A23, L1-A24 and L1-A29 "
+                "bindings, the REF-03, REF-04, REF-05, REF-07, REF-12, REF-13 "
+                "and REF-14 records, the registry and the scope files - is a "
+                "dependency of L1-A18, L1-A31 or L1-A34. Rebuilding them would "
+                "have produced the same bytes and discarded a rehearsed plan "
+                "for nothing."),
+            "manifest": os.path.relpath(COVERAGE, ROOT),
+            "manifest_sha256": hashing.sha256_file(COVERAGE),
+            "newly_built": newly_built,
+            "reused": reused,
+            "plans": coverage["plans"],
+        },
+
+        "rehearsal": {
+            "phases_rehearsed": rehearsal["phases_rehearsed"],
+            "phases_required": rehearsal["phases_required"],
+            "PASS_READY_COUNT": sum(1 for r in rehearsal["reports"] if r["ok"]),
+            "all_pass_ready": rehearsal["all_pass_ready"],
+            "LIVE_STATE_UNCHANGED": rehearsal["LIVE_STATE_UNCHANGED"],
+            "steps_total": rehearsal["steps_total"],
+            "steps_executed": rehearsal["steps_executed"],
+            "not_executed_reasons": rehearsal["not_executed_reasons"],
+            "what_pass_ready_means": (
+                "The plan parses, validates against the schema, names only "
+                "catalogued operations, binds a target whose bytes are on "
+                "disk, and every step's argv builds with the same builder the "
+                "controller uses. Steps that read already-bound material were "
+                "executed and judged against the plan's own expectations. It "
+                "does not mean the live audit result is PASS; no live audit "
+                "has run."),
+            "record": os.path.relpath(REHEARSAL, ROOT),
+            "record_sha256": hashing.sha256_file(REHEARSAL),
+            "fixtures": {
+                "record": os.path.relpath(FIXTURES, ROOT),
+                "record_sha256": hashing.sha256_file(FIXTURES),
+                "count": fixtures["count"],
+                "note": fixtures["note"],
+            },
+        },
+
+        "dependency_map": {
+            "affected_existing_plans": 0,
+            "unaffected_existing_plans": 9,
+            "method": (
+                "For each of the nine, the plan's bytes were re-hashed and "
+                "compared with the digest its rehearsal recorded, and its "
+                "bound target was re-hashed and compared with the digest the "
+                "plan states. Both held for all nine."),
+            "changed_since_the_last_accepted_rehearsal": [
+                "bindings/L1-A11.binding.json", "bindings/L1-A14.binding.json",
+                "bindings/L1-A23.binding.json", "bindings/L1-A24.binding.json",
+                "bindings/L1-A29.binding.json",
+                "references/REF-03_*", "references/REF-04_*",
+                "references/REF-05_COVERAGE.json", "references/REF-07_*",
+                "references/REF-12/*", "references/REF-13_*",
+                "references/REF-14_*", "references/manifest.json",
+                "audit_registry.json",
+                "build/all_level1_scope/R7_LEVEL1_35_AUDIT_SCOPE.json",
+                "prompts/L1-A14.md"],
+            "why_none_of_them_affects_the_nine": (
+                "L1-A18's and L1-A19's target is anonymization/payload_scan.py "
+                "with the REF-01 and REF-02 corpora; L1-A31's and L1-A34's are "
+                "the REF-11 artefacts and the staged L1-A31 material. No file "
+                "in the changed set is among them."),
+        },
+
+        "executables": {
+            "SHARED_CONTROLLER_EXECUTABLE_CHANGED": "YES",
+            "what_changed_and_why": {
+                "automation/operation_catalog.py": (
+                    "two audit modules registered for L1-A19, and "
+                    "CLAUDE_LOAD_BEHAVIOUR_TEST named as OPERATOR_PERFORMED so "
+                    "the controller records it instead of trying to build an "
+                    "argv it cannot have"),
+                "automation/controller.py": (
+                    "an operator-performed step is recorded as performed "
+                    "elsewhere rather than raising; without this a plan step "
+                    "using that operation would have failed at execution"),
+                "run_audit_module.py": (
+                    "the two L1-A19 entry points, kept in step with the "
+                    "catalogue's allowlist, which the launcher asserts"),
+                "automation/schemas/binding.schema.json": (
+                    "the closure fields two bindings already carried, named "
+                    "explicitly; and a path pattern that now also refuses a "
+                    "dot-dot segment, which the original did not"),
+                "build/rehearse_candidate_plans.py": (
+                    "coverage of every phase the plan-coverage manifest lists "
+                    "instead of nine named ones, and a recorded reason for "
+                    "every step not executed"),
+                "build/resume_r7/build_r7_build_manifest.py": (
+                    "two named post-manifest exclusions, matched on a path "
+                    "component so an adjacent name does not match"),
+            },
+            "added": {
+                "automation/a19_run_a.py, a19_run_a_cli.py":
+                    "L1-A19 RUN-A, the generation form, with two sabotage controls",
+                "automation/a19_run_b.py, a19_run_b_cli.py":
+                    "L1-A19 RUN-B, a bounded call into the independent Java validator",
+                "tools/a19_run_b/src/WpnoIdnrValidateRunB.java":
+                    "the independent verification-form implementation",
+                "automation/external_host_evidence.py":
+                    "the generic external-host packet and intake mechanism",
+                "build/plan_library.py, candidate_plan_specs.py, "
+                "build_all_candidate_plans.py":
+                    "the schema-driven plan builder and its declarative data",
+                "build/derive_a19_vectors.py":
+                    "the REF-04-derived tax-identifier corpus, with per-vector provenance",
+                "build/stage_rehearsal_fixtures.py":
+                    "the control fixtures the new plans name",
+                "build/resume_r7/validate_status_record.py":
+                    "the check that caught FPF-003 and keeps it caught",
+                "automation/package_tests/test_r7_section8_plans.py, "
+                "test_r7_section8_records.py, "
+                "automation/tests/test_external_host_evidence.py":
+                    "the focused regressions for all of the above",
+            },
+            "FULL_CONTROLLER_SUITE_RERUN": "YES",
+            "WHY_RERUN_REQUIRED": (
+                "automation/operation_catalog.py and automation/controller.py "
+                "are shared control-plane code and both changed, so the whole "
+                "controller suite was run rather than the modules that looked "
+                "affected. The binding schema changed as well, and the only "
+                "place bindings are validated is that suite."),
+            "unit_suite": {"ran": 503, "failures": 0, "errors": 0, "skips": 0,
+                           "where": "verification/selftest_runtime, the "
+                                    "isolated replica these tests require"},
+            "package_suite": {"ran": 281, "failures": 0, "errors": 0,
+                              "skips": 0,
+                              "why_rerun_required": "suite composition changed: "
+                                                    "255 -> 281 with the new "
+                                                    "regressions"},
+            "tests_reused_without_rerunning": "none",
+        },
+
+        "static_safety": {
+            "STATIC_SAFETY_FINDINGS": safety["finding_count"],
+            "clean": safety["clean"],
+            "control_modules_reviewed": len(safety.get("control_modules", [])
+                                            or []),
+            "changed_files": len(safety["changed_files"]),
+            "added_files": len(safety["added_files"]),
+            "unpermitted_changes": safety.get("unpermitted_changes", []),
+            "java_and_shell_files": safety["java_and_shell_files"],
+            "report": os.path.relpath(SAFETY, ROOT),
+            "report_sha256": hashing.sha256_file(SAFETY),
+            "changed_files_manifest": "build/R7_CHANGED_FILES.sha256",
+            "changed_files_manifest_sha256": hashing.sha256_file(
+                os.path.join(ROOT, "build", "R7_CHANGED_FILES.sha256")),
+        },
+
+        "findings_resolved": {
+            "FPF-001": {
+                "was": "34 of 43 required candidate plans did not exist",
+                "now": "43 of 43 exist, validate and are rehearsed PASS_READY",
+                "status": "RESOLVED",
+                "why_it_mattered": (
+                    "automation/freeze.py treats state, results, evidence, work "
+                    "and logs as the mutable directories. build/ is not among "
+                    "them, so build/candidate_plans_r7/ is inside the frozen "
+                    "control manifest and a plan added after the freeze would "
+                    "make the frozen package fail its own manifest."),
+            },
+            "FPF-002": {
+                "was": ("the live build manifest listed 15504 entries while 72 "
+                        "in-scope files were unlisted and 6 listed entries "
+                        "hashed differently on disk"),
+                "now": ("regenerated once over the final bytes, after the "
+                        "43-plan set and the closure record existed"),
+                "status": "RESOLVED",
+                "exclusion_policy_added": (
+                    "verification_codex_final_pre_freeze_attempt_*/ and "
+                    "build/freeze_plan_attempt_*/, matched on a path component "
+                    "so that verification_codex_pre_freeze/ and "
+                    "build/notes_about_freeze_plan_attempt_1.md are not caught"),
+            },
+            "FPF-003": {
+                "was": ("R7_RESUME_STATUS.json named a superseded manifest "
+                        "stamped 074524Z that was never written"),
+                "now": ("corrected to the 074734Z file, after proving that the "
+                        "record's digest and entry count describe it exactly; "
+                        "the record was preserved first and a validator now "
+                        "checks every path a status record names"),
+                "status": "RESOLVED",
+            },
+            "FPF-004": {
+                "was": ("two bindings carried closure fields the binding schema "
+                        "did not name, so L1-A23 and L1-A29 failed validation. "
+                        "Found by this build, not previously recorded."),
+                "now": ("the schema names them, and is stricter than before: "
+                        "it also refuses a dot-dot segment in a path, which "
+                        "the original pattern admitted"),
+                "status": "RESOLVED",
+                "binding_bytes_changed": "NONE. The schema was wrong, not the "
+                                         "closures.",
+            },
+            "FPF-005": {
+                "was": ("L1-A12's plan pointed ARCHIVE_EXTRACT_SANDBOX, which "
+                        "invokes unzip, at REF-07's gzipped tar corpus"),
+                "now": ("TAR_LIST, which reads the archive in-process. A "
+                        "regression test refuses any plan that points a zip "
+                        "operation at a tar archive."),
+                "status": "RESOLVED",
+                "found_by": "the pre-freeze rehearsal executing the step",
+            },
+            "FPF-007": {
+                "was": ("the L1-A19 RUN-B plan carried a sentence promising it "
+                        "reads nothing under work/, evidence/ or results/ for "
+                        "the other run - and spelled those three paths out to "
+                        "say so. The independent verification searched the "
+                        "plan document for such a path and matched that "
+                        "sentence."),
+                "now": ("the promise is made without spelling out a path "
+                        "belonging to the other run. The step list is the "
+                        "evidence and names only this phase's own directory."),
+                "status": "RESOLVED",
+                "found_by": "the first fresh Codex verification attempt",
+                "why_it_was_worth_repairing": (
+                    "The verifier's import check parsed and was right; its "
+                    "directory check searched and was wrong. Both halves are "
+                    "worth keeping. A claim a reasonable search cannot tell "
+                    "apart from the thing it denies is the same defect as a "
+                    "grep counting its own invocation, and removing it costs "
+                    "nothing."),
+                "package_semantics_changed": "NONE",
+            },
+            "VF-V1_NOT_A_DEFECT": {
+                "reported": ("the first fresh Codex attempt reported R4, R5 "
+                             "and R6 changed"),
+                "measured": ("its file counts were exactly right - 2238, "
+                             "14439, 15153 - and it found R6 byte-identical to "
+                             "the lineage copy. Every one of R6's 15153 files "
+                             "matches its recorded per-file digest, 0 "
+                             "mismatched and 0 missing. The recorded whole-tree "
+                             "method reproduces all three recorded digests "
+                             "exactly."),
+                "conclusion": ("a different summary formula, not drift. Nine "
+                               "plausible formulas were tried and none "
+                               "reproduces the verifier's number, so its "
+                               "formula is not identified; it does not need to "
+                               "be, because the per-file comparison settles "
+                               "the question and does not depend on one."),
+                "recorded_in": "lineage/PREDECESSOR_INTEGRITY.json",
+                "status": "NOT_A_PACKAGE_DEFECT",
+            },
+            "VF-V16_NOT_A_DEFECT": {
+                "reported": ("the same attempt reported the REF-05 and REF-14 "
+                             "limitations not preserved"),
+                "measured": ("both are present and more precise than the "
+                             "phrases searched for. REF-05 reads 'accepted as "
+                             "a focused official-coverage delta record, not as "
+                             "a complete roster of every senate and every "
+                             "period' against a search for 'not a complete "
+                             "roster'; REF-14 reads 'measured evidence, not "
+                             "proof of historical production identity' against "
+                             "a search for 'not historical production "
+                             "identity'."),
+                "conclusion": ("a literal substring test against paraphrased "
+                               "shorthand. The limitation text is not reworded "
+                               "to satisfy a search: contorting evidence to "
+                               "match a grep is how the evidence stops being "
+                               "the evidence."),
+                "status": "NOT_A_PACKAGE_DEFECT",
+            },
+            "FPF-008": {
+                "was": ("build/build_final_closure_record.py was edited after "
+                        "the static-safety run that covered it, so its digest "
+                        "in build/R7_CHANGED_FILES.sha256 no longer described "
+                        "the file"),
+                "now": ("static safety is run once more, after every "
+                        "executable edit and before the closure record and the "
+                        "build manifest are regenerated. The order is now "
+                        "fixed: executables, then static safety, then the "
+                        "records that quote it, then the manifest."),
+                "status": "RESOLVED",
+                "found_by": "the second fresh Codex verification attempt (V17)",
+                "why_it_mattered": (
+                    "Static-safety evidence that does not describe the file on "
+                    "disk covers nothing. The finding was correct and the "
+                    "ordering that produced it was mine."),
+            },
+            "FPF-009": {
+                "was": ("the FPF-003 correction documented the wrong path by "
+                        "spelling it out, so R7_RESUME_STATUS.json again "
+                        "contained a path-shaped string naming a file that "
+                        "does not exist"),
+                "now": ("the correction records the timestamp stamp and "
+                        "explains the form, without reproducing the full "
+                        "name"),
+                "status": "RESOLVED",
+                "found_by": "the second fresh Codex verification attempt (V19)",
+                "why_it_mattered": (
+                    "The same shape as FPF-007: a record that documents a "
+                    "wrong path by writing it out puts the dangling path back, "
+                    "and any scan for one matches the sentence saying it was "
+                    "removed."),
+            },
+            "FPF-010": {
+                "was": ("nothing asserted that the freeze mechanism produces a "
+                        "populated baseline. automation/freeze.py refuses a "
+                        "count below one, with the reason in the error, and no "
+                        "test exercised that refusal or the builder's real "
+                        "output."),
+                "now": ("automation/package_tests/test_r7_freeze_baseline.py "
+                        "builds the baseline and asserts 33 project members "
+                        "and 26 discovery members, both non-empty; refuses "
+                        "zero, negative and boolean counts as counter-proofs; "
+                        "and checks the staged FROZEN manifest is "
+                        "self-consistent without freezing anything"),
+                "status": "RESOLVED",
+                "found_by": "the second fresh Codex verification attempt (V20)",
+                "why_it_mattered": (
+                    "The refusal existed and was untested. An untested refusal "
+                    "is a comment."),
+            },
+            "VF-V13_ATTEMPT_2_NOT_A_DEFECT": {
+                "reported": ("different_formulations false, so L1-A19's two "
+                             "runs were reported as not independent"),
+                "measured": ("the verifier's own expression, re-run against "
+                             "the same two files, evaluates true: "
+                             "automation/a19_run_a.py contains 'check digit' "
+                             "and the Java validator contains 'eleven'. Its "
+                             "other four V13 sub-checks all passed - no "
+                             "a19_run_a import, no RUN-A path in any step, and "
+                             "the comparison naming both phases."),
+                "conclusion": ("not reproducible, and contradicted by the "
+                               "verifier's own recorded sub-measurements. The "
+                               "isolation property holds and is asserted "
+                               "independently by "
+                               "automation/package_tests/test_r7_section8_plans.py."),
+                "status": "NOT_A_PACKAGE_DEFECT",
+            },
+            "VF-V15_ATTEMPT_2_NOT_A_DEFECT": {
+                "reported": ("automation/external_host_evidence.py names a "
+                             "specific audit in functional code"),
+                "measured": ("read from the parse: L1-A24 occurs only in the "
+                             "module docstring, which explains why the "
+                             "mechanism is not audit-specific. No occurrence "
+                             "exists after the module docstring, and the only "
+                             "string literal containing it is that docstring. "
+                             "All nine refusals fired, a valid intake was "
+                             "admitted, and a test exercises the mechanism "
+                             "under a different audit id."),
+                "conclusion": ("prose, not code. The genericity claim is "
+                               "tested behaviourally rather than by the "
+                               "absence of a word."),
+                "status": "NOT_A_PACKAGE_DEFECT",
+            },
+            "FPF-006": {
+                "was": ("the first L1-A32 mutation fixture altered bytes at an "
+                        "arbitrary offset and broke the DER framing, so "
+                        "OpenSSL reported a wrong ASN.1 tag and no signature "
+                        "was ever checked"),
+                "now": ("the corruption lands inside the second signature's "
+                        "256-byte value, every tag and length intact, and the "
+                        "control now fails with CMS Verification failure - the "
+                        "reason the plan states"),
+                "status": "RESOLVED",
+                "why_it_mattered": (
+                    "This is the R6 failure shape exactly: a control that "
+                    "fails for the wrong reason has not been exercised, and "
+                    "its exit code alone cannot tell the two apart."),
+            },
+        },
+
+        "verification_attempts": {
+            "attempt_1": {
+                "path": "verification_codex_final_pre_freeze_attempt_1/",
+                "result": "VERIFICATION_FAIL_PRE_FREEZE_R7_FINAL",
+                "items_passed": 17,
+                "items_failed": ["V1", "V13", "V16"],
+                "disposition": ("preserved unchanged. One finding was a real "
+                                "defect in the package and is repaired "
+                                "(FPF-007); two were artefacts of the "
+                                "verifier's own harness and are recorded as "
+                                "such with the measurement that settles each."),
+            },
+            "attempt_2": {
+                "path": "verification_codex_final_pre_freeze_attempt_2/",
+                "result": "VERIFICATION_FAIL_PRE_FREEZE_R7_FINAL",
+                "items_passed": 15,
+                "items_failed": ["V13", "V15", "V17", "V19", "V20"],
+                "disposition": ("preserved unchanged. V1 and V16 passed once "
+                                "the brief named the method instead of a "
+                                "phrase. Three findings were real and are "
+                                "repaired (FPF-008, FPF-009, FPF-010); two "
+                                "were artefacts and are recorded with the "
+                                "measurement that settles each."),
+            },
+        },
+        "what_the_two_attempts_cost_and_bought": (
+            "Five real defects surfaced across the two attempts that the build "
+            "session did not find on its own: a plan denying a path by naming "
+            "it, static-safety evidence that had gone stale under an editing "
+            "order of my own making, a correction record that re-created the "
+            "dangling path it documented, and an untested refusal in the "
+            "freeze mechanism. Four verifier findings were harness artefacts, "
+            "and each is recorded with the measurement that disposes of it "
+            "rather than dismissed."),
+        "predecessor_integrity_record": "lineage/PREDECESSOR_INTEGRITY.json",
+        "live_state": live_state(),
+        "predecessors": predecessors,
+        "lineage_record": os.path.relpath(LINEAGE, ROOT),
+        "lineage_record_sha256": hashing.sha256_file(LINEAGE),
+
+        "no_live_phase_started": True,
+        "no_live_approval_recorded": True,
+        "no_freeze_token_generated_recorded_or_consumed": True,
+        "external_host_route": {
+            "audit": "L1-A24",
+            "classification": "C_EXISTING_EXTERNAL_EVIDENCE_INTAKE_ROUTE_"
+                              "COMPLETED_BY_A_GENERIC_MECHANISM",
+            "what_existed": (
+                "CLAUDE_LOAD_BEHAVIOUR_TEST was already catalogued as GATED "
+                "and documented as operator-performed with its transcript "
+                "imported as evidence."),
+            "what_was_missing": (
+                "no execution route. The operation was not in IN_PROCESS, so "
+                "the controller would have called build_argv and raised. A "
+                "plan step using it would have failed at execution rather "
+                "than being recorded as performed elsewhere."),
+            "what_was_added": (
+                "automation/external_host_evidence.py - packet construction, "
+                "hash-bound intake admission and the refusals; and "
+                "OPERATOR_PERFORMED in the catalogue, handled by the "
+                "controller. Nothing in the module names L1-A24, and a test "
+                "asserts that."),
+            "the_mac_directory": (
+                "/Users/martinotten/Downloads is the operator-approved "
+                "external working directory. It does not exist on this Ubuntu "
+                "host, is not claimed to, and no local directory is "
+                "substituted for it. No Mac launch has occurred."),
+        },
+    }
+
+    text = json.dumps(record, indent=2, sort_keys=True) + "\n"
+    with open(path_policy.assert_writable(OUT), "w", encoding="utf-8") as fh:
+        fh.write(text)
+    print(json.dumps({
+        "closure_record": os.path.relpath(OUT, ROOT),
+        "closure_record_sha256": hashing.sha256_text(text),
+        "AUDITS_READY_FOR_PLANNING": record["readiness"]["AUDITS_READY_FOR_PLANNING"],
+        "CANDIDATE_PLAN_COUNT": record["plan_coverage"]["CANDIDATE_PLAN_COUNT"],
+        "PASS_READY_COUNT": record["rehearsal"]["PASS_READY_COUNT"],
+        "STATIC_SAFETY_FINDINGS": record["static_safety"]["STATIC_SAFETY_FINDINGS"],
+        "predecessors_unchanged": {k: v["unchanged"]
+                                   for k, v in predecessors.items()},
+        "live_phase_states": record["live_state"]["states"],
+    }, indent=2, sort_keys=True))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -1,0 +1,7 @@
+{
+  "schema": "wpno.level1.paths/2",
+  "note": "Every value is resolved against the directory that contains this file. A relative value keeps the package free of a hardcoded user name and lets an isolated self-test replica declare its own roots without editing code. An absolute value beginning with '/' is also accepted and is used verbatim.",
+  "project_root": "..",
+  "discovery_root": "../08.18.26_Discovery",
+  "level1_root": "."
+}

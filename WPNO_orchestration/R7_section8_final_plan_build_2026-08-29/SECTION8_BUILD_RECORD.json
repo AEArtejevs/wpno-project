@@ -1,0 +1,70 @@
+{
+  "R8_CREATED": "NO",
+  "artefact_digests": {
+    "build/R7_BUILD_MANIFEST.sha256": "5b4a5c60a0a4d4fd2e8a1ebe0fcdadcbe3d3a2b739d341ebe6a1d035b11c5a18",
+    "build/R7_FINAL_PRE_FREEZE_CLOSURE.json": "47f667f30651416c227332f3960c41d70008affb901e5f76b71c83e97f7e8300",
+    "build/R7_STATIC_SAFETY_REPORT.json": "1a573643e1e18b62a605b273e35c688b2080f0c419111fcbaa821fc03cf1f605",
+    "build/candidate_plans_r7/PLAN_COVERAGE_MANIFEST.json": "1e5446e37a4c7d7d489cc9f2297bd836e496b39786c159eb3ca28a1332986be4",
+    "corpora/R7_REF04_IDNR_VECTORS.jsonl": "6eba579879d929d0c6fe94ef05143cabca9d588a21ea33240e4e706f34e2bd5c",
+    "lineage/PREDECESSOR_INTEGRITY.json": "5eeca0c21fbe8c1131d9ade34c6e1dde2b9310ac97c5a155e1021c76b70c52ff",
+    "work/_rehearsal_r7/REHEARSAL_REPORT.json": "0227cfb40f3ee54effc10c7e353440d731f3b0aca21dd555eba26082c189662f"
+  },
+  "existing_plans_reused": 9,
+  "mode": "R7_SECTION8_BUILD_ALL_43_PLANS_REHEARSE_VERIFY_AND_REACH_FREEZE_GATE",
+  "new_plans_built": 34,
+  "plan_coverage": {
+    "CANDIDATE_PLAN_COUNT": 43,
+    "DUPLICATE_PLAN_COUNT": 0,
+    "MISSING_PLAN_COUNT": 0,
+    "REQUIRED_PLAN_COUNT": 43,
+    "UNKNOWN_PLAN_COUNT": 0,
+    "phase_totals_by_kind": {
+      "COMPARISON": 4,
+      "RUN-A": 35,
+      "RUN-B": 4
+    }
+  },
+  "predecessors": {
+    "R4": {
+      "files": 2238,
+      "per_file_matched": null,
+      "snapshot_matches": true
+    },
+    "R5": {
+      "files": 14439,
+      "per_file_matched": null,
+      "snapshot_matches": true
+    },
+    "R6": {
+      "files": 15153,
+      "per_file_matched": 15153,
+      "snapshot_matches": true
+    }
+  },
+  "preserved_pre_section8_copies": [
+    "binding.schema.json.PRE_SECTION8",
+    "build_r7_build_manifest.py.PRE_SECTION8",
+    "controller.py.PRE_SECTION8",
+    "operation_catalog.py.PRE_SECTION8",
+    "rehearse_candidate_plans.py.PRE_SECTION8",
+    "run_audit_module.py.PRE_SECTION8"
+  ],
+  "r7_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7",
+  "rehearsal": {
+    "LIVE_STATE_UNCHANGED": true,
+    "all_pass_ready": true,
+    "not_executed_reasons": {
+      "EXECUTING_WOULD_BE_THE_LIVE_PHASE": 0,
+      "GIT_OPERATION_NOT_RUN_IN_THIS_SESSION": 1,
+      "IN_PROCESS_NO_SUBPROCESS": 165,
+      "LIVE_PHASE_MATERIAL_NOT_STAGED": 96,
+      "OPERATOR_PERFORMED_ON_ANOTHER_HOST": 3
+    },
+    "phases_rehearsed": 43,
+    "phases_required": 43,
+    "steps_executed": 42,
+    "steps_total": 307
+  },
+  "schema": "wpno.level1.section8-build-record/1",
+  "static_safety_findings": 0
+}

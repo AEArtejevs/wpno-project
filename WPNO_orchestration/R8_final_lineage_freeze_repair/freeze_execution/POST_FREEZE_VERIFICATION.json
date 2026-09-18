@@ -1,0 +1,39 @@
+{
+ "FROZEN_STATE_VERIFIED": true,
+ "MODE": "FROZEN",
+ "MODE_bytes_sha256": "67885f01edc72c2991b2ae9be04afc14a743b79c9d382262620be8ac154fa5fa",
+ "approvals_bytes": 0,
+ "control_manifest_sha256": "62deca0b61f2810bf73bbb9b336cb52761e5ab773334e78a4285921aab2fba65",
+ "discovery_baseline_count": 26,
+ "discovery_baseline_nonempty": true,
+ "entries": 914,
+ "evidence": 0,
+ "failed": 0,
+ "ledger_outcomes": [
+  "PUBLISH_STARTED",
+  "FROZEN"
+ ],
+ "ledger_rows": 2,
+ "live_phase_states": {
+  "NOT_STARTED": 43
+ },
+ "malformed": [],
+ "migration_ledger_present": false,
+ "mismatched": [],
+ "missing": [],
+ "mode_entry_in_manifest": "67885f01edc72c2991b2ae9be04afc14a743b79c9d382262620be8ac154fa5fa",
+ "mode_entry_matches_frozen_bytes": true,
+ "no_live_phase_started": true,
+ "ok": 914,
+ "package_verified_attempt": 3,
+ "package_verified_lineage_artifacts": [
+  "lineage/R7_BASELINE_MANIFEST.json",
+  "lineage/R8_LINEAGE.sha256"
+ ],
+ "package_verified_lineage_kind": "COMPACT_DIRECT_FILE",
+ "project_baseline_count": 33,
+ "project_baseline_nonempty": true,
+ "results": 0,
+ "schema": "wpno.r8.post-freeze-verification/1",
+ "token_consumed_once": true
+}

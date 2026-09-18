@@ -1,0 +1,64 @@
+{
+  "bytecode_attributed_to_repair": [],
+  "bytecode_attribution_note": "All 51 bytecode files predate frozen_at_utc (newest 2026-08-27T07:22:55Z). None is attributable to the repair; PYTHONDONTWRITEBYTECODE=1 was set on every command. None will be removed. Their absence from the frozen manifest is a pre-existing condition of the freeze, not part of this incident.",
+  "bytecode_files_created_after_freeze": 0,
+  "bytecode_files_measured": 51,
+  "classification": "POST_FREEZE_CONTROL_PLANE_MODIFICATION_INCIDENT",
+  "control_manifest_entries": 15804,
+  "frozen_at_utc": "2026-08-28T09:14:39Z",
+  "manifest_listed_changed": [
+    {
+      "BACKUP_CANDIDATE_PATH": "/home/ubuntu/R7_repair_backup_2026-08-28/automation/controller.py",
+      "CHANGE_TYPE": "MODIFIED_IN_PLACE_AFTER_FREEZE",
+      "CURRENT_DIRTY_SHA256": "e8be79f3a1748c91eda92ab66405c906b3ed5ad2ba178dde1baaa060144a5e63",
+      "FROZEN_EXPECTED_SHA256": "aff9bc25271e76eda7999b3000bde6479253bf691a7c3bf5508c74a561991f06",
+      "MODIFICATION_TIME": "2026-08-28T11:45:37Z",
+      "RELATIVE_PATH": "automation/controller.py",
+      "SIZE": 89103
+    },
+    {
+      "BACKUP_CANDIDATE_PATH": "/home/ubuntu/R7_repair_backup_2026-08-28/build/rehearse_candidate_plans.py",
+      "CHANGE_TYPE": "MODIFIED_IN_PLACE_AFTER_FREEZE",
+      "CURRENT_DIRTY_SHA256": "4b164c6beefd006ebd499619a52d1bdbcfb8bde9f63ffccab182bcfbc9e51f3d",
+      "FROZEN_EXPECTED_SHA256": "acfab6efed4d08c540b261269fe379a54a7b045e3bfb122cb3e29dbb1e219199",
+      "MODIFICATION_TIME": "2026-08-28T12:02:29Z",
+      "RELATIVE_PATH": "build/rehearse_candidate_plans.py",
+      "SIZE": 24866
+    }
+  ],
+  "manifest_listed_missing": [],
+  "measured_at_utc": "2026-08-28T12:24:15Z",
+  "mode_on_disk": "FROZEN",
+  "mutable_subdirs_excluded_from_repair_attribution": [
+    "state",
+    "results",
+    "evidence",
+    "work",
+    "logs",
+    "verification"
+  ],
+  "new_control_plane_files": [
+    {
+      "CURRENT_SHA256": "4269ad5e3da4892e6660e3b5cae4d031926c9f42bc7638940f6ddbad19f0ea4e",
+      "MODIFICATION_TIME": "2026-08-28T12:05:01Z",
+      "RELATIVE_PATH": "automation/in_process_ops.py",
+      "SIZE": 29658,
+      "WHY_ATTRIBUTED_TO_REPAIR": "absent from the frozen control manifest; created 2026-08-28 during the in-place execution-engine repair; mtime falls after frozen_at_utc"
+    },
+    {
+      "CURRENT_SHA256": "2f9d06d07b676571ffa4e3d91cd3566ceadca54b9b917e36978ea14d4b9d1aad",
+      "MODIFICATION_TIME": "2026-08-28T11:56:19Z",
+      "RELATIVE_PATH": "automation/package_tests/test_r7_in_process_ops.py",
+      "SIZE": 15324,
+      "WHY_ATTRIBUTED_TO_REPAIR": "absent from the frozen control manifest; created 2026-08-28 during the in-place execution-engine repair; mtime falls after frozen_at_utc"
+    }
+  ],
+  "preserved_files": [
+    "automation/controller.py",
+    "build/rehearse_candidate_plans.py",
+    "automation/in_process_ops.py",
+    "automation/package_tests/test_r7_in_process_ops.py"
+  ],
+  "r7_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7",
+  "schema": "wpno.incident.dirty_measurement/1"
+}

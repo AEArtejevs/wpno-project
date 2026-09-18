@@ -1,0 +1,15 @@
+Verification failed and stopped at item 19 as required.
+
+- Controller suite: 503 tests, all passed.
+- Package suite: 343 tests, 1 failure, 47 errors.
+- ORIGINAL remained unchanged across all 1,362 paths.
+- The write-isolation control was proven live: the clone Unicode file’s mtime moved while its bytes still matched ORIGINAL.
+- No retry, repair, static-safety run, or further substantive verification occurred.
+
+Outputs:
+
+- [VERIFICATION_RESULT.json](/home/ubuntu/project/WPNO_orchestration/R8_final_verification_attempt_5/codex_output/VERIFICATION_RESULT.json)
+- [VERIFICATION_NOTES.md](/home/ubuntu/project/WPNO_orchestration/R8_final_verification_attempt_5/codex_output/VERIFICATION_NOTES.md)
+- [VERIFICATION_MANIFEST.sha256](/home/ubuntu/project/WPNO_orchestration/R8_final_verification_attempt_5/codex_output/VERIFICATION_MANIFEST.sha256)
+
+Status: `VERIFICATION_FAIL_PRE_FREEZE_R8_FINAL`.

@@ -1,0 +1,124 @@
+{
+  "argv": [
+    "/usr/bin/java",
+    "-cp",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/tools/cms_verifier/classes:/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/tools/bouncycastle/bcprov-jdk18on-1.85.2.jar:/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/tools/bouncycastle/bcpkix-jdk18on-1.85.jar:/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/tools/bouncycastle/bcutil-jdk18on-1.85.jar",
+    "WpnoCmsVerify",
+    "--cms",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-berufungsbegruendung-O.pdf.p7s",
+    "--content",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-berufungsbegruendung-O.pdf",
+    "--leaf",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/document_leaf_from_sealed_p7s_parse_evidence.pem",
+    "--root",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/document_root.pem",
+    "--validation-time",
+    "1772232897",
+    "--intermediate",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/document_intermediate.pem"
+  ],
+  "exit_code": 0,
+  "inputs": {
+    "cms_sha256": "4287a3783caec8da9b6e0c16f86a3d5e363a34253427eca3116159e77dd07a7a",
+    "content_sha256": "42089e1bf976e6e478ea17624eb35239494b3f3556af10092e8916d5d6d92cc8",
+    "leaf_sha256": "dfefa6644f6a894752b1a7e788bfa3b23a4c3d99b16485cfa483ae70772ae4f3",
+    "root_sha256": "2efdae019319b4135cca35090fe66975768022379cffc1e357f60c3805be2ff0"
+  },
+  "result": {
+    "all_certificates_valid_at_validation_time": {
+      "detail": {
+        "C=DE,2.5.4.4=#0c0a5265696e6b6e65636874,2.5.4.42=#0c05416368696d,2.5.4.5=#130b46532d3130303537353733,CN=Achim Reinknecht,UID=DE.BRAK.6aeb9a2c-b12e-45b0-92a9-e466ba908021.cd01": "VALID_AT_VALIDATION_TIME",
+        "C=DE,O=Bundesnotarkammer,2.5.4.97=#0c0b4445313232373838323338,OU=Zertifizierungsstelle,CN=BNotK Root CA 2017": "VALID_AT_VALIDATION_TIME",
+        "C=DE,O=Bundesnotarkammer,2.5.4.97=#0c0b4445313232373838323338,OU=Zertifizierungsstelle,CN=BNotK rqSigt CA 2020": "VALID_AT_VALIDATION_TIME"
+      },
+      "passed": true
+    },
+    "bc_version": "1.8502",
+    "certificate_path_validates_against_explicit_anchor": {
+      "detail": {
+        "anchor_subject": "C=DE,O=Bundesnotarkammer,2.5.4.97=#0c0b4445313232373838323338,OU=Zertifizierungsstelle,CN=BNotK Root CA 2017",
+        "anchors_supplied": 1,
+        "path_length": 2,
+        "revocation_checking": "DISABLED_EXPLICITLY_NO_NETWORK"
+      },
+      "passed": true
+    },
+    "checks_not_reached": [],
+    "checks_reported": [
+      "cms_parses",
+      "is_detached_signature",
+      "exactly_one_signer",
+      "signer_id_matches_supplied_leaf",
+      "signed_attributes_present",
+      "message_digest_attribute_present",
+      "message_digest_matches_content",
+      "signature_verifies",
+      "certificate_path_validates_against_explicit_anchor",
+      "all_certificates_valid_at_validation_time"
+    ],
+    "cms_parses": {
+      "detail": "SignedData parsed",
+      "passed": true
+    },
+    "cms_sha256": "4287a3783caec8da9b6e0c16f86a3d5e363a34253427eca3116159e77dd07a7a",
+    "content_bytes": 4096,
+    "content_sha256": "42089e1bf976e6e478ea17624eb35239494b3f3556af10092e8916d5d6d92cc8",
+    "exactly_one_signer": {
+      "detail": "signer count 1",
+      "passed": true
+    },
+    "exit_code": 0,
+    "failed_checks": [],
+    "implementation": "Bouncy Castle + JDK PKIX",
+    "input_sha256": {
+      "cms": "4287a3783caec8da9b6e0c16f86a3d5e363a34253427eca3116159e77dd07a7a",
+      "content": "42089e1bf976e6e478ea17624eb35239494b3f3556af10092e8916d5d6d92cc8",
+      "intermediate": "e104242cc9554ec821b8e9c4e975f8318245d699d5ba98d2af8b15d5b8122088",
+      "leaf": "dfefa6644f6a894752b1a7e788bfa3b23a4c3d99b16485cfa483ae70772ae4f3",
+      "root": "2efdae019319b4135cca35090fe66975768022379cffc1e357f60c3805be2ff0"
+    },
+    "inputs_unchanged": true,
+    "intermediate_subject": "C=DE,O=Bundesnotarkammer,2.5.4.97=#0c0b4445313232373838323338,OU=Zertifizierungsstelle,CN=BNotK rqSigt CA 2020",
+    "is_detached_signature": {
+      "detail": "no encapsulated content, content supplied separately",
+      "passed": true
+    },
+    "java_version": "21.0.12",
+    "leaf_subject": "C=DE,2.5.4.4=#0c0a5265696e6b6e65636874,2.5.4.42=#0c05416368696d,2.5.4.5=#130b46532d3130303537353733,CN=Achim Reinknecht,UID=DE.BRAK.6aeb9a2c-b12e-45b0-92a9-e466ba908021.cd01",
+    "message_digest_attribute_present": {
+      "detail": "present",
+      "passed": true
+    },
+    "message_digest_matches_content": {
+      "detail": {
+        "computed_over_supplied_content": "42089e1bf976e6e478ea17624eb35239494b3f3556af10092e8916d5d6d92cc8",
+        "declared_in_signature": "42089e1bf976e6e478ea17624eb35239494b3f3556af10092e8916d5d6d92cc8",
+        "digest_algorithm_oid": "2.16.840.1.101.3.4.2.1"
+      },
+      "passed": true
+    },
+    "network_used": false,
+    "openssl_used": false,
+    "root_subject": "C=DE,O=Bundesnotarkammer,2.5.4.97=#0c0b4445313232373838323338,OU=Zertifizierungsstelle,CN=BNotK Root CA 2017",
+    "signature_verifies": {
+      "detail": "signature verifies against --leaf",
+      "passed": true
+    },
+    "signed_attributes_present": {
+      "detail": "5 attributes",
+      "passed": true
+    },
+    "signer_id_matches_supplied_leaf": {
+      "detail": "SignerInfo SID matches --leaf",
+      "passed": true
+    },
+    "subprocess_launched": false,
+    "system_default_trust_used": false,
+    "validation_time_epoch": 1772232897,
+    "validation_time_utc": "2026-02-27T22:54:57Z",
+    "verified": true,
+    "verifier": "WpnoCmsVerify"
+  },
+  "schema": "wpno.level1.independent-cms/1",
+  "validation_time": 1772232897
+}

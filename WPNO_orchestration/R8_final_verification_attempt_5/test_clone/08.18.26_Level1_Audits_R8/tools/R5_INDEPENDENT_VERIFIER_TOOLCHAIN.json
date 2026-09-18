@@ -1,0 +1,159 @@
+{
+  "INDEPENDENT_CMS_VERIFIER_STATUS": "READY",
+  "active_state": "BUILT_AND_TESTED",
+  "bouncy_castle_jars": {
+    "all_checksum_csv_match": true,
+    "all_read_only": true,
+    "count": 3,
+    "jars": [
+      {
+        "absolute_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R5/tools/bouncycastle/bcprov-jdk18on-1.85.2.jar",
+        "bytes": 10280518,
+        "checksum_csv_row": {
+          "sha1": "aeb3dac02f799ed4783d5ed5900513339880727f",
+          "sha256": "986b0fb92ec10e0c66b43e036ce0077e6150cfaecd1db9fb92b56672e157afe5"
+        },
+        "checksum_csv_sha1_match": true,
+        "checksum_csv_sha256_match": true,
+        "checksum_csv_status": "MATCH",
+        "entries": 7571,
+        "filename": "bcprov-jdk18on-1.85.2.jar",
+        "mode": "0444",
+        "path": "tools/bouncycastle/bcprov-jdk18on-1.85.2.jar",
+        "sha1": "aeb3dac02f799ed4783d5ed5900513339880727f",
+        "sha256": "986b0fb92ec10e0c66b43e036ce0077e6150cfaecd1db9fb92b56672e157afe5",
+        "version_claimed_by_filename": "1.85.2",
+        "version_consistent": true,
+        "version_in_manifest": "1.85.2",
+        "zip_crc_test": "PASSED"
+      },
+      {
+        "absolute_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R5/tools/bouncycastle/bcpkix-jdk18on-1.85.jar",
+        "bytes": 1315409,
+        "checksum_csv_row": {
+          "sha1": "b33d047adc6801a1cfc8ffe1634b23b306a670c1",
+          "sha256": "c9f82b2d4e99c4bbdfccf684e52cc06ea06a0b567bfd0d08f9c5a3f417055996"
+        },
+        "checksum_csv_sha1_match": true,
+        "checksum_csv_sha256_match": true,
+        "checksum_csv_status": "MATCH",
+        "entries": 1100,
+        "filename": "bcpkix-jdk18on-1.85.jar",
+        "mode": "0444",
+        "path": "tools/bouncycastle/bcpkix-jdk18on-1.85.jar",
+        "sha1": "b33d047adc6801a1cfc8ffe1634b23b306a670c1",
+        "sha256": "c9f82b2d4e99c4bbdfccf684e52cc06ea06a0b567bfd0d08f9c5a3f417055996",
+        "version_claimed_by_filename": "1.85",
+        "version_consistent": true,
+        "version_in_manifest": "1.85",
+        "zip_crc_test": "PASSED"
+      },
+      {
+        "absolute_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R5/tools/bouncycastle/bcutil-jdk18on-1.85.jar",
+        "bytes": 718812,
+        "checksum_csv_row": {
+          "sha1": "c41082d6f61628919b675970563f5615e4427c9f",
+          "sha256": "590f55ed5d68529239898a4a5c4f730b6e37f45d1cfa3fbe51f8485abe32c42d"
+        },
+        "checksum_csv_sha1_match": true,
+        "checksum_csv_sha256_match": true,
+        "checksum_csv_status": "MATCH",
+        "entries": 678,
+        "filename": "bcutil-jdk18on-1.85.jar",
+        "mode": "0444",
+        "path": "tools/bouncycastle/bcutil-jdk18on-1.85.jar",
+        "sha1": "c41082d6f61628919b675970563f5615e4427c9f",
+        "sha256": "590f55ed5d68529239898a4a5c4f730b6e37f45d1cfa3fbe51f8485abe32c42d",
+        "version_claimed_by_filename": "1.85",
+        "version_consistent": true,
+        "version_in_manifest": "1.85",
+        "zip_crc_test": "PASSED"
+      }
+    ],
+    "status": "PRESENT_AND_ACCEPTED",
+    "tool_area": "tools/bouncycastle"
+  },
+  "checksum_file": {
+    "bytes": 23210,
+    "bytes_preserved": true,
+    "encoding": "utf-8",
+    "header": [
+      "Distribution",
+      "SHA-1",
+      "SHA-256"
+    ],
+    "non_ascii_bytes": 0,
+    "path": "/home/ubuntu/project/2026-08-25_R5_Required_Offline_Material/CHECKSUMS-1.85.csv",
+    "row_count": 168,
+    "sha256": "00b47503730705f3b3f7517b34f64c13012025ec27e8a60793dc404d40296b30",
+    "verification_status": "VERIFIED_ALL_THREE_REQUIRED_ROWS_MATCH"
+  },
+  "controls": {
+    "evidence": "build/R5_PASS_READINESS.json criterion run_b_materially_independent for L1-A31 and L1-A34; independently reproduced in verification_claude_2/measurements/V05_cms_positive.json",
+    "invalid_chain_control": "FAIL_AS_REQUIRED",
+    "mutation_controls_proved_effective": true,
+    "one_byte_certificate_mutation_control": "FAIL_AS_REQUIRED",
+    "one_byte_content_mutation_control": "FAIL_AS_REQUIRED",
+    "positive_control": "PASS",
+    "wrong_content_control": "FAIL_AS_REQUIRED"
+  },
+  "downloads_attempted": false,
+  "gate": "HUMAN_GATE: SUPPLY_INDEPENDENT_CMS_VERIFIER",
+  "gate_satisfied": true,
+  "independence_facts": {
+    "DEFAULT_TRUST_USED": false,
+    "NETWORK_USED": false,
+    "OPENSSL_SUBPROCESS_USED": false,
+    "SYSTEM_TRUST_USED": false,
+    "basis": "No ProcessBuilder, Runtime, ProcessHandle, System.load, System.loadLibrary, Socket, URL, URLConnection, HttpClient, InetAddress, TrustManagerFactory, KeyStore or cacerts reference exists in the source with comments and string literals stripped, nor in the compiled class constant pool. The trust anchor is the single certificate passed as --root, via PKIXParameters built from that one anchor. Revocation is disabled explicitly."
+  },
+  "independent_verifier": {
+    "build_status": "BUILT",
+    "build_toolchain": "javac 21.0.12",
+    "compiled_artifact_form": "CLASS_FILE_NOT_JAR",
+    "compiled_bytes": 14443,
+    "compiled_path": "tools/cms_verifier/classes/WpnoCmsVerify.class",
+    "compiled_sha256": "02064bddac0d48beac5dfe11b5fb1bceabce1bf2c044e272f809378ee9cedde2",
+    "implementation": "Bouncy Castle + JDK PKIX",
+    "name": "WpnoCmsVerify",
+    "source_bytes": 17478,
+    "source_path": "tools/cms_verifier/src/WpnoCmsVerify.java",
+    "source_sha256": "ea21575592a454d6f183163aacf906ed363071ee1301764f429fe15ec9ed91c7",
+    "test_status": "TESTED_ALL_REQUIRED_CONTROLS_PASSED"
+  },
+  "maven_or_gradle_used": false,
+  "network_used": false,
+  "platform": "UBUNTU",
+  "recorded_at_utc": "2026-08-26T15:25:00Z",
+  "revision": "R5",
+  "schema": "wpno.level1.independent_verifier_toolchain/2",
+  "source_dir": "/home/ubuntu/project/2026-08-25_R5_Required_Offline_Material",
+  "status": "BUILT_AND_TESTED",
+  "superseded_state": {
+    "bouncy_castle_jars_status": "ABSENT",
+    "historical_fact": "At 13:13:56Z the operator-supplied Bouncy Castle JARs had not yet been placed and no independent CMS verifier existed. That record was true when written. The JARs were supplied and accepted at 13:53 and the verifier was compiled at 13:55, superseding it.",
+    "recorded_at_utc": "2026-08-26T13:13:56Z",
+    "schema": "wpno.level1.independent_verifier_toolchain/1",
+    "state": "ABSENT_OR_NOT_BUILT_BEFORE_OPERATOR_MATERIAL_IMPORT",
+    "superseded_record_preserved_at": "tools/R5_INDEPENDENT_VERIFIER_TOOLCHAIN.SUPERSEDED_2026-08-26T131356Z.json",
+    "superseded_record_sha256": "7a5513b98ea1f7f00900b0424416cd3afff944f6af914ef9aafc06a00c6623b4",
+    "verifier_status": "NOT_BUILT_MISSING_OPERATOR_SUPPLIED_JARS"
+  },
+  "toolchain": {
+    "jar": {
+      "executable": "/usr/bin/jar",
+      "real_path": "/usr/lib/jvm/java-21-openjdk-amd64/bin/jar",
+      "version": "jar 21.0.12"
+    },
+    "java": {
+      "executable": "/usr/bin/java",
+      "real_path": "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
+      "version": "openjdk version \"21.0.12\" 2026-07-21"
+    },
+    "javac": {
+      "executable": "/usr/bin/javac",
+      "real_path": "/usr/lib/jvm/java-21-openjdk-amd64/bin/javac",
+      "version": "javac 21.0.12"
+    }
+  }
+}

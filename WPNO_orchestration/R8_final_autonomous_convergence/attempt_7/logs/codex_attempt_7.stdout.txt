@@ -1,0 +1,15 @@
+Verification stopped and recorded as:
+
+`VERIFICATION_FAIL_PRE_FREEZE_R8_FINAL`
+
+The verifier itself failed at item 13 with `KeyError: 'step_id'`. Per the mandatory stop rule, I did not repair or rerun it. Items not durably measured are marked not verified.
+
+A closing comparison confirmed all 1,362 ORIGINAL paths were unchanged: zero content, mtime, mode, ownership, symlink, addition, or removal differences.
+
+Outputs:
+
+- [VERIFICATION_RESULT.json](/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_7/codex_output/VERIFICATION_RESULT.json)
+- [MEASUREMENTS.json](/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_7/codex_output/MEASUREMENTS.json)
+- [COMMAND_LOG.jsonl](/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_7/codex_output/COMMAND_LOG.jsonl)
+- [VERIFICATION_REPORT.md](/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_7/codex_output/VERIFICATION_REPORT.md)
+- [VERIFICATION_MANIFEST.sha256](/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_7/codex_output/VERIFICATION_MANIFEST.sha256)

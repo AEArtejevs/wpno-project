@@ -1,0 +1,16 @@
+REF-05 OPERATOR PERIOD AND PROVENANCE STATEMENT (COMPLETE BY HUMAN)
+
+BGH_REGISTER intended start date: ____________________
+BGH_REGISTER intended end/as-of date: ____________________
+Is only calendar year 2026 claimed? YES / NO / EXPLAIN: ____________________
+Official URL/source location for annual plan: ____________________
+Official URL/source locations for every amendment: ____________________
+Operator acquisition date(s): ____________________
+Confirm amendment set is complete through stated end/as-of date: YES / NO; basis: ____________________
+Is 2026_07_01_Externe_Organigramm_GV.pdf proven official BGH material? YES / NO; evidence: ____________________
+If not proven, must it be excluded from REF-05? YES / NO: ____________________
+Operator identity: ____________________
+Statement date: ____________________
+Signature/attestation: ____________________
+
+Do not treat the loose organigram as BGH material without this decision.

@@ -1,0 +1,5 @@
+{
+  "exit_code": 0,
+  "out": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/work/L1-A31/RUN-B/a31_independent_vhn.json",
+  "out_sha256": "e79561e1ebb52dff0aad1f4dd59f5f7288ae6f4de60004914fe8f8e9ec6ce261"
+}

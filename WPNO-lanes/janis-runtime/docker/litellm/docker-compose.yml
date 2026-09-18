@@ -1,0 +1,30 @@
+services:
+  litellm:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: wpno-litellm-custom:latest
+    container_name: wpno_litellm
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./config.yaml:/app/config.yaml:ro
+      - ./custom_callback.py:/app/custom_callback.py:ro
+      - ../../anonymization/payload_scan.py:/app/payload_scan.py:ro
+      - ../../anonymization/iban_validation.py:/app/iban_validation.py:ro
+      - ../../anonymization/party_names.json:/app/party_names.json:ro
+      - ./tool_registry_gate.py:/app/tool_registry_gate.py:ro
+      - ../../mcp/mcp.registry.json:/app/mcp.registry.json:ro
+      - ./ledger_data:/app/ledger_data
+    command: ["--config", "/app/config.yaml", "--port", "4000"]
+    ports:
+      - "127.0.0.1:4000:4000"
+    depends_on:
+      - redis
+  redis:
+    image: redis:7
+    container_name: wpno_redis
+    restart: always
+    ports:
+      - "127.0.0.1:6380:6379"

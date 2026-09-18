@@ -1,0 +1,11 @@
+{
+ "stamp": "20260707T102758Z",
+ "head": "be78001fdda2611744a89f271a351645f377b4c3",
+ "commits_all": "386",
+ "items": 100,
+ "tresor_files": 97,
+ "bundle_sha": "32516d953f79de5061f226e9d75c018a6d615797668e19a92ef748b4c8dabc40",
+ "repo_tar_sha": "41ec3840f14bf3af6bd0c2ab7d5013791374c673dc71a50889cc759ef2b03b9b",
+ "tresor_tar_sha": "f1204a1fa5de2b9572bf58319a08ec77ebabc4b20d382657edf6ebbb506e4fe5",
+ "manifest_sha": "34134577d83daabc444fe169a124d61441a4d6b3db6969a7af1390f4ea4bae12"
+}

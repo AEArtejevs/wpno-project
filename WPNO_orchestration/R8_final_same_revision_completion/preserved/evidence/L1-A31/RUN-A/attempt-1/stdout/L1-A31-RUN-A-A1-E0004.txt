@@ -1,0 +1,102 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 5302145568816532876 (0x4995014d88b88d8c)
+        Signature Algorithm: rsassaPss        
+        Hash Algorithm: sha512
+        Mask Algorithm: mgf1 with sha512
+         Salt Length: 0x40
+        Trailer Field: 0x01 (default)
+        Issuer: CN=BNotK rqSigt CA 2020, OU=Zertifizierungsstelle, organizationIdentifier=DE122788238, O=Bundesnotarkammer, C=DE
+        Validity
+            Not Before: Nov 17 14:10:28 2022 GMT
+            Not After : Nov 16 14:10:28 2027 GMT
+        Subject: UID=DE.BRAK.6aeb9a2c-b12e-45b0-92a9-e466ba908021.cd01, CN=Achim Reinknecht, serialNumber=FS-10057573, GN=Achim, SN=Reinknecht, C=DE
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (3072 bit)
+                Modulus:
+                    00:cf:7c:36:9b:06:5e:40:1a:a9:cb:4b:86:31:28:
+                    7e:04:e1:8a:96:6e:6c:32:16:e8:07:cc:cb:2d:03:
+                    94:b5:e1:0b:07:3e:5a:32:a0:1f:ff:cf:0f:2b:50:
+                    87:5a:09:fc:d2:2a:5e:11:fc:8a:64:98:bb:8b:ed:
+                    3e:4c:5d:34:95:7d:84:5a:fa:7d:45:07:f3:c4:7e:
+                    54:d6:6b:9e:4b:fb:2b:22:5d:1f:dc:fc:fd:4d:52:
+                    31:c6:bd:26:7d:bd:9f:18:90:05:27:bf:2f:ae:2f:
+                    07:42:35:4a:bb:ee:3e:07:53:87:57:06:9a:5b:ab:
+                    2d:8b:8e:66:f3:fd:cb:c7:8a:fc:97:8a:60:58:20:
+                    48:af:b4:90:34:7f:6c:23:7c:05:ef:05:86:5b:0f:
+                    11:14:16:e8:83:18:d4:bf:2d:cb:19:7e:42:d7:17:
+                    18:fc:1e:03:92:bf:a7:ce:36:6c:a0:60:e3:b0:fa:
+                    7b:f0:c0:0f:bd:34:6d:af:1d:fa:42:35:6b:73:74:
+                    7f:f0:5f:57:a8:38:a4:9b:b0:be:40:57:5b:e5:72:
+                    7a:b9:de:a3:45:96:a5:de:9e:18:d7:c7:1d:cc:ad:
+                    24:81:00:e8:85:68:73:36:4a:7e:10:07:d3:ca:28:
+                    81:9e:24:5f:0a:9e:65:13:f1:4a:99:8c:29:57:b4:
+                    bb:b1:81:a2:6f:a3:ba:1c:43:91:b8:ea:aa:41:16:
+                    bd:c0:4b:a1:72:d7:c4:8c:85:c1:2a:c2:7c:79:11:
+                    a1:15:04:e6:87:ab:be:f2:7b:99:2c:62:95:60:11:
+                    fc:36:c6:cd:b2:3f:94:95:61:5b:4f:f6:16:da:2b:
+                    65:e7:07:27:22:6c:10:6c:e1:4d:ea:e9:6a:9d:4e:
+                    7c:a2:8c:b5:9c:50:7b:f0:35:2e:2e:3f:82:4b:21:
+                    f4:57:bb:d5:9b:9b:c3:b8:ac:da:c7:0e:d4:97:be:
+                    f3:81:36:c0:8d:7f:a2:9a:9d:19:39:6f:19:aa:da:
+                    a6:8e:cb:ea:67:fe:6c:a0:69:ab
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: critical
+                CA:FALSE
+            X509v3 Authority Key Identifier: 
+                8B:CB:83:86:29:8D:F8:61:13:1D:4A:62:E9:89:8E:1F:01:E5:5A:7A
+            Authority Information Access: 
+                CA Issuers - URI:https://zertifizierungsstelle.bnotk.de/veroeffentlichungen
+                OCSP - URI:http://ocsp.zs.bnotk.de/eqsig
+            X509v3 Certificate Policies: 
+                Policy: 1.3.6.1.4.1.41460.5.1.1.1.2.1.4
+                  CPS: https://zertifizierungsstelle.bnotk.de/veroeffentlichungen
+                Policy: 1.3.6.1.4.1.41460.5.2.1.1.2.2.5
+                  CPS: https://zertifizierungsstelle.bnotk.de/veroeffentlichungen
+                Policy: 1.3.6.1.4.1.41460.5.3.1.1.2.2.3
+                  CPS: https://zertifizierungsstelle.bnotk.de/veroeffentlichungen
+            X509v3 Subject Key Identifier: 
+                21:C5:8E:4E:03:4F:7B:A5:FB:59:2A:20:C0:FD:42:54:67:26:59:F8
+            X509v3 Key Usage: critical
+                Non Repudiation
+            qcStatements: 
+                0..0......F..0......F..0.......F..0..0@.:https://zertifizierungsstelle.bnotk.de/veroeffentlichungen..de0@.:https://zertifizierungsstelle.bnotk.de/veroeffentlichungen..en0......F..0......F...
+    Signature Algorithm: rsassaPss
+    Signature Value:        
+        Hash Algorithm: sha512
+        Mask Algorithm: mgf1 with sha512
+         Salt Length: 0x40
+        Trailer Field: 0x01 (default)
+        36:66:67:c2:34:05:04:f2:e5:56:11:78:5e:20:d8:63:45:a1:
+        fa:fe:a0:52:92:a8:d8:65:dc:d5:f1:b1:6c:1d:90:4e:0e:7a:
+        72:82:3d:a5:e9:0d:c2:93:04:fa:6d:2a:57:4d:b4:9d:c0:12:
+        96:72:96:ae:39:24:bf:ba:3e:e7:4a:be:22:d3:9f:67:0a:b0:
+        89:a3:8b:d2:83:6e:d3:60:24:7f:5e:a4:61:c5:c6:66:0e:b0:
+        a0:7c:2c:8c:b3:d1:fa:f1:93:f2:36:64:f4:20:49:3b:f6:53:
+        f8:38:03:60:a5:da:10:0e:ed:aa:47:7a:01:61:13:91:dc:3c:
+        b0:29:79:46:dc:05:8f:08:32:14:fc:7c:f5:88:27:eb:23:b2:
+        15:b0:39:49:1b:4a:ea:df:01:30:67:22:03:b6:d0:f8:44:04:
+        d3:dd:e9:42:e3:5d:b6:18:1b:29:57:8f:eb:12:85:0c:59:f4:
+        7c:0e:5a:8f:95:2f:0a:11:45:cb:31:47:92:e7:d3:28:17:67:
+        83:96:4c:db:5a:9b:40:5d:f7:3e:05:94:ac:34:73:d2:00:43:
+        8a:65:fa:a6:67:c5:69:f9:95:b8:8e:d7:a6:6f:3a:05:00:cb:
+        b5:bb:66:fa:d0:4a:ed:dd:6d:5e:d6:81:50:a6:7a:6a:32:28:
+        5e:43:fa:04:1c:c9:d6:ba:6e:0d:76:cf:23:24:80:22:9a:5d:
+        fe:d4:7e:7b:00:82:08:80:da:e2:38:42:8d:5b:ab:0b:28:c5:
+        dd:e4:c4:ac:cf:13:a7:95:3c:3e:9d:67:39:e9:5e:e2:d5:f9:
+        19:a0:0b:5f:f1:f0:9b:2a:c8:b9:ce:00:c6:0b:59:bc:62:50:
+        71:d1:d8:da:60:35:b4:f0:31:98:f9:08:ab:45:c4:50:7d:bc:
+        e4:81:8f:26:73:e0:61:e7:37:e1:e9:e8:c1:aa:92:bf:90:2d:
+        4f:dd:ea:1e:55:fb:10:92:ec:66:b5:88:3f:b4:a6:a9:b7:0a:
+        ec:c4:41:a4:87:c1:f9:a2:a8:63:0c:fc:35:05:a2:fc:1e:7a:
+        8b:e4:55:91:46:0a:db:99:ea:ef:7e:a2:1f:c1:d7:c8:b7:de:
+        a7:ac:53:f2:13:73:2d:37:5f:7e:09:2d:15:93:c3:c4:3b:06:
+        50:01:48:65:73:76:f6:c4:6f:8c:ad:e6:9a:be:d5:6a:06:0c:
+        ed:65:cb:2e:9e:bb:4a:22:48:b3:84:fb:75:5a:8d:58:17:fc:
+        0f:90:75:8d:5f:1c:cd:bb:fc:7e:78:ae:3c:27:2f:3e:70:5f:
+        40:a4:f7:65:9e:87:00:5f:36:37:2e:a6:25:a6:98:5f:2d:5c:
+        d6:f0:a1:75:e8:d2:91:28
+sha256 Fingerprint=B9:D0:91:D1:11:D4:13:A1:DF:56:E1:0B:C1:8E:1C:20:19:66:FD:59:92:FD:54:2C:99:2E:B5:59:A0:A4:17:60

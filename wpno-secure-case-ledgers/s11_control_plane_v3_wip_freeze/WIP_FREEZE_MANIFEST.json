@@ -1,0 +1,90 @@
+[
+  {
+    "freeze_id": "WIP-001",
+    "source_path": "memory/attestation_v3_ed25519_pubkey.pem",
+    "size_bytes": 113,
+    "sha256_before": "04c3e4e17c8b6c3df953df6a89dae1adbdacd30f5af8f48e8a2a813ca4e4e3c4",
+    "sha256_after": "04c3e4e17c8b6c3df953df6a89dae1adbdacd30f5af8f48e8a2a813ca4e4e3c4",
+    "hash_match": "true"
+  },
+  {
+    "freeze_id": "WIP-002",
+    "source_path": "reports/S11_CONTROL_PLANE_V3_CANDIDATE_STATUS.md",
+    "size_bytes": 619,
+    "sha256_before": "1c0c7bffb2ea31e38274588f32e1130e37c223dd22424a4805e6fe1b007ff64a",
+    "sha256_after": "1c0c7bffb2ea31e38274588f32e1130e37c223dd22424a4805e6fe1b007ff64a",
+    "hash_match": "true"
+  },
+  {
+    "freeze_id": "WIP-003",
+    "source_path": "reports/S11_CONTROL_PLANE_V3_COUNCIL_AND_TRIBUNAL.csv",
+    "size_bytes": 1287,
+    "sha256_before": "ddafeb32a1378d91d753fc8b51a89a0a8571def29085b18d4b2f038bb25d3c7c",
+    "sha256_after": "ddafeb32a1378d91d753fc8b51a89a0a8571def29085b18d4b2f038bb25d3c7c",
+    "hash_match": "true"
+  },
+  {
+    "freeze_id": "WIP-004",
+    "source_path": "reports/S11_CONTROL_PLANE_V3_COUNCIL_AND_TRIBUNAL.md",
+    "size_bytes": 772,
+    "sha256_before": "eebd2d16b01e7d22a2661e1f8116df6e790e92dc94435e471469c2708dd6ea94",
+    "sha256_after": "eebd2d16b01e7d22a2661e1f8116df6e790e92dc94435e471469c2708dd6ea94",
+    "hash_match": "true"
+  },
+  {
+    "freeze_id": "WIP-005",
+    "source_path": "reports/S11_CONTROL_PLANE_V3_FINDING_REGISTER.csv",
+    "size_bytes": 4317,
+    "sha256_before": "920205f9545f43a2df84859f9bf80206cf990b2e768b95a10dc53617f2513ec9",
+    "sha256_after": "920205f9545f43a2df84859f9bf80206cf990b2e768b95a10dc53617f2513ec9",
+    "hash_match": "true"
+  },
+  {
+    "freeze_id": "WIP-006",
+    "source_path": "reports/S11_CONTROL_PLANE_V3_FINDING_REGISTER.md",
+    "size_bytes": 406,
+    "sha256_before": "5eaa4ddbb703cb13b0926919edeea8d0ab1a6705da41da133e9790a75c98e0d5",
+    "sha256_after": "5eaa4ddbb703cb13b0926919edeea8d0ab1a6705da41da133e9790a75c98e0d5",
+    "hash_match": "true"
+  },
+  {
+    "freeze_id": "WIP-007",
+    "source_path": "reports/S11_CONTROL_PLANE_V3_TRUST_ROOT_DESIGN.md",
+    "size_bytes": 1900,
+    "sha256_before": "1f21ff95d34ba3a227415e3469ba8ca358b4f049becffcf76c730eb2f196e867",
+    "sha256_after": "1f21ff95d34ba3a227415e3469ba8ca358b4f049becffcf76c730eb2f196e867",
+    "hash_match": "true"
+  },
+  {
+    "freeze_id": "WIP-008",
+    "source_path": "scripts/s11_attestation_v3.py",
+    "size_bytes": 13848,
+    "sha256_before": "622351884e7cf5977e66d09af7a0ce73e464afaf42e45c040d56d23a9451b16b",
+    "sha256_after": "622351884e7cf5977e66d09af7a0ce73e464afaf42e45c040d56d23a9451b16b",
+    "hash_match": "true"
+  },
+  {
+    "freeze_id": "WIP-009",
+    "source_path": "scripts/s11_content_state_gate.py",
+    "size_bytes": 5673,
+    "sha256_before": "83c64c011640380a9e6040158c9d0e16ad1df67afd2f9199e3f5b9e0e9838605",
+    "sha256_after": "83c64c011640380a9e6040158c9d0e16ad1df67afd2f9199e3f5b9e0e9838605",
+    "hash_match": "true"
+  },
+  {
+    "freeze_id": "WIP-010",
+    "source_path": "scripts/s11_validated_commit_v3.py",
+    "size_bytes": 6253,
+    "sha256_before": "3ab4b39e0b20069c1449e8315256c271a962ed4f215985ef2330bfbbdf6d52fa",
+    "sha256_after": "3ab4b39e0b20069c1449e8315256c271a962ed4f215985ef2330bfbbdf6d52fa",
+    "hash_match": "true"
+  },
+  {
+    "freeze_id": "WIP-011",
+    "source_path": "tests/test_s11_control_plane_v3.py",
+    "size_bytes": 7507,
+    "sha256_before": "46d602a2b5380f5417c98a767fe649917617a79ac223b4c175c200a0a1e45b85",
+    "sha256_after": "46d602a2b5380f5417c98a767fe649917617a79ac223b4c175c200a0a1e45b85",
+    "hash_match": "true"
+  }
+]

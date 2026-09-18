@@ -1,0 +1,3 @@
+# Control-Plane — Gate-Phase-Lebenszyklus
+
+RCK2-22 wird NICHT durch Loeschen/Umpinnen des stale Tests geloest. reports/S11_GATE_PHASE_REGISTRY.csv fuehrt test_s11_ps861_006d_recheck_protocol.py als HISTORICAL_REPLAY (Baseline 080df65, superseded_by S11-Control-Plane-Scope-Guard, mit Begruendung). Der Pre-Commit-Gate (phase_lifecycle()) fuehrt nur ACTIVE_CURRENT-Phasen gegen HEAD; historische Phasen werden mit Grund geloggt, nicht still deaktiviert. Ersatz: der zustands-/scope-aware S11-Control-Plane-Scope-Guard prueft ueber PRODUCT_CANDIDATE_REGISTRY, dass kein Produkt-Fachlogik-Diff gegen den Referenzkandidaten 670e362 entsteht (kein statisches Pinning).

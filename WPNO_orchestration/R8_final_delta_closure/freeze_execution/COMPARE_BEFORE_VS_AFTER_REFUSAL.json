@@ -1,0 +1,47 @@
+{
+ "EQUAL": false,
+ "a": {
+  "entry_count": 1449,
+  "path": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/freeze_execution/INVENTORY_BEFORE_FREEZE.json",
+  "root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8"
+ },
+ "b": {
+  "entry_count": 1449,
+  "path": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/freeze_execution/INVENTORY_AFTER_REFUSAL.json",
+  "root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8"
+ },
+ "compared_fields": [
+  "type",
+  "size",
+  "sha256",
+  "symlink_target",
+  "mode",
+  "uid",
+  "gid",
+  "mtime_ns"
+ ],
+ "contents_changed": 0,
+ "differences": [
+  {
+   "fields": {
+    "mtime_ns": [
+     1787935576976971868,
+     1787951102478448904
+    ]
+   },
+   "path": "state"
+  }
+ ],
+ "gid_changed": 0,
+ "modes_changed": 0,
+ "mtimes_changed": 1,
+ "paths_added": 0,
+ "paths_differing": 1,
+ "paths_only_in_a": [],
+ "paths_only_in_b": [],
+ "paths_removed": 0,
+ "schema": "wpno.r8.delta-inventory-compare/1",
+ "symlink_targets_changed": 0,
+ "uid_changed": 0,
+ "written_paths": 0
+}

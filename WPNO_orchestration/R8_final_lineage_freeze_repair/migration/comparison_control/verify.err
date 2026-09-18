@@ -1,0 +1,4 @@
+{
+  "error": "MigrationError",
+  "message": "SOURCE_PHASE_NOT_SEALED: L1-A31/COMPARISON is [REDACTED:BIC]. An unsealed attempt has no manifest and no seal, so nothing about it can be verified -- which is exactly the condition of the predecessor's COMPARISON attempt, executed with zero evidence."
+}

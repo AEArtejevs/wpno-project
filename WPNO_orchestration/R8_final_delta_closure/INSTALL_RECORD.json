@@ -1,0 +1,654 @@
+{
+ "INSTALL_VALID": true,
+ "byte_mismatches": [],
+ "installed": [
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/VERIFY_PROMPT.md",
+   "INSTALLED_SHA256": "3a7b3a22f3205685afe503bb056b211678c46ae74577a4376c6a080f4eae0e01",
+   "ROLE": "FINAL_VERIFICATION_INSTRUCTIONS",
+   "SIZE": 13412,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/tools/DELTA_VERIFY_PROMPT.md",
+   "SOURCE_SHA256": "3a7b3a22f3205685afe503bb056b211678c46ae74577a4376c6a080f4eae0e01"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/run_delta_closure.sh",
+   "INSTALLED_SHA256": "ded748def546bb4591f11c4a61ac2b16850c1f599d2acb0f93e34c62742303de",
+   "ROLE": "VERIFICATION_RUNNER",
+   "SIZE": 3280,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/tools/run_delta_closure.sh",
+   "SOURCE_SHA256": "ded748def546bb4591f11c4a61ac2b16850c1f599d2acb0f93e34c62742303de"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/VERIFIER_SCHEMA_MAP.json",
+   "INSTALLED_SHA256": "85d9e8730f4e4f1011336a9c50b2295d0ed6f98f0275845950feb5056940a0c6",
+   "ROLE": "SCHEMA_MAP",
+   "SIZE": 63835,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/VERIFIER_SCHEMA_MAP.json",
+   "SOURCE_SHA256": "85d9e8730f4e4f1011336a9c50b2295d0ed6f98f0275845950feb5056940a0c6"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/selftest_delta_verifier.py",
+   "INSTALLED_SHA256": "820e8b21e3c3929f315d9bad6f44fd1e0a1a5c1d60e2fbaf1f1848c9fe836063",
+   "ROLE": "VERIFIER_SELF_TEST",
+   "SIZE": 10250,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/tools/selftest_delta_verifier.py",
+   "SOURCE_SHA256": "820e8b21e3c3929f315d9bad6f44fd1e0a1a5c1d60e2fbaf1f1848c9fe836063"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/DELTA_VERIFIER_SELFTEST.json",
+   "INSTALLED_SHA256": "23ad63044660efaab5d9ec8125fac046d3ddc3b1fa0ba51ab0206a6bbb6c000b",
+   "ROLE": "VERIFIER_SELF_TEST_RESULT",
+   "SIZE": 12371,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/selftest/DELTA_VERIFIER_SELFTEST.json",
+   "SOURCE_SHA256": "23ad63044660efaab5d9ec8125fac046d3ddc3b1fa0ba51ab0206a6bbb6c000b"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/ATTEMPT_8_DURABLE_ITEM_MATRIX.json",
+   "INSTALLED_SHA256": "7712d8be46741a0a445abeb6aafd0e03bee31abf5eb7886403b9447eae4dfb0a",
+   "ROLE": "DURABLE_ITEM_MATRIX",
+   "SIZE": 245025,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/ATTEMPT_8_DURABLE_ITEM_MATRIX.json",
+   "SOURCE_SHA256": "7712d8be46741a0a445abeb6aafd0e03bee31abf5eb7886403b9447eae4dfb0a"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/BASE_EVIDENCE_VERIFICATION.json",
+   "INSTALLED_SHA256": "1cbb588a82c5e4dd317bfec5379ef734ae40137b02fd1b35e4534a6024c1e1c9",
+   "ROLE": "BASE_EVIDENCE_VERIFICATION",
+   "SIZE": 8806,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/BASE_EVIDENCE_VERIFICATION.json",
+   "SOURCE_SHA256": "1cbb588a82c5e4dd317bfec5379ef734ae40137b02fd1b35e4534a6024c1e1c9"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/TOOL_INVENTORY.json",
+   "INSTALLED_SHA256": "aa9ef12c3c6208060fc941084fa26e986f5f492a6a749e38b21b4e9bc73eb710",
+   "ROLE": "TOOL_INVENTORY",
+   "SIZE": 16757,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/TOOL_INVENTORY.json",
+   "SOURCE_SHA256": "aa9ef12c3c6208060fc941084fa26e986f5f492a6a749e38b21b4e9bc73eb710"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/helpers/delta_predicates.py",
+   "INSTALLED_SHA256": "74cbd638eb294a679123199c90c9853a58fd81253dc4f4be514b20c6bd409c6f",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 18294,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/tools/delta_predicates.py",
+   "SOURCE_SHA256": "74cbd638eb294a679123199c90c9853a58fd81253dc4f4be514b20c6bd409c6f"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/helpers/delta_context.py",
+   "INSTALLED_SHA256": "cd4cd649739c3db0ce5c185d9f1fba7b185d033ab0e220fe7ebe271b4dc5c086",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 5434,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/tools/delta_context.py",
+   "SOURCE_SHA256": "cd4cd649739c3db0ce5c185d9f1fba7b185d033ab0e220fe7ebe271b4dc5c086"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/helpers/build_schema_map.py",
+   "INSTALLED_SHA256": "bc67159f2028b5f46374cbc698c317e71d7eb898d87f2523ae5f5dbf7d96a9d9",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 8443,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/tools/build_schema_map.py",
+   "SOURCE_SHA256": "bc67159f2028b5f46374cbc698c317e71d7eb898d87f2523ae5f5dbf7d96a9d9"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/helpers/build_durable_matrix.py",
+   "INSTALLED_SHA256": "7397e4ca4a6a80bf409f4f79a8f196f605e6ebe0bcab1a6606ed7746ce6bb8be",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 11546,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/tools/build_durable_matrix.py",
+   "SOURCE_SHA256": "7397e4ca4a6a80bf409f4f79a8f196f605e6ebe0bcab1a6606ed7746ce6bb8be"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/helpers/verify_base_evidence.py",
+   "INSTALLED_SHA256": "1564956d171bc212aa52ddd6eda1b42f29bf2b7b9a215355101739a9432878e2",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 11712,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/tools/verify_base_evidence.py",
+   "SOURCE_SHA256": "1564956d171bc212aa52ddd6eda1b42f29bf2b7b9a215355101739a9432878e2"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/helpers/fixed_target_check.py",
+   "INSTALLED_SHA256": "fdacd41ac2b64ea436c62c6bdcf61daa46d89252d4abb1a041a02a80efbccecf",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 7510,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/tools/fixed_target_check.py",
+   "SOURCE_SHA256": "fdacd41ac2b64ea436c62c6bdcf61daa46d89252d4abb1a041a02a80efbccecf"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/helpers/build_delta_tool_inventory.py",
+   "INSTALLED_SHA256": "e7372a2ac14fdf1e176f0a10f71536751cfc456060b63b188e961ac6813c33f6",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 12689,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/tools/build_delta_tool_inventory.py",
+   "SOURCE_SHA256": "e7372a2ac14fdf1e176f0a10f71536751cfc456060b63b188e961ac6813c33f6"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/helpers/install_verification.py",
+   "INSTALLED_SHA256": "3d96116c396098d221c61e31510ac8799bbb1c9d2cba036dd04187387a0cbd6d",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 7954,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/tools/install_verification.py",
+   "SOURCE_SHA256": "3d96116c396098d221c61e31510ac8799bbb1c9d2cba036dd04187387a0cbd6d"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/helpers/inventory_r8.py",
+   "INSTALLED_SHA256": "7f3c8702f66a54c517d6fcccf403f2da5f187a3e5c27e3f81b884be9db14c03d",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 3193,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/tools/inventory_r8.py",
+   "SOURCE_SHA256": "7f3c8702f66a54c517d6fcccf403f2da5f187a3e5c27e3f81b884be9db14c03d"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/helpers/compare_inventories.py",
+   "INSTALLED_SHA256": "506a75df0de3a0757bf8c65a27bb70811b0d0bc98980e85a110f548e1b9e1f2a",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 3114,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/tools/compare_inventories.py",
+   "SOURCE_SHA256": "506a75df0de3a0757bf8c65a27bb70811b0d0bc98980e85a110f548e1b9e1f2a"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/helpers/measure_path.py",
+   "INSTALLED_SHA256": "ed58c52a83402725fe3a623bde2b517af311ad8883bda95cbd32880bb9aa2dcd",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 4648,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/tools/measure_path.py",
+   "SOURCE_SHA256": "ed58c52a83402725fe3a623bde2b517af311ad8883bda95cbd32880bb9aa2dcd"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/helpers/inspect_writers.py",
+   "INSTALLED_SHA256": "1dd5ac390e3395be5cdb19a98d46fbe6afe7ac8a2d0b1e4d8484e917870a5f3d",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 4949,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/tools/inspect_writers.py",
+   "SOURCE_SHA256": "1dd5ac390e3395be5cdb19a98d46fbe6afe7ac8a2d0b1e4d8484e917870a5f3d"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/helpers/preflight_clone.py",
+   "INSTALLED_SHA256": "6dce64d963bed087e0e10badfaca7aae7461bad5a86b16585739132f19043080",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 8587,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/tools/preflight_clone.py",
+   "SOURCE_SHA256": "6dce64d963bed087e0e10badfaca7aae7461bad5a86b16585739132f19043080"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/helpers/make_clone.sh",
+   "INSTALLED_SHA256": "f9d94018267820a532658b88f7b0f925f24df5628be8b6b5ad5cbe43256659b0",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 1680,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/tools/make_clone.sh",
+   "SOURCE_SHA256": "f9d94018267820a532658b88f7b0f925f24df5628be8b6b5ad5cbe43256659b0"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/helpers/run_package_suite.py",
+   "INSTALLED_SHA256": "53580905bba7a9720fd6e34320d5395bca0ae39dab10f60dce05755d6d93c4b2",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 8479,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/tools/run_package_suite.py",
+   "SOURCE_SHA256": "53580905bba7a9720fd6e34320d5395bca0ae39dab10f60dce05755d6d93c4b2"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/preflight/FIXED_TARGET.json",
+   "INSTALLED_SHA256": "a136d4bf826b8c79cee78e8a772dd3d14cb278a0fe7b2049e317a6a306343a2c",
+   "ROLE": "PREFLIGHT_EVIDENCE",
+   "SIZE": 2349,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/preflight/FIXED_TARGET.json",
+   "SOURCE_SHA256": "a136d4bf826b8c79cee78e8a772dd3d14cb278a0fe7b2049e317a6a306343a2c"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/preflight/FIXED_TARGET_POST.json",
+   "INSTALLED_SHA256": "a136d4bf826b8c79cee78e8a772dd3d14cb278a0fe7b2049e317a6a306343a2c",
+   "ROLE": "PREFLIGHT_EVIDENCE",
+   "SIZE": 2349,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/preflight/FIXED_TARGET_POST.json",
+   "SOURCE_SHA256": "a136d4bf826b8c79cee78e8a772dd3d14cb278a0fe7b2049e317a6a306343a2c"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/preflight/PREFLIGHT.json",
+   "INSTALLED_SHA256": "353a1c556165c3a422e0e55b1f7329fc7ec38f3703da79fb3706964455b5a596",
+   "ROLE": "PREFLIGHT_EVIDENCE",
+   "SIZE": 3122,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/preflight/PREFLIGHT.json",
+   "SOURCE_SHA256": "353a1c556165c3a422e0e55b1f7329fc7ec38f3703da79fb3706964455b5a596"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/preflight/WRITER_INSPECTION_PRE.json",
+   "INSTALLED_SHA256": "79bb9e973a41c9e100e608942bb988008924332bb6a51d19cbadf32e8ef9b9df",
+   "ROLE": "PREFLIGHT_EVIDENCE",
+   "SIZE": 955,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/preflight/WRITER_INSPECTION_PRE.json",
+   "SOURCE_SHA256": "79bb9e973a41c9e100e608942bb988008924332bb6a51d19cbadf32e8ef9b9df"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/preflight/WRITER_INSPECTION_POST.json",
+   "INSTALLED_SHA256": "148508e7998ea574fcaa5a148b54aeae295e1bc0ce9021f291d2b56308ad0a82",
+   "ROLE": "PREFLIGHT_EVIDENCE",
+   "SIZE": 955,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/preflight/WRITER_INSPECTION_POST.json",
+   "SOURCE_SHA256": "148508e7998ea574fcaa5a148b54aeae295e1bc0ce9021f291d2b56308ad0a82"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/preflight/COMPARE_ORIGINAL_VS_CLONE_INITIAL.json",
+   "INSTALLED_SHA256": "cfa9dd338102a608bfaf8d7e2f1890e381196bdeb0b3a62fe96c02658dc648f5",
+   "ROLE": "PREFLIGHT_EVIDENCE",
+   "SIZE": 900,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/preflight/COMPARE_ORIGINAL_VS_CLONE_INITIAL.json",
+   "SOURCE_SHA256": "cfa9dd338102a608bfaf8d7e2f1890e381196bdeb0b3a62fe96c02658dc648f5"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/preflight/SANDBOX_PROBE_RECORD.json",
+   "INSTALLED_SHA256": "a43fe57053476188e8368199ed8514aef5ce39e6192a25c9c709a1e745dcc0db",
+   "ROLE": "WRITE_BARRIER_PROOF",
+   "SIZE": 2328,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/logs/SANDBOX_PROBE_RECORD.json",
+   "SOURCE_SHA256": "a43fe57053476188e8368199ed8514aef5ce39e6192a25c9c709a1e745dcc0db"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/write_isolation/INVENTORY_PRE.json",
+   "INSTALLED_SHA256": "3e63e9cdf704d384343fd1f0ed9ccfa83df6b1d76e7b817e10b8d8e763327284",
+   "ROLE": "WRITE_ISOLATION_EVIDENCE",
+   "SIZE": 437977,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/inventory/INVENTORY_PRE.json",
+   "SOURCE_SHA256": "3e63e9cdf704d384343fd1f0ed9ccfa83df6b1d76e7b817e10b8d8e763327284"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/write_isolation/INVENTORY_POST.json",
+   "INSTALLED_SHA256": "3e63e9cdf704d384343fd1f0ed9ccfa83df6b1d76e7b817e10b8d8e763327284",
+   "ROLE": "WRITE_ISOLATION_EVIDENCE",
+   "SIZE": 437977,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/inventory/INVENTORY_POST.json",
+   "SOURCE_SHA256": "3e63e9cdf704d384343fd1f0ed9ccfa83df6b1d76e7b817e10b8d8e763327284"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/write_isolation/COMPARE_PRE_VS_POST.json",
+   "INSTALLED_SHA256": "5cb8a576461dd9ad4b7ec93baf8995b4b638290845b6148a5f64d0337a0966de",
+   "ROLE": "WRITE_ISOLATION_EVIDENCE",
+   "SIZE": 883,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/inventory/COMPARE_PRE_VS_POST.json",
+   "SOURCE_SHA256": "5cb8a576461dd9ad4b7ec93baf8995b4b638290845b6148a5f64d0337a0966de"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/write_isolation/INVENTORY_PRE.summary.json",
+   "INSTALLED_SHA256": "f670bb872db4a39a17176d010392eb3218551834355d9f5102ddd7ee3ba34767",
+   "ROLE": "WRITE_ISOLATION_EVIDENCE",
+   "SIZE": 334,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/inventory/INVENTORY_PRE.summary.json",
+   "SOURCE_SHA256": "f670bb872db4a39a17176d010392eb3218551834355d9f5102ddd7ee3ba34767"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/write_isolation/INVENTORY_POST.summary.json",
+   "INSTALLED_SHA256": "20b5eb97cf63bffe763e8dc7f1f98ab0554d67f5338f4bca02873cb4f6fe210c",
+   "ROLE": "WRITE_ISOLATION_EVIDENCE",
+   "SIZE": 335,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/inventory/INVENTORY_POST.summary.json",
+   "SOURCE_SHA256": "20b5eb97cf63bffe763e8dc7f1f98ab0554d67f5338f4bca02873cb4f6fe210c"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/COMMAND_LOG.jsonl",
+   "INSTALLED_SHA256": "40bbccd5fff5e7185c7e77bee1908ede57e5a32c6a2a5b3f95dae9105778d026",
+   "ROLE": "DELTA_EVIDENCE",
+   "SIZE": 12899,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/codex_output/COMMAND_LOG.jsonl",
+   "SOURCE_SHA256": "40bbccd5fff5e7185c7e77bee1908ede57e5a32c6a2a5b3f95dae9105778d026"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/ITEM_RESULTS.jsonl",
+   "INSTALLED_SHA256": "89573c3ee4816db09e6c324f88fbe120d7ab1a789a32dcfa89052ce240f5946b",
+   "ROLE": "DELTA_EVIDENCE",
+   "SIZE": 35669,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/codex_output/ITEM_RESULTS.jsonl",
+   "SOURCE_SHA256": "89573c3ee4816db09e6c324f88fbe120d7ab1a789a32dcfa89052ce240f5946b"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/MEASUREMENTS.json",
+   "INSTALLED_SHA256": "ea73d870ae6583e81a73f06636261b223a9223d8c86925d9fa0b9e68e3d26bc6",
+   "ROLE": "DELTA_EVIDENCE",
+   "SIZE": 14813,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/codex_output/MEASUREMENTS.json",
+   "SOURCE_SHA256": "ea73d870ae6583e81a73f06636261b223a9223d8c86925d9fa0b9e68e3d26bc6"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/ORIGINAL_INVENTORY_FINAL.json",
+   "INSTALLED_SHA256": "6a49b6ea23f4ccf55f0b3e18c19df8d0ecaf5aff569864d14bc0bf8aaa3c4770",
+   "ROLE": "DELTA_EVIDENCE",
+   "SIZE": 432403,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/codex_output/ORIGINAL_INVENTORY_FINAL.json",
+   "SOURCE_SHA256": "6a49b6ea23f4ccf55f0b3e18c19df8d0ecaf5aff569864d14bc0bf8aaa3c4770"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/VERIFICATION_MANIFEST.sha256",
+   "INSTALLED_SHA256": "db10751b497684b5619a2face39545117dce65e7f715a83dda5894aaa1670523",
+   "ROLE": "DELTA_EVIDENCE",
+   "SIZE": 780,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/codex_output/VERIFICATION_MANIFEST.sha256",
+   "SOURCE_SHA256": "db10751b497684b5619a2face39545117dce65e7f715a83dda5894aaa1670523"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/VERIFICATION_REPORT.md",
+   "INSTALLED_SHA256": "42a6f98c17c977c76859dcf5240ebf11db49249be74c1f82e7392b73ea5f8f7b",
+   "ROLE": "DELTA_EVIDENCE",
+   "SIZE": 1619,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/codex_output/VERIFICATION_REPORT.md",
+   "SOURCE_SHA256": "42a6f98c17c977c76859dcf5240ebf11db49249be74c1f82e7392b73ea5f8f7b"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/VERIFICATION_RESULT.json",
+   "INSTALLED_SHA256": "c8a09a85f97429a524a2b2a52f6c88b5fc06a844ba9cc0afe241b4adb298924d",
+   "ROLE": "DELTA_EVIDENCE",
+   "SIZE": 49372,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/codex_output/VERIFICATION_RESULT.json",
+   "SOURCE_SHA256": "c8a09a85f97429a524a2b2a52f6c88b5fc06a844ba9cc0afe241b4adb298924d"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/WRITER_INSPECTION.json",
+   "INSTALLED_SHA256": "e039f42618cabbb105eda8cc63c7cffd10ea84541f5fae8cee27514daf40ccc4",
+   "ROLE": "DELTA_EVIDENCE",
+   "SIZE": 224,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/codex_output/WRITER_INSPECTION.json",
+   "SOURCE_SHA256": "e039f42618cabbb105eda8cc63c7cffd10ea84541f5fae8cee27514daf40ccc4"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/run_logged.py",
+   "INSTALLED_SHA256": "366a06501ec6f820e8d902bfec1289f7f54b6b2ab15075d54428f6a891185433",
+   "ROLE": "DELTA_EVIDENCE",
+   "SIZE": 560,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/codex_output/run_logged.py",
+   "SOURCE_SHA256": "366a06501ec6f820e8d902bfec1289f7f54b6b2ab15075d54428f6a891185433"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/verify_delta.py",
+   "INSTALLED_SHA256": "8f1ec02accacfac2a95fb02fb771a4292d67193e9a03b2eb61d8de27733abcf2",
+   "ROLE": "DELTA_EVIDENCE",
+   "SIZE": 20161,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/codex_output/verify_delta.py",
+   "SOURCE_SHA256": "8f1ec02accacfac2a95fb02fb771a4292d67193e9a03b2eb61d8de27733abcf2"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/AUDIT_1_17.stderr.txt",
+   "INSTALLED_SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 0,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/AUDIT_1_17.stderr.txt",
+   "SOURCE_SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/AUDIT_1_17.stdout.txt",
+   "INSTALLED_SHA256": "70e8d20f341cbb9cd0629d286c338cc6dca60edf361b4147a9076087c37530fa",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 40,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/AUDIT_1_17.stdout.txt",
+   "SOURCE_SHA256": "70e8d20f341cbb9cd0629d286c338cc6dca60edf361b4147a9076087c37530fa"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/COMMAND_LOG.jsonl",
+   "INSTALLED_SHA256": "117c080964b290e9100d50ef7e22b3f847dd832376026f8e2a4de91048899cfc",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 3890,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/COMMAND_LOG.jsonl",
+   "SOURCE_SHA256": "117c080964b290e9100d50ef7e22b3f847dd832376026f8e2a4de91048899cfc"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/CONTROLLER_SUITE.stderr.txt",
+   "INSTALLED_SHA256": "a360b07a1d1dfc589015cd2ee72e02a618cf1d00aa47fc560d98628fba8be0a8",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 1109,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/CONTROLLER_SUITE.stderr.txt",
+   "SOURCE_SHA256": "a360b07a1d1dfc589015cd2ee72e02a618cf1d00aa47fc560d98628fba8be0a8"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/CONTROLLER_SUITE.stdout.txt",
+   "INSTALLED_SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 0,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/CONTROLLER_SUITE.stdout.txt",
+   "SOURCE_SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/ITEM33_AFTER.json",
+   "INSTALLED_SHA256": "f716c5ae0aa10196629558af80862b9da90b9ded371bf44dc30795f74a02f19c",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 747,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM33_AFTER.json",
+   "SOURCE_SHA256": "f716c5ae0aa10196629558af80862b9da90b9ded371bf44dc30795f74a02f19c"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/ITEM33_BEFORE.json",
+   "INSTALLED_SHA256": "97f3d1f068101ad6fe8f505600aa13d8e0786d5a5a39d53d701e810c7c521099",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 747,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM33_BEFORE.json",
+   "SOURCE_SHA256": "97f3d1f068101ad6fe8f505600aa13d8e0786d5a5a39d53d701e810c7c521099"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/ITEM33_COMPARE.json",
+   "INSTALLED_SHA256": "6955470af6aa47630c69ad5c97c145c69784cad8167d2b7192cd4f9772f6d5ca",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 1754,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM33_COMPARE.json",
+   "SOURCE_SHA256": "6955470af6aa47630c69ad5c97c145c69784cad8167d2b7192cd4f9772f6d5ca"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/ITEM_RESULTS.jsonl",
+   "INSTALLED_SHA256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 158534,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "SOURCE_SHA256": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/MEASUREMENTS.json",
+   "INSTALLED_SHA256": "9f6718cba59c2032dbb14a4740429e3c49e909bb69d7c6ddbaffdaa1b6c77e4c",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 1280051,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/MEASUREMENTS.json",
+   "SOURCE_SHA256": "9f6718cba59c2032dbb14a4740429e3c49e909bb69d7c6ddbaffdaa1b6c77e4c"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/ORIGINAL_INVENTORY_AFTER.json",
+   "INSTALLED_SHA256": "1a58749aa6510c8f148eabec126b1926e598af4275afb78f772990ec3ea36dc7",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 437980,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ORIGINAL_INVENTORY_AFTER.json",
+   "SOURCE_SHA256": "1a58749aa6510c8f148eabec126b1926e598af4275afb78f772990ec3ea36dc7"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/ORIGINAL_INVENTORY_AFTER.summary.json",
+   "INSTALLED_SHA256": "21a0527eb13ba0b5ae8afbccf2017b995d1c084cd0f8901a2eb6a8512602ae12",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 367,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ORIGINAL_INVENTORY_AFTER.summary.json",
+   "SOURCE_SHA256": "21a0527eb13ba0b5ae8afbccf2017b995d1c084cd0f8901a2eb6a8512602ae12"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/ORIGINAL_INVENTORY_BEFORE.json",
+   "INSTALLED_SHA256": "1a58749aa6510c8f148eabec126b1926e598af4275afb78f772990ec3ea36dc7",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 437980,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ORIGINAL_INVENTORY_BEFORE.json",
+   "SOURCE_SHA256": "1a58749aa6510c8f148eabec126b1926e598af4275afb78f772990ec3ea36dc7"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/ORIGINAL_INVENTORY_COMPARE.json",
+   "INSTALLED_SHA256": "b4f844cc93782c03c68c7708db9e46b640f8a91bccbfb144e89362a6acc36327",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 952,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ORIGINAL_INVENTORY_COMPARE.json",
+   "SOURCE_SHA256": "b4f844cc93782c03c68c7708db9e46b640f8a91bccbfb144e89362a6acc36327"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/ORIGINAL_INVENTORY_COMPARE.summary.json",
+   "INSTALLED_SHA256": "d2e830f25420a5927ee7b9adb75cb2ab936ae7788d836cb3898dc433074530f6",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 333,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ORIGINAL_INVENTORY_COMPARE.summary.json",
+   "SOURCE_SHA256": "d2e830f25420a5927ee7b9adb75cb2ab936ae7788d836cb3898dc433074530f6"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/PACKAGE_SUITE.json",
+   "INSTALLED_SHA256": "2d9bcc0de18b258bdcb3ca3892716fbd017e53b180cb34349698bbdd85fbdadd",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 4064,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/PACKAGE_SUITE.json",
+   "SOURCE_SHA256": "2d9bcc0de18b258bdcb3ca3892716fbd017e53b180cb34349698bbdd85fbdadd"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/PACKAGE_SUITE.stderr.txt",
+   "INSTALLED_SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 0,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/PACKAGE_SUITE.stderr.txt",
+   "SOURCE_SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/PACKAGE_SUITE.stdout.txt",
+   "INSTALLED_SHA256": "fc4c97ff83086c4a5bf870efca0086e60ca4d41ce04c562722fff6a693276f1c",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 312,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/PACKAGE_SUITE.stdout.txt",
+   "SOURCE_SHA256": "fc4c97ff83086c4a5bf870efca0086e60ca4d41ce04c562722fff6a693276f1c"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/STATIC.stderr.txt",
+   "INSTALLED_SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 0,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/STATIC.stderr.txt",
+   "SOURCE_SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/STATIC.stdout.txt",
+   "INSTALLED_SHA256": "f06027e1f3cfa6606786a50ab3df99de7b06861a0a422de16dc0c99f33843b71",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 149,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/STATIC.stdout.txt",
+   "SOURCE_SHA256": "f06027e1f3cfa6606786a50ab3df99de7b06861a0a422de16dc0c99f33843b71"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/VERIFICATION_MANIFEST.sha256",
+   "INSTALLED_SHA256": "8f386ac517bab581e3bd8f89b07d38222c66bdf60dca2b0ea4097d87ac0e9b8f",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 2217,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/VERIFICATION_MANIFEST.sha256",
+   "SOURCE_SHA256": "8f386ac517bab581e3bd8f89b07d38222c66bdf60dca2b0ea4097d87ac0e9b8f"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/VERIFICATION_REPORT.md",
+   "INSTALLED_SHA256": "629a941a4c1442fdfcb6d33020e26a7484c629c8c894ed8cac4ee8e761fbb4b4",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 2186,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/VERIFICATION_REPORT.md",
+   "SOURCE_SHA256": "629a941a4c1442fdfcb6d33020e26a7484c629c8c894ed8cac4ee8e761fbb4b4"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/VERIFICATION_RESULT.json",
+   "INSTALLED_SHA256": "729967891c0eba3f8d4fb3e1460747ff0f55e5bba27159cc5bc69342d6a5375b",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 241014,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/VERIFICATION_RESULT.json",
+   "SOURCE_SHA256": "729967891c0eba3f8d4fb3e1460747ff0f55e5bba27159cc5bc69342d6a5375b"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/static_safety_outputs/R8_CHANGED_FILES.sha256",
+   "INSTALLED_SHA256": "39310d24d48978384d655a9b1b6164be0b21bd851d32b714b00d3e2f8cf27923",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 4422,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/static_safety_outputs/R8_CHANGED_FILES.sha256",
+   "SOURCE_SHA256": "39310d24d48978384d655a9b1b6164be0b21bd851d32b714b00d3e2f8cf27923"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/static_safety_outputs/R8_STATIC_SAFETY_REPORT.json",
+   "INSTALLED_SHA256": "e1614cc069a993459f25ce8e1de9b1c0a694a8f89e890b0de921450911c8b027",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 23029,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/static_safety_outputs/R8_STATIC_SAFETY_REPORT.json",
+   "SOURCE_SHA256": "e1614cc069a993459f25ce8e1de9b1c0a694a8f89e890b0de921450911c8b027"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_5/base_attempt_8/INVENTORY_FINAL.json",
+   "INSTALLED_SHA256": "1a58749aa6510c8f148eabec126b1926e598af4275afb78f772990ec3ea36dc7",
+   "ROLE": "BASE_ATTEMPT_8_EVIDENCE",
+   "SIZE": 437980,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/original_inventory/INVENTORY_FINAL.json",
+   "SOURCE_SHA256": "1a58749aa6510c8f148eabec126b1926e598af4275afb78f772990ec3ea36dc7"
+  }
+ ],
+ "installed_count": 71,
+ "manifest_excluded_by": "build/build_r8_build_manifest.py is_post_manifest_artefact, matched on the first path component",
+ "paths_created_in_r8": 71,
+ "paths_created_outside_the_excluded_directory": [],
+ "paths_removed_from_r8": [],
+ "r8_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+ "schema": "wpno.r8.delta-verification-install/1",
+ "verification_attempt_number": 5,
+ "verification_directory": "verification_codex_final_pre_freeze_attempt_5"
+}

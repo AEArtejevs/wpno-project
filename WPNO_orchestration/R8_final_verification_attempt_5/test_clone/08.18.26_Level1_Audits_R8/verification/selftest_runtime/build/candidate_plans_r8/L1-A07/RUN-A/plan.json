@@ -1,0 +1,263 @@
+{
+  "audit_id": "L1-A07",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Run every known-bad case that v1 detects against v3, and identify every protection lost, every false positive introduced and every false negative introduced between the versions. The corpus is derived from the two rule sets, never from either guard's output.",
+  "static_analysis": "Both versions are parsed, never imported, and their rule sets are extracted separately. The v1 known-bad corpus is then built from the v1 patterns - one isolating input per v1 rule - so that every input maps to a named rule. A corpus derived from a guard's output would agree with that guard by construction and could not show what it misses.\n\nv1 is AP17_output_guardrail_VERALTET.py.txt and v3 is AP17_output_guardrail_v3.py. v2 exists as well and is hashed and parsed so that the version set is enumerated rather than assumed.\n\nPYTHON_SCRIPT_RUN_SANDBOX runs a script under work/ and nowhere else, so the approved phase first copies the guard to work/<audit>/RUN-A/sandbox/ and records the copy's digest beside the original's. The original in authoring/ is read and never written to. Where a rule has to be neutralised to attribute a rejection, it is neutralised in that copy and the neutralised line is recorded.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/authoring/AP17_output_guardrail_VERALTET.py.txt"
+      },
+      "purpose": "Extract the v1 rule set.",
+      "step_id": "parse_v1",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/authoring/AP17_output_guardrail_v2_VERALTET.py.txt"
+      },
+      "purpose": "Enumerate the version set rather than assume it.",
+      "step_id": "parse_v2",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/authoring/AP17_output_guardrail_v3.py"
+      },
+      "purpose": "Extract the v3 rule set.",
+      "step_id": "parse_v3",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--corpus",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A07/RUN-A/corpus/v1_known_bad"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A07/RUN-A/sandbox/guard_v1.py"
+      },
+      "purpose": "The full isolating corpus against the v1 sandbox copy.",
+      "step_id": "run_corpus_against_v1",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--corpus",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A07/RUN-A/corpus/v1_known_bad"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A07/RUN-A/sandbox/guard_v3.py"
+      },
+      "purpose": "The identical corpus against the v3 sandbox copy.",
+      "step_id": "run_corpus_against_v3",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--corpus",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A07/RUN-A/corpus/known_good"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A07/RUN-A/sandbox/run_both_versions.py"
+      },
+      "purpose": "A corpus of legitimate content against both versions. Detections here are false positives and the two rates are compared.",
+      "step_id": "run_known_good_corpus_against_both",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--corpus",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A07/RUN-A/corpus/v1_known_bad",
+          "--assert-each-rule-detected"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A07/RUN-A/sandbox/guard_v1.py"
+      },
+      "purpose": "Each isolating input must be detected by the version whose rule it targets. If v1 does not detect its own rule's input, the corpus is wrong and not the guard.",
+      "step_id": "positive_control_each_rule_detects_its_input",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--corpus",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A07/RUN-A/corpus/known_good"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A07/RUN-A/sandbox/guard_v1.py"
+      },
+      "purpose": "The known-good corpus must produce no detections in v1, so that the false-positive comparison has a baseline before v3 is judged.",
+      "step_id": "negative_control_known_good_clean_in_v1",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--corpus",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A07/RUN-A/corpus/v1_known_bad"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A07/RUN-A/sandbox/guard_v3_rule_neutralised.py"
+      },
+      "purpose": "A rule present in both versions, neutralised in the v3 sandbox copy: its corresponding input must stop being detected. This proves the corpus-to-rule mapping is real.",
+      "step_id": "mutation_control_shared_rule_neutralised",
+      "timeout_seconds": 600
+    }
+  ],
+  "target": {
+    "identity_evidence": "bindings records this path with this digest. Which guardrail version is productive is an open question in this audit's binding and a version suffix is excluded by rule from answering it. This phase compares two versions; v1 is bound as the target because it is the side whose detections define the corpus.",
+    "path": "/home/ubuntu/project/WPNO/authoring/AP17_output_guardrail_VERALTET.py.txt",
+    "sha256": "555ee5164da201864833506a7f9f6f61885f18ff506b1ed4f5f6cddd70f37d37"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "/home/ubuntu/project/WPNO/authoring/AP17_output_guardrail_VERALTET.py.txt",
+        "/home/ubuntu/project/WPNO/authoring/AP17_output_guardrail_v2_VERALTET.py.txt",
+        "/home/ubuntu/project/WPNO/authoring/AP17_output_guardrail_v3.py"
+      ],
+      "allowed_writes": [
+        "work/L1-A07/RUN-A/",
+        "evidence/L1-A07/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A07 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A07",
+      "candidate_template_identity": "L1-A07/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A07/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "/usr/bin/python3 -I -B against sandbox copies",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "ARBITRARY_SHELL",
+        "CHANGE_PERMISSION",
+        "DATABASE_CONNECTION",
+        "DATABASE_WRITE",
+        "DELETE_SOURCE",
+        "DOCKER_BUILD",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_SOCKET_ACCESS",
+        "GIT_MUTATION",
+        "INSTALL_PACKAGE",
+        "LAUNCH_AGENT_MUTATION",
+        "MCP_MUTATION",
+        "MODIFY_SOURCE",
+        "N8N_MUTATION",
+        "NETWORK_REQUEST",
+        "NETWORK_UPLOAD",
+        "SERVICE_MUTATION"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [],
+      "independent_oracle": "The AST-extracted rule sets themselves, and inputs constructed from them. Neither guard version validates the other; the corpus comes from the patterns, not from either guard's output.",
+      "limitations": [],
+      "method": "rule-derived isolating corpus run against both versions",
+      "notes": [
+        "PYTHON_SCRIPT_RUN_SANDBOX runs a script under work/ and nowhere else, so the approved phase first copies the guard to work/<audit>/RUN-A/sandbox/ and records the copy's digest beside the original's. The original in authoring/ is read and never written to. Where a rule has to be neutralised to attribute a rejection, it is neutralised in that copy and the neutralised line is recorded."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [],
+      "references": [],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": null,
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "check_id": "difference_table",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "What changed between the versions?",
+      "required_result": "Two lists: detected by v1 and not by v3 - lost protection; detected by v3 and not by v1 - added protection."
+    },
+    {
+      "check_id": "false_positive_rates",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "How do the false-positive rates compare?",
+      "required_result": "Both rates reported, against the same known-good corpus.",
+      "step_id": "run_known_good_corpus_against_both"
+    },
+    {
+      "check_id": "lost_protection_explained",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Is each lost protection explained?",
+      "required_result": "Per lost protection: whether the omission is explained by an intentional narrowing visible in the code, or is unexplained. An unexplained loss is a finding."
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_result": "EVERY_V1_RULE_DETECTS_ITS_OWN_INPUT",
+      "question": "Does each isolating input hit the rule it targets?",
+      "step_id": "positive_control_each_rule_detects_its_input",
+      "why": "If v1 misses its own rule's input, the corpus is wrong and every downstream comparison is uninterpretable."
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_failure_reason": "legitimate content matches no v1 rule; detections here are the baseline false-positive rate and must be recorded before v3 is judged",
+      "expected_result": "ZERO_DETECTIONS",
+      "question": "Is the known-good corpus clean in v1?",
+      "step_id": "negative_control_known_good_clean_in_v1"
+    },
+    {
+      "check_id": "mutation_control",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_result": "THAT_RULES_INPUT_STOPS_BEING_DETECTED",
+      "fixture": "work/L1-A07/RUN-A/sandbox/guard_v3_rule_neutralised.py",
+      "fixture_construction": "the v3 sandbox copy with one rule present in both versions disabled",
+      "proof_the_fixture_differs": "its SHA-256 differs from the v3 sandbox copy's and the neutralised line is recorded",
+      "question": "Is the corpus-to-rule mapping real?",
+      "step_id": "mutation_control_shared_rule_neutralised",
+      "zero_changed_results_is": "proof the mapping is wrong, not a passing control"
+    }
+  ]
+}

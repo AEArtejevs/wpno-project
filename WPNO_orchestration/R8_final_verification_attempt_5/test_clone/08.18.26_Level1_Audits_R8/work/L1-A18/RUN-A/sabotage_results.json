@@ -1,0 +1,3706 @@
+{
+  "applicable_vector_count": 217,
+  "empty_input_result": {
+    "actual": {
+      "input": "",
+      "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+      "normalization": "clean(number, ' -.').strip().upper()",
+      "normalized": "",
+      "reason": "SHORTER_THAN_FOUR_CHARACTERS",
+      "result": "INVALID",
+      "run_phase": "RUN-A"
+    },
+    "country": null,
+    "expected_result": "INVALID",
+    "iban_raw": "",
+    "scope": "EMPTY_INPUT"
+  },
+  "method": "python streaming ISO/IEC 7064 MOD97-10 fold",
+  "results": [
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES2121000418450200051331",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 37,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES2121000418450200051331",
+        "reason": "MOD97_10_REMAINDER_37_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES2121000418450200051331",
+      "scope": "ISO13616_GENERIC"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES89 3183 1500 9500 0121 0562",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 9,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES8931831500950001210562",
+        "reason": "MOD97_10_REMAINDER_9_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES89 3183 1500 9500 0121 0562",
+      "scope": "ISO13616_GENERIC"
+    },
+    {
+      "actual": {
+        "country": "AD",
+        "input": "AD1210012030200359100100",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 0,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "AD1210012030200359100100",
+        "reason": "MOD97_10_REMAINDER_0_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "AD",
+      "expected_result": "INVALID",
+      "iban_raw": "AD1210012030200359100100",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "AD",
+        "input": "AD48 0001 2030 2003 5910 01",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "AD48000120302003591001",
+        "reason": "LENGTH_22_EXPECTED_24",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "AD",
+      "expected_result": "INVALID",
+      "iban_raw": "AD48 0001 2030 2003 5910 01",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "AL",
+        "input": "AL48212110090000000235698741",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 68,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "AL48212110090000000235698741",
+        "reason": "MOD97_10_REMAINDER_68_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "AL",
+      "expected_result": "INVALID",
+      "iban_raw": "AL48212110090000000235698741",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "AT",
+        "input": "AT611804300234573201",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 17,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "AT611804300234573201",
+        "reason": "MOD97_10_REMAINDER_17_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "AT",
+      "expected_result": "INVALID",
+      "iban_raw": "AT611804300234573201",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "AT",
+        "input": "AT93 1904 3002 3457 3201 99",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "AT93190430023457320199",
+        "reason": "LENGTH_22_EXPECTED_20",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "AT",
+      "expected_result": "INVALID",
+      "iban_raw": "AT93 1904 3002 3457 3201 99",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "BA",
+        "input": "BA30 1290 0794 0102 84",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "BA3012900794010284",
+        "reason": "LENGTH_18_EXPECTED_20",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "BA",
+      "expected_result": "INVALID",
+      "iban_raw": "BA30 1290 0794 0102 84",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "BA",
+        "input": "BA391290709401028494",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 63,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "BA391290709401028494",
+        "reason": "MOD97_10_REMAINDER_63_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "BA",
+      "expected_result": "INVALID",
+      "iban_raw": "BA391290709401028494",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "BE",
+        "input": "BE36 5390 0754 7034 1234",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "BE365390075470341234",
+        "reason": "LENGTH_20_EXPECTED_16",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "BE",
+      "expected_result": "INVALID",
+      "iban_raw": "BE36 5390 0754 7034 1234",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "BE",
+        "input": "BE68530907547034",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 44,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "BE68530907547034",
+        "reason": "MOD97_10_REMAINDER_44_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "BE",
+      "expected_result": "INVALID",
+      "iban_raw": "BE68530907547034",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "BG",
+        "input": "BG80BNBG99611020345678",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 64,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "BG80BNBG99611020345678",
+        "reason": "MOD97_10_REMAINDER_64_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "BG",
+      "expected_result": "INVALID",
+      "iban_raw": "BG80BNBG99611020345678",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "BG",
+        "input": "BG93 BNBG 9661 1A20 3456 78",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "BG93BNBG96611A20345678",
+        "reason": "BBAN_STRUCTURE:character 'A' at position 10 is not n",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "BG",
+      "expected_result": "INVALID",
+      "iban_raw": "BG93 BNBG 9661 1A20 3456 78",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "CY",
+        "input": "CY17002001281000001200527600",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 25,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "CY17002001281000001200527600",
+        "reason": "MOD97_10_REMAINDER_25_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "CY",
+      "expected_result": "INVALID",
+      "iban_raw": "CY17002001281000001200527600",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "CZ",
+        "input": "CZ6508000000129000145399",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 13,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "CZ6508000000129000145399",
+        "reason": "MOD97_10_REMAINDER_13_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "CZ",
+      "expected_result": "INVALID",
+      "iban_raw": "CZ6508000000129000145399",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "CZ",
+        "input": "CZ9455000000000101038930",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 74,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "CZ9455000000000101038930",
+        "reason": "MOD97_10_REMAINDER_74_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "CZ",
+      "expected_result": "INVALID",
+      "iban_raw": "CZ9455000000000101038930",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "DK",
+        "input": "DK5000400440116342",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 82,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "DK5000400440116342",
+        "reason": "MOD97_10_REMAINDER_82_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "DK",
+      "expected_result": "INVALID",
+      "iban_raw": "DK5000400440116342",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "GI",
+        "input": "GI22 NW3K 0000 0000 7099 453",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "GI22NW3K000000007099453",
+        "reason": "BBAN_STRUCTURE:character '3' at position 3 is not a",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "GI",
+      "expected_result": "INVALID",
+      "iban_raw": "GI22 NW3K 0000 0000 7099 453",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "HR",
+        "input": "HR1210010052863000160",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 8,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "HR1210010052863000160",
+        "reason": "MOD97_10_REMAINDER_8_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "HR",
+      "expected_result": "INVALID",
+      "iban_raw": "HR1210010052863000160",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NL",
+        "input": "NL56 3003 0A17 1643 00",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NL5630030A17164300",
+        "reason": "BBAN_STRUCTURE:character '3' at position 1 is not a",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NL",
+      "expected_result": "INVALID",
+      "iban_raw": "NL56 3003 0A17 1643 00",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "input": "0001",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "0001",
+        "reason": "COUNTRY_CODE_NOT_ALPHABETIC",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NONE",
+      "expected_result": "INVALID",
+      "iban_raw": "0001",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "QQ",
+        "input": "QQ93 1234 5678",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "QQ9312345678",
+        "reason": "UNKNOWN_COUNTRY_CODE",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "QQ",
+      "expected_result": "INVALID",
+      "iban_raw": "QQ93 1234 5678",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "XX",
+        "input": "XX431234",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "XX431234",
+        "reason": "UNKNOWN_COUNTRY_CODE",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "XX",
+      "expected_result": "INVALID",
+      "iban_raw": "XX431234",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "AD",
+        "input": "AD12 0001 2030 2003 5910 0100",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 32,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "AD1200012030200359100100",
+        "reason": "MOD97_10_REMAINDER_32_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "AD",
+      "expected_result": "VALID",
+      "iban_raw": "AD12 0001 2030 2003 5910 0100",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "AD",
+        "input": "AD1200012030200359100100",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 32,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "AD1200012030200359100100",
+        "reason": "MOD97_10_REMAINDER_32_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "AD",
+      "expected_result": "VALID",
+      "iban_raw": "AD1200012030200359100100",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "AE",
+        "input": "AE070331234567890123456",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 31,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "AE070331234567890123456",
+        "reason": "MOD97_10_REMAINDER_31_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "AE",
+      "expected_result": "VALID",
+      "iban_raw": "AE070331234567890123456",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "AL",
+        "input": "AL47 2121 1009 0000 0002 3569 8741",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 67,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "AL47212110090000000235698741",
+        "reason": "MOD97_10_REMAINDER_67_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "AL",
+      "expected_result": "VALID",
+      "iban_raw": "AL47 2121 1009 0000 0002 3569 8741",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "AL",
+        "input": "AL47212110090000000235698741",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 67,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "AL47212110090000000235698741",
+        "reason": "MOD97_10_REMAINDER_67_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "AL",
+      "expected_result": "VALID",
+      "iban_raw": "AL47212110090000000235698741",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "AT",
+        "input": "AT61 1904 3002 3457 3201",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 81,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "AT611904300234573201",
+        "reason": "MOD97_10_REMAINDER_81_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "AT",
+      "expected_result": "VALID",
+      "iban_raw": "AT61 1904 3002 3457 3201",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "AT",
+        "input": "AT611904300234573201",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 81,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "AT611904300234573201",
+        "reason": "MOD97_10_REMAINDER_81_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "AT",
+      "expected_result": "VALID",
+      "iban_raw": "AT611904300234573201",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "AZ",
+        "input": "AZ21NABZ00000000137010001944",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 1,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "AZ21NABZ00000000137010001944",
+        "reason": "ALL_REF01_RULES_SATISFIED",
+        "result": "VALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "AZ",
+      "expected_result": "VALID",
+      "iban_raw": "AZ21NABZ00000000137010001944",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "BA",
+        "input": "BA39 1290 0794 0102 8494",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 63,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "BA391290079401028494",
+        "reason": "MOD97_10_REMAINDER_63_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "BA",
+      "expected_result": "VALID",
+      "iban_raw": "BA39 1290 0794 0102 8494",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "BA",
+        "input": "BA391290079401028494",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 63,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "BA391290079401028494",
+        "reason": "MOD97_10_REMAINDER_63_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "BA",
+      "expected_result": "VALID",
+      "iban_raw": "BA391290079401028494",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "BG",
+        "input": "BG80 BNBG 9661 1020 3456 78",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 64,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "BG80BNBG96611020345678",
+        "reason": "MOD97_10_REMAINDER_64_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "BG",
+      "expected_result": "VALID",
+      "iban_raw": "BG80 BNBG 9661 1020 3456 78",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "BG",
+        "input": "BG80BNBG96611020345678",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 64,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "BG80BNBG96611020345678",
+        "reason": "MOD97_10_REMAINDER_64_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "BG",
+      "expected_result": "VALID",
+      "iban_raw": "BG80BNBG96611020345678",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "BH",
+        "input": "BH67BMAG00001299123456",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 55,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "BH67BMAG00001299123456",
+        "reason": "MOD97_10_REMAINDER_55_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "BH",
+      "expected_result": "VALID",
+      "iban_raw": "BH67BMAG00001299123456",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "BR",
+        "input": "BR1800000000141455123924100C2",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 46,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "BR1800000000141455123924100C2",
+        "reason": "MOD97_10_REMAINDER_46_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "BR",
+      "expected_result": "VALID",
+      "iban_raw": "BR1800000000141455123924100C2",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "BR",
+        "input": "BR9700360305000010009795493P1",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 93,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "BR9700360305000010009795493P1",
+        "reason": "MOD97_10_REMAINDER_93_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "BR",
+      "expected_result": "VALID",
+      "iban_raw": "BR9700360305000010009795493P1",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "CH",
+        "input": "CH93 0076 2011 6238 5295 7",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 33,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "CH9300762011623852957",
+        "reason": "MOD97_10_REMAINDER_33_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "CH",
+      "expected_result": "VALID",
+      "iban_raw": "CH93 0076 2011 6238 5295 7",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "CH",
+        "input": "CH9300762011623852957",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 33,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "CH9300762011623852957",
+        "reason": "MOD97_10_REMAINDER_33_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "CH",
+      "expected_result": "VALID",
+      "iban_raw": "CH9300762011623852957",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "CY",
+        "input": "CY17 0020 0128 0000 0012 0052 7600",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 57,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "CY17002001280000001200527600",
+        "reason": "MOD97_10_REMAINDER_57_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "CY",
+      "expected_result": "VALID",
+      "iban_raw": "CY17 0020 0128 0000 0012 0052 7600",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "CY",
+        "input": "CY17002001280000001200527600",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 57,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "CY17002001280000001200527600",
+        "reason": "MOD97_10_REMAINDER_57_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "CY",
+      "expected_result": "VALID",
+      "iban_raw": "CY17002001280000001200527600",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "CZ",
+        "input": "CZ65 0800 0000 1920 0014 5399",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 13,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "CZ6508000000192000145399",
+        "reason": "MOD97_10_REMAINDER_13_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "CZ",
+      "expected_result": "VALID",
+      "iban_raw": "CZ65 0800 0000 1920 0014 5399",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "CZ",
+        "input": "CZ6508000000192000145399",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 13,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "CZ6508000000192000145399",
+        "reason": "MOD97_10_REMAINDER_13_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "CZ",
+      "expected_result": "VALID",
+      "iban_raw": "CZ6508000000192000145399",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "CZ",
+        "input": "CZ94 5500 0000 0010 1103 8930",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 42,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "CZ9455000000001011038930",
+        "reason": "MOD97_10_REMAINDER_42_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "CZ",
+      "expected_result": "VALID",
+      "iban_raw": "CZ94 5500 0000 0010 1103 8930",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "CZ",
+        "input": "CZ9455000000001011038930",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 42,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "CZ9455000000001011038930",
+        "reason": "MOD97_10_REMAINDER_42_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "CZ",
+      "expected_result": "VALID",
+      "iban_raw": "CZ9455000000001011038930",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "DE",
+        "input": "DE89 3704 0044 0532 0130 00",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 65,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "DE89370400440532013000",
+        "reason": "MOD97_10_REMAINDER_65_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "DE",
+      "expected_result": "VALID",
+      "iban_raw": "DE89 3704 0044 0532 0130 00",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "DE",
+        "input": "DE89370400440532013000",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 65,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "DE89370400440532013000",
+        "reason": "MOD97_10_REMAINDER_65_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "DE",
+      "expected_result": "VALID",
+      "iban_raw": "DE89370400440532013000",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "DK",
+        "input": "DK50 0040 0440 1162 43",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 82,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "DK5000400440116243",
+        "reason": "MOD97_10_REMAINDER_82_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "DK",
+      "expected_result": "VALID",
+      "iban_raw": "DK50 0040 0440 1162 43",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "DK",
+        "input": "DK5000400440116243",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 82,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "DK5000400440116243",
+        "reason": "MOD97_10_REMAINDER_82_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "DK",
+      "expected_result": "VALID",
+      "iban_raw": "DK5000400440116243",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "DO",
+        "input": "DO28BAGR00000001212453611324",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 44,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "DO28BAGR00000001212453611324",
+        "reason": "MOD97_10_REMAINDER_44_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "DO",
+      "expected_result": "VALID",
+      "iban_raw": "DO28BAGR00000001212453611324",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "EE",
+        "input": "EE38 2200 2210 2014 5685",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 94,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "EE382200221020145685",
+        "reason": "MOD97_10_REMAINDER_94_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "EE",
+      "expected_result": "VALID",
+      "iban_raw": "EE38 2200 2210 2014 5685",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "EE",
+        "input": "EE382200221020145685",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 94,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "EE382200221020145685",
+        "reason": "MOD97_10_REMAINDER_94_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "EE",
+      "expected_result": "VALID",
+      "iban_raw": "EE382200221020145685",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES04 0075 0078 0605 0005 0355",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 84,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES0400750078060500050355",
+        "reason": "MOD97_10_REMAINDER_84_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES04 0075 0078 0605 0005 0355",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES0521053014113400002160",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 21,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES0521053014113400002160",
+        "reason": "MOD97_10_REMAINDER_21_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES0521053014113400002160",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES10 0075 0080 11 0600658108",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 90,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES1000750080110600658108",
+        "reason": "MOD97_10_REMAINDER_90_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES10 0075 0080 11 0600658108",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES15-0049-1806-9121-1186-9374",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 95,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES1500491806912111869374",
+        "reason": "MOD97_10_REMAINDER_95_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES15-0049-1806-9121-1186-9374",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES2030810089311100269222",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 36,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES2030810089311100269222",
+        "reason": "MOD97_10_REMAINDER_36_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES2030810089311100269222",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES24 2090 3191 1400 4012 1040",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 72,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES2420903191140040121040",
+        "reason": "MOD97_10_REMAINDER_72_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES24 2090 3191 1400 4012 1040",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES27 3183 1500 9600 0121 0562",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 11,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES2731831500960001210562",
+        "reason": "MOD97_10_REMAINDER_11_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES27 3183 1500 9600 0121 0562",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES28 2104 0485 5390 6968 2983",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 12,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES2821040485539069682983",
+        "reason": "MOD97_10_REMAINDER_12_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES28 2104 0485 5390 6968 2983",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES29 2100 2815 9822 0059 9427",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 45,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES2921002815982200599427",
+        "reason": "MOD97_10_REMAINDER_45_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES29 2100 2815 9822 0059 9427",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES37 2038 8700 7861 0000 9781",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 85,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES3720388700786100009781",
+        "reason": "MOD97_10_REMAINDER_85_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES37 2038 8700 7861 0000 9781",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES39 0081 0294 66 0001238624",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 23,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES3900810294660001238624",
+        "reason": "MOD97_10_REMAINDER_23_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES39 0081 0294 66 0001238624",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES 58 0049 0290 3424 1352 8341",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 74,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES5800490290342413528341",
+        "reason": "MOD97_10_REMAINDER_74_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES 58 0049 0290 3424 1352 8341",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES58 1465 0100 9719 0014 4593",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 10,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES5814650100971900144593",
+        "reason": "MOD97_10_REMAINDER_10_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES58 1465 0100 9719 0014 4593",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES59 0049 5030 1129 1601 1246",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 75,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES5900495030112916011246",
+        "reason": "MOD97_10_REMAINDER_75_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES59 0049 5030 1129 1601 1246",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES62 2100 4288 5922 0010 4465",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 14,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES6221004288592200104465",
+        "reason": "MOD97_10_REMAINDER_14_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES62 2100 4288 5922 0010 4465",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES72 2013-0692-81-0201150993",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 56,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES7220130692810201150993",
+        "reason": "MOD97_10_REMAINDER_56_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES72 2013-0692-81-0201150993",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES72 2048 1075 8334 0000 2171",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 56,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES7220481075833400002171",
+        "reason": "MOD97_10_REMAINDER_56_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES72 2048 1075 8334 0000 2171",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES81 0081 5515 2900 0157 5763",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 1,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES8100815515290001575763",
+        "reason": "ALL_REF01_RULES_SATISFIED",
+        "result": "VALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES81 0081 5515 2900 0157 5763",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES8521005731710200031769",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 5,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES8521005731710200031769",
+        "reason": "MOD97_10_REMAINDER_5_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES8521005731710200031769",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES86 2013 0095 1102 0142 6812",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 38,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES8620130095110201426812",
+        "reason": "MOD97_10_REMAINDER_38_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES86 2013 0095 1102 0142 6812",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES86 30580157682720001384",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 6,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES8630580157682720001384",
+        "reason": "MOD97_10_REMAINDER_6_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES86 30580157682720001384",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES88 2095 0497 9191 0708 8631",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 72,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES8820950497919107088631",
+        "reason": "MOD97_10_REMAINDER_72_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES88 2095 0497 9191 0708 8631",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES91 2100 0418 4502 0005 1332",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 75,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES9121000418450200051332",
+        "reason": "MOD97_10_REMAINDER_75_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES91 2100 0418 4502 0005 1332",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES9121000418450200051332",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 75,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES9121000418450200051332",
+        "reason": "MOD97_10_REMAINDER_75_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES9121000418450200051332",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ES",
+        "input": "ES98 0049 5442 2227 1606 6973",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 18,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ES9800495442222716066973",
+        "reason": "MOD97_10_REMAINDER_18_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ES",
+      "expected_result": "VALID",
+      "iban_raw": "ES98 0049 5442 2227 1606 6973",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "FI",
+        "input": "FI21 1234 5600 0007 85",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 77,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "FI2112345600000785",
+        "reason": "MOD97_10_REMAINDER_77_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "FI",
+      "expected_result": "VALID",
+      "iban_raw": "FI21 1234 5600 0007 85",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "FI",
+        "input": "FI2112345600000785",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 77,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "FI2112345600000785",
+        "reason": "MOD97_10_REMAINDER_77_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "FI",
+      "expected_result": "VALID",
+      "iban_raw": "FI2112345600000785",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "FI",
+        "input": "FI5542345670000081",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 47,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "FI5542345670000081",
+        "reason": "MOD97_10_REMAINDER_47_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "FI",
+      "expected_result": "VALID",
+      "iban_raw": "FI5542345670000081",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "FO",
+        "input": "FO62 6460 0001 6316 34",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 78,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "FO6264600001631634",
+        "reason": "MOD97_10_REMAINDER_78_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "FO",
+      "expected_result": "VALID",
+      "iban_raw": "FO62 6460 0001 6316 34",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "FO",
+        "input": "FO6264600001631634",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 78,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "FO6264600001631634",
+        "reason": "MOD97_10_REMAINDER_78_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "FO",
+      "expected_result": "VALID",
+      "iban_raw": "FO6264600001631634",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "FR",
+        "input": "FR14 2004 1010 0505 0001 3M02 606",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 42,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "FR1420041010050500013M02606",
+        "reason": "MOD97_10_REMAINDER_42_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "FR",
+      "expected_result": "VALID",
+      "iban_raw": "FR14 2004 1010 0505 0001 3M02 606",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "FR",
+        "input": "FR1420041010050500013M02606",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 42,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "FR1420041010050500013M02606",
+        "reason": "MOD97_10_REMAINDER_42_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "FR",
+      "expected_result": "VALID",
+      "iban_raw": "FR1420041010050500013M02606",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "GB",
+        "input": "GB29 NWBK 6016 1331 9268 19",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 9,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "GB29NWBK60161331926819",
+        "reason": "MOD97_10_REMAINDER_9_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "GB",
+      "expected_result": "VALID",
+      "iban_raw": "GB29 NWBK 6016 1331 9268 19",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "GB",
+        "input": "GB29NWBK60161331926819",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 9,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "GB29NWBK60161331926819",
+        "reason": "MOD97_10_REMAINDER_9_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "GB",
+      "expected_result": "VALID",
+      "iban_raw": "GB29NWBK60161331926819",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "GE",
+        "input": "GE29 NB00 0000 0101 9049 17",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 53,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "GE29NB0000000101904917",
+        "reason": "MOD97_10_REMAINDER_53_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "GE",
+      "expected_result": "VALID",
+      "iban_raw": "GE29 NB00 0000 0101 9049 17",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "GE",
+        "input": "GE29NB0000000101904917",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 53,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "GE29NB0000000101904917",
+        "reason": "MOD97_10_REMAINDER_53_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "GE",
+      "expected_result": "VALID",
+      "iban_raw": "GE29NB0000000101904917",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "GI",
+        "input": "GI75 NWBK 0000 0000 7099 453",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 19,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "GI75NWBK000000007099453",
+        "reason": "MOD97_10_REMAINDER_19_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "GI",
+      "expected_result": "VALID",
+      "iban_raw": "GI75 NWBK 0000 0000 7099 453",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "GI",
+        "input": "GI75NWBK000000007099453",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 19,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "GI75NWBK000000007099453",
+        "reason": "MOD97_10_REMAINDER_19_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "GI",
+      "expected_result": "VALID",
+      "iban_raw": "GI75NWBK000000007099453",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "GL",
+        "input": "GL89 6471 0001 0002 06",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 45,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "GL8964710001000206",
+        "reason": "MOD97_10_REMAINDER_45_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "GL",
+      "expected_result": "VALID",
+      "iban_raw": "GL89 6471 0001 0002 06",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "GL",
+        "input": "GL8964710001000206",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 45,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "GL8964710001000206",
+        "reason": "MOD97_10_REMAINDER_45_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "GL",
+      "expected_result": "VALID",
+      "iban_raw": "GL8964710001000206",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "GR",
+        "input": "GR16 0110 1250 0000 0001 2300 695",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 92,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "GR1601101250000000012300695",
+        "reason": "MOD97_10_REMAINDER_92_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "GR",
+      "expected_result": "VALID",
+      "iban_raw": "GR16 0110 1250 0000 0001 2300 695",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "GR",
+        "input": "GR1601101250000000012300695",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 92,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "GR1601101250000000012300695",
+        "reason": "MOD97_10_REMAINDER_92_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "GR",
+      "expected_result": "VALID",
+      "iban_raw": "GR1601101250000000012300695",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "GT",
+        "input": "GT82TRAJ01020000001210029690",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 38,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "GT82TRAJ01020000001210029690",
+        "reason": "MOD97_10_REMAINDER_38_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "GT",
+      "expected_result": "VALID",
+      "iban_raw": "GT82TRAJ01020000001210029690",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "HR",
+        "input": "HR12 1001 0051 8630 0016 0",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 40,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "HR1210010051863000160",
+        "reason": "MOD97_10_REMAINDER_40_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "HR",
+      "expected_result": "VALID",
+      "iban_raw": "HR12 1001 0051 8630 0016 0",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "HR",
+        "input": "HR1210010051863000160",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 40,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "HR1210010051863000160",
+        "reason": "MOD97_10_REMAINDER_40_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "HR",
+      "expected_result": "VALID",
+      "iban_raw": "HR1210010051863000160",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "HU",
+        "input": "HU42 1177 3016 1111 1018 0000 0000",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 18,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "HU42117730161111101800000000",
+        "reason": "MOD97_10_REMAINDER_18_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "HU",
+      "expected_result": "VALID",
+      "iban_raw": "HU42 1177 3016 1111 1018 0000 0000",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "HU",
+        "input": "HU42117730161111101800000000",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 18,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "HU42117730161111101800000000",
+        "reason": "MOD97_10_REMAINDER_18_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "HU",
+      "expected_result": "VALID",
+      "iban_raw": "HU42117730161111101800000000",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "IE",
+        "input": "IE29 AIBK 9311 5212 3456 78",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 21,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "IE29AIBK93115212345678",
+        "reason": "MOD97_10_REMAINDER_21_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "IE",
+      "expected_result": "VALID",
+      "iban_raw": "IE29 AIBK 9311 5212 3456 78",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "IE",
+        "input": "IE29AIBK93115212345678",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 21,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "IE29AIBK93115212345678",
+        "reason": "MOD97_10_REMAINDER_21_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "IE",
+      "expected_result": "VALID",
+      "iban_raw": "IE29AIBK93115212345678",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "IL",
+        "input": "IL62 0108 0000 0009 9999 999",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 50,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "IL620108000000099999999",
+        "reason": "MOD97_10_REMAINDER_50_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "IL",
+      "expected_result": "VALID",
+      "iban_raw": "IL62 0108 0000 0009 9999 999",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "IL",
+        "input": "IL620108000000099999999",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 50,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "IL620108000000099999999",
+        "reason": "MOD97_10_REMAINDER_50_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "IL",
+      "expected_result": "VALID",
+      "iban_raw": "IL620108000000099999999",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "IS",
+        "input": "IS14 0159 2600 7654 5510 7303 39",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 30,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "IS140159260076545510730339",
+        "reason": "MOD97_10_REMAINDER_30_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "IS",
+      "expected_result": "VALID",
+      "iban_raw": "IS14 0159 2600 7654 5510 7303 39",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "IS",
+        "input": "IS140159260076545510730339",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 30,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "IS140159260076545510730339",
+        "reason": "MOD97_10_REMAINDER_30_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "IS",
+      "expected_result": "VALID",
+      "iban_raw": "IS140159260076545510730339",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "IT",
+        "input": "IT60 X054 2811 1010 0000 0123 456",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 16,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "IT60X0542811101000000123456",
+        "reason": "MOD97_10_REMAINDER_16_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "IT",
+      "expected_result": "VALID",
+      "iban_raw": "IT60 X054 2811 1010 0000 0123 456",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "IT",
+        "input": "IT60X0542811101000000123456",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 16,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "IT60X0542811101000000123456",
+        "reason": "MOD97_10_REMAINDER_16_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "IT",
+      "expected_result": "VALID",
+      "iban_raw": "IT60X0542811101000000123456",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "JO",
+        "input": "JO94CBJO0010000000000131000302",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 46,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "JO94CBJO0010000000000131000302",
+        "reason": "MOD97_10_REMAINDER_46_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "JO",
+      "expected_result": "VALID",
+      "iban_raw": "JO94CBJO0010000000000131000302",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "KZ",
+        "input": "KZ86125KZT5004100100",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 34,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "KZ86125KZT5004100100",
+        "reason": "MOD97_10_REMAINDER_34_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "KZ",
+      "expected_result": "VALID",
+      "iban_raw": "KZ86125KZT5004100100",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "LB",
+        "input": "LB62 0999 0000 0001 0019 0122 9114",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 26,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "LB62099900000001001901229114",
+        "reason": "MOD97_10_REMAINDER_26_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "LB",
+      "expected_result": "VALID",
+      "iban_raw": "LB62 0999 0000 0001 0019 0122 9114",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "LB",
+        "input": "LB62099900000001001901229114",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 26,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "LB62099900000001001901229114",
+        "reason": "MOD97_10_REMAINDER_26_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "LB",
+      "expected_result": "VALID",
+      "iban_raw": "LB62099900000001001901229114",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "LI",
+        "input": "LI21 0881 0000 2324 013A A",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 13,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "LI21088100002324013AA",
+        "reason": "MOD97_10_REMAINDER_13_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "LI",
+      "expected_result": "VALID",
+      "iban_raw": "LI21 0881 0000 2324 013A A",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "LI",
+        "input": "LI21088100002324013AA",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 13,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "LI21088100002324013AA",
+        "reason": "MOD97_10_REMAINDER_13_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "LI",
+      "expected_result": "VALID",
+      "iban_raw": "LI21088100002324013AA",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "LT",
+        "input": "LT12 1000 0111 0100 1000",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 80,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "LT121000011101001000",
+        "reason": "MOD97_10_REMAINDER_80_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "LT",
+      "expected_result": "VALID",
+      "iban_raw": "LT12 1000 0111 0100 1000",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "LT",
+        "input": "LT121000011101001000",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 80,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "LT121000011101001000",
+        "reason": "MOD97_10_REMAINDER_80_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "LT",
+      "expected_result": "VALID",
+      "iban_raw": "LT121000011101001000",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "LU",
+        "input": "LU28 0019 4006 4475 0000",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 68,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "LU280019400644750000",
+        "reason": "MOD97_10_REMAINDER_68_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "LU",
+      "expected_result": "VALID",
+      "iban_raw": "LU28 0019 4006 4475 0000",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "LU",
+        "input": "LU280019400644750000",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 68,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "LU280019400644750000",
+        "reason": "MOD97_10_REMAINDER_68_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "LU",
+      "expected_result": "VALID",
+      "iban_raw": "LU280019400644750000",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "LV",
+        "input": "LV80 BANK 0000 4351 9500 1",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 92,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "LV80BANK0000435195001",
+        "reason": "MOD97_10_REMAINDER_92_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "LV",
+      "expected_result": "VALID",
+      "iban_raw": "LV80 BANK 0000 4351 9500 1",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "LV",
+        "input": "LV80BANK0000435195001",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 92,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "LV80BANK0000435195001",
+        "reason": "MOD97_10_REMAINDER_92_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "LV",
+      "expected_result": "VALID",
+      "iban_raw": "LV80BANK0000435195001",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "MC",
+        "input": "MC11 1273 9000 7000 1111 1000 h79",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 91,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "MC1112739000700011111000H79",
+        "reason": "MOD97_10_REMAINDER_91_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "MC",
+      "expected_result": "VALID",
+      "iban_raw": "MC11 1273 9000 7000 1111 1000 h79",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "MC",
+        "input": "MC1112739000700011111000h79",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 91,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "MC1112739000700011111000H79",
+        "reason": "MOD97_10_REMAINDER_91_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "MC",
+      "expected_result": "VALID",
+      "iban_raw": "MC1112739000700011111000h79",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "MD",
+        "input": "MD24AG000225100013104168",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 44,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "MD24AG000225100013104168",
+        "reason": "MOD97_10_REMAINDER_44_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "MD",
+      "expected_result": "VALID",
+      "iban_raw": "MD24AG000225100013104168",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ME",
+        "input": "ME25 5050 0001 2345 6789 51",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 17,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ME25505000012345678951",
+        "reason": "MOD97_10_REMAINDER_17_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ME",
+      "expected_result": "VALID",
+      "iban_raw": "ME25 5050 0001 2345 6789 51",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ME",
+        "input": "ME25505000012345678951",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 17,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ME25505000012345678951",
+        "reason": "MOD97_10_REMAINDER_17_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ME",
+      "expected_result": "VALID",
+      "iban_raw": "ME25505000012345678951",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ME",
+        "input": "ME 2551 0000 0000 0623 4133",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 17,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ME25510000000006234133",
+        "reason": "MOD97_10_REMAINDER_17_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ME",
+      "expected_result": "VALID",
+      "iban_raw": "ME 2551 0000 0000 0623 4133",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ME",
+        "input": "ME 25510260797324001246",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 81,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ME25510260797324001246",
+        "reason": "MOD97_10_REMAINDER_81_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ME",
+      "expected_result": "VALID",
+      "iban_raw": "ME 25510260797324001246",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ME",
+        "input": "ME 25525007010044076639",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 81,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ME25525007010044076639",
+        "reason": "MOD97_10_REMAINDER_81_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ME",
+      "expected_result": "VALID",
+      "iban_raw": "ME 25525007010044076639",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ME",
+        "input": "ME 25535005130000020047",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 81,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ME25535005130000020047",
+        "reason": "MOD97_10_REMAINDER_81_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ME",
+      "expected_result": "VALID",
+      "iban_raw": "ME 25535005130000020047",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ME",
+        "input": "ME 25540000007300246820",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 81,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ME25540000007300246820",
+        "reason": "MOD97_10_REMAINDER_81_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ME",
+      "expected_result": "VALID",
+      "iban_raw": "ME 25540000007300246820",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ME",
+        "input": "ME 25 5403 0000 2379 9201 09",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 49,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ME25540300002379920109",
+        "reason": "MOD97_10_REMAINDER_49_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ME",
+      "expected_result": "VALID",
+      "iban_raw": "ME 25 5403 0000 2379 9201 09",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "ME",
+        "input": "ME 25550005080000004970",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 17,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "ME25550005080000004970",
+        "reason": "MOD97_10_REMAINDER_17_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "ME",
+      "expected_result": "VALID",
+      "iban_raw": "ME 25550005080000004970",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "MK",
+        "input": "MK072 5012 0000 0589 84",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 87,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "MK07250120000058984",
+        "reason": "MOD97_10_REMAINDER_87_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "MK",
+      "expected_result": "VALID",
+      "iban_raw": "MK072 5012 0000 0589 84",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "MK",
+        "input": "MK07250120000058984",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 87,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "MK07250120000058984",
+        "reason": "MOD97_10_REMAINDER_87_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "MK",
+      "expected_result": "VALID",
+      "iban_raw": "MK07250120000058984",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "MR",
+        "input": "MR13 0002 0001 0100 0012 3456 753",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 57,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "MR1300020001010000123456753",
+        "reason": "MOD97_10_REMAINDER_57_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "MR",
+      "expected_result": "VALID",
+      "iban_raw": "MR13 0002 0001 0100 0012 3456 753",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "MR",
+        "input": "MR1300020001010000123456753",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 57,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "MR1300020001010000123456753",
+        "reason": "MOD97_10_REMAINDER_57_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "MR",
+      "expected_result": "VALID",
+      "iban_raw": "MR1300020001010000123456753",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "MT",
+        "input": "MT84 MALT 0110 0001 2345 MTLC AST0 01S",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 72,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "MT84MALT011000012345MTLCAST001S",
+        "reason": "MOD97_10_REMAINDER_72_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "MT",
+      "expected_result": "VALID",
+      "iban_raw": "MT84 MALT 0110 0001 2345 MTLC AST0 01S",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "MT",
+        "input": "MT84MALT011000012345MTLCAST001S",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 72,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "MT84MALT011000012345MTLCAST001S",
+        "reason": "MOD97_10_REMAINDER_72_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "MT",
+      "expected_result": "VALID",
+      "iban_raw": "MT84MALT011000012345MTLCAST001S",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "MU",
+        "input": "MU17 BOMM 0101 1010 3030 0200 000M UR",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 41,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "MU17BOMM0101101030300200000MUR",
+        "reason": "MOD97_10_REMAINDER_41_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "MU",
+      "expected_result": "VALID",
+      "iban_raw": "MU17 BOMM 0101 1010 3030 0200 000M UR",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "MU",
+        "input": "MU17 BOMM0101101030300200000MUR",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 41,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "MU17BOMM0101101030300200000MUR",
+        "reason": "MOD97_10_REMAINDER_41_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "MU",
+      "expected_result": "VALID",
+      "iban_raw": "MU17 BOMM0101101030300200000MUR",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NL",
+        "input": "NL91 ABNA 0417 1643 00",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 95,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NL91ABNA0417164300",
+        "reason": "MOD97_10_REMAINDER_95_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NL",
+      "expected_result": "VALID",
+      "iban_raw": "NL91 ABNA 0417 1643 00",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NL",
+        "input": "NL91ABNA0417164300",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 95,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NL91ABNA0417164300",
+        "reason": "MOD97_10_REMAINDER_95_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NL",
+      "expected_result": "VALID",
+      "iban_raw": "NL91ABNA0417164300",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 02 15037577003",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 18,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO0215037577003",
+        "reason": "MOD97_10_REMAINDER_18_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 02 15037577003",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 05 15030383041",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 53,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO0515030383041",
+        "reason": "MOD97_10_REMAINDER_53_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 05 15030383041",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 0560110516994",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 85,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO0560110516994",
+        "reason": "MOD97_10_REMAINDER_85_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 0560110516994",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO05 7058 0555 568",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 85,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO0570580555568",
+        "reason": "MOD97_10_REMAINDER_85_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO05 7058 0555 568",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 0571 3905 25162",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 21,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO0571390525162",
+        "reason": "MOD97_10_REMAINDER_21_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 0571 3905 25162",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO07.8380.08.06006",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 87,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO0783800806006",
+        "reason": "MOD97_10_REMAINDER_87_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO07.8380.08.06006",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 0828014322061",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 24,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO0828014322061",
+        "reason": "MOD97_10_REMAINDER_24_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 0828014322061",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 1232600465693",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 28,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO1232600465693",
+        "reason": "MOD97_10_REMAINDER_28_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 1232600465693",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO1782000193468",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 33,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO1782000193468",
+        "reason": "MOD97_10_REMAINDER_33_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO1782000193468",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 19 4920 06 96270",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 3,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO1949200696270",
+        "reason": "MOD97_10_REMAINDER_3_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 19 4920 06 96270",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 21 650 405 251 19",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 37,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO2165040525119",
+        "reason": "MOD97_10_REMAINDER_37_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 21 650 405 251 19",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 2342009668904",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 7,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO2342009668904",
+        "reason": "MOD97_10_REMAINDER_7_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 2342009668904",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO2476940517075",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 8,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO2476940517075",
+        "reason": "MOD97_10_REMAINDER_8_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO2476940517075",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 26 7032 0516 038",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 42,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO2670320516038",
+        "reason": "MOD97_10_REMAINDER_42_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 26 7032 0516 038",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 3036245391786",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 14,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO3036245391786",
+        "reason": "MOD97_10_REMAINDER_14_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 3036245391786",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 31 6018 04 47124",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 79,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO3160180447124",
+        "reason": "MOD97_10_REMAINDER_79_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 31 6018 04 47124",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 33 4270 06 08551",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 49,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO3342700608551",
+        "reason": "MOD97_10_REMAINDER_49_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 33 4270 06 08551",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 35 9650 05 73667",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 19,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO3596500573667",
+        "reason": "MOD97_10_REMAINDER_19_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 35 9650 05 73667",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO38 8200 06 10190",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 22,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO3882000610190",
+        "reason": "MOD97_10_REMAINDER_22_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO38 8200 06 10190",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 39 4750 07 95936",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 87,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO3947500795936",
+        "reason": "MOD97_10_REMAINDER_87_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 39 4750 07 95936",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 39 6318 05 01489",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 23,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO3963180501489",
+        "reason": "MOD97_10_REMAINDER_23_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 39 6318 05 01489",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 39 7874 0597 506",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 87,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO3978740597506",
+        "reason": "MOD97_10_REMAINDER_87_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 39 7874 0597 506",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 40 1503 7355 353",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 88,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO4015037355353",
+        "reason": "MOD97_10_REMAINDER_88_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 40 1503 7355 353",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 402333 06 01019",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 88,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO4023330601019",
+        "reason": "MOD97_10_REMAINDER_88_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 402333 06 01019",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 43 651 204 471 94",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 91,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO4365120447194",
+        "reason": "MOD97_10_REMAINDER_91_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 43 651 204 471 94",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 44 1850.05.14562",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 92,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO4418500514562",
+        "reason": "MOD97_10_REMAINDER_92_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 44 1850.05.14562",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 4575600702548",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 61,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO4575600702548",
+        "reason": "MOD97_10_REMAINDER_61_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 4575600702548",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO4697500641723",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 62,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO4697500641723",
+        "reason": "MOD97_10_REMAINDER_62_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO4697500641723",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 5314300642641",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 5,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO5314300642641",
+        "reason": "MOD97_10_REMAINDER_5_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 5314300642641",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 57 78740655867",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 41,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO5778740655867",
+        "reason": "MOD97_10_REMAINDER_41_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 57 78740655867",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO5876940518888",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 10,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO5876940518888",
+        "reason": "MOD97_10_REMAINDER_10_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO5876940518888",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 5997501101463",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 11,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO5997501101463",
+        "reason": "MOD97_10_REMAINDER_11_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 5997501101463",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 62 650 204 441 20",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 14,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO6265020444120",
+        "reason": "MOD97_10_REMAINDER_14_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 62 650 204 441 20",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 6865040505746",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 52,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO6865040505746",
+        "reason": "MOD97_10_REMAINDER_52_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 6865040505746",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 6940872430085",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 85,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO6940872430085",
+        "reason": "MOD97_10_REMAINDER_85_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 6940872430085",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 6947780786090",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 85,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO6947780786090",
+        "reason": "MOD97_10_REMAINDER_85_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 6947780786090",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO71.4202.47.14777",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 55,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO7142024714777",
+        "reason": "MOD97_10_REMAINDER_55_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO71.4202.47.14777",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 71 7694 05 00903",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 23,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO7176940500903",
+        "reason": "MOD97_10_REMAINDER_23_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 71 7694 05 00903",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 7615030839797",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 28,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO7615030839797",
+        "reason": "MOD97_10_REMAINDER_28_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 7615030839797",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO77 7694 0511 077",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 93,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO7776940511077",
+        "reason": "MOD97_10_REMAINDER_93_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO77 7694 0511 077",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 89 42004151326",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 41,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO8942004151326",
+        "reason": "MOD97_10_REMAINDER_41_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 89 42004151326",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO89 4760 5692 776",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 9,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO8947605692776",
+        "reason": "MOD97_10_REMAINDER_9_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO89 4760 5692 776",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO8976940512510",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 41,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO8976940512510",
+        "reason": "MOD97_10_REMAINDER_41_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO8976940512510",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO 91 16024246306",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 43,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO9116024246306",
+        "reason": "MOD97_10_REMAINDER_43_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO 91 16024246306",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO93 8601 1117 947",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 77,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO9386011117947",
+        "reason": "MOD97_10_REMAINDER_77_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO93 8601 1117 947",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO9386011117947",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 77,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO9386011117947",
+        "reason": "MOD97_10_REMAINDER_77_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO9386011117947",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "NO",
+        "input": "NO9832271000153",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 82,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "NO9832271000153",
+        "reason": "MOD97_10_REMAINDER_82_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "NO",
+      "expected_result": "VALID",
+      "iban_raw": "NO9832271000153",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "PK",
+        "input": "PK36SCBL0000001123456702",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 4,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "PK36SCBL0000001123456702",
+        "reason": "MOD97_10_REMAINDER_4_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "PK",
+      "expected_result": "VALID",
+      "iban_raw": "PK36SCBL0000001123456702",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "PL",
+        "input": "PL61 1090 1014 0000 0712 1981 2874",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 65,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "PL61109010140000071219812874",
+        "reason": "MOD97_10_REMAINDER_65_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "PL",
+      "expected_result": "VALID",
+      "iban_raw": "PL61 1090 1014 0000 0712 1981 2874",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "PL",
+        "input": "PL61109010140000071219812874",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 65,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "PL61109010140000071219812874",
+        "reason": "MOD97_10_REMAINDER_65_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "PL",
+      "expected_result": "VALID",
+      "iban_raw": "PL61109010140000071219812874",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "PS",
+        "input": "PS92PALS000000000400123456702",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 92,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "PS92PALS000000000400123456702",
+        "reason": "MOD97_10_REMAINDER_92_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "PS",
+      "expected_result": "VALID",
+      "iban_raw": "PS92PALS000000000400123456702",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "PT",
+        "input": "PT50 0002 0123 1234 5678 9015 4",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 86,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "PT50000201231234567890154",
+        "reason": "MOD97_10_REMAINDER_86_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "PT",
+      "expected_result": "VALID",
+      "iban_raw": "PT50 0002 0123 1234 5678 9015 4",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "PT",
+        "input": "PT50000201231234567890154",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 86,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "PT50000201231234567890154",
+        "reason": "MOD97_10_REMAINDER_86_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "PT",
+      "expected_result": "VALID",
+      "iban_raw": "PT50000201231234567890154",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "QA",
+        "input": "QA58DOHB00001234567890ABCDEFG",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 34,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "QA58DOHB00001234567890ABCDEFG",
+        "reason": "MOD97_10_REMAINDER_34_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "QA",
+      "expected_result": "VALID",
+      "iban_raw": "QA58DOHB00001234567890ABCDEFG",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "RO",
+        "input": "RO49 AAAA 1B31 0075 9384 0000",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 33,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "RO49AAAA1B31007593840000",
+        "reason": "MOD97_10_REMAINDER_33_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "RO",
+      "expected_result": "VALID",
+      "iban_raw": "RO49 AAAA 1B31 0075 9384 0000",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "RO",
+        "input": "RO49AAAA1B31007593840000",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 33,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "RO49AAAA1B31007593840000",
+        "reason": "MOD97_10_REMAINDER_33_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "RO",
+      "expected_result": "VALID",
+      "iban_raw": "RO49AAAA1B31007593840000",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "RS",
+        "input": "RS35 2600 0560 1001 6113 79",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 3,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "RS35260005601001611379",
+        "reason": "MOD97_10_REMAINDER_3_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "RS",
+      "expected_result": "VALID",
+      "iban_raw": "RS35 2600 0560 1001 6113 79",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "RS",
+        "input": "RS35260005601001611379",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 3,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "RS35260005601001611379",
+        "reason": "MOD97_10_REMAINDER_3_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "RS",
+      "expected_result": "VALID",
+      "iban_raw": "RS35260005601001611379",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "SA",
+        "input": "SA03 8000 0000 6080 1016 7519",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 75,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "SA0380000000608010167519",
+        "reason": "MOD97_10_REMAINDER_75_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "SA",
+      "expected_result": "VALID",
+      "iban_raw": "SA03 8000 0000 6080 1016 7519",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "SA",
+        "input": "SA0380000000608010167519",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 75,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "SA0380000000608010167519",
+        "reason": "MOD97_10_REMAINDER_75_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "SA",
+      "expected_result": "VALID",
+      "iban_raw": "SA0380000000608010167519",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "SE",
+        "input": "SE45 5000 0000 0583 9825 7466",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 5,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "SE4550000000058398257466",
+        "reason": "MOD97_10_REMAINDER_5_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "SE",
+      "expected_result": "VALID",
+      "iban_raw": "SE45 5000 0000 0583 9825 7466",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "SE",
+        "input": "SE4550000000058398257466",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 5,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "SE4550000000058398257466",
+        "reason": "MOD97_10_REMAINDER_5_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "SE",
+      "expected_result": "VALID",
+      "iban_raw": "SE4550000000058398257466",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "SI",
+        "input": "SI56 1910 0000 0123 438",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 32,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "SI56191000000123438",
+        "reason": "MOD97_10_REMAINDER_32_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "SI",
+      "expected_result": "VALID",
+      "iban_raw": "SI56 1910 0000 0123 438",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "SI",
+        "input": "SI56191000000123438",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 32,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "SI56191000000123438",
+        "reason": "MOD97_10_REMAINDER_32_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "SI",
+      "expected_result": "VALID",
+      "iban_raw": "SI56191000000123438",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "SK",
+        "input": "SK31 1200 0000 1987 4263 7541",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 79,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "SK3112000000198742637541",
+        "reason": "MOD97_10_REMAINDER_79_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "SK",
+      "expected_result": "VALID",
+      "iban_raw": "SK31 1200 0000 1987 4263 7541",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "SK",
+        "input": "SK3112000000198742637541",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 79,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "SK3112000000198742637541",
+        "reason": "MOD97_10_REMAINDER_79_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "SK",
+      "expected_result": "VALID",
+      "iban_raw": "SK3112000000198742637541",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "SM",
+        "input": "SM86 U032 2509 8000 0000 0270 100",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 46,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "SM86U0322509800000000270100",
+        "reason": "MOD97_10_REMAINDER_46_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "SM",
+      "expected_result": "VALID",
+      "iban_raw": "SM86 U032 2509 8000 0000 0270 100",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "SM",
+        "input": "SM86U0322509800000000270100",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 46,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "SM86U0322509800000000270100",
+        "reason": "MOD97_10_REMAINDER_46_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "SM",
+      "expected_result": "VALID",
+      "iban_raw": "SM86U0322509800000000270100",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "TL",
+        "input": "TL 38 008 00123456789101 57",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 74,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "TL380080012345678910157",
+        "reason": "MOD97_10_REMAINDER_74_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "TL",
+      "expected_result": "VALID",
+      "iban_raw": "TL 38 008 00123456789101 57",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "TN",
+        "input": "TN59 1000 6035 1835 9847 8831",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 71,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "TN5910006035183598478831",
+        "reason": "MOD97_10_REMAINDER_71_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "TN",
+      "expected_result": "VALID",
+      "iban_raw": "TN59 1000 6035 1835 9847 8831",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "TN",
+        "input": "TN5910006035183598478831",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 71,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "TN5910006035183598478831",
+        "reason": "MOD97_10_REMAINDER_71_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "TN",
+      "expected_result": "VALID",
+      "iban_raw": "TN5910006035183598478831",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "TR",
+        "input": "TR33 0006 1005 1978 6457 8413 26",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 61,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "TR330006100519786457841326",
+        "reason": "MOD97_10_REMAINDER_61_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "TR",
+      "expected_result": "VALID",
+      "iban_raw": "TR33 0006 1005 1978 6457 8413 26",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "TR",
+        "input": "TR330006100519786457841326",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 61,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "TR330006100519786457841326",
+        "reason": "MOD97_10_REMAINDER_61_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "TR",
+      "expected_result": "VALID",
+      "iban_raw": "TR330006100519786457841326",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "VG",
+        "input": "VG96VPVG0000012345678901",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 16,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "VG96VPVG0000012345678901",
+        "reason": "MOD97_10_REMAINDER_16_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "VG",
+      "expected_result": "VALID",
+      "iban_raw": "VG96VPVG0000012345678901",
+      "scope": "STDNUM_FULL"
+    },
+    {
+      "actual": {
+        "country": "XK",
+        "input": "XK051212012345678906",
+        "method": "PYTHON_STREAMING_MOD97_10_WITH_REF01_RULES",
+        "mod97_remainder": 37,
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "normalized": "XK051212012345678906",
+        "reason": "MOD97_10_REMAINDER_37_EXPECTED_1",
+        "result": "INVALID",
+        "run_phase": "RUN-A"
+      },
+      "country": "XK",
+      "expected_result": "VALID",
+      "iban_raw": "XK051212012345678906",
+      "scope": "STDNUM_FULL"
+    }
+  ],
+  "rules_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/corpora/R5_REF01_COUNTRY_RULES.jsonl",
+  "rules_sha256": "d2739c4e221e5b1f4b23b6215a630b47487aef84193b5bc5a8865b395798d0e0",
+  "sabotage": "mod97",
+  "schema": "wpno.level1.a18-run-a/1",
+  "total_inputs_answered": 218,
+  "vectors_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/corpora/R5_REF02_IBAN_VECTORS.jsonl",
+  "vectors_sha256": "baa93efb9e6acc3d57d36c6fd8bfac81e364eff939e708a581f775d1e2c9b82a"
+}

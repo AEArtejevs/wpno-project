@@ -1,0 +1,47 @@
+REF-03 SOURCE MAP
+
+1. REF-03_ISO_IEC_7064_2003.pdf
+
+Role:
+Identifies ISO/IEC 7064:2003 and establishes that MOD 11,10 is a hybrid
+numeric system with one check digit and designation 6.
+
+Limitation:
+This is an iTeh preview. It contains normative pages 1–5 only and does not
+contain clauses 9 and 10.
+
+It must not be described as the complete ISO standard.
+
+2. REF-03_ELSTER_Pruefung_Steueridentifikationsnummer_2026-04-15.pdf
+
+Authority:
+Bayerisches Landesamt für Steuern / ELSTER.
+
+Role:
+Official German tax-administration specification of the IdNr structure,
+official examples and exact check-digit calculation.
+
+Relevant location:
+Section 2.2, especially document pages 6–8.
+
+3. REF-03_BZSt_German_IdNr_Issuer_Specification.pdf
+
+Role:
+Official background evidence that the German IdNr consists of eleven digits
+and that the eleventh digit is the check digit.
+
+4. Independent implementation evidence
+
+python-stdnum 2.2:
+stdnum/de/idnr.py
+stdnum/iso7064/mod_11_10.py
+
+Role:
+Independent executable implementation and test-vector support.
+
+CONCLUSION:
+
+The ISO preview is not treated as a complete standard.
+
+The missing operational MOD 11,10 calculation is supplied by the official
+ELSTER specification and independently corroborated by python-stdnum 2.2.

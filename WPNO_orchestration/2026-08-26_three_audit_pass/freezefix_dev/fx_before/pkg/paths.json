@@ -1,0 +1,7 @@
+{
+  "discovery_root": "../discovery_root",
+  "level1_root": ".",
+  "note": "Isolated freeze-order fixture.",
+  "project_root": "../project_root",
+  "schema": "wpno.level1.paths/2"
+}

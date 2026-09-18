@@ -1,0 +1,62 @@
+{
+  "audit_id": "L1-A18",
+  "run_phase": "COMPARISON",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Compare the accepted RUN-A and RUN-B attempts for L1-A18.",
+  "static_analysis": "COMPARISON reads the accepted usable attempt of RUN-A and the accepted usable attempt of RUN-B, and the complete attempt history of both. Superseded attempts are reported, not filtered: a comparison that shows only the attempts that worked is not a record of what happened. It refuses to run at all unless both phases have an accepted usable sealed attempt.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PARSE_JSON_READONLY",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/progress.json"
+      },
+      "purpose": "Read the accepted attempt pointer and the full attempt history for RUN-A and RUN-B.",
+      "step_id": "collect_accepted_attempts",
+      "timeout_seconds": 60
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A18/RUN-A/ATTEMPT_INDEX.json"
+      },
+      "purpose": "Bind the comparison to the attempt history it read.",
+      "step_id": "compare_run_a_seal",
+      "timeout_seconds": 60
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A18/RUN-B/ATTEMPT_INDEX.json"
+      },
+      "purpose": "The same, for RUN-B.",
+      "step_id": "compare_run_b_seal",
+      "timeout_seconds": 60
+    }
+  ],
+  "target": {
+    "identity_evidence": "the same target both runs were bound to; a comparison across two different targets compares nothing",
+    "path": "/home/ubuntu/project/WPNO/anonymization/payload_scan.py",
+    "sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b"
+  },
+  "test_matrix": [
+    {
+      "compared": [
+        "per-vector verdicts across all 217 vectors",
+        "the empty-input result",
+        "the reason recorded for every disagreement"
+      ]
+    },
+    {
+      "refusal": "COMPARISON refuses unless both RUN-A and RUN-B have an accepted usable sealed attempt"
+    },
+    {
+      "superseded_attempts": "REPORTED_NOT_HIDDEN"
+    },
+    {
+      "disagreement": "a disagreement between the two methods is a finding in its own right and is never resolved by preferring the run that matches expectation"
+    }
+  ]
+}

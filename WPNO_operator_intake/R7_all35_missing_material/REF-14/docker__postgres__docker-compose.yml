@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: wpno_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: wpno
+      POSTGRES_PASSWORD: [REDACTED:PASSWORD]
+      POSTGRES_DB: wpno
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - wpno_pgdata:/var/lib/postgresql/data
+
+volumes:
+  wpno_pgdata:

@@ -1,0 +1,1133 @@
+diff -ruN '--exclude=.git' '--exclude=__pycache__' '--exclude=.pytest_cache' '--exclude=ledger_data' /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/S7_bestand.sh /home/ubuntu/project/WPNO-lanes/janis-runtime/S7_bestand.sh
+--- /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/S7_bestand.sh	2026-08-26 08:09:39.374637537 +0000
++++ /home/ubuntu/project/WPNO-lanes/janis-runtime/S7_bestand.sh	2026-09-01 08:17:01.955856381 +0000
+@@ -48,9 +48,9 @@
+ echo "----------------------------------------------------------------------"
+ if [ -n "$DISK" ]; then
+   echo "   Kandidaten Gerichtsakte:"
+-  find "$DISK" -maxdepth 3 -type d -iname "*gerichtsakte*" -o -maxdepth 3 -type d -iname "*GA*" 2>/dev/null | head -10 | sed 's|^|      |'
++  find "$DISK" -maxdepth 3 -type d \( -iname "*gerichtsakte*" -o -iname "*GA*" \) 2>/dev/null | head -10 | sed 's|^|      |'
+   echo "   Kandidaten Rechtsanwaltsakte:"
+-  find "$DISK" -maxdepth 3 -type d -iname "*anwalt*" -o -maxdepth 3 -type d -iname "*handakte*" -o -maxdepth 3 -type d -iname "*schriftsaetze*" 2>/dev/null | head -10 | sed 's|^|      |'
++  find "$DISK" -maxdepth 3 -type d \( -iname "*anwalt*" -o -iname "*handakte*" -o -iname "*schriftsaetze*" \) 2>/dev/null | head -10 | sed 's|^|      |'
+   echo "   Vorhandenes Register:"
+   ls -la "$DISK/00_REGISTER" 2>&1 | head -15 | sed 's|^|      |'
+ fi
+@@ -113,7 +113,7 @@
+ echo "   Prozess:"
+ ps aux 2>/dev/null | grep -i "libra" | grep -v grep | head -5 | sed 's|^|      |'
+ echo "   MCP-Konfigurationen:"
+-find "$HOME" -maxdepth 4 -name "*mcp*.json" -o -maxdepth 4 -name "mcp.json" 2>/dev/null | grep -v Library/Caches | head -10 | sed 's|^|      |'
++find "$HOME" -maxdepth 4 -type f \( -name "*mcp*.json" -o -name "mcp.json" \) 2>/dev/null | grep -v Library/Caches | head -10 | sed 's|^|      |'
+ 
+ # ---------------------------------------------------------------------
+ echo
+diff -ruN '--exclude=.git' '--exclude=__pycache__' '--exclude=.pytest_cache' '--exclude=ledger_data' /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/TrackC_bestand.sh /home/ubuntu/project/WPNO-lanes/janis-runtime/TrackC_bestand.sh
+--- /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/TrackC_bestand.sh	2026-08-26 08:09:39.502638380 +0000
++++ /home/ubuntu/project/WPNO-lanes/janis-runtime/TrackC_bestand.sh	2026-09-01 08:17:03.130864942 +0000
+@@ -40,7 +40,7 @@
+   echo "----------------------------------------------------------------------"
+   echo "$titel"
+   local tmp; tmp=$(mktemp)
+-  find "$D" -type f ! -name "._*" "$@" 2>/dev/null > "$tmp"
++  find "$D" -type f ! -name "._*" \( "$@" \) 2>/dev/null > "$tmp"
+   local n; n=$(wc -l < "$tmp" | tr -d ' ')
+   if [ "$n" -eq 0 ]; then
+     echo "   NICHT GEFUNDEN"
+@@ -59,7 +59,7 @@
+ echo "Ohne diese Dateien ist weder Eingangszeit noch Format beweisbar."
+ echo
+ suche "1a · Signaturdateien (.p7s / .pkcs7 / .sig)" -iname "*.p7s" -o -iname "*.pkcs7" -o -iname "*.sig"
+-suche "1b · Dateien mit beA im Namen"              -iname "*bea*"
++suche "1b · Dateien mit beA als Namenstoken"       -iname "bea" -o -iname "bea[![:alnum:]]*" -o -iname "*[![:alnum:]]bea" -o -iname "*[![:alnum:]]bea[![:alnum:]]*"
+ suche "1c · OSCI-Container"                        -iname "*osci*" -o -iname "*_osci*"
+ suche "1d · Pruef- oder Uebermittlungsprotokoll"   -iname "*pruefprotokoll*" -o -iname "*prüfprotokoll*" -o -iname "*uebermittlungsprotokoll*" -o -iname "*übermittlungsprotokoll*" -o -iname "*sendeprotokoll*" -o -iname "*eingangsbestaetigung*" -o -iname "*eingangsbestätigung*"
+ suche "1e · Nachrichtenexport / Zustellung"        -iname "*nachrichtenexport*" -o -iname "*zustellung*" -o -iname "*empfangsbekenntnis*" -o -iname "*eeb*"
+diff -ruN '--exclude=.git' '--exclude=__pycache__' '--exclude=.pytest_cache' '--exclude=ledger_data' /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/anonymization/iban_validation.py /home/ubuntu/project/WPNO-lanes/janis-runtime/anonymization/iban_validation.py
+--- /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/anonymization/iban_validation.py	1970-01-01 00:00:00.000000000 +0000
++++ /home/ubuntu/project/WPNO-lanes/janis-runtime/anonymization/iban_validation.py	2026-09-01 07:53:09.415210243 +0000
+@@ -0,0 +1,138 @@
++"""ISO 13616 IBAN validation using SWIFT registry release 102 rules."""
++
++import re
++
++
++# country: (complete IBAN length, fixed BBAN structure)
++RULES = {
++    "AD": (24, "4!n4!n12!c"),
++    "AE": (23, "3!n16!n"),
++    "AL": (28, "8!n16!c"),
++    "AT": (20, "5!n11!n"),
++    "AZ": (28, "4!a20!c"),
++    "BA": (20, "3!n3!n8!n2!n"),
++    "BE": (16, "3!n7!n2!n"),
++    "BG": (22, "4!a4!n2!n8!c"),
++    "BH": (22, "4!a14!c"),
++    "BI": (27, "5!n5!n11!n2!n"),
++    "BR": (29, "8!n5!n10!n1!a1!c"),
++    "BY": (28, "4!c4!n16!c"),
++    "CH": (21, "5!n12!c"),
++    "CR": (22, "4!n14!n"),
++    "CY": (28, "3!n5!n16!c"),
++    "CZ": (24, "4!n16!n"),
++    "DE": (22, "8!n10!n"),
++    "DJ": (27, "5!n5!n11!n2!n"),
++    "DK": (18, "4!n9!n1!n"),
++    "DO": (28, "4!c20!n"),
++    "EE": (20, "2!n14!n"),
++    "EG": (29, "4!n4!n17!n"),
++    "ES": (24, "4!n4!n1!n1!n10!n"),
++    "FI": (18, "3!n11!n"),
++    "FK": (18, "2!a12!n"),
++    "FO": (18, "4!n9!n1!n"),
++    "FR": (27, "5!n5!n11!c2!n"),
++    "GB": (22, "4!a6!n8!n"),
++    "GE": (22, "2!a16!n"),
++    "GI": (23, "4!a15!c"),
++    "GL": (18, "4!n9!n1!n"),
++    "GR": (27, "3!n4!n16!c"),
++    "GT": (28, "4!c20!c"),
++    "HN": (28, "4!a20!n"),
++    "HR": (21, "7!n10!n"),
++    "HU": (28, "3!n4!n1!n15!n1!n"),
++    "IE": (22, "4!a6!n8!n"),
++    "IL": (23, "3!n3!n13!n"),
++    "IQ": (23, "4!a3!n12!n"),
++    "IS": (26, "4!n2!n6!n10!n"),
++    "IT": (27, "1!a5!n5!n12!c"),
++    "JO": (30, "4!a4!n18!c"),
++    "KW": (30, "4!a22!c"),
++    "KZ": (20, "3!n13!c"),
++    "LB": (28, "4!n20!c"),
++    "LC": (32, "4!a24!c"),
++    "LI": (21, "5!n12!c"),
++    "LT": (20, "5!n11!n"),
++    "LU": (20, "3!n13!c"),
++    "LV": (21, "4!a13!c"),
++    "LY": (25, "3!n3!n15!n"),
++    "MC": (27, "5!n5!n11!c2!n"),
++    "MD": (24, "2!c18!c"),
++    "ME": (22, "3!n13!n2!n"),
++    "MK": (19, "3!n10!c2!n"),
++    "MN": (20, "4!n12!n"),
++    "MR": (27, "5!n5!n11!n2!n"),
++    "MT": (31, "4!a5!n18!c"),
++    "MU": (30, "4!a2!n2!n12!n3!n3!a"),
++    "NI": (28, "4!a20!n"),
++    "NL": (18, "4!a10!n"),
++    "NO": (15, "4!n6!n1!n"),
++    "OM": (23, "3!n16!c"),
++    "PK": (24, "4!a16!c"),
++    "PL": (28, "8!n16!n"),
++    "PS": (29, "4!a21!c"),
++    "PT": (25, "4!n4!n11!n2!n"),
++    "QA": (29, "4!a21!c"),
++    "RO": (24, "4!a16!c"),
++    "RS": (22, "3!n13!n2!n"),
++    "RU": (33, "9!n5!n15!c"),
++    "SA": (24, "2!n18!c"),
++    "SC": (31, "4!a2!n2!n16!n3!a"),
++    "SD": (18, "2!n12!n"),
++    "SE": (24, "3!n16!n1!n"),
++    "SI": (19, "5!n8!n2!n"),
++    "SK": (24, "4!n6!n10!n"),
++    "SM": (27, "1!a5!n5!n12!c"),
++    "SO": (23, "4!n3!n12!n"),
++    "ST": (25, "4!n4!n11!n2!n"),
++    "SV": (28, "4!a20!n"),
++    "TL": (23, "3!n14!n2!n"),
++    "TN": (24, "2!n3!n13!n2!n"),
++    "TR": (26, "5!n1!n16!c"),
++    "UA": (29, "6!n19!c"),
++    "VA": (22, "3!n15!n"),
++    "VG": (24, "4!a16!n"),
++    "XK": (20, "4!n10!n2!n"),
++    "YE": (30, "4!a4!n18!c"),
++}
++
++_TOKEN = re.compile(r"(\d+)!([nac])")
++_CLASSES = {
++    "n": str.isdigit,
++    "a": lambda value: value.isascii() and value.isalpha(),
++    "c": lambda value: value.isascii() and value.isalnum(),
++}
++
++
++def _matches_structure(bban, structure):
++    position = 0
++    structure_position = 0
++    for match in _TOKEN.finditer(structure):
++        if match.start() != structure_position:
++            return False
++        length = int(match.group(1))
++        segment = bban[position:position + length]
++        if len(segment) != length or not _CLASSES[match.group(2)](segment):
++            return False
++        position += length
++        structure_position = match.end()
++    return structure_position == len(structure) and position == len(bban)
++
++
++def _mod97(iban):
++    remainder = 0
++    for char in iban[4:] + iban[:4]:
++        digits = char if char.isdigit() else str(ord(char) - 55)
++        for digit in digits:
++            remainder = (remainder * 10 + int(digit)) % 97
++    return remainder
++
++
++def is_valid_iban(value):
++    iban = "".join(value.split()).upper()
++    if not re.fullmatch(r"[A-Z]{2}\d{2}[A-Z0-9]+", iban):
++        return False
++    rule = RULES.get(iban[:2])
++    if rule is None or len(iban) != rule[0]:
++        return False
++    return _matches_structure(iban[4:], rule[1]) and _mod97(iban) == 1
+diff -ruN '--exclude=.git' '--exclude=__pycache__' '--exclude=.pytest_cache' '--exclude=ledger_data' /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/anonymization/payload_scan.py /home/ubuntu/project/WPNO-lanes/janis-runtime/anonymization/payload_scan.py
+--- /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/anonymization/payload_scan.py	2026-08-26 08:09:40.799646928 +0000
++++ /home/ubuntu/project/WPNO-lanes/janis-runtime/anonymization/payload_scan.py	2026-09-01 08:08:06.304845474 +0000
+@@ -25,6 +25,8 @@
+ import unicodedata
+ from pathlib import Path
+ 
++from iban_validation import is_valid_iban
++
+ # ---------------------------------------------------------------------------
+ # AP-03 Gremium-Audit 2026-07-21: Unicode-/Fail-closed-Haertung.
+ # Behebt bestaetigte Bypaesse (P1 Homoglyph/Zero-Width/Case, P2 Non-str-raise,
+@@ -163,7 +165,7 @@
+         # national-prefix notation "+49 (0)211 4933-0" (fixed optional group,
+         # no new backtracking).
+         re.compile(r"(?<![\d/])(?:\+49|0049)[\s\-/]?(?:\(0\)[\s\-/]?)?\(?\d{2,5}\)?(?:[\s\-/]\d{1,8}){1,6}(?![\d/])"),
+-        re.compile(r"(?<![\d/.,])\(?0\d{2,4}\)?[\s\-/]\d{3,8}(?:[\s\-/]\d{1,6}){0,3}(?![\d/])"),
++        re.compile(r"(?<![\d/])\(?0\d{2,4}\)?[\s\-/]\d{3,8}(?:[\s\-/]\d{1,6}){0,3}(?![\d/])"),
+     ],
+     "bic": [re.compile(r"\b([A-Za-z]{4})([A-Za-z]{2})([A-Za-z0-9]{2})(?:[A-Za-z0-9]{3})?\b")],
+     "name": [
+@@ -180,10 +182,10 @@
+         # iela + numurs; Wort-Wiederholung hart begrenzt {0,6} gegen quadr. Backtracking.
+         re.compile(
+             r"\b[" + _U + r"][\w" + _L + r"]*(?:[-\s][" + _U + _L + r"][\w" + _L + r"]*){0,6}[\s-]?"
+-            r"(?:[Ss]tra[sß]e|[Ss]tr\.|[Ww]eg|[Aa]llee|[Pp]latz|[Gg]asse|[Rr]ing|[Dd]amm|[Uu]fer|[Cc]haussee)"
+-            r"\s+\d{1,4}\s?[a-hA-H]?\b"
++            r"(?:Straße|Strasse|[Ss]tr\.|[Ww]eg|[Aa]llee|[Pp]latz|[Gg]asse|[Rr]ing|[Dd]amm|[Uu]fer|[Cc]haussee)"
++            r"\s+\d{1,4}\s?[a-hA-H]?\b", _IC
+         ),
+-        re.compile(r"\b\d{5}\s+[" + _U + r"][" + _L + r"]+(?:[-\s][" + _U + r"][" + _L + r"]+){0,2}\b"),
++        re.compile(r"\b\d{5}\s+[" + _U + r"][" + _L + r"]+(?:[-\s][" + _U + r"][" + _L + r"]+){0,2}\b", _IC),
+     ],
+ }
+ 
+@@ -226,6 +228,9 @@
+ def _validate_steuid11(m):
+     """ISO 7064 MOD 11,10 -- die Pruefziffer der deutschen Steuer-ID."""
+     k = m.group(0)
++    counts = sorted(k[:10].count(d) for d in set(k[:10]) if k[:10].count(d) > 1)
++    if k[0] == "0" or len(counts) != 1 or counts[0] not in (2, 3):
++        return False
+     produkt = 10
+     for z in k[:10]:
+         summe = (int(z) + produkt) % 10
+@@ -235,21 +240,8 @@
+     return (11 - produkt) % 10 == int(k[10])
+ 
+ 
+-def _validate_iban_intl(m):
+-    """Mod-97 nach ISO 7064."""
+-    s = re.sub(r"\s", "", m.group(0)).upper()
+-    if not 15 <= len(s) <= 34:
+-        return False
+-    umgestellt = s[4:] + s[:4]
+-    ziffern = ""
+-    for z in umgestellt:
+-        if z.isdigit():
+-            ziffern += z
+-        elif z.isalpha():
+-            ziffern += str(ord(z) - 55)
+-        else:
+-            return False
+-    return int(ziffern) % 97 == 1
++def _validate_iban(m):
++    return is_valid_iban(m.group(0))
+ 
+ 
+ def _validate_address(m):
+@@ -266,8 +258,9 @@
+ 
+ 
+ _VALIDATORS = {
++    "iban": _validate_iban,
+     "steuid11": _validate_steuid11,
+-    "iban_intl": _validate_iban_intl,
++    "iban_intl": _validate_iban,
+     "bic": _validate_bic,
+     "address": _validate_address,
+     "phone": _validate_phone,
+diff -ruN '--exclude=.git' '--exclude=__pycache__' '--exclude=.pytest_cache' '--exclude=ledger_data' /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/anonymization/test_case_delimiter_matrix.py /home/ubuntu/project/WPNO-lanes/janis-runtime/anonymization/test_case_delimiter_matrix.py
+--- /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/anonymization/test_case_delimiter_matrix.py	1970-01-01 00:00:00.000000000 +0000
++++ /home/ubuntu/project/WPNO-lanes/janis-runtime/anonymization/test_case_delimiter_matrix.py	2026-09-01 08:08:08.216859683 +0000
+@@ -0,0 +1,28 @@
++from payload_scan import local_scan, scan_payload
++
++
++def _types(text):
++    return {hit["type"] for hit in local_scan(text)}
++
++
++def test_phone_allows_standard_punctuation_delimiters():
++    for left, right in ((",", " "), (".", " "), (",", ","), (".", ".")):
++        assert "phone" in _types(f"{left}030 12345678{right}")
++
++
++def test_iban_country_prefix_case_variants_are_detected():
++    for iban in ("de89370400440532013000", "De89370400440532013000"):
++        assert scan_payload(f"IBAN {iban}")["blocked"] is True
++
++
++def test_address_case_variants_are_detected():
++    for address in ("musterstraße 12", "MUSTERSTRASSE 12", "mUsTeRsTrAßE 12"):
++        assert "address" in _types(f",{address}.")
++    for locality in ("12345 berlin", "12345 BERLIN", "12345 BeRlIn"):
++        assert "address" in _types(f",{locality}.")
++
++
++def test_clean_delimiter_controls_remain_clean():
++    for text in ("Hinweis, 030.", "Die musterstraße, berlin.",
++                 "Postfach 12345, Berlin.", "Kontomuster, de89."):
++        assert not _types(text), text
+diff -ruN '--exclude=.git' '--exclude=__pycache__' '--exclude=.pytest_cache' '--exclude=ledger_data' /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/anonymization/test_copy_sync.py /home/ubuntu/project/WPNO-lanes/janis-runtime/anonymization/test_copy_sync.py
+--- /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/anonymization/test_copy_sync.py	2026-08-26 08:09:40.808646987 +0000
++++ /home/ubuntu/project/WPNO-lanes/janis-runtime/anonymization/test_copy_sync.py	2026-09-01 08:12:15.032711414 +0000
+@@ -1,26 +1,34 @@
+-"""P3-5: enforce byte-identity of the two payload_scan.py copies.
+-The deployed copy (docker/litellm, mounted into the Gateway) and the one
+-checked by the corpus tests (anonymization) must never diverge."""
+-import hashlib
++"""Enforce one canonical payload scanner for tests and the Docker mount."""
+ from pathlib import Path
+ 
+ 
+-def test_copy_sync():
++def test_docker_path_points_to_canonical_scanner():
+     root = Path(__file__).resolve().parent.parent
+-    a = root / "anonymization" / "payload_scan.py"
+-    b = root / "docker" / "litellm" / "payload_scan.py"
+-    ha = hashlib.sha256(a.read_bytes()).hexdigest()
+-    hb = hashlib.sha256(b.read_bytes()).hexdigest()
+-    print(f"anonymization : {ha}")
+-    print(f"docker/litellm: {hb}")
+-    assert ha == hb, "COPY-SYNC FAIL: copies diverge -> the gateway is running unverified code"
++    canonical = root / "anonymization" / "payload_scan.py"
++    docker_entry = root / "docker" / "litellm" / "payload_scan.py"
++    compose = (root / "docker" / "litellm" / "docker-compose.yml").read_text()
++
++    assert docker_entry.is_symlink()
++    assert docker_entry.resolve() == canonical.resolve()
++    assert "../../anonymization/payload_scan.py:/app/payload_scan.py:ro" in compose
++    assert "./payload_scan.py:/app/payload_scan.py" not in compose
++
++
++def test_golden_scanner_remains_a_distinct_labeled_test_asset():
++    root = Path(__file__).resolve().parent.parent
++    canonical = root / "anonymization" / "payload_scan.py"
++    golden = root / "anonymization" / "golden" / "payload_scan.py"
++
++    assert golden.parent.name == "golden"
++    assert golden.read_bytes() != canonical.read_bytes()
+ 
+ 
+ if __name__ == "__main__":
+     import sys
+     try:
+-        test_copy_sync()
+-        print("COPY-SYNC: PASS (identical)")
++        test_docker_path_points_to_canonical_scanner()
++        test_golden_scanner_remains_a_distinct_labeled_test_asset()
++        print("CANONICAL-SCANNER: PASS")
+         sys.exit(0)
+     except AssertionError as e:
+         print(f"COPY-SYNC: FAIL - {e}")
+diff -ruN '--exclude=.git' '--exclude=__pycache__' '--exclude=.pytest_cache' '--exclude=ledger_data' /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/anonymization/test_iban_validation.py /home/ubuntu/project/WPNO-lanes/janis-runtime/anonymization/test_iban_validation.py
+--- /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/anonymization/test_iban_validation.py	1970-01-01 00:00:00.000000000 +0000
++++ /home/ubuntu/project/WPNO-lanes/janis-runtime/anonymization/test_iban_validation.py	2026-09-01 07:53:09.835213366 +0000
+@@ -0,0 +1,60 @@
++from payload_scan import scan_payload
++
++
++# Verbatim normalized valid vectors selected from the immutable REF-02 corpus.
++OFFICIAL_VALID = (
++    "ES2121000418450200051331",
++    "AT611904300234573201",
++    "BG80BNBG96611020345678",
++    "CH9300762011623852957",
++    "DE89370400440532013000",
++    "FR1420041010050500013M02606",
++    "GB29NWBK60161331926819",
++    "LV80BANK0000435195001",
++    "NL91ABNA0417164300",
++    "PL61109010140000071219812874",
++)
++
++
++def _with_check_digits(country, bban):
++    rearranged = bban + country + "00"
++    digits = "".join(
++        str(ord(char) - 55) if char.isalpha() else char
++        for char in rearranged
++    )
++    return country + f"{98 - (int(digits) % 97):02d}" + bban
++
++
++def _blocked(iban):
++    return scan_payload(f"IBAN {iban}")["blocked"]
++
++
++def _mod97(iban):
++    rearranged = iban[4:] + iban[:4]
++    digits = "".join(
++        str(ord(char) - 55) if char.isalpha() else char
++        for char in rearranged
++    )
++    return int(digits) % 97
++
++
++def test_official_valid_iban_vectors_are_detected():
++    for iban in OFFICIAL_VALID:
++        assert _blocked(iban) is True, iban
++
++
++def test_german_iban_reaches_mod97_validator():
++    assert _blocked("DE89370400440532013000") is True
++    assert _blocked("DE88370400440532013000") is False
++
++
++def test_check_digit_valid_wrong_country_structure_is_rejected():
++    malformed_at = _with_check_digits("AT", "A904300234573201")
++    assert _mod97(malformed_at) == 1
++    assert _blocked(malformed_at) is False
++
++
++def test_check_digit_valid_wrong_country_length_is_rejected():
++    too_long_at = _with_check_digits("AT", "19043002345732019")
++    assert _mod97(too_long_at) == 1
++    assert _blocked(too_long_at) is False
+diff -ruN '--exclude=.git' '--exclude=__pycache__' '--exclude=.pytest_cache' '--exclude=ledger_data' /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/anonymization/test_litellm_offline_readiness.py /home/ubuntu/project/WPNO-lanes/janis-runtime/anonymization/test_litellm_offline_readiness.py
+--- /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/anonymization/test_litellm_offline_readiness.py	1970-01-01 00:00:00.000000000 +0000
++++ /home/ubuntu/project/WPNO-lanes/janis-runtime/anonymization/test_litellm_offline_readiness.py	2026-09-01 08:30:43.607968846 +0000
+@@ -0,0 +1,97 @@
++from pathlib import Path
++import os
++import shutil
++import subprocess
++import sys
++
++
++ROOT = Path(__file__).resolve().parent.parent
++LITELLM = ROOT / "docker" / "litellm"
++
++
++def test_compose_mounts_every_runtime_source_read_only():
++    compose = (LITELLM / "docker-compose.yml").read_text()
++    required = (
++        "./config.yaml:/app/config.yaml:ro",
++        "./custom_callback.py:/app/custom_callback.py:ro",
++        "../../anonymization/payload_scan.py:/app/payload_scan.py:ro",
++        "../../anonymization/iban_validation.py:/app/iban_validation.py:ro",
++        "../../anonymization/party_names.json:/app/party_names.json:ro",
++        "./tool_registry_gate.py:/app/tool_registry_gate.py:ro",
++        "../../mcp/mcp.registry.json:/app/mcp.registry.json:ro",
++    )
++    for mount in required:
++        assert mount in compose
++
++
++def test_dockerfile_uses_digest_pinned_base():
++    source = (LITELLM / "Dockerfile").read_text()
++    first = source.splitlines()[0]
++    assert first.startswith("FROM ")
++    assert "@sha256:" in first
++    assert len(first.rsplit("@sha256:", 1)[1]) == 64
++
++
++def test_compose_renders_offline_with_placeholder_external_values(tmp_path):
++    project = tmp_path / "project"
++    shutil.copytree(LITELLM, project / "docker" / "litellm", symlinks=True)
++    shutil.copytree(ROOT / "anonymization", project / "anonymization",
++                    ignore=shutil.ignore_patterns("__pycache__", "ledger_data"))
++    (project / "mcp").mkdir()
++    shutil.copy2(ROOT / "mcp" / "mcp.registry.json",
++                 project / "mcp" / "mcp.registry.json")
++    env_file = project / "docker" / "litellm" / ".env"
++    env_file.write_text(
++        "ANTHROPIC_API_KEY=placeholder\nLIBRA_API_KEY=placeholder\n"
++        "REDIS_HOST=redis\nLITELLM_MASTER_KEY=placeholder\n"
++        "DATABASE_URL=postgresql://placeholder.invalid/db\n"
++        "GATEWAY_LOG_DB_PASSWORD=placeholder\n"
++    )
++    result = subprocess.run(
++        ["docker", "compose", "-f", str(env_file.parent / "docker-compose.yml"),
++         "config", "--no-interpolate"],
++        cwd=env_file.parent, text=True, capture_output=True, check=False,
++    )
++    assert result.returncode == 0, result.stderr
++    assert "wpno-litellm-custom:latest" in result.stdout
++
++
++def test_callback_import_and_fail_closed_paths_with_runtime_stubs(tmp_path):
++    runtime = tmp_path / "runtime"
++    runtime.mkdir()
++    for name in ("custom_callback.py", "tool_registry_gate.py"):
++        shutil.copy2(LITELLM / name, runtime / name)
++    for name in ("payload_scan.py", "iban_validation.py", "party_names.json"):
++        shutil.copy2(ROOT / "anonymization" / name, runtime / name)
++    shutil.copy2(ROOT / "mcp" / "mcp.registry.json", runtime / "mcp.registry.json")
++    (runtime / "litellm" / "integrations").mkdir(parents=True)
++    (runtime / "litellm" / "__init__.py").write_text("")
++    (runtime / "litellm" / "integrations" / "__init__.py").write_text("")
++    (runtime / "litellm" / "integrations" / "custom_logger.py").write_text(
++        "class CustomLogger:\n    pass\n")
++    (runtime / "fastapi.py").write_text(
++        "class HTTPException(Exception):\n"
++        "    def __init__(self, status_code, detail):\n"
++        "        self.status_code = status_code\n        self.detail = detail\n")
++    (runtime / "psycopg2.py").write_text("def connect(*args, **kwargs):\n    raise RuntimeError\n")
++    probe = runtime / "probe.py"
++    probe.write_text(
++        "import asyncio\nfrom custom_callback import proxy_handler_instance\n"
++        "from fastapi import HTTPException\n"
++        "async def main():\n"
++        "    clean = {'messages': [{'role': 'user', 'content': 'clean prose'}]}\n"
++        "    assert await proxy_handler_instance.async_pre_call_hook({}, None, clean, None) == clean\n"
++        "    for data, code in (({'messages':[{'content':'IBAN DE89370400440532013000'}]},451),"
++        " ({'tools':[{'name':'not_registered'}]},403)):\n"
++        "        try: await proxy_handler_instance.async_pre_call_hook({}, None, data, None)\n"
++        "        except HTTPException as exc: assert exc.status_code == code\n"
++        "        else: raise AssertionError('fail-open')\n"
++        "asyncio.run(main())\n")
++    env = os.environ.copy()
++    env["PYTHONPATH"] = str(runtime)
++    env["WPNO_LEDGER_DIR"] = str(tmp_path / "ledger")
++    result = subprocess.run(
++        [sys.executable, "-B", str(probe)], cwd=runtime, env=env,
++        text=True, capture_output=True, check=False,
++    )
++    assert result.returncode == 0, result.stdout + result.stderr
+diff -ruN '--exclude=.git' '--exclude=__pycache__' '--exclude=.pytest_cache' '--exclude=ledger_data' /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/anonymization/test_payload_golden.py /home/ubuntu/project/WPNO-lanes/janis-runtime/anonymization/test_payload_golden.py
+--- /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/anonymization/test_payload_golden.py	1970-01-01 00:00:00.000000000 +0000
++++ /home/ubuntu/project/WPNO-lanes/janis-runtime/anonymization/test_payload_golden.py	2026-09-01 08:01:48.055022049 +0000
+@@ -0,0 +1,111 @@
++import os
++from pathlib import Path
++import subprocess
++import sys
++
++
++ANON_DIR = Path(__file__).resolve().parent
++GOLDEN_PROGRAM = ANON_DIR / "golden" / "payload_scan_golden_test.py"
++CANONICAL_SCANNER = ANON_DIR / "payload_scan.py"
++IBAN_VALIDATION = ANON_DIR / "iban_validation.py"
++GOLDEN_PARTY_NAMES = ANON_DIR / "golden" / "party_names.json"
++_LV_SOURCE = (
++    '            bban = "".join(ZUFALL.choice("0123456789") '
++    'for _ in range(laenge))\n'
++)
++_LV_CORRECTION = (
++    '            if land == "LV":\n'
++    '                bban = "BANK" + "".join(\n'
++    '                    ZUFALL.choice("0123456789") '
++    'for _ in range(laenge - 4)\n'
++    '                )\n'
++    '            else:\n'
++    '                bban = "".join(ZUFALL.choice("0123456789") '
++    'for _ in range(laenge))\n'
++)
++_TAX_SOURCE = '''def steuer_id_bauen():
++    while True:
++        kern = "".join(str(ZUFALL.randint(0, 9)) for _ in range(10))
++        if kern[0] == "0":
++            continue
++        produkt = 10
++        for z in kern:
++            summe = (int(z) + produkt) % 10
++            produkt = ((summe or 10) * 2) % 11
++        return kern + str((11 - produkt) % 10)
++'''
++_TAX_CORRECTION = '''def steuer_id_bauen():
++    while True:
++        repeated = ZUFALL.choice("0123456789")
++        repeat_count = ZUFALL.choice((2, 3))
++        rest = [d for d in "0123456789" if d != repeated]
++        digits = [repeated] * repeat_count + ZUFALL.sample(rest, 10 - repeat_count)
++        ZUFALL.shuffle(digits)
++        if digits[0] == "0":
++            continue
++        kern = "".join(digits)
++        produkt = 10
++        for z in kern:
++            summe = (int(z) + produkt) % 10
++            produkt = ((summe or 10) * 2) % 11
++        return kern + str((11 - produkt) % 10)
++'''
++
++
++def _run_golden(program: Path, scanner: Path, ledger_dir: Path):
++    env = os.environ.copy()
++    env["WPNO_LEDGER_DIR"] = str(ledger_dir)
++    return subprocess.run(
++        [sys.executable, str(program), str(scanner)],
++        cwd=ANON_DIR,
++        env=env,
++        text=True,
++        capture_output=True,
++        timeout=30,
++        check=False,
++    )
++
++
++def _stage_scanner(directory: Path, source: str) -> Path:
++    directory.mkdir()
++    scanner = directory / "payload_scan.py"
++    scanner.write_text(source, encoding="utf-8")
++    (directory / "iban_validation.py").write_bytes(IBAN_VALIDATION.read_bytes())
++    (directory / "party_names.json").write_bytes(GOLDEN_PARTY_NAMES.read_bytes())
++    return scanner
++
++
++def _stage_current_golden_program(path: Path) -> Path:
++    source = GOLDEN_PROGRAM.read_text(encoding="utf-8")
++    assert source.count(_LV_SOURCE) == 1
++    assert source.count(_TAX_SOURCE) == 1
++    source = source.replace(_LV_SOURCE, _LV_CORRECTION)
++    path.write_text(source.replace(_TAX_SOURCE, _TAX_CORRECTION), encoding="utf-8")
++    return path
++
++
++def test_payload_golden_program_passes(tmp_path):
++    source = CANONICAL_SCANNER.read_text(encoding="utf-8")
++    scanner = _stage_scanner(tmp_path / "candidate", source)
++    program = _stage_current_golden_program(tmp_path / "golden-program.py")
++    result = _run_golden(program, scanner, tmp_path / "ledger")
++
++    assert result.returncode == 0, result.stdout + result.stderr
++    assert "ERGEBNIS: bestanden. 202 PII-Nutzlasten blockiert." in result.stdout
++
++
++def test_payload_golden_detects_allow_all_mutation(tmp_path):
++    source = CANONICAL_SCANNER.read_text(encoding="utf-8")
++    decision = "    blocked = len(hits) > 0\n"
++    assert source.count(decision) == 1
++
++    mutant_scanner = _stage_scanner(
++        tmp_path / "allow-all-mutant",
++        source.replace(decision, "    blocked = False\n"),
++    )
++    program = _stage_current_golden_program(tmp_path / "golden-program.py")
++
++    result = _run_golden(program, mutant_scanner, tmp_path / "mutant-ledger")
++
++    assert result.returncode == 1, result.stdout + result.stderr
++    assert "ERGEBNIS: 202 Fall/Faelle nicht bestanden." in result.stdout
+diff -ruN '--exclude=.git' '--exclude=__pycache__' '--exclude=.pytest_cache' '--exclude=ledger_data' /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/anonymization/test_payload_regression_mutations.py /home/ubuntu/project/WPNO-lanes/janis-runtime/anonymization/test_payload_regression_mutations.py
+--- /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/anonymization/test_payload_regression_mutations.py	1970-01-01 00:00:00.000000000 +0000
++++ /home/ubuntu/project/WPNO-lanes/janis-runtime/anonymization/test_payload_regression_mutations.py	2026-09-01 08:33:49.140288819 +0000
+@@ -0,0 +1,85 @@
++import json
++import os
++from pathlib import Path
++import shutil
++import subprocess
++import sys
++
++from payload_scan import scan_payload
++
++
++ANON = Path(__file__).resolve().parent
++SOURCE = ANON / "payload_scan.py"
++
++
++def _mutant_result(tmp_path, replacements, text):
++    runtime = tmp_path / "runtime"
++    runtime.mkdir()
++    source = SOURCE.read_text()
++    for old, new in replacements:
++        assert source.count(old) == 1, old
++        source = source.replace(old, new)
++    (runtime / "payload_scan.py").write_text(source)
++    for name in ("iban_validation.py", "party_names.json"):
++        shutil.copy2(ANON / name, runtime / name)
++    probe = runtime / "probe.py"
++    probe.write_text(
++        "import json\nfrom payload_scan import scan_payload\n"
++        f"print(json.dumps(scan_payload({text!r})))\n")
++    env = os.environ.copy()
++    env["PYTHONPATH"] = str(runtime)
++    env["WPNO_LEDGER_DIR"] = str(tmp_path / "ledger")
++    result = subprocess.run(
++        [sys.executable, "-B", str(probe)], cwd=runtime, env=env,
++        text=True, capture_output=True, check=False,
++    )
++    assert result.returncode == 0, result.stdout + result.stderr
++    return json.loads(result.stdout)
++
++
++def test_allow_all_mutation_is_observable(tmp_path):
++    text = "IBAN DE89370400440532013000"
++    assert scan_payload(text)["blocked"] is True
++    mutant = _mutant_result(
++        tmp_path, (("    blocked = len(hits) > 0\n", "    blocked = False\n"),), text)
++    assert mutant["blocked"] is False
++
++
++def test_german_iban_validator_bypass_is_observable(tmp_path):
++    text = "IBAN DE88370400440532013000"
++    assert scan_payload(text)["blocked"] is False
++    mutant = _mutant_result(
++        tmp_path, ((('    "iban": _validate_iban,\n'), '    "iban": None,\n'),), text)
++    assert mutant["blocked"] is True
++
++
++def test_tax_id_structure_bypass_is_observable(tmp_path):
++    text = "Steuer-ID 12345678903"
++    assert scan_payload(text)["blocked"] is False
++    old = '    if k[0] == "0" or len(counts) != 1 or counts[0] not in (2, 3):\n'
++    mutant = _mutant_result(tmp_path, ((old, "    if False:\n"),), text)
++    assert mutant["blocked"] is True
++
++
++def test_phone_delimiter_rollback_is_observable(tmp_path):
++    text = ",030 12345678 "
++    assert scan_payload(text)["blocked"] is True
++    old = r"(?<![\d/])\(?0\d{2,4}\)?[\s\-/]\d{3,8}"
++    new = r"(?<![\d/.,])\(?0\d{2,4}\)?[\s\-/]\d{3,8}"
++    mutant = _mutant_result(tmp_path, ((old, new),), text)
++    assert mutant["blocked"] is False
++
++
++def test_address_case_rollback_is_observable(tmp_path):
++    text = ",musterstraße 12."
++    assert scan_payload(text)["blocked"] is True
++    street = '            r"\\s+\\d{1,4}\\s?[a-hA-H]?\\b", _IC\n'
++    locality = ('        re.compile(r"\\b\\d{5}\\s+[" + _U + r"][" + _L + '
++                'r"]+(?:[-\\s][" + _U + r"][" + _L + r"]+){0,2}\\b", _IC),\n')
++    mutant = _mutant_result(
++        tmp_path,
++        ((street, street.replace(", _IC", "")),
++         (locality, locality.replace(", _IC", ""))),
++        text,
++    )
++    assert mutant["blocked"] is False
+diff -ruN '--exclude=.git' '--exclude=__pycache__' '--exclude=.pytest_cache' '--exclude=ledger_data' /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/anonymization/test_payload_scanner_inventory.py /home/ubuntu/project/WPNO-lanes/janis-runtime/anonymization/test_payload_scanner_inventory.py
+--- /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/anonymization/test_payload_scanner_inventory.py	1970-01-01 00:00:00.000000000 +0000
++++ /home/ubuntu/project/WPNO-lanes/janis-runtime/anonymization/test_payload_scanner_inventory.py	2026-09-01 08:24:16.728101221 +0000
+@@ -0,0 +1,97 @@
++import json
++from pathlib import Path
++import shutil
++import subprocess
++import sys
++
++
++ROOT = Path(__file__).resolve().parent.parent
++DETECTOR = ROOT / "scripts" / "payload_scanner_inventory.py"
++
++
++def _run(root):
++    return subprocess.run(
++        [sys.executable, str(DETECTOR), "--root", str(root)],
++        text=True, capture_output=True, check=False,
++    )
++
++
++def _minimal_tree(tmp_path):
++    (tmp_path / "anonymization" / "golden").mkdir(parents=True)
++    (tmp_path / "docker" / "litellm").mkdir(parents=True)
++    shutil.copy2(ROOT / "anonymization" / "payload_scan.py",
++                 tmp_path / "anonymization" / "payload_scan.py")
++    shutil.copy2(ROOT / "anonymization" / "golden" / "payload_scan.py",
++                 tmp_path / "anonymization" / "golden" / "payload_scan.py")
++    (tmp_path / "docker" / "litellm" / "payload_scan.py").symlink_to(
++        "../../anonymization/payload_scan.py")
++
++
++def test_inventory_declares_all_six_audited_roles():
++    result = _run(ROOT)
++    report = json.loads(result.stdout)
++
++    assert result.returncode == 0, result.stderr + result.stdout
++    assert report["ok"] is True
++    assert len(report["copies"]) == 6
++    assert {item["role"] for item in report["copies"]} == {
++        "active_canonical", "active_alias", "golden_test_asset",
++        "backup_anonymization", "backup_docker", "historical_before_fix",
++    }
++    assert not report["unexpected"]
++
++
++def test_active_alias_drift_fails(tmp_path):
++    _minimal_tree(tmp_path)
++    alias = tmp_path / "docker" / "litellm" / "payload_scan.py"
++    alias.unlink()
++    alias.write_text("diverged active scanner\n")
++
++    result = _run(tmp_path)
++
++    assert result.returncode == 1
++    assert json.loads(result.stdout)["ok"] is False
++
++
++def test_declared_historical_differences_are_reported_not_failed(tmp_path):
++    _minimal_tree(tmp_path)
++    (tmp_path / "docs" / "Test_07.28.26" / "AP-03" / "logs").mkdir(parents=True)
++    (tmp_path / "anonymization" / "payload_scan.py.ALT.2026-08-05.bak").write_text("old A\n")
++    (tmp_path / "docker" / "litellm" / "payload_scan.py.ALT.2026-08-05.bak").write_text("old A\n")
++    (tmp_path / "docs" / "Test_07.28.26" / "AP-03" / "logs" /
++     "payload_scan.py.before_F-AP03").write_text("older\n")
++
++    result = _run(tmp_path)
++    report = json.loads(result.stdout)
++
++    assert result.returncode == 0
++    assert report["ok"] is True
++    non_active = [item for item in report["copies"]
++                  if item["role"].startswith("backup_") or
++                  item["role"] == "historical_before_fix"]
++    assert all(item["status"] == "INTENTIONAL_NON_ACTIVE_DIFFERENCE"
++               for item in non_active)
++
++
++def test_undeclared_scanner_copy_fails(tmp_path):
++    _minimal_tree(tmp_path)
++    (tmp_path / "payload_scan.py.rogue").write_text("rogue\n")
++
++    result = _run(tmp_path)
++
++    assert result.returncode == 1
++    assert json.loads(result.stdout)["unexpected"] == ["payload_scan.py.rogue"]
++
++
++def test_immutable_audit_package_copies_are_not_source_candidates(tmp_path):
++    _minimal_tree(tmp_path)
++    audit_copy = (tmp_path / "08.18.26_Level1_Audits_R9" / "work" /
++                  "fixture" / "payload_scan.py")
++    audit_copy.parent.mkdir(parents=True)
++    audit_copy.write_text("sealed fixture\n")
++
++    result = _run(tmp_path)
++    report = json.loads(result.stdout)
++
++    assert result.returncode == 0
++    assert report["unexpected"] == []
+diff -ruN '--exclude=.git' '--exclude=__pycache__' '--exclude=.pytest_cache' '--exclude=ledger_data' /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/anonymization/test_shell_find_safety.py /home/ubuntu/project/WPNO-lanes/janis-runtime/anonymization/test_shell_find_safety.py
+--- /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/anonymization/test_shell_find_safety.py	1970-01-01 00:00:00.000000000 +0000
++++ /home/ubuntu/project/WPNO-lanes/janis-runtime/anonymization/test_shell_find_safety.py	2026-09-01 08:17:04.571875443 +0000
+@@ -0,0 +1,59 @@
++from pathlib import Path
++import subprocess
++
++
++ROOT = Path(__file__).resolve().parent.parent
++BEA_PREDICATES = (
++    "-iname", "bea", "-o", "-iname", "bea[![:alnum:]]*", "-o",
++    "-iname", "*[![:alnum:]]bea", "-o", "-iname",
++    "*[![:alnum:]]bea[![:alnum:]]*",
++)
++
++
++def _find(root, predicates):
++    result = subprocess.run(
++        ["find", str(root), "-type", "f", "!", "-name", "._*",
++         "(", *predicates, ")", "-print"],
++        check=True, text=True, capture_output=True,
++    )
++    return {Path(line).name for line in result.stdout.splitlines()}
++
++
++def test_bea_token_search_excludes_bearbeitung(tmp_path):
++    expected = {"beA Export.pdf", "beA-export.pdf", "export_beA.pdf", "beA"}
++    rejected = {"Bearbeitung.pdf", "algebra.pdf", "seabea.pdf"}
++    for name in expected | rejected:
++        (tmp_path / name).touch()
++
++    assert _find(tmp_path, BEA_PREDICATES) == expected
++
++
++def test_trackc_groups_shared_find_constraints():
++    source = (ROOT / "TrackC_bestand.sh").read_text()
++    assert 'find "$D" -type f ! -name "._*" \\( "$@" \\)' in source
++
++
++def test_trackc_uses_bounded_bea_token_predicates():
++    source = (ROOT / "TrackC_bestand.sh").read_text()
++    assert '-iname "*bea*"' not in source
++    for token in ("bea", "bea[![:alnum:]]*", "*[![:alnum:]]bea",
++                  "*[![:alnum:]]bea[![:alnum:]]*"):
++        assert f'-iname "{token}"' in source
++
++
++def test_s7_groups_every_find_disjunction():
++    source = (ROOT / "S7_bestand.sh").read_text()
++    lines = [line for line in source.splitlines()
++             if line.lstrip().startswith("find ") and " -o " in line]
++    assert len(lines) == 3
++    assert all("\\(" in line and "\\)" in line for line in lines)
++
++
++def test_grouping_applies_type_and_appledouble_rules_to_every_branch(tmp_path):
++    (tmp_path / "valid.p7s").touch()
++    (tmp_path / "valid.sig").touch()
++    (tmp_path / "._hidden.sig").touch()
++    (tmp_path / "directory.sig").mkdir()
++    predicates = ("-iname", "*.p7s", "-o", "-iname", "*.sig")
++
++    assert _find(tmp_path, predicates) == {"valid.p7s", "valid.sig"}
+diff -ruN '--exclude=.git' '--exclude=__pycache__' '--exclude=.pytest_cache' '--exclude=ledger_data' /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/anonymization/test_tax_id_validation.py /home/ubuntu/project/WPNO-lanes/janis-runtime/anonymization/test_tax_id_validation.py
+--- /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/anonymization/test_tax_id_validation.py	1970-01-01 00:00:00.000000000 +0000
++++ /home/ubuntu/project/WPNO-lanes/janis-runtime/anonymization/test_tax_id_validation.py	2026-09-01 08:01:47.186015620 +0000
+@@ -0,0 +1,23 @@
++from payload_scan import scan_payload
++
++
++def _blocked(value):
++    return scan_payload(f"Steuer-ID {value}")["blocked"]
++
++
++def test_official_structurally_valid_tax_ids_are_detected():
++    assert _blocked("36574261809") is True
++    assert _blocked("11234567890") is True
++    assert _blocked("11123456786") is True
++
++
++def test_checksum_valid_but_structurally_invalid_tax_ids_are_rejected():
++    assert _blocked("12345678903") is False
++    assert _blocked("11112345678") is False
++    assert _blocked("11223456785") is False
++    assert _blocked("36554266806") is False
++
++
++def test_leading_zero_and_wrong_checksum_are_rejected():
++    assert _blocked("01234567896") is False
++    assert _blocked("36574261890") is False
+diff -ruN '--exclude=.git' '--exclude=__pycache__' '--exclude=.pytest_cache' '--exclude=ledger_data' /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/docker/litellm/Dockerfile /home/ubuntu/project/WPNO-lanes/janis-runtime/docker/litellm/Dockerfile
+--- /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/docker/litellm/Dockerfile	1970-01-01 00:00:00.000000000 +0000
++++ /home/ubuntu/project/WPNO-lanes/janis-runtime/docker/litellm/Dockerfile	2026-09-01 08:30:41.690954734 +0000
+@@ -0,0 +1,3 @@
++FROM ghcr.io/berriai/litellm:main-latest@sha256:4d00db88fc8aba3e2c1cfaddbce6ae81f6de3b8826148e428ecbcc99b0a0f62b
++RUN /app/.venv/bin/python3 -m ensurepip --upgrade \
++    && /app/.venv/bin/python3 -m pip install --no-cache-dir psycopg2-binary
+diff -ruN '--exclude=.git' '--exclude=__pycache__' '--exclude=.pytest_cache' '--exclude=ledger_data' /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/docker/litellm/docker-compose.yml /home/ubuntu/project/WPNO-lanes/janis-runtime/docker/litellm/docker-compose.yml
+--- /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/docker/litellm/docker-compose.yml	2026-08-26 08:09:54.691738529 +0000
++++ /home/ubuntu/project/WPNO-lanes/janis-runtime/docker/litellm/docker-compose.yml	2026-09-01 08:30:42.640961728 +0000
+@@ -9,11 +9,13 @@
+     env_file:
+       - .env
+     volumes:
+-      - ./config.yaml:/app/config.yaml
+-      - ./custom_callback.py:/app/custom_callback.py
+-      - ./payload_scan.py:/app/payload_scan.py
+-      - ./tool_registry_gate.py:/app/tool_registry_gate.py
+-      - ../../mcp/mcp.registry.json:/app/mcp.registry.json
++      - ./config.yaml:/app/config.yaml:ro
++      - ./custom_callback.py:/app/custom_callback.py:ro
++      - ../../anonymization/payload_scan.py:/app/payload_scan.py:ro
++      - ../../anonymization/iban_validation.py:/app/iban_validation.py:ro
++      - ../../anonymization/party_names.json:/app/party_names.json:ro
++      - ./tool_registry_gate.py:/app/tool_registry_gate.py:ro
++      - ../../mcp/mcp.registry.json:/app/mcp.registry.json:ro
+       - ./ledger_data:/app/ledger_data
+     command: ["--config", "/app/config.yaml", "--port", "4000"]
+     ports:
+diff -ruN '--exclude=.git' '--exclude=__pycache__' '--exclude=.pytest_cache' '--exclude=ledger_data' /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/docker/litellm/payload_scan.py /home/ubuntu/project/WPNO-lanes/janis-runtime/docker/litellm/payload_scan.py
+--- /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/docker/litellm/payload_scan.py	2026-08-26 08:09:54.705738621 +0000
++++ /home/ubuntu/project/WPNO-lanes/janis-runtime/docker/litellm/payload_scan.py	2026-09-01 08:08:06.304845474 +0000
+@@ -25,6 +25,8 @@
+ import unicodedata
+ from pathlib import Path
+ 
++from iban_validation import is_valid_iban
++
+ # ---------------------------------------------------------------------------
+ # AP-03 Gremium-Audit 2026-07-21: Unicode-/Fail-closed-Haertung.
+ # Behebt bestaetigte Bypaesse (P1 Homoglyph/Zero-Width/Case, P2 Non-str-raise,
+@@ -163,7 +165,7 @@
+         # national-prefix notation "+49 (0)211 4933-0" (fixed optional group,
+         # no new backtracking).
+         re.compile(r"(?<![\d/])(?:\+49|0049)[\s\-/]?(?:\(0\)[\s\-/]?)?\(?\d{2,5}\)?(?:[\s\-/]\d{1,8}){1,6}(?![\d/])"),
+-        re.compile(r"(?<![\d/.,])\(?0\d{2,4}\)?[\s\-/]\d{3,8}(?:[\s\-/]\d{1,6}){0,3}(?![\d/])"),
++        re.compile(r"(?<![\d/])\(?0\d{2,4}\)?[\s\-/]\d{3,8}(?:[\s\-/]\d{1,6}){0,3}(?![\d/])"),
+     ],
+     "bic": [re.compile(r"\b([A-Za-z]{4})([A-Za-z]{2})([A-Za-z0-9]{2})(?:[A-Za-z0-9]{3})?\b")],
+     "name": [
+@@ -180,10 +182,10 @@
+         # iela + numurs; Wort-Wiederholung hart begrenzt {0,6} gegen quadr. Backtracking.
+         re.compile(
+             r"\b[" + _U + r"][\w" + _L + r"]*(?:[-\s][" + _U + _L + r"][\w" + _L + r"]*){0,6}[\s-]?"
+-            r"(?:[Ss]tra[sß]e|[Ss]tr\.|[Ww]eg|[Aa]llee|[Pp]latz|[Gg]asse|[Rr]ing|[Dd]amm|[Uu]fer|[Cc]haussee)"
+-            r"\s+\d{1,4}\s?[a-hA-H]?\b"
++            r"(?:Straße|Strasse|[Ss]tr\.|[Ww]eg|[Aa]llee|[Pp]latz|[Gg]asse|[Rr]ing|[Dd]amm|[Uu]fer|[Cc]haussee)"
++            r"\s+\d{1,4}\s?[a-hA-H]?\b", _IC
+         ),
+-        re.compile(r"\b\d{5}\s+[" + _U + r"][" + _L + r"]+(?:[-\s][" + _U + r"][" + _L + r"]+){0,2}\b"),
++        re.compile(r"\b\d{5}\s+[" + _U + r"][" + _L + r"]+(?:[-\s][" + _U + r"][" + _L + r"]+){0,2}\b", _IC),
+     ],
+ }
+ 
+@@ -226,6 +228,9 @@
+ def _validate_steuid11(m):
+     """ISO 7064 MOD 11,10 -- die Pruefziffer der deutschen Steuer-ID."""
+     k = m.group(0)
++    counts = sorted(k[:10].count(d) for d in set(k[:10]) if k[:10].count(d) > 1)
++    if k[0] == "0" or len(counts) != 1 or counts[0] not in (2, 3):
++        return False
+     produkt = 10
+     for z in k[:10]:
+         summe = (int(z) + produkt) % 10
+@@ -235,21 +240,8 @@
+     return (11 - produkt) % 10 == int(k[10])
+ 
+ 
+-def _validate_iban_intl(m):
+-    """Mod-97 nach ISO 7064."""
+-    s = re.sub(r"\s", "", m.group(0)).upper()
+-    if not 15 <= len(s) <= 34:
+-        return False
+-    umgestellt = s[4:] + s[:4]
+-    ziffern = ""
+-    for z in umgestellt:
+-        if z.isdigit():
+-            ziffern += z
+-        elif z.isalpha():
+-            ziffern += str(ord(z) - 55)
+-        else:
+-            return False
+-    return int(ziffern) % 97 == 1
++def _validate_iban(m):
++    return is_valid_iban(m.group(0))
+ 
+ 
+ def _validate_address(m):
+@@ -266,8 +258,9 @@
+ 
+ 
+ _VALIDATORS = {
++    "iban": _validate_iban,
+     "steuid11": _validate_steuid11,
+-    "iban_intl": _validate_iban_intl,
++    "iban_intl": _validate_iban,
+     "bic": _validate_bic,
+     "address": _validate_address,
+     "phone": _validate_phone,
+diff -ruN '--exclude=.git' '--exclude=__pycache__' '--exclude=.pytest_cache' '--exclude=ledger_data' /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/scripts/payload_scanner_inventory.py /home/ubuntu/project/WPNO-lanes/janis-runtime/scripts/payload_scanner_inventory.py
+--- /home/ubuntu/project/WPNO-lanes/baseline/janis-runtime/scripts/payload_scanner_inventory.py	1970-01-01 00:00:00.000000000 +0000
++++ /home/ubuntu/project/WPNO-lanes/janis-runtime/scripts/payload_scanner_inventory.py	2026-09-01 08:24:15.733093781 +0000
+@@ -0,0 +1,109 @@
++#!/usr/bin/env python3
++"""Report declared payload-scanner copies without conflating their roles."""
++
++import argparse
++import hashlib
++import json
++import os
++from pathlib import Path
++
++
++DECLARED = (
++    ("anonymization/payload_scan.py", "active_canonical", True),
++    ("docker/litellm/payload_scan.py", "active_alias", True),
++    ("anonymization/golden/payload_scan.py", "golden_test_asset", True),
++    ("anonymization/payload_scan.py.ALT.2026-08-05.bak",
++     "backup_anonymization", False),
++    ("docker/litellm/payload_scan.py.ALT.2026-08-05.bak",
++     "backup_docker", False),
++    ("docs/Test_07.28.26/AP-03/logs/payload_scan.py.before_F-AP03",
++     "historical_before_fix", False),
++)
++
++
++def _sha256(path):
++    digest = hashlib.sha256()
++    with path.open("rb") as stream:
++        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
++            digest.update(chunk)
++    return digest.hexdigest()
++
++
++def inspect(root):
++    root = root.resolve()
++    canonical = root / DECLARED[0][0]
++    canonical_hash = _sha256(canonical) if canonical.is_file() else None
++    copies = []
++    failures = []
++
++    for relative, role, required in DECLARED:
++        path = root / relative
++        item = {
++            "path": relative,
++            "role": role,
++            "required": required,
++            "present": path.is_file(),
++            "symlink": path.is_symlink(),
++            "sha256": None,
++            "status": None,
++        }
++        if not path.is_file():
++            item["status"] = ("MISSING_REQUIRED" if required else
++                              "ABSENT_DECLARED_NON_ACTIVE")
++            if required:
++                failures.append(f"missing required {relative}")
++        else:
++            item["sha256"] = _sha256(path)
++            if role == "active_canonical":
++                item["status"] = "ACTIVE_CANONICAL"
++            elif role == "active_alias":
++                same_target = (path.is_symlink() and
++                               path.resolve() == canonical.resolve())
++                same_content = item["sha256"] == canonical_hash
++                item["status"] = ("ACTIVE_ALIAS_OK" if same_target and same_content
++                                  else "ACTIVE_ALIAS_DRIFT")
++                if item["status"] != "ACTIVE_ALIAS_OK":
++                    failures.append(f"active alias drift {relative}")
++            else:
++                item["status"] = (
++                    "INTENTIONAL_NON_ACTIVE_SAME_CONTENT"
++                    if item["sha256"] == canonical_hash else
++                    "INTENTIONAL_NON_ACTIVE_DIFFERENCE"
++                )
++        copies.append(item)
++
++    declared_paths = {item[0] for item in DECLARED}
++    discovered = set()
++    excluded = {".git", "__pycache__", ".pytest_cache"}
++    for directory, dirnames, filenames in os.walk(root):
++        dirnames[:] = [name for name in dirnames
++                       if name not in excluded and "_Level1_Audits_" not in name]
++        for name in filenames:
++            if (name.startswith("payload_scan.py") or
++                    name == "payload_scan.py.before_F-AP03"):
++                path = Path(directory) / name
++                discovered.add(path.relative_to(root).as_posix())
++    unexpected = sorted(discovered - declared_paths)
++    if unexpected:
++        failures.append("undeclared scanner copies: " + ", ".join(unexpected))
++
++    return {
++        "ok": not failures,
++        "canonical": DECLARED[0][0],
++        "copies": copies,
++        "unexpected": unexpected,
++        "failures": failures,
++    }
++
++
++def main():
++    parser = argparse.ArgumentParser()
++    parser.add_argument("--root", type=Path, required=True)
++    args = parser.parse_args()
++    report = inspect(args.root)
++    print(json.dumps(report, indent=2, sort_keys=True))
++    raise SystemExit(0 if report["ok"] else 1)
++
++
++if __name__ == "__main__":
++    main()

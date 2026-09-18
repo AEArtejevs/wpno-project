@@ -1,0 +1,161 @@
+{
+  "count": 16,
+  "fixtures": [
+    {
+      "bytes_actually_differ": true,
+      "differs_from": "references/REF-11-original-mail-attachment.zip",
+      "differs_from_sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42",
+      "kind": "MUTATION_FIXTURE",
+      "note": "one byte of the archive altered at offset 288905 (114 -> 115)",
+      "path": "work/L1-A27/RUN-A/controls/archive_one_byte_mutated.zip",
+      "sha256": "26581636cf2d4081d9cc4a9e873680417a364a1b17ad4dbbda13eff462167348",
+      "size": 577811
+    },
+    {
+      "bytes_actually_differ": true,
+      "differs_from": "references/REF-11-vhn-covered-content.xml",
+      "differs_from_sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23",
+      "kind": "MUTATION_FIXTURE",
+      "note": "one byte of the covered content altered at offset 962 (108 -> 109)",
+      "path": "work/L1-A28/RUN-A/controls/content_one_byte_mutated.xml",
+      "sha256": "7455f00f607f3958d4a5c1bba0a781ed2f7c3efd895006e9c318e3a8826d3fc1",
+      "size": 1924
+    },
+    {
+      "bytes_actually_differ": true,
+      "differs_from": "references/REF-12/376_DKB MH.docx",
+      "differs_from_sha256": "0b8403982880761b1e2bc31d8c15b756fad0fe12259d55d1611323a4e768b3ca",
+      "kind": "MUTATION_FIXTURE",
+      "note": "one byte of a sandbox copy altered at offset 26206 (218 -> 219); the reference copy is not written to",
+      "path": "work/L1-A29/RUN-A/controls/document_one_byte_mutated.docx",
+      "sha256": "9848b52970d6414e683fbbd87378ea169c3e21c0849ee621be1bec7b0bff0eef",
+      "size": 52412
+    },
+    {
+      "kind": "NEGATIVE_CONTROL_FIXTURE",
+      "note": "a synthetic archive with no macOS metadata entry at all",
+      "path": "work/L1-A30/RUN-A/controls/without_appledouble.zip",
+      "sha256": "b28cc23f2c2716a2015e1aaf8166cad1e54a335af13b2a544d5dfc69aa1473d3",
+      "size": 271
+    },
+    {
+      "bytes_actually_differ": true,
+      "differs_from": "work/L1-A30/RUN-A/controls/without_appledouble.zip",
+      "differs_from_sha256": "b28cc23f2c2716a2015e1aaf8166cad1e54a335af13b2a544d5dfc69aa1473d3",
+      "kind": "POSITIVE_CONTROL_FIXTURE",
+      "note": "a synthetic archive carrying a __MACOSX prefix entry, a ._ basename entry and a .DS_Store entry",
+      "path": "work/L1-A30/RUN-A/controls/with_appledouble.zip",
+      "sha256": "90cb7e58c1c3adf50213424f677c0d472ebba42065c9ffff2c5e813fd9663fc8",
+      "size": 678
+    },
+    {
+      "bytes_actually_differ": true,
+      "differs_from": "work/L1-A30/RUN-A/controls/without_appledouble.zip",
+      "differs_from_sha256": "b28cc23f2c2716a2015e1aaf8166cad1e54a335af13b2a544d5dfc69aa1473d3",
+      "kind": "MUTATION_FIXTURE",
+      "note": "the negative-control archive with exactly one ._ entry added",
+      "path": "work/L1-A30/RUN-A/controls/one_added_appledouble.zip",
+      "sha256": "ac8e0fb37cf61945230f82cb8faf5bf8f4f203cc261e2b54c3197e91c682a0b1",
+      "size": 413
+    },
+    {
+      "kind": "NEGATIVE_CONTROL_FIXTURE",
+      "note": "a synthetic detached CMS carrying exactly one SignerInfo",
+      "path": "work/L1-A32/RUN-A/synthetic/one_signer.p7s",
+      "sha256": "cf7a84a594b13de815f5a76e516ce0dea6c6ff8b70a1544178425be3c790b67e",
+      "size": 2560
+    },
+    {
+      "bytes_actually_differ": true,
+      "differs_from": "work/L1-A32/RUN-A/synthetic/one_signer.p7s",
+      "differs_from_sha256": "cf7a84a594b13de815f5a76e516ce0dea6c6ff8b70a1544178425be3c790b67e",
+      "kind": "POSITIVE_CONTROL_FIXTURE",
+      "note": "a synthetic detached CMS carrying two SignerInfo entries, both valid under the synthetic root",
+      "path": "work/L1-A32/RUN-A/synthetic/two_signer.p7s",
+      "sha256": "0999d31e0a38bc56cb5e87c130eb0cdc35d2a637a5c35820239a76d5d5edb70b",
+      "size": 3189
+    },
+    {
+      "bytes_actually_differ": true,
+      "der_framing_preserved": true,
+      "differs_from": "work/L1-A32/RUN-A/synthetic/two_signer.p7s",
+      "differs_from_sha256": "0999d31e0a38bc56cb5e87c130eb0cdc35d2a637a5c35820239a76d5d5edb70b",
+      "kind": "MUTATION_FIXTURE",
+      "note": "the two-signer structure with sixteen bytes altered inside the second signature's 256-byte value at offset 2933; every DER tag and length is unchanged, so the structure still parses and the failure is a signature failure rather than a parse failure",
+      "path": "work/L1-A32/RUN-A/synthetic/two_signer_second_corrupt.p7s",
+      "sha256": "cd70d7a3d38fbc31f90d250a7ea4906b08a8121baddc60d20266ef04f6b9e5b0",
+      "signature_values_found": 2,
+      "size": 3189
+    },
+    {
+      "bytes_actually_differ": true,
+      "differs_from": "references/REF-11-vhn-covered-content.xml",
+      "differs_from_sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23",
+      "kind": "NEGATIVE_CONTROL_FIXTURE",
+      "note": "one byte of an entry altered at offset 962 (108 -> 109)",
+      "path": "work/L1-A33/RUN-A/controls/entry_one_byte_mutated.xml",
+      "sha256": "7455f00f607f3958d4a5c1bba0a781ed2f7c3efd895006e9c318e3a8826d3fc1",
+      "size": 1924
+    },
+    {
+      "bytes_actually_differ": true,
+      "differs_from": "references/REF-11-563203462.xml",
+      "differs_from_sha256": "8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a",
+      "kind": "MUTATION_FIXTURE",
+      "note": "one byte of a declared value altered at offset 8118 (69 -> 70), so that the declaration side of the comparison is exercised",
+      "path": "work/L1-A33/RUN-A/controls/manifest_declared_hash_altered.xml",
+      "sha256": "b5a042f6e4df9ac0116a589f6ee651c88ebb223a1827425d4ffa82695b72051c",
+      "size": 16237
+    },
+    {
+      "kind": "CONTROL_FIXTURE",
+      "note": "a synthetic detached CMS over the synthetic content, used to locate the coverage boundary",
+      "path": "work/L1-A35/RUN-A/controls/synthetic_detached.p7s",
+      "sha256": "cf7a84a594b13de815f5a76e516ce0dea6c6ff8b70a1544178425be3c790b67e",
+      "size": 2560
+    },
+    {
+      "bytes_actually_differ": true,
+      "differs_from": "work/L1-A31/preparation_r8_2026-08-28/synthetic/content.bin",
+      "differs_from_sha256": "e380a7ae3609bf27a11346f76b860c6976819a2a030a2a9a213184976fbcfa7d",
+      "kind": "MUTATION_FIXTURE",
+      "note": "one byte inside the signed content altered at offset 140 (87 -> 88)",
+      "path": "work/L1-A35/RUN-A/controls/content_inside_coverage_mutated.bin",
+      "sha256": "83ed3d34450010cc31903004dffa6a23b21f606e573b791c5d6c0c04557aa6e3",
+      "size": 280
+    },
+    {
+      "kind": "CONTROL_FIXTURE",
+      "note": "a synthetic source archive for the layer comparison",
+      "path": "work/L1-A35/RUN-A/controls/synthetic_source.zip",
+      "sha256": "b57e7bd6400de4d8fde30c67b82f3b3e8379bc7d4e034e71dc42ab87d568068e",
+      "size": 270
+    },
+    {
+      "kind": "POSITIVE_CONTROL_FIXTURE",
+      "note": "a byte-for-byte copy of the synthetic source archive",
+      "path": "work/L1-A35/RUN-A/controls/synthetic_copy_preserving.zip",
+      "sha256": "b57e7bd6400de4d8fde30c67b82f3b3e8379bc7d4e034e71dc42ab87d568068e",
+      "size": 270
+    },
+    {
+      "bytes_actually_differ": true,
+      "differs_from": "work/L1-A35/RUN-A/controls/synthetic_source.zip",
+      "differs_from_sha256": "b57e7bd6400de4d8fde30c67b82f3b3e8379bc7d4e034e71dc42ab87d568068e",
+      "kind": "NEGATIVE_CONTROL_FIXTURE",
+      "note": "the same entries stored uncompressed: the container differs while every entry's content is unchanged",
+      "path": "work/L1-A35/RUN-A/controls/synthetic_copy_recompressed.zip",
+      "sha256": "6c04bc96f9edae27802bd822de18fea541160c79ae75223815d31db11681775b",
+      "size": 1271
+    },
+    {
+      "claim": "every entry of the recompressed copy has the same uncompressed content as the source, while the archives differ as files",
+      "entries_checked": 2,
+      "kind": "FIXTURE_PROPERTY_PROOF",
+      "verified": true
+    }
+  ],
+  "note": "Every fixture is synthetic or a sandbox copy. No accepted reference byte was written to and nothing was created outside work/.",
+  "revision": "R8",
+  "schema": "wpno.level1.rehearsal-fixtures/1"
+}

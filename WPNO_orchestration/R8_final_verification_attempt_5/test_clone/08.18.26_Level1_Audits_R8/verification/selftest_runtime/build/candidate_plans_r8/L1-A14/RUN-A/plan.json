@@ -1,0 +1,318 @@
+{
+  "audit_id": "L1-A14",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Independently enumerate and classify all citations in the recovered checker input, compute the BGH count without the production counter, compare, and record every disagreement. The source-bound structural oracle is the DOCX with SHA-256 9f7ee8caebee9345b54dd535a2681789512f68dfc2e4bf7b0652c5cc48722675, 165 total citation occurrences and 64 unique citations.",
+  "static_analysis": "No module under PROJECT_ROOT is imported. The document is located in references/ as REF-06 and its digest is verified against references/manifest.json and against the source-bound value 9f7ee8caebee9345b54dd535a2681789512f68dfc2e4bf7b0652c5cc48722675 before anything else. A hash mismatch is BLOCKED; the document is client material and is never copied into a report.\n\nPage identity is two separate measurements of the same hash-bound file and they are kept apart: Word extended-properties metadata stores 111 pages, while prior independent visible-pagination parsing resolves 'Seite 1 von 138' through 'Seite 138 von 138'. Both are recorded. A page-measurement discrepancy alone does not override exact hash identity and original checker-input provenance, and it is not reported as evidence that the document is the wrong one.\n\nThe document's text is extracted independently in the sandbox - unzip and parse word/document.xml with external entities and DTD disabled - and the citation grammar this audit states is applied to it. The production counter is never the oracle, and neither is any prior report under docs/.\n\nPYTHON_SCRIPT_RUN_SANDBOX runs a script under work/ and nowhere else, so the approved phase first copies the checker to work/<audit>/RUN-A/sandbox/ and records the copy's digest beside the original's. The original in authoring/ is read and never written to.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "expected_sha256": "9f7ee8caebee9345b54dd535a2681789512f68dfc2e4bf7b0652c5cc48722675",
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-06_S01.docx"
+      },
+      "purpose": "Verify the document against the manifest and against the source-bound value before any extraction.",
+      "step_id": "verify_document_digest",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "ARCHIVE_EXTRACT_SANDBOX",
+      "params": {
+        "archive": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-06_S01.docx",
+        "dest": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A14/RUN-A/extracted"
+      },
+      "purpose": "Extract the OOXML parts into the audit work directory only.",
+      "step_id": "extract_document_parts",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "ORACLE",
+      "operation": "DOCX_PARSE_SANDBOX",
+      "params": {
+        "load_dtd": false,
+        "no_network": true,
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-06_S01.docx",
+        "resolve_entities": false
+      },
+      "purpose": "Read word/document.xml with external entities and DTD disabled, and reconstruct the text run by run.",
+      "step_id": "parse_document_xml",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "XML_PARSE_SANDBOX",
+      "params": {
+        "load_dtd": false,
+        "no_network": true,
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A14/RUN-A/extracted/docProps/app.xml",
+        "resolve_entities": false
+      },
+      "purpose": "Word extended-properties page count, recorded as its own measurement and not merged with the visible pagination.",
+      "step_id": "read_extended_properties",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "ORACLE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--text",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A14/RUN-A/extracted_text.txt",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A14/RUN-A/independent_counts.json"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A14/RUN-A/sandbox/independent_citations.py"
+      },
+      "purpose": "Enumerate and classify every citation by the grammar this audit states, without the production counter.",
+      "step_id": "independent_citation_enumeration",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--text",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A14/RUN-A/extracted_text.txt",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A14/RUN-A/production_counts.json"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A14/RUN-A/sandbox/AP18_referenzpruefung.py"
+      },
+      "purpose": "Run the checker's own counter over the same text, for comparison only.",
+      "step_id": "production_counter",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--text",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A14/RUN-A/controls/seeded_plus_one.txt",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A14/RUN-A/controls/seeded_counts.json"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A14/RUN-A/sandbox/independent_citations.py"
+      },
+      "purpose": "A synthetic copy seeded with one additional unmistakable BGH citation: both methods must increase by one. This proves both respond.",
+      "step_id": "positive_control_seeded_citation",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--text",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A14/RUN-A/controls/no_citations.txt",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A14/RUN-A/controls/zero_counts.json"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A14/RUN-A/sandbox/independent_citations.py"
+      },
+      "purpose": "Over a text with no citations, both methods must report zero.",
+      "step_id": "negative_control_no_citations",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--text",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A14/RUN-A/controls/removed_one.txt",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A14/RUN-A/controls/removed_counts.json"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A14/RUN-A/sandbox/independent_citations.py"
+      },
+      "purpose": "A synthetic copy with one BGH citation removed: the independent count must fall by one. If it does not, the independent method is not independent enough to be an oracle.",
+      "step_id": "mutation_control_removed_citation",
+      "timeout_seconds": 600
+    }
+  ],
+  "target": {
+    "identity_evidence": "The binding records this path as a candidate with this digest. It is bound as the anchor; which copy is productive is L1-A10's question and a filename does not answer it. REF-06 is the input document, not the target; the target is the checker whose count is under audit.",
+    "path": "/home/ubuntu/project/WPNO/authoring/AP18_referenzpruefung.py",
+    "sha256": "f5eb5a9cbeb37cada9186ba305b9a307ea40e3012ca0e2e6dd0b2560f4352d74"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "/home/ubuntu/project/WPNO/authoring/AP18_referenzpruefung.py",
+        "references/REF-06_S01.docx"
+      ],
+      "allowed_writes": [
+        "work/L1-A14/RUN-A/",
+        "evidence/L1-A14/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A14 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A14",
+      "candidate_template_identity": "L1-A14/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A14/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "/usr/bin/python3 -I -B against a sandbox copy; /usr/bin/unzip for extraction",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "ARBITRARY_SHELL",
+        "CHANGE_PERMISSION",
+        "DATABASE_CONNECTION",
+        "DATABASE_WRITE",
+        "DELETE_SOURCE",
+        "DOCKER_BUILD",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_SOCKET_ACCESS",
+        "GIT_MUTATION",
+        "INSTALL_PACKAGE",
+        "LAUNCH_AGENT_MUTATION",
+        "MCP_MUTATION",
+        "MODIFY_SOURCE",
+        "N8N_MUTATION",
+        "NETWORK_REQUEST",
+        "NETWORK_UPLOAD",
+        "SERVICE_MUTATION"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [
+        "The operator supplied REF-06 as the recovered checker input and its identity is bound by the source-bound SHA-256 9f7ee8caebee9345b54dd535a2681789512f68dfc2e4bf7b0652c5cc48722675."
+      ],
+      "independent_oracle": "The independent citation grammar and manual classification produced by this audit. The production counter may never serve as the oracle, and neither may any prior report under docs/.",
+      "limitations": [
+        "The document is client material. It is read in the sandbox and never copied into a report; only counts and classifications leave the work directory.",
+        "Page identity is two separate measurements of the same hash-bound file: Word extended-properties metadata stores 111 pages, and prior independent visible-pagination parsing resolves 138. Both are recorded and neither is corrected into the other.",
+        "A page-measurement discrepancy alone does not override exact hash identity and original checker-input provenance."
+      ],
+      "method": "independent citation grammar against the production counter",
+      "notes": [
+        "PYTHON_SCRIPT_RUN_SANDBOX runs a script under work/ and nowhere else, so the approved phase first copies the checker to work/<audit>/RUN-A/sandbox/ and records the copy's digest beside the original's. The original in authoring/ is read and never written to."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [
+        "REF-06"
+      ],
+      "references": [
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-06_S01.docx",
+          "sha256": "9f7ee8caebee9345b54dd535a2681789512f68dfc2e4bf7b0652c5cc48722675"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/manifest.json",
+          "sha256": "4c1e9a706a5ba2a3c6f25f7ffc37963efadbe529f907865f516982ce3b54f1b4"
+        }
+      ],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": null,
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "check_id": "document_identity",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_sha256": "9f7ee8caebee9345b54dd535a2681789512f68dfc2e4bf7b0652c5cc48722675",
+      "question": "Is this the source-bound document?",
+      "required_result": "The digest matches both the manifest and the source-bound value. A mismatch is BLOCKED.",
+      "step_id": "verify_document_digest",
+      "structural_oracle": {
+        "total_citation_occurrences": 165,
+        "unique_citations": 64
+      }
+    },
+    {
+      "check_id": "page_identity_two_measurements",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "How many pages does the document have?",
+      "required_result": "Both recorded, as two measurements of the same hash-bound file. Neither is corrected into the other and the discrepancy is not reported as a document-identity failure.",
+      "step_id": "read_extended_properties",
+      "visible_pagination_pages": 138,
+      "word_extended_properties_pages": 111
+    },
+    {
+      "check_id": "independent_versus_production_count",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_exit_code": 0,
+      "question": "Do the two counts agree, and where do they differ?",
+      "required_result": "Both counts reported with every disagreement located at the citation that produced it, never as a difference of totals.",
+      "step_id": "independent_citation_enumeration",
+      "why": "The independent enumeration must run. Its counts are the oracle's answer and are substantive."
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_result": "BOTH_COUNTS_INCREASE_BY_EXACTLY_ONE",
+      "fixture": "work/L1-A14/RUN-A/controls/seeded_plus_one.txt",
+      "fixture_construction": "the extracted text with one unmistakable BGH citation added",
+      "question": "Do both methods respond to an added citation?",
+      "step_id": "positive_control_seeded_citation"
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_failure_reason": "the text contains no citation; a nonzero count would mean the method matches ordinary prose",
+      "expected_result": "BOTH_REPORT_ZERO",
+      "question": "Do both methods report zero on citation-free text?",
+      "step_id": "negative_control_no_citations"
+    },
+    {
+      "check_id": "mutation_control",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_result": "THE_INDEPENDENT_COUNT_FALLS_BY_EXACTLY_ONE",
+      "expected_status": "COMPLETED_OUTCOME_IS_SUBSTANTIVE",
+      "fixture": "work/L1-A14/RUN-A/controls/removed_one.txt",
+      "fixture_construction": "the extracted text with one BGH citation removed",
+      "proof_the_fixture_differs": "its SHA-256 differs from the extracted text's and the removed citation is recorded",
+      "question": "Is the independent method genuinely independent?",
+      "step_id": "mutation_control_removed_citation",
+      "why": "The count must fall by exactly one, which is read from the counts file the run writes.",
+      "zero_changed_results_is": "proof that the independent method is not independent enough to be an oracle, not a passing control"
+    },
+    {
+      "check_id": "control_expectation_parse_document_xml",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_boolean": true,
+      "expected_exit_code": 0,
+      "question": "What must this control step do for its measurement to count?",
+      "step_id": "parse_document_xml",
+      "why": "The oracle must parse word/document.xml."
+    }
+  ]
+}

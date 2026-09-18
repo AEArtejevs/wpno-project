@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tns:nachricht.gds.uebermittlungSchriftgutobjekte.0005005 xmlns:tns="http://www.xjustiz.de" xmlns:din91379="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xjustiz.de xjustiz_0005_nachrichten_3_1.xsd">
+    <tns:nachrichtenkopf xjustizVersion="3.5.1">
+        <tns:aktenzeichen.absender>44/2022-R-0</tns:aktenzeichen.absender>
+        <tns:aktenzeichen.empfaenger>I-25 U 75/25</tns:aktenzeichen.empfaenger>
+        <tns:erstellungszeitpunkt>2026-02-27T23:55:24.739+01:00</tns:erstellungszeitpunkt>
+        <tns:auswahl_absender>
+            <tns:absender.sonstige>Reinknecht, Achim (50670 Köln) DE.BRAK.6aeb9a2c-b12e-45b0-92a9-e466ba908021.cd01</tns:absender.sonstige>
+        </tns:auswahl_absender>
+        <tns:auswahl_empfaenger>
+            <tns:empfaenger.gericht listURI="urn:xoev-de:xjustiz:codeliste:gds.gerichte" listVersionID="3.7">
+                <code>R2000</code>
+            </tns:empfaenger.gericht>
+        </tns:auswahl_empfaenger>
+        <tns:eigeneNachrichtenID>f61166fa-1787-4efb-9877-9f34670ca724</tns:eigeneNachrichtenID>
+        <tns:herstellerinformation>
+            <tns:nameDesProdukts>beA-Client (Client-Security)</tns:nameDesProdukts>
+            <tns:herstellerDesProdukts>Bundesrechtsanwaltskammer</tns:herstellerDesProdukts>
+            <tns:version>4.2.1.0</tns:version>
+        </tns:herstellerinformation>
+    </tns:nachrichtenkopf>
+    <tns:grunddaten>
+        <tns:verfahrensdaten>
+            <tns:instanzdaten>
+                <tns:instanznummer>1</tns:instanznummer>
+                <tns:sachgebiet listVersionID="2.3">
+                    <code>039</code>
+                </tns:sachgebiet>
+                <tns:auswahl_instanzbehoerde>
+                    <tns:gericht listURI="urn:xoev-de:xjustiz:codeliste:gds.gerichte" listVersionID="3.7">
+                        <code>R2000</code>
+                    </tns:gericht>
+                </tns:auswahl_instanzbehoerde>
+                <tns:aktenzeichen>
+                    <tns:auswahl_aktenzeichen>
+                        <tns:aktenzeichen.freitext></tns:aktenzeichen.freitext>
+                    </tns:auswahl_aktenzeichen>
+                </tns:aktenzeichen>
+                <tns:kurzrubrum>WPNO Wirtschaftsprüfungsgesellschaft PartGmbH gegen H&amp;R GmbH &amp; Co. KGaA u.a.</tns:kurzrubrum>
+                <tns:verfahrensgegenstand>
+                    <tns:gegenstand>WPNO Wirtschaftsprüfungsgesellschaft PartGmbH gegen H&amp;R GmbH &amp; Co. KGaA u.a.</tns:gegenstand>
+                </tns:verfahrensgegenstand>
+            </tns:instanzdaten>
+        </tns:verfahrensdaten>
+    </tns:grunddaten>
+    <tns:schriftgutobjekte>
+        <tns:dokument>
+            <tns:identifikation>
+                <tns:id>f63f9626-3708-4485-ac54-6009c91daad6</tns:id>
+                <tns:nummerImUebergeordnetenContainer>1</tns:nummerImUebergeordnetenContainer>
+            </tns:identifikation>
+            <tns:xjustiz.fachspezifischeDaten>
+                <tns:dokumentklasse listURI="urn:xoev-de:xjustiz:codeliste:gds.dokumentklasse" listVersionID="1.4">
+                    <code>001</code>
+                </tns:dokumentklasse>
+                <tns:anzeigename>Berufungsbegründung</tns:anzeigename>
+                <tns:datei>
+                    <tns:dateiname>Berufungsbegründung_O.pdf</tns:dateiname>
+                    <tns:bestandteil listVersionID="2.4">
+                        <code>001</code>
+                    </tns:bestandteil>
+                </tns:datei>
+                <tns:datei>
+                    <tns:dateiname>Berufungsbegründung_O.pdf.p7s</tns:dateiname>
+                    <tns:bestandteil listVersionID="2.4">
+                        <code>003</code>
+                    </tns:bestandteil>
+                    <tns:dateiname.bezugsdatei>Berufungsbegründung_O.pdf</tns:dateiname.bezugsdatei>
+                </tns:datei>
+            </tns:xjustiz.fachspezifischeDaten>
+        </tns:dokument>
+    </tns:schriftgutobjekte>
+</tns:nachricht.gds.uebermittlungSchriftgutobjekte.0005005>

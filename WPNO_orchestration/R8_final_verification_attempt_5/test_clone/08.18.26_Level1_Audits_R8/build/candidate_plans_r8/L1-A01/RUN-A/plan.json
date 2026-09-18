@@ -1,0 +1,293 @@
+{
+  "audit_id": "L1-A01",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Establish whether two runs of the assembly path, given identical input and identical configuration, produce byte-identical output; and where they do not, establish exactly which bytes differ and whether those bytes are document content or container metadata. Those two are different findings and are never merged.",
+  "static_analysis": "The assembler is parsed with PYTHON_AST_PARSE, never imported. Every source of nondeterminism reachable from module scope and from the entry point is enumerated: datetime and time calls, uuid, random, os.urandom, hash-order-dependent iteration over dict or set, os.listdir and glob ordering, locale-dependent formatting, tempfile names and environment reads. Every write target and every constructed path is enumerated with them.\n\nThe output container format is determined from the parse. If it is ZIP-based, as DOCX is, then ZIP local headers carry an mtime and that alone breaks byte equality unless the writer pins it - so a raw-hash difference is not yet evidence of nondeterministic content, and the layer must be identified before the difference is interpreted.\n\nPreparation the approved phase performs: two clean work directories RUN1 and RUN2, neither pre-existing, each receiving a copy of a synthetic input fixture built inside the audit work directory. Never a client document. The environment is pinned identically for both - TZ, LC_ALL, LANG, PYTHONHASHSEED, and SOURCE_DATE_EPOCH where the code honours it - and the exact allowlist is recorded.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/authoring/AP16_assemble_long_document.py"
+      },
+      "purpose": "Enumerate nondeterminism sources, write targets and the entry point's argument surface.",
+      "step_id": "parse_assembler",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN1/input",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN1/output.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/sandbox/AP16_assemble_long_document.py"
+      },
+      "purpose": "First run, in its own clean directory.",
+      "step_id": "run1",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN2/input",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN2/output.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/sandbox/AP16_assemble_long_document.py"
+      },
+      "purpose": "Second run, identical input and identical pinned environment, in its own clean directory.",
+      "step_id": "run2",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "COMPARE_HASHES",
+      "params": {
+        "algorithms": [
+          "sha256"
+        ],
+        "left": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN1/output.docx",
+        "right": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN2/output.docx"
+      },
+      "purpose": "Hash the raw output of each run before touching it in any way.",
+      "step_id": "hash_both_outputs_raw",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "COMPARE_BINARY_FILES",
+      "params": {
+        "left": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN1/output.docx",
+        "right": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN2/output.docx"
+      },
+      "purpose": "If the raw hashes differ, locate the differing bytes and attribute them to a layer.",
+      "step_id": "locate_differences",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "ORACLE",
+      "operation": "ZIP_LIST",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN1/output.docx"
+      },
+      "purpose": "Read the container structure with the standard library so that a metadata difference can be told from a content difference.",
+      "step_id": "independent_container_read",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "COMPARE_HASHES",
+      "params": {
+        "algorithms": [
+          "sha256"
+        ],
+        "left": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN1/output.docx",
+        "right": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/controls/output_from_changed_input.docx"
+      },
+      "purpose": "One known character changed in the RUN2 input fixture: the raw hashes must differ and the located difference must be the one introduced. This proves the comparison can see a change.",
+      "step_id": "positive_control_known_input_difference",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "COMPARE_HASHES",
+      "params": {
+        "algorithms": [
+          "sha256"
+        ],
+        "left": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/controls/unchanged_a.docx",
+        "right": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/controls/unchanged_b.docx"
+      },
+      "purpose": "The assembler run twice on the same input in the same directory shape with no change at all. Any difference observed here is nondeterminism rather than input variation, which is what separates the two causes.",
+      "step_id": "negative_control_same_input_twice",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/controls/pinned_input",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/controls/pinned_output.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/sandbox/AP16_assemble_long_document.py"
+      },
+      "purpose": "Pin every identified nondeterminism source - fixed TZ, fixed PYTHONHASHSEED, fixed SOURCE_DATE_EPOCH - and repeat. If the output becomes deterministic the nondeterminism is environmental; if it does not it is in the code, and the AST enumeration is re-examined for what it missed.",
+      "step_id": "mutation_control_pin_nondeterminism",
+      "timeout_seconds": 600
+    }
+  ],
+  "target": {
+    "identity_evidence": "bindings/L1-A01.binding.json records this path with this digest and the file on disk hashes to the same value.",
+    "path": "/home/ubuntu/project/WPNO/authoring/AP16_assemble_long_document.py",
+    "sha256": "4bcde78f0220eaf07a70c6a9ba20c98d66ee4d65f38a998762c30c9bd5b09932"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "/home/ubuntu/project/WPNO/authoring/AP16_assemble_long_document.py"
+      ],
+      "allowed_writes": [
+        "work/L1-A01/RUN-A/",
+        "evidence/L1-A01/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A01 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A01",
+      "candidate_template_identity": "L1-A01/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A01/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "/usr/bin/python3 -I -B against a sandbox copy",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "ARBITRARY_SHELL",
+        "CHANGE_PERMISSION",
+        "DATABASE_CONNECTION",
+        "DATABASE_WRITE",
+        "DELETE_SOURCE",
+        "DOCKER_BUILD",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_SOCKET_ACCESS",
+        "GIT_MUTATION",
+        "INSTALL_PACKAGE",
+        "LAUNCH_AGENT_MUTATION",
+        "MCP_MUTATION",
+        "MODIFY_SOURCE",
+        "N8N_MUTATION",
+        "NETWORK_REQUEST",
+        "NETWORK_UPLOAD",
+        "SERVICE_MUTATION"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [],
+      "independent_oracle": "The independent reader is written for this audit with zipfile and xml.etree, external entities and DTD disabled. It states what the document contains; the target states what it claims. The generator is never its own oracle, and a prior report under docs/ is not one either.",
+      "limitations": [],
+      "method": "two pinned runs compared at the raw and container layers",
+      "notes": [
+        "The input fixture is synthetic and is built inside the audit work directory. Never a client document.",
+        "ZIP local headers carry an mtime; a raw-hash difference is not by itself evidence of nondeterministic content."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [],
+      "references": [],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": "Production identity requires execution-path evidence: an import, an invocation in a script, a container command, a workflow node or a scheduler entry. Filename, version suffix, modification time, file size, documentation, comments and proximity to another file are excluded by rule. If production identity cannot be proven the answer is that it cannot be proven from this machine; no most-likely candidate is nominated.",
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "check_id": "byte_identity",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Are the two outputs byte-identical?",
+      "required_result": "The two raw digests, and whether they are equal. Hashed before either file is touched.",
+      "step_id": "hash_both_outputs_raw"
+    },
+    {
+      "check_id": "layer_of_any_difference",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "If they differ, is it content or container metadata?",
+      "required_result": "The differing byte ranges, each attributed to document content or to container metadata. The two are different findings and are never merged.",
+      "step_id": "locate_differences"
+    },
+    {
+      "check_id": "environment_recorded",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "pinned": [
+        "TZ",
+        "LC_ALL",
+        "LANG",
+        "PYTHONHASHSEED",
+        "SOURCE_DATE_EPOCH"
+      ],
+      "question": "Was the environment identical for both runs?",
+      "required_result": "The exact allowlist recorded, not described. Two runs under different environments compare nothing."
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_exit_code": 0,
+      "expected_hash_relation": "DIFFERENT",
+      "expected_result": "HASHES_DIFFER_AT_THE_INTRODUCED_DIFFERENCE",
+      "fixture": "work/L1-A01/RUN-A/controls/output_from_changed_input.docx",
+      "fixture_construction": "output produced from the RUN2 input fixture with one character changed",
+      "proof_the_fixture_differs": "the input fixtures' digests differ and the changed character is recorded",
+      "question": "Can the comparison see a known change?",
+      "step_id": "positive_control_known_input_difference",
+      "why": "A difference was introduced deliberately. If the digests match, the comparison is not reading both operands."
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_failure_reason": "nothing was changed between the two runs, so a difference cannot be input variation",
+      "expected_result": "ANY_DIFFERENCE_HERE_IS_NONDETERMINISM",
+      "expected_status": "COMPLETED_OUTCOME_IS_SUBSTANTIVE",
+      "question": "Does the same input twice produce the same output?",
+      "step_id": "negative_control_same_input_twice",
+      "why": "This is what separates nondeterminism from input variation."
+    },
+    {
+      "check_id": "mutation_control",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_result": "DETERMINISTIC_MEANS_ENVIRONMENTAL; STILL_VARYING_MEANS_IN_THE_CODE",
+      "expected_status": "COMPLETED_OUTCOME_IS_SUBSTANTIVE",
+      "fixture": "every identified nondeterminism source pinned",
+      "follow_up": "If the output still varies, the AST enumeration is re-examined for the source it missed.",
+      "question": "Is the nondeterminism environmental or in the code?",
+      "step_id": "mutation_control_pin_nondeterminism",
+      "why": "The plan states both outcomes as informative: deterministic means environmental, still varying means in the code.",
+      "zero_changed_results_is": "informative here rather than an error: if pinning changes nothing and the output was already identical, the control has not been exercised and is recorded as not exercised"
+    },
+    {
+      "check_id": "control_expectation_independent_container_read",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_exit_code": 0,
+      "question": "What must this control step do for its measurement to count?",
+      "step_id": "independent_container_read",
+      "why": "An oracle that cannot read the container is an infrastructure failure, not a finding. The entry list it returns is substantive."
+    }
+  ]
+}

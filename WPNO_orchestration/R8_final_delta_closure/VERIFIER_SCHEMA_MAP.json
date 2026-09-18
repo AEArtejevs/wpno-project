@@ -1,0 +1,1745 @@
+{
+ "UNRESOLVED_KEY_LOOKUPS": 0,
+ "attempt_8_item_shapes": {
+  "1": {
+   "measured_keys": null,
+   "measured_type": "str",
+   "pass": true
+  },
+  "2": {
+   "measured_keys": null,
+   "measured_type": "str",
+   "pass": true
+  },
+  "3": {
+   "measured_keys": null,
+   "measured_type": "str",
+   "pass": true
+  },
+  "4": {
+   "measured_keys": null,
+   "measured_type": "str",
+   "pass": true
+  },
+  "5": {
+   "measured_keys": null,
+   "measured_type": "str",
+   "pass": true
+  },
+  "6": {
+   "measured_keys": null,
+   "measured_type": "str",
+   "pass": true
+  },
+  "7": {
+   "measured_keys": null,
+   "measured_type": "str",
+   "pass": true
+  },
+  "8": {
+   "measured_keys": null,
+   "measured_type": "str",
+   "pass": true
+  },
+  "9": {
+   "measured_keys": [
+    "occurrence_count",
+    "occurrences",
+    "replica_imports_from_live_paths",
+    "unclassified",
+    "verifier_dirs_manifest_excluded"
+   ],
+   "measured_type": "dict",
+   "pass": true
+  },
+  "10": {
+   "measured_keys": null,
+   "measured_type": "str",
+   "pass": true
+  },
+  "11": {
+   "measured_keys": null,
+   "measured_type": "str",
+   "pass": true
+  },
+  "12": {
+   "measured_keys": null,
+   "measured_type": "str",
+   "pass": true
+  },
+  "13": {
+   "measured_keys": null,
+   "measured_type": "str",
+   "pass": true
+  },
+  "14": {
+   "measured_keys": null,
+   "measured_type": "str",
+   "pass": true
+  },
+  "15": {
+   "measured_keys": null,
+   "measured_type": "str",
+   "pass": true
+  },
+  "16": {
+   "measured_keys": null,
+   "measured_type": "str",
+   "pass": true
+  },
+  "17": {
+   "measured_keys": null,
+   "measured_type": "str",
+   "pass": true
+  },
+  "18": {
+   "measured_keys": [
+    "errors",
+    "exit_status",
+    "failures",
+    "skips",
+    "tests_run"
+   ],
+   "measured_type": "dict",
+   "pass": true
+  },
+  "19": {
+   "measured_keys": [
+    "EFFECTIVE_FAILURES",
+    "EFFECTIVE_PASSED",
+    "SUITE_CLEAN",
+    "clone",
+    "errors",
+    "pass_a_exit_code",
+    "pass_a_in_clone",
+    "pass_a_stderr_tail",
+    "pass_b_in_situ",
+    "r8_root",
+    "schema",
+    "skips",
+    "tests_failing_in_clone",
+    "tests_resolved_in_situ",
+    "tests_run",
+    "tests_unresolved",
+    "unresolved"
+   ],
+   "measured_type": "dict",
+   "pass": true
+  },
+  "20": {
+   "measured_keys": [
+    "clean",
+    "exit_status",
+    "fields_match_except_allowed",
+    "finding_count",
+    "output_files",
+    "predecessor_root"
+   ],
+   "measured_type": "dict",
+   "pass": true
+  },
+  "21": {
+   "measured_keys": [
+    "duplicate_count",
+    "duplicates",
+    "missing",
+    "missing_count",
+    "plans",
+    "unknown",
+    "unknown_count"
+   ],
+   "measured_type": "dict",
+   "pass": true
+  },
+  "22": {
+   "measured_keys": [
+    "per_phase_ready",
+    "reported",
+    "required"
+   ],
+   "measured_type": "dict",
+   "pass": true
+  },
+  "23": {
+   "measured_keys": [
+    "IN_PROCESS_HANDLER_INVOCATIONS",
+    "IN_PROCESS_STEP_COUNT",
+    "NOTE_ONLY_IN_PROCESS_STEPS",
+    "REQUIRED_IN_PROCESS_STEPS_WITHOUT_EVIDENCE",
+    "reconciliation"
+   ],
+   "measured_type": "dict",
+   "pass": false
+  },
+  "24": {
+   "measured_keys": [
+    "HOLLOW_PHASES",
+    "LIVE_STATE_UNCHANGED"
+   ],
+   "measured_type": "dict",
+   "pass": true
+  },
+  "25": {
+   "measured_keys": [
+    "audits",
+    "phases",
+    "state_counts"
+   ],
+   "measured_type": "dict",
+   "pass": true
+  },
+  "26": {
+   "measured_keys": [
+    "approval_rows",
+    "evidence_files",
+    "result_files",
+    "token_files"
+   ],
+   "measured_type": "dict",
+   "pass": true
+  },
+  "27": {
+   "measured_keys": [
+    "duplicates",
+    "entries",
+    "listed_not_physical",
+    "malformed",
+    "manifest_sha256",
+    "mismatches",
+    "physical_not_listed"
+   ],
+   "measured_type": "dict",
+   "pass": true
+  },
+  "28": {
+   "measured_keys": [
+    "reason",
+    "status"
+   ],
+   "measured_type": "dict",
+   "pass": false
+  },
+  "29": {
+   "measured_keys": [
+    "reason",
+    "status"
+   ],
+   "measured_type": "dict",
+   "pass": false
+  },
+  "30": {
+   "measured_keys": [
+    "reason",
+    "status"
+   ],
+   "measured_type": "dict",
+   "pass": false
+  },
+  "31": {
+   "measured_keys": [
+    "after_fold_sha256",
+    "before_fold_sha256",
+    "changed_paths",
+    "manifest_entries"
+   ],
+   "measured_type": "dict",
+   "pass": true
+  },
+  "32": {
+   "measured_keys": [
+    "EQUAL",
+    "R8 contents changed",
+    "R8 modes changed",
+    "R8 mtimes changed",
+    "R8 paths added",
+    "R8 paths removed",
+    "R8 paths written",
+    "R8 symlink targets changed",
+    "inventory_paths"
+   ],
+   "measured_type": "dict",
+   "pass": true
+  },
+  "33": {
+   "measured_keys": [
+    "after",
+    "before",
+    "bytes_match_original_after",
+    "comparison",
+    "original_sha256"
+   ],
+   "measured_type": "dict",
+   "pass": true
+  },
+  "34": {
+   "measured_keys": [
+    "reason",
+    "status"
+   ],
+   "measured_type": "dict",
+   "pass": false
+  },
+  "35": {
+   "measured_keys": [
+    "reason",
+    "status"
+   ],
+   "measured_type": "dict",
+   "pass": false
+  }
+ },
+ "attempt_8_root": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8",
+ "field_count": 175,
+ "fields": [
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "R7_UNIQUE_IN_PROCESS_PLAN_STEPS_REMEASURED",
+   "SAMPLE_VALUE": "165",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/IN_PROCESS_COUNT_RECONCILIATION.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "R8_INVOCATIONS_PER_UNIQUE_STEP",
+   "SAMPLE_VALUE": "'1:1 for every step that ran; the executor is called once per plan step and never loops over inputs'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/IN_PROCESS_COUNT_RECONCILIATION.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "R8_IN_PROCESS_HANDLER_INVOCATIONS",
+   "SAMPLE_VALUE": "169",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/IN_PROCESS_COUNT_RECONCILIATION.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "R8_TOTAL_PLAN_STEPS",
+   "SAMPLE_VALUE": "311",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/IN_PROCESS_COUNT_RECONCILIATION.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "R8_UNIQUE_IN_PROCESS_PLAN_STEPS",
+   "SAMPLE_VALUE": "169",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/IN_PROCESS_COUNT_RECONCILIATION.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "explanation",
+   "SAMPLE_VALUE": "<dict len 11>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/IN_PROCESS_COUNT_RECONCILIATION.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "r7_dirty_rehearsal",
+   "SAMPLE_VALUE": "<dict len 8>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/IN_PROCESS_COUNT_RECONCILIATION.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "revision",
+   "SAMPLE_VALUE": "'R8'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/IN_PROCESS_COUNT_RECONCILIATION.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "schema",
+   "SAMPLE_VALUE": "'wpno.level1.in-process-count-reconciliation/1'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/IN_PROCESS_COUNT_RECONCILIATION.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "steps",
+   "SAMPLE_VALUE": "<list len 311>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/IN_PROCESS_COUNT_RECONCILIATION.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "IN_PROCESS_HANDLER_INVOCATIONS",
+   "SAMPLE_VALUE": "169",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "IN_PROCESS_STEP_COUNT",
+   "SAMPLE_VALUE": "169",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "NOTE_ONLY_IN_PROCESS_STEPS",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "REQUIRED_IN_PROCESS_STEPS_WITHOUT_EVIDENCE",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "HOLLOW_PHASES",
+   "SAMPLE_VALUE": "<list len 0>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "LIVE_STATE_UNCHANGED",
+   "SAMPLE_VALUE": "True",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "phases_rehearsed",
+   "SAMPLE_VALUE": "43",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "phases_required",
+   "SAMPLE_VALUE": "43",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "all_pass_ready",
+   "SAMPLE_VALUE": "True",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "steps_total",
+   "SAMPLE_VALUE": "311",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "steps_executed",
+   "SAMPLE_VALUE": "213",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "reports",
+   "SAMPLE_VALUE": "<list len 43>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "ACTUALLY_EXECUTED_STEP_COUNT",
+   "SAMPLE_VALUE": "16",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "DEFERRED_LIVE_MATERIAL_COUNT",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "DEFERRED_STEP_COUNT",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "EVIDENCE_RECORD_COUNT",
+   "SAMPLE_VALUE": "16",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "FAILED_STEP_COUNT",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "HOLLOW",
+   "SAMPLE_VALUE": "False",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "IN_PROCESS_HANDLER_INVOCATIONS",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "IN_PROCESS_STEPS_WITHOUT_EVIDENCE",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "IN_PROCESS_STEP_COUNT",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "NOTE_ONLY_IN_PROCESS_STEPS",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "OPERATOR_ACTION_STEP_COUNT",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "PASS_READY",
+   "SAMPLE_VALUE": "True",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "PATH_SUBSTITUTIONS_USED",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "PLANNED_STEP_COUNT",
+   "SAMPLE_VALUE": "16",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "SKIPPED_STEP_COUNT",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "WHY_PASS_READY",
+   "SAMPLE_VALUE": "'every step met its declared expectation, every in-process step invoked its handler and produced evidence, and the ta...",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "allowed_reads_declared",
+   "SAMPLE_VALUE": "False",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "allowed_writes_declared",
+   "SAMPLE_VALUE": "False",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "audit_id",
+   "SAMPLE_VALUE": "'L1-A31'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "carried_forward",
+   "SAMPLE_VALUE": "False",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "gated_operations",
+   "SAMPLE_VALUE": "<list len 3>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "ok",
+   "SAMPLE_VALUE": "True",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "plan_path",
+   "SAMPLE_VALUE": "'build/candidate_plans_r8/L1-A31/RUN-A/plan.json'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "plan_sha256",
+   "SAMPLE_VALUE": "'602290e119b40e6df3ba49801ba9508005c6115620c4746625bad45ecffc4d4c'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "run_phase",
+   "SAMPLE_VALUE": "'RUN-A'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "schema_valid",
+   "SAMPLE_VALUE": "True",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "steps",
+   "SAMPLE_VALUE": "<list len 16>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "steps_argv_built",
+   "SAMPLE_VALUE": "16",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "steps_executed",
+   "SAMPLE_VALUE": "16",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "steps_total",
+   "SAMPLE_VALUE": "16",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "target_identity_holds",
+   "SAMPLE_VALUE": "True",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "target_path",
+   "SAMPLE_VALUE": "'/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "target_sha256_in_plan",
+   "SAMPLE_VALUE": "'023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.reports[*]",
+   "KEY_NAME": "target_sha256_on_disk",
+   "SAMPLE_VALUE": "'023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.reports[*].steps[*]",
+   "KEY_NAME": "argv",
+   "SAMPLE_VALUE": "<list len 8>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$.reports[*].steps[*]",
+   "KEY_NAME": "argv_built",
+   "SAMPLE_VALUE": "True",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$.reports[*].steps[*]",
+   "KEY_NAME": "control_role",
+   "SAMPLE_VALUE": "'MEASUREMENT'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.reports[*].steps[*]",
+   "KEY_NAME": "executed",
+   "SAMPLE_VALUE": "True",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$.reports[*].steps[*]",
+   "KEY_NAME": "exit_code",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.reports[*].steps[*]",
+   "KEY_NAME": "expected_exit_code",
+   "SAMPLE_VALUE": "None",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "NoneType"
+  },
+  {
+   "JSON_PATH": "$.reports[*].steps[*]",
+   "KEY_NAME": "ok",
+   "SAMPLE_VALUE": "True",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$.reports[*].steps[*]",
+   "KEY_NAME": "operation",
+   "SAMPLE_VALUE": "'OPENSSL_PARSE_CERT'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.reports[*].steps[*]",
+   "KEY_NAME": "result",
+   "SAMPLE_VALUE": "'NO_EXPECTATION_STATED'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.reports[*].steps[*]",
+   "KEY_NAME": "stderr_head",
+   "SAMPLE_VALUE": "''",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.reports[*].steps[*]",
+   "KEY_NAME": "step_id",
+   "SAMPLE_VALUE": "'parse_vhn_leaf'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "REQUIRED_PLAN_COUNT",
+   "SAMPLE_VALUE": "43",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/candidate_plans_r8/PLAN_COVERAGE_MANIFEST.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "CANDIDATE_PLAN_COUNT",
+   "SAMPLE_VALUE": "43",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/candidate_plans_r8/PLAN_COVERAGE_MANIFEST.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "MISSING_PLAN_COUNT",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/candidate_plans_r8/PLAN_COVERAGE_MANIFEST.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "DUPLICATE_PLAN_COUNT",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/candidate_plans_r8/PLAN_COVERAGE_MANIFEST.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "UNKNOWN_PLAN_COUNT",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/candidate_plans_r8/PLAN_COVERAGE_MANIFEST.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "plans",
+   "SAMPLE_VALUE": "<list len 43>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/candidate_plans_r8/PLAN_COVERAGE_MANIFEST.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "CONTROL_ROLE_STEP_COUNT",
+   "SAMPLE_VALUE": "122",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/CONTROL_EXPECTATION_COVERAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "CONTROL_STEPS_WITHOUT_ENFORCED_EXPECTATION",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/CONTROL_EXPECTATION_COVERAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "CONTROL_STEPS_WITH_EXPECTED_REASON_WHERE_REQUIRED",
+   "SAMPLE_VALUE": "'44/74'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/CONTROL_EXPECTATION_COVERAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "CONTROL_STEPS_WITH_MACHINE_CHECKABLE_EXPECTATION",
+   "SAMPLE_VALUE": "'122/122'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/CONTROL_EXPECTATION_COVERAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "NOT_WEAKENED",
+   "SAMPLE_VALUE": "\"No control's expectation was loosened to make a rehearsal pass. Where the plan leaves an outcome open, the expectati...",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/CONTROL_EXPECTATION_COVERAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "R7_55_ADJUDICATED",
+   "SAMPLE_VALUE": "'41 of the 55 already declared an expectation in prose that no harness could evaluate; 14 declared none at all. All 5...",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/CONTROL_EXPECTATION_COVERAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "R7_STEPS_WITH_CONTROL_ROLE_AND_NO_DECLARED_EXIT_CODE",
+   "SAMPLE_VALUE": "55",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/CONTROL_EXPECTATION_COVERAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "findings_for_the_human",
+   "SAMPLE_VALUE": "<dict len 3>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/CONTROL_EXPECTATION_COVERAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "revision",
+   "SAMPLE_VALUE": "'R8'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/CONTROL_EXPECTATION_COVERAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "schema",
+   "SAMPLE_VALUE": "'wpno.level1.control-expectation-coverage/1'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/CONTROL_EXPECTATION_COVERAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "audits",
+   "SAMPLE_VALUE": "<dict len 35>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/progress.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "halt_critical",
+   "SAMPLE_VALUE": "None",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/progress.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "NoneType"
+  },
+  {
+   "JSON_PATH": "$.audits[*][*]",
+   "KEY_NAME": "audit_id",
+   "SAMPLE_VALUE": "'L1-A01'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/progress.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.audits[*][*]",
+   "KEY_NAME": "run_phase",
+   "SAMPLE_VALUE": "'RUN-A'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/progress.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.audits[*][*]",
+   "KEY_NAME": "state",
+   "SAMPLE_VALUE": "'NOT_STARTED'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/progress.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.audits[*][*]",
+   "KEY_NAME": "updated",
+   "SAMPLE_VALUE": "1787924363.5687628",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/progress.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "float"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "applied_before_freeze",
+   "SAMPLE_VALUE": "False",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/migration_plan_r7_to_r8/MIGRATION_PLAN.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "predecessor",
+   "SAMPLE_VALUE": "'R7'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/migration_plan_r7_to_r8/MIGRATION_PLAN.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "prepared_utc",
+   "SAMPLE_VALUE": "'2026-08-28T16:04:10Z'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/migration_plan_r7_to_r8/MIGRATION_PLAN.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "r8_lineage_record_sha256",
+   "SAMPLE_VALUE": "'c4c12173f877dc5f998a4f24a5661a87cfdf356ab3ea8558786d9f7716f467cc'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/migration_plan_r7_to_r8/MIGRATION_PLAN.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "revision",
+   "SAMPLE_VALUE": "'R8'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/migration_plan_r7_to_r8/MIGRATION_PLAN.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "route",
+   "SAMPLE_VALUE": "'import-sealed-predecessor-attempt'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/migration_plan_r7_to_r8/MIGRATION_PLAN.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "route_module",
+   "SAMPLE_VALUE": "'automation/migration.py'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/migration_plan_r7_to_r8/MIGRATION_PLAN.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "route_module_sha256",
+   "SAMPLE_VALUE": "'65b3db95c3bf9d012195ee81c946f95bae08aea0cc7545134cf1f76d0d6ba93f'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/migration_plan_r7_to_r8/MIGRATION_PLAN.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "schema",
+   "SAMPLE_VALUE": "'wpno.level1.migration-plan/1'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/migration_plan_r7_to_r8/MIGRATION_PLAN.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "migratable_attempts",
+   "SAMPLE_VALUE": "<list len 2>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/migration_plan_r7_to_r8/MIGRATION_PLAN.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "excluded_attempts",
+   "SAMPLE_VALUE": "<list len 1>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/migration_plan_r7_to_r8/MIGRATION_PLAN.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "post_freeze_resume_sequence",
+   "SAMPLE_VALUE": "<list len 10>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/migration_plan_r7_to_r8/MIGRATION_PLAN.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "R7_BYTES_NOT_DUPLICATED",
+   "SAMPLE_VALUE": "614178940",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "chain",
+   "SAMPLE_VALUE": "<list len 5>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "incident_record",
+   "SAMPLE_VALUE": "<dict len 4>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "inheritance_method",
+   "SAMPLE_VALUE": "'hash-bound reference. R8 records the predecessor roots, their snapshot digests and their control-manifest verificati...",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "migratable_r7_attempts",
+   "SAMPLE_VALUE": "<list len 2>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "non_migratable_r7_attempts",
+   "SAMPLE_VALUE": "<dict len 1>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "predecessor",
+   "SAMPLE_VALUE": "'R7'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "predecessors",
+   "SAMPLE_VALUE": "<dict len 3>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "r7",
+   "SAMPLE_VALUE": "<dict len 16>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "r7_attempts",
+   "SAMPLE_VALUE": "<dict len 3>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "recorded_at_utc",
+   "SAMPLE_VALUE": "'2026-08-28T13:22:16Z'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "revision",
+   "SAMPLE_VALUE": "'R8'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "schema",
+   "SAMPLE_VALUE": "'wpno.level1.lineage-compact/1'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "baseline_manifest_sha256",
+   "SAMPLE_VALUE": "'0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "build_id",
+   "SAMPLE_VALUE": "'L1BUILD-R7-2026-08-26-UBUNTU-PHASE-ATTEMPT-MODEL'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "continuous_post_freeze_immutability",
+   "SAMPLE_VALUE": "False",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "control_manifest",
+   "SAMPLE_VALUE": "<dict len 7>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "current_bytes_restored_to_frozen_manifest",
+   "SAMPLE_VALUE": "True",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "files",
+   "SAMPLE_VALUE": "16153",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "frozen_state_summary",
+   "SAMPLE_VALUE": "<dict len 7>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "inherited_lineage_tree",
+   "SAMPLE_VALUE": "<dict len 6>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "mode_on_disk",
+   "SAMPLE_VALUE": "'FROZEN'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "post_freeze_modification_incident",
+   "SAMPLE_VALUE": "'RECORDED'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "r7_own_record_said_no_successor_permitted",
+   "SAMPLE_VALUE": "True",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "revision_record",
+   "SAMPLE_VALUE": "<dict len 13>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "root",
+   "SAMPLE_VALUE": "'/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "snapshot_sha256",
+   "SAMPLE_VALUE": "'f84ac00a0ce66a0e786494295a2574de413ae6e359fea762ce4fa4b399102a3f'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "symlinks",
+   "SAMPLE_VALUE": "<list len 0>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "why_r8_exists_anyway",
+   "SAMPLE_VALUE": "\"R7's inventory records final_revision true and successor_permitted false. The human authorised R8 on 2026-08-28 afte...",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$[*]",
+   "KEY_NAME": "<row count>",
+   "SAMPLE_VALUE": "1",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/transitions.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$[*]",
+   "KEY_NAME": "audit_id",
+   "SAMPLE_VALUE": "'PACKAGE'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/transitions.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$[*]",
+   "KEY_NAME": "binding",
+   "SAMPLE_VALUE": "<dict len 3>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/transitions.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$[*]",
+   "KEY_NAME": "from_state",
+   "SAMPLE_VALUE": "'NOT_STARTED'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/transitions.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$[*]",
+   "KEY_NAME": "pid",
+   "SAMPLE_VALUE": "563572",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/transitions.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$[*]",
+   "KEY_NAME": "recorded_at",
+   "SAMPLE_VALUE": "1787924363.6241002",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/transitions.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "float"
+  },
+  {
+   "JSON_PATH": "$[*]",
+   "KEY_NAME": "route",
+   "SAMPLE_VALUE": "'init-revision'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/transitions.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$[*]",
+   "KEY_NAME": "run_phase",
+   "SAMPLE_VALUE": "'REVISION'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/transitions.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$[*]",
+   "KEY_NAME": "schema",
+   "SAMPLE_VALUE": "'wpno.level1.transition/1'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/transitions.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$[*]",
+   "KEY_NAME": "to_state",
+   "SAMPLE_VALUE": "'NOT_STARTED'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/transitions.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$[id=1].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "'entries=1915; mismatching_paths=[]; malformed=[]; duplicates=[]'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$[id=2].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "\"entries=14160; mismatching_paths=['MODE']; malformed=[]; duplicates=[]\"",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$[id=3].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "'entries=14781; mismatching_paths=[]; malformed=[]; duplicates=[]'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$[id=4].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "'entries=15804; mismatching_paths=[]; malformed=[]; duplicates=[]'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$[id=5].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "'incident_entries=15; incident_mismatches=0; malformed=[]; duplicates=[]; continuous=False; restored=True; contrary_f...",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$[id=6].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "\"R6_EXECUTION_exists=False; predecessor_package_like_dirs=[]; resolved={'R4': '/home/ubuntu/project/WPNO/08.18.26_Lev...",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$[id=7].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "'active_same_path_files_compared=330; shared_inode_paths=[]'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$[id=8].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "\"call_occurrences={'automation/controller.py': 2, 'build/rehearse_candidate_plans.py': 1}\"",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$[id=9].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "<dict len 5>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$[id=10].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "'catalog=18; handlers=18; schemas=18; catalog-handler=[]; handler-catalog=[]; catalog-schema=[]; schema-catalog=[]'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$[id=11].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "\"operation=PROVE_SET_NOVELTY; reference_root=/home/ubuntu/project/WPNO/ap18/korpus_docx; expected_reference_entry_cou...",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$[id=12].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "'degenerate_compare_hashes=[]; rehearsal_steps_with_outside_reads=[]'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$[id=13].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "'operation=COUNT_TEXT_MATCHES; word_boundary=True; expected_count=0'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$[id=14].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "\"prefix=b'MIME-Version:'; R8_sha256=8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a; R7_sha256=8f47e...",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$[id=15].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "'rederived_control_count=122; unenforced=[]; coverage_count=122; coverage_unenforced=0; coverage_machine=122/122'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$[id=16].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "\"migratable=[('L1-A31', 'RUN-A'), ('L1-A31', 'RUN-B')]; excluded=[('L1-A31', 'COMPARISON', 'EXECUTED_UNSEALED_ZERO_EV...",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$[id=17].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "'state=EXECUTED; SEAL_exists=False; evidence_files=0'",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$[id=18].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "<dict len 5>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$[id=19].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "<dict len 17>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$[id=20].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "<dict len 6>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$[id=21].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "<dict len 7>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$[id=22].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "<dict len 3>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$[id=23].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "<dict len 5>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$[id=24].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "<dict len 2>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$[id=25].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "<dict len 3>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$[id=26].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "<dict len 4>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$[id=27].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "<dict len 7>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$[id=28].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "<dict len 2>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$[id=29].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "<dict len 2>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$[id=30].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "<dict len 2>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$[id=31].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "<dict len 4>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$[id=32].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "<dict len 9>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$[id=33].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "<dict len 5>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$[id=34].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "<dict len 2>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$[id=35].measured",
+   "KEY_NAME": "measured",
+   "NOTE": "items 1-8 and 10-17 record `measured` as a semicolon-separated key=value STRING; items 9 and 18-35 record it as an OBJECT. A predicate that indexes every record as a dict raises TypeError on the strings.",
+   "SAMPLE_VALUE": "<dict len 2>",
+   "SOURCE_FILE": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  }
+ ],
+ "r8_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+ "rule": "every key a predicate names must appear here with VALUE_PRESENT true. No fallback, no unprefixed alias.",
+ "schema": "wpno.r8.delta-verifier-schema-map/1",
+ "source_digests": {
+  "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/CONTROL_EXPECTATION_COVERAGE.json": "53c1998bee4bb65f96cb0a746c664f8bee6656ba7c06365ac790df7a620f891e",
+  "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/IN_PROCESS_COUNT_RECONCILIATION.json": "1450107c54936e3a90151b666e9f75d7a9dd765a21cf926a6325ee01183fc124",
+  "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/candidate_plans_r8/PLAN_COVERAGE_MANIFEST.json": "0de8b726edc5de9248d8983edecd7b22841e3eda03d0ce317d6b853610b1ad3c",
+  "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/migration_plan_r7_to_r8/MIGRATION_PLAN.json": "805a5e34b2f703b94c80c5789db1498c8395796c2da27617cfdd50cf61a7b82b",
+  "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R8_LINEAGE.json": "c4c12173f877dc5f998a4f24a5661a87cfdf356ab3ea8558786d9f7716f467cc",
+  "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/progress.json": "0d52456464f711252527dad19c1d418510fd04e2bf855025fe6dfce5de5c7193",
+  "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/transitions.jsonl": "76fc0d6eb5706456c9af3142115edd67aa3536139791e35d80fb42dff1129313",
+  "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/REHEARSAL_REPORT.json": "3c34ac822fe02875a0d1a3b5b59afd89e4245e07978f6b5036f06fb77089b80e",
+  "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/codex_output/ITEM_RESULTS.jsonl": "38c0d481f7cbc3c41c0fbc8eb5d0a47b92c558a7c476e16e29a5c71a914dbba4"
+ },
+ "unresolved": []
+}

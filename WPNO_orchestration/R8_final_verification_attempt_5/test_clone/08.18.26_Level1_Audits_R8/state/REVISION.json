@@ -1,0 +1,15 @@
+{
+  "audits_initialised": 35,
+  "initialised_at": 1787924363.6193097,
+  "level1_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+  "lineage_path": "lineage/R8_LINEAGE.json",
+  "mode_at_initialisation": "GENERATED_UNVERIFIED",
+  "phases_initialised": 43,
+  "platform": "UBUNTU",
+  "predecessor": "R7",
+  "predecessor_approvals_authority": "NONE. No approval token recorded against the predecessor authorises any phase of this revision. Every gated phase here requires a fresh human token bound to this revision's own plan.",
+  "predecessor_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7",
+  "predecessor_state_disposition": "HISTORICAL_ONLY_PRESERVED_IN_LINEAGE_NOT_ACTIVE",
+  "revision": "R8",
+  "schema": "wpno.level1.revision/1"
+}

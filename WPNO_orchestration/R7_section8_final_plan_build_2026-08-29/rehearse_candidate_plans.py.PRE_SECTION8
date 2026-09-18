@@ -1,0 +1,204 @@
+#!/usr/bin/env python3
+"""Rehearse the exact candidate live plans, with the exact argv builder.
+
+This is the check R6 did not have. Its pre-freeze readiness fixture exercised
+the operation catalogue generically and passed; the live L1-A31 plan then
+failed on a purpose, an epoch and a mutation fixture that the fixture had
+never executed. So this harness does not build its own parameters. It reads
+the nine candidate plans, hands each step's params to
+`operation_catalog.build_argv` — the same function the controller calls — and
+runs the result.
+
+What is rehearsed and what is not.
+
+  * Every control is executed and its outcome checked against the plan's own
+    `expected_exit_code` AND, where the plan states one, its
+    `expected_failure_reason`. R6 asserted only "nonzero" and therefore scored
+    two CMS controls as passing while both were failing on the certificate
+    purpose, before either had compared a byte of content.
+
+  * Every measurement step's argv is built and, where it is read-only against
+    already-bound material, executed, so a parameter that cannot work is found
+    now rather than under an approved token.
+
+  * No phase is started, no approval is recorded, nothing is sealed and
+    nothing is written under `results/` or `evidence/`. A rehearsal that
+    started a phase would be the live run.
+
+The rehearsal writes only under `work/_rehearsal_r7/` and reports every step.
+"""
+
+import json
+import os
+import subprocess
+import sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, ROOT)
+
+from automation import (hashing, mutation_fixtures, operation_catalog,  # noqa: E402
+                        path_policy, policy, schema_validation)
+
+PLANS = os.path.join(ROOT, "build", "candidate_plans_r7")
+OUTDIR = os.path.join(ROOT, "work", "_rehearsal_r7")
+
+# Steps whose execution would be the live audit rather than a rehearsal of it.
+# Their argv is built and recorded; they are not run here. Everything else,
+# including every control, is run.
+BUILD_ONLY = {
+    ("L1-A31", "COMPARISON"), ("L1-A34", "COMPARISON"),
+    ("L1-A18", "COMPARISON"),
+}
+
+
+def run(argv, timeout):
+    return subprocess.run(  # noqa: S603 - argv list, shell=False
+        argv, shell=False, capture_output=True, timeout=timeout,
+        env=policy.base_environment(), cwd=ROOT, check=False)
+
+
+def matrix_for(plan):
+    by_step = {}
+    for entry in plan.get("test_matrix", []):
+        if "step_id" in entry:
+            by_step[entry["step_id"]] = entry
+    return by_step
+
+
+def judge(step, entry, proc):
+    """Did this step do what the plan said it would, and for the stated reason?"""
+    stderr = proc.stderr.decode("utf-8", "replace")
+    expected = entry.get("expected_exit_code") if entry else None
+    verdict = {"step_id": step["step_id"],
+               "control_role": step.get("control_role"),
+               "exit_code": proc.returncode,
+               "expected_exit_code": expected}
+
+    if expected is None:
+        verdict["result"] = "NO_EXPECTATION_STATED"
+        verdict["ok"] = proc.returncode == 0
+    elif expected == "NONZERO":
+        verdict["ok"] = proc.returncode != 0
+        verdict["result"] = ("FAILS_AS_DESIGNED" if verdict["ok"]
+                             else "DID_NOT_FAIL")
+    else:
+        verdict["ok"] = proc.returncode == expected
+        verdict["result"] = "AS_EXPECTED" if verdict["ok"] else "UNEXPECTED_EXIT"
+
+    reason = (entry or {}).get("expected_failure_reason")
+    if reason:
+        present = mutation_fixtures.reason_is_present(stderr, reason)
+        verdict["expected_failure_reason"] = reason
+        verdict["failure_reason_observed"] = present
+        # A control that fails for the wrong reason has not been exercised.
+        # This is the assertion R6 did not make.
+        if not present:
+            verdict["ok"] = False
+            verdict["result"] = "FAILED_FOR_THE_WRONG_REASON"
+    verdict["stderr_head"] = stderr[:400]
+    return verdict
+
+
+def rehearse_plan(audit_id, phase):
+    path = os.path.join(PLANS, audit_id, phase, "plan.json")
+    with open(path, encoding="utf-8") as fh:
+        raw = fh.read()
+    plan = schema_validation.parse_strict(raw)
+    schema_validation.validate_named(plan, "execution_plan.schema.json")
+    gated = operation_catalog.validate_plan_operations(plan)
+
+    report = {
+        "audit_id": audit_id,
+        "run_phase": phase,
+        "plan_path": os.path.relpath(path, ROOT),
+        "plan_sha256": hashing.sha256_text(raw),
+        "schema_valid": True,
+        "gated_operations": sorted(set(gated)),
+        "target_path": plan["target"]["path"],
+        "target_sha256_in_plan": plan["target"]["sha256"],
+        "target_sha256_on_disk": hashing.sha256_file(plan["target"]["path"]),
+        "steps": [],
+    }
+    report["target_identity_holds"] = (
+        report["target_sha256_in_plan"] == report["target_sha256_on_disk"])
+
+    by_step = matrix_for(plan)
+    build_only = (audit_id, phase) in BUILD_ONLY
+
+    for step in plan["steps"]:
+        name = step["operation"]
+        record = {"step_id": step["step_id"], "operation": name,
+                  "control_role": step.get("control_role")}
+        if name in operation_catalog.IN_PROCESS:
+            record["argv"] = None
+            record["note"] = "in-process; performed by the worker"
+            record["ok"] = True
+            report["steps"].append(record)
+            continue
+        try:
+            argv = operation_catalog.build_argv(name, step.get("params", {}))
+        except Exception as exc:                      # noqa: BLE001
+            record["ok"] = False
+            record["argv_error"] = "%s: %s" % (type(exc).__name__, exc)
+            report["steps"].append(record)
+            continue
+        record["argv"] = argv
+        if build_only:
+            record["ok"] = True
+            record["note"] = ("argv built and recorded; not executed, because "
+                              "executing it would be the live phase")
+            report["steps"].append(record)
+            continue
+        proc = run(argv, step.get("timeout_seconds", 120))
+        record.update(judge(step, by_step.get(step["step_id"]), proc))
+        report["steps"].append(record)
+
+    report["ok"] = (report["target_identity_holds"]
+                    and all(s.get("ok") for s in report["steps"]))
+    return report
+
+
+def main():
+    path_policy.ensure_dir(OUTDIR)
+    for tree in ("L1-A31/RUN-B", "L1-A34/RUN-B", "L1-A18/RUN-A",
+                 "L1-A18/RUN-B"):
+        path_policy.ensure_dir(os.path.join(ROOT, "work", *tree.split("/")))
+    path_policy.ensure_dir(os.path.join(
+        ROOT, "work", "L1-A31", "preparation_r7_2026-08-26", "outputs"))
+
+    reports = []
+    for audit_id in ("L1-A31", "L1-A34", "L1-A18"):
+        for phase in ("RUN-A", "RUN-B", "COMPARISON"):
+            reports.append(rehearse_plan(audit_id, phase))
+
+    out = os.path.join(OUTDIR, "REHEARSAL_REPORT.json")
+    payload = {
+        "schema": "wpno.level1.plan-rehearsal/1",
+        "revision": "R7",
+        "phases_rehearsed": len(reports),
+        "all_pass_ready": all(r["ok"] for r in reports),
+        "reports": reports,
+    }
+    with open(path_policy.assert_writable(out), "w", encoding="utf-8") as fh:
+        json.dump(payload, fh, indent=2, sort_keys=True)
+        fh.write("\n")
+
+    print(json.dumps({
+        "rehearsal_report": os.path.relpath(out, ROOT),
+        "rehearsal_report_sha256": hashing.sha256_file(out),
+        "all_pass_ready": payload["all_pass_ready"],
+        "per_phase": {"%s/%s" % (r["audit_id"], r["run_phase"]):
+                      ("PASS_READY" if r["ok"] else "NOT_PASS_READY")
+                      for r in reports},
+        "failing_steps": [
+            {"phase": "%s/%s" % (r["audit_id"], r["run_phase"]),
+             "step_id": s["step_id"],
+             "result": s.get("result") or s.get("argv_error"),
+             "stderr_head": s.get("stderr_head", "")[:200]}
+            for r in reports for s in r["steps"] if not s.get("ok")],
+    }, indent=2, sort_keys=True))
+    return 0 if payload["all_pass_ready"] else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

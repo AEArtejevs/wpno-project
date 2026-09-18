@@ -1,0 +1,246 @@
+{
+  "audit_id": "L1-A06",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Prove that the productive guard accepts the known-good report, that the acceptance is a real evaluation rather than a skipped or no-op execution, and that no suppression mechanism is hiding a rejection. Zero rules evaluated with exit 0 is not a pass.",
+  "static_analysis": "The guard is parsed, never imported, and its rule set is enumerated so that the number of rules that ought to run is known before any run happens. Acceptance is only meaningful relative to the number of rules that actually ran.\n\nCLAUDE.md section 10 records the vacuous-success pattern this audit exists to detect: two test functions and no __main__ block, exit 0, nothing executed. An acceptance produced the same way is the same defect wearing a different name, and here it is a FAIL rather than a pass.\n\nWhere the guard does not report how many rules it evaluated, a sandbox copy is instrumented to count, and the count is reported as coming from an instrumented copy whose digest is recorded.\n\nPYTHON_SCRIPT_RUN_SANDBOX runs a script under work/ and nowhere else, so the approved phase first copies the guard to work/<audit>/RUN-A/sandbox/ and records the copy's digest beside the original's. The original in authoring/ is read and never written to. Where a rule has to be neutralised to attribute a rejection, it is neutralised in that copy and the neutralised line is recorded.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/authoring/AP17_output_guardrail_v3.py"
+      },
+      "purpose": "Enumerate the rules that ought to run.",
+      "step_id": "parse_guard",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A06/RUN-A/inputs/known_good.md"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A06/RUN-A/sandbox/AP17_output_guardrail_v3.py"
+      },
+      "purpose": "Run the sandbox copy against the known-good input.",
+      "step_id": "run_against_known_good",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "ORACLE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A06/RUN-A/inputs/known_good.md",
+          "--count-rules"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A06/RUN-A/sandbox/AP17_output_guardrail_v3_instrumented.py"
+      },
+      "purpose": "An instrumented sandbox copy that counts the rules actually evaluated. Zero with exit 0 is a FAIL.",
+      "step_id": "count_rules_evaluated",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A06/RUN-A/inputs/known_good.md",
+          "--config",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A06/RUN-A/inputs/absent_config.json"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A06/RUN-A/sandbox/AP17_output_guardrail_v3.py"
+      },
+      "purpose": "With the guard's configuration or pattern file removed from the sandbox environment: does it block, or pass silently?",
+      "step_id": "run_without_configuration",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A06/RUN-A/inputs/known_bad.md"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A06/RUN-A/sandbox/AP17_output_guardrail_v3.py"
+      },
+      "purpose": "The known-bad input from L1-A05 must be rejected by this same invocation path. This proves the guard was actually evaluating during this audit's runs, and it is the single most important control here.",
+      "step_id": "positive_control_known_bad_still_rejected",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A06/RUN-A/inputs/known_good.md"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A06/RUN-A/sandbox/AP17_output_guardrail_v3.py"
+      },
+      "purpose": "The known-good input must be accepted. On its own this is worth nothing without the positive control above.",
+      "step_id": "negative_control_known_good_accepted",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A06/RUN-A/inputs/known_good_with_bad_token.md"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A06/RUN-A/sandbox/AP17_output_guardrail_v3.py"
+      },
+      "purpose": "One known-bad token inserted into a copy of the known-good input. It must now be rejected. If a known-good document stays accepted after a known-bad token is added, acceptance is not an evaluation.",
+      "step_id": "mutation_control_bad_token_inserted",
+      "timeout_seconds": 300
+    }
+  ],
+  "target": {
+    "identity_evidence": "bindings records this path with this digest. Which guardrail version is productive is an open question in this audit's binding and a version suffix is excluded by rule from answering it.",
+    "path": "/home/ubuntu/project/WPNO/authoring/AP17_output_guardrail_v3.py",
+    "sha256": "dd60dc63437691082b821fe219a7599c1561c757214a0e38eac97367ab2a09ca"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "/home/ubuntu/project/WPNO/authoring/AP17_output_guardrail_v3.py"
+      ],
+      "allowed_writes": [
+        "work/L1-A06/RUN-A/",
+        "evidence/L1-A06/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A06 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A06",
+      "candidate_template_identity": "L1-A06/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A06/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "/usr/bin/python3 -I -B against a sandbox copy",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "ARBITRARY_SHELL",
+        "CHANGE_PERMISSION",
+        "DATABASE_CONNECTION",
+        "DATABASE_WRITE",
+        "DELETE_SOURCE",
+        "DOCKER_BUILD",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_SOCKET_ACCESS",
+        "GIT_MUTATION",
+        "INSTALL_PACKAGE",
+        "LAUNCH_AGENT_MUTATION",
+        "MCP_MUTATION",
+        "MODIFY_SOURCE",
+        "N8N_MUTATION",
+        "NETWORK_REQUEST",
+        "NETWORK_UPLOAD",
+        "SERVICE_MUTATION"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [],
+      "independent_oracle": "The rule enumeration from the AST parse, plus the rule-evaluation count. Acceptance is only meaningful relative to the number of rules that ran.",
+      "limitations": [],
+      "method": "acceptance measured against the count of rules actually evaluated",
+      "notes": [
+        "PYTHON_SCRIPT_RUN_SANDBOX runs a script under work/ and nowhere else, so the approved phase first copies the guard to work/<audit>/RUN-A/sandbox/ and records the copy's digest beside the original's. The original in authoring/ is read and never written to. Where a rule has to be neutralised to attribute a rejection, it is neutralised in that copy and the neutralised line is recorded.",
+        "A count obtained from an instrumented copy is reported as such, with that copy's digest."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [],
+      "references": [],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": null,
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "check_id": "rules_evaluated",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_exit_code": 0,
+      "question": "How many rules actually ran?",
+      "required_result": "A count, compared against the number the AST enumeration says exist.",
+      "specification_reference": "CLAUDE.md section 10, bullet 4",
+      "step_id": "count_rules_evaluated",
+      "why": "The instrumented copy must run. The plan is explicit that zero rules with exit 0 is a FAIL, so the count is the finding and is not bound here.",
+      "zero_rules_with_exit_zero_is": "a FAIL for this audit, not a pass. It is the vacuous-success pattern CLAUDE.md section 10 records."
+    },
+    {
+      "check_id": "configuration_absent_behaviour",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "What happens when the configuration is missing?",
+      "required_result": "Recorded as blocking or as passing silently. A guard that passes silently when its patterns are absent protects nothing.",
+      "step_id": "run_without_configuration"
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": "NONZERO",
+      "expected_failure_reason": "the known-bad content the guard is built to reject",
+      "expected_result": "REJECTED",
+      "question": "Was the guard evaluating at all during these runs?",
+      "step_id": "positive_control_known_bad_still_rejected",
+      "why": "This is the single most important control here. Without it, acceptance of the good input is indistinguishable from the guard doing nothing."
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_result": "ACCEPTED",
+      "question": "Is the known-good input accepted?",
+      "step_id": "negative_control_known_good_accepted",
+      "worth_on_its_own": "nothing, without the positive control"
+    },
+    {
+      "check_id": "mutation_control",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expected_exit_code": "NONZERO",
+      "expected_failure_reason": "the inserted known-bad token",
+      "expected_result": "NOW_REJECTED",
+      "fixture": "work/L1-A06/RUN-A/inputs/known_good_with_bad_token.md",
+      "fixture_construction": "the known-good input with exactly one known-bad token inserted",
+      "proof_the_fixture_differs": "its SHA-256 differs from the known-good input's and the inserted token is recorded",
+      "question": "Does adding a bad token change acceptance?",
+      "step_id": "mutation_control_bad_token_inserted",
+      "zero_changed_results_is": "proof that acceptance is not an evaluation, not a passing control"
+    }
+  ]
+}

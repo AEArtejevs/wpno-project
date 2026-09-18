@@ -1,0 +1,101 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 5902272738184572932 (0x51e915c8a6f6b004)
+        Signature Algorithm: rsassaPss        
+        Hash Algorithm: sha512
+        Mask Algorithm: mgf1 with sha512
+         Salt Length: 0x40
+        Trailer Field: 0x01 (default)
+        Issuer: CN=SAFE Root CA 2017, O=BNotK, C=DE
+        Validity
+            Not Before: Nov 14 13:35:38 2017 GMT
+            Not After : Nov  9 10:25:18 2037 GMT
+        Subject: CN=beA VHN CA 2017, O=BNotK, C=DE
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (4096 bit)
+                Modulus:
+                    00:d7:3f:8f:58:41:bf:de:e8:53:81:77:b1:f1:93:
+                    78:25:71:4f:79:ec:f6:17:33:fe:9c:a8:d1:83:9d:
+                    2a:fe:9e:42:54:8a:69:c9:03:09:4f:2f:84:d9:3e:
+                    ba:62:9a:4e:7f:ee:e0:ff:39:24:2a:9d:3b:60:6f:
+                    f7:ee:32:db:04:cb:8b:28:9e:99:4f:39:61:12:79:
+                    9b:a5:54:7c:34:bc:05:3a:dd:dd:d4:ba:8c:11:ca:
+                    04:40:d9:0c:5f:ed:72:bb:7d:21:77:2c:8a:95:a8:
+                    da:6d:1a:65:3e:fc:a7:a9:99:59:78:d9:5d:1b:ab:
+                    cb:dc:0c:d8:42:d5:fb:c4:58:92:64:12:a4:c5:7f:
+                    b5:44:35:59:59:7e:67:80:99:d4:7e:77:61:49:ef:
+                    b4:37:de:01:a1:72:27:81:0b:43:87:40:a6:cf:e1:
+                    66:fd:e8:ab:83:39:1b:16:57:fa:7d:0c:62:50:b3:
+                    0b:e1:d4:b2:d5:0c:4c:27:7b:a2:7f:2a:e9:13:cd:
+                    a7:3c:42:2a:da:d7:b6:bb:f3:fd:65:33:40:95:42:
+                    04:0e:d7:eb:01:2c:f2:98:f2:28:3d:dd:cf:96:b9:
+                    d6:f2:a0:9b:bf:ed:1d:60:19:39:22:f7:2f:a5:8b:
+                    39:ca:76:3f:eb:45:e6:73:64:e9:6a:20:87:e9:92:
+                    b1:95:ab:fa:84:e6:ec:d5:c3:fe:4f:b3:71:3b:86:
+                    87:96:20:d2:8e:57:65:c4:92:f5:88:97:93:a1:54:
+                    29:c8:ee:38:92:7a:14:fa:dc:06:ec:1e:b8:e6:0a:
+                    96:0d:2a:0c:23:aa:c0:66:ce:9b:f8:b2:21:c5:6f:
+                    65:f3:c8:d3:b0:22:48:04:65:ee:09:d1:19:11:19:
+                    68:4d:e4:8f:cb:16:ee:08:dc:f5:1b:0c:91:35:0d:
+                    6e:01:0d:70:f9:84:7a:67:27:8f:ac:c2:53:a6:6f:
+                    0b:f3:4f:bd:05:e9:99:b7:03:ff:9a:29:d8:87:10:
+                    86:54:2a:be:70:3b:68:81:67:e4:7c:93:46:84:06:
+                    4f:58:1c:3d:9c:15:12:67:24:24:c2:94:7a:64:a8:
+                    70:27:bb:67:87:07:53:72:43:62:68:11:e1:3f:91:
+                    89:bb:2f:c0:3a:f9:23:9e:e0:b6:77:42:65:ca:d2:
+                    ee:51:bb:1a:84:31:26:41:ce:52:c9:87:de:55:de:
+                    7d:d6:27:fe:a6:86:26:1d:16:b6:77:9b:cf:10:6a:
+                    88:2f:af:2b:47:57:38:5b:72:25:34:16:dc:81:5e:
+                    a8:f7:7c:a6:cc:03:44:43:dc:42:54:92:57:2d:55:
+                    e9:50:96:d1:7e:ef:60:1c:1c:d5:81:79:33:d4:04:
+                    34:aa:35
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: critical
+                CA:TRUE
+            X509v3 Authority Key Identifier: 
+                11:8F:40:A8:02:F8:AF:02:04:7F:E4:60:97:C3:AC:AC:18:AD:38:A1
+            Authority Information Access: 
+                OCSP - URI:http://ocsp.zs.bnotk.de/nq
+            X509v3 Subject Key Identifier: 
+                25:FE:24:5A:AC:07:41:81:D0:CF:11:C2:91:C9:00:EA:8F:D8:9B:90
+            X509v3 Key Usage: critical
+                Certificate Sign, CRL Sign
+    Signature Algorithm: rsassaPss
+    Signature Value:        
+        Hash Algorithm: sha512
+        Mask Algorithm: mgf1 with sha512
+         Salt Length: 0x40
+        Trailer Field: 0x01 (default)
+        48:07:55:cc:86:27:b0:a2:ae:bc:98:9c:a4:87:ab:d8:99:e2:
+        03:27:af:57:bf:16:8e:39:d8:46:5c:c8:db:33:20:4c:68:df:
+        d4:3b:70:83:88:10:87:7b:e3:f9:05:31:95:91:c0:6a:a0:2f:
+        69:6f:06:08:d0:10:d2:30:46:47:31:0e:ae:f2:a1:fb:5b:bf:
+        37:8c:69:a2:55:f0:2e:70:8c:b3:f6:7a:b6:e1:1d:bd:45:d0:
+        fa:bb:45:be:cb:a6:d8:87:45:24:33:3a:7e:40:c0:a2:56:d3:
+        27:e3:62:58:cc:5b:22:34:6c:96:f3:32:09:36:fc:ca:78:3c:
+        31:78:65:ca:be:44:62:78:cd:50:c5:66:b5:d9:49:bd:ce:4c:
+        77:ad:ed:b9:a1:d9:c7:26:8b:18:db:10:e8:5f:b2:50:e7:dd:
+        75:28:22:a0:a2:b0:b0:0d:60:a2:f9:40:33:cc:67:79:ab:c6:
+        78:20:2e:3b:c3:8e:89:49:53:0e:78:06:fb:f7:8a:b3:a7:5e:
+        4f:8e:ee:f9:cd:97:e7:f6:84:0d:41:c9:96:be:1c:a5:27:d0:
+        3c:50:12:25:f0:1b:7a:38:85:e4:a2:e4:c2:31:a9:67:2c:64:
+        09:fa:05:fc:e3:5f:39:62:95:e6:43:5e:1e:67:70:a0:ba:8f:
+        e3:a9:12:91:73:55:68:b9:b4:2e:17:25:30:84:65:f9:25:2a:
+        52:e3:d2:eb:18:c5:fc:bf:f9:e9:d5:0b:b0:e4:3d:63:44:55:
+        4c:4c:9a:ea:d7:06:70:f9:67:fe:2d:99:27:a7:0a:d2:46:15:
+        e4:c9:4f:36:d5:de:3a:5e:16:7e:06:15:6a:cd:80:a7:f6:b3:
+        29:e7:9a:d8:23:da:cd:2f:ca:81:77:18:c6:fb:97:13:2e:3e:
+        b7:73:35:f5:b8:1e:55:45:43:29:d9:9b:68:11:38:0e:3f:52:
+        e3:b2:d3:ec:80:0d:b3:21:37:aa:d9:64:93:8d:2f:71:75:2c:
+        7c:35:cb:02:35:9e:96:cb:73:01:62:5f:82:74:15:1e:f7:b5:
+        c0:02:48:61:a3:b7:a8:d3:81:5f:2b:21:ad:c9:e2:fa:ba:58:
+        3a:b1:15:b6:0c:b9:e7:16:e2:f8:3e:27:d8:75:ab:4b:11:71:
+        ec:59:e7:29:59:1d:62:25:13:df:0b:f6:75:86:d0:d0:36:90:
+        31:ab:7f:89:92:69:e4:93:b1:81:dd:e8:ef:95:6e:1e:c6:80:
+        4e:08:47:cd:5f:1a:84:eb:52:75:0c:2f:e6:72:fa:92:f3:8c:
+        58:eb:62:72:fb:ed:6c:f2:ca:b2:41:20:95:87:cb:5e:e0:ed:
+        d3:15:58:45:e0:5e:d5:ad
+sha256 Fingerprint=91:02:AB:0A:16:7D:59:9B:4E:1A:0D:A6:60:1A:FD:12:77:5B:F0:F6:4D:BB:E3:70:13:17:7B:89:6E:6F:29:24

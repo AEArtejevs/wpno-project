@@ -1,0 +1,2 @@
+Date: 2026-08-27
+Method: read-only filesystem reads restricted to PROJECT_ROOT/docker/ and PROJECT_ROOT/mcp/. Relevant configuration/source candidates were copied into this package with source-relative paths recorded and SHA-256 measured. Secret-bearing assignment values, if present, were replaced with category placeholders. .env files were not read. REF-13 mounts and Compose labels were used only as historical deployment evidence. Historical byte identity is not inferred. No network, Git, Docker runtime, service, or audit operation was used.

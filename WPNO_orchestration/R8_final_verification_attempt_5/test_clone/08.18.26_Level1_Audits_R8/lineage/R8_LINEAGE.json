@@ -1,0 +1,324 @@
+{
+  "R7_BYTES_NOT_DUPLICATED": 614178940,
+  "chain": [
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8"
+  ],
+  "incident_record": {
+    "copied_to": "lineage/R7_POST_FREEZE_INCIDENT",
+    "files": [
+      {
+        "relative_path": "DIRTY_R7_MEASUREMENT.json",
+        "sha256": "e8af692936b918b6abcf9bd4daa38831b7bf047c6bb09fbebcc872a9cb1f0b76",
+        "size": 3059
+      },
+      {
+        "relative_path": "DIRTY_R7_MEASUREMENT.md",
+        "sha256": "2d711f563765df4f56dd326948c38519918890aec14d6b75ce41acc8b535bd6f",
+        "size": 2061
+      },
+      {
+        "relative_path": "DIRTY_REPAIR_FILES.sha256",
+        "sha256": "f5156c1849707fcab5f94b9b18605a6b42aca1b878814326e7e81cb4b5177795",
+        "size": 479
+      },
+      {
+        "relative_path": "INCIDENT_MANIFEST.sha256",
+        "sha256": "6d3ab746e0f221a7d83d055c81356f7dd013976a4c94f04cb4cc66fa7a5f8ab6",
+        "size": 1558
+      },
+      {
+        "relative_path": "PROCESS_INSPECTION.json",
+        "sha256": "355c004674d7a35daa658881145fbb3b3f451df600637ad850af9a1c428c0ca1",
+        "size": 1402
+      },
+      {
+        "relative_path": "R7_RESTORATION_RECORD.json",
+        "sha256": "2356adeb08720f365b0e906b27b22ec5d221f8b1fdf0d49056100f49619102da",
+        "size": 3779
+      },
+      {
+        "relative_path": "R7_RESTORATION_REPORT.md",
+        "sha256": "6eb73c632ae8fa6c8b4601ad0e95de382a1b1d47898658dc900e8a00d795fa6f",
+        "size": 3768
+      },
+      {
+        "relative_path": "REPAIR_FINDINGS.json",
+        "sha256": "4fb28208aca1d4c0307d66c9f5013dd3147fb6fbf11544c552334c880f536587",
+        "size": 4362
+      },
+      {
+        "relative_path": "REPAIR_FINDINGS.md",
+        "sha256": "5e072ffa65492a3b87d13ed3a53768857c49470669958fb06a3f2e6f025e50a7",
+        "size": 3516
+      },
+      {
+        "relative_path": "_restore_actions.json",
+        "sha256": "35e76978174087d97898018cdc0aa572c5a68e0bd47f5a94bf34982264f63065",
+        "size": 913
+      },
+      {
+        "relative_path": "DIRTY_REPAIR_DIFFS/automation__controller.py.diff",
+        "sha256": "cd7e5321b6afef20fee913daeea91311907f231dc0e03b77741528949cc08a9c",
+        "size": 4218
+      },
+      {
+        "relative_path": "DIRTY_REPAIR_DIFFS/build__rehearse_candidate_plans.py.diff",
+        "sha256": "faddf11ac13e425a184bf40921818124b243e37ec2f44cc56be7ba7e9eb77750",
+        "size": 6843
+      },
+      {
+        "relative_path": "dirty_repair_files/automation/controller.py",
+        "sha256": "e8be79f3a1748c91eda92ab66405c906b3ed5ad2ba178dde1baaa060144a5e63",
+        "size": 89103
+      },
+      {
+        "relative_path": "dirty_repair_files/automation/in_process_ops.py",
+        "sha256": "4269ad5e3da4892e6660e3b5cae4d031926c9f42bc7638940f6ddbad19f0ea4e",
+        "size": 29658
+      },
+      {
+        "relative_path": "dirty_repair_files/automation/package_tests/test_r7_in_process_ops.py",
+        "sha256": "2f9d06d07b676571ffa4e3d91cd3566ceadca54b9b917e36978ea14d4b9d1aad",
+        "size": 15324
+      },
+      {
+        "relative_path": "dirty_repair_files/build/rehearse_candidate_plans.py",
+        "sha256": "4b164c6beefd006ebd499619a52d1bdbcfb8bde9f63ffccab182bcfbc9e51f3d",
+        "size": 24866
+      }
+    ],
+    "source": "/home/ubuntu/project/WPNO_orchestration/R7_post_freeze_in_place_repair_incident_2026-08-28",
+    "verification": {
+      "byte_identical_to_source": true,
+      "copied_file_count": 16,
+      "entries_checked": 15,
+      "exit_code": 0,
+      "failed": 0,
+      "manifest": "lineage/R7_POST_FREEZE_INCIDENT/INCIDENT_MANIFEST.sha256",
+      "manifest_sha256": "6d3ab746e0f221a7d83d055c81356f7dd013976a4c94f04cb4cc66fa7a5f8ab6",
+      "ok": 15
+    }
+  },
+  "inheritance_method": "hash-bound reference. R8 records the predecessor roots, their snapshot digests and their control-manifest verification results, and re-measures them in place. No predecessor tree is copied into R8 and no hardlink joins an active R7 file to an active R8 file.",
+  "migratable_r7_attempts": [
+    "L1-A31/RUN-A",
+    "L1-A31/RUN-B"
+  ],
+  "non_migratable_r7_attempts": {
+    "L1-A31/COMPARISON": "EXECUTED_UNSEALED_ZERO_EVIDENCE_FROZEN_CONTROLLER_DEFECT"
+  },
+  "predecessor": "R7",
+  "predecessors": {
+    "R4": {
+      "control_manifest": {
+        "entries": 1915,
+        "exit_code": 0,
+        "manifest_path": "08.18.26_Level1_Audits_R4/CONTROL_MANIFEST.sha256",
+        "manifest_sha256": "4b9d44f256975f7211dc37dbd382d8c3737b02abd1211fec3ea1fe78a1f1cb9f",
+        "mismatching": 0,
+        "mismatching_paths": [],
+        "ok": 1915
+      },
+      "files": 2238,
+      "mode_on_disk": "FROZEN",
+      "physically_duplicated_into_r8": false,
+      "reachable_from_r8": "by reference through R7's lineage tree at 08.18.26_Level1_Audits_R7/lineage, which is not copied",
+      "root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R4",
+      "snapshot_matches_r7_record": true,
+      "snapshot_sha256": "4d8ab234a553b158c55341b5f6f6284fddab4b643949288d57697ca638781430",
+      "snapshot_sha256_recorded_by_r7": "4d8ab234a553b158c55341b5f6f6284fddab4b643949288d57697ca638781430",
+      "symlinks": []
+    },
+    "R5": {
+      "control_manifest": {
+        "entries": 14160,
+        "exit_code": 1,
+        "manifest_path": "08.18.26_Level1_Audits_R5/CONTROL_MANIFEST.sha256",
+        "manifest_sha256": "55e702a63e074bf34cdbedb441fcdf9ec3db9356e2d58da80d23a2aceea98176",
+        "mismatching": 1,
+        "mismatching_paths": [
+          "MODE"
+        ],
+        "ok": 14159
+      },
+      "files": 14439,
+      "historical_classification": "SUPERSEDED_INVALID_FREEZE_MODE_MANIFEST_ORDERING",
+      "mode_on_disk": "FROZEN",
+      "permitted_mismatch": {
+        "actual_value": "FROZEN",
+        "cause": "R5 published CONTROL_MANIFEST.sha256 before it published MODE, so the manifest recorded the pre-freeze value. R6 repaired the ordering.",
+        "is_the_sole_mismatch": true,
+        "manifest_mtime_utc": "2026-08-26T17:20:07Z",
+        "mode_mtime_utc": "2026-08-26T17:20:07Z",
+        "path": "MODE",
+        "predates_this_work": true,
+        "recorded_sha256": "0dba1cc2928ed5a2a3259b8d9aa4188feb6b775c91d7eab990bb75fa49cd6eee",
+        "recorded_value": "GENERATED_UNVERIFIED"
+      },
+      "physically_duplicated_into_r8": false,
+      "reachable_from_r8": "by reference through R7's lineage tree at 08.18.26_Level1_Audits_R7/lineage, which is not copied",
+      "root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R5",
+      "snapshot_matches_r7_record": true,
+      "snapshot_sha256": "191902e7e7626099e0c149d46ed105bc691820186173021fd1001cf4856a556e",
+      "snapshot_sha256_recorded_by_r7": "191902e7e7626099e0c149d46ed105bc691820186173021fd1001cf4856a556e",
+      "symlinks": []
+    },
+    "R6": {
+      "control_manifest": {
+        "entries": 14781,
+        "exit_code": 0,
+        "manifest_path": "08.18.26_Level1_Audits_R6/CONTROL_MANIFEST.sha256",
+        "manifest_sha256": "759a7b86c4ca688fda95e467b211504fbde0b9f8528be68e94c9803bec6e989f",
+        "mismatching": 0,
+        "mismatching_paths": [],
+        "ok": 14781
+      },
+      "files": 15153,
+      "mode_on_disk": "FROZEN",
+      "physically_duplicated_into_r8": false,
+      "reachable_from_r8": "by reference through R7's lineage tree at 08.18.26_Level1_Audits_R7/lineage, which is not copied",
+      "root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R6",
+      "snapshot_matches_r7_record": true,
+      "snapshot_sha256": "aa3650f456343e5ade7e662d011d483df69cc6cf6f77097d36d6356eb7c56026",
+      "snapshot_sha256_recorded_by_r7": "aa3650f456343e5ade7e662d011d483df69cc6cf6f77097d36d6356eb7c56026",
+      "symlinks": []
+    }
+  },
+  "r7": {
+    "baseline_manifest_sha256": "0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d",
+    "build_id": "L1BUILD-R7-2026-08-26-UBUNTU-PHASE-ATTEMPT-MODEL",
+    "continuous_post_freeze_immutability": false,
+    "control_manifest": {
+      "entries": 15804,
+      "exit_code": 0,
+      "manifest_path": "08.18.26_Level1_Audits_R7/CONTROL_MANIFEST.sha256",
+      "manifest_sha256": "005e3e890f7ebea0202101c918aa2dc2794b82c9ff8d8c27318ed9f9e15beb57",
+      "mismatching": 0,
+      "mismatching_paths": [],
+      "ok": 15804
+    },
+    "current_bytes_restored_to_frozen_manifest": true,
+    "files": 16153,
+    "frozen_state_summary": {
+      "approval_records": 3,
+      "audits": 35,
+      "audits_with_a_started_phase": {},
+      "frozen_at_utc": "2026-08-28T09:14:39Z",
+      "halt_critical": null,
+      "mode": "FROZEN",
+      "phases_with_recorded_state": 0
+    },
+    "inherited_lineage_tree": {
+      "inventory_record": "08.18.26_Level1_Audits_R7/lineage/R4_R5_R6_R7_INVENTORY.json",
+      "inventory_sha256": "fffd263a2dee529447b4514483dbbbf32ceef5a06ed3cd2d46bffe1243747dfe",
+      "note": "R7's own lineage carries a full physical copy of R6, which carries R5, which carries R4. R8 does not copy it. The chain is verified by re-measuring each predecessor at its own root.",
+      "path": "08.18.26_Level1_Audits_R7/lineage",
+      "predecessor_integrity_record": "08.18.26_Level1_Audits_R7/lineage/PREDECESSOR_INTEGRITY.json",
+      "predecessor_integrity_sha256": "357818157c717b65a9e4a74cb051054e0186db9c53534cb81d05e11ec6c5f794"
+    },
+    "mode_on_disk": "FROZEN",
+    "post_freeze_modification_incident": "RECORDED",
+    "r7_own_record_said_no_successor_permitted": true,
+    "revision_record": {
+      "audits_initialised": 35,
+      "initialised_at": 1787781433.342558,
+      "level1_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7",
+      "lineage_path": "lineage/R6_EXECUTION",
+      "mode_at_initialisation": "GENERATED_UNVERIFIED",
+      "phases_initialised": 43,
+      "platform": "UBUNTU",
+      "predecessor": "R6",
+      "predecessor_approvals_authority": "NONE. No approval token recorded against the predecessor authorises any phase of this revision. Every gated phase here requires a fresh human token bound to this revision's own plan.",
+      "predecessor_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R6",
+      "predecessor_state_disposition": "HISTORICAL_ONLY_PRESERVED_IN_LINEAGE_NOT_ACTIVE",
+      "revision": "R7",
+      "schema": "wpno.level1.revision/1"
+    },
+    "root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7",
+    "snapshot_sha256": "f84ac00a0ce66a0e786494295a2574de413ae6e359fea762ce4fa4b399102a3f",
+    "symlinks": [],
+    "why_r8_exists_anyway": "R7's inventory records final_revision true and successor_permitted false. The human authorised R8 on 2026-08-28 after the frozen execution-engine defect was measured: the frozen controller performed no IN_PROCESS operation at all. That defect cannot be repaired inside a frozen revision, and it was already attempted in place once -- which is the incident this lineage carries."
+  },
+  "r7_attempts": {
+    "L1-A31/COMPARISON": {
+      "attempt_1_file_count": 0,
+      "attempt_1_present": true,
+      "attempt_index_present": false,
+      "audit_id": "L1-A31",
+      "evidence_dir": "08.18.26_Level1_Audits_R7/evidence/L1-A31/COMPARISON",
+      "plan_present": true,
+      "plan_sha256": "0126c7417fb9da5606bac46bdde58ed75ec576fdde54fe24d1faf9560bc64025",
+      "progress_accepted_attempt": null,
+      "progress_state": "EXECUTED",
+      "progress_verdict": null,
+      "run_phase": "COMPARISON"
+    },
+    "L1-A31/RUN-A": {
+      "attempt_1_file_count": 35,
+      "attempt_1_present": true,
+      "attempt_index_present": true,
+      "attempt_index_sha256": "412bf564b2c584e8289c0ba8861f107f048eee4277f6f0b1c14bf77f07a94c1d",
+      "audit_id": "L1-A31",
+      "commands_sha256": "f85a6350252ffe414ef35c40469ce2c2e1f7faa090968f3601de478d22e764b6",
+      "evidence_dir": "08.18.26_Level1_Audits_R7/evidence/L1-A31/RUN-A",
+      "evidence_manifest_entries": 33,
+      "evidence_manifest_failures": [],
+      "evidence_manifest_sha256": "9bade28eab2ff0a06e849985a77c2ddd2f7d460425d8d4f828a907cf220fedc6",
+      "evidence_manifest_verifies": true,
+      "plan_present": true,
+      "plan_sha256": "157b5bc02c01b9c025b312eb4aa9b6a341c2e4b565ff41e516c03520d4ad0bde",
+      "progress_accepted_attempt": 1,
+      "progress_state": "SEALED",
+      "progress_verdict": "UNVERIFIED",
+      "run_phase": "RUN-A",
+      "seal": {
+        "attempt_id": "L1-A31/RUN-A/attempt-1",
+        "attempt_number": 1,
+        "audit_id": "L1-A31",
+        "file_count": 33,
+        "manifest_sha256": "9bade28eab2ff0a06e849985a77c2ddd2f7d460425d8d4f828a907cf220fedc6",
+        "run_phase": "RUN-A",
+        "sealed_at": 1787915740.3329437,
+        "verdict": "UNVERIFIED"
+      },
+      "seal_sha256": "f7a7a4b203b8566698229deac378e695c9582448b0f048192fb3ac599e3b86ff"
+    },
+    "L1-A31/RUN-B": {
+      "attempt_1_file_count": 7,
+      "attempt_1_present": true,
+      "attempt_index_present": true,
+      "attempt_index_sha256": "b7cfb1cc25d8d97364b82ab92dd3d9f7cff518a321ea003e6c36af19aa6fe8e6",
+      "audit_id": "L1-A31",
+      "commands_sha256": "894315af4692223c0312c361ce3afed82827b0d9c7e745937c3d36c63c0e3ae2",
+      "evidence_dir": "08.18.26_Level1_Audits_R7/evidence/L1-A31/RUN-B",
+      "evidence_manifest_entries": 5,
+      "evidence_manifest_failures": [],
+      "evidence_manifest_sha256": "20d4ce5fd9780471e0839841fe6d3eb1031bdf0afa889e43f60ebba6ecf8d9b1",
+      "evidence_manifest_verifies": true,
+      "plan_present": true,
+      "plan_sha256": "65f59b4af174a95ce6781e63c443b13caa8d8ad627344a6ab2c2cca424285896",
+      "progress_accepted_attempt": 1,
+      "progress_state": "SEALED",
+      "progress_verdict": "UNVERIFIED",
+      "run_phase": "RUN-B",
+      "seal": {
+        "attempt_id": "L1-A31/RUN-B/attempt-1",
+        "attempt_number": 1,
+        "audit_id": "L1-A31",
+        "file_count": 5,
+        "manifest_sha256": "20d4ce5fd9780471e0839841fe6d3eb1031bdf0afa889e43f60ebba6ecf8d9b1",
+        "run_phase": "RUN-B",
+        "sealed_at": 1787916242.8916295,
+        "verdict": "UNVERIFIED"
+      },
+      "seal_sha256": "ebedb95c451b9bf69ead5092eddbb97512df32de7c86de003f2f1a533c869f65"
+    }
+  },
+  "recorded_at_utc": "2026-08-28T13:22:16Z",
+  "revision": "R8",
+  "schema": "wpno.level1.lineage-compact/1"
+}

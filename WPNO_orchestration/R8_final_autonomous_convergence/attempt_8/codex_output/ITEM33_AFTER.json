@@ -1,0 +1,17 @@
+{
+ "exists": true,
+ "mode": "0o664",
+ "mtime_ns": 1787945105532801228,
+ "requested_path": "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_8_667636/verification/selftest_runtime/work/_selftest/unicode_fs_behaviour.txt",
+ "requested_was_absolute": true,
+ "resolved_path": "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_8_667636/verification/selftest_runtime/work/_selftest/unicode_fs_behaviour.txt",
+ "root": "CLONE",
+ "roots_declared": {
+  "CLONE": "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_8_667636",
+  "ORIGINAL": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8"
+ },
+ "schema": "wpno.r8.attempt8-observation/1",
+ "sha256": "a0cc46c89c46df86716561b22e637b0f2e26c52ccef9d5baf1652849a1037210",
+ "size": 49,
+ "type": "file"
+}

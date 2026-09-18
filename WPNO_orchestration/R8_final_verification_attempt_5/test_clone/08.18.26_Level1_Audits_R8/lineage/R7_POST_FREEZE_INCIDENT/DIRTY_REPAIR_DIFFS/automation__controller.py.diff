@@ -1,0 +1,88 @@
+frozen original: /home/ubuntu/R7_repair_backup_2026-08-28/automation/controller.py (sha256 aff9bc25271e76eda7999b3000bde6479253bf691a7c3bf5508c74a561991f06)
+dirty current  : automation/controller.py (sha256 e8be79f3a1748c91eda92ab66405c906b3ed5ad2ba178dde1baaa060144a5e63)
+
+--- frozen/automation/controller.py
++++ dirty/automation/controller.py
+@@ -54,8 +54,9 @@
+ import unicodedata
+ 
+ from . import (attempts, audit_context, codex_adapter, evidence, freeze,
+-               hashing, locking, operation_catalog, path_policy, policy,
+-               redaction, schema_validation, state_machine)
++               hashing, in_process_ops, locking, operation_catalog,
++               path_policy, policy, redaction, schema_validation,
++               state_machine)
+ 
+ 
+ class ControllerError(Exception):
+@@ -761,6 +762,59 @@
+             "stdout_truncated": trunc_out, "stderr_truncated": trunc_err}
+ 
+ 
++def _run_in_process_operation(op_name, params, recorder):
++    """Perform one in-process operation and record it as evidence.
++
++    This function is the repair of a defect that made the package report work
++    it had not done. The branch that called it used to read:
++
++        outcomes.append({"operation": ..., "note":
++                         "in-process; performed by the worker"})
++        continue
++
++    There was no worker. `IN_PROCESS` means, in this package's own catalogue,
++    "this machine does it with the standard library and no subprocess" -- so
++    the controller is the one that must do it, and it was doing nothing. The
++    note made a skipped step read like a completed one, and the returned
++    `executed` count counted the steps it had skipped. Twelve of the 43
++    phases consist entirely of such steps and would have reported success
++    having measured nothing.
++
++    An in-process operation has no argv, because no process is launched. The
++    recorded argv is therefore the empty list rather than a reconstructed
++    command line: a plausible-looking command that was never run is exactly
++    the misleading artefact CLAUDE.md section 4 rules out, and a label is not
++    evidence. What the operation actually found goes into stdout as canonical
++    JSON, so it is hashed and sealed like every other result. A failed
++    assertion is recorded with a non-zero exit code and its reason, not
++    raised: a measurement that came out negative is still a measurement.
++    """
++    started = time.time()
++    code, result = in_process_ops.perform(op_name, params)
++    payload = json.dumps(result, ensure_ascii=False, sort_keys=True,
++                         indent=2, default=str).encode("utf-8")
++
++    limit = policy.MAX_OUTPUT_BYTES
++    truncated = len(payload) > limit
++    if truncated:
++        payload = payload[:limit]
++    stderr = b""
++    if code != 0:
++        stderr = ("%s failed: %s\n"
++                  % (op_name, result.get("reason", "unstated"))).encode("utf-8")
++
++    eid = recorder.record_operation(
++        operation=op_name, argv=[], exit_code=code,
++        stdout=payload, stderr=stderr,
++        timeout_seconds=None, output_limit_bytes=limit,
++        started=started, finished=time.time(),
++        truncated_stdout=truncated, truncated_stderr=False,
++        note="IN_PROCESS_NO_SUBPROCESS: performed by the controller with the "
++             "standard library; no process was launched")
++    return {"evidence_id": eid, "exit_code": code, "timed_out": False,
++            "stdout_truncated": truncated, "stderr_truncated": False,
++            "in_process": True}
++
+ 
+ # --------------------------------------------------- revision initialisation
+ def cmd_init_revision(args):
+@@ -1128,8 +1182,8 @@
+         outcomes = []
+         for step in plan["steps"]:
+             if step["operation"] in operation_catalog.IN_PROCESS:
+-                outcomes.append({"operation": step["operation"],
+-                                 "note": "in-process; performed by the worker"})
++                outcomes.append(_run_in_process_operation(
++                    step["operation"], step.get("params", {}), recorder))
+                 continue
+             if step["operation"] in operation_catalog.OPERATOR_PERFORMED:
+                 outcomes.append({

@@ -1,0 +1,122 @@
+{
+  "actions_not_taken": [
+    "attempt 5 was not launched",
+    "the package was not repaired",
+    "no freeze plan was created",
+    "no freeze token was generated, recorded or consumed"
+  ],
+  "attempt_4": {
+    "items_fail": [
+      "V15",
+      "V19"
+    ],
+    "items_pass": 20,
+    "measured_build_manifest_entry_count": 15752,
+    "measured_build_manifest_sha256": "4fa47432bf98a960676e4de16d04176436cc664a2fdad6302463638a12088d66",
+    "outputs_revised_after_first_write": false,
+    "outputs_written_once_at_utc": "2026-08-28T07:44:54Z",
+    "overall_pass": false,
+    "path": "verification_codex_final_pre_freeze_attempt_4",
+    "result_sha256": "a5970ff4b49b6d39e5268c29ccb1a378760aebf2201acffeecb71f8b24239e10",
+    "status": "VERIFICATION_FAIL_PRE_FREEZE_R7_FINAL",
+    "subprocess_exit_code": 0,
+    "subprocess_exited_utc": "2026-08-28T07:51:11Z",
+    "unresolved_findings": 2,
+    "verification_manifest_covers": [
+      "COMMAND_LOG.jsonl",
+      "MEASUREMENTS.json",
+      "VERIFICATION_REPORT.md",
+      "VERIFICATION_RESULT.json"
+    ],
+    "verification_manifest_sha256": "3d09b8086f91f9cfdbc0e8e10f6eee8b178c8db28a0b5c11e19e5472e711f67b",
+    "verification_manifest_valid": true
+  },
+  "findings": [
+    {
+      "classification": "PRE_FREEZE_VERIFICATION_FAILURE",
+      "exact_measurement": {
+        "ast_imports": {
+          "automation/a19_run_b.py": [
+            "json",
+            "os",
+            "subprocess",
+            ":hashing",
+            ":path_policy",
+            ":policy"
+          ],
+          "automation/a19_run_b_cli.py": [
+            "argparse",
+            "json",
+            "sys",
+            ":a19_run_b",
+            ":hashing",
+            ":path_policy"
+          ]
+        },
+        "comparison_names_both": true,
+        "imports_or_reaches_run_a": [],
+        "run_a_computation": "folds first ten digits, produces eleventh, compares carried digit",
+        "run_b_computation": "folds all eleven digits, requires final intermediate 1, produces no check digit",
+        "run_b_cross_phase_paths": [
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/work/L1-A19/RUN-B"
+        ],
+        "sabotage_argv_count": 2,
+        "sabotage_controls_distinct": true,
+        "source_assertions": {
+          "run_a_generation_form": true,
+          "run_b_verification_form": true
+        }
+      },
+      "executable_bytes_must_change": false,
+      "finding_id": "FPF4-V15",
+      "internally_repairable_before_freeze": true,
+      "item": "V15"
+    },
+    {
+      "classification": "PRE_FREEZE_VERIFICATION_FAILURE",
+      "exact_measurement": {
+        "changed_manifest_entries": 54,
+        "closure_counts_found": {
+          "errors": [
+            0,
+            0
+          ],
+          "failures": [
+            0,
+            0
+          ],
+          "skips": [
+            0,
+            0
+          ]
+        },
+        "malformed_rows": [],
+        "rehash_failures": [],
+        "static_clean": true,
+        "static_finding_count": 0
+      },
+      "executable_bytes_must_change": false,
+      "finding_id": "FPF4-V19",
+      "internally_repairable_before_freeze": true,
+      "item": "V19"
+    }
+  ],
+  "outcome": "HUMAN_GATE_FINAL_VERIFICATION_ATTEMPT_4_FAILED",
+  "post_attempt_no_drift_check": {
+    "MODE": "GENERATED_UNVERIFIED",
+    "approvals": 0,
+    "build_manifest_sha256": "4fa47432bf98a960676e4de16d04176436cc664a2fdad6302463638a12088d66",
+    "entries_verified": "15752/15752",
+    "evidence_seals": 0,
+    "freeze_artefacts": [],
+    "live_phases": "43 NOT_STARTED",
+    "mismatching": 0,
+    "missing": 0,
+    "new_r7_paths_outside_attempt_4": 0,
+    "on_disk_not_listed": 0,
+    "read_only": true,
+    "results": 0,
+    "symlinks": 0
+  },
+  "schema": "wpno.level1.attempt4-disposition/1"
+}

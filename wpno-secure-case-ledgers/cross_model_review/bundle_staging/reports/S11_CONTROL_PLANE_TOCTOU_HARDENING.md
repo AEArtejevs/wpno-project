@@ -1,0 +1,3 @@
+# Control-Plane — TOCTOU-Hardening
+
+Statt "pruefen -> warten -> git commit" (TOCTOU-anfaellig) bindet der Broker den geprueften Zustand an den Commit: (a) exklusiver Lock verhindert parallelen Broker/Gate; (b) tree0 wird nach der Validierung erneut gegen git write-tree geprueft (Index-Mutation -> Abbruch); (c) parent0 wird gegen HEAD geprueft (HEAD-Bewegung -> Abbruch); (d) `git update-ref ref new old` ist atomarer CAS gegen den erwarteten Parent; (e) Commit wird AUS tree0 erzeugt (commit-tree), nie erneut aus dem veraenderlichen Working Tree gelesen. Keine Wiederverwendung eines alten Gate-Ergebnisses bei geaenderter Baseline.

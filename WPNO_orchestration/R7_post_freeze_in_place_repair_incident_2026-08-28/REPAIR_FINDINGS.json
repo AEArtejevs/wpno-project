@@ -1,0 +1,80 @@
+{
+  "A_frozen_execution_engine_defect": {
+    "affected_steps_of_307": 165,
+    "controller_behaviour": "automation/controller.py appended the note 'in-process; performed by the worker' and executed `continue`. No worker exists; the only non-test occurrence of the word in automation/*.py was that note.",
+    "fully_hollow_phases": [
+      "L1-A03/RUN-A",
+      "L1-A10/RUN-A",
+      "L1-A17/RUN-A",
+      "L1-A18/COMPARISON",
+      "L1-A19/COMPARISON",
+      "L1-A20/RUN-A",
+      "L1-A21/RUN-A",
+      "L1-A23/RUN-A",
+      "L1-A24/RUN-A",
+      "L1-A31/COMPARISON",
+      "L1-A33/RUN-A",
+      "L1-A34/COMPARISON"
+    ],
+    "observed_consequence": "L1-A31 COMPARISON reported executed=3 and entered state EXECUTED with zero evidence files.",
+    "phases_fully_hollow": 12,
+    "phases_partially_skipped": 26,
+    "rehearsal_behaviour": "build/rehearse_candidate_plans.py recorded executed=false together with ok=true, so an unexecuted step counted as a passing step.",
+    "summary": "The frozen controller never performed IN_PROCESS operations.",
+    "why_it_was_invisible": "The pre-freeze rehearsal shared the blind spot, so the 43/43 PASS_READY result never exercised these steps; six Codex verification attempts did not detect it."
+  },
+  "B_candidate_repair": {
+    "convergence_stopped_by": "the two plan defects C and D",
+    "focused_tests_passed": 26,
+    "includes_sabotage_proof": "test_the_guard_rejects_the_original_defective_branch reconstructs the defective branch verbatim and requires the guard to reject it",
+    "integrations": [
+      "automation/controller.py _run_in_process_operation",
+      "build/rehearse_candidate_plans.py real execution plus control-role judgement"
+    ],
+    "measured_before_repair": 0,
+    "measured_in_process_execution": 187,
+    "operations_implemented": 16,
+    "shared_implementation": "automation/in_process_ops.py",
+    "status": "BUILT, PROVEN, THEN REVERTED OUT OF R7. Preserved for R8.",
+    "test_file": "automation/package_tests/test_r7_in_process_ops.py"
+  },
+  "C_l1_a21_plan_defect": {
+    "applied_to_r7": false,
+    "audit": "L1-A21",
+    "authorised_correction": "R8 ONLY: use the plan-appropriate text operation, such as COUNT_TEXT_MATCHES, to measure the intended pattern and assert zero matches.",
+    "consequence": "The JSON parser refuses before the expect_absent assertion is evaluated. The negative control never tested anything.",
+    "measured_file_type": "Docker tabular ASCII text (docker ps output), 5449 bytes; not JSON",
+    "operation": "PARSE_JSON_READONLY",
+    "phase": "RUN-A",
+    "step_id": "negative_control_export_is_not_another_project",
+    "target": "references/REF-13_all_containers.txt"
+  },
+  "D_l1_a33_plan_defect": {
+    "applied_to_r7": false,
+    "audit": "L1-A33",
+    "authorised_correction": "R8 ONLY: safely extract the intended XML MIME part into an R8 mutable work location, then parse the extracted XML, leaving the accepted reference unchanged.",
+    "consequence": "The XML parser correctly refuses at line 1 column 0. The step is a load-bearing MEASUREMENT, not a control.",
+    "expected_exit_code": 0,
+    "measured_file_type": "MIME multipart entity wrapping XML parts; 'MIME-Version: 1.0' at byte zero, Content-Type Multipart/Related",
+    "operation": "XML_PARSE_SANDBOX",
+    "phase": "RUN-A",
+    "root_cause": "The operation was chosen from the .xml extension. CLAUDE.md section 4: a filename is not evidence of content.",
+    "step_id": "parse_container_xml_safely",
+    "target": "references/REF-11-563203462.xml"
+  },
+  "E_control_expectation_weakness": {
+    "assessment": "NOT ADJUDICATED. These are not assumed all defective and not assumed all benign.",
+    "by_role": {
+      "MUTATION": 20,
+      "NEGATIVE": 14,
+      "ORACLE": 12,
+      "POSITIVE": 9
+    },
+    "note": "With no declared expectation the harness scores a step ok only when it exits 0, which is the wrong polarity for a control built to fail.",
+    "of_total_steps": 307,
+    "r8_requirement": "R8 must require an explicit machine-checkable expected outcome for every control step, using an exit code, expected status, expected count, expected hash or another operation-appropriate assertion.",
+    "steps_with_control_role_and_no_declared_expected_exit_code": 55
+  },
+  "recorded_at_utc": "2026-08-28T12:31:23Z",
+  "schema": "wpno.incident.repair_findings/1"
+}

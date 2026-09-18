@@ -1,0 +1,130 @@
+{
+  "derived_by": "build/derive_a19_vectors.py",
+  "derived_vector_count": 23,
+  "documented_vector_count": 11,
+  "duplicate_raw_values": {},
+  "expected_result_counts": {
+    "INVALID_CHECKSUM": 5,
+    "INVALID_FORMAT_LEADING_ZERO": 2,
+    "INVALID_FORMAT_NON_DIGIT": 1,
+    "INVALID_FORMAT_REPETITION": 8,
+    "INVALID_LENGTH": 7,
+    "INVALID_NOT_A_STRING": 1,
+    "VALID": 10
+  },
+  "oracle_note": "No expected value in this corpus was produced by the implementation under audit. The documented vectors are REF-04's own; the derived vectors follow named rules whose implementation was first checked against every documented vector.",
+  "ref03_limitation": "The ISO/IEC 7064 item is an eleven-page iTeh preview containing normative pages 1-5. It establishes that MOD 11,10 is the designated hybrid system with one check digit. It does not contain clauses 9 and 10 and must not be described as the complete ISO standard. The operational calculation is taken from the official ELSTER specification and corroborated by REF-04.",
+  "references": {
+    "REF-03": {
+      "bzst": {
+        "path": "references/REF-03_BZSt_German_IdNr_Issuer_Specification.pdf",
+        "sha256": "b2ec9da8ae160d548d46eebebe0ef9ccfc9f9db204a25cea4ff3f04fc7609a0f"
+      },
+      "elster": {
+        "path": "references/REF-03_ELSTER_Pruefung_Steueridentifikationsnummer_2026-04-15.pdf",
+        "sha256": "f5f8a41beabb469851e26b47cdd4eb6641a9bdbc68c34a589edaa90631b37f41"
+      },
+      "iso_preview": {
+        "path": "references/REF-03_ISO_IEC_7064_2003.pdf",
+        "sha256": "b88b0f84a0f1e121ff49a7640a62a4c9057e5cfedcaf790eff86c0fa5f1c31f8"
+      },
+      "source_map": {
+        "path": "references/REF-03_SOURCE_MAP.txt",
+        "sha256": "5dcd16b464c8d950f88f1ef78730379966df2d1d907f4d28db6dc0a4db9a9a0b"
+      }
+    },
+    "REF-04": {
+      "doctest": {
+        "path": "references/REF-04_test_de_idnr.doctest",
+        "sha256": "95d71ea0dee4276908f2d32a1adf05c938164ecd836ee384dc4ffc7439a58ecd"
+      },
+      "idnr": {
+        "path": "references/REF-04_idnr.py",
+        "sha256": "406499181359159d39185b2703e32764c13be54c30834a7b0f172e68af76aa77"
+      }
+    }
+  },
+  "revision": "R7",
+  "rule_self_check_against_ref04": [
+    {
+      "agrees": true,
+      "computed": "VALID",
+      "expected": "VALID",
+      "locator": "REF-04_idnr.py docstring",
+      "raw": "36 574 261 809"
+    },
+    {
+      "agrees": true,
+      "computed": "INVALID_CHECKSUM",
+      "expected": "INVALID_CHECKSUM",
+      "locator": "REF-04_idnr.py docstring",
+      "raw": "36574261890"
+    },
+    {
+      "agrees": true,
+      "computed": "INVALID_FORMAT_REPETITION",
+      "expected": "INVALID_FORMAT_REPETITION",
+      "locator": "REF-04_idnr.py docstring",
+      "raw": "36554266806"
+    },
+    {
+      "agrees": true,
+      "computed": "INVALID_LENGTH",
+      "expected": "INVALID_LENGTH",
+      "locator": "REF-04 doctest",
+      "raw": "116574261809"
+    },
+    {
+      "agrees": true,
+      "computed": "INVALID_FORMAT_NON_DIGIT",
+      "expected": "INVALID_FORMAT_NON_DIGIT",
+      "locator": "REF-04 doctest",
+      "raw": "A6574261809"
+    },
+    {
+      "agrees": true,
+      "computed": "INVALID_FORMAT_LEADING_ZERO",
+      "expected": "INVALID_FORMAT_LEADING_ZERO",
+      "locator": "REF-04 doctest",
+      "raw": "01234567896"
+    },
+    {
+      "agrees": true,
+      "computed": "INVALID_FORMAT_REPETITION",
+      "expected": "INVALID_FORMAT_REPETITION",
+      "locator": "REF-04 doctest",
+      "raw": "1234567890 3"
+    },
+    {
+      "agrees": true,
+      "computed": "VALID",
+      "expected": "VALID",
+      "locator": "REF-04 doctest",
+      "raw": "1123456789 0"
+    },
+    {
+      "agrees": true,
+      "computed": "VALID",
+      "expected": "VALID",
+      "locator": "REF-04 doctest",
+      "raw": "1112345678 6"
+    },
+    {
+      "agrees": true,
+      "computed": "INVALID_FORMAT_REPETITION",
+      "expected": "INVALID_FORMAT_REPETITION",
+      "locator": "REF-04 doctest",
+      "raw": "1111234567 8"
+    },
+    {
+      "agrees": true,
+      "computed": "INVALID_FORMAT_REPETITION",
+      "expected": "INVALID_FORMAT_REPETITION",
+      "locator": "REF-04 doctest",
+      "raw": "1122345678 5"
+    }
+  ],
+  "rule_self_check_disagreements": 0,
+  "schema": "wpno.level1.a19-idnr-vectors/1",
+  "vector_count": 34
+}

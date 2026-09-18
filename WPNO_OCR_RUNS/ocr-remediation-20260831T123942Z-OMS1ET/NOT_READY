@@ -1,0 +1,5 @@
+NOT_READY
+timestamp_utc=2026-08-31T12:40:58Z
+reason=insufficient_free_space_and_combined_ram_swap
+source_project=/home/ubuntu/project/WPNO
+readiness_report=/home/ubuntu/project/WPNO_OCR_RUNS/ocr-remediation-20260831T123942Z-OMS1ET/reports/SERVER_READINESS_REPORT.md

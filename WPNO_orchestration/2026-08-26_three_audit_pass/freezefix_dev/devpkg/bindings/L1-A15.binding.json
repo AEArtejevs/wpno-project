@@ -1,0 +1,56 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A15",
+  "binding_status": "TARGET_CONFIRMED",
+  "logical_targets": [
+    "test_injection assertion validity and vacuous-zero detection"
+  ],
+  "candidate_paths": [
+    "/Users/martinotten/WPNO/ap18/AP18_test_injection.py",
+    "/Users/martinotten/WPNO/ap18/AP18_eingangsfilter.py",
+    "/Users/martinotten/WPNO/pytest.ini"
+  ],
+  "productive_target": "/Users/martinotten/WPNO/ap18/AP18_test_injection.py",
+  "productive_target_sha256": "f01e65bc9eff2efec3cac2f55ef5238ea5a28139fec2080e6004816c7181eb9d",
+  "productive_target_evidence": [
+    {
+      "claim": "File identity confirmed by name, symbol match and SHA-256.",
+      "note": "File identity is NOT production identity. No execution-path evidence establishes that this file is the copy invoked in production. See discovery_reconciliation/04_PRODUCTION_PATH_RECONCILIATION.md."
+    }
+  ],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [],
+  "external_evidence_required": [],
+  "unresolved_questions": [],
+  "discovery_drift": [
+    "D-08"
+  ],
+  "source_evidence": [
+    {
+      "source_path": "/Users/martinotten/WPNO/ap18/AP18_test_injection.py",
+      "sha256": "f01e65bc9eff2efec3cac2f55ef5238ea5a28139fec2080e6004816c7181eb9d",
+      "locator": "whole file",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/ap18/AP18_eingangsfilter.py",
+      "sha256": "e8ad639cbeb238b16985f240ed1045297c26a9202c603695b29f29a3ea74ffb3",
+      "locator": "the code under test",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/pytest.ini",
+      "sha256": "3259aae6b1feea94c78ee30440a63e82f2e4d5a4caa5a291820307c83323f227",
+      "locator": "collection configuration",
+      "evidence_type": "config",
+      "confidence": "HIGH"
+    }
+  ],
+  "replications": 1,
+  "risk": "CRITICAL",
+  "execution_order": 19
+}

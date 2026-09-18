@@ -1,0 +1,39 @@
+{
+  "audit_id": "L1-A34",
+  "conversion_inside_references": false,
+  "conversion_method": "IN_PROCESS_BASE64_NO_SUBPROCESS",
+  "default_trust_used": false,
+  "identity_equal": true,
+  "identity_equality": {
+    "fingerprint_equal": true,
+    "issuer_equal": true,
+    "public_key_equal": true,
+    "subject_equal": true
+  },
+  "overwrote_existing": false,
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.trust_staging/1",
+  "source_der_path": "references/REF-08-safe-root-ca-2017.der",
+  "source_der_sha256": "1abddfa573cf1dcd5a75f164bc828e6d4177c448849535912eed3c7825bfc9fc",
+  "source_der_sha256_after_staging": "1abddfa573cf1dcd5a75f164bc828e6d4177c448849535912eed3c7825bfc9fc",
+  "source_identity": {
+    "fingerprint_sha256": "1A:BD:DF:A5:73:CF:1D:CD:5A:75:F1:64:BC:82:8E:6D:41:77:C4:48:84:95:35:91:2E:ED:3C:78:25:BF:C9:FC",
+    "issuer": "CN=SAFE Root CA 2017, O=BNotK, C=DE",
+    "public_key_pem": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAsSrZQjtfeFj7w0zEYKAK\nu2uRyx5cIt3n2FsUgWROD1LS0mVhQJOX0azw+p64//VYeR8nva+5S8o4PLuETkcq\n1DtW4p3ZTzzdMZu+NdEBXsX3IZ+hBuo9iEwkK5ytYcLikLxzfvzSLoIFOJ+uplpQ\nKRj2mPy7NPyC6GNs+fwxLGrXJISE17W2mTIgIJuoSAExrBffE+i7tknop8vDsSVV\nVupWLtbrPzP37gS/ObZlHyuedYS3xB75fLSpkfGYyYhoxuUvypReU+cZD16oRZQT\n5teWsS/mBJ4Ua1YDcZHtofQB6J0yqerki1Qka0mlZqEvtAO6WzRfhcYAT7eQx/Op\nJod3R8ajyCC5IYxc651EdEGQ1w6QvEf+HOFBP2FGVpQEUr5pX2YUpv+k03txshuO\nvWV97+36TP2H6MHX+kSmI38MajgdB60aAKw8esGDhNy8kvb13h3j4JXVbFM7Zd6V\n2E8m0GJGEmBvOSPYvBYG37H4CN+hYK+oue6ctMNH8l96K0B0U/IJGExTLWqlZuV4\no2BbHe3ggMQ+Y0Vz4cd/VtgVcxbqhOmL4oQQAeR3kWr8YFI1ChHo8i0FTuQ0H7ri\nLvWwEnz8EFjGKPdZAqtzibOi7TTlD37BXPUuLbxlkPbGCehLumLrVY6btOZg2m4M\nPAoHWRBYgEHvZe9s7gQmJ2kCAwEAAQ==\n-----END PUBLIC KEY-----",
+    "public_key_sha256": "d569beb24913e50e338c783be2dc62cd9a39c2eea3234e87061623a0da0e4b47",
+    "subject": "CN=SAFE Root CA 2017, O=BNotK, C=DE"
+  },
+  "source_reference_unchanged": true,
+  "staged_at": 1787924285.8896248,
+  "staged_identity": {
+    "fingerprint_sha256": "1A:BD:DF:A5:73:CF:1D:CD:5A:75:F1:64:BC:82:8E:6D:41:77:C4:48:84:95:35:91:2E:ED:3C:78:25:BF:C9:FC",
+    "issuer": "CN=SAFE Root CA 2017, O=BNotK, C=DE",
+    "public_key_pem": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAsSrZQjtfeFj7w0zEYKAK\nu2uRyx5cIt3n2FsUgWROD1LS0mVhQJOX0azw+p64//VYeR8nva+5S8o4PLuETkcq\n1DtW4p3ZTzzdMZu+NdEBXsX3IZ+hBuo9iEwkK5ytYcLikLxzfvzSLoIFOJ+uplpQ\nKRj2mPy7NPyC6GNs+fwxLGrXJISE17W2mTIgIJuoSAExrBffE+i7tknop8vDsSVV\nVupWLtbrPzP37gS/ObZlHyuedYS3xB75fLSpkfGYyYhoxuUvypReU+cZD16oRZQT\n5teWsS/mBJ4Ua1YDcZHtofQB6J0yqerki1Qka0mlZqEvtAO6WzRfhcYAT7eQx/Op\nJod3R8ajyCC5IYxc651EdEGQ1w6QvEf+HOFBP2FGVpQEUr5pX2YUpv+k03txshuO\nvWV97+36TP2H6MHX+kSmI38MajgdB60aAKw8esGDhNy8kvb13h3j4JXVbFM7Zd6V\n2E8m0GJGEmBvOSPYvBYG37H4CN+hYK+oue6ctMNH8l96K0B0U/IJGExTLWqlZuV4\no2BbHe3ggMQ+Y0Vz4cd/VtgVcxbqhOmL4oQQAeR3kWr8YFI1ChHo8i0FTuQ0H7ri\nLvWwEnz8EFjGKPdZAqtzibOi7TTlD37BXPUuLbxlkPbGCehLumLrVY6btOZg2m4M\nPAoHWRBYgEHvZe9s7gQmJ2kCAwEAAQ==\n-----END PUBLIC KEY-----",
+    "public_key_sha256": "d569beb24913e50e338c783be2dc62cd9a39c2eea3234e87061623a0da0e4b47",
+    "subject": "CN=SAFE Root CA 2017, O=BNotK, C=DE"
+  },
+  "staged_pem_mode": "0444",
+  "staged_pem_path": "work/L1-A31/preparation_r8_2026-08-28/staged_anchors/vhn_root_from_der.pem",
+  "staged_pem_sha256": "ff7f2c632312dcd799d69780a23bfc11a0f6ad8423e84f524d89481722130929",
+  "system_trust_used": false
+}

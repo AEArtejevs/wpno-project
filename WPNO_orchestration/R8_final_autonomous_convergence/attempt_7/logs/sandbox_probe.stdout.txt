@@ -1,0 +1,9 @@
+1. `EXIT_1=0`
+2. `EXIT_2=0`
+3. `EXIT_3=1`
+
+Exact error text:
+
+```text
+/bin/bash: line 1: /home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/PROBE_MUST_NOT_EXIST.txt: Read-only file system
+```

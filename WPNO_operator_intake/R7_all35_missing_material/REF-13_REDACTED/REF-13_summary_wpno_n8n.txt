@@ -1,0 +1,7 @@
+Name=/wpno_n8n
+Status=exited
+Created=2026-07-15T05:18:30.169988331Z
+ImageID=sha256:d1606a508b1e426de07a98fa10f3758ef474b17590c6f181a0dd38c999f819d0
+WorkingDir=/home/node
+Entrypoint=["tini","--","/docker-entrypoint.sh"]
+Cmd=null

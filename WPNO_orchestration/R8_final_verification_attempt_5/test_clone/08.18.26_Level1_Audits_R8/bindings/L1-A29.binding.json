@@ -1,0 +1,59 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A29",
+  "binding_status": "TARGET_CONFIRMED",
+  "logical_targets": [
+    "Independent 376 hash remeasurement"
+  ],
+  "candidate_paths": [
+    "references/REF-12/376_DKB MH.docx"
+  ],
+  "productive_target": "references/REF-12/376_DKB MH.docx",
+  "productive_target_sha256": "0b8403982880761b1e2bc31d8c15b756fad0fe12259d55d1611323a4e768b3ca",
+  "productive_target_evidence": [
+    {
+      "claim": "The operator statement defines 376 as 376_DKB MH.docx and records the source-host path, expected pre-transfer SHA-256, size and chain of custody.",
+      "source": "references/REF-12/REF-12_OPERATOR_PROVENANCE.txt",
+      "confidence": "HIGH"
+    }
+  ],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [
+    "references/REF-12/376_DKB MH.docx",
+    "references/REF-12/REF-12_OPERATOR_PROVENANCE.txt",
+    "references/REF-12/REF-12_MANIFEST.sha256"
+  ],
+  "external_evidence_required": [
+    "REF-12",
+    "REF-11"
+  ],
+  "unresolved_questions": [],
+  "discovery_drift": [],
+  "source_evidence": [
+    {
+      "source_path": "references/REF-12/376_DKB MH.docx",
+      "sha256": "0b8403982880761b1e2bc31d8c15b756fad0fe12259d55d1611323a4e768b3ca",
+      "locator": "Complete raw OOXML artefact; 52412 bytes",
+      "evidence_type": "artifact",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "references/REF-12/REF-12_OPERATOR_PROVENANCE.txt",
+      "sha256": "bf1391ab358f724e88c9016488d2d3b9e598d1283c49eb177c9e320d6f5bbe78",
+      "locator": "Operator definition, original source path, expected-hash provenance, chain of custody and limitation",
+      "evidence_type": "operator_statement",
+      "confidence": "HIGH"
+    }
+  ],
+  "referent": "376_DKB MH.docx",
+  "source_mac_path": "/Users/martinotten/Desktop/Milchhof_Entpackt/376-379_Kaspertr.Steurbescheinigung MH/376_DKB MH.docx",
+  "expected_sha256": "0b8403982880761b1e2bc31d8c15b756fad0fe12259d55d1611323a4e768b3ca",
+  "expected_hash_source": "OPERATOR_SUPPLIED_SOURCE_HOST_MEASUREMENT_PRE_SERVER_TRANSFER",
+  "chain_of_custody": "BOUND",
+  "chain_of_custody_limitation": "No older standalone historical SHA-256 manifest was located. The valid expected value is the operator-supplied source-host measurement made before server transfer.",
+  "replications": 1,
+  "risk": "HIGH",
+  "execution_order": 31
+}

@@ -1,0 +1,266 @@
+{
+  "audit_id": "L1-A27",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Identify the operator-supplied archive, hash its raw bytes by two independent methods, record size, metadata and stored entry structure, and prove the measurement resolves a one-byte change. The archive is hashed as it lies: not opened, not extracted, not normalised first.",
+  "static_analysis": "No module under PROJECT_ROOT is imported; nothing here parses project code at all. The archive is located in references/ as REF-11 and its digest is checked against references/manifest.json before any other operation. STAT_FILE and FILE_TYPE establish what the file is before it is hashed, so that a hash is not computed over something other than the claimed object. ZIP_LIST reads the stored entry names, sizes, CRCs and timestamps without extracting.\n\nPreparation the approved phase performs first: copy the archive to work/L1-A27/RUN-A/controls/archive_one_byte_mutated.zip and flip exactly one byte, recording the offset and both byte values. The original in references/ is never written to.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "STAT_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip"
+      },
+      "purpose": "Size and metadata, recorded before the file is hashed.",
+      "step_id": "stat_archive",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "FILE_TYPE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip"
+      },
+      "purpose": "Confirm the object is what it is claimed to be.",
+      "step_id": "file_type_archive",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip"
+      },
+      "purpose": "First independent hash of the raw bytes.",
+      "step_id": "hash_method_1",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "ORACLE",
+      "operation": "COMPARE_HASHES",
+      "params": {
+        "algorithms": [
+          "sha256",
+          "sha512"
+        ],
+        "expected_sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42",
+        "left": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip",
+        "right": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip"
+      },
+      "purpose": "Second independent hash, computed by a streaming standard-library read written for this audit, and compared with the first. Two methods that disagree mean one is not reading the raw bytes.",
+      "step_id": "hash_method_2_streaming",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "ZIP_LIST",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip"
+      },
+      "purpose": "Stored entry names, sizes, CRCs and timestamps.",
+      "step_id": "zip_list_no_extract",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn-covered-content.xml"
+      },
+      "purpose": "Hash a file whose digest is independently known from the reference manifest, and confirm both methods produce it.",
+      "step_id": "positive_control_known_hash",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "COMPARE_HASHES",
+      "params": {
+        "left": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn-covered-content.xml",
+        "right": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-563203462.xml"
+      },
+      "purpose": "Two files known to differ must hash differently. A method that reports every pair equal reports nothing.",
+      "step_id": "negative_control_two_files_differ",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "COMPARE_BINARY_FILES",
+      "params": {
+        "left": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip",
+        "right": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A27/RUN-A/controls/archive_one_byte_mutated.zip"
+      },
+      "purpose": "A sandbox copy with exactly one byte altered must be detected by both methods. Zero detected differences is a measurement error, not a pass.",
+      "step_id": "mutation_control_one_byte",
+      "timeout_seconds": 300
+    }
+  ],
+  "target": {
+    "identity_evidence": "references/manifest.json binds this operator-supplied archive as REF-11 with the same SHA-256",
+    "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip",
+    "sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "references/REF-11-*"
+      ],
+      "allowed_writes": [
+        "work/L1-A27/RUN-A/",
+        "evidence/L1-A27/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A27 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A27",
+      "candidate_template_identity": "L1-A27/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A27/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "/usr/bin/file for FILE_TYPE; every other step is in-process",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "ARBITRARY_SHELL",
+        "CHANGE_PERMISSION",
+        "DATABASE_CONNECTION",
+        "DATABASE_WRITE",
+        "DELETE_SOURCE",
+        "DOCKER_BUILD",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_SOCKET_ACCESS",
+        "GIT_MUTATION",
+        "INSTALL_PACKAGE",
+        "LAUNCH_AGENT_MUTATION",
+        "MCP_MUTATION",
+        "MODIFY_SOURCE",
+        "N8N_MUTATION",
+        "NETWORK_REQUEST",
+        "NETWORK_UPLOAD",
+        "SERVICE_MUTATION"
+      ],
+      "forbidden_reads": [
+        "any client document not in references/"
+      ],
+      "human_decisions": [],
+      "independent_oracle": "Two independent hashing methods and the file's own byte count. Neither method is derived from the other.",
+      "limitations": [
+        "REF-11 is operator-supplied material. Its chain of custody is the operator's statement recorded in references/manifest.json. Hash identity against that record is what is verified here; it is not proof of how the bytes came to exist before intake, and is not reported as such."
+      ],
+      "method": "two independent hash computations over the raw bytes",
+      "notes": [
+        "The archive is never copied into a report; only its measurements are."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [
+        "REF-11"
+      ],
+      "references": [
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip",
+          "sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn.xml.p7s",
+          "sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn-covered-content.xml",
+          "sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-563203462.xml",
+          "sha256": "8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/manifest.json",
+          "sha256": "4c1e9a706a5ba2a3c6f25f7ffc37963efadbe529f907865f516982ce3b54f1b4"
+        }
+      ],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": "Identity comes from the operator-supplied artefact alone. The digest is checked against references/manifest.json before any other operation. No similarly named file is substituted and no project file that merely mentions the subject is bound.",
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "check_id": "two_methods_agree",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": 0,
+      "question": "Do the two independent hash computations agree?",
+      "required_result": "Both methods produce the same SHA-256.",
+      "second_algorithm": "SHA-512 is recorded as well, so a later comparison does not depend on one algorithm.",
+      "step_id": "hash_method_2_streaming",
+      "why": "A disagreement means one method is not reading the raw bytes, and it must be resolved before anything else is interpreted."
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": 0,
+      "question": "Do the methods reproduce an independently known digest?",
+      "required_result": "The computed digest equals the value references/manifest.json records for the same file.",
+      "step_id": "positive_control_known_hash"
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_exit_code": 0,
+      "expected_failure_reason": "the two inputs are different files",
+      "expected_hash_relation": "DIFFERENT",
+      "expected_result": "DIGESTS_DIFFER",
+      "question": "Do the methods distinguish two different files?",
+      "required_result": "The digests differ. Equality here would mean the comparison is not reading both operands.",
+      "step_id": "negative_control_two_files_differ",
+      "why": "DIGESTS_DIFFER. Equality would mean the comparison is not reading both operands, which is what the plan already says."
+    },
+    {
+      "check_id": "mutation_control",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_boolean": false,
+      "expected_exit_code": 0,
+      "expected_result": "DIFFERENCE_DETECTED_AT_THE_RECORDED_OFFSET",
+      "fixture": "work/L1-A27/RUN-A/controls/archive_one_byte_mutated.zip",
+      "fixture_construction": "a byte-for-byte copy of the archive with exactly one byte flipped; the offset and both values are recorded",
+      "proof_the_fixture_differs": "the copy's SHA-256 differs from the original's, and the recorded offset names where",
+      "question": "Does a one-byte change change the measurement?",
+      "required_result": "Both methods report the archive changed.",
+      "step_id": "mutation_control_one_byte",
+      "why": "One deliberately altered byte must make the archives compare as not identical. Zero detected differences is a measurement error, not a pass -- CLAUDE.md section 6.",
+      "zero_changed_bytes_is": "a measurement error and an invalid control, never a pass"
+    },
+    {
+      "check_id": "raw_bytes_only",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "question": "Was anything opened, extracted or normalised first?",
+      "required_result": "No. ZIP_LIST reads the central directory without extracting, and the hashes are taken over the file as it lies.",
+      "verdict_effect": "A hash computed after extraction would answer a different question and voids this phase."
+    }
+  ]
+}

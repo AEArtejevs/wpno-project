@@ -1,0 +1,287 @@
+{
+  "audit_id": "L1-A28",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Identify the signed content and whether the CMS object carries it or references it, identify the digest algorithm from the structure rather than by assumption, extract the messageDigest signed attribute, recalculate the digest over an explicitly stated byte range by a method that is not the CMS library, and compare byte for byte. A match here does not establish that the signature verifies; that is L1-A34.",
+  "static_analysis": "No module under PROJECT_ROOT is imported. The CMS object and its content are located in references/ as REF-11 and their digests are checked against references/manifest.json first.\n\nEncapsulated versus detached is decided before anything is hashed, because it determines what is hashed and everything downstream rests on it. REF-11-vhn.xml.p7s is a detached CMS over REF-11-vhn-covered-content.xml: the covered content is a separate file, which is why every verification step names it explicitly.\n\nThe structure is parsed and the result is marked PARSE_ONLY_NOT_VERIFICATION. A parse that is allowed to read as a verification is the confusion this audit exists to prevent.\n\nPreparation the approved phase performs: copy the covered content to work/L1-A28/RUN-A/controls/content_one_byte_mutated.xml and alter one byte, recording the offset.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "STAT_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn.xml.p7s"
+      },
+      "purpose": "Record the CMS object's size and metadata.",
+      "step_id": "stat_cms",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn.xml.p7s"
+      },
+      "purpose": "Bind the CMS object being parsed.",
+      "step_id": "hash_cms",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn-covered-content.xml"
+      },
+      "purpose": "Bind the detached content whose digest the messageDigest attribute is supposed to carry.",
+      "step_id": "hash_covered_content",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "OPENSSL_PARSE_CERT",
+      "params": {
+        "cert": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_leaf_from_sealed_p7s_parse_evidence.pem"
+      },
+      "purpose": "Read the signer certificate carried in the sealed structure. PARSE_ONLY_NOT_VERIFICATION.",
+      "step_id": "parse_signer_certificate",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "ORACLE",
+      "operation": "COMPARE_HASHES",
+      "params": {
+        "algorithms": [
+          "sha256"
+        ],
+        "expected_sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23",
+        "left": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn-covered-content.xml",
+        "right": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/outputs/vhn_verified_content.bin"
+      },
+      "purpose": "Recalculate the content digest over the stated byte range with a standard-library streaming read, not with the CMS library that parsed the structure, and compare it with the extracted attribute.",
+      "step_id": "recalculate_digest_independently",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/content.bin"
+      },
+      "purpose": "Digest an input whose value is independently known from the reference manifest.",
+      "step_id": "positive_control_known_digest",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "COMPARE_HASHES",
+      "params": {
+        "algorithms": [
+          "sha256"
+        ],
+        "left": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/content.bin",
+        "right": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/wrong_content.bin"
+      },
+      "purpose": "A different input must produce a different digest.",
+      "step_id": "negative_control_different_input",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "COMPARE_BINARY_FILES",
+      "params": {
+        "left": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn-covered-content.xml",
+        "right": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A28/RUN-A/controls/content_one_byte_mutated.xml"
+      },
+      "purpose": "One altered byte of the content must change the recalculated digest so that it no longer matches the attribute.",
+      "step_id": "mutation_control_content_byte",
+      "timeout_seconds": 300
+    }
+  ],
+  "target": {
+    "identity_evidence": "references/manifest.json binds this CMS object as REF-11 with the same SHA-256",
+    "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn.xml.p7s",
+    "sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "references/REF-11-*",
+        "work/L1-A31/preparation_r8_2026-08-28/"
+      ],
+      "allowed_writes": [
+        "work/L1-A28/RUN-A/",
+        "evidence/L1-A28/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A28 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A28",
+      "candidate_template_identity": "L1-A28/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A28/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "/usr/bin/openssl for the certificate parse; the digest steps are in-process",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "ARBITRARY_SHELL",
+        "CHANGE_PERMISSION",
+        "DATABASE_CONNECTION",
+        "DATABASE_WRITE",
+        "DELETE_SOURCE",
+        "DOCKER_BUILD",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_SOCKET_ACCESS",
+        "GIT_MUTATION",
+        "INSTALL_PACKAGE",
+        "LAUNCH_AGENT_MUTATION",
+        "MCP_MUTATION",
+        "MODIFY_SOURCE",
+        "N8N_MUTATION",
+        "NETWORK_REQUEST",
+        "NETWORK_UPLOAD",
+        "SERVICE_MUTATION"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [],
+      "independent_oracle": "An independent hash computation over a stated byte range, plus the ASN.1 structure read directly. The signing tool's own verification output is not the oracle here.",
+      "limitations": [
+        "REF-11 is operator-supplied material. Its chain of custody is the operator's statement recorded in references/manifest.json. Hash identity against that record is what is verified here; it is not proof of how the bytes came to exist before intake, and is not reported as such."
+      ],
+      "method": "ASN.1 structure read plus an independent digest recalculation over an explicitly stated byte range",
+      "notes": [
+        "A CMS verified without naming its detached content proves nothing about any file, which is why the content path is explicit in every step that uses it."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [
+        "REF-11"
+      ],
+      "references": [
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip",
+          "sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn.xml.p7s",
+          "sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn-covered-content.xml",
+          "sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-563203462.xml",
+          "sha256": "8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/manifest.json",
+          "sha256": "4c1e9a706a5ba2a3c6f25f7ffc37963efadbe529f907865f516982ce3b54f1b4"
+        }
+      ],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": "The CMS object and its content come from the operator-supplied REF-11 material and their digests are checked against references/manifest.json first.",
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "check_id": "encapsulated_or_detached",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Does the CMS carry the content or reference it?",
+      "recorded_before": "any digest is computed",
+      "required_result": "Stated explicitly, with the structural evidence for it. Everything downstream depends on this answer.",
+      "why": "Hashing the wrong range produces a mismatch that looks exactly like a tampered file."
+    },
+    {
+      "check_id": "digest_algorithm_from_structure",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Which digest algorithm does the structure name?",
+      "required_result": "Read from the parsed structure, never assumed from the file extension or from what is common."
+    },
+    {
+      "check_id": "three_results_reported_separately",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "never_reported_as": "a verified signature. (c) matching does not establish that the signature verifies; that question belongs to L1-A34.",
+      "question": "Are the three results kept apart?",
+      "required_result": "(a) the recalculated content digest, (b) the extracted messageDigest attribute, (c) whether they match - reported as three values, never merged."
+    },
+    {
+      "check_id": "parse_only",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": 0,
+      "question": "Is the structural parse marked as a parse?",
+      "required_result": "PARSE_ONLY_NOT_VERIFICATION",
+      "step_id": "parse_signer_certificate"
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": 0,
+      "question": "Is the digest method correct on a known input?",
+      "step_id": "positive_control_known_digest"
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_exit_code": 0,
+      "expected_failure_reason": "the two inputs are different content",
+      "expected_hash_relation": "DIFFERENT",
+      "expected_result": "DIGESTS_DIFFER",
+      "fixture": "the synthetic content and wrong-content pair staged for L1-A31",
+      "question": "Does a different input give a different digest?",
+      "step_id": "negative_control_different_input",
+      "why": "DIGESTS_DIFFER, as the plan states."
+    },
+    {
+      "check_id": "mutation_control",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_boolean": false,
+      "expected_exit_code": 0,
+      "expected_result": "DIGEST_CHANGES_AND_NO_LONGER_MATCHES_THE_ATTRIBUTE",
+      "fixture": "work/L1-A28/RUN-A/controls/content_one_byte_mutated.xml",
+      "fixture_construction": "a copy of the covered content with one byte altered",
+      "proof_the_fixture_differs": "its SHA-256 differs from the original's",
+      "question": "Does one altered content byte break the match?",
+      "step_id": "mutation_control_content_byte",
+      "why": "One altered content byte must change the comparison.",
+      "zero_changed_results_is": "a measurement error, not a pass"
+    },
+    {
+      "check_id": "control_expectation_recalculate_digest_independently",
+      "degenerate_operands": "left and right name the same path, so `equal` is true by construction. No outcome expectation is bound to it, because a control that cannot fail is not a control. Outside the two plan repairs authorised for R8; recorded for the human.",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_exit_code": 0,
+      "question": "What must this control step do for its measurement to count?",
+      "step_id": "recalculate_digest_independently",
+      "why": "The recalculation must complete."
+    }
+  ]
+}

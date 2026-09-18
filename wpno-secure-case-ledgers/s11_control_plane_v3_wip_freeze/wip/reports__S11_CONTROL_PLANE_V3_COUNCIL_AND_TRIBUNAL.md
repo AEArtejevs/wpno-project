@@ -1,0 +1,3 @@
+# Control-Plane V3 — Zwei Gremien + Evidence Tribunal
+
+Zwei gegensaetzliche Gremien (Assurance + Breaker, unabhaengige Sandboxes/git-Objekt-Oracles) fanden **8 reale Bypaesse (2 CRITICAL) in der ERSTEN V3-Fassung**: Attestation-Transplant, Ledger-nicht-append-only, Pubkey-Substitution, Broker-promotet-aktive-Branch, Scope-Guard-Luecken (neue Datei + caller-Baseline), content_gate-CASE_SIG-toter-Code. ALLE in EINEM Reparaturzyklus geschlossen und deterministisch reproduziert (6/6 + 2/2). Evidence Tribunal (keine Mehrheit): CV3-1 (Pubkey) bleibt **PARTIAL** — volles out-of-band-Pinning ist operativ (Reviewer haelt Fingerprint). Deshalb KEIN Kandidatenabschluss, KEINE aktive-Branch-Promotion, Status hoechstens CONTROL_PLANE_V3_CANDIDATE_PENDING_CHATGPT_REVIEW.

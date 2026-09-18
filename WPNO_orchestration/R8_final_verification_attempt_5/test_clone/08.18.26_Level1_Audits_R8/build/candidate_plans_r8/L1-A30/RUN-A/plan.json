@@ -1,0 +1,256 @@
+{
+  "audit_id": "L1-A30",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Detect AppleDouble and macOS metadata entries in the archive by reading the central directory rather than a listing summary, and determine for each whether it lies inside or outside the byte range the signature covers. Which entries exist, whether they are covered, and what follows for the signed content are three separate answers and are reported as three.",
+  "static_analysis": "No module under PROJECT_ROOT is imported. The only occurrence of the string AppleDouble anywhere in PROJECT_ROOT is in S7_bestand.sh, an unrelated inventory script; it is not this audit's target and is not bound as one.\n\nZIP_LIST reads the archive without extracting. The central directory entries are inspected directly - names, order, sizes, external attributes, and any entry a normal listing omits - because a summary can drop exactly the entries this audit is looking for. Entry names are searched for __MACOSX prefixes, ._ basename prefixes, .DS_Store and Icon entries.\n\nUnicode normal form is recorded with every name comparison: an entry name may differ in normal form between the archive and the filesystem, and a comparison that does not state its form is not a comparison.\n\nThe coverage question requires the signature's coverage boundary from L1-A34. Until that boundary is available, entries are reported as found and their coverage is reported as not yet determined, never as outside coverage by default.\n\nPreparation the approved phase performs: build three synthetic archives under work/L1-A30/RUN-A/controls/ with zipfile - one carrying __MACOSX and ._ entries, one carrying none, and a copy of the second with exactly one ._ entry added.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "ZIP_LIST",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip"
+      },
+      "purpose": "The complete stored entry list, read without extracting.",
+      "step_id": "zip_list_raw",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "COUNT_TEXT_MATCHES",
+      "params": {
+        "normal_form": "NFC",
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip",
+        "patterns": [
+          "__MACOSX",
+          "\\._",
+          "\\.DS_Store",
+          "Icon\r"
+        ],
+        "word_boundary": false
+      },
+      "purpose": "Search the entry names for __MACOSX, ._ basenames, .DS_Store and Icon entries, with the Unicode normal form of the comparison recorded.",
+      "step_id": "central_directory_scan",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "ZIP_LIST",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A30/RUN-A/controls/with_appledouble.zip"
+      },
+      "purpose": "A synthetic archive built to contain __MACOSX and ._ entries. The method must find them.",
+      "step_id": "positive_control_archive_with_metadata",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "ZIP_LIST",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A30/RUN-A/controls/without_appledouble.zip"
+      },
+      "purpose": "A synthetic archive built with no such entries. The method must report none. A method that reports metadata everywhere reports nothing.",
+      "step_id": "negative_control_archive_without_metadata",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "ZIP_LIST",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A30/RUN-A/controls/one_added_appledouble.zip"
+      },
+      "purpose": "The same synthetic archive with a single ._ entry added. Detection must appear; with the entry removed again it must disappear.",
+      "step_id": "mutation_control_added_entry",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "ARCHIVE_EXTRACT_SANDBOX",
+      "params": {
+        "archive": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip",
+        "dest": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A30/RUN-A/extracted"
+      },
+      "purpose": "Extract into the audit work directory only, and compare the extracted listing with the raw listing. A difference between them is a property of the extraction tool and is recorded as one.",
+      "step_id": "extract_for_listing_comparison",
+      "timeout_seconds": 600
+    }
+  ],
+  "target": {
+    "identity_evidence": "references/manifest.json binds this archive as REF-11",
+    "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip",
+    "sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "references/REF-11-*",
+        "work/L1-A30/RUN-A/controls/"
+      ],
+      "allowed_writes": [
+        "work/L1-A30/RUN-A/",
+        "evidence/L1-A30/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A30 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A30",
+      "candidate_template_identity": "L1-A30/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A30/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "/usr/bin/unzip for the sandbox extraction; the listing steps are in-process",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "ARBITRARY_SHELL",
+        "CHANGE_PERMISSION",
+        "DATABASE_CONNECTION",
+        "DATABASE_WRITE",
+        "DELETE_SOURCE",
+        "DOCKER_BUILD",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_SOCKET_ACCESS",
+        "GIT_MUTATION",
+        "INSTALL_PACKAGE",
+        "LAUNCH_AGENT_MUTATION",
+        "MCP_MUTATION",
+        "MODIFY_SOURCE",
+        "N8N_MUTATION",
+        "NETWORK_REQUEST",
+        "NETWORK_UPLOAD",
+        "SERVICE_MUTATION"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [],
+      "independent_oracle": "The raw central directory read with the standard library's zipfile, independent of any extraction tool.",
+      "limitations": [
+        "REF-11 is operator-supplied material. Its chain of custody is the operator's statement recorded in references/manifest.json. Hash identity against that record is what is verified here; it is not proof of how the bytes came to exist before intake, and is not reported as such.",
+        "The coverage question depends on the signature coverage boundary established by L1-A34. Until that boundary exists, coverage is reported as not yet determined."
+      ],
+      "method": "central-directory read with the standard library's zipfile, independent of any extraction tool",
+      "notes": [],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [
+        "REF-11"
+      ],
+      "references": [
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip",
+          "sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn.xml.p7s",
+          "sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn-covered-content.xml",
+          "sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-563203462.xml",
+          "sha256": "8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/manifest.json",
+          "sha256": "4c1e9a706a5ba2a3c6f25f7ffc37963efadbe529f907865f516982ce3b54f1b4"
+        }
+      ],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": "The archive is the operator-supplied REF-11 artefact, digest-checked against references/manifest.json. S7_bestand.sh mentions AppleDouble and is explicitly not bound as a target.",
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "check_id": "entries_found",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "normal_form_recorded": "NFC, stated with the comparison",
+      "question": "Which macOS metadata entries exist in the archive?",
+      "required_result": "The complete list, from the central directory rather than a listing summary.",
+      "step_id": "central_directory_scan"
+    },
+    {
+      "check_id": "coverage",
+      "depends_on": "the coverage boundary from L1-A34",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Do those entries lie inside the signature's coverage?",
+      "required_result": "Reported per entry. Where the boundary is not yet available the answer is NOT_YET_DETERMINED, never OUTSIDE_COVERAGE by default.",
+      "why": "This is the decisive question and it is not answerable alone."
+    },
+    {
+      "check_id": "three_answers_kept_apart",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "question": "Are the three answers reported separately?",
+      "required_result": "(a) which entries exist, (b) whether they are covered, (c) what follows for the signed content - never collapsed into one statement."
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_result": "BOTH_METADATA_ENTRIES_DETECTED",
+      "fixture": "work/L1-A30/RUN-A/controls/with_appledouble.zip",
+      "fixture_construction": "a synthetic archive containing a __MACOSX/ prefix entry and a ._ basename entry, built with zipfile",
+      "question": "Does the method find entries that are there?",
+      "step_id": "positive_control_archive_with_metadata"
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_failure_reason": "no such entry exists in this archive; a detection here would mean the matcher matches everything",
+      "expected_result": "ZERO_METADATA_ENTRIES_DETECTED",
+      "fixture": "work/L1-A30/RUN-A/controls/without_appledouble.zip",
+      "question": "Does the method report none when there are none?",
+      "step_id": "negative_control_archive_without_metadata"
+    },
+    {
+      "check_id": "mutation_control",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_exit_code": 0,
+      "expected_minimum_count": 1,
+      "expected_result": "EXACTLY_ONE_METADATA_ENTRY_DETECTED",
+      "fixture": "work/L1-A30/RUN-A/controls/one_added_appledouble.zip",
+      "fixture_construction": "the negative-control archive with exactly one ._ entry added",
+      "proof_the_fixture_differs": "its entry count is one higher and its SHA-256 differs from the negative control's",
+      "question": "Does adding one entry change the answer?",
+      "step_id": "mutation_control_added_entry",
+      "why": "The archive with the added entry must list at least one entry. Which of them is the AppleDouble entry is counted downstream; ZIP_LIST's own count is of all entries, so binding an exact number here would assert something the operation does not measure.",
+      "zero_changed_results_is": "a measurement error, not a pass"
+    },
+    {
+      "check_id": "extraction_differences_attributed",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": 0,
+      "question": "Are extraction-tool artefacts attributed to the tool?",
+      "required_result": "Differences between the extracted listing and the raw listing are recorded as properties of the extraction tool, not of the archive.",
+      "step_id": "extract_for_listing_comparison"
+    }
+  ]
+}

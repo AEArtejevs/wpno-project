@@ -1,0 +1,662 @@
+{
+  "schema": "wpno.r7.evidence-closure-status/1",
+  "generated_date": "2026-08-27",
+  "mode": "READ_ONLY_EVIDENCE_CLOSURE_VERIFICATION",
+  "authoritative_gate": {
+    "previously_missing_reference_ids": [
+      "REF-03",
+      "REF-04",
+      "REF-05",
+      "REF-06",
+      "REF-07",
+      "REF-12",
+      "REF-13",
+      "REF-14"
+    ],
+    "matches_current_gate": true,
+    "separate_human_decision": "L1-A24"
+  },
+  "counts": {
+    "previously_missing_reference_ids": 8,
+    "accepted_reference_ids": 2,
+    "partial_reference_ids": 4,
+    "missing_reference_ids": 2,
+    "human_decisions_missing": 1,
+    "audits_total": 35,
+    "audits_ready_for_planning": 27,
+    "audits_blocked_by_external_material": 7
+  },
+  "overall_operator_manifest": {
+    "exists": false,
+    "classification": "CORRECTABLE_INTAKE_DOCUMENTATION_GAP"
+  },
+  "items": [
+    {
+      "ref_id": "REF-03",
+      "audit_ids": [
+        "L1-A19"
+      ],
+      "physical_status": "PRESENT: 5 files; 4 evidence/source-map entries plus manifest; no symlink or zero-byte file",
+      "format_status": "PDF/TXT valid by signatures; ISO item is an 11-page iTeh preview, not full ISO",
+      "manifest_status": "PASS: 4/4 entries verify and filenames reconcile",
+      "content_status": "Official ELSTER material supplies structure/examples/check-digit calculation; BZSt supports 11-digit structure; ISO preview identifies MOD 11,10 but omits clauses 9-10; limitation expressly disclosed",
+      "provenance_status": "Authorities and roles stated in SOURCE_MAP; upstream acquisition chain before intake is not independently documented",
+      "redaction_status": "No likely secret fields observed",
+      "final_classification": "ACCEPTED_WITH_EXPLICIT_LIMITATION",
+      "exact_remaining_action": "Import only with the source limitation preserved verbatim; do not describe the ISO preview as the complete standard."
+    },
+    {
+      "ref_id": "REF-04",
+      "audit_ids": [
+        "L1-A19"
+      ],
+      "physical_status": "PRESENT: idnr.py and test_de_idnr.doctest",
+      "format_status": "Upstream Python source and doctest text; no execution performed",
+      "manifest_status": "No REF-04-local manifest; both hashes exactly match the corresponding files inside the already accepted/hash-bound python-stdnum 2.2 archive in R7",
+      "content_status": "Upstream vectors are not invented; idnr.py links to stdnum.iso7064.mod_11_10; accepted archive contains mod_11_10.py and its MOD 11,10 implementation",
+      "provenance_status": "Identity is established by byte identity to R7 REF-02 python-stdnum 2.2, whose manifest records operator custody and upstream identity with a pre-receipt custody limitation",
+      "redaction_status": "No secret-bearing material observed",
+      "final_classification": "ACCEPTED",
+      "exact_remaining_action": "At lawful import, bind the two loose files and the existing hash-bound python-stdnum 2.2 archive as the REF-04 source set; derive the normalized corpus during the audit, not with the checker under test."
+    },
+    {
+      "ref_id": "REF-05",
+      "audit_ids": [
+        "L1-A11"
+      ],
+      "physical_status": "PRESENT: 2026 annual plan, 2026 Präsidium decisions, and one loose organigram candidate",
+      "format_status": "All are structurally PDF; loose PDF is one page and embeds title Organigramm extern plus source outline name 2026_04_01_Externe_Organigramm_GV.vsd despite its loose filename beginning 2026_07_01",
+      "manifest_status": "No per-file or overall operator manifest",
+      "content_status": "The annual plan and decision compilation are relevant, but BGH_REGISTER states no validity period. Completeness through 2026-08-27 and official-source identity/coverage of all mid-year amendments are not proven. Loose organigram issuer is not established as BGH and cannot be treated as the official roster",
+      "provenance_status": "Filenames/content indicators are insufficient; source URLs/capture method, authority and dates are absent",
+      "redaction_status": "No likely secret fields observed",
+      "final_classification": "PARTIAL",
+      "exact_remaining_action": "Operator must state BGH_REGISTER’s intended validity period and provide a hash-bound provenance statement proving the annual plan, complete amendment set through that period, and roster/composition source are official BGH publications; separately identify the loose organigram issuer or exclude it."
+    },
+    {
+      "ref_id": "REF-06",
+      "audit_ids": [
+        "L1-A14"
+      ],
+      "physical_status": "MISSING: no DOCX exists in intake; REF-06 contains Reuters files belonging to REF-07",
+      "format_status": "Required DOCX/OOXML cannot be tested",
+      "manifest_status": "MISSING",
+      "content_status": "No 110-page document is present, so the frozen hypotheses (43 unique citations, 82 occurrences, BGH count) cannot be tested under L1-A14’s independent counting rule",
+      "provenance_status": "MISSING operator provenance, original filename, original hash and intended-document attestation",
+      "redaction_status": "Client-material controls would be required upon receipt",
+      "final_classification": "MISSING",
+      "exact_remaining_action": "Operator must supply the exact original 110-page DOCX with original filename, SHA-256, chain of custody and attestation that it is the version previously counted; do not resave it."
+    },
+    {
+      "ref_id": "REF-07",
+      "audit_ids": [
+        "L1-A12"
+      ],
+      "physical_status": "PRESENT but misfiled under REF-06: archive, Reuters README and UCI HTML",
+      "format_status": "GZIP/TAR validates; archive contains exactly 22 reut2-000.sgm through reut2-021.sgm, lewis.dtd, README and six category-description files",
+      "manifest_status": "No operator manifest or provenanced expected archive hash; observed SHA-256 is 3bae43c9b14e387f76a61b6d82bf98a4fb5d3ef99ef7e7075ff2ccbcf59f9d30",
+      "content_status": "Reuters-21578 Distribution 1.0 is a real independently annotated corpus. No normalized label file exists. Labels must be derived from actual SGML category fields; README explicitly warns TOPICS=YES/NO is not the document category label",
+      "provenance_status": "README and UCI landing-page capture identify distribution; operator receipt/custody and expected-hash provenance are absent",
+      "redaction_status": "Research-use copyright limitation must be preserved; no secret-bearing material observed",
+      "final_classification": "PRESENT_REQUIRES_DERIVED_CORPUS",
+      "exact_remaining_action": "Before import, operator must hash-bind/provenance the archive; then a lawful independent preparation step must derive a label corpus from SGML category fields, without the checker under test, and hash every derived file plus the sorted collection inventory."
+    },
+    {
+      "ref_id": "REF-12",
+      "audit_ids": [
+        "L1-A29"
+      ],
+      "physical_status": "MISSING: no REF-12 directory, statement or artefact found",
+      "format_status": "MISSING",
+      "manifest_status": "MISSING",
+      "content_status": "No explicit operator definition of what “376” denotes; no candidate was inferred or hashed as the referent",
+      "provenance_status": "MISSING_OPERATOR_DEFINITION",
+      "redaction_status": "Not assessable",
+      "final_classification": "MISSING",
+      "exact_remaining_action": "Operator must provide one explicit statement defining 376 and identifying the exact artefact, object type, original identifier/path/source, chain of custody, provenanced expected SHA-256, current SHA-256, and original/byte-identical status."
+    },
+    {
+      "ref_id": "REF-13",
+      "audit_ids": [
+        "L1-A21"
+      ],
+      "physical_status": "PRESENT: 36 physical files; canonical manifest covers 31 evidence files, but four unbound image_1.json–image_4.json files are extra semantic duplicates of the named image JSON files",
+      "format_status": "All manifest JSON parses; four BOM JSON extras also parse; required four-container metadata, indexes, mounts, labels, summaries, image history, Docker context/info are present",
+      "manifest_status": "31/31 entries verify; manifest itself plus 31 bound files would be canonical 32, but current directory has four unbound extras",
+      "content_status": "Index reconciles four containers (wpno_litellm, wpno_n8n, wpno_postgres, wpno_redis) and image IDs; mounts/labels/summaries/history/context are present",
+      "provenance_status": "Operator-produced Docker export is hash-bound locally; no overall capture manifest states operator/authority/date/capture command for every file",
+      "redaction_status": "Raw container JSON contains environment entries with secret-bearing field names (values deliberately not reported); unsafe for unrestricted audit import",
+      "final_classification": "PRESENT_NEEDS_REDACTION",
+      "exact_remaining_action": "Operator must create a redacted, hash-bound derivative that removes secret values while retaining field names and structural evidence, and must exclude or separately bind the four unbound semantic-duplicate image_N.json files; preserve raw bytes only as restricted evidence."
+    },
+    {
+      "ref_id": "REF-14",
+      "audit_ids": [
+        "L1-A17",
+        "L1-A23"
+      ],
+      "physical_status": "PRESENT current server candidates under docker/ and mcp/; historical docker/litellm/mcp.registry.json deployed-source path is absent, while current Compose mounts ../../mcp/mcp.registry.json",
+      "format_status": "YAML/Python/JSON/Compose text present and registry JSON parses",
+      "manifest_status": "No REF-14 operator manifest binds current candidates to historical Windows-mounted bytes",
+      "content_status": "Current Compose plus REF-13 proves historical container destinations, entrypoint, command, working directory, config, callback, payload scanner and registry gate mounts. It supports L1-A17’s invocation path. It does not establish all actual-Mac facts required by L1-A23, and static current server files do not by themselves prove historical byte identity or continued production use",
+      "provenance_status": "PRESENT_CURRENT_SERVER_COPY_PRODUCTION_IDENTITY_NOT_PROVEN; current mcp/mcp.registry.json is the canonical source referenced by current Compose, but its byte identity to historical C:\\WPNO\\docker\\litellm\\mcp.registry.json is unproven",
+      "redaction_status": "Compose references .env files; field names were inventoried without values. Config uses environment-variable references. Any imported export must omit secret values",
+      "final_classification": "PARTIAL",
+      "exact_remaining_action": "Operator must provide a redacted REF-14 provenance/capture statement mapping each current server file and hash to the production deployment, explicitly resolve historical byte identity (or state it is unprovable), and supply the actual Mac/CLAUDE.md reality evidence required by L1-A23."
+    },
+    {
+      "ref_id": "L1-A24",
+      "audit_ids": [
+        "L1-A24"
+      ],
+      "physical_status": "No operator decision record found",
+      "format_status": "MISSING decision record and pre-execution manifest",
+      "manifest_status": "MISSING",
+      "content_status": "No explicit human approval, host identity, canonical external directory, purpose, expected CLAUDE.md path, directory existence/symlink result, approver or decision date",
+      "provenance_status": "MISSING human approval record",
+      "redaction_status": "Not applicable",
+      "final_classification": "HUMAN_DECISION_REQUIRED",
+      "exact_remaining_action": "An authorized human must approve and record one existing external launch directory with host, canonical path, purpose, expected CLAUDE.md path, existence/symlink checks, approver, date, and a pre-execution per-file SHA-256 manifest."
+    }
+  ],
+  "observed_file_inventory": [
+    {
+      "relative_path": "2026_07_01_Externe_Organigramm_GV.pdf",
+      "file_type": "PDF",
+      "size": 57780,
+      "sha256": "5d522539a07b69d9e5e19d87dbddf9a19d33af2d539a1412b7cc1cfb778744bd",
+      "modification_time_utc": "2026-08-27T09:56:13.075354+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-05 candidate only; not established"
+    },
+    {
+      "relative_path": "REF-03/REF-03_BZSt_German_IdNr_Issuer_Specification.pdf",
+      "file_type": "PDF",
+      "size": 338888,
+      "sha256": "b2ec9da8ae160d548d46eebebe0ef9ccfc9f9db204a25cea4ff3f04fc7609a0f",
+      "modification_time_utc": "2026-08-27T10:09:41.081863+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-03"
+    },
+    {
+      "relative_path": "REF-03/REF-03_ELSTER_Pruefung_Steueridentifikationsnummer_2026-04-15.pdf",
+      "file_type": "PDF",
+      "size": 1221897,
+      "sha256": "f5f8a41beabb469851e26b47cdd4eb6641a9bdbc68c34a589edaa90631b37f41",
+      "modification_time_utc": "2026-08-27T11:29:03.687608+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-03"
+    },
+    {
+      "relative_path": "REF-03/REF-03_ISO_IEC_7064_2003.pdf",
+      "file_type": "PDF",
+      "size": 855717,
+      "sha256": "b88b0f84a0f1e121ff49a7640a62a4c9057e5cfedcaf790eff86c0fa5f1c31f8",
+      "modification_time_utc": "2026-08-27T09:56:32.156481+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-03"
+    },
+    {
+      "relative_path": "REF-03/REF-03_MANIFEST.sha256",
+      "file_type": "plain text",
+      "size": 430,
+      "sha256": "337ae74a124e4d4ce312e62390ef61ec4123c28100797def7ebeb2c17b8e89d4",
+      "modification_time_utc": "2026-08-27T11:35:29.498264+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-03"
+    },
+    {
+      "relative_path": "REF-03/REF-03_SOURCE_MAP.txt",
+      "file_type": "plain text",
+      "size": 1259,
+      "sha256": "5dcd16b464c8d950f88f1ef78730379966df2d1d907f4d28db6dc0a4db9a9a0b",
+      "modification_time_utc": "2026-08-27T11:35:29.463264+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-03"
+    },
+    {
+      "relative_path": "REF-04/idnr.py",
+      "file_type": "Python source text",
+      "size": 3268,
+      "sha256": "406499181359159d39185b2703e32764c13be54c30834a7b0f172e68af76aa77",
+      "modification_time_utc": "2026-08-27T09:56:27.461449+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-04"
+    },
+    {
+      "relative_path": "REF-04/test_de_idnr.doctest",
+      "file_type": "binary",
+      "size": 2225,
+      "sha256": "95d71ea0dee4276908f2d32a1adf05c938164ecd836ee384dc4ffc7439a58ecd",
+      "modification_time_utc": "2026-08-27T09:56:27.044446+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-04"
+    },
+    {
+      "relative_path": "REF-05/REF-05_BGH_Geschaeftsverteilungsplan_2026.pdf",
+      "file_type": "PDF",
+      "size": 172665,
+      "sha256": "b103cc8b193fcfef62d9d57f5c809c925ba170394a1fe2badba9c66305d27ed5",
+      "modification_time_utc": "2026-08-27T09:56:25.627437+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-05"
+    },
+    {
+      "relative_path": "REF-05/REF-05_BGH_Praesidiumsbeschluesse_2026.pdf",
+      "file_type": "PDF",
+      "size": 900744,
+      "sha256": "da9f847e6532bfacfc6f3a8f55edba9c3ad5f346b2242f5918668c938e7b6d18",
+      "modification_time_utc": "2026-08-27T10:39:39.759406+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-05"
+    },
+    {
+      "relative_path": "REF-06/README.txt",
+      "file_type": "plain text",
+      "size": 36388,
+      "sha256": "eb669045dd883c56cb5a96da1848c3380bc6371894c5663709a46776e3262a96",
+      "modification_time_utc": "2026-08-27T10:11:06.343451+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-07 (Reuters documentation; misfiled under REF-06)"
+    },
+    {
+      "relative_path": "REF-06/reuters21578.html",
+      "file_type": "HTML text",
+      "size": 831,
+      "sha256": "ba7fcb3e75a813b893fb5d13782296b373c57c42661a3e0f6d19574497dcc17f",
+      "modification_time_utc": "2026-08-27T10:11:06.029449+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-07 (misfiled under REF-06)"
+    },
+    {
+      "relative_path": "REF-06/reuters21578.tar.gz",
+      "file_type": "GZIP archive",
+      "size": 8150596,
+      "sha256": "3bae43c9b14e387f76a61b6d82bf98a4fb5d3ef99ef7e7075ff2ccbcf59f9d30",
+      "modification_time_utc": "2026-08-27T10:11:38.605674+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-07 (misfiled under REF-06)"
+    },
+    {
+      "relative_path": "REF-13/REF-13_CONTAINER_INDEX.json",
+      "file_type": "JSON",
+      "size": 1116,
+      "sha256": "496245439cec08bb81472e05a6ab1cf087a0cc43b3941433604834b426e17638",
+      "modification_time_utc": "2026-08-27T10:53:07.335800+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_MANIFEST.sha256",
+      "file_type": "plain text",
+      "size": 3036,
+      "sha256": "0f243fb7a28f8ee15eeafc7bb1cfb1e8b9a084f516f0582df00d9f0bd5b7e60a",
+      "modification_time_utc": "2026-08-27T10:53:14.076845+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_all_containers.txt",
+      "file_type": "plain text",
+      "size": 5460,
+      "sha256": "351d063e3850ba5b88e78d715ec8b5b64b51351ea1a158543bd2acfe97404e14",
+      "modification_time_utc": "2026-08-27T10:53:06.996798+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_container_wpno_litellm.json",
+      "file_type": "JSON",
+      "size": 11929,
+      "sha256": "dd2259e764ce67b8be38850473fef2a582b5546ef3bd0aa64768e088f3000435",
+      "modification_time_utc": "2026-08-27T10:53:07.691803+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_container_wpno_n8n.json",
+      "file_type": "JSON",
+      "size": 10320,
+      "sha256": "43c3d36b3e42be24d4d557a8fc91b36605f27099c7bdc33b6b5450bddd7b9e3f",
+      "modification_time_utc": "2026-08-27T10:53:07.966805+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_container_wpno_postgres.json",
+      "file_type": "JSON",
+      "size": 9760,
+      "sha256": "6022a38a8e883dd9b50939b76a0fb6047e6e6fd47ccea71d5125fb16d2688892",
+      "modification_time_utc": "2026-08-27T10:53:08.264807+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_container_wpno_redis.json",
+      "file_type": "JSON",
+      "size": 9360,
+      "sha256": "df261bb86f1aff11db15e75a6d5e54313da19f6cf670bfe48b00d3bdd33f99ea",
+      "modification_time_utc": "2026-08-27T10:53:08.551808+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_docker_context.txt",
+      "file_type": "plain text",
+      "size": 15,
+      "sha256": "08d34a7d0d6173276b86f3da17a6b4db7df625f5654ec8574e85220649bfc49d",
+      "modification_time_utc": "2026-08-27T10:53:09.094812+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_docker_context_inspect.json",
+      "file_type": "JSON",
+      "size": 869,
+      "sha256": "a87290a947cb6a70275d268667c25279ed3d916a6c44dd97e2c69dd88659986e",
+      "modification_time_utc": "2026-08-27T10:53:08.812810+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_docker_info.txt",
+      "file_type": "plain text",
+      "size": 3705,
+      "sha256": "e515a63b5342f61283e024c82927bf0924a8ca0e7fe8a8c76de8b791de78dac4",
+      "modification_time_utc": "2026-08-27T10:53:09.392814+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_docker_version.txt",
+      "file_type": "plain text",
+      "size": 783,
+      "sha256": "a934272097fff1fc5e3aab9515c25d2d8ae2d692c6988fe89ca48f709684b5a2",
+      "modification_time_utc": "2026-08-27T10:53:09.741816+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_image_digests.txt",
+      "file_type": "plain text",
+      "size": 2369,
+      "sha256": "c7a0409016628263a569a7a2a89bc8833a24e2229a0c7bf628f2f8ec24407d12",
+      "modification_time_utc": "2026-08-27T10:53:10.166819+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_image_history_wpno_litellm.txt",
+      "file_type": "plain text",
+      "size": 7270,
+      "sha256": "ec6f4a757159b53c7c20253278d06a4e7bf9e1376d6fbae0d749892431206623",
+      "modification_time_utc": "2026-08-27T10:53:10.420821+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_image_history_wpno_n8n.txt",
+      "file_type": "plain text",
+      "size": 15653,
+      "sha256": "83cce4aac85d150c99c13d03867281a848783749546ef4643cb9feb2fb629db8",
+      "modification_time_utc": "2026-08-27T10:53:10.707823+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_image_history_wpno_postgres.txt",
+      "file_type": "plain text",
+      "size": 52137,
+      "sha256": "f42c92e9a618bf64a854703d36ef15b6b9c9bf4fdba76e57fbe77035bde0ad2e",
+      "modification_time_utc": "2026-08-27T10:53:11.002825+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_image_history_wpno_redis.txt",
+      "file_type": "plain text",
+      "size": 36311,
+      "sha256": "1d560d480bcb098f398346f04905c47556d26e8ff48a7b549b068be85a2f7f44",
+      "modification_time_utc": "2026-08-27T10:53:11.308827+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_image_wpno_litellm.json",
+      "file_type": "JSON",
+      "size": 4478,
+      "sha256": "e688b357302f50a1a719dc8b91a0c7f9924fd55301e7c264f1aaa9a1ae18324f",
+      "modification_time_utc": "2026-08-27T10:53:11.630829+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_image_wpno_n8n.json",
+      "file_type": "JSON",
+      "size": 4327,
+      "sha256": "f3cd21e1495d15b97e8ba6724eb906bbf5f7b92974d3a68e3f1c81dd838c4c32",
+      "modification_time_utc": "2026-08-27T10:53:11.935831+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_image_wpno_postgres.json",
+      "file_type": "JSON",
+      "size": 3129,
+      "sha256": "4142b7654a092ec96e0871695bfdc0b6dc422195521c27f2204c3dee0a822654",
+      "modification_time_utc": "2026-08-27T10:53:12.185833+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_image_wpno_redis.json",
+      "file_type": "JSON",
+      "size": 2265,
+      "sha256": "dca94e7927e5fd7fd3e6491c47d6529fa08bd2429a484809bf5bd3fe9d6a4dd2",
+      "modification_time_utc": "2026-08-27T10:53:12.521835+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_labels_wpno_litellm.json",
+      "file_type": "JSON",
+      "size": 1218,
+      "sha256": "aa0c2f6b27df2346cd9e3d6062b92e84fd3c1cabd82959c3f7a68f3cab660c7e",
+      "modification_time_utc": "2026-08-27T10:53:12.818837+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_labels_wpno_n8n.json",
+      "file_type": "JSON",
+      "size": 1554,
+      "sha256": "193eacccfda75fc8a0977ff87c90ff9d769099a473522e96db99aa33ba194ce7",
+      "modification_time_utc": "2026-08-27T10:53:13.090838+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_labels_wpno_postgres.json",
+      "file_type": "JSON",
+      "size": 595,
+      "sha256": "bd26b656bfb37d20c9f05d16a583ff860b0afe36c27c244548af5a5084a13f68",
+      "modification_time_utc": "2026-08-27T10:53:13.404840+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_labels_wpno_redis.json",
+      "file_type": "JSON",
+      "size": 589,
+      "sha256": "910bb89ee5eeb85be643ef407f8dbba1177ec42d4b3c1b3f80ec4646e25fa963",
+      "modification_time_utc": "2026-08-27T10:53:13.745843+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_mounts_wpno_litellm.json",
+      "file_type": "JSON",
+      "size": 929,
+      "sha256": "bd8984b7edbf467f7a7b945c3d39208bc55ccef0e9b4a32f0a35171a5d32f592",
+      "modification_time_utc": "2026-08-27T10:53:14.425847+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_mounts_wpno_n8n.json",
+      "file_type": "JSON",
+      "size": 165,
+      "sha256": "e1b78c5221ad7a8bcb7defe6fd8b7a42dc01e921ae29e6726e5ef8b355e515f5",
+      "modification_time_utc": "2026-08-27T10:53:14.636849+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_mounts_wpno_postgres.json",
+      "file_type": "JSON",
+      "size": 210,
+      "sha256": "8455414d0337dd927e57d5e5e28d8b4e496385ef904a515ae3d691477f29e783",
+      "modification_time_utc": "2026-08-27T10:53:14.918851+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_mounts_wpno_redis.json",
+      "file_type": "JSON",
+      "size": 277,
+      "sha256": "ae50fde4e76849291374e7bef12a774cd7b70cd1654344906144fc34eb4fdc6c",
+      "modification_time_utc": "2026-08-27T10:53:15.208853+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_summary_wpno_litellm.txt",
+      "file_type": "plain text",
+      "size": 268,
+      "sha256": "a8b2b29ac3e1792c7c85536ada16d4f6fc77b9645c882ca54aa6c40c7c5a8bc5",
+      "modification_time_utc": "2026-08-27T10:53:15.534855+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_summary_wpno_n8n.txt",
+      "file_type": "plain text",
+      "size": 235,
+      "sha256": "5c432164016fea6035c77e7af86b7970fd1739a5e73258de2385b4ccb911e4f9",
+      "modification_time_utc": "2026-08-27T10:53:15.898857+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_summary_wpno_postgres.txt",
+      "file_type": "plain text",
+      "size": 225,
+      "sha256": "273ddb6b9c38d6cafcbc889aa5205e204bda13fb9940e06873046c5531b3c7b8",
+      "modification_time_utc": "2026-08-27T10:53:16.233859+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/REF-13_summary_wpno_redis.txt",
+      "file_type": "plain text",
+      "size": 231,
+      "sha256": "ad7c994b6ca2db14b796cd762e0e5e649d160e19128d041aa99996500ff97a45",
+      "modification_time_utc": "2026-08-27T10:53:16.458861+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/image_1.json",
+      "file_type": "JSON",
+      "size": 4481,
+      "sha256": "197505095ac7442e3c228da1e74a4ad58d4f7db71a6697365205ec2d954addb2",
+      "modification_time_utc": "2026-08-27T10:46:58.709358+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/image_2.json",
+      "file_type": "JSON",
+      "size": 4330,
+      "sha256": "5d619626f6be72166080734401d2c802614b70b4abc178978cd1675b89b178c3",
+      "modification_time_utc": "2026-08-27T10:46:58.417356+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/image_3.json",
+      "file_type": "JSON",
+      "size": 3132,
+      "sha256": "ebb0c186b30c28eadd2935c58dac17b54560f3a41c0f1de1ad80634caabbc700",
+      "modification_time_utc": "2026-08-27T10:46:57.993353+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    },
+    {
+      "relative_path": "REF-13/image_4.json",
+      "file_type": "JSON",
+      "size": 2268,
+      "sha256": "a5b386e066e7fb8a5d32898957325697ce8332f29da14256fb45480a0dc5398b",
+      "modification_time_utc": "2026-08-27T10:46:57.534350+00:00",
+      "symlink": false,
+      "duplicate_content_group": null,
+      "associated_ref_id": "REF-13"
+    }
+  ],
+  "controls": {
+    "network_used": false,
+    "git_used": false,
+    "project_modules_imported": false,
+    "r7_modified": false,
+    "r7_frozen": false,
+    "live_audit_phase_advanced": false
+  }
+}

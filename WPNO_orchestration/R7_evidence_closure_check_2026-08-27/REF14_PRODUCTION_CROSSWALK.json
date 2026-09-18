@@ -1,0 +1,135 @@
+{
+  "schema": "wpno.r7.ref14-crosswalk/1",
+  "generated_date": "2026-08-27",
+  "classification": "PARTIAL",
+  "registry_candidates": [
+    {
+      "path": "/home/ubuntu/project/WPNO/mcp/mcp.registry.json",
+      "sha256": "ceae751125f270e50e0e24c298c3dd50dd294c7f4cc96eb0bca83121c15e810b",
+      "role": "canonical current source referenced by current Compose"
+    },
+    {
+      "path": "/home/ubuntu/project/WPNO/mcp/evidence/boot_abort_test/mcp.registry.json",
+      "sha256": "a3a95ffa3b74a6734f082b7e35a91f984187abc00859556568906c4767c56eab",
+      "role": "verification fixture; excluded as canonical"
+    },
+    {
+      "path": "/home/ubuntu/project/WPNO/backups/mcp.registry.json",
+      "sha256": "9f83eaf0527f2932dae09f5e12ec4466ee24feb11ff609b0ae379ee7bbe3e928",
+      "role": "backup outside requested mcp/docker scan; noncanonical candidate"
+    }
+  ],
+  "crosswalk": [
+    {
+      "container": "wpno_litellm",
+      "container_destination_path": "/app/custom_callback.py",
+      "docker_recorded_windows_source_path": "C:\\WPNO\\docker\\litellm\\custom_callback.py",
+      "current_server_candidate_path": "/home/ubuntu/project/WPNO/docker/litellm/custom_callback.py",
+      "current_candidate_sha256": "6c83c40064c1727d0753bcaa6230314c2a4510858427542cfa5bd1ef2231b44b",
+      "role": "LiteLLM callback invoking payload scan and tool gate",
+      "canonical_source_or_deployed_copy": "current server candidate / historical mounted-source pathname analogue",
+      "historical_windows_byte_identity_proven": false
+    },
+    {
+      "container": "wpno_litellm",
+      "container_destination_path": "/app/ledger.db",
+      "docker_recorded_windows_source_path": "C:\\WPNO\\docker\\litellm\\ledger.db",
+      "current_server_candidate_path": "/home/ubuntu/project/WPNO/docker/litellm/ledger.db",
+      "current_candidate_sha256": "48a45b1cd9c5f9fa45efad47dcbbdaf0c6e8184f56844ff805d08494d593f713",
+      "role": "ledger database",
+      "canonical_source_or_deployed_copy": "current server candidate / mutable deployed data",
+      "historical_windows_byte_identity_proven": false
+    },
+    {
+      "container": "wpno_litellm",
+      "container_destination_path": "/app/mcp.registry.json",
+      "docker_recorded_windows_source_path": "C:\\WPNO\\docker\\litellm\\mcp.registry.json",
+      "current_server_candidate_path": "/home/ubuntu/project/WPNO/mcp/mcp.registry.json",
+      "current_candidate_sha256": "ceae751125f270e50e0e24c298c3dd50dd294c7f4cc96eb0bca83121c15e810b",
+      "role": "MCP registry",
+      "canonical_source_or_deployed_copy": "canonical current source referenced by current Compose; deployed copy historically lived below docker/litellm",
+      "historical_windows_byte_identity_proven": false
+    },
+    {
+      "container": "wpno_litellm",
+      "container_destination_path": "/app/payload_scan.py",
+      "docker_recorded_windows_source_path": "C:\\WPNO\\docker\\litellm\\payload_scan.py",
+      "current_server_candidate_path": "/home/ubuntu/project/WPNO/docker/litellm/payload_scan.py",
+      "current_candidate_sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b",
+      "role": "productive payload scan",
+      "canonical_source_or_deployed_copy": "current server candidate / historical mounted-source pathname analogue",
+      "historical_windows_byte_identity_proven": false
+    },
+    {
+      "container": "wpno_litellm",
+      "container_destination_path": "/app/tool_registry_gate.py",
+      "docker_recorded_windows_source_path": "C:\\WPNO\\docker\\litellm\\tool_registry_gate.py",
+      "current_server_candidate_path": "/home/ubuntu/project/WPNO/docker/litellm/tool_registry_gate.py",
+      "current_candidate_sha256": "96dbde61dc20fa90d2a9cb6c1562a4877128c12811631684d5840758f5662347",
+      "role": "MCP tool allowlist gate",
+      "canonical_source_or_deployed_copy": "current server candidate / historical mounted-source pathname analogue",
+      "historical_windows_byte_identity_proven": false
+    },
+    {
+      "container": "wpno_litellm",
+      "container_destination_path": "/app/config.yaml",
+      "docker_recorded_windows_source_path": "C:\\WPNO\\docker\\litellm\\config.yaml",
+      "current_server_candidate_path": "/home/ubuntu/project/WPNO/docker/litellm/config.yaml",
+      "current_candidate_sha256": "ac59d2aa9f9a950ebfd356817b962f6eaf180edf5699a9df87cbf39d41236793",
+      "role": "LiteLLM configuration",
+      "canonical_source_or_deployed_copy": "current server candidate / historical mounted-source pathname analogue",
+      "historical_windows_byte_identity_proven": false
+    },
+    {
+      "container": "wpno_n8n",
+      "container_destination_path": null,
+      "docker_recorded_windows_source_path": null,
+      "current_server_candidate_path": "/home/ubuntu/project/WPNO/docker/n8n/docker-compose.yml",
+      "current_candidate_sha256": "a209b6b0d70ab001025312c540e33a399435abb09fa3c0528cc7b6aa8e1d21c5",
+      "role": "n8n declared launch/configuration",
+      "canonical_source_or_deployed_copy": "current declarative source; not a REF-13 bind mount",
+      "historical_windows_byte_identity_proven": false
+    },
+    {
+      "container": "wpno_postgres",
+      "container_destination_path": null,
+      "docker_recorded_windows_source_path": null,
+      "current_server_candidate_path": "/home/ubuntu/project/WPNO/docker/postgres/docker-compose.yml",
+      "current_candidate_sha256": "12753d2feb9f8b36b7f6bfedb05a69f7eb569eee773a0dbe194fdf2183ec8cbb",
+      "role": "PostgreSQL declared launch/configuration",
+      "canonical_source_or_deployed_copy": "current declarative source; not a REF-13 bind mount",
+      "historical_windows_byte_identity_proven": false
+    },
+    {
+      "container": "wpno_litellm",
+      "container_destination_path": null,
+      "docker_recorded_windows_source_path": null,
+      "current_server_candidate_path": "/home/ubuntu/project/WPNO/docker/litellm/docker-compose.yml",
+      "current_candidate_sha256": "cdd162fa4145c4617f8c71956cc570c50e1c9a4a1da69007b6cbd2c034281329",
+      "role": "current Compose declaration",
+      "canonical_source_or_deployed_copy": "canonical current declaration",
+      "historical_windows_byte_identity_proven": false
+    },
+    {
+      "container": "wpno_litellm",
+      "container_destination_path": null,
+      "docker_recorded_windows_source_path": null,
+      "current_server_candidate_path": "/home/ubuntu/project/WPNO/docker/litellm/Dockerfile",
+      "current_candidate_sha256": "05fbf2c570ce65d64fdd7e62920293bda8a1c0cc13c5d2d64961bfabf072692a",
+      "role": "image build definition",
+      "canonical_source_or_deployed_copy": "canonical current declaration",
+      "historical_windows_byte_identity_proven": false
+    },
+    {
+      "container": "wpno_litellm",
+      "container_destination_path": null,
+      "docker_recorded_windows_source_path": null,
+      "current_server_candidate_path": "/home/ubuntu/project/WPNO/mcp/evidence/boot_abort_test/mcp.registry.json",
+      "current_candidate_sha256": "a3a95ffa3b74a6734f082b7e35a91f984187abc00859556568906c4767c56eab",
+      "role": "verification-fixture registry candidate",
+      "canonical_source_or_deployed_copy": "fixture/noncanonical",
+      "historical_windows_byte_identity_proven": false
+    }
+  ],
+  "finding": "Current server path differences do not invalidate the registry; historical Windows-mounted byte identity is not proven."
+}

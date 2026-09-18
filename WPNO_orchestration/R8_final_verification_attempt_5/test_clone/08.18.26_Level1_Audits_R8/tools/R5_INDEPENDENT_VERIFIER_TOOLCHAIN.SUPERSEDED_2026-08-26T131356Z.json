@@ -1,0 +1,90 @@
+{
+  "bouncy_castle_jars": {
+    "checksum_file": "CHECKSUMS-1.85.csv",
+    "downloads_attempted": false,
+    "found_under_search_root": [],
+    "maven_or_gradle_used": false,
+    "network_used": false,
+    "required": [
+      "bcprov-jdk18on-1.85.2.jar",
+      "bcpkix-jdk18on-1.85.jar",
+      "bcutil-jdk18on-1.85.jar"
+    ],
+    "search_root": "/home/ubuntu/project",
+    "status": "ABSENT"
+  },
+  "gate": "HUMAN_GATE: SUPPLY_INDEPENDENT_CMS_VERIFIER",
+  "platform": "UBUNTU",
+  "recorded_at_utc": "2026-08-26T13:13:56Z",
+  "revision": "R5",
+  "schema": "wpno.level1.independent_verifier_toolchain/1",
+  "toolchain": {
+    "jar": {
+      "absolute_path": "/usr/bin/jar",
+      "exit_code": 0,
+      "present": true,
+      "real_path": "/usr/lib/jvm/java-21-openjdk-amd64/bin/jar",
+      "version": "jar 21.0.12",
+      "version_command": "/usr/bin/jar --version",
+      "version_full": "jar 21.0.12"
+    },
+    "java": {
+      "absolute_path": "/usr/bin/java",
+      "exit_code": 0,
+      "present": true,
+      "real_path": "/usr/lib/jvm/java-21-openjdk-amd64/bin/java",
+      "version": "openjdk version \"21.0.12\" 2026-07-21",
+      "version_command": "/usr/bin/java -version",
+      "version_full": "openjdk version \"21.0.12\" 2026-07-21\nOpenJDK Runtime Environment (build 21.0.12+8-1-26.04-Ubuntu)\nOpenJDK 64-Bit Server VM (build 21.0.12+8-1-26.04-Ubuntu, mixed mode, sharing)"
+    },
+    "javac": {
+      "absolute_path": "/usr/bin/javac",
+      "exit_code": 0,
+      "present": true,
+      "real_path": "/usr/lib/jvm/java-21-openjdk-amd64/bin/javac",
+      "version": "javac 21.0.12",
+      "version_command": "/usr/bin/javac -version",
+      "version_full": "javac 21.0.12"
+    },
+    "keytool": {
+      "absolute_path": "/usr/bin/keytool",
+      "exit_code": 0,
+      "present": true,
+      "real_path": "/usr/lib/jvm/java-21-openjdk-amd64/bin/keytool",
+      "version": "Key and Certificate Management Tool",
+      "version_command": "/usr/bin/keytool -help",
+      "version_full": "Key and Certificate Management Tool\n\nCommands:\n\n -certreq            Generates a certificate request\n -changealias        Changes an entry's alias\n -delete             Deletes an entry\n -exportcert         Exports certificate\n -genkeypair         Generates a key pair\n -genseckey          Generates a secret key\n -gencert            Generates certificate from a certificate request\n -importcert         Imports a certificate or a certificate chain\n -importpass         Imports a password\n -importkeystore     Imports one or all entries from another keystore\n -keypasswd          Changes the key passw"
+    },
+    "openssl": {
+      "absolute_path": "/usr/bin/openssl",
+      "exit_code": 0,
+      "present": true,
+      "real_path": "/usr/bin/openssl",
+      "version": "OpenSSL 3.5.5 27 Jan 2026 (Library: OpenSSL 3.5.5 27 Jan 2026)",
+      "version_command": "/usr/bin/openssl version",
+      "version_full": "OpenSSL 3.5.5 27 Jan 2026 (Library: OpenSSL 3.5.5 27 Jan 2026)"
+    },
+    "python3": {
+      "absolute_path": "/usr/bin/python3",
+      "exit_code": 0,
+      "present": true,
+      "real_path": "/usr/bin/python3.14",
+      "version": "Python 3.14.4 (main, Jun 18 2026, 14:25:02) [GCC 15.2.0]",
+      "version_command": "/usr/bin/python3 -VV",
+      "version_full": "Python 3.14.4 (main, Jun 18 2026, 14:25:02) [GCC 15.2.0]"
+    },
+    "sha256sum": {
+      "absolute_path": "/usr/bin/sha256sum",
+      "exit_code": 0,
+      "present": true,
+      "real_path": "/usr/lib/cargo/bin/coreutils/sha256sum",
+      "version": "sha256sum (uutils coreutils) 0.8.0",
+      "version_command": "/usr/bin/sha256sum --version",
+      "version_full": "sha256sum (uutils coreutils) 0.8.0"
+    }
+  },
+  "toolchain_complete": true,
+  "verifier_status": "NOT_BUILT_MISSING_OPERATOR_SUPPLIED_JARS",
+  "what_is_available": "A complete JDK 21 toolchain is installed and its absolute paths and versions are recorded above. What is missing is only the operator-supplied Bouncy Castle provider, PKIX and util JARs and their checksum file. Without them there is no permitted CMS implementation on this machine that is materially independent of OpenSSL.",
+  "why_not_substituted": "Java's own CMS support is not a materially independent verifier for this purpose and no substitute library may be downloaded: the build is offline by instruction and by policy. Building a verifier against a different library than the one whose provenance the operator recorded would also break the checksum chain that makes the verifier admissible."
+}

@@ -1,0 +1,10 @@
+{
+  "recorded": true,
+  "audit_id": "L1-A31",
+  "run_phase": "COMPARISON",
+  "state": "APPROVED",
+  "plan_sha256": "47f25f7d07023d9f18e27e0f65ea21fcc85382166983d5b9eff59dcb43b6e272",
+  "target_sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42",
+  "operations_executed": 0,
+  "next_step": "`controller execute-approved` runs the plan. record-approval does not."
+}

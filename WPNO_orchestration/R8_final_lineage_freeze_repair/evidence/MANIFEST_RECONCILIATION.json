@@ -1,0 +1,15 @@
+{
+ "EXACT_RECONCILIATION": true,
+ "bad": 0,
+ "duplicates": [],
+ "entries": 728,
+ "listed_not_physical": [],
+ "malformed": [],
+ "manifest_sha256": "f7e181a21c902a401c55cd9f97d50c55711fbcef6c5fdf16845ab94bc8db95bb",
+ "mismatched": [],
+ "missing": [],
+ "ok": 728,
+ "physical_in_scope": 728,
+ "physical_not_listed": [],
+ "schema": "wpno.r8.lineage-repair-manifest-reconciliation/2"
+}

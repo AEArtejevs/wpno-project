@@ -1,0 +1,144 @@
+{
+  "applied_before_freeze": false,
+  "excluded_attempts": [
+    {
+      "audit_id": "L1-A31",
+      "evidence_file_count": 0,
+      "exclusion_reason": "EXECUTED_UNSEALED_ZERO_EVIDENCE_FROZEN_CONTROLLER_DEFECT",
+      "measured": "state is EXECUTED, no seal exists, and the phase produced 0 evidence files",
+      "run_phase": "COMPARISON",
+      "sealed": false,
+      "state": "EXECUTED"
+    }
+  ],
+  "migratable_attempts": [
+    {
+      "applied": false,
+      "apply_only_after": "R8 MODE == FROZEN",
+      "approval_authority": "NONE. A token authorises one execution of one plan in one revision. R8's own gated phases require fresh human tokens.",
+      "approval_token_imported": false,
+      "destination_audit_id": "L1-A31",
+      "destination_revision": "R8",
+      "destination_run_phase": "RUN-A",
+      "migration_packet_sha256": "fb97facea18155e6b81fdc6e913e14c0b85f1658f5e238de0973cfac8e66df27",
+      "predecessor_incident_disclosed": true,
+      "predecessor_incident_summary": "R7 was modified after it was frozen and restored to its frozen bytes. Its control manifest verifies now; it did not continuously. The incident record is carried in R8's lineage.",
+      "prepared_by": "build/build_migration_plan.py",
+      "schema": "wpno.level1.migration-packet/1",
+      "source_attempt_id": "L1-A31/RUN-A/attempt-1",
+      "source_attempt_number": 1,
+      "source_audit_id": "L1-A31",
+      "source_classification": "SUBSTANTIVE_AUDIT_RESULT",
+      "source_control_manifest_entries": 15804,
+      "source_control_manifest_sha256": "005e3e890f7ebea0202101c918aa2dc2794b82c9ff8d8c27318ed9f9e15beb57",
+      "source_evidence_file_count": 33,
+      "source_evidence_manifest_sha256": "9bade28eab2ff0a06e849985a77c2ddd2f7d460425d8d4f828a907cf220fedc6",
+      "source_incident_manifest_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R7_POST_FREEZE_INCIDENT/INCIDENT_MANIFEST.sha256",
+      "source_incident_manifest_sha256": "6d3ab746e0f221a7d83d055c81356f7dd013976a4c94f04cb4cc66fa7a5f8ab6",
+      "source_plan_sha256": "157b5bc02c01b9c025b312eb4aa9b6a341c2e4b565ff41e516c03520d4ad0bde",
+      "source_reference_hashes": [
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/references/REF-11-berufungsbegruendung-O.pdf",
+          "sha256": "42089e1bf976e6e478ea17624eb35239494b3f3556af10092e8916d5d6d92cc8"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/references/REF-11-berufungsbegruendung-O.pdf.p7s",
+          "sha256": "4287a3783caec8da9b6e0c16f86a3d5e363a34253427eca3116159e77dd07a7a"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/references/REF-11-original-mail-attachment.zip",
+          "sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/references/REF-11-vhn-covered-content.xml",
+          "sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/references/REF-11-vhn.xml.p7s",
+          "sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a"
+        }
+      ],
+      "source_revision": "R7",
+      "source_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7",
+      "source_run_phase": "RUN-A",
+      "source_seal_sha256": "f7a7a4b203b8566698229deac378e695c9582448b0f048192fb3ac599e3b86ff",
+      "source_target_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/references/REF-11-original-mail-attachment.zip",
+      "source_target_sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42",
+      "source_verdict": "UNVERIFIED"
+    },
+    {
+      "applied": false,
+      "apply_only_after": "R8 MODE == FROZEN",
+      "approval_authority": "NONE. A token authorises one execution of one plan in one revision. R8's own gated phases require fresh human tokens.",
+      "approval_token_imported": false,
+      "destination_audit_id": "L1-A31",
+      "destination_revision": "R8",
+      "destination_run_phase": "RUN-B",
+      "migration_packet_sha256": "9df287ceabcb681b367a787e9e1203ded6b88e5e1b1c2bdc1311183236c38a41",
+      "predecessor_incident_disclosed": true,
+      "predecessor_incident_summary": "R7 was modified after it was frozen and restored to its frozen bytes. Its control manifest verifies now; it did not continuously. The incident record is carried in R8's lineage.",
+      "prepared_by": "build/build_migration_plan.py",
+      "schema": "wpno.level1.migration-packet/1",
+      "source_attempt_id": "L1-A31/RUN-B/attempt-1",
+      "source_attempt_number": 1,
+      "source_audit_id": "L1-A31",
+      "source_classification": "SUBSTANTIVE_AUDIT_RESULT",
+      "source_control_manifest_entries": 15804,
+      "source_control_manifest_sha256": "005e3e890f7ebea0202101c918aa2dc2794b82c9ff8d8c27318ed9f9e15beb57",
+      "source_evidence_file_count": 5,
+      "source_evidence_manifest_sha256": "20d4ce5fd9780471e0839841fe6d3eb1031bdf0afa889e43f60ebba6ecf8d9b1",
+      "source_incident_manifest_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R7_POST_FREEZE_INCIDENT/INCIDENT_MANIFEST.sha256",
+      "source_incident_manifest_sha256": "6d3ab746e0f221a7d83d055c81356f7dd013976a4c94f04cb4cc66fa7a5f8ab6",
+      "source_plan_sha256": "65f59b4af174a95ce6781e63c443b13caa8d8ad627344a6ab2c2cca424285896",
+      "source_reference_hashes": [
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/references/REF-11-berufungsbegruendung-O.pdf",
+          "sha256": "42089e1bf976e6e478ea17624eb35239494b3f3556af10092e8916d5d6d92cc8"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/references/REF-11-berufungsbegruendung-O.pdf.p7s",
+          "sha256": "4287a3783caec8da9b6e0c16f86a3d5e363a34253427eca3116159e77dd07a7a"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/references/REF-11-original-mail-attachment.zip",
+          "sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/references/REF-11-vhn-covered-content.xml",
+          "sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/references/REF-11-vhn.xml.p7s",
+          "sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a"
+        }
+      ],
+      "source_revision": "R7",
+      "source_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7",
+      "source_run_phase": "RUN-B",
+      "source_seal_sha256": "ebedb95c451b9bf69ead5092eddbb97512df32de7c86de003f2f1a533c869f65",
+      "source_target_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/references/REF-11-original-mail-attachment.zip",
+      "source_target_sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42",
+      "source_verdict": "UNVERIFIED"
+    }
+  ],
+  "post_freeze_resume_sequence": [
+    "freeze R8",
+    "verify the R8 frozen control manifest",
+    "apply this migration packet once, through the controller route",
+    "verify the imported RUN-A and RUN-B",
+    "require L1-A31 RUN-A SEALED / UNVERIFIED",
+    "require L1-A31 RUN-B SEALED / UNVERIFIED",
+    "require L1-A31 COMPARISON NOT_STARTED",
+    "prepare L1-A31 COMPARISON",
+    "request a new R8 phase approval token",
+    "execute the comparison through the repaired controller"
+  ],
+  "predecessor": "R7",
+  "prepared_utc": "2026-08-28T16:04:10Z",
+  "r8_lineage_record_sha256": "c4c12173f877dc5f998a4f24a5661a87cfdf356ab3ea8558786d9f7716f467cc",
+  "revision": "R8",
+  "route": "import-sealed-predecessor-attempt",
+  "route_module": "automation/migration.py",
+  "route_module_sha256": "65b3db95c3bf9d012195ee81c946f95bae08aea0cc7545134cf1f76d0d6ba93f",
+  "schema": "wpno.level1.migration-plan/1"
+}

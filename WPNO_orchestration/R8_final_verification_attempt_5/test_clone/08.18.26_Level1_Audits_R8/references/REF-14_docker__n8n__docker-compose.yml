@@ -1,0 +1,47 @@
+services:
+  n8n:
+    image: n8nio/n8n:latest@sha256:efe735b31f5d4ed35a057a56d9a803e42f933a2b028b69b8462d9c4a7c90fe5c
+    container_name: wpno_n8n
+    restart: always
+    environment:
+      # Secrets liegen in docker/n8n/.env (gitignored via **/.env) — §20.4
+      # "Keys nie in Skripten". Fix 2026-07-27 (N-14-Umfeld): Klartext-Werte
+      # aus dieser getrackten Datei entfernt. Git-History enthielt nur den
+      # Platzhalter changeme_dev_only, das reale Passwort war nie committet.
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=${N8N_BASIC_AUTH_USER}
+      - N8N_BASIC_AUTH_PASSWORD=[REDACTED:PASSWORD]
+      # N-14-Fix: Virtual Key (key_alias n8n-nacht-batch, Budget/RPM-limitiert)
+      # ersetzt den frueher im Workflow hartkodierten Master-Key.
+      - LITELLM_KEY_BATCH=${LITELLM_KEY_BATCH}
+      - GENERIC_TIMEZONE=Europe/Riga
+      - TZ=Europe/Riga
+      # Wiki-Automatisierung v2 (31.07.2026): Code-Node darf fs lesen/schreiben.
+      # KEIN NODES_EXCLUDE — Execute Command bleibt deaktiviert (R-8/F-11).
+      - NODE_FUNCTION_ALLOW_BUILTIN=fs,path
+    ports:
+      - "127.0.0.1:5678:5678"
+    volumes:
+      - wpno_n8n_data:/home/node/.n8n
+      # Wiki-Automation kanzleiweit (v2): NUR host-erzeugte Namenslisten +
+      # Notifications — n8n sieht KEINE Mandatsinhalte. Die frueheren H&R-
+      # Direktmounts (iCloud ro + _inbox) wurden mit der v1→v2-Migration am
+      # 04.08.2026 entfernt (Step 6; H&R laeuft ueber wiki-inboxes/hr).
+      - /Users/martinotten/WPNO/mandate-inbox:/home/node/.n8n-files/mandate-inbox
+      - /Users/martinotten/WPNO/wiki-inboxes:/home/node/.n8n-files/wiki-inboxes
+  # Namenslisten-Sidecar (31.07.2026, Befund D-3): launchd hat unter macOS
+  # keinen TCC-Zugriff auf iCloud Drive, Docker Desktop schon. Kein Netzwerk,
+  # fester ro-Code, schreibt ausschliesslich Namenslisten in die Inboxen.
+  wiki_lister:
+    image: python:3.12-alpine
+    container_name: wpno_wiki_lister
+    restart: always
+    network_mode: "none"
+    command: sh -c "while true; do python /app/lister.py; sleep 300; done"
+    volumes:
+      - /Users/martinotten/WPNO/tools/wiki_lister_container.py:/app/lister.py:ro
+      - "/Users/martinotten/Library/Mobile Documents/com~apple~CloudDocs:/data/cloud:ro"
+      - /Users/martinotten/WPNO/mandate-inbox:/data/mandate-inbox
+      - /Users/martinotten/WPNO/wiki-inboxes:/data/wiki-inboxes
+volumes:
+  wpno_n8n_data:

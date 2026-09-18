@@ -1,0 +1,69 @@
+{
+  "R7_control_manifest": {
+    "entries": 15804,
+    "exit_code": 0,
+    "manifest_path": "08.18.26_Level1_Audits_R7/CONTROL_MANIFEST.sha256",
+    "manifest_sha256": "005e3e890f7ebea0202101c918aa2dc2794b82c9ff8d8c27318ed9f9e15beb57",
+    "mismatching": 0,
+    "mismatching_paths": [],
+    "ok": 15804
+  },
+  "R7_snapshot_sha256": "f84ac00a0ce66a0e786494295a2574de413ae6e359fea762ce4fa4b399102a3f",
+  "attempts": {
+    "L1-A31/COMPARISON": {
+      "attempt_1_file_count": 0,
+      "evidence_manifest_verifies": null,
+      "seal_sha256": null,
+      "state": "EXECUTED",
+      "verdict": null
+    },
+    "L1-A31/RUN-A": {
+      "attempt_1_file_count": 35,
+      "evidence_manifest_verifies": true,
+      "seal_sha256": "f7a7a4b203b8566698229deac378e695c9582448b0f048192fb3ac599e3b86ff",
+      "state": "SEALED",
+      "verdict": "UNVERIFIED"
+    },
+    "L1-A31/RUN-B": {
+      "attempt_1_file_count": 7,
+      "evidence_manifest_verifies": true,
+      "seal_sha256": "ebedb95c451b9bf69ead5092eddbb97512df32de7c86de003f2f1a533c869f65",
+      "state": "SEALED",
+      "verdict": "UNVERIFIED"
+    }
+  },
+  "incident_verification": {
+    "byte_identical_to_source": true,
+    "copied_file_count": 16,
+    "entries_checked": 15,
+    "exit_code": 0,
+    "failed": 0,
+    "manifest": "lineage/R7_POST_FREEZE_INCIDENT/INCIDENT_MANIFEST.sha256",
+    "manifest_sha256": "6d3ab746e0f221a7d83d055c81356f7dd013976a4c94f04cb4cc66fa7a5f8ab6",
+    "ok": 15
+  },
+  "lineage": "lineage/R8_LINEAGE.json",
+  "lineage_sha256": "c4c12173f877dc5f998a4f24a5661a87cfdf356ab3ea8558786d9f7716f467cc",
+  "predecessors": {
+    "R4": {
+      "control_manifest_ok": "1915/1915",
+      "mismatching_paths": [],
+      "mode": "FROZEN",
+      "snapshot_matches_r7_record": true
+    },
+    "R5": {
+      "control_manifest_ok": "14159/14160",
+      "mismatching_paths": [
+        "MODE"
+      ],
+      "mode": "FROZEN",
+      "snapshot_matches_r7_record": true
+    },
+    "R6": {
+      "control_manifest_ok": "14781/14781",
+      "mismatching_paths": [],
+      "mode": "FROZEN",
+      "snapshot_matches_r7_record": true
+    }
+  }
+}

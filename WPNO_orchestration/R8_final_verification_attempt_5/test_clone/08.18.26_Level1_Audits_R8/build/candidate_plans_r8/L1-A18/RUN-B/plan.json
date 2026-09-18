@@ -1,0 +1,55 @@
+{
+  "audit_id": "L1-A18",
+  "run_phase": "RUN-B",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "The same 217 vectors through an independent Java validator, which computes the check digits by building the expanded digit string and taking one big-integer modulus.",
+  "static_analysis": "automation/a18_run_b.py contains no validation logic at all. It launches the Java program and reads back what it said; putting any part of the decision there would put RUN-A's runtime back inside RUN-B. Every input line is prefixed with a marker so that an empty IBAN is still one input and cannot be lost in a blank line.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "AUDIT_MODULE_RUN",
+      "params": {
+        "args": [
+          "--vectors",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/corpora/R5_REF02_IBAN_VECTORS.jsonl",
+          "--rules",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/corpora/R5_REF01_COUNTRY_RULES.jsonl",
+          "--work-dir",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A18/RUN-B",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A18/RUN-B/run_b_results.json"
+        ],
+        "module": "automation.a18_run_b_cli"
+      },
+      "purpose": "217 vectors through the Java method.",
+      "step_id": "run_b_validation",
+      "timeout_seconds": 300
+    }
+  ],
+  "target": {
+    "identity_evidence": "same digest RUN-A was bound to",
+    "path": "/home/ubuntu/project/WPNO/anonymization/payload_scan.py",
+    "sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b"
+  },
+  "test_matrix": [
+    {
+      "independence": {
+        "algorithm_shape": "expanded digit string and one big-integer modulus, not a streaming fold",
+        "language": "Java 21, not Python",
+        "shared_code": "none"
+      }
+    },
+    {
+      "isolation": {
+        "imports_a18_run_a": false,
+        "run_a_conclusions_supplied": false
+      }
+    },
+    {
+      "expected_applicable_vector_count": 217,
+      "expected_exit_code": 0,
+      "expected_total_inputs_answered": 218,
+      "step_id": "run_b_validation"
+    }
+  ]
+}

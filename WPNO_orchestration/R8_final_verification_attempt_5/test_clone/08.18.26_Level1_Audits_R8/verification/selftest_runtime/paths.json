@@ -1,0 +1,7 @@
+{
+  "discovery_root": "../selftest_discovery_root",
+  "level1_root": ".",
+  "note": "Isolated R8 shared-controller self-test replica.",
+  "project_root": "../selftest_project_root",
+  "schema": "wpno.level1.paths/2"
+}

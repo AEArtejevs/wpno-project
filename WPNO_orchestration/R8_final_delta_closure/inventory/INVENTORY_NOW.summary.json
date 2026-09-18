@@ -1,0 +1,10 @@
+{
+ "counts_by_type": {
+  "dir": 401,
+  "file": 961
+ },
+ "entry_count": 1362,
+ "inventory_sha256": "3e63e9cdf704d384343fd1f0ed9ccfa83df6b1d76e7b817e10b8d8e763327284",
+ "out": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/inventory/INVENTORY_NOW.json",
+ "root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8"
+}

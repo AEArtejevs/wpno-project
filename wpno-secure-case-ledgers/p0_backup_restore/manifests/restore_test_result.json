@@ -1,0 +1,12 @@
+{
+ "1_manifest_lesbar": "JA (100 Items)",
+ "2_repo_head": "clone_rc=0; HEAD=4c3acb235ba2 == ORIGINAL",
+ "tresor_hashes": "97/97 identisch",
+ "3_p0a_preservation": "MATCH",
+ "4_p0e_blocklist": "MATCH",
+ "5_p0f1_detail": "MATCH",
+ "6_rebuild_quellen": "VOLLSTAENDIG",
+ "7_rebuild_truth_auf_restore": "{'official': 27, 'ingests': 27, 'judgments': 45, 'releases': 0, 'court_ready_or_freigabe_releases': 0}",
+ "8_verifikator_original": "GRUEN",
+ "10_restore_offgit": "JA (im Tresor, nie getrackt)"
+}

@@ -1,0 +1,10 @@
+{
+ "counts_by_type": {
+  "dir": 401,
+  "file": 961
+ },
+ "entry_count": 1362,
+ "inventory_sha256": "1a58749aa6510c8f148eabec126b1926e598af4275afb78f772990ec3ea36dc7",
+ "out": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_8/original_inventory/INVENTORY_POST.json",
+ "root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8"
+}

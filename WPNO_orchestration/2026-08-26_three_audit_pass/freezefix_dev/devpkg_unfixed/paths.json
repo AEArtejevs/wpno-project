@@ -1,0 +1,7 @@
+{
+  "schema": "wpno.level1.paths/2",
+  "note": "Freeze-order unfixed control package.",
+  "project_root": "./dev_project",
+  "discovery_root": "./dev_discovery",
+  "level1_root": "."
+}

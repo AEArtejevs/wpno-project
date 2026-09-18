@@ -1,0 +1,956 @@
+{
+  "cms_verified": false,
+  "created": "2026-08-21 CONTROLLED_REFERENCE_IMPORT_EXECUTED_AFTER_HUMAN_APPROVAL_TOKEN",
+  "destination_naming_statement": "Destination filenames are audit naming conventions. Original ZIP filenames and raw filename bytes remain preserved in manifest metadata. Destination naming is not evidence that the original source file was renamed.",
+  "openssl_used": false,
+  "p7s_parsed": false,
+  "physical_record_count": 34,
+  "record_count": 25,
+  "ref_id": "MULTIPLE",
+  "ref_ids": [
+    "REF-01",
+    "REF-02",
+    "REF-03",
+    "REF-04",
+    "REF-05",
+    "REF-06",
+    "REF-07",
+    "REF-08",
+    "REF-09",
+    "REF-11",
+    "REF-12",
+    "REF-13",
+    "REF-14"
+  ],
+  "references": [
+    {
+      "absence_means": "BLOCKED_MISSING_OFFICIAL_REFERENCE",
+      "acceptance_status": "ACCEPTED",
+      "chain_of_custody": "Operator-supplied offline supplement bound by a verified SHA-256 manifest; saved BGH annual page and linked current PDF independently checked in the focused L1-A11 coverage delta.",
+      "chain_of_custody_limitation": "Browser-extension-injected markup in the saved HTML is excluded from evidence; only BGH page content, canonical URL, annual list, official PDF link, and BGH generation marker are relied upon.",
+      "description": "Official BGH 2026 annual Präsidium decisions page and unchanged current annual PDF establishing publication coverage through 2026-08-27.",
+      "evidence_role": "OFFICIAL_BGH_ANNUAL_ROSTER_AND_COMPLETE_CURRENT_PUBLICATION_COVERAGE",
+      "file": "references/REF-05_COVERAGE.json",
+      "format": "JSON coverage record binding saved official HTML, current PDF, and capture provenance",
+      "ref_id": "REF-05",
+      "required_by": [
+        "L1-A11"
+      ],
+      "sha256": "b9c3febc10f6f059579e86bf986775a007c633d4e76fa197e16db7a40cb89923",
+      "source": "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/REF-05/R7_REF05_SUPPLEMENT",
+      "source_manifest_sha256": "374e18e51923327a25ad7ad285ae708db9ea1b3d9845c085194ae813db2f0e23",
+      "transformation_status": "EXTERNAL_SOURCE_BYTES_UNCHANGED; PACKAGE_LOCAL_COVERAGE_RECORD ADDED",
+      "version_or_date": "BGH annual set for 2026; official page generated 2026-08-28T00:15:49+02:00"
+    },
+    {
+      "absence_means": "UNVERIFIED_MAC_REALITY",
+      "acceptance_status": "ACCEPTED_CURRENT_MAC_REALITY_WITH_HISTORICAL_IDENTITY_LIMITATION",
+      "chain_of_custody": "Hash-bound transferred Mac evidence package; package-local intake manifest verified on Ubuntu before import.",
+      "chain_of_custody_limitation": "The records establish current Mac reality and recorded Claude/Codex working directories. They do not prove historical byte identity, historical production identity, or continued production use.",
+      "description": "Transferred Mac-reality inventory and crosswalk for L1-A23, including global/project CLAUDE.md paths, Docker and MCP paths, hashes, symlink status, and working-directory evidence.",
+      "evidence_role": "CURRENT_MAC_REALITY_FOR_CLAUDE_MD_COMPARISON",
+      "file": "references/REF-14_MAC_REALITY.json",
+      "format": "JSON and Markdown evidence records with package and import SHA-256 manifests",
+      "mac_evidence_intake_manifest_sha256": "85a35beda513939934966fd08190c8593d40262785a09a35572b803ce4e3fe57",
+      "manifest_file": "references/REF-14_MAC_MANIFEST.sha256",
+      "ref_id": "REF-14",
+      "required_by": [
+        "L1-A23"
+      ],
+      "sha256": "8c4c580db8d191a95e1ecc913da1c5acf70373433411d170b33769501a28063e",
+      "source": "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/MAC_EVIDENCE",
+      "supporting_files": [
+        {
+          "file": "references/REF-14_MAC_REALITY.md",
+          "sha256": "49959d08f4a3d3eb5222b9e781896e751803faea0d36cc5a3ad6401f6c13165a"
+        },
+        {
+          "file": "references/REF-14_MAC_EVIDENCE_STATUS.json",
+          "sha256": "7a4d1d1922847cd59a7da9a853a31a03ff463d3e6d96ca55193804ba4a267c74"
+        },
+        {
+          "file": "references/REF-14_MAC_EVIDENCE_SEARCH_REPORT.md",
+          "sha256": "e3de9ec10b9436a1e974966587bf02f61120927bd224d708f897a735d6a7cae3"
+        },
+        {
+          "file": "references/REF-14_MAC_MANIFEST.sha256",
+          "sha256": "5d5606a071b91e9dbd3c225fe3e6dd9525012d9211d02bd942b9954e61853a33"
+        }
+      ],
+      "transformation_status": "RAW_BYTE_COPIES_OF_FOCUSED_TRANSFERRED_MAC_EVIDENCE"
+    },
+    {
+      "absence_means": "BLOCKED_376_TARGET_UNIDENTIFIED",
+      "acceptance_status": "ACCEPTED",
+      "chain_of_custody": "BOUND",
+      "chain_of_custody_limitation": "No older standalone historical SHA-256 manifest was located. The expected value remains valid as the operator-supplied source-host measurement made before server transfer.",
+      "description": "Operator-defined 376 artefact with source-host expected-hash provenance and byte-preserving Ubuntu copy.",
+      "destination": "references/REF-12/376_DKB MH.docx",
+      "evidence_role": "REFERENT_IDENTITY_AND_EXPECTED_HASH_ORACLE",
+      "expected_hash_source": "OPERATOR_SUPPLIED_SOURCE_HOST_MEASUREMENT_PRE_SERVER_TRANSFER",
+      "file": "references/REF-12/376_DKB MH.docx",
+      "format": "docx",
+      "manifest_file": "references/REF-12/REF-12_MANIFEST.sha256",
+      "manifest_sha256": "78526f9660f43bb10c003a1bbee8361607a214fb3056562dda742f549a388f62",
+      "operator_provenance_file": "references/REF-12/REF-12_OPERATOR_PROVENANCE.txt",
+      "operator_provenance_sha256": "bf1391ab358f724e88c9016488d2d3b9e598d1283c49eb177c9e320d6f5bbe78",
+      "original_source_filename": "376_DKB MH.docx",
+      "ref_id": "REF-12",
+      "referent": "376_DKB MH.docx",
+      "required_by": [
+        "L1-A29"
+      ],
+      "retrieved": "2026-08-27 OPERATOR_SUPPLIED_OFFLINE_MATERIAL",
+      "sha256": "0b8403982880761b1e2bc31d8c15b756fad0fe12259d55d1611323a4e768b3ca",
+      "size_bytes": 52412,
+      "source": "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/REF-12",
+      "source_mac_path": "/Users/martinotten/Desktop/Milchhof_Entpackt/376-379_Kaspertr.Steurbescheinigung MH/376_DKB MH.docx",
+      "transformation_status": "RAW_BYTE_COPY_FROM_OPERATOR_SUPPLIED_FILE"
+    },
+    {
+      "absence_means": "BLOCKED_SCHEME_IDENTITY_UNCERTAIN",
+      "chain_of_custody_limitation": "ACCEPTED_WITH_EXPLICIT_LIMITATION: the ISO item is an 11-page iTeh preview, not the complete standard; upstream acquisition chain before intake is not independently documented. Do not describe the ISO preview as the complete standard.",
+      "description": "REF-03 accepted source package for L1-A19, with the explicit limitation preserved.",
+      "evidence_role": "OFFICIAL_ISSUER_MATERIAL_AND_LIMITED_ISO_7064_PREVIEW",
+      "file": "references/REF-03_MANIFEST.sha256",
+      "format": "sha256 manifest binding four REF-03 package files",
+      "ref_id": "REF-03",
+      "required_by": ["L1-A19"],
+      "sha256": "337ae74a124e4d4ce312e62390ef61ec4123c28100797def7ebeb2c17b8e89d4",
+      "source": "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/REF-03",
+      "transformation_status": "RAW_BYTE_COPIES; LIMITATION_PRESERVED",
+      "acceptance_status": "ACCEPTED_WITH_EXPLICIT_LIMITATION"
+    },
+    {
+      "absence_means": "BLOCKED",
+      "chain_of_custody_limitation": "Identity is established by byte identity to the already accepted/hash-bound python-stdnum 2.2 archive; custody before operator receipt remains limited as recorded for REF-02.",
+      "description": "Upstream idnr.py and its independent doctest vectors, byte-identical to files in accepted REF-02.",
+      "evidence_role": "INDEPENDENT_TAX_ID_IMPLEMENTATION_AND_TEST_VECTORS",
+      "file": "references/REF-04_idnr.py",
+      "additional_file": "references/REF-04_test_de_idnr.doctest",
+      "format": "Python source and doctest text",
+      "ref_id": "REF-04",
+      "required_by": ["L1-A19"],
+      "sha256": "406499181359159d39185b2703e32764c13be54c30834a7b0f172e68af76aa77",
+      "additional_sha256": "95d71ea0dee4276908f2d32a1adf05c938164ecd836ee384dc4ffc7439a58ecd",
+      "source": "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/REF-04",
+      "transformation_status": "RAW_BYTE_COPIES",
+      "acceptance_status": "ACCEPTED"
+    },
+    {
+      "absence_means": "UNVERIFIED",
+      "chain_of_custody_limitation": "ACCEPTED_DERIVED_CORPUS_COMPLETE_PROVENANCE_LIMITATION: archive identity is supported by the Reuters README and UCI capture, but upstream acquisition history before operator intake is not independently documented; research-use copyright limitation applies.",
+      "description": "Reuters-21578 source archive plus independently derived label corpus and collection inventory.",
+      "evidence_role": "REAL_ARTICLE_CORPUS_WITH_INDEPENDENTLY_DERIVED_LABELS",
+      "file": "references/REF-07_MANIFEST.sha256",
+      "format": "sha256 manifest binding archive, documentation, labels and derivation records",
+      "ref_id": "REF-07",
+      "required_by": ["L1-A12"],
+      "sha256": "c0d833f3569b4c29676a29016a19a42556b4934ee619e0aef4193921eade2f95",
+      "source": "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/REF-07",
+      "transformation_status": "RAW_SOURCE_BYTES_AND_HASH_BOUND_DERIVED_CORPUS",
+      "acceptance_status": "ACCEPTED_DERIVED_CORPUS_COMPLETE_PROVENANCE_LIMITATION"
+    },
+    {
+      "absence_means": "UNVERIFIED_DOCKER_PRODUCTIVE_COPY",
+      "chain_of_custody_limitation": "ACCEPTED_REDACTED_DERIVATIVE_RAW_RESTRICTED: imported files are the redacted derivative; raw Docker capture remains restricted and is not imported.",
+      "description": "Redacted, hash-bound Docker metadata derivative retaining structural provenance evidence without secret values.",
+      "evidence_role": "REDACTED_DOCKER_PRODUCTIVE_COPY_AND_IMAGE_PROVENANCE",
+      "file": "references/REF-13_REDACTED_MANIFEST.sha256",
+      "format": "sha256 manifest binding redacted derivative",
+      "ref_id": "REF-13",
+      "required_by": ["L1-A21"],
+      "sha256": "3974e31db485e6e82632d61d3c7c693ba12dbd6443790fa7d4f080bc8abf9deb",
+      "source": "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/REF-13_REDACTED",
+      "transformation_status": "ACCEPTED_REDACTED_DERIVATIVE_RAW_RESTRICTED",
+      "acceptance_status": "ACCEPTED_REDACTED_DERIVATIVE_RAW_RESTRICTED"
+    },
+    {
+      "absence_means": "UNVERIFIED",
+      "chain_of_custody_limitation": "ACCEPTED_CURRENT_SERVER_CONFIGURATION_WITH_HISTORICAL_IDENTITY_NOT_PROVEN: current server configuration supports L1-A17; byte identity to the historical Windows-mounted deployment and continued production use are not proven. This acceptance does not satisfy L1-A23 actual-Mac evidence.",
+      "description": "Redacted current server configuration and crosswalk for L1-A17 only.",
+      "evidence_role": "CURRENT_SERVER_PRODUCTION_INVOCATION_CONFIGURATION",
+      "file": "references/REF-14_MANIFEST.sha256",
+      "format": "sha256 manifest binding redacted current server configuration",
+      "ref_id": "REF-14",
+      "required_by": ["L1-A17"],
+      "sha256": "ff306651928bf10279ef472c38fc982771e298ed4f11fba7508a5db4dcc2c7e3",
+      "source": "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/REF-14",
+      "transformation_status": "RAW_BYTE_COPIES_OF_REDACTED_CURRENT_SERVER_PACKAGE",
+      "acceptance_status": "ACCEPTED_CURRENT_SERVER_CONFIGURATION_WITH_HISTORICAL_IDENTITY_NOT_PROVEN",
+      "l1_a23_status": "SUPERSEDED_BY_ACCEPTED_MAC_REALITY_RECORD"
+    },
+    {
+      "absence_means": "BLOCKED",
+      "chain_of_custody": "Recovered from Martin's Mac. The original AFNA uploaded source, the AFNA checker object S01.docx, and the iCloud source copy are byte-identical. The package copy is a byte-preserving copy of REF-06_S01.docx and is bound to the independently verified intake manifest.",
+      "chain_of_custody_limitation": "No source-bound provenance was found for the historical 82 occurrences / 43 unique citations assertion. That expectation is retained only as SUPERSEDED_UNSUPPORTED_EXPECTATION.",
+      "content_verification": {
+        "citation_counting_rule_changed": false,
+        "docx_valid": true,
+        "historical_expectation": "82_TOTAL_43_UNIQUE",
+        "historical_expectation_status": "SUPERSEDED_UNSUPPORTED_EXPECTATION",
+        "original_checker_input_supported": true,
+        "total_citation_occurrences": 165,
+        "three_way_byte_identity": true,
+        "unique_citations": 64,
+        "word_stored_page_count": 111,
+        "displayed_or_rendered_page_count": 138,
+        "page_count_method": "Prior independent visible-pagination parsing; static OOXML confirms PAGE/NUMPAGES fields but stores stale field results of 1 and contains no updateFields setting.",
+        "page_count_role": "DESCRIPTIVE_TARGET_IDENTIFICATION_EVIDENCE"
+      },
+      "description": "Recovered original DOCX input used by AP18_referenzpruefung.py. Word extended-properties metadata stores 111 pages; the document’s visible pagination resolves to 138 pages. The unchanged authoritative L1-A14 counting rule yields 165 total citation occurrences and 64 unique citations.",
+      "destination": "references/REF-06_S01.docx",
+      "destination_audit_filename": "REF-06_S01.docx",
+      "evidence_role": "SOURCE_BOUND_L1_A14_CHECKER_INPUT_AND_CITATION_COUNT_ORACLE",
+      "file": "references/REF-06_S01.docx",
+      "format": "docx",
+      "original_source_filename": "REF-06_S01.docx",
+      "pages": 111,
+      "displayed_or_rendered_pages": 138,
+      "ref_id": "REF-06",
+      "required_by": [
+        "L1-A14"
+      ],
+      "retrieved": "2026-08-27 OPERATOR_RECOVERED_OFFLINE_MATERIAL",
+      "sha256": "9f7ee8caebee9345b54dd535a2681789512f68dfc2e4bf7b0652c5cc48722675",
+      "bound_copy_sha256": "9f7ee8caebee9345b54dd535a2681789512f68dfc2e4bf7b0652c5cc48722675",
+      "source": "Operator intake at /home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/REF-06; REF-06_MANIFEST.sha256 verifies all three recovered copies.",
+      "source_evidence_path": "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/REF-06/REF-06_PROVENANCE.txt",
+      "source_sha256": "9f7ee8caebee9345b54dd535a2681789512f68dfc2e4bf7b0652c5cc48722675",
+      "transformation_status": "RAW_BYTE_COPY_FROM_RECOVERED_ORIGINAL_CHECKER_INPUT",
+      "version_or_date": "Recovered 2026-08-27; exact original checker input"
+    },
+    {
+      "absence_means": "BLOCKED",
+      "chain_of_custody": "Hash-bound to the operator-supplied file and to OFFLINE_INPUTS.sha256. SHA-256 recomputed independently on arrival and matched the operator-recorded value. Identity established from document content, not from the filename.",
+      "chain_of_custody_limitation": "Custody before receipt from the operator is not established. The document was not retrieved from SWIFT by this package and no signature over it was verified; there is none in the file.",
+      "content_verification": {
+        "country_registry": "PRESENT, 89 countries with ISO 3166 prefixes",
+        "iban_lengths": "PRESENT for all 89 countries",
+        "iban_structures": "PRESENT for all 89 countries (IBAN and BBAN)",
+        "iso_13616_named": "PRESENT (102 occurrences in the PDF text)",
+        "mod97_10_rule": "PRESENT: 'The check digits are calculated based on the scheme defined in ISO/IEC 7064 (MOD97-10).'",
+        "official_country_examples": "PRESENT, electronic and print form for all 89 countries",
+        "registration_authority_statement": "PRESENT",
+        "release_statement": "Release 102  Jun 2026",
+        "self_consistency": "All 89 official examples start with their country code, match their declared IBAN length, and evaluate to 1 under MOD97-10."
+      },
+      "decoded_source_filename": "REF-01_SWIFT_IBAN_Registry_Release_102.pdf",
+      "description": "SWIFT IBAN Registry, Release 102 - the ISO 13616 Registration Authority publication. Carries the normative prose including the ISO/IEC 7064 (MOD97-10) check-digit rule.",
+      "destination_audit_filename": "REF-01-swift-iban-registry-release-102.pdf",
+      "destination_naming_statement": "The destination filename is an audit naming convention. The original operator filename is recorded below. A destination name is not evidence about the source.",
+      "evidence_role": "IBAN_SPECIFICATION_AND_CHECK_DIGIT_RULE",
+      "file": "references/REF-01-swift-iban-registry-release-102.pdf",
+      "format": "pdf",
+      "pages": 97,
+      "ref_id": "REF-01",
+      "required_by": [
+        "L1-A18"
+      ],
+      "retrieved": "2026-08-26 OPERATOR_SUPPLIED_OFFLINE_MATERIAL",
+      "sha256": "e5b0e447e91db94259c5222caa3f9b7f45db4dcbbe61fb99a09cb331a1cb4675",
+      "source": "Operator-supplied offline material at /home/ubuntu/project/2026-08-25_R5_Required_Offline_Material, accompanied by OFFLINE_INPUTS.sha256. SWIFT is the ISO 13616 Registration Authority, as stated in the document itself.",
+      "source_evidence_path": "references/_intake_status/R5_REF01_ACCEPTANCE.json",
+      "transformation_status": "RAW_BYTE_COPY_FROM_OPERATOR_SUPPLIED_FILE",
+      "version_or_date": "Release 102, Jun 2026 (stated on the title page of the PDF)"
+    },
+    {
+      "absence_means": "BLOCKED",
+      "chain_of_custody": "Hash-bound to the operator-supplied file and to OFFLINE_INPUTS.sha256. SHA-256 recomputed independently on arrival and matched the operator-recorded value. Identity established from document content, not from the filename.",
+      "chain_of_custody_limitation": "Custody before receipt from the operator is not established. The document was not retrieved from SWIFT by this package and no signature over it was verified; there is none in the file.",
+      "content_verification": {
+        "country_registry": "PRESENT, 89 countries with ISO 3166 prefixes",
+        "iban_lengths": "PRESENT for all 89 countries",
+        "iban_structures": "PRESENT for all 89 countries (IBAN and BBAN)",
+        "iso_13616_named": "PRESENT (102 occurrences in the PDF text)",
+        "mod97_10_rule": "PRESENT: 'The check digits are calculated based on the scheme defined in ISO/IEC 7064 (MOD97-10).'",
+        "official_country_examples": "PRESENT, electronic and print form for all 89 countries",
+        "registration_authority_statement": "PRESENT",
+        "release_statement": "Release 102  Jun 2026",
+        "self_consistency": "All 89 official examples start with their country code, match their declared IBAN length, and evaluate to 1 under MOD97-10."
+      },
+      "countries": 89,
+      "decoded_source_filename": "REF-01_SWIFT_IBAN_Registry_Release_102.txt",
+      "description": "Machine-readable country registry accompanying the PDF: per-country IBAN prefix, BBAN and IBAN structure, BBAN and IBAN length, and official electronic and print examples.",
+      "destination_audit_filename": "REF-01-swift-iban-registry-release-102.txt",
+      "destination_naming_statement": "The destination filename is an audit naming convention. The original operator filename is recorded below. A destination name is not evidence about the source.",
+      "encoding": "Windows-1252. Bytes are preserved exactly and decoded read-only; the file is never re-encoded or rewritten.",
+      "evidence_role": "IBAN_COUNTRY_REGISTRY_LENGTHS_AND_STRUCTURES",
+      "file": "references/REF-01-swift-iban-registry-release-102.txt",
+      "format": "txt (tab-separated, transposed: one row per field, one column per country)",
+      "line_terminators": "mixed CRLF and LF, preserved",
+      "ref_id": "REF-01",
+      "required_by": [
+        "L1-A18"
+      ],
+      "retrieved": "2026-08-26 OPERATOR_SUPPLIED_OFFLINE_MATERIAL",
+      "sha256": "a98aae4d7b59544973415491accb1345cb449bfd75a67c8bc704fbe6e161c303",
+      "source": "Operator-supplied offline material at /home/ubuntu/project/2026-08-25_R5_Required_Offline_Material, accompanied by OFFLINE_INPUTS.sha256. SWIFT is the ISO 13616 Registration Authority, as stated in the document itself.",
+      "source_evidence_path": "references/_intake_status/R5_REF01_ACCEPTANCE.json",
+      "transformation_status": "RAW_BYTE_COPY_FROM_OPERATOR_SUPPLIED_FILE",
+      "version_or_date": "Release 102, Jun 2026 (stated on the title page of the PDF)"
+    },
+    {
+      "absence_means": "BLOCKED",
+      "chain_of_custody": "Hash-bound to the operator-supplied file and to OFFLINE_INPUTS.sha256. SHA-256 recomputed independently on arrival and matched the operator-recorded value. Project identity and version established from archive content, not from the filename.",
+      "chain_of_custody_limitation": "Custody before receipt from the operator is not established. The archive was not retrieved from the upstream project by this package and carries no signature that was verified.",
+      "decoded_source_filename": "python-stdnum-2.2.zip",
+      "derived_corpus": {
+        "applicable_invalid": 21,
+        "applicable_valid": 196,
+        "applicable_vector_count": 217,
+        "countries_with_both_outcomes": [
+          "AD",
+          "AL",
+          "AT",
+          "BA",
+          "BG",
+          "CY",
+          "CZ",
+          "DK",
+          "GI",
+          "HR",
+          "NL"
+        ],
+        "normalization": "clean(number, ' -.').strip().upper()",
+        "path": "corpora/R5_REF02_IBAN_VECTORS.jsonl",
+        "sha256": "baa93efb9e6acc3d57d36c6fd8bfac81e364eff939e708a581f775d1e2c9b82a",
+        "valid_vectors_mutated_into_invalid": false,
+        "vector_count": 219,
+        "vectors_invented": false
+      },
+      "description": "python-stdnum 2.2 source archive. Supplies the independent IBAN test vectors and their expected outcomes for L1-A18.",
+      "destination_audit_filename": "REF-02-python-stdnum-2.2.zip",
+      "destination_naming_statement": "The destination filename is an audit naming convention. The original operator filename is recorded above.",
+      "evidence_role": "IBAN_VECTOR_CORPUS_SOURCE",
+      "file": "references/REF-02-python-stdnum-2.2.zip",
+      "format": "zip",
+      "licence": "LGPL 2.1 or later; COPYING present at the archive root",
+      "ref_id": "REF-02",
+      "required_by": [
+        "L1-A18"
+      ],
+      "retrieved": "2026-08-26 OPERATOR_SUPPLIED_OFFLINE_MATERIAL",
+      "sha256": "12b08a74c96478fa3c86c63721d531b3e07d233a2dd27ebea9c8df38f841622e",
+      "source": "Operator-supplied offline material at /home/ubuntu/project/2026-08-25_R5_Required_Offline_Material, accompanied by OFFLINE_INPUTS.sha256. Upstream project URL stated in setup.py: https://arthurdejong.org/python-stdnum/",
+      "source_evidence_path": "references/_intake_status/R5_REF02_ACCEPTANCE.json",
+      "static_inspection": {
+        "archive_code_executed": false,
+        "archive_entries": 905,
+        "crc_test": "PASSED (zipfile.testzip() returned None)",
+        "iban_doctest": "python-stdnum-2.2/tests/test_iban.doctest",
+        "iban_module": "python-stdnum-2.2/stdnum/iban.py",
+        "licence_file": "python-stdnum-2.2/COPYING",
+        "project_identity": "python-stdnum (setup.py name)",
+        "single_top_level_prefix": "python-stdnum-2.2",
+        "symlink_entries": 0,
+        "traversal_or_absolute_entries": 0,
+        "version": "2.2"
+      },
+      "transformation_status": "RAW_BYTE_COPY_FROM_OPERATOR_SUPPLIED_FILE",
+      "version_or_date": "2.2 (stdnum/__init__.py __version__ = '2.2')"
+    },
+    {
+      "absence_means": "BLOCKED",
+      "chain_of_custody": "Official chain/trusted-list material verified in V2 evidence and imported byte-for-byte after explicit human approval. No network refetch, system trust, Keychain trust, revocation check, or TL XML-signature verification was performed during import.",
+      "chain_of_custody_limitation": "Downloaded-date metadata may be null and is not treated as content identity.; Offline provenance is based on retained download metadata and current source hashes; no network refetch was performed.; XML signature verification of TL-DE.XML was not executed or claimed.",
+      "description": "German Trusted List Sha256 Digest",
+      "destination_audit_filename": "REF-08-TL-DE.sha2",
+      "evidence_role": "GERMAN_TRUSTED_LIST_SHA256_DIGEST",
+      "file": "references/REF-08-TL-DE.sha2",
+      "format": "sha256-digest",
+      "import_evidence_path": "work/operator_intake/L1-A31/finish_day_2026-08-24/REF08_REF09_IMPORT_EVIDENCE.json",
+      "intended_audits": [
+        "L1-A31"
+      ],
+      "original_source_filename": "TL-DE.sha2.txt",
+      "raw_source_filename_bytes_hex": "544c2d44452e736861322e747874",
+      "ref_id": "REF-08",
+      "required_by": [
+        "L1-A31"
+      ],
+      "retrieved": "(null)",
+      "sha256": "97367e808eeabdef3ba800995056b2019868d4e0c531bdf0cfae3db1a3f7e5f9",
+      "source": "Operator-provided official acquisition file at /Users/martinotten/Downloads/2026-08-21_L1-A31_Official_Chain_Material/TL-DE.sha2.txt; source SHA-256 recorded before import in V2 evidence.",
+      "source_metadata": {
+        "com.apple.quarantine": {
+          "application": "Brave",
+          "exit_code": 0,
+          "raw": "0081;6a8879aa;Brave;D6FB9170-7017-47F2-BBEC-C18EFB10FB23",
+          "status": "READ",
+          "stderr": ""
+        },
+        "downloaded_date_is_null": true,
+        "kMDItemDownloadedDate": {
+          "exit_code": 0,
+          "raw": "(null)",
+          "status": "READ",
+          "stderr": ""
+        },
+        "kMDItemWhereFroms": {
+          "exit_code": 0,
+          "raw": "(\n    \"https://tl.bundesnetzagentur.de/TL-DE.sha2\"\n)",
+          "status": "READ",
+          "stderr": ""
+        },
+        "where_froms_domains": [
+          "tl.bundesnetzagentur.de"
+        ],
+        "where_froms_urls": [
+          "https://tl.bundesnetzagentur.de/TL-DE.sha2"
+        ]
+      },
+      "source_sha256": "97367e808eeabdef3ba800995056b2019868d4e0c531bdf0cfae3db1a3f7e5f9",
+      "transformation_status": "BYTE_PRESERVING_NO_CONVERSION",
+      "version_or_date": "Imported 2026-08-24 from official chain material acquisition set."
+    },
+    {
+      "absence_means": "BLOCKED",
+      "chain_of_custody": "Official chain/trusted-list material verified in V2 evidence and imported byte-for-byte after explicit human approval. No network refetch, system trust, Keychain trust, revocation check, or TL XML-signature verification was performed during import.",
+      "chain_of_custody_limitation": "Downloaded-date metadata may be null and is not treated as content identity.; Offline provenance is based on retained download metadata and current source hashes; no network refetch was performed.; XML signature verification of TL-DE.XML was not executed or claimed.",
+      "description": "German Trusted List Xml",
+      "destination_audit_filename": "REF-08-TL-DE.xml",
+      "evidence_role": "GERMAN_TRUSTED_LIST_XML",
+      "file": "references/REF-08-TL-DE.xml",
+      "format": "xml",
+      "import_evidence_path": "work/operator_intake/L1-A31/finish_day_2026-08-24/REF08_REF09_IMPORT_EVIDENCE.json",
+      "intended_audits": [
+        "L1-A31"
+      ],
+      "original_source_filename": "TL-DE.XML",
+      "raw_source_filename_bytes_hex": "544c2d44452e584d4c",
+      "ref_id": "REF-08",
+      "required_by": [
+        "L1-A31"
+      ],
+      "retrieved": "(null)",
+      "sha256": "93d0a212a03ede4411d6d9ebb54b886c013a4a2f48aa666b7c493ca3b13a4549",
+      "source": "Operator-provided official acquisition file at /Users/martinotten/Downloads/2026-08-21_L1-A31_Official_Chain_Material/TL-DE.XML; source SHA-256 recorded before import in V2 evidence.",
+      "source_metadata": {
+        "com.apple.quarantine": {
+          "application": "Brave",
+          "exit_code": 0,
+          "raw": "0081;6a88798f;Brave;490DFB2E-F1A7-4DD0-98D9-00597E9F1F37",
+          "status": "READ",
+          "stderr": ""
+        },
+        "downloaded_date_is_null": true,
+        "kMDItemDownloadedDate": {
+          "exit_code": 0,
+          "raw": "(null)",
+          "status": "READ",
+          "stderr": ""
+        },
+        "kMDItemWhereFroms": {
+          "exit_code": 0,
+          "raw": "(\n    \"https://tl.bundesnetzagentur.de/TL-DE.XML\"\n)",
+          "status": "READ",
+          "stderr": ""
+        },
+        "where_froms_domains": [
+          "tl.bundesnetzagentur.de"
+        ],
+        "where_froms_urls": [
+          "https://tl.bundesnetzagentur.de/TL-DE.XML"
+        ]
+      },
+      "source_sha256": "93d0a212a03ede4411d6d9ebb54b886c013a4a2f48aa666b7c493ca3b13a4549",
+      "transformation_status": "BYTE_PRESERVING_NO_CONVERSION",
+      "version_or_date": "Imported 2026-08-24 from official chain material acquisition set."
+    },
+    {
+      "absence_means": "BLOCKED",
+      "chain_of_custody": "Official chain/trusted-list material verified in V2 evidence and imported byte-for-byte after explicit human approval. No network refetch, system trust, Keychain trust, revocation check, or TL XML-signature verification was performed during import.",
+      "chain_of_custody_limitation": "Downloaded-date metadata may be null and is not treated as content identity.; Offline provenance is based on retained download metadata and current source hashes; no network refetch was performed.; XML signature verification of TL-DE.XML was not executed or claimed.",
+      "description": "Document Root Ca",
+      "destination_audit_filename": "REF-08-bnotk-root-ca-2017.crt",
+      "evidence_role": "DOCUMENT_ROOT_CA",
+      "file": "references/REF-08-bnotk-root-ca-2017.crt",
+      "format": "crt",
+      "import_evidence_path": "work/operator_intake/L1-A31/finish_day_2026-08-24/REF08_REF09_IMPORT_EVIDENCE.json",
+      "intended_audits": [
+        "L1-A31"
+      ],
+      "original_source_filename": "bnotkrootca2017.crt",
+      "raw_source_filename_bytes_hex": "626e6f746b726f6f746361323031372e637274",
+      "ref_id": "REF-08",
+      "required_by": [
+        "L1-A31"
+      ],
+      "retrieved": "(null)",
+      "sha256": "8a03cce7ad27669a687b16c5e15a4eb9e853b38fe7d7b6e849e8a12ef1e5ba50",
+      "source": "Operator-provided official acquisition file at /Users/martinotten/Downloads/2026-08-21_L1-A31_Official_Chain_Material/bnotkrootca2017.crt; source SHA-256 recorded before import in V2 evidence.",
+      "source_metadata": {
+        "com.apple.quarantine": {
+          "application": "Brave",
+          "exit_code": 0,
+          "raw": "0081;6a8878dd;Brave;5AE706E7-9E01-492B-8261-C461A80C496E",
+          "status": "READ",
+          "stderr": ""
+        },
+        "downloaded_date_is_null": true,
+        "kMDItemDownloadedDate": {
+          "exit_code": 0,
+          "raw": "(null)",
+          "status": "READ",
+          "stderr": ""
+        },
+        "kMDItemWhereFroms": {
+          "exit_code": 0,
+          "raw": "(\n    \"https://zertifizierungsstelle.bnotk.de/\"\n)",
+          "status": "READ",
+          "stderr": ""
+        },
+        "where_froms_domains": [
+          "zertifizierungsstelle.bnotk.de"
+        ],
+        "where_froms_urls": [
+          "https://zertifizierungsstelle.bnotk.de/"
+        ]
+      },
+      "source_sha256": "8a03cce7ad27669a687b16c5e15a4eb9e853b38fe7d7b6e849e8a12ef1e5ba50",
+      "transformation_status": "BYTE_PRESERVING_NO_CONVERSION",
+      "version_or_date": "Imported 2026-08-24 from official chain material acquisition set."
+    },
+    {
+      "absence_means": "BLOCKED",
+      "chain_of_custody": "Official chain/trusted-list material verified in V2 evidence and imported byte-for-byte after explicit human approval. No network refetch, system trust, Keychain trust, revocation check, or TL XML-signature verification was performed during import.",
+      "chain_of_custody_limitation": "Downloaded-date metadata may be null and is not treated as content identity.; Offline provenance is based on retained download metadata and current source hashes; no network refetch was performed.; XML signature verification of TL-DE.XML was not executed or claimed.",
+      "description": "Vhn Root Ca",
+      "destination_audit_filename": "REF-08-safe-root-ca-2017.der",
+      "evidence_role": "VHN_ROOT_CA",
+      "file": "references/REF-08-safe-root-ca-2017.der",
+      "format": "der",
+      "import_evidence_path": "work/operator_intake/L1-A31/finish_day_2026-08-24/REF08_REF09_IMPORT_EVIDENCE.json",
+      "intended_audits": [
+        "L1-A31"
+      ],
+      "original_source_filename": "2021-09-09-safe-root-ca-2017.crt.der",
+      "raw_source_filename_bytes_hex": "323032312d30392d30392d736166652d726f6f742d63612d323031372e6372742e646572",
+      "ref_id": "REF-08",
+      "required_by": [
+        "L1-A31"
+      ],
+      "retrieved": "(\n    \"2026-08-21 16:06:22 +0000\"\n)",
+      "sha256": "1abddfa573cf1dcd5a75f164bc828e6d4177c448849535912eed3c7825bfc9fc",
+      "source": "Operator-provided official acquisition file at /Users/martinotten/Downloads/2026-08-21_L1-A31_Official_Chain_Material/2021-09-09-safe-root-ca-2017.crt.der; source SHA-256 recorded before import in V2 evidence.",
+      "source_metadata": {
+        "com.apple.quarantine": {
+          "application": "Safari",
+          "exit_code": 0,
+          "raw": "0083;6a88777e;Safari;6E270575-A7E6-4EA6-8B6F-93F63D247DC6",
+          "status": "READ",
+          "stderr": ""
+        },
+        "downloaded_date_is_null": false,
+        "kMDItemDownloadedDate": {
+          "exit_code": 0,
+          "raw": "(\n    \"2026-08-21 16:06:22 +0000\"\n)",
+          "status": "READ",
+          "stderr": ""
+        },
+        "kMDItemWhereFroms": {
+          "exit_code": 0,
+          "raw": "(\n    \"https://onlinehilfe.bnotk.de/fileadmin/root-zertifikate/saferootca2017.cacert.der\",\n    \"https://onlinehilfe.bnotk.de/root-zertifikate-der-bundesnotarkammer.html\"\n)",
+          "status": "READ",
+          "stderr": ""
+        },
+        "where_froms_domains": [
+          "onlinehilfe.bnotk.de"
+        ],
+        "where_froms_urls": [
+          "https://onlinehilfe.bnotk.de/fileadmin/root-zertifikate/saferootca2017.cacert.der",
+          "https://onlinehilfe.bnotk.de/root-zertifikate-der-bundesnotarkammer.html"
+        ]
+      },
+      "source_sha256": "1abddfa573cf1dcd5a75f164bc828e6d4177c448849535912eed3c7825bfc9fc",
+      "transformation_status": "BYTE_PRESERVING_NO_CONVERSION",
+      "version_or_date": "Imported 2026-08-24 from official chain material acquisition set."
+    },
+    {
+      "absence_means": "BLOCKED",
+      "chain_of_custody": "Official chain/trusted-list material verified in V2 evidence and imported byte-for-byte after explicit human approval. No network refetch, system trust, Keychain trust, revocation check, or TL XML-signature verification was performed during import.",
+      "chain_of_custody_limitation": "Downloaded-date metadata may be null and is not treated as content identity.; Offline provenance is based on retained download metadata and current source hashes; no network refetch was performed.; XML signature verification of TL-DE.XML was not executed or claimed.",
+      "description": "Vhn Intermediate Ca",
+      "destination_audit_filename": "REF-09-bea-vhn-ca-2017.pem",
+      "evidence_role": "VHN_INTERMEDIATE_CA",
+      "file": "references/REF-09-bea-vhn-ca-2017.pem",
+      "format": "pem",
+      "import_evidence_path": "work/operator_intake/L1-A31/finish_day_2026-08-24/REF08_REF09_IMPORT_EVIDENCE.json",
+      "intended_audits": [
+        "L1-A31"
+      ],
+      "original_source_filename": "2021-09-09-bea-vhn-ca-2017.pem",
+      "raw_source_filename_bytes_hex": "323032312d30392d30392d6265612d76686e2d63612d323031372e70656d",
+      "ref_id": "REF-09",
+      "required_by": [
+        "L1-A31"
+      ],
+      "retrieved": "(null)",
+      "sha256": "55cbcb2b1c367b7e01c3cfff38663edbf23409f7c2dfd8222529133562007b17",
+      "source": "Operator-provided official acquisition file at /Users/martinotten/Downloads/2026-08-21_L1-A31_Official_Chain_Material/2021-09-09-bea-vhn-ca-2017.pem; source SHA-256 recorded before import in V2 evidence.",
+      "source_metadata": {
+        "com.apple.quarantine": {
+          "application": "Chrome",
+          "exit_code": 0,
+          "raw": "0081;6a8c4ec6;Chrome;",
+          "status": "READ",
+          "stderr": ""
+        },
+        "downloaded_date_is_null": true,
+        "kMDItemDownloadedDate": {
+          "exit_code": 0,
+          "raw": "(null)",
+          "status": "READ",
+          "stderr": ""
+        },
+        "kMDItemWhereFroms": {
+          "exit_code": 0,
+          "raw": "(\n    \"https://onlinehilfe.bnotk.de/fileadmin/root-zertifikate/2021-09-09-bea-vhn-ca-2017.pem\",\n    \"https://onlinehilfe.bnotk.de/root-zertifikate-der-bundesnotarkammer.html\"\n)",
+          "status": "READ",
+          "stderr": ""
+        },
+        "where_froms_domains": [
+          "onlinehilfe.bnotk.de"
+        ],
+        "where_froms_urls": [
+          "https://onlinehilfe.bnotk.de/fileadmin/root-zertifikate/2021-09-09-bea-vhn-ca-2017.pem",
+          "https://onlinehilfe.bnotk.de/root-zertifikate-der-bundesnotarkammer.html"
+        ]
+      },
+      "source_sha256": "55cbcb2b1c367b7e01c3cfff38663edbf23409f7c2dfd8222529133562007b17",
+      "transformation_status": "BYTE_PRESERVING_NO_CONVERSION",
+      "version_or_date": "Imported 2026-08-24 from official chain material acquisition set."
+    },
+    {
+      "absence_means": "BLOCKED",
+      "chain_of_custody": "Official chain/trusted-list material verified in V2 evidence and imported byte-for-byte after explicit human approval. No network refetch, system trust, Keychain trust, revocation check, or TL XML-signature verification was performed during import.",
+      "chain_of_custody_limitation": "Downloaded-date metadata may be null and is not treated as content identity.; Offline provenance is based on retained download metadata and current source hashes; no network refetch was performed.; XML signature verification of TL-DE.XML was not executed or claimed.",
+      "description": "Document Intermediate Ca",
+      "destination_audit_filename": "REF-09-bnotk-rqsigt-ca-2020.cer",
+      "evidence_role": "DOCUMENT_INTERMEDIATE_CA",
+      "file": "references/REF-09-bnotk-rqsigt-ca-2020.cer",
+      "format": "cer",
+      "import_evidence_path": "work/operator_intake/L1-A31/finish_day_2026-08-24/REF08_REF09_IMPORT_EVIDENCE.json",
+      "intended_audits": [
+        "L1-A31"
+      ],
+      "original_source_filename": "BNotK_rqSigt_CA_2020.cer",
+      "raw_source_filename_bytes_hex": "424e6f744b5f7271536967745f43415f323032302e636572",
+      "ref_id": "REF-09",
+      "required_by": [
+        "L1-A31"
+      ],
+      "retrieved": "(null)",
+      "sha256": "9bca87c417df1e33391ee76f277119e892395a7eb9d90592bb2fb3746c76fb68",
+      "source": "Operator-provided official acquisition file at /Users/martinotten/Downloads/2026-08-21_L1-A31_Official_Chain_Material/BNotK_rqSigt_CA_2020.cer; source SHA-256 recorded before import in V2 evidence.",
+      "source_metadata": {
+        "com.apple.quarantine": {
+          "application": "Brave",
+          "exit_code": 0,
+          "raw": "0081;6a8878c5;Brave;AB875010-4E5B-45F5-ADDB-6CA921DBF445",
+          "status": "READ",
+          "stderr": ""
+        },
+        "downloaded_date_is_null": true,
+        "kMDItemDownloadedDate": {
+          "exit_code": 0,
+          "raw": "(null)",
+          "status": "READ",
+          "stderr": ""
+        },
+        "kMDItemWhereFroms": {
+          "exit_code": 0,
+          "raw": "(\n    \"https://zertifizierungsstelle.bnotk.de/\"\n)",
+          "status": "READ",
+          "stderr": ""
+        },
+        "where_froms_domains": [
+          "zertifizierungsstelle.bnotk.de"
+        ],
+        "where_froms_urls": [
+          "https://zertifizierungsstelle.bnotk.de/"
+        ]
+      },
+      "source_sha256": "9bca87c417df1e33391ee76f277119e892395a7eb9d90592bb2fb3746c76fb68",
+      "transformation_status": "BYTE_PRESERVING_NO_CONVERSION",
+      "version_or_date": "Imported 2026-08-24 from official chain material acquisition set."
+    },
+    {
+      "absence_means": "BLOCKED",
+      "chain_of_custody": "Verified evidence links the raw mailbox message, decoded attachment, downloaded ZIP, ZIP entries, and current substantive case files by SHA-256. Independent sender authentication, custody before receipt, exact 17 August user operation, P7S/CMS coverage, and certificate-chain verification are not established by this record.",
+      "chain_of_custody_limitation": "Hash-bound to the raw mailbox message, decoded attachment ZIP, and stream-hashed ZIP-entry inventory by V2 evidence; P7S/CMS content coverage, signer identity, certificate chain, independent sender authentication, custody before receipt, and exact 17 August user operation remain unverified.",
+      "crc32": "58faee81",
+      "cryptographic_relationship_status": "UNVERIFIED_NO_P7S_OR_CMS_PARSED",
+      "decoded_source_filename": "563203462.xml",
+      "description": "OSCI container context XML stream-extracted from the verified mailbox attachment ZIP.",
+      "destination_audit_filename": "REF-11-563203462.xml",
+      "destination_naming_statement": "Destination filenames are audit naming conventions. Original ZIP filenames and raw filename bytes remain preserved in manifest metadata. Destination naming is not evidence that the original source file was renamed.",
+      "evidence_role": "OSCI_CONTAINER_CONTEXT_XML",
+      "expected_uncompressed_size": 16237,
+      "extracted_entry_sha256": "8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a",
+      "file": "references/REF-11-563203462.xml",
+      "format": "xml",
+      "nfc_source_name": "563203462.xml",
+      "nfd_source_name": "563203462.xml",
+      "raw_zip_filename_bytes_hex": "3536333230333436322e786d6c",
+      "ref_id": "REF-11",
+      "required_by": [
+        "L1-A27",
+        "L1-A28",
+        "L1-A30",
+        "L1-A31",
+        "L1-A32",
+        "L1-A33",
+        "L1-A34",
+        "L1-A35"
+      ],
+      "retrieved": "2026-08-21 CONTROLLED_REFERENCE_IMPORT_EXECUTED_AFTER_HUMAN_APPROVAL_TOKEN",
+      "sha256": "8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a",
+      "source": "V2-verified mailbox attachment ZIP provenance; source EML SHA-256 b0ff23f60924e96a8c52ef608f9f36d767cb28132b4c79ef1e93e15c04d8888b; attachment/downloaded ZIP SHA-256 023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42. Original ZIP entry name 563203462.xml with raw filename bytes hex 3536333230333436322e786d6c.",
+      "source_evidence_path": "work/operator_intake/L1-A31/2026-08-21_ZIP_ENTRY_HASH_INVENTORY.jsonl",
+      "source_zip_original_download_path": "/Users/martinotten/Downloads/Nachricht_563203462.zip",
+      "source_zip_sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42",
+      "transformation_status": "STREAM_EXTRACTED_FROM_VERIFIED_MAILBOX_ATTACHMENT_ZIP_FOR_AUDIT_USE",
+      "version_or_date": "Message Date header 2026-02-28T00:59:12+01:00; ZIP entry local times are preserved as ZIP metadata where applicable and are not treated as proof of initial download.",
+      "zip_archive_sequence_number": 3
+    },
+    {
+      "absence_means": "BLOCKED",
+      "chain_of_custody": "Verified evidence links the raw mailbox message, decoded attachment, downloaded ZIP, ZIP entries, and current substantive case files by SHA-256. Independent sender authentication, custody before receipt, exact 17 August user operation, P7S/CMS coverage, and certificate-chain verification are not established by this record.",
+      "chain_of_custody_limitation": "Hash-bound to the raw mailbox message, decoded attachment ZIP, and stream-hashed ZIP-entry inventory by V2 evidence; P7S/CMS content coverage, signer identity, certificate chain, independent sender authentication, custody before receipt, and exact 17 August user operation remain unverified.",
+      "crc32": "dc92dca5",
+      "cryptographic_relationship_status": "UNVERIFIED_NO_P7S_OR_CMS_PARSED",
+      "decoded_source_filename": "Berufungsbegründung_O.pdf",
+      "description": "Possible document covered-content PDF stream-extracted from the verified mailbox attachment ZIP; coverage not verified by this import plan.",
+      "destination_audit_filename": "REF-11-berufungsbegruendung-O.pdf",
+      "destination_naming_statement": "Destination filenames are audit naming conventions. Original ZIP filenames and raw filename bytes remain preserved in manifest metadata. Destination naming is not evidence that the original source file was renamed.",
+      "evidence_role": "POSSIBLE_DOCUMENT_COVERED_CONTENT_UNVERIFIED",
+      "expected_uncompressed_size": 4096,
+      "extracted_entry_sha256": "42089e1bf976e6e478ea17624eb35239494b3f3556af10092e8916d5d6d92cc8",
+      "file": "references/REF-11-berufungsbegruendung-O.pdf",
+      "format": "pdf",
+      "nfc_source_name": "Berufungsbegründung_O.pdf",
+      "nfd_source_name": "Berufungsbegründung_O.pdf",
+      "raw_zip_filename_bytes_hex": "4265727566756e677362656772c3bc6e64756e675f4f2e706466",
+      "ref_id": "REF-11",
+      "required_by": [
+        "L1-A27",
+        "L1-A28",
+        "L1-A30",
+        "L1-A31",
+        "L1-A32",
+        "L1-A33",
+        "L1-A34",
+        "L1-A35"
+      ],
+      "retrieved": "2026-08-21 CONTROLLED_REFERENCE_IMPORT_EXECUTED_AFTER_HUMAN_APPROVAL_TOKEN",
+      "sha256": "42089e1bf976e6e478ea17624eb35239494b3f3556af10092e8916d5d6d92cc8",
+      "source": "V2-verified mailbox attachment ZIP provenance; source EML SHA-256 b0ff23f60924e96a8c52ef608f9f36d767cb28132b4c79ef1e93e15c04d8888b; attachment/downloaded ZIP SHA-256 023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42. Original ZIP entry name Berufungsbegründung_O.pdf with raw filename bytes hex 4265727566756e677362656772c3bc6e64756e675f4f2e706466.",
+      "source_evidence_path": "work/operator_intake/L1-A31/2026-08-21_ZIP_ENTRY_HASH_INVENTORY.jsonl",
+      "source_zip_original_download_path": "/Users/martinotten/Downloads/Nachricht_563203462.zip",
+      "source_zip_sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42",
+      "transformation_status": "STREAM_EXTRACTED_FROM_VERIFIED_MAILBOX_ATTACHMENT_ZIP_FOR_AUDIT_USE",
+      "version_or_date": "Message Date header 2026-02-28T00:59:12+01:00; ZIP entry local times are preserved as ZIP metadata where applicable and are not treated as proof of initial download.",
+      "zip_archive_sequence_number": 4
+    },
+    {
+      "absence_means": "BLOCKED",
+      "chain_of_custody": "Verified evidence links the raw mailbox message, decoded attachment, downloaded ZIP, ZIP entries, and current substantive case files by SHA-256. Independent sender authentication, custody before receipt, exact 17 August user operation, P7S/CMS coverage, and certificate-chain verification are not established by this record.",
+      "chain_of_custody_limitation": "Hash-bound to the raw mailbox message, decoded attachment ZIP, and stream-hashed ZIP-entry inventory by V2 evidence; P7S/CMS content coverage, signer identity, certificate chain, independent sender authentication, custody before receipt, and exact 17 August user operation remain unverified.",
+      "cms_verified": false,
+      "crc32": "bf200506",
+      "cryptographic_relationship_status": "UNVERIFIED_NO_P7S_OR_CMS_PARSED",
+      "decoded_source_filename": "Berufungsbegründung_O.pdf.p7s",
+      "description": "Document P7S signature object stream-extracted from the verified mailbox attachment ZIP; not parsed or verified by this import plan.",
+      "destination_audit_filename": "REF-11-berufungsbegruendung-O.pdf.p7s",
+      "destination_naming_statement": "Destination filenames are audit naming conventions. Original ZIP filenames and raw filename bytes remain preserved in manifest metadata. Destination naming is not evidence that the original source file was renamed.",
+      "evidence_role": "DOCUMENT_SIGNATURE_OBJECT",
+      "expected_uncompressed_size": 3102,
+      "extracted_entry_sha256": "4287a3783caec8da9b6e0c16f86a3d5e363a34253427eca3116159e77dd07a7a",
+      "file": "references/REF-11-berufungsbegruendung-O.pdf.p7s",
+      "format": "p7s",
+      "nfc_source_name": "Berufungsbegründung_O.pdf.p7s",
+      "nfd_source_name": "Berufungsbegründung_O.pdf.p7s",
+      "openssl_used": false,
+      "p7s_parsed": false,
+      "raw_zip_filename_bytes_hex": "4265727566756e677362656772c3bc6e64756e675f4f2e7064662e703773",
+      "ref_id": "REF-11",
+      "required_by": [
+        "L1-A27",
+        "L1-A28",
+        "L1-A30",
+        "L1-A31",
+        "L1-A32",
+        "L1-A33",
+        "L1-A34",
+        "L1-A35"
+      ],
+      "retrieved": "2026-08-21 CONTROLLED_REFERENCE_IMPORT_EXECUTED_AFTER_HUMAN_APPROVAL_TOKEN",
+      "sha256": "4287a3783caec8da9b6e0c16f86a3d5e363a34253427eca3116159e77dd07a7a",
+      "source": "V2-verified mailbox attachment ZIP provenance; source EML SHA-256 b0ff23f60924e96a8c52ef608f9f36d767cb28132b4c79ef1e93e15c04d8888b; attachment/downloaded ZIP SHA-256 023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42. Original ZIP entry name Berufungsbegründung_O.pdf.p7s with raw filename bytes hex 4265727566756e677362656772c3bc6e64756e675f4f2e7064662e703773.",
+      "source_evidence_path": "work/operator_intake/L1-A31/2026-08-21_ZIP_ENTRY_HASH_INVENTORY.jsonl",
+      "source_zip_original_download_path": "/Users/martinotten/Downloads/Nachricht_563203462.zip",
+      "source_zip_sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42",
+      "transformation_status": "STREAM_EXTRACTED_FROM_VERIFIED_MAILBOX_ATTACHMENT_ZIP_FOR_AUDIT_USE",
+      "version_or_date": "Message Date header 2026-02-28T00:59:12+01:00; ZIP entry local times are preserved as ZIP metadata where applicable and are not treated as proof of initial download.",
+      "zip_archive_sequence_number": 5
+    },
+    {
+      "absence_means": "BLOCKED",
+      "chain_of_custody": "Verified evidence links the raw mailbox message, decoded attachment, downloaded ZIP, ZIP entries, and current substantive case files by SHA-256. Independent sender authentication, custody before receipt, exact 17 August user operation, P7S/CMS coverage, and certificate-chain verification are not established by this record.",
+      "chain_of_custody_limitation": "Hash-bound to the raw mailbox message and decoded attachment ZIP by V2 evidence; independent sender authentication, custody before receipt, exact 17 August user operation, P7S/CMS coverage, and certificate-chain verification remain unverified.",
+      "decoded_source_filename": "Nachricht_563203462.zip",
+      "description": "Original mailbox attachment ZIP preserved as a raw archive for REF-11 audit use.",
+      "destination_audit_filename": "REF-11-original-mail-attachment.zip",
+      "destination_naming_statement": "Destination filenames are audit naming conventions. Original ZIP filenames and raw filename bytes remain preserved in manifest metadata. Destination naming is not evidence that the original source file was renamed.",
+      "evidence_role": "ORIGINAL_MAILBOX_ATTACHMENT_ARCHIVE",
+      "extracted_entry_sha256": "NOT_APPLICABLE_RAW_ZIP_COPY",
+      "file": "references/REF-11-original-mail-attachment.zip",
+      "format": "zip",
+      "raw_source_filename_bytes_hex": "4e61636872696368745f3536333230333436322e7a6970",
+      "raw_zip_filename_bytes_hex": "NOT_APPLICABLE_RAW_ARCHIVE_COPY",
+      "ref_id": "REF-11",
+      "required_by": [
+        "L1-A27",
+        "L1-A28",
+        "L1-A30",
+        "L1-A31",
+        "L1-A32",
+        "L1-A33",
+        "L1-A34",
+        "L1-A35"
+      ],
+      "retrieved": "2026-08-21 CONTROLLED_REFERENCE_IMPORT_EXECUTED_AFTER_HUMAN_APPROVAL_TOKEN",
+      "sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42",
+      "source": "V2-verified mailbox attachment ZIP provenance; source EML SHA-256 b0ff23f60924e96a8c52ef608f9f36d767cb28132b4c79ef1e93e15c04d8888b; attachment/downloaded ZIP SHA-256 023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42. Future source path is the operator-supplied downloaded ZIP path recorded in the import plan.",
+      "source_evidence_path": "work/operator_intake/L1-A31/2026-08-21_MAIL_EML_EVIDENCE.json",
+      "source_zip_original_download_path": "/Users/martinotten/Downloads/Nachricht_563203462.zip",
+      "source_zip_sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42",
+      "transformation_status": "RAW_BYTE_COPY_FROM_VERIFIED_DOWNLOADED_ZIP_MATCHING_MAILBOX_ATTACHMENT",
+      "version_or_date": "Message Date header 2026-02-28T00:59:12+01:00; ZIP entry local times are preserved as ZIP metadata where applicable and are not treated as proof of initial download."
+    },
+    {
+      "absence_means": "BLOCKED",
+      "chain_of_custody": "Verified evidence links the raw mailbox message, decoded attachment, downloaded ZIP, ZIP entries, and current substantive case files by SHA-256. Independent sender authentication, custody before receipt, exact 17 August user operation, P7S/CMS coverage, and certificate-chain verification are not established by this record.",
+      "chain_of_custody_limitation": "Hash-bound to the raw mailbox message, decoded attachment ZIP, and stream-hashed ZIP-entry inventory by V2 evidence; P7S/CMS content coverage, signer identity, certificate chain, independent sender authentication, custody before receipt, and exact 17 August user operation remain unverified.",
+      "crc32": "53e45ec5",
+      "cryptographic_relationship_status": "UNVERIFIED_NO_P7S_OR_CMS_PARSED",
+      "decoded_source_filename": "vhn.xml",
+      "description": "Possible VHN covered-content XML stream-extracted from the verified mailbox attachment ZIP; coverage not verified by this import plan.",
+      "destination_audit_filename": "REF-11-vhn-covered-content.xml",
+      "destination_naming_statement": "Destination filenames are audit naming conventions. Original ZIP filenames and raw filename bytes remain preserved in manifest metadata. Destination naming is not evidence that the original source file was renamed.",
+      "evidence_role": "POSSIBLE_VHN_COVERED_CONTENT_UNVERIFIED",
+      "expected_uncompressed_size": 1924,
+      "extracted_entry_sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23",
+      "file": "references/REF-11-vhn-covered-content.xml",
+      "format": "xml",
+      "nfc_source_name": "vhn.xml",
+      "nfd_source_name": "vhn.xml",
+      "raw_zip_filename_bytes_hex": "76686e2e786d6c",
+      "ref_id": "REF-11",
+      "required_by": [
+        "L1-A27",
+        "L1-A28",
+        "L1-A30",
+        "L1-A31",
+        "L1-A32",
+        "L1-A33",
+        "L1-A34",
+        "L1-A35"
+      ],
+      "retrieved": "2026-08-21 CONTROLLED_REFERENCE_IMPORT_EXECUTED_AFTER_HUMAN_APPROVAL_TOKEN",
+      "sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23",
+      "source": "V2-verified mailbox attachment ZIP provenance; source EML SHA-256 b0ff23f60924e96a8c52ef608f9f36d767cb28132b4c79ef1e93e15c04d8888b; attachment/downloaded ZIP SHA-256 023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42. Original ZIP entry name vhn.xml with raw filename bytes hex 76686e2e786d6c.",
+      "source_evidence_path": "work/operator_intake/L1-A31/2026-08-21_ZIP_ENTRY_HASH_INVENTORY.jsonl",
+      "source_zip_original_download_path": "/Users/martinotten/Downloads/Nachricht_563203462.zip",
+      "source_zip_sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42",
+      "transformation_status": "STREAM_EXTRACTED_FROM_VERIFIED_MAILBOX_ATTACHMENT_ZIP_FOR_AUDIT_USE",
+      "version_or_date": "Message Date header 2026-02-28T00:59:12+01:00; ZIP entry local times are preserved as ZIP metadata where applicable and are not treated as proof of initial download.",
+      "zip_archive_sequence_number": 7
+    },
+    {
+      "absence_means": "BLOCKED",
+      "chain_of_custody": "Verified evidence links the raw mailbox message, decoded attachment, downloaded ZIP, ZIP entries, and current substantive case files by SHA-256. Independent sender authentication, custody before receipt, exact 17 August user operation, P7S/CMS coverage, and certificate-chain verification are not established by this record.",
+      "chain_of_custody_limitation": "Hash-bound to the raw mailbox message, decoded attachment ZIP, and stream-hashed ZIP-entry inventory by V2 evidence; P7S/CMS content coverage, signer identity, certificate chain, independent sender authentication, custody before receipt, and exact 17 August user operation remain unverified.",
+      "cms_verified": false,
+      "crc32": "6623628d",
+      "cryptographic_relationship_status": "UNVERIFIED_NO_P7S_OR_CMS_PARSED",
+      "decoded_source_filename": "vhn.xml.p7s",
+      "description": "VHN P7S signature object stream-extracted from the verified mailbox attachment ZIP; not parsed or verified by this import plan.",
+      "destination_audit_filename": "REF-11-vhn.xml.p7s",
+      "destination_naming_statement": "Destination filenames are audit naming conventions. Original ZIP filenames and raw filename bytes remain preserved in manifest metadata. Destination naming is not evidence that the original source file was renamed.",
+      "evidence_role": "VHN_SIGNATURE_OBJECT",
+      "expected_uncompressed_size": 2396,
+      "extracted_entry_sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a",
+      "file": "references/REF-11-vhn.xml.p7s",
+      "format": "p7s",
+      "nfc_source_name": "vhn.xml.p7s",
+      "nfd_source_name": "vhn.xml.p7s",
+      "openssl_used": false,
+      "p7s_parsed": false,
+      "raw_zip_filename_bytes_hex": "76686e2e786d6c2e703773",
+      "ref_id": "REF-11",
+      "required_by": [
+        "L1-A27",
+        "L1-A28",
+        "L1-A30",
+        "L1-A31",
+        "L1-A32",
+        "L1-A33",
+        "L1-A34",
+        "L1-A35"
+      ],
+      "retrieved": "2026-08-21 CONTROLLED_REFERENCE_IMPORT_EXECUTED_AFTER_HUMAN_APPROVAL_TOKEN",
+      "sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a",
+      "source": "V2-verified mailbox attachment ZIP provenance; source EML SHA-256 b0ff23f60924e96a8c52ef608f9f36d767cb28132b4c79ef1e93e15c04d8888b; attachment/downloaded ZIP SHA-256 023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42. Original ZIP entry name vhn.xml.p7s with raw filename bytes hex 76686e2e786d6c2e703773.",
+      "source_evidence_path": "work/operator_intake/L1-A31/2026-08-21_ZIP_ENTRY_HASH_INVENTORY.jsonl",
+      "source_zip_original_download_path": "/Users/martinotten/Downloads/Nachricht_563203462.zip",
+      "source_zip_sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42",
+      "transformation_status": "STREAM_EXTRACTED_FROM_VERIFIED_MAILBOX_ATTACHMENT_ZIP_FOR_AUDIT_USE",
+      "version_or_date": "Message Date header 2026-02-28T00:59:12+01:00; ZIP entry local times are preserved as ZIP metadata where applicable and are not treated as proof of initial download.",
+      "zip_archive_sequence_number": 8
+    },
+    {
+      "absence_means": "BLOCKED",
+      "chain_of_custody": "Verified evidence links the raw mailbox message, decoded attachment, downloaded ZIP, ZIP entries, and current substantive case files by SHA-256. Independent sender authentication, custody before receipt, exact 17 August user operation, P7S/CMS coverage, and certificate-chain verification are not established by this record.",
+      "chain_of_custody_limitation": "Hash-bound to the raw mailbox message, decoded attachment ZIP, and stream-hashed ZIP-entry inventory by V2 evidence; P7S/CMS content coverage, signer identity, certificate chain, independent sender authentication, custody before receipt, and exact 17 August user operation remain unverified.",
+      "crc32": "fc8c1fb4",
+      "cryptographic_relationship_status": "UNVERIFIED_NO_P7S_OR_CMS_PARSED",
+      "decoded_source_filename": "xjustiz_nachricht.xml",
+      "description": "XJustiz message context XML stream-extracted from the verified mailbox attachment ZIP.",
+      "destination_audit_filename": "REF-11-xjustiz_nachricht.xml",
+      "destination_naming_statement": "Destination filenames are audit naming conventions. Original ZIP filenames and raw filename bytes remain preserved in manifest metadata. Destination naming is not evidence that the original source file was renamed.",
+      "evidence_role": "XJUSTIZ_MESSAGE_CONTEXT_XML",
+      "expected_uncompressed_size": 4154,
+      "extracted_entry_sha256": "309a4c7d0cecdf8abf7a97200f6ce31529f84dd677524144978c3044aa5a89a7",
+      "file": "references/REF-11-xjustiz_nachricht.xml",
+      "format": "xml",
+      "nfc_source_name": "xjustiz_nachricht.xml",
+      "nfd_source_name": "xjustiz_nachricht.xml",
+      "raw_zip_filename_bytes_hex": "786a757374697a5f6e61636872696368742e786d6c",
+      "ref_id": "REF-11",
+      "required_by": [
+        "L1-A27",
+        "L1-A28",
+        "L1-A30",
+        "L1-A31",
+        "L1-A32",
+        "L1-A33",
+        "L1-A34",
+        "L1-A35"
+      ],
+      "retrieved": "2026-08-21 CONTROLLED_REFERENCE_IMPORT_EXECUTED_AFTER_HUMAN_APPROVAL_TOKEN",
+      "sha256": "309a4c7d0cecdf8abf7a97200f6ce31529f84dd677524144978c3044aa5a89a7",
+      "source": "V2-verified mailbox attachment ZIP provenance; source EML SHA-256 b0ff23f60924e96a8c52ef608f9f36d767cb28132b4c79ef1e93e15c04d8888b; attachment/downloaded ZIP SHA-256 023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42. Original ZIP entry name xjustiz_nachricht.xml with raw filename bytes hex 786a757374697a5f6e61636872696368742e786d6c.",
+      "source_evidence_path": "work/operator_intake/L1-A31/2026-08-21_ZIP_ENTRY_HASH_INVENTORY.jsonl",
+      "source_zip_original_download_path": "/Users/martinotten/Downloads/Nachricht_563203462.zip",
+      "source_zip_sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42",
+      "transformation_status": "STREAM_EXTRACTED_FROM_VERIFIED_MAILBOX_ATTACHMENT_ZIP_FOR_AUDIT_USE",
+      "version_or_date": "Message Date header 2026-02-28T00:59:12+01:00; ZIP entry local times are preserved as ZIP metadata where applicable and are not treated as proof of initial download.",
+      "zip_archive_sequence_number": 6
+    }
+  ],
+  "schema": "wpno.level1.references_manifest/1",
+  "updated": "2026-08-28 L1_A11_REF05_OFFICIAL_COVERAGE_DELTA_ACCEPTED"
+}

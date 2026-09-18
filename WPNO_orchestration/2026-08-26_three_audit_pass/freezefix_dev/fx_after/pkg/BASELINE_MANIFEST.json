@@ -1,0 +1,34 @@
+{
+  "discovery_files": [
+    {
+      "path": "disc_0.txt",
+      "sha256": "63ae61984c681c7693e4b9829974d452c2bbfa88f4a8dd8b7c550af88f287bf8"
+    },
+    {
+      "path": "disc_1.txt",
+      "sha256": "882655c5f626c3eb4abd0ba5c2771beffcac6e4519b13aa8bf134c552d62b564"
+    }
+  ],
+  "project_files": [
+    {
+      "path": "src_0.txt",
+      "sha256": "a65ada49f065b070b43e4d5a408e14b83e4ba0ab8348a989e5ce03a18cf1a858",
+      "state": "FILE"
+    },
+    {
+      "path": "src_1.txt",
+      "sha256": "2e6568d824bbb326065a0409bc48d92373118909e5e411d3433ba7b8ec99a971",
+      "state": "FILE"
+    },
+    {
+      "path": "src_2.txt",
+      "sha256": "506b32fa4efe8f959ea6ebfaab9601cc302bbd6fc9c983573a0e140a0658d18b",
+      "state": "FILE"
+    }
+  ],
+  "schema": "wpno.level1.baseline-manifest/1",
+  "scope": {
+    "audited_sources": "All PROJECT_ROOT candidate_paths and source_evidence source_path values named in bindings; duplicates removed; presence state captured at freeze time.",
+    "discovery": "Every regular non-symlink file under DISCOVERY_ROOT."
+  }
+}

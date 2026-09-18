@@ -1,0 +1,392 @@
+{
+ "BASE_EVIDENCE_VALID": true,
+ "base_attempt": 8,
+ "checks": [
+  {
+   "PASS": true,
+   "claim": "unit tests ran",
+   "expected": 503,
+   "measured": 503,
+   "source": "CONTROLLER_SUITE.stderr.txt (unittest's own summary line)"
+  },
+  {
+   "PASS": true,
+   "claim": "unit tests clean (0 failures, 0 errors, 0 skips)",
+   "expected": true,
+   "measured": true,
+   "source": "CONTROLLER_SUITE.stderr.txt trailing OK"
+  },
+  {
+   "PASS": true,
+   "claim": "unit-suite item record agrees",
+   "expected": {
+    "errors": 0,
+    "failures": 0,
+    "skips": 0,
+    "tests_run": 503
+   },
+   "measured": {
+    "errors": 0,
+    "failures": 0,
+    "skips": 0,
+    "tests_run": 503
+   },
+   "source": "ITEM_RESULTS.jsonl id=18"
+  },
+  {
+   "PASS": true,
+   "claim": "package tests run",
+   "expected": 361,
+   "measured": 361,
+   "source": "PACKAGE_SUITE.json"
+  },
+  {
+   "PASS": true,
+   "claim": "package tests effective passes",
+   "expected": 361,
+   "measured": 361,
+   "source": "PACKAGE_SUITE.json"
+  },
+  {
+   "PASS": true,
+   "claim": "package tests effective failures",
+   "expected": 0,
+   "measured": 0,
+   "source": "PACKAGE_SUITE.json"
+  },
+  {
+   "PASS": true,
+   "claim": "package tests errors",
+   "expected": 0,
+   "measured": 0,
+   "source": "PACKAGE_SUITE.json"
+  },
+  {
+   "PASS": true,
+   "claim": "package tests skips",
+   "expected": 0,
+   "measured": 0,
+   "source": "PACKAGE_SUITE.json"
+  },
+  {
+   "PASS": true,
+   "claim": "package suite clean",
+   "expected": true,
+   "measured": true,
+   "source": "PACKAGE_SUITE.json"
+  },
+  {
+   "PASS": true,
+   "claim": "package tests unresolved",
+   "expected": 0,
+   "measured": 0,
+   "source": "PACKAGE_SUITE.json"
+  },
+  {
+   "PASS": true,
+   "claim": "the one clone failure was resolved in situ and wrote nothing",
+   "expected": true,
+   "measured": true,
+   "source": "PACKAGE_SUITE.json pass_b_in_situ"
+  },
+  {
+   "PASS": true,
+   "claim": "package suite target was the current package",
+   "expected": true,
+   "measured": true,
+   "source": "PACKAGE_SUITE.json r8_root"
+  },
+  {
+   "PASS": true,
+   "claim": "static safety findings",
+   "expected": 0,
+   "measured": 0,
+   "source": "static_safety_outputs/R8_STATIC_SAFETY_REPORT.json"
+  },
+  {
+   "PASS": true,
+   "claim": "static safety clean",
+   "expected": true,
+   "measured": true,
+   "source": "static_safety_outputs/R8_STATIC_SAFETY_REPORT.json"
+  },
+  {
+   "PASS": true,
+   "claim": "static safety unpermitted changes",
+   "expected": [],
+   "measured": [],
+   "source": "static_safety_outputs/R8_STATIC_SAFETY_REPORT.json"
+  },
+  {
+   "PASS": true,
+   "claim": "static safety predecessor root was the real R7 sibling",
+   "expected": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7",
+   "measured": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7",
+   "source": "static_safety_outputs/R8_STATIC_SAFETY_REPORT.json"
+  },
+  {
+   "PASS": true,
+   "claim": "clone static review equals the package's own record except package_root and reviewed_at_utc",
+   "expected": [
+    "package_root",
+    "reviewed_at_utc"
+   ],
+   "measured": [
+    "package_root",
+    "reviewed_at_utc"
+   ],
+   "source": "clone report vs build/R8_STATIC_SAFETY_REPORT.json"
+  },
+  {
+   "PASS": true,
+   "claim": "plans",
+   "expected": 43,
+   "measured": 43,
+   "source": "ITEM_RESULTS.jsonl id=21"
+  },
+  {
+   "PASS": true,
+   "claim": "rehearsals PASS_READY",
+   "expected": 43,
+   "measured": 43,
+   "source": "ITEM_RESULTS.jsonl id=22"
+  },
+  {
+   "PASS": true,
+   "claim": "control expectations re-derived",
+   "expected": 122,
+   "measured": 122,
+   "source": "ITEM_RESULTS.jsonl id=15"
+  },
+  {
+   "PASS": true,
+   "claim": "control expectations recorded",
+   "expected": 122,
+   "measured": 122,
+   "source": "ITEM_RESULTS.jsonl id=15"
+  },
+  {
+   "PASS": true,
+   "claim": "unenforced controls",
+   "expected": 0,
+   "measured": 0,
+   "source": "ITEM_RESULTS.jsonl id=15"
+  },
+  {
+   "PASS": true,
+   "claim": "hollow phases",
+   "expected": [],
+   "measured": [],
+   "source": "ITEM_RESULTS.jsonl id=24"
+  },
+  {
+   "PASS": true,
+   "claim": "audits",
+   "expected": 35,
+   "measured": 35,
+   "source": "ITEM_RESULTS.jsonl id=25"
+  },
+  {
+   "PASS": true,
+   "claim": "phases",
+   "expected": 43,
+   "measured": 43,
+   "source": "ITEM_RESULTS.jsonl id=25"
+  },
+  {
+   "PASS": true,
+   "claim": "approval rows",
+   "expected": 0,
+   "measured": 0,
+   "source": "ITEM_RESULTS.jsonl id=26"
+  },
+  {
+   "PASS": true,
+   "claim": "result files",
+   "expected": 0,
+   "measured": 0,
+   "source": "ITEM_RESULTS.jsonl id=26"
+  },
+  {
+   "PASS": true,
+   "claim": "evidence files",
+   "expected": 0,
+   "measured": 0,
+   "source": "ITEM_RESULTS.jsonl id=26"
+  },
+  {
+   "PASS": true,
+   "claim": "manifest entries",
+   "expected": 724,
+   "measured": 724,
+   "source": "ITEM_RESULTS.jsonl id=27"
+  },
+  {
+   "PASS": true,
+   "claim": "live phase states",
+   "expected": {
+    "NOT_STARTED": 43
+   },
+   "measured": {
+    "NOT_STARTED": 43
+   },
+   "source": "ITEM_RESULTS.jsonl id=25"
+  },
+  {
+   "PASS": true,
+   "claim": "manifest digest measured by attempt 8 is the current one",
+   "expected": "6dfd1af689754be61f2ea6ef77f01d2e5bdb8929ef8c0799e15db203755b945a",
+   "measured": "6dfd1af689754be61f2ea6ef77f01d2e5bdb8929ef8c0799e15db203755b945a",
+   "source": "ITEM_RESULTS.jsonl id=27"
+  },
+  {
+   "PASS": true,
+   "claim": "out-of-allowance reads",
+   "expected": [],
+   "measured": [],
+   "source": "ITEM_RESULTS.jsonl id=12"
+  },
+  {
+   "PASS": true,
+   "claim": "R4 mismatching",
+   "expected": [],
+   "measured": [],
+   "source": "ITEM_RESULTS.jsonl id=1"
+  },
+  {
+   "PASS": true,
+   "claim": "R5 mismatching is MODE only",
+   "expected": [
+    "MODE"
+   ],
+   "measured": [
+    "MODE"
+   ],
+   "source": "ITEM_RESULTS.jsonl id=2"
+  },
+  {
+   "PASS": true,
+   "claim": "R6 mismatching",
+   "expected": [],
+   "measured": [],
+   "source": "ITEM_RESULTS.jsonl id=3"
+  },
+  {
+   "PASS": true,
+   "claim": "R7 entries",
+   "expected": 15804,
+   "measured": 15804,
+   "source": "ITEM_RESULTS.jsonl id=4"
+  },
+  {
+   "PASS": true,
+   "claim": "R7 mismatching",
+   "expected": [],
+   "measured": [],
+   "source": "ITEM_RESULTS.jsonl id=4"
+  },
+  {
+   "PASS": true,
+   "claim": "write isolation: original R8 unchanged",
+   "expected": true,
+   "measured": true,
+   "source": "ORIGINAL_INVENTORY_COMPARE.json"
+  },
+  {
+   "PASS": true,
+   "claim": "write isolation: paths_added",
+   "expected": 0,
+   "measured": 0,
+   "source": "ORIGINAL_INVENTORY_COMPARE.json"
+  },
+  {
+   "PASS": true,
+   "claim": "write isolation: paths_removed",
+   "expected": 0,
+   "measured": 0,
+   "source": "ORIGINAL_INVENTORY_COMPARE.json"
+  },
+  {
+   "PASS": true,
+   "claim": "write isolation: contents_changed",
+   "expected": 0,
+   "measured": 0,
+   "source": "ORIGINAL_INVENTORY_COMPARE.json"
+  },
+  {
+   "PASS": true,
+   "claim": "write isolation: mtimes_changed",
+   "expected": 0,
+   "measured": 0,
+   "source": "ORIGINAL_INVENTORY_COMPARE.json"
+  },
+  {
+   "PASS": true,
+   "claim": "write isolation: modes_changed",
+   "expected": 0,
+   "measured": 0,
+   "source": "ORIGINAL_INVENTORY_COMPARE.json"
+  },
+  {
+   "PASS": true,
+   "claim": "write isolation: uid_changed",
+   "expected": 0,
+   "measured": 0,
+   "source": "ORIGINAL_INVENTORY_COMPARE.json"
+  },
+  {
+   "PASS": true,
+   "claim": "write isolation: gid_changed",
+   "expected": 0,
+   "measured": 0,
+   "source": "ORIGINAL_INVENTORY_COMPARE.json"
+  },
+  {
+   "PASS": true,
+   "claim": "write isolation: symlink_targets_changed",
+   "expected": 0,
+   "measured": 0,
+   "source": "ORIGINAL_INVENTORY_COMPARE.json"
+  },
+  {
+   "PASS": true,
+   "claim": "in-process handler invocations (recorded by attempt 8)",
+   "expected": 169,
+   "measured": 169,
+   "source": "ITEM_RESULTS.jsonl id=23"
+  },
+  {
+   "PASS": true,
+   "claim": "in-process step count (recorded by attempt 8)",
+   "expected": 169,
+   "measured": 169,
+   "source": "ITEM_RESULTS.jsonl id=23"
+  },
+  {
+   "PASS": true,
+   "claim": "note-only steps (recorded by attempt 8)",
+   "expected": 0,
+   "measured": 0,
+   "source": "ITEM_RESULTS.jsonl id=23"
+  },
+  {
+   "PASS": true,
+   "claim": "steps without evidence (recorded by attempt 8)",
+   "expected": 0,
+   "measured": 0,
+   "source": "ITEM_RESULTS.jsonl id=23"
+  },
+  {
+   "PASS": true,
+   "claim": "item 23 nevertheless carries FAILED_VERIFIER_PREDICATE",
+   "expected": "remeasured in the delta, not carried forward",
+   "measured": false,
+   "note": "the four figures above are correct on the bytes, but the predicate that judged them completed and returned an adverse result. A figure recorded beside a failed judgement is not a passed item. Item 23 is remeasured in full.",
+   "source": "ITEM_RESULTS.jsonl id=23"
+  }
+ ],
+ "checks_passed": 51,
+ "checks_total": 51,
+ "failures": [],
+ "schema": "wpno.r8.delta-base-evidence/1"
+}

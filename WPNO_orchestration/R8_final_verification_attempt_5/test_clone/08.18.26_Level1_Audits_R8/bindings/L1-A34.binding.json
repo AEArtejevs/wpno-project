@@ -1,0 +1,29 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A34",
+  "binding_status": "EXTERNAL_EVIDENCE_REQUIRED",
+  "logical_targets": [
+    "Full independent verification of vhn.xml.p7s"
+  ],
+  "candidate_paths": [],
+  "productive_target": null,
+  "productive_target_sha256": null,
+  "productive_target_evidence": [],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [],
+  "external_evidence_required": [
+    "REF-08",
+    "REF-09",
+    "REF-11"
+  ],
+  "unresolved_questions": [
+    "vhn.xml.p7s and its covered content are absent."
+  ],
+  "discovery_drift": [],
+  "source_evidence": [],
+  "replications": 2,
+  "risk": "CRITICAL",
+  "execution_order": 2
+}

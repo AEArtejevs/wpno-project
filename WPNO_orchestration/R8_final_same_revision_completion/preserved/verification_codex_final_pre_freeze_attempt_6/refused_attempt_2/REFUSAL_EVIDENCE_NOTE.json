@@ -1,0 +1,17 @@
+{
+ "empty_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+ "files": {
+  "COMPARE_BEFORE_VS_AFTER_REFUSAL.json": "56dfb455b25f7af168cb4aea8c7a1d62c97c04e3167659376812be1e686d0497",
+  "FIXED_TARGET_AFTER_REFUSAL.json": "a136d4bf826b8c79cee78e8a772dd3d14cb278a0fe7b2049e317a6a306343a2c",
+  "INVENTORY_AFTER_REFUSAL.json": "7aac8dc7f5e9e2d2924a3041eb71211e45f7de5fbaa7bb5bb3e6267dd33d2986",
+  "INVENTORY_BEFORE_FREEZE.json": "4597091ac6cf8460cd103168fbdbd505a84a3194d5f757d7768bd8025b228a36",
+  "R8_FREEZE_REFUSAL_INCIDENT.md": "e593e9610df4c1b0eeecbdf77f1c1d542f7d4c52e5c24ba9337805f70c7e2f97",
+  "WRITER_INSPECTION_BEFORE_FREEZE.json": "edc5d2cb47bdaa17a22e347de876276f1d6f6340e138959e74238c4b5b484c20",
+  "freeze.stderr.txt": "e3e50743b28aa18e5943333eb38c7d698f0befbf584ee8fb7e75c2fe9a02d68a",
+  "freeze.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+ },
+ "recorded_utc": "2026-08-28T22:37:16Z",
+ "schema": "wpno.r8.refusal-evidence-attestation/1",
+ "why_this_manifest_exists": "the freeze-plan builder refuses to bind a zero-byte artefact, because a control-plane record of no bytes is one that failed to be written. Two of these files are legitimately empty: the controller printed nothing to stdout when it refused the freeze, and wrote nothing to one stderr stream. Empty is those streams' correct value and is itself the evidence. The builder admits a zero-byte artefact only inside an installed verification directory and only when a manifest there attests its digest as the SHA-256 of the empty string -- attested, not merely observed. This is that manifest.",
+ "written_after_the_verification": "yes, and disclosed. The independent verification measured R8's manifest-covered bytes; this directory is excluded from that manifest and did not exist while the verifier ran. Nothing manifest-covered changed."
+}

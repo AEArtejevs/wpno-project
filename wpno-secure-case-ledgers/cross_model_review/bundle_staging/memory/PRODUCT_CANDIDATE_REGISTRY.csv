@@ -1,0 +1,7 @@
+product_line,candidate_commit,candidate_status,supersedes,qc_baseline,review_status,note
+006D,bb28769,MODELL_SPEC_ONLY,,ed862a4,SUPERSEDED,006D Tax/SV/Public-Creditor Visualisierungs-MODELL
+006D,ed862a4,DUAL_COUNCIL_QC,bb28769,ed862a4,SUPERSEDED,unabhaengige QC L99_BLOCKED_BY_P0
+006D,9a50f7e,GUARD_HARDENING,ed862a4,080df65,SUPERSEDED,Hardening der 12 QC-Findings
+006D,080df65,INDEPENDENT_L99_RECHECK,9a50f7e,080df65,HISTORICAL,Recheck BLOCK (QC-only, kein Produktdiff)
+006D,670e362,ALLOWLIST_FORMAT_HARDENED_CANDIDATE,9a50f7e,670e362,NOT_ACCEPTED_L99_BLOCKED,widerlegt durch unabhaengigen Recheck; KEINE Baseline
+CONTROL_PLANE,HEAD,STAGED_TREE_ATTESTATION_HARDENED_CANDIDATE,670e362,670e362,PENDING_CROSS_MODEL_REVIEW,dieser P0-Kontrollschicht-Lauf; aktueller Produkt-Referenzstand bleibt 670e362

@@ -1,0 +1,102 @@
+{
+ "PREFLIGHT_PASS": true,
+ "R8_WROTE_NOTHING": true,
+ "boundary": "stopped at cmd_freeze_level1's stated write boundary: 'nothing above this line writes'",
+ "plan": "build/freeze_plan_attempt_3/FREEZE_PLAN_R8_ATTEMPT_3.json",
+ "plan_sha256": "19c16de22e04f3d1539f7c8c6ff438ee4cfeb192d49af78555af9d95a771b282",
+ "r8_paths_added": [],
+ "r8_paths_changed": [],
+ "r8_paths_removed": [],
+ "r8_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+ "schema": "wpno.r8.dry-freeze-preflight/1",
+ "steps": [
+  {
+   "PASS": true,
+   "measured": {
+    "fields": 5,
+    "grammar": "accepted"
+   },
+   "name": "parse_freeze_token",
+   "step": 1
+  },
+  {
+   "PASS": true,
+   "measured": "GENERATED_UNVERIFIED",
+   "name": "assert_no_freeze_artefact + MODE is GENERATED_UNVERIFIED",
+   "step": 2
+  },
+  {
+   "PASS": true,
+   "measured": {
+    "approvals_bytes": 0,
+    "phase_records": 43,
+    "started": 0
+   },
+   "name": "no audit phase started, no approval recorded",
+   "step": 3
+  },
+  {
+   "PASS": true,
+   "measured": {
+    "path": "build/freeze_plan_attempt_3/FREEZE_PLAN_R8_ATTEMPT_3.json",
+    "sha256": "19c16de22e04f3d1539f7c8c6ff438ee4cfeb192d49af78555af9d95a771b282"
+   },
+   "name": "plan resolves, loads strict and shape-checks",
+   "step": 4
+  },
+  {
+   "PASS": true,
+   "measured": true,
+   "name": "assert_token_binds_plan",
+   "step": 5
+  },
+  {
+   "PASS": true,
+   "measured": {
+    "all_matched": true,
+    "bound_artifacts": 211
+   },
+   "name": "assert_plan_matches_disk",
+   "step": 6
+  },
+  {
+   "PASS": true,
+   "measured": {
+    "discovery_members": 26,
+    "preview_sha256": "0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d",
+    "project_members": 33
+   },
+   "name": "Ubuntu baseline built and matches the plan",
+   "step": 7
+  },
+  {
+   "PASS": true,
+   "measured": {
+    "accepted": true,
+    "ledger": "state/freeze_attempts.jsonl",
+    "recorded_attempts": 0
+   },
+   "name": "assert_not_replayed",
+   "step": 8
+  },
+  {
+   "PASS": true,
+   "measured": {
+    "checked": [
+     "lineage/R7_BASELINE_MANIFEST.json",
+     "lineage/R8_LINEAGE.sha256"
+    ],
+    "required": [
+     "lineage/R7_BASELINE_MANIFEST.json",
+     "lineage/R8_LINEAGE.sha256"
+    ]
+   },
+   "name": "predecessor lineage bound, present and unaltered",
+   "step": 9
+  }
+ ],
+ "steps_passed": 9,
+ "steps_total": 9,
+ "token_derived_here": true,
+ "token_printed_or_written": false
+}

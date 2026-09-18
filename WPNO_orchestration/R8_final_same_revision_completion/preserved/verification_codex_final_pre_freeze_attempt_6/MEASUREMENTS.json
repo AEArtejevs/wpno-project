@@ -1,0 +1,758 @@
+{
+  "items": {
+    "A1": {
+      "declared": [
+        "lineage/R7_BASELINE_MANIFEST.json",
+        "lineage/R8_LINEAGE.sha256"
+      ],
+      "files": [
+        {
+          "path": "lineage/R7_BASELINE_MANIFEST.json",
+          "regular": true,
+          "symlink": false
+        },
+        {
+          "path": "lineage/R8_LINEAGE.sha256",
+          "regular": true,
+          "symlink": false
+        }
+      ],
+      "kind": "COMPACT_DIRECT_FILE"
+    },
+    "A2": {
+      "constant": "lineage/R7_BASELINE_MANIFEST.json",
+      "declared": "lineage/R7_BASELINE_MANIFEST.json"
+    },
+    "A3": {
+      "corrected_measurement": {
+        "archive_code_loaders": [],
+        "computing_occurrences": [
+          {
+            "classification": "permitted_test_constant",
+            "line": 54,
+            "path": "automation/package_tests/test_r8_freeze_lineage.py"
+          },
+          {
+            "classification": "archived_incident_evidence",
+            "line": 1726,
+            "path": "lineage/R7_POST_FREEZE_INCIDENT/dirty_repair_files/automation/controller.py"
+          }
+        ],
+        "incident_manifest_entries": 15,
+        "incident_manifest_mismatches": 0
+      },
+      "initial_measurement": {
+        "archive_code_loaders": [],
+        "executable_occurrences": [
+          {
+            "classification": "permitted_test_constant",
+            "line": 54,
+            "path": "automation/package_tests/test_r8_freeze_lineage.py",
+            "targets": [
+              "DEFECTIVE_DERIVATION"
+            ]
+          },
+          {
+            "classification": "live_executable",
+            "line": 57,
+            "path": "build/build_r8_closure_record.py",
+            "targets": [
+              "record"
+            ]
+          },
+          {
+            "classification": "archived_incident_evidence",
+            "line": 1726,
+            "path": "lineage/R7_POST_FREEZE_INCIDENT/dirty_repair_files/automation/controller.py",
+            "targets": [
+              "lineage_key"
+            ]
+          }
+        ],
+        "incident_manifest_entries": 15,
+        "incident_manifest_mismatches": 0,
+        "self_test_read": "43d605265d80396ca72af9d8020b4e7ec6d80bfd196e6b01ac4f6be1683264e7",
+        "text_occurrences": [
+          {
+            "classification": "text/comment pending AST",
+            "line": 1899,
+            "path": "automation/controller.py",
+            "text": "#     \"lineage/%s_MANIFEST.sha256\" % PREDECESSOR_BASELINE_REL.split(os.sep)[1]"
+          },
+          {
+            "classification": "text/comment pending AST",
+            "line": 656,
+            "path": "automation/freeze.py",
+            "text": "#         PREDECESSOR_BASELINE_REL.split(os.sep)[1],)"
+          },
+          {
+            "classification": "text/comment pending AST",
+            "line": 7,
+            "path": "automation/package_tests/test_r8_freeze_lineage.py",
+            "text": "PREDECESSOR_BASELINE_REL.split(os.sep)[1],)"
+          },
+          {
+            "classification": "text/comment pending AST",
+            "line": 55,
+            "path": "automation/package_tests/test_r8_freeze_lineage.py",
+            "text": "freeze.PREDECESSOR_BASELINE_REL.split(os.sep)[1],)"
+          },
+          {
+            "classification": "text/comment pending AST",
+            "line": 197,
+            "path": "automation/package_tests/test_r8_freeze_lineage.py",
+            "text": "self.assertNotIn(\"PREDECESSOR_BASELINE_REL.split(os.sep)[1],)\", source)"
+          },
+          {
+            "classification": "text/comment pending AST",
+            "line": 259,
+            "path": "automation/package_tests/test_r8_freeze_lineage.py",
+            "text": "if \"PREDECESSOR_BASELINE_REL.split\" not in text:"
+          },
+          {
+            "classification": "text/comment pending AST",
+            "line": 280,
+            "path": "automation/package_tests/test_r8_freeze_lineage.py",
+            "text": "if \"PREDECESSOR_BASELINE_REL.split\" in segment:"
+          },
+          {
+            "classification": "text/comment pending AST",
+            "line": 306,
+            "path": "automation/package_tests/test_r8_freeze_lineage.py",
+            "text": "if \"PREDECESSOR_BASELINE_REL.split\" not in text:"
+          },
+          {
+            "classification": "text/comment pending AST",
+            "line": 314,
+            "path": "automation/package_tests/test_r8_freeze_lineage.py",
+            "text": "\"PREDECESSOR_BASELINE_REL.split\""
+          },
+          {
+            "classification": "text/comment pending AST",
+            "line": 260,
+            "path": "build/build_r8_closure_record.py",
+            "text": "\"PREDECESSOR_BASELINE_REL.split(os.sep)[1]. That yields a \""
+          },
+          {
+            "classification": "text/comment pending AST",
+            "line": 1727,
+            "path": "lineage/R7_POST_FREEZE_INCIDENT/dirty_repair_files/automation/controller.py",
+            "text": "freeze.PREDECESSOR_BASELINE_REL.split(os.sep)[1],)"
+          },
+          {
+            "classification": "text/comment pending AST",
+            "line": 1899,
+            "path": "verification/selftest_runtime/automation/controller.py",
+            "text": "#     \"lineage/%s_MANIFEST.sha256\" % PREDECESSOR_BASELINE_REL.split(os.sep)[1]"
+          },
+          {
+            "classification": "text/comment pending AST",
+            "line": 656,
+            "path": "verification/selftest_runtime/automation/freeze.py",
+            "text": "#         PREDECESSOR_BASELINE_REL.split(os.sep)[1],)"
+          }
+        ]
+      },
+      "verifier_scratch_correction": "The first predicate classified an assignment containing a narrative string literal as computing the expression. The corrected AST predicate requires the split/subscript expression itself in the assigned value."
+    },
+    "A4": {
+      "corrected_measurement": {
+        "defective_derivation_lines": [],
+        "gate_call_lines": [
+          1915
+        ]
+      },
+      "initial_measurement": {
+        "gate_call_lines": [
+          1915
+        ],
+        "path_arithmetic_lines": [
+          1826,
+          1839
+        ]
+      },
+      "verifier_scratch_correction": "The first predicate matched every enclosing AST statement containing the constant name, including the function and with blocks. The corrected predicate matches the defective split/subscript computation."
+    },
+    "A5": {
+      "accepted": [
+        true,
+        true
+      ],
+      "refused": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    "B1": {
+      "corrected_measurement": {
+        "errors": 0,
+        "failures": 0,
+        "returncode": 0,
+        "skips": 0,
+        "tests_run": 44
+      },
+      "initial_measurement": {
+        "errors": 0,
+        "failures": 0,
+        "returncode": 0,
+        "skips": 0,
+        "tests_run": 44
+      },
+      "mandated_clone_rerun": {
+        "clone": "/home/ubuntu/project/WPNO/.r8_lineage_verify_clone_711053",
+        "errors": 0,
+        "failures": 0,
+        "returncode": 0,
+        "skips": 0,
+        "tests_run": 44
+      },
+      "verifier_scratch_correction": "The prompt gives no fixed focused-suite count. The live module contains and ran 44 tests; hard-coding the superseded 43 count was verifier error."
+    },
+    "B2": {
+      "corrected_measurement": {
+        "actual_command": true,
+        "fixture_builds_under_work": true,
+        "fixture_class": "Fixture"
+      },
+      "initial_measurement": {
+        "actual_command": true,
+        "disposable_fixture": false
+      },
+      "verifier_scratch_correction": "The first predicate guessed a class name. The source names the disposable builder Fixture and invokes Fixture(...).build()."
+    },
+    "B3": {
+      "assertions": {
+        "test_both_baselines_are_nonempty": true,
+        "test_mode_became_frozen": true,
+        "test_no_audit_phase_was_started": true,
+        "test_replay_of_the_same_token_is_refused": true,
+        "test_the_control_manifest_verifies_from_disk": true,
+        "test_the_lineage_gate_was_reached_and_passed": true,
+        "test_the_manifest_mode_entry_matches_frozen": true,
+        "test_the_original_r8_package_was_not_written": true,
+        "test_the_token_was_consumed_exactly_once": true,
+        "test_the_verified_record_names_the_lineage_artefacts_it_required": true
+      },
+      "suite": {
+        "errors": 0,
+        "failures": 0,
+        "returncode": 0,
+        "skips": 0,
+        "tests_run": 44
+      }
+    },
+    "B4": {
+      "error": true,
+      "old_path": true,
+      "suite": {
+        "errors": 0,
+        "failures": 0,
+        "returncode": 0,
+        "skips": 0,
+        "tests_run": 44
+      }
+    },
+    "B5": {
+      "defective_expression": false,
+      "errors": 0,
+      "failures": 0,
+      "mandated_clone_rerun": {
+        "clone": "/home/ubuntu/project/WPNO/.r8_lineage_verify_clone_711053",
+        "errors": 0,
+        "failures": 0,
+        "returncode": 0,
+        "skips": 0,
+        "tests_run": 33
+      },
+      "returncode": 0,
+      "skips": 0,
+      "tests_run": 33,
+      "uses_declaration": true
+    },
+    "B6": {
+      "after": {
+        "lineage/R7_BASELINE_MANIFEST.json": {
+          "mtime_ns": 1787927923280577609,
+          "sha256": "0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d"
+        },
+        "lineage/R8_LINEAGE.sha256": {
+          "mtime_ns": 1787923336492007435,
+          "sha256": "eb26a89a718f7384449827638623762b6e70ece0679810e170d7f98448d1f926"
+        }
+      },
+      "before": {
+        "lineage/R7_BASELINE_MANIFEST.json": {
+          "mtime_ns": 1787927923280577609,
+          "sha256": "0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d"
+        },
+        "lineage/R8_LINEAGE.sha256": {
+          "mtime_ns": 1787923336492007435,
+          "sha256": "eb26a89a718f7384449827638623762b6e70ece0679810e170d7f98448d1f926"
+        }
+      },
+      "returned": [
+        "lineage/R7_BASELINE_MANIFEST.json",
+        "lineage/R8_LINEAGE.sha256"
+      ]
+    },
+    "C1": {
+      "clone": "/home/ubuntu/project/WPNO/.r8_lineage_verify_clone_711053",
+      "errors": 0,
+      "failures": 0,
+      "returncode": 0,
+      "skips": 0,
+      "tests_run": 503
+    },
+    "C2": {
+      "baked_absolute_original_work_path_strings": 357,
+      "classification": "RELOCATION_ARTEFACT_RESOLVED_IN_SITU",
+      "clone_failures": 1,
+      "count_delta": 44,
+      "effective_passing": 405,
+      "errors": 0,
+      "failure_test": "automation.package_tests.test_r7_rehearsal_output_paths.OutputsStayInsideTheWorkArea.test_no_plan_in_the_package_names_an_unconfined_output",
+      "in_situ_inventory_delta": {
+        "contents_changed": 0,
+        "gid_changed": 0,
+        "modes_changed": 0,
+        "mtimes_changed": 0,
+        "paths_added": 0,
+        "paths_differing": 0,
+        "paths_removed": 0,
+        "symlink_targets_changed": 0,
+        "uid_changed": 0
+      },
+      "in_situ_passed": true,
+      "in_situ_wrote_nothing": true,
+      "new_lineage_module_tests": 44,
+      "passing_in_clone": 404,
+      "passing_only_in_situ": 1,
+      "plan_files_with_baked_absolute_original_work_paths": 34,
+      "prior_suite_count": 361,
+      "runner_sha256": "53580905bba7a9720fd20af20d09198d807b9d854eb3e8ce5181935faa96012c",
+      "skips": 0,
+      "tests_run": 405,
+      "unresolved": 0,
+      "verifier_procedure_correction": "Initial run stopped after the expected clone failure. The required two-pass runner was then run unmodified; the one clone failure passed in situ and both in-situ inventories were identical."
+    },
+    "C3": {
+      "clean": true,
+      "differing_fields": [],
+      "finding_count": 0,
+      "mandated_clone_rerun": {
+        "added": 19,
+        "changed": 25,
+        "clean": true,
+        "clone": "/home/ubuntu/project/WPNO/.r8_lineage_verify_clone_711053",
+        "findings": 0,
+        "java_shell": 5,
+        "returncode": 0,
+        "reviewed": 49
+      },
+      "returncode": 0
+    },
+    "C4": {
+      "duplicates": [],
+      "entries": 728,
+      "extra_in_manifest": [],
+      "malformed": [],
+      "manifest_sha256": "f7e181a21c902a401c55cd9f97d50c55711fbcef6c5fdf16845ab94bc8db95bb",
+      "mismatches": [],
+      "missing_from_manifest": []
+    },
+    "C5": {
+      "bad_named_digests": [],
+      "controller": {
+        "clean": true,
+        "cwd": "verification/selftest_runtime",
+        "errors": 0,
+        "exit_code": 0,
+        "expected_failures": 0,
+        "failures": 0,
+        "finished_utc": "2026-08-28T22:04:45Z",
+        "measurement": "RUN",
+        "note": "runs only inside the isolated replica; these tests write controller state and refuse to run anywhere else",
+        "ran": 503,
+        "skips": 0,
+        "started_utc": "2026-08-28T22:04:36Z",
+        "suite": "controller_suite",
+        "test_source_count": 18,
+        "test_sources": {
+          "automation/tests/test_approval_gate.py": "61d8afe09bcbcc82069f7b745f26a5cd886a52d57ccc43287a5b3ec407ceafca",
+          "automation/tests/test_attempt_model.py": "15527e7fff9a3d3365230533e350330a03dc0904f3ae2f35cc4e4aacf3096c8c",
+          "automation/tests/test_codex_adapter.py": "cad48e54d0091f36ca38dc4b660ec2f80990cf16b45873bc8ecb562bac02cdae",
+          "automation/tests/test_evidence_sealing.py": "19cc5bb5050ab8fc9c2bc213bc7fec099a2b05a919fc2b7686181a16ee2a6f0a",
+          "automation/tests/test_external_host_evidence.py": "6745be25fc054a3189ebb6271f060173479cbec8f499c6dfc40872f8c0a7866e",
+          "automation/tests/test_freeze_plan_binding.py": "b22fa66ec4f12e0e26e29be6d2936122465fa7346d14deb1860398307cb645af",
+          "automation/tests/test_l1a31_plan_correction.py": "012808a3c7ff8a0f7693c0174046ea8001e2df922dc5c2d2861558fd8585f138",
+          "automation/tests/test_manifest_integrity.py": "e8f48199b6735b06c31769e54c484a422513daf6996d8419123a86f3f1156c87",
+          "automation/tests/test_operation_catalog.py": "d00ad6918b95f09a37ded55e8d147fbcea75a88d363166a72c15ecbb3a0dce73",
+          "automation/tests/test_path_policy.py": "acf2aeeb423bfb8c6902e5c3124d67b97e9d911b2c451236b08c73e1ece69ac4",
+          "automation/tests/test_prepare_execution.py": "2c49c0ad62e8ae5c99037de57926dd7368526c05981866b5abaf81765b45584a",
+          "automation/tests/test_prompt_injection.py": "5a663a5cf4eb779d57851f0fc6d3fce02269d9833814e598ea62a156b15e2576",
+          "automation/tests/test_r5_a31_harness.py": "8e97191c1fe7cf55c823a2f2a495a6729d7b0a8214741e05a3647d58c4681756",
+          "automation/tests/test_r5_run_b_isolation.py": "ebe9457a1dc870eecab203b7fe662c34b913ca384416551d6510e4650197b80e",
+          "automation/tests/test_redaction.py": "f54bf1c45c55dd3de2270b54348a2892f22fbfa7a774f3932514cd3341fa9702",
+          "automation/tests/test_replication_isolation.py": "c6a6d618a8733a43b732b547e15e59c302fb016fe4bbfac0e9fd864dea02b17b",
+          "automation/tests/test_source_integrity.py": "47e8665caedec4a5deb94cd72b3aac7ac755c576a0feff0990650e01469d2532",
+          "automation/tests/test_state_machine.py": "a75ab3733e85dd7b3df46862492de87d050e8ba573412b04bd408b54927d8f2f"
+        },
+        "unexpected_successes": 0
+      },
+      "named_digest_count": 0,
+      "package": {
+        "clean": true,
+        "cwd": ".",
+        "errors": 0,
+        "exit_code": 0,
+        "expected_failures": 0,
+        "failures": 0,
+        "finished_utc": "2026-08-28T22:07:03Z",
+        "measurement": "RUN",
+        "note": "runs at the package root",
+        "ran": 405,
+        "skips": 0,
+        "started_utc": "2026-08-28T22:04:45Z",
+        "suite": "package_suite",
+        "test_source_count": 15,
+        "test_sources": {
+          "automation/package_tests/test_freeze_order_regression.py": "a3a58653afbdebdc52630fac17349fcdb65fe12b52cd78b88401e4a70b5e8513",
+          "automation/package_tests/test_r5_a18_validators.py": "65e095a9f605433370e1357178e8fbe90e50b243db2483cefc978cda9abe3655",
+          "automation/package_tests/test_r5_a34_der_staging.py": "ed778363e78e1a5e4c2654ec8d48f05a1be90925692c040a38167e1bb0fe270b",
+          "automation/package_tests/test_r5_freeze_repair.py": "3a5965a931860a21e6445eca3cbe7012715d162d898d5717520dcb99913f4309",
+          "automation/package_tests/test_r5_independent_cms.py": "207f5f95f30044b0c65909b05dc74303e30bf76ca07eef52bc32ad9cbbe9deec",
+          "automation/package_tests/test_r5_initialisation.py": "ef573269b70c9652c4b97621bda0fab3e721b0bda5c8cfef1a6b2656d8225136",
+          "automation/package_tests/test_r5_ref01_ref02.py": "5a5b51a2d4ef2786f45ae75c0933ba6b2257c943e3c0c55e7c406935c0d810ae",
+          "automation/package_tests/test_r6_initialisation.py": "e2dd1de089450deac560cde5536460aac9dbae13ad3fce14b15ac96b3c842dae",
+          "automation/package_tests/test_r7_freeze_baseline.py": "0a9efd56aec007d65fe35bc32d37bce903fd70d007888cefa37d4be7a6659536",
+          "automation/package_tests/test_r7_initialisation.py": "5366e6e7f9ccde7043b167f8e5aab5c0958923d0b364d02ab76dccbf8c2d5e70",
+          "automation/package_tests/test_r7_rehearsal_output_paths.py": "8fe4e9338c56bf84b8c756fbec9ec3c1c6d4a7dc40def165dadb21e224816330",
+          "automation/package_tests/test_r7_section8_plans.py": "e5ecfc1dd825965680c93ae470b76a6a90a0f862ce1a27bc60c6ea2c8cb2ba6a",
+          "automation/package_tests/test_r7_section8_records.py": "95049d8fd5908e1cfae968e81dc0b1a790ebd3b242579d3bb3937fcfe2aebf8b",
+          "automation/package_tests/test_r8_freeze_lineage.py": "43d605265d80396ca72af9d8020b4e7ec6d80bfd196e6b01ac4f6be1683264e7",
+          "automation/package_tests/test_r8_migration.py": "5fd2e6750365db287959654434518787da7d7502ffd88870eaa61446aedc6970"
+        },
+        "unexpected_successes": 0
+      }
+    },
+    "C6": {
+      "defect_keys": [
+        "gate_checks_per_artefact",
+        "regression",
+        "repair",
+        "required_artifacts",
+        "what_it_was",
+        "why_nothing_caught_it"
+      ],
+      "has_refusal": true,
+      "live_execution": "None. No R8 phase has been executed and none may be until after R8 is frozen and the migration packet is applied."
+    },
+    "D1": {
+      "physical_plans": 43,
+      "reported": {
+        "CANDIDATE_PLAN_COUNT": 43,
+        "DUPLICATE_PLAN_COUNT": 0,
+        "MISSING_PLAN_COUNT": 0,
+        "REQUIRED_PLAN_COUNT": 43,
+        "UNKNOWN_PLAN_COUNT": 0
+      }
+    },
+    "D2": {
+      "all_pass_ready": true,
+      "non_pass_ready": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "records": 43,
+      "rehearsed": 43,
+      "required": 43
+    },
+    "D3": {
+      "corrected_measurement": {
+        "hollow": [],
+        "note_only": 0,
+        "plan_derived": 169,
+        "plan_steps": 311,
+        "record_derived": 169,
+        "record_rows": 311,
+        "recorded_invocations": 169,
+        "recorded_unique": 169,
+        "rehearsal_invocations": 169,
+        "rehearsal_steps": 169,
+        "without_evidence": 0
+      },
+      "initial_measurement": {
+        "hollow": [],
+        "note_only": 0,
+        "plan_derived": 169,
+        "plan_steps": 311,
+        "record_rows": 311,
+        "recorded": 169,
+        "rehearsal_invocations": 169,
+        "rehearsal_steps": 169,
+        "row_derived": 0,
+        "unique": 169,
+        "without_evidence": 0
+      },
+      "verifier_scratch_correction": "The record uses the proved uppercase OPERATION and R8_FINAL_CLASSIFICATION keys; the first predicate incorrectly used lowercase operation."
+    },
+    "D4": {
+      "corrected_measurement": {
+        "anchored_references": [],
+        "freeze_condition_lines": []
+      },
+      "initial_measurement": {
+        "anchored_references": [],
+        "freeze_branch_lines": [
+          300
+        ]
+      },
+      "verifier_scratch_correction": "The first predicate searched an entire If statement including its body and comments; the corrected AST predicate checks only each branch condition."
+    },
+    "D5": {
+      "derived_control_steps": 122,
+      "recorded_count": 122,
+      "recorded_ratio": "122/122",
+      "simple_derived_expectation_fields": 0,
+      "unenforced": 0
+    },
+    "D6": {
+      "nonempty_steps": []
+    },
+    "D7": {
+      "corrected_measurement": {
+        "applied_before_freeze": false,
+        "disk_route_digest": "65b3db95c3bf9d012195ee81c946f95bae08aea0cc7545134cf1f76d0d6ba93f",
+        "excluded": [
+          [
+            "L1-A31",
+            "COMPARISON",
+            "EXECUTED_UNSEALED_ZERO_EVIDENCE_FROZEN_CONTROLLER_DEFECT"
+          ]
+        ],
+        "migratable": [
+          [
+            "L1-A31",
+            "RUN-A"
+          ],
+          [
+            "L1-A31",
+            "RUN-B"
+          ]
+        ],
+        "migration_ledger_size": 0,
+        "route_digest": "65b3db95c3bf9d012195ee81c946f95bae08aea0cc7545134cf1f76d0d6ba93f"
+      },
+      "initial_measurement": {
+        "applied_before_freeze": false,
+        "disk_route_digest": "65b3db95c3bf9d012195ee81c946f95bae08aea0cc7545134cf1f76d0d6ba93f",
+        "excluded": [
+          [
+            "L1-A31",
+            "COMPARISON",
+            null
+          ]
+        ],
+        "migratable": [
+          [
+            null,
+            null
+          ],
+          [
+            null,
+            null
+          ]
+        ],
+        "migration_ledger_size": 0,
+        "route_digest": "65b3db95c3bf9d012195ee81c946f95bae08aea0cc7545134cf1f76d0d6ba93f"
+      },
+      "verifier_scratch_correction": "The first predicate used unproved/nonexistent generic keys. The corrected measurement uses the schema-proved destination_* and exclusion_reason keys."
+    },
+    "E1": {
+      "duplicates": [],
+      "entries": 1915,
+      "malformed": [],
+      "mismatches": []
+    },
+    "E10": {
+      "exists": false,
+      "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R9"
+    },
+    "E11": {
+      "contents_changed": 0,
+      "modes_changed": 0,
+      "mtimes_changed": 0,
+      "paths_added": 0,
+      "paths_removed": 0,
+      "symlink_targets_changed": 0,
+      "written_paths": 0
+    },
+    "E12": {
+      "blocking_writable_descriptors": 0,
+      "pgrep_used": false,
+      "pids_inspected": 3,
+      "pids_uninspectable": 0,
+      "uninspectable_reason": []
+    },
+    "E2": {
+      "duplicates": [],
+      "entries": 14160,
+      "malformed": [],
+      "mismatches": [
+        "MODE"
+      ]
+    },
+    "E3": {
+      "duplicates": [],
+      "entries": 14781,
+      "malformed": [],
+      "mismatches": []
+    },
+    "E4": {
+      "duplicates": [],
+      "entries": 15804,
+      "malformed": [],
+      "mismatches": []
+    },
+    "E5": {
+      "continuous": false,
+      "contrary_claims": [],
+      "incident_entries": 15,
+      "incident_mismatches": 0,
+      "restored": true
+    },
+    "E6": {
+      "package_like_lineage_dirs": [],
+      "shared_active_inodes": []
+    },
+    "E7": {
+      "audits": 35,
+      "phases": 43,
+      "states": [
+        "NOT_STARTED"
+      ]
+    },
+    "E8": {
+      "approvals_bytes": 0,
+      "evidence_files": [],
+      "freeze_attempts_exists": false,
+      "mode": "GENERATED_UNVERIFIED",
+      "result_files": []
+    },
+    "E9": {
+      "routes": [
+        "init-revision"
+      ],
+      "rows": 1
+    },
+    "F1": {
+      "bad_rows": [],
+      "categories_present": {
+        "freeze.py": true,
+        "instructions": true,
+        "runner": true,
+        "schema": true,
+        "token": true
+      },
+      "result_mislabeled": false,
+      "rows": 29,
+      "unidentified": 0
+    },
+    "F2": {
+      "corrected_measurement": {
+        "baseline_member_counts": [
+          4,
+          11
+        ],
+        "dummy_digests": [
+          "0000000000000000000000000000000000000000000000000000000000000000",
+          "1111111111111111111111111111111111111111111111111111111111111111",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        ],
+        "dummy_roundtrip": true,
+        "platform": "UBUNTU",
+        "revision": "R8"
+      },
+      "initial_measurement": {
+        "baseline_member_counts": [
+          4,
+          11
+        ],
+        "dummy_roundtrip": false,
+        "platform": "UBUNTU",
+        "revision": "R8"
+      },
+      "mandated_clone_rerun": {
+        "baseline_member_counts": [
+          4,
+          11
+        ],
+        "clone": "/home/ubuntu/project/WPNO/.r8_lineage_verify_clone_711053",
+        "dummy_digests": [
+          "0000000000000000000000000000000000000000000000000000000000000000",
+          "1111111111111111111111111111111111111111111111111111111111111111",
+          "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        ],
+        "dummy_roundtrip": true,
+        "initial_scratch_error": "Incorrectly looked for a members field in two mapping returns and got [0,0]. After proving keys/types, len(mapping) measured [4,11].",
+        "platform": "UBUNTU",
+        "revision": "R8"
+      },
+      "verifier_scratch_correction": "parse_freeze_token returns a proved-key dictionary, not a tuple. The corrected comparison checks package_sha256, verification_sha256, and freeze_plan_sha256."
+    }
+  },
+  "preflight": {
+    "all_eight_pass": true,
+    "original_clone_initial_equal": true
+  },
+  "schema": "wpno.level1.codex-measurements/1",
+  "verification_corrections": [
+    "C2 two-pass procedure completed after premature initial classification",
+    "write-capable checks rerun on mandated clone _711053",
+    "F2 return mapping shape proved before indexing/counting"
+  ]
+}

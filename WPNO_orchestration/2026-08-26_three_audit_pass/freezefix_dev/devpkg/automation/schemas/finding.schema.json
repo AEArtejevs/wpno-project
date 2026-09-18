@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "One audit finding",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["finding_id", "summary", "source_path", "sha256", "locator",
+               "evidence_type", "confidence", "critical"],
+  "properties": {
+    "finding_id": {"type": "string", "minLength": 1},
+    "summary": {"type": "string", "minLength": 1},
+    "source_path": {"type": "string", "minLength": 1},
+    "sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "locator": {"type": "string", "minLength": 1},
+    "evidence_type": {"enum": ["source", "config", "data", "artifact",
+                               "documentation", "test", "export", "runtime"]},
+    "confidence": {"enum": ["HIGH", "MEDIUM", "LOW"]},
+    "critical": {"type": "boolean"}
+  }
+}

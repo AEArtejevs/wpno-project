@@ -1,0 +1,7 @@
+Name=/wpno_redis
+Status=exited
+Created=2026-07-15T14:58:49.518053792Z
+ImageID=sha256:a8f08480e1f88f2647fed492d1178c06abb0d0c1fbf02c682a61e2f483fb3954
+WorkingDir=/data
+Entrypoint=["docker-entrypoint.sh"]
+Cmd=["redis-server"]

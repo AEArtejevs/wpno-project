@@ -1,0 +1,55 @@
+{
+  "authorised_this_session": [
+    "L1-A16 plan defect repair",
+    "the other recorded plan/control/path findings",
+    "retargeting stale R7-specific test expectations without weakening them",
+    "completing the generic predecessor-attempt migration route and packet",
+    "directly related internal R8 pre-freeze defects found while doing the above"
+  ],
+  "mode": "R8_FINAL_TARGETED_CONVERGENCE_NO_REPEAT_NO_R9",
+  "predecessors": {
+    "R4": {
+      "control_manifest": "1915/1915",
+      "mismatching": 0,
+      "mode": "FROZEN"
+    },
+    "R5": {
+      "classification": "historical freeze-order defect, predates this work",
+      "control_manifest": "14159/14160",
+      "mismatching": 1,
+      "mismatching_paths": [
+        "MODE"
+      ],
+      "mode": "FROZEN"
+    },
+    "R6": {
+      "control_manifest": "14781/14781",
+      "mismatching": 0,
+      "mode": "FROZEN"
+    },
+    "R7": {
+      "control_manifest": "15804/15804",
+      "mismatching": 0,
+      "mode": "FROZEN"
+    }
+  },
+  "r7_incident_manifest": "15/15 OK",
+  "r8": {
+    "approvals": 0,
+    "audits": 35,
+    "evidence_files": 0,
+    "mode": "GENERATED_UNVERIFIED",
+    "phase_states": {
+      "NOT_STARTED": 43
+    },
+    "phases": 43,
+    "raw_tokens": 0,
+    "results_files": 0
+  },
+  "r9_present": false,
+  "recorded_at_utc": "2026-08-28T14:19:15Z",
+  "schema": "wpno.r8.resume-record/1",
+  "status_path_sha256": "4eab114fa079f9eb2fc4ea8cd5a0bc06ebf32c529c6230c6a2a34e9c981e4874",
+  "writer_inspection_method": "/proc/<pid>/exe + fd realpath + fdinfo flags; pgrep -f not used",
+  "writers_into_r8": []
+}

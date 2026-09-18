@@ -1,0 +1,19 @@
+REF-12 OPERATOR DEFINITION AND PROVENANCE STATEMENT (COMPLETE BY HUMAN)
+
+Meaning of “376”: ____________________
+Object type: ____________________
+Original filename/identifier: ____________________
+Original path/source system: ____________________
+Actual artefact supplied: ____________________
+Relevant date/version: ____________________
+Chain of custody: ____________________
+Expected SHA-256: ____________________
+Source and date of expected SHA-256: ____________________
+Why that prior expected value is independent: ____________________
+Current artefact SHA-256: ____________________
+Original/byte-identical status and evidence: ____________________
+Operator identity: ____________________
+Statement date: ____________________
+Signature/attestation: ____________________
+
+A hash calculated for the first time now is not an independently provenanced expected value.

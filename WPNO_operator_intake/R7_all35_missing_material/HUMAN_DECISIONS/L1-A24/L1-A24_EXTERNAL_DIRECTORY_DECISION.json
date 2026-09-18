@@ -1,0 +1,12 @@
+{
+  "schema": "wpno.r7.human-decision/1",
+  "revision": "R7",
+  "audit_id": "L1-A24",
+  "decision_type": "EXTERNAL_LAUNCH_DIRECTORY_SELECTION",
+  "decision": "APPROVED",
+  "selected_directory": "/Users/martinotten/Downloads",
+  "candidate_evidence": "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/MAC_EVIDENCE/L1_A24_EXTERNAL_DIRECTORY_CANDIDATES.json",
+  "selection_scope": "Use this already-measured Mac directory as the external launch directory for L1-A24. This decision does not assert any runtime result and does not waive any evidence requirement.",
+  "operator": "Andris",
+  "recorded_utc": "2026-08-27T23:20:12+00:00"
+}

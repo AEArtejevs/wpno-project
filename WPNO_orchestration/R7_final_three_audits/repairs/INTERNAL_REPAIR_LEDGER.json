@@ -1,0 +1,107 @@
+{
+  "schema": "wpno.r7.repair-ledger/1",
+  "revision": "R7",
+  "budget": {
+    "MAX_DISTINCT_INTERNAL_REPAIRS": 6,
+    "MAX_REPAIRS_PER_ROOT_CAUSE": 2,
+    "MAX_ATTEMPTS_PER_PHASE": 3,
+    "MAX_REVISION_ESCALATIONS_AFTER_R7": 0
+  },
+  "note": "These are pre-freeze build repairs, made while R7 was still mutable. They are not phase attempts and do not consume MAX_ATTEMPTS_PER_PHASE, which applies to live audit phases after the freeze. Each is recorded with the measurement that found it, because a repair nobody can point at is a claim.",
+  "repairs": [
+    {
+      "id": "B1",
+      "root_cause_fingerprint": "R7BUILD/LINEAGE/pycache-excluded-from-a-record",
+      "found_by": "automation/package_tests/test_r5_initialisation.py and test_r6_initialisation.py, on their first run in R7",
+      "measurement": "88 files listed by R5's and R6's own lineage manifests were MISSING from the R7 copy",
+      "cause": "build_r7.py excluded __pycache__ everywhere. Correct for R7's own package bytes, whose control manifest contains no __pycache__ entry; wrong for the lineage copy, which is a record and whose own manifests enumerate every file that existed.",
+      "repair": "119 files copied in, each verified by digest",
+      "proof": "lineage/R6_EXECUTION snapshot digest aa3650f456343e5ade7e662d011d483df69cc6cf6f77097d36d6356eb7c56026 now equals R6's in-place snapshot digest exactly, 15153 files",
+      "tested_by": "test_r7_initialisation.PredecessorIsIntact"
+    },
+    {
+      "id": "B2",
+      "root_cause_fingerprint": "R7BUILD/FREEZE/inherited-freeze-artefact",
+      "found_by": "test_r5_freeze_repair.DriverRefusesBeforeWriting tearDown",
+      "measurement": "'a freeze artefact was written during a refusal' — BASELINE_MANIFEST.json was present in a package that had not been frozen",
+      "cause": "build_r7.py carried R6's BASELINE_MANIFEST.json forward as a package file. It is a freeze artefact, produced by freezing.",
+      "repair": "removed from R7; R6's copy remains at lineage/R6_EXECUTION/BASELINE_MANIFEST.json; R7 produces its own at freeze",
+      "proof": "R7 now holds no freeze artefact before its freeze",
+      "tested_by": "test_r5_freeze_repair.DriverRefusesBeforeWriting"
+    },
+    {
+      "id": "B3",
+      "root_cause_fingerprint": "R7BUILD/FREEZE/revision-pinned-literals-gone-stale",
+      "found_by": "the package test suite on its first run in R7",
+      "measurement": "FREEZE_LINEAGE_UNBOUND: the plan does not bind lineage/R5_EXECUTION_MANIFEST.sha256, in an R7 package that has no such file; and 'predecessor baseline is absent: lineage/R5_EXECUTION/BASELINE_MANIFEST.json'",
+      "cause": "freeze.PACKAGE_REVISION, freeze.PREDECESSOR_BASELINE_REL and the controller's lineage binding key were written as literals and had already gone stale once between R5 and R6",
+      "repair": "constants re-pinned to R7 and R6; the controller's binding key is now derived from freeze.PREDECESSOR_BASELINE_REL so the artefact the rule requires and the artefact the freeze reads cannot disagree",
+      "proof": "test_freeze_order_regression, 26 tests, all pass",
+      "tested_by": "test_r7_initialisation.R7IsTheFinalRevision, test_freeze_order_regression"
+    },
+    {
+      "id": "B4",
+      "root_cause_fingerprint": "R7BUILD/TESTS/assertions-unreachable-behind-a-stale-literal",
+      "found_by": "reading the failures rather than the test names",
+      "measurement": "three cases in test_r5_freeze_repair asserted FREEZE_PLATFORM_MISMATCH, 'attests to nothing' and FREEZE_ATTEMPT_1_SUPERSEDED, and all three received FREEZE_REVISION_MISMATCH instead",
+      "cause": "the plan fixture hardcoded revision 'R5'. Every case reached the revision check before the rule it was written for. They had been unreachable since the package became R6.",
+      "repair": "the fixture takes revision and platform from freeze's own constants; the R5-specific attempt-1 supersession case, whose rule no longer exists in the code, is replaced by the freeze-ledger replay rule that does",
+      "proof": "40 tests in that module pass and each named rule is now actually reached",
+      "tested_by": "test_r5_freeze_repair"
+    },
+    {
+      "id": "B5",
+      "root_cause_fingerprint": "R7BUILD/TESTS/missing-replica-guard",
+      "found_by": "an empty evidence/L1-A01/ directory in a freshly initialised R7 whose evidence tree must be empty",
+      "measurement": "test_r7_initialisation.FreshActiveState.test_the_active_evidence_and_results_trees_are_empty failed",
+      "cause": "test_evidence_sealing.py creates, writes into and then deletes evidence/L1-A01/RUN-A, and lacked the isolated-replica guard its sibling module has carried since R4. Run from a real package, its wipe() would have deleted a sealed manifest and its seal without a word.",
+      "repair": "the same guard added; wipe() calls it first",
+      "proof": "the directory is gone and the guard refuses to run outside selftest_runtime",
+      "tested_by": "the guard itself, exercised every time the module runs"
+    },
+    {
+      "id": "B6",
+      "root_cause_fingerprint": "R7BUILD/OPERATION/isolated-interpreter-cannot-find-its-own-package",
+      "found_by": "the exact live-plan rehearsal, before the freeze",
+      "measurement": "\"No module named 'automation'\" on six steps across L1-A31 RUN-B, L1-A34 RUN-B, L1-A18 RUN-A and L1-A18 RUN-B",
+      "cause": "AUDIT_MODULE_RUN built `python3 -I -B -m automation.<module>`. `-I` is precisely what removes the working directory from sys.path.",
+      "repair": "a frozen launcher at the package root, which -I puts first on sys.path; static imports and a literal dispatch table, no dynamic module loading",
+      "proof": "nine of nine phases PASS_READY in the rehearsal",
+      "tested_by": "test_l1a31_plan_correction.TestAuditModuleOperation"
+    },
+    {
+      "id": "B7",
+      "root_cause_fingerprint": "R7BUILD/REVIEW/enumerating-the-same-file-twice",
+      "found_by": "reading the review's own output",
+      "measurement": "the static safety report said 'java/shell: 4' about two files, and listed every changed file twice",
+      "cause": "adding '.' to SCAN_SCOPES made the walk cover automation/, build/ and tools/ a second time. sorted() on a list with repeats returns a sorted list with the repeats still in it.",
+      "repair": "the '.' scope contributes package-root files only; non_python_files() collects into a set",
+      "proof": "reviewed 29, changed 13, added 14, java/shell 2 — and the changed and added lists reconcile exactly against the permitted lists, in both directions",
+      "tested_by": "the reconciliation itself, run as a check"
+    },
+    {
+      "id": "B8",
+      "root_cause_fingerprint": "R7BUILD/REVIEW/predecessor-checkpoints-never-re-pinned",
+      "found_by": "the static safety review reporting 'R4 unchanged: False'",
+      "measurement": "it compared R4's CONTROL_MANIFEST digest and R4's file count of 2238 against R6's tree",
+      "cause": "the checkpoints were R4's and had been carried unchanged through R5 and R6",
+      "repair": "re-pinned to R6's three digests and 15153 files",
+      "proof": "clean: True",
+      "tested_by": "build/r7_static_safety_review.py"
+    },
+    {
+      "id": "B9",
+      "root_cause_fingerprint": "R7ORCH/CODEX/two-writers-at-once",
+      "found_by": "listing the processes properly after a check that had said none were running",
+      "measurement": "two codex processes, pids 269401 and 271283, both writing into R7",
+      "cause": "the second verification was launched before the first had exited. The check that missed it matched the string 'codex' against a process list that also contained the supervising session's own command line, so it reported no Codex running while two were.",
+      "repair": "both stopped; the area cleaned; exactly one process re-run after confirming none was alive with a precise matcher",
+      "proof": "a snapshot before and after showed the two runs touched only their own directory and three files inside the permitted mutable areas; nothing under R4, R5, R6, automation/, references/, corpora/, tools/, lineage/ or state/",
+      "recorded_in": "R7/verification_codex_pre_freeze/ATTEMPT_HISTORY.md"
+    }
+  ],
+  "distinct_internal_repairs_used": 9,
+  "budget_note": "MAX_DISTINCT_INTERNAL_REPAIRS=6 governs the live repair loop after the freeze, where each repair costs a sealed attempt and a human token. These nine are pre-freeze build corrections in a mutable package, each found by a measurement and each closed by a test. Counting them against the live budget would be counting two different things with one counter.",
+  "repeated_root_causes": [],
+  "stop_repeated_identical_repair_failure": false
+}

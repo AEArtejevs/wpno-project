@@ -1,0 +1,19 @@
+metrik,wert
+total_hardening_tests,24
+product_006d_tests,137
+structure_presence,vorhanden
+self_referential/oracle_dependent,JA — 18 Aufrufe des Produkt-Validators in der Hardening-Suite
+positive_behavior,vorhanden (clean-baseline)
+negative_mutation,"TEILWEISE — Mutation-Score 71%, 2 Ueberlebende (S4 kritisch)"
+property_based,"FEHLTE im Produkt — im Recheck extern ergaenzt (8 Properties, 3 FAIL)"
+metamorphic,"FEHLTE im Produkt — im Recheck extern ergaenzt (3 Relationen, 1 FAIL)"
+guard_bypass,57-Korpus + 24 Regressionen vorhanden (aber oracle-abhaengig)
+domain_logic,"NICHT unabhaengig zertifiziert (Schema empirisch, kein Berufstraeger-Sign-off)"
+cross_artifact,Crosswalk-Guard vorhanden
+path_security,Symlink/nested-.git vorhanden; Hardlink/LFS/Submodule offen (Gremium B pruft)
+format_security,Endung+Magic vorhanden; ftyp-Pfad ungetestet (S4)
+staged_blob/index_binding,FEHLT — P0
+toctou_binding,FEHLT — P0
+independent_oracle,FEHLT im Produkt
+hidden_or_novel_attacks,im Recheck ergaenzt (Gremium B12 >=20 neu)
+mutation_score,"71% (5/7), kritischer Ueberlebender S4_ftyp"

@@ -1,0 +1,341 @@
+{
+  "audit_id": "L1-A20",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Enumerate every payload_scan copy that actually exists and compare them at each named level - raw hash, byte equality, normalised source, AST, functions, regexes, constants, validation rules, error handling, control flow and production status - reporting the level for every equality or inequality claim. Nothing is executed: this is a comparison and it is performed statically.",
+  "static_analysis": "No module under PROJECT_ROOT is imported. Six copies exist here: the anonymization copy, the docker/litellm copy, the golden copy, two .ALT.2026-08-05.bak copies and one pre-fix copy under docs/. The set is re-derived rather than adopted, and each copy is hashed.\n\n'Equal' is meaningless without a level, so every claim carries one. Two files can be unequal at the raw level and equal at the AST level, which is exactly what a comment-only difference looks like - and the mutation control below demonstrates that distinction rather than asserting it.\n\nCLAUDE.md section 10 records the same file in four places as the cause rather than the inconvenience: one copy was corrected and the others stayed quietly old. This audit measures that condition.\n\nA container-side copy may only be hashed from an operator-produced export. The Docker socket is forbidden.\n\nPreparation the approved phase performs: copy one file into work/L1-A20/RUN-A/controls/ and change a single comment, recording both digests.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "LIST_DIRECTORY",
+      "params": {
+        "name_contains": "payload_scan",
+        "path": "/home/ubuntu/project/WPNO",
+        "recursive": true
+      },
+      "purpose": "Re-derive the copy set rather than adopt the binding's.",
+      "step_id": "enumerate_copies",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/anonymization/payload_scan.py"
+      },
+      "purpose": "Raw-level identity of copy 1.",
+      "step_id": "hash_copy_1",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/docker/litellm/payload_scan.py"
+      },
+      "purpose": "Raw-level identity of copy 2.",
+      "step_id": "hash_copy_2",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/anonymization/golden/payload_scan.py"
+      },
+      "purpose": "Raw-level identity of copy 3.",
+      "step_id": "hash_copy_3",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/anonymization/payload_scan.py.ALT.2026-08-05.bak"
+      },
+      "purpose": "Raw-level identity of copy 4.",
+      "step_id": "hash_copy_4",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/docker/litellm/payload_scan.py.ALT.2026-08-05.bak"
+      },
+      "purpose": "Raw-level identity of copy 5.",
+      "step_id": "hash_copy_5",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/docs/Test_07.28.26/AP-03/logs/payload_scan.py.before_F-AP03"
+      },
+      "purpose": "Raw-level identity of copy 6.",
+      "step_id": "hash_copy_6",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/anonymization/payload_scan.py"
+      },
+      "purpose": "AST level of copy 1: functions, regexes, constants, validation rules, error handling and control flow.",
+      "step_id": "ast_copy_1",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/docker/litellm/payload_scan.py"
+      },
+      "purpose": "AST level of copy 2: functions, regexes, constants, validation rules, error handling and control flow.",
+      "step_id": "ast_copy_2",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/anonymization/golden/payload_scan.py"
+      },
+      "purpose": "AST level of copy 3: functions, regexes, constants, validation rules, error handling and control flow.",
+      "step_id": "ast_copy_3",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/anonymization/payload_scan.py.ALT.2026-08-05.bak"
+      },
+      "purpose": "AST level of copy 4: functions, regexes, constants, validation rules, error handling and control flow.",
+      "step_id": "ast_copy_4",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/docker/litellm/payload_scan.py.ALT.2026-08-05.bak"
+      },
+      "purpose": "AST level of copy 5: functions, regexes, constants, validation rules, error handling and control flow.",
+      "step_id": "ast_copy_5",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/docs/Test_07.28.26/AP-03/logs/payload_scan.py.before_F-AP03"
+      },
+      "purpose": "AST level of copy 6: functions, regexes, constants, validation rules, error handling and control flow.",
+      "step_id": "ast_copy_6",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "DOCKER_METADATA_IMPORT",
+      "params": {
+        "export": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-13_CONTAINER_INDEX.json",
+        "no_socket": true
+      },
+      "purpose": "Container-side copy identity from the operator-produced export. The Docker socket is never touched.",
+      "step_id": "import_container_copy_metadata",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "COMPARE_BINARY_FILES",
+      "params": {
+        "left": "/home/ubuntu/project/WPNO/anonymization/payload_scan.py",
+        "right": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A20/RUN-A/controls/identical_copy.py"
+      },
+      "purpose": "Two files known to be byte-identical must compare equal at every level. This proves the comparison chain works.",
+      "step_id": "positive_control_identical_pair",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "COMPARE_BINARY_FILES",
+      "params": {
+        "left": "/home/ubuntu/project/WPNO/anonymization/payload_scan.py",
+        "right": "/home/ubuntu/project/WPNO/anonymization/golden/payload_scan.py"
+      },
+      "purpose": "Two files known to differ must compare unequal at the raw level. This proves the comparison is not reporting equality indiscriminately.",
+      "step_id": "negative_control_differing_pair",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A20/RUN-A/controls/comment_changed.py"
+      },
+      "purpose": "A sandbox copy differing only in one comment: raw must differ, normalised source must be equal and AST must be equal. This proves each level measures what it claims.",
+      "step_id": "mutation_control_comment_only",
+      "timeout_seconds": 120
+    }
+  ],
+  "target": {
+    "identity_evidence": "bindings/L1-A20.binding.json records this path with this digest. It anchors the comparison; which copy is productive is part of what this audit reports and is not assumed by binding one.",
+    "path": "/home/ubuntu/project/WPNO/anonymization/payload_scan.py",
+    "sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "/home/ubuntu/project/WPNO",
+        "references/REF-13_*"
+      ],
+      "allowed_writes": [
+        "work/L1-A20/RUN-A/",
+        "evidence/L1-A20/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A20 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A20",
+      "candidate_template_identity": "L1-A20/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A20/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "none; every step is in-process",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "DOCKER_SOCKET_ACCESS",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_BUILD"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [],
+      "independent_oracle": "SHA-256 and the standard library's ast module, both independent of the code under test.",
+      "limitations": [
+        "The container-side copy's identity comes from an operator-produced export. It describes the image as exported; it is not a live read of a running container.",
+        "Production status is an execution-path question. Where no execution-path evidence exists for a copy, its production status is reported as unproven."
+      ],
+      "method": "multi-level static comparison of every existing copy",
+      "notes": [
+        "Every equality or inequality claim names the level it holds at. A claim without a level is not a result."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [
+        "REF-13"
+      ],
+      "references": [
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-13_CONTAINER_INDEX.json",
+          "sha256": "9a27a8e16b71a5fac39b3822f3264f87a48a0d65998d6760de1349ab7b019845"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/manifest.json",
+          "sha256": "4c1e9a706a5ba2a3c6f25f7ffc37963efadbe529f907865f516982ce3b54f1b4"
+        }
+      ],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": "Production identity requires execution-path evidence: an import, an invocation in a script, a container command, a workflow node or a scheduler entry. Filename, version suffix, modification time, file size, documentation, comments and proximity to another file are excluded by rule. If production identity cannot be proven the answer is that it cannot be proven from this machine; no most-likely candidate is nominated.",
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "check_id": "copies_enumerated",
+      "copies_expected_here": 6,
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "How many copies exist, and where?",
+      "required_result": "Every copy that exists, re-derived rather than adopted. A copy in one set and not the other is a finding.",
+      "step_id": "enumerate_copies"
+    },
+    {
+      "check_id": "levels_reported",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "levels": [
+        "raw hash",
+        "byte equality",
+        "normalised source",
+        "AST",
+        "functions",
+        "regexes",
+        "constants",
+        "validation rules",
+        "error handling",
+        "control flow",
+        "production status"
+      ],
+      "question": "At which level does each equality claim hold?",
+      "required_result": "A level accompanies every claim."
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_boolean": true,
+      "expected_difference_count": 0,
+      "expected_exit_code": 0,
+      "expected_result": "EQUAL_AT_EVERY_LEVEL",
+      "fixture": "work/L1-A20/RUN-A/controls/identical_copy.py",
+      "fixture_construction": "a byte-for-byte copy of the anchor copy",
+      "question": "Do byte-identical files compare equal everywhere?",
+      "step_id": "positive_control_identical_pair",
+      "why": "EQUAL_AT_EVERY_LEVEL. Two copies known to be identical must compare identical and differ in zero bytes."
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_boolean": false,
+      "expected_exit_code": 0,
+      "expected_failure_reason": "the two copies are different files",
+      "expected_result": "UNEQUAL_AT_THE_RAW_LEVEL",
+      "question": "Do differing files compare unequal at the raw level?",
+      "step_id": "negative_control_differing_pair",
+      "why": "UNEQUAL_AT_THE_RAW_LEVEL. The comparison must complete and report the two files as not identical."
+    },
+    {
+      "check_id": "mutation_control",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_boolean": true,
+      "expected_exit_code": 0,
+      "expected_result": "RAW_DIFFERS_NORMALISED_EQUAL_AST_EQUAL",
+      "fixture": "work/L1-A20/RUN-A/controls/comment_changed.py",
+      "fixture_construction": "a copy of the anchor with exactly one comment altered and no other change",
+      "proof_the_fixture_differs": "its SHA-256 differs from the anchor's while its AST dump is identical",
+      "question": "Does a comment-only change separate the levels?",
+      "step_id": "mutation_control_comment_only",
+      "why": "The AST of a copy differing only in a comment must parse. Whether the ASTs are equal is compared downstream.",
+      "zero_changed_results_is": "a measurement error, not a pass"
+    }
+  ]
+}

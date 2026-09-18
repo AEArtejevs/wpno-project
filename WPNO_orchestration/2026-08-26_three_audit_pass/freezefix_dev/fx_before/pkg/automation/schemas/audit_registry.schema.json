@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Level-1 audit registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "build_id", "mode", "project_root", "discovery_root",
+               "level1_root", "audits"],
+  "properties": {
+    "schema": {"const": "wpno.level1.audit_registry/1"},
+    "build_id": {"type": "string", "minLength": 1},
+    "build_revision": {"type": "string", "minLength": 1},
+    "mode": {"enum": ["GENERATED_UNVERIFIED", "FROZEN"]},
+    "generated": {"type": "string"},
+    "project_root": {"type": "string", "pattern": "^(/|\\.{1,2}(/|$))"},
+    "discovery_root": {"type": "string", "pattern": "^(/|\\.{1,2}(/|$))"},
+    "level1_root": {"type": "string", "pattern": "^(/|\\.{1,2}(/|$))"},
+    "root_note": {"type": "string"},
+    "predecessor_note": {"type": "string"},
+    "id_scheme_note": {"type": "string"},
+    "source_note": {"type": "string"},
+    "execution_order_note": {"type": "string"},
+    "audits": {
+      "type": "array",
+      "minItems": 35,
+      "maxItems": 35,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["audit_id", "source_group", "source_point", "title",
+                     "risk", "execution_order", "replications", "prompt_file",
+                     "binding_file", "status"],
+        "properties": {
+          "audit_id": {"type": "string", "pattern": "^L1-A[0-3][0-9]$"},
+          "source_group": {"type": "string", "minLength": 1},
+          "source_group_title": {"type": "string"},
+          "source_point": {"type": "integer", "minimum": 1, "maximum": 35},
+          "title": {"type": "string", "minLength": 1},
+          "risk": {"enum": ["CRITICAL", "HIGH", "MEDIUM", "LOW"]},
+          "execution_order": {"type": "integer", "minimum": 1, "maximum": 35},
+          "replications": {"type": "integer", "minimum": 1, "maximum": 2},
+          "prompt_file": {"type": "string", "pattern": "^prompts/"},
+          "binding_file": {"type": "string", "pattern": "^bindings/"},
+          "status": {"enum": ["NOT_STARTED", "IN_PROGRESS", "SEALED",
+                              "BLOCKED", "ERROR", "CONTAMINATED"]}
+        }
+      }
+    }
+  }
+}

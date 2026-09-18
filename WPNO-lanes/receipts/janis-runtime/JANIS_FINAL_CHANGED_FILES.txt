@@ -1,0 +1,17 @@
+MODIFIED S7_bestand.sh
+MODIFIED TrackC_bestand.sh
+ADDED anonymization/iban_validation.py
+MODIFIED anonymization/payload_scan.py
+ADDED anonymization/test_case_delimiter_matrix.py
+MODIFIED anonymization/test_copy_sync.py
+ADDED anonymization/test_iban_validation.py
+ADDED anonymization/test_litellm_offline_readiness.py
+ADDED anonymization/test_payload_golden.py
+ADDED anonymization/test_payload_regression_mutations.py
+ADDED anonymization/test_payload_scanner_inventory.py
+ADDED anonymization/test_shell_find_safety.py
+ADDED anonymization/test_tax_id_validation.py
+ADDED docker/litellm/Dockerfile (source-bound copy restored from live WPNO)
+MODIFIED docker/litellm/docker-compose.yml
+REPLACED_WITH_SYMLINK docker/litellm/payload_scan.py -> ../../anonymization/payload_scan.py
+ADDED scripts/payload_scanner_inventory.py

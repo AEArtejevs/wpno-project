@@ -1,0 +1,313 @@
+{
+  "audit_id": "L1-A03",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Enumerate every version of the TOC exporter that exists on this machine, hash each, and prove from execution-path evidence which one is productive - or prove that it cannot be proven. Nothing is executed: no exporter needs to run to answer an identity question, and running one would not answer it.",
+  "static_analysis": "LIST_DIRECTORY over authoring/ identifies every file whose name contains export_with_toc. Each is hashed and compared against the binding; a mismatch means the tree changed since the package was built and the run stops with BUILD_CONTAMINATED_SOURCE_CHANGED.\n\nThree versions exist here: AP16_export_with_toc.py, AP16_export_with_toc_v2.py and AP16_export_with_toc_v4.py. Whether a v3 ever existed is answered from the Discovery hash inventory and from read-only git history over authoring/, and the places searched are recorded as evidence whether or not they yielded anything.\n\nEach version is AST-parsed and their function sets, arguments, constants and output paths are diffed. Production identity requires execution-path evidence: an import, an invocation in a script, a container command, a workflow node or a scheduler entry. Filename, version suffix, modification time, file size, documentation, comments and proximity to another file are excluded by rule. If production identity cannot be proven the answer is that it cannot be proven from this machine; no most-likely candidate is nominated.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "LIST_DIRECTORY",
+      "params": {
+        "name_contains": "export_with_toc",
+        "path": "/home/ubuntu/project/WPNO/authoring"
+      },
+      "purpose": "Re-derive the version set rather than adopt the binding's list.",
+      "step_id": "enumerate_authoring",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/authoring/AP16_export_with_toc.py"
+      },
+      "purpose": "Bind version 1.",
+      "step_id": "hash_v1",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/authoring/AP16_export_with_toc_v2.py"
+      },
+      "purpose": "Bind version 2.",
+      "step_id": "hash_v2",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/authoring/AP16_export_with_toc_v4.py"
+      },
+      "purpose": "Bind version 4.",
+      "step_id": "hash_v4",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/authoring/AP16_export_with_toc.py"
+      },
+      "purpose": "Function set, arguments, constants and output paths.",
+      "step_id": "ast_v1",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/authoring/AP16_export_with_toc_v2.py"
+      },
+      "purpose": "The same, for version 2.",
+      "step_id": "ast_v2",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/authoring/AP16_export_with_toc_v4.py"
+      },
+      "purpose": "The same, for version 4.",
+      "step_id": "ast_v4",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "COUNT_TEXT_MATCHES",
+      "params": {
+        "include_globs": [
+          "*.py",
+          "*.sh",
+          "*.yml",
+          "*.yaml",
+          "*.json",
+          "*.toml",
+          "*.cfg",
+          "*.ini",
+          "*.plist",
+          "Dockerfile*"
+        ],
+        "normal_form": "NFC",
+        "patterns": [
+          "AP16_export_with_toc",
+          "export_with_toc"
+        ],
+        "root": "/home/ubuntu/project/WPNO",
+        "word_boundary": true
+      },
+      "purpose": "Search the whole project for imports and textual references to each version, across source, shell scripts, compose files, Dockerfiles, workflow JSON, MCP configuration and scheduler definitions.",
+      "step_id": "search_callers",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "COUNT_TEXT_MATCHES",
+      "params": {
+        "include_globs": [
+          "*.py",
+          "*.sh",
+          "*.yml",
+          "*.yaml",
+          "*.json",
+          "*.toml",
+          "*.cfg",
+          "*.ini",
+          "*.plist",
+          "Dockerfile*"
+        ],
+        "normal_form": "NFC",
+        "patterns": [
+          "AP16_export_with_toc_v2"
+        ],
+        "root": "/home/ubuntu/project/WPNO",
+        "word_boundary": true
+      },
+      "purpose": "A string known to exist in exactly one version must be found there and nowhere else. This proves the search method works before absence is interpreted.",
+      "step_id": "positive_control_unique_string",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "COUNT_TEXT_MATCHES",
+      "params": {
+        "include_globs": [
+          "*.py",
+          "*.sh",
+          "*.yml",
+          "*.yaml",
+          "*.json",
+          "*.toml",
+          "*.cfg",
+          "*.ini",
+          "*.plist",
+          "Dockerfile*"
+        ],
+        "normal_form": "NFC",
+        "patterns": [
+          "AP16_export_with_toc_v3_definitely_absent"
+        ],
+        "root": "/home/ubuntu/project/WPNO",
+        "word_boundary": true
+      },
+      "purpose": "A deliberately absent identifier must return zero hits. This proves the search is not matching everything.",
+      "step_id": "negative_control_absent_identifier",
+      "timeout_seconds": 600
+    }
+  ],
+  "target": {
+    "identity_evidence": "The highest-numbered version present, bound as the enumeration's anchor and explicitly NOT as the productive version. Which version is productive is this audit's question and a version suffix is excluded by rule from answering it.",
+    "path": "/home/ubuntu/project/WPNO/authoring/AP16_export_with_toc_v4.py",
+    "sha256": "b204a8e5e9bd7a7489bd2d69c61242ec9da8c929186b4b3393599a3d120ebdb7"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "/home/ubuntu/project/WPNO/authoring",
+        "/home/ubuntu/project/WPNO"
+      ],
+      "allowed_writes": [
+        "work/L1-A03/RUN-A/",
+        "evidence/L1-A03/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A03 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A03",
+      "candidate_template_identity": "L1-A03/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A03/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "none; every step is in-process",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "ARBITRARY_SHELL",
+        "CHANGE_PERMISSION",
+        "DATABASE_CONNECTION",
+        "DATABASE_WRITE",
+        "DELETE_SOURCE",
+        "DOCKER_BUILD",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_SOCKET_ACCESS",
+        "GIT_MUTATION",
+        "INSTALL_PACKAGE",
+        "LAUNCH_AGENT_MUTATION",
+        "MCP_MUTATION",
+        "MODIFY_SOURCE",
+        "N8N_MUTATION",
+        "NETWORK_REQUEST",
+        "NETWORK_UPLOAD",
+        "SERVICE_MUTATION"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [],
+      "independent_oracle": "Execution-path evidence only. Absence of every form of it is itself the oracle's answer, and that answer is 'unprovable from this machine'.",
+      "limitations": [],
+      "method": "enumeration, hashing, AST diff and execution-path search",
+      "notes": [
+        "Every textual search is anchored with a word boundary. CLAUDE.md section 10 records the cost of omitting one: a bare *bea* matched Projektbeauftragung, Beanstandung and Bearbeitung - twelve hits, none real. A search whose boundary handling is not stated is not a search.",
+        "No exporter is executed. Execution would produce a document and still not say which version is productive."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [],
+      "references": [],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": "Production identity requires execution-path evidence: an import, an invocation in a script, a container command, a workflow node or a scheduler entry. Filename, version suffix, modification time, file size, documentation, comments and proximity to another file are excluded by rule. If production identity cannot be proven the answer is that it cannot be proven from this machine; no most-likely candidate is nominated.",
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "check_id": "enumeration_versus_binding",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Does the re-derived version set match the binding's?",
+      "required_result": "A file in one and not the other is a finding before anything else proceeds.",
+      "step_id": "enumerate_authoring",
+      "versions_expected_here": 3
+    },
+    {
+      "check_id": "did_v3_ever_exist",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "method": "the Discovery hash inventory and read-only git history over authoring/",
+      "question": "Did AP16_export_with_toc_v3.py ever exist?",
+      "required_result": "Answered from the places searched, with every place recorded whether or not it yielded anything. 'Not found' is recorded as not found, never as 'does not exist'."
+    },
+    {
+      "check_id": "productive_version",
+      "excluded_by_rule": [
+        "filename",
+        "version suffix",
+        "mtime",
+        "file size",
+        "documentation",
+        "comments",
+        "proximity"
+      ],
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Which version is productive?",
+      "required_result": "Proven from execution-path evidence, or reported as unprovable from this machine. No most-likely candidate is nominated.",
+      "step_id": "search_callers"
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_exit_code": 0,
+      "expected_minimum_count": 1,
+      "expected_result": "FOUND_IN_EXACTLY_THE_EXPECTED_PLACES",
+      "question": "Does the search find a string that is there?",
+      "step_id": "positive_control_unique_string",
+      "why": "Absence is only a result once the search is shown to work."
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_count": 0,
+      "expected_exit_code": 0,
+      "expected_failure_reason": "the identifier does not occur anywhere in the tree",
+      "expected_result": "ZERO_HITS",
+      "question": "Does the search return zero for an absent identifier?",
+      "step_id": "negative_control_absent_identifier",
+      "why": "ZERO_HITS, as the plan states. The scan must complete and find nothing; an exit code alone could not tell that apart from never having scanned."
+    },
+    {
+      "check_id": "mutation_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "question": "Is a mutation control applicable?",
+      "reason": "Nothing is being detected. The audit enumerates and attributes; there is no detector whose sensitivity a mutation would demonstrate. Recorded rather than omitted, as the specification requires.",
+      "required_result": "NOT_APPLICABLE"
+    }
+  ]
+}

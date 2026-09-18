@@ -1,0 +1,8 @@
+..................................................................................................................................................................................................................................................../home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/automation/package_tests/__init__.py:121: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/MODE' mode='r' encoding='utf-8'>
+  mode = (open(mode_path, encoding="utf-8").read().strip()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.....................................................................................................................
+----------------------------------------------------------------------
+Ran 361 tests in 193.808s
+
+OK

@@ -1,0 +1,61 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A21",
+  "binding_status": "TARGET_UNRESOLVED",
+  "logical_targets": [
+    "Docker productive copy and image provenance"
+  ],
+  "candidate_paths": [
+    "/Users/martinotten/WPNO/docker/litellm/docker-compose.yml",
+    "/Users/martinotten/WPNO/docker/litellm/Dockerfile",
+    "/Users/martinotten/WPNO/docker/litellm/payload_scan.py",
+    "/Users/martinotten/WPNO/docker/litellm/custom_callback.py"
+  ],
+  "productive_target": null,
+  "productive_target_sha256": null,
+  "productive_target_evidence": [],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [],
+  "external_evidence_required": [
+    "REF-13"
+  ],
+  "unresolved_questions": [
+    "Image ID, digest, timestamps and container mapping require an operator export."
+  ],
+  "discovery_drift": [],
+  "source_evidence": [
+    {
+      "source_path": "/Users/martinotten/WPNO/docker/litellm/docker-compose.yml",
+      "sha256": "cdd162fa4145c4617f8c71956cc570c50e1c9a4a1da69007b6cbd2c034281329",
+      "locator": "volumes block, four bind mounts",
+      "evidence_type": "config",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/docker/litellm/Dockerfile",
+      "sha256": "05fbf2c570ce65d64fdd7e62920293bda8a1c0cc13c5d2d64961bfabf072692a",
+      "locator": "build definition",
+      "evidence_type": "config",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/docker/litellm/payload_scan.py",
+      "sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b",
+      "locator": "the bind-mounted host file",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/docker/litellm/custom_callback.py",
+      "sha256": "6c83c40064c1727d0753bcaa6230314c2a4510858427542cfa5bd1ef2231b44b",
+      "locator": "the invoker",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    }
+  ],
+  "replications": 1,
+  "risk": "CRITICAL",
+  "execution_order": 7
+}

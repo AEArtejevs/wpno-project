@@ -1,0 +1,43 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A16",
+  "binding_status": "TARGET_PARTIAL",
+  "logical_targets": [
+    "Five novel DOCX injection cases"
+  ],
+  "candidate_paths": [
+    "/Users/martinotten/WPNO/ap18/AP18_eingangsfilter.py",
+    "/Users/martinotten/WPNO/ap18/AP18_erzeuge_testkorpus_docx.py"
+  ],
+  "productive_target": null,
+  "productive_target_sha256": null,
+  "productive_target_evidence": [],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [],
+  "external_evidence_required": [],
+  "unresolved_questions": [
+    "The five novel DOCX cases must be authored and must not repeat W1..W5."
+  ],
+  "discovery_drift": [],
+  "source_evidence": [
+    {
+      "source_path": "/Users/martinotten/WPNO/ap18/AP18_eingangsfilter.py",
+      "sha256": "e8ad639cbeb238b16985f240ed1045297c26a9202c603695b29f29a3ea74ffb3",
+      "locator": "the filter under test",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/ap18/AP18_erzeuge_testkorpus_docx.py",
+      "sha256": "a0a0378783c360626d57cd19075a4a820b21f777a9344789541c04e73beabef1",
+      "locator": "existing corpus builder",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    }
+  ],
+  "replications": 1,
+  "risk": "HIGH",
+  "execution_order": 20
+}

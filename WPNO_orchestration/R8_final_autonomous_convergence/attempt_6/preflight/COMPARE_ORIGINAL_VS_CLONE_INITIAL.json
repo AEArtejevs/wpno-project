@@ -1,0 +1,37 @@
+{
+ "EQUAL": true,
+ "a": {
+  "entry_count": 1362,
+  "path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_6/original_inventory/INVENTORY_PRE.json",
+  "root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8"
+ },
+ "b": {
+  "entry_count": 1362,
+  "path": "/home/ubuntu/project/WPNO_orchestration/R8_final_autonomous_convergence/attempt_6/preflight/INVENTORY_CLONE_INITIAL.json",
+  "root": "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_6_658748"
+ },
+ "compared_fields": [
+  "type",
+  "size",
+  "sha256",
+  "symlink_target",
+  "mode",
+  "uid",
+  "gid",
+  "mtime_ns"
+ ],
+ "contents_changed": 0,
+ "differences": [],
+ "gid_changed": 0,
+ "modes_changed": 0,
+ "mtimes_changed": 0,
+ "paths_added": 0,
+ "paths_differing": 0,
+ "paths_only_in_a": [],
+ "paths_only_in_b": [],
+ "paths_removed": 0,
+ "schema": "wpno.r8.attempt6-inventory-compare/1",
+ "symlink_targets_changed": 0,
+ "uid_changed": 0,
+ "written_paths": 0
+}

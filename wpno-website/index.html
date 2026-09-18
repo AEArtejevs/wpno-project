@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>WPNO — Wirtschaftsprüfungsgesellschaft · Steuerberatungsgesellschaft</title>
+<meta name="description" content="WPNO GmbH — Wirtschaftsprüfungsgesellschaft, Steuerberatungsgesellschaft. Düsseldorf · Köln · Hamburg. [PLATZHALTER: Meta-Beschreibung]" />
+<style>
+  /* ─────────────────────────────────────────────────────────────
+     SCHRIFT — System-Stacks, es wird NICHTS geladen.
+     Display/Überschriften: System-Serif (Apple: New York, sonst Georgia)
+     Mikro-Labels / Navigation: System-Sans, weit gesperrt
+     Handschrift: NICHT als Font, sondern als Inline-SVG
+     ───────────────────────────────────────────────────────────── */
+  :root{
+    --serif: ui-serif, "New York", Georgia, "Times New Roman", "Iowan Old Style", serif;
+    --sans:  -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+    --ink:    #14141a;   /* fast-Schwarz, nie reines Schwarz */
+    --ink-2:  #46464e;   /* gedämpfter Fließtext */
+    --hair:   #e4e1da;   /* Haarlinie */
+    --paper:  #ffffff;   /* Weiß */
+    --gold:   #927544;   /* EIN zurückhaltender Akzent, sparsam */
+
+    --mw: 1180px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-size:17px; line-height:1.72; font-weight:400;
+  }
+  .wrap{ max-width:var(--mw); margin:0 auto; padding:0 40px; }
+
+  .eyebrow{
+    font-family:var(--sans); font-size:11px; font-weight:600;
+    letter-spacing:.3em; text-transform:uppercase; color:var(--ink-2);
+  }
+  em{ font-style:italic; }
+
+  /* ── Kopfzeile ───────────────────────────────────────────── */
+  header{ border-bottom:1px solid var(--hair); }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; height:92px; }
+  .mark{ font-family:var(--serif); font-size:24px; letter-spacing:.36em; font-weight:500; padding-left:.36em; }
+  nav a{
+    font-family:var(--sans); font-size:12px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--ink-2); text-decoration:none; margin-left:38px; transition:color .25s;
+  }
+  nav a:hover{ color:var(--ink); }
+
+  /* ── Hero ────────────────────────────────────────────────── */
+  .hero{ padding:150px 0 120px; }
+  .hero .eyebrow{ margin-bottom:38px; }
+  .hero h1{
+    font-family:var(--serif); font-weight:400; color:var(--ink);
+    font-size:clamp(44px, 6.2vw, 84px); line-height:1.04; letter-spacing:-0.018em;
+    margin:0 0 8px; max-width:15ch;
+  }
+  .script{ display:block; margin:6px 0 42px; }
+  .script svg{ width:clamp(220px,30vw,360px); height:auto; overflow:visible; }
+  .script path{
+    fill:none; stroke:var(--gold); stroke-width:2.1; stroke-linecap:round; stroke-linejoin:round;
+    stroke-dasharray:1500; stroke-dashoffset:1500; animation:draw 2.8s ease forwards .4s;
+  }
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+  @media (prefers-reduced-motion: reduce){ .script path{ animation:none; stroke-dashoffset:0; } }
+
+  .lede{ font-family:var(--serif); font-size:clamp(20px,2.2vw,26px); line-height:1.55; color:var(--ink-2); max-width:48ch; font-weight:400; }
+  .meta-line{ margin-top:46px; font-family:var(--sans); font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:var(--ink-2); }
+  .meta-line .sep{ color:var(--hair); margin:0 14px; }
+
+  /* ── Abschnitt ───────────────────────────────────────────── */
+  section{ padding:104px 0; border-top:1px solid var(--hair); }
+  .sec-head{ display:grid; grid-template-columns:240px 1fr; gap:60px; }
+  @media (max-width:820px){ .sec-head{ grid-template-columns:1fr; gap:24px; } }
+  .sec-head h2{
+    font-family:var(--serif); font-weight:400; font-size:clamp(28px,3.6vw,44px);
+    line-height:1.14; margin:14px 0 0; letter-spacing:-0.012em; max-width:20ch;
+  }
+  .sec-head .body{ color:var(--ink-2); max-width:58ch; }
+  .sec-head .body p{ margin:0 0 18px; }
+  .sec-head .body p:last-child{ margin-bottom:0; }
+
+  /* Herkunft — herrschaftlicher Auftakt */
+  .heritage{ background:var(--paper); }
+  .heritage .crest{ font-family:var(--serif); font-size:13px; letter-spacing:.34em; text-transform:uppercase; color:var(--gold); }
+  .heritage h2{ font-size:clamp(30px,4vw,52px); }
+  .heritage .name{ white-space:nowrap; }
+  .heritage .pull{ font-family:var(--serif); font-style:italic; font-size:clamp(19px,2vw,22px); color:var(--ink); border-left:1px solid var(--gold); padding-left:26px; margin:36px 0 0; max-width:50ch; }
+
+  /* Werte / Prinzipien */
+  .cols{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--hair); margin-top:64px; }
+  @media (max-width:820px){ .cols{ grid-template-columns:1fr; } }
+  .col{ background:var(--paper); padding:40px 32px 32px; }
+  .col .n{ font-family:var(--serif); font-size:15px; color:var(--gold); letter-spacing:.1em; }
+  .col h3{ font-family:var(--serif); font-weight:500; font-size:23px; margin:18px 0 12px; }
+  .col p{ color:var(--ink-2); font-size:15.5px; margin:0; }
+
+  /* Tätigkeitsfelder */
+  .fields{ list-style:none; margin:56px 0 0; padding:0; border-top:1px solid var(--hair); }
+  .fields li{ display:grid; grid-template-columns:260px 1fr; gap:60px; align-items:baseline; padding:28px 0; border-bottom:1px solid var(--hair); }
+  @media (max-width:820px){ .fields li{ grid-template-columns:1fr; gap:8px; } }
+  .fields .k{ font-family:var(--serif); font-size:22px; }
+  .fields .d{ color:var(--ink-2); font-size:16px; }
+
+  /* Standorte + globaler Kontext */
+  .places{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--hair); margin-top:64px; }
+  @media (max-width:820px){ .places{ grid-template-columns:1fr; } }
+  .place{ background:var(--paper); padding:40px 32px; position:relative; }
+  .place h3{ font-family:var(--serif); font-weight:400; font-size:30px; margin:0 0 16px; letter-spacing:-0.01em; }
+  .place address{ font-style:normal; color:var(--ink-2); font-size:14.5px; line-height:1.85; }
+  .place .note{ margin-top:16px; padding-top:16px; border-top:1px solid var(--hair); font-family:var(--serif); font-style:italic; font-size:14px; line-height:1.55; color:var(--ink-2); }
+  .place .postal{ position:absolute; top:40px; right:32px; font-family:var(--sans); font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); }
+  .global{ margin-top:40px; font-family:var(--serif); font-style:italic; font-size:clamp(18px,2vw,22px); color:var(--ink-2); max-width:56ch; }
+  .countries{ list-style:none; display:flex; flex-wrap:wrap; align-items:center; margin:28px 0 0; padding:0; }
+  .countries li{ font-family:var(--sans); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-2); }
+  .countries li:not(:last-child)::after{ content:"·"; color:var(--gold); margin:0 14px; }
+
+  /* Das Mandat — Exklusivität */
+  .mandate{ text-align:center; padding:128px 0; }
+  .mandate .eyebrow{ display:block; margin-bottom:30px; }
+  .mandate h2{ font-family:var(--serif); font-weight:400; font-size:clamp(30px,4.4vw,56px); line-height:1.1; letter-spacing:-0.015em; margin:0 auto 32px; max-width:18ch; }
+  .mandate p{ color:var(--ink-2); max-width:50ch; margin:0 auto; font-size:18px; }
+
+  /* Haltung / Akzent */
+  .sign{ text-align:center; padding:120px 0; }
+  .sign .eyebrow{ display:block; margin-bottom:28px; }
+  .sign blockquote{ font-family:var(--serif); font-weight:400; font-size:clamp(24px,3.4vw,38px); line-height:1.32; max-width:24ch; margin:0 auto 44px; letter-spacing:-0.012em; }
+  .sign .sig svg{ width:230px; height:auto; overflow:visible; }
+  .sign .sig path{ fill:none; stroke:var(--ink); stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+
+  /* Geschäftsführung — schlicht, kein Testat-Layout */
+  .leadership{ margin-top:44px; }
+  .lead-label{ display:block; font-family:var(--sans); font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--ink-2); margin-bottom:10px; }
+  .lead-names{ font-family:var(--serif); font-style:italic; font-size:20px; color:var(--ink); }
+
+  /* Footer */
+  footer{ border-top:1px solid var(--hair); padding:60px 0 72px; }
+  .foot{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; }
+  @media (max-width:820px){ .foot{ grid-template-columns:1fr 1fr; gap:36px; } }
+  .foot .mark{ font-size:18px; }
+  .foot .legal{ font-size:12.5px; color:var(--ink-2); line-height:1.95; }
+  .foot .legal .h{ display:block; font-family:var(--sans); font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--ink); margin-bottom:10px; }
+  .foot nav a{ display:block; margin:0 0 6px; }
+  .contact{ font-family:var(--serif); }
+  .contact a{ font-size:21px; color:var(--ink); text-decoration:none; border-bottom:1px solid var(--gold); padding-bottom:2px; }
+  .contact a:hover{ color:var(--gold); }
+  .contact .hint{ display:block; margin-top:12px; font-family:var(--sans); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-2); }
+  .places-contact{ margin-top:36px; font-family:var(--serif); font-style:italic; font-size:clamp(18px,2vw,21px); color:var(--ink-2); }
+  .places-contact a{ font-style:normal; color:var(--ink); text-decoration:none; border-bottom:1px solid var(--gold); }
+
+  /* Echtes Siegel (WPNO) — monochrom in Tinte/Anthrazit statt Stempel-Blau */
+  .seal{ width:138px; height:auto; display:block; filter:grayscale(1) brightness(.82) contrast(1.12); }
+</style>
+</head>
+<body>
+
+<!-- ══ KOPF ══════════════════════════════════════════════════ -->
+<header>
+  <div class="wrap topbar">
+    <div class="mark">WPNO</div>
+    <nav>
+      <a href="#herkunft">Herkunft</a>
+      <a href="#kanzlei">Kanzlei</a>
+      <a href="#taetigkeit">Tätigkeit</a>
+      <a href="#anspruch">Anspruch</a>
+      <a href="#standorte">Standorte</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══ HERO ══════════════════════════════════════════════════ -->
+<div class="wrap">
+  <div class="hero">
+    <div class="eyebrow">Wirtschaftsprüfungsgesellschaft · Steuerberatungsgesellschaft</div>
+    <h1>Beraten und prüfen ist urteilen. Nicht verwalten.</h1>
+
+    <!-- HANDSCHRIFT-AKZENT — Inline-SVG, lädt keine Schrift.
+         Platzhalter-Flourish in Kupferstich-/Kanzlei-Anmutung der Epoche.
+         Final: getrackte Schreibschrift jener Zeit als <path>. -->
+    <span class="script" aria-label="Tradition">
+      <svg viewBox="0 0 360 90" role="img">
+        <path d="M8,60 C30,18 44,16 50,46 C54,66 40,78 36,70 C32,62 52,40 70,42
+                 C84,44 78,66 70,66 C62,66 70,46 92,44 C108,43 104,64 116,52
+                 C126,42 124,30 130,34 C136,38 132,60 146,58 C162,56 168,30 196,30
+                 C214,30 214,58 200,62 C188,65 196,40 220,40 C236,40 240,56 256,40
+                 C268,28 286,24 300,40 C312,54 300,66 312,58 C326,49 332,40 352,38" />
+      </svg>
+    </span>
+
+    <p class="lede">Ein Haus in der Tradition aus der damaligen Zeit —
+      <em>Peat, Marwick, Mitchell &amp; Co.</em> Getragen von Beratern, deren
+      Erfahrung in jener Schule wurzelt. Wir nehmen wenige Mandate an. Wir wählen
+      sie selbst.</p>
+
+    <div class="meta-line">
+      Düsseldorf <span class="sep">·</span> Köln <span class="sep">·</span> Hamburg
+      <span class="sep">·</span> grenzüberschreitend tätig
+    </div>
+  </div>
+</div>
+
+<!-- ══ HERKUNFT — der Peat-Marwick-Bogen ═════════════════════ -->
+<section id="herkunft" class="heritage">
+  <div class="wrap sec-head">
+    <div class="crest">Herkunft</div>
+    <div>
+      <h2>Tradition aus der<br><span class="name">damaligen Zeit.</span></h2>
+      <div class="body" style="margin-top:34px">
+        <p>Es gab eine Zeit — die ersten Jahrzehnte des vergangenen Jahrhunderts,
+          zwischen London und New York —, in der jene großen Häuser ihren Stand
+          begründeten: Sozietäten, deren Name für eine Auffassung stand, deren
+          Testat das Wort eines Hauses war — und deren Rat dasselbe Gewicht
+          besaß. Es war zugleich die Zeit der großen Anwaltshäuser, deren Wort in
+          den Vorstandsetagen wie vor den Gerichten galt. Diskretion war ihnen
+          nicht Pflicht, sondern Lebensform.</p>
+        <p>Aus dieser Auffassung kommen wir. <em>Urteil vor Verfahren, Substanz
+          vor Darstellung, Zurückhaltung als Stil</em> — das haben unsere Berater
+          übernommen und fortgeführt: in der Beratung wie in der Prüfung, nie in
+          der bloßen Deklaration. Wir treten <em>nicht</em> ihre Nachfolge an;
+          wir führen ihre Auffassung fort.</p>
+      </div>
+      <p class="pull">Manche Dinge lernt man nicht in einem Jahrzehnt — und
+        manche Häuser erkennt man daran, dass sie es nicht behaupten müssen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ KANZLEI ═══════════════════════════════════════════════ -->
+<section id="kanzlei">
+  <div class="wrap sec-head">
+    <div class="eyebrow">Die Kanzlei</div>
+    <div class="body">
+      <h2>Eine Sozietät unter Gleichen.</h2>
+      <p style="margin-top:28px">WPNO ist ein Haus von bewusst begrenztem Zuschnitt
+        — die Beschränkung ist gewählt, nicht erlitten. Wir übernehmen <em>keine
+        deklaratorischen Tätigkeiten</em>: keine laufende Buchhaltung, keine
+        Routine-Erklärungen, keine Massenabwicklung. Was uns anvertraut wird,
+        verlangt Urteil, nicht Verwaltung.</p>
+      <p>Unter einem Dach vereinen sich Wirtschaftsprüfer und US-amerikanische
+        Certified Public Accountants (CPA), Steuerberater und Rechtsanwälte,
+        Restrukturierungs- und Sanierungsberater, Insolvenz- und Unternehmens­berater.
+        Keiner von ihnen zählt weniger als drei Jahrzehnte im Beruf — eine
+        Erfahrung, die sich nicht einstellen, sondern allein erwerben lässt.</p>
+      <p>Wer mit uns arbeitet, arbeitet mit eben diesen Köpfen — vom ersten
+        Gespräch bis zur Entscheidung. Es gibt keine zweite Reihe, an die wir
+        weiterreichen, und niemanden, der auf Kosten des Mandanten lernt.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TÄTIGKEIT ═════════════════════════════════════════════ -->
+<section id="taetigkeit">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Tätigkeit</div>
+      <div class="body">
+        <h2>Wir beraten — und wir vertreten.</h2>
+        <p style="margin-top:24px">Als Wirtschaftsprüfer, Steuerberater und
+          Rechtsanwälte stehen wir an der Seite des Mandanten, bis die Sache
+          entschieden ist: gegenüber der Finanzverwaltung, vor den Finanz- und
+          ordentlichen Gerichten, in Sanierung, Insolvenz und Auseinandersetzung.
+          Wo andere mit dem Rat enden, vertreten wir auch die Folgen — statt sie
+          einem anderen zu überlassen.</p>
+        <p>Eines unterscheidet uns von nahezu allen Häusern unserer Profession:
+          Unsere Wirtschaftsprüfer und Steuerberater vertreten Mandanten
+          <em>bundesweit</em> vor den Finanzgerichten — mit einer Tiefe im
+          Steuerrecht, wie sie unter Prüfern die Ausnahme ist. Prüferisches Urteil
+          und streitige Steuerpraxis in einer Hand: Das ist unser Punkt.</p>
+      </div>
+    </div>
+    <ul class="fields">
+      <li><span class="k">Prüfung &amp; Beratung</span><span class="d">Gutachterliche Prüfung und betriebswirtschaftliche Beratung — die belastbare Grundlage, bevor entschieden wird.</span></li>
+      <li><span class="k">Steuer — Gestaltung &amp; Vertretung</span><span class="d">Gestaltung für Unternehmerfamilien, Stiftungen und Vermögen; Vertretung gegenüber der Finanzverwaltung und bundesweit vor den Finanzgerichten.</span></li>
+      <li><span class="k">Restrukturierung &amp; Sanierung</span><span class="d">Begleitung von Unternehmen in der Krise — Konzept, Verhandlung, Umsetzung, ehe aus der Krise eine Insolvenz wird.</span></li>
+      <li><span class="k">Insolvenz &amp; Anfechtung</span><span class="d">Vertretung gegenüber Insolvenzverwaltern — von der Forderungsanmeldung bis zur Abwehr von Anfechtungen.</span></li>
+      <li><span class="k">Recht &amp; Vertretung</span><span class="d">Als Rechtsanwälte vertreten wir vor den Gerichten — in steuerlichen, wirtschaftlichen und gesellschaftsrechtlichen Auseinandersetzungen, bis zur Entscheidung.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══ ANSPRUCH — Präzision & Zuverlässigkeit als Wesenszug ═══ -->
+<section id="anspruch">
+  <div class="wrap sec-head">
+    <div class="eyebrow">Anspruch</div>
+    <div class="body">
+      <h2>Genauigkeit ist kein Vorsatz. Sie ist ein Bedürfnis.</h2>
+      <p style="margin-top:28px">Präzision und Zuverlässigkeit verlangen uns keine
+        Anstrengung ab — sie sind die Art, wie wir denken. Was ungenau bliebe,
+        ließe uns keine Ruhe; was offen bliebe, beschäftigte uns, bis es
+        geschlossen ist.</p>
+      <p>Wer uns ein Mandat anvertraut, muss Sorgfalt nicht einfordern. Er erhält
+        sie, weil wir nicht anders können — und weil ein gegebenes Wort für uns
+        ein gehaltenes ist.</p>
+      <p>Diese Sorgfalt ist nicht allein Haltung, sondern beaufsichtigt: Als
+        Wirtschaftsprüfer sind wir gesetzliche Abschlussprüfer im Sinne des
+        § 316 HGB und unterliegen der externen Qualitätskontrolle der
+        Wirtschaftsprüferkammer — zwei Merkmale, die den Wirtschaftsprüfer vom
+        Steuerberater unterscheiden. Wir vereinen beide Professionen unter einem
+        Dach; geprüft wird bei uns auch die eigene Arbeit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STANDORTE + GLOBALER KONTEXT ══════════════════════════ -->
+<section id="standorte">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Standorte</div>
+      <div class="body">
+        <h2>Ein Haus. Drei Standorte.</h2>
+        <p style="margin-top:24px">Eine Sozietät, kein Verbund — dieselben Köpfe
+          und dieselbe Auffassung an jedem Standort. Die Postanschrift führt
+          zentral über Düsseldorf.</p>
+      </div>
+    </div>
+    <div class="places">
+      <div class="place">
+        <span class="postal">Postanschrift</span>
+        <h3>Düsseldorf</h3>
+        <address>Speditionstraße 2<br>40221 Düsseldorf</address>
+        <div class="note">Im Medienhafen — wo aus dem einstigen Rheinhafen ein
+          Quartier der Architektur und der Beratung wurde.</div>
+      </div>
+      <div class="place">
+        <h3>Köln</h3>
+        <address>Blumenthalstraße 23<br>50670 Köln</address>
+        <div class="note">Im Anwaltsviertel hinter dem Oberlandesgericht — wo
+          traditionell die beim Oberlandesgericht zugelassenen Sozietäten ihren
+          Sitz hatten.</div>
+      </div>
+      <div class="place">
+        <h3>Hamburg</h3>
+        <address>Am Kaiserkai 62<br>20457 Hamburg</address>
+        <div class="note">In der HafenCity, wo die Speicherstadt an die
+          Elbphilharmonie grenzt — hanseatische Lage, hanseatische Auffassung.</div>
+      </div>
+    </div>
+    <p class="global">Über Grenzen hinweg arbeiten wir mit unabhängigen
+      Partnerhäusern in über 30 Ländern zusammen — an den Plätzen, an denen
+      Vermögen und Unternehmen Zukunft haben. Den geeigneten Partner wählen wir
+      für jedes Mandat einzeln.</p>
+    <ul class="countries">
+      <li>Schweiz</li><li>Liechtenstein</li><li>Luxemburg</li><li>Österreich</li>
+      <li>Vereinigtes Königreich</li><li>Irland</li><li>Vereinigte Staaten</li>
+      <li>Singapur</li><li>Vereinigte Arabische Emirate</li><li>Saudi-Arabien</li>
+      <li>Katar</li><li>Indien</li><li>Kasachstan</li><li>Aserbaidschan</li>
+      <li>Turkmenistan</li><li>Kirgistan</li>
+    </ul>
+    <p class="places-contact">Wir korrespondieren bevorzugt in Schriftform —
+      <a href="mailto:info@wpno.com">info@wpno.com</a>.</p>
+  </div>
+</section>
+
+<!-- ══ DAS MANDAT — Exklusivität ═════════════════════════════ -->
+<section id="mandat" class="mandate">
+  <div class="wrap">
+    <span class="eyebrow">Das Mandat</span>
+    <h2>Ein Mandat nach dem anderen.</h2>
+    <p>Wir betreuen jeden Mandanten persönlich — und nehmen das nächste Mandat
+      erst an, wenn das vorige abgeschlossen ist. So bleiben wir wenige — und nur
+      so können Qualität, Präzision und persönlicher Kontakt unser Anspruch sein,
+      nicht bloß unsere Worte.</p>
+  </div>
+</section>
+
+<!-- ══ HALTUNG / AKZENT ══════════════════════════════════════ -->
+<section>
+  <div class="wrap sign">
+    <span class="eyebrow">Unsere Haltung</span>
+    <blockquote>Wir reden wenig und urteilen genau.</blockquote>
+    <div class="leadership">
+      <span class="lead-label">Die Geschäftsführung</span>
+      <span class="lead-names">Martin Otten · Stephan Harzer</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FUSS ══════════════════════════════════════════════════ -->
+<footer id="kontakt">
+  <div class="wrap foot">
+    <div>
+      <img class="seal" src="siegel.png" alt="WPNO GmbH — Wirtschaftsprüfungsgesellschaft · Steuerberatungsgesellschaft · Siegel · Düsseldorf" />
+      <div class="legal" style="margin-top:18px">
+        WPNO GmbH<br>
+        Wirtschaftsprüfungsgesellschaft ·<br>Steuerberatungsgesellschaft
+      </div>
+      <div class="legal" style="margin-top:14px">
+        Mitglied der Wirtschaftsprüferkammer, Berlin ·<br>
+        Steuerberaterkammer Düsseldorf ·<br>
+        Rechtsanwaltskammer Köln
+      </div>
+      <div class="contact" style="margin-top:22px">
+        <a href="mailto:info@wpno.com">info@wpno.com</a>
+        <span class="hint">Wir korrespondieren bevorzugt schriftlich</span>
+      </div>
+    </div>
+    <div class="legal"><span class="h">Düsseldorf</span>Speditionstraße 2<br>40221 Düsseldorf</div>
+    <div class="legal"><span class="h">Köln</span>Blumenthalstraße 23<br>50670 Köln</div>
+    <div class="legal"><span class="h">Hamburg</span>Am Kaiserkai 62<br>20457 Hamburg</div>
+  </div>
+  <div class="wrap" style="margin-top:48px; display:flex; justify-content:space-between; gap:30px; flex-wrap:wrap">
+    <nav>
+      <a href="#">Impressum</a>
+      <a href="#">Datenschutz</a>
+      <a href="#">Berufsrechtliche Hinweise</a>
+    </nav>
+    <div class="legal" style="align-self:flex-end">© [Jahr] WPNO GmbH</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+finding_id,severity,finding,evidence,status
+XMR-CP-001,P0,Scope guard compares product reference to HEAD rather than the candidate/index tree; staged product changes can be invisible before commit.,test_s11_control_plane_scope_guard.py; red-team verify,OPEN
+XMR-CP-002,P0,"Content validation still runs on the mutable working tree. Working-tree==index is not byte identity under filters, encodings, LFS, sparse/skip-worktree, untracked or ignored inputs.",README_REVIEW.md; s11_staged_tree_gate diff,OPEN
+XMR-CP-003,P0,WPNO_GATE_SELFTEST can replace the complete production gate with a trivial self-test; production environment is not hermetically sanitized.,run_precommit_quality_gate.py,OPEN
+XMR-CP-004,P0,WPNO_STAGEDTREE_TEST_MODE/WPNO_STAGEDTREE_GATE_CMD can advance the branch under a synthetic gate; the attestation is TEST_MODE but the broker can still return GREEN.,s11_staged_tree_gate diff; s11_validated_commit.py; staged-tree tests,OPEN
+XMR-CP-005,CRITICAL,The branch ref is updated before the V2 attestation is durably written and verified. An attestation failure can leave HEAD advanced without a valid attestation.,s11_validated_commit.py,OPEN
+XMR-CP-006,CRITICAL,GREEN_PENDING_GATECODE_REVIEW is committed to the active branch but the CLI returns failure; the state is ambiguous and product work is not hard-blocked.,s11_validated_commit.py; README_REVIEW.md,OPEN
+XMR-CP-007,CRITICAL,"HMAC is in the same trust domain as the product agent, can be redirected by environment variable, and is auto-created. It is not an independent signing root.",attestation_v2_schema.md; ci_gate diff,OPEN
+XMR-CP-008,CRITICAL,An expected active gate script that is missing is only logged as SKIP; the gate remains fail-open.,run_precommit_quality_gate.py,OPEN
+XMR-CP-009,CRITICAL,The candidate tree can modify validators and tests that judge it. Detection only produces PENDING and does not provide an external trusted oracle.,s11_staged_tree_gate diff; candidate status,OPEN
+XMR-CP-010,HIGH,"Attestation does not bind the full execution environment and external inputs: runtime, lockfiles, PATH, PYTHONPATH, locale, timezone, env, off-git manifests, databases, seeds and timeouts.",README_REVIEW.md; attestation schema,OPEN
+XMR-CP-011,CRITICAL,Direct git commit/commit-tree/update-ref can bypass the broker and ordinary hooks; unattested commits are not yet hard-excluded from the product chain.,README_REVIEW.md,OPEN
+XMR-CP-012,HIGH,V1 records can remain a current fallback trust path. Legacy evidence is not cleanly separated from current-policy eligibility.,ci_gate diff; README_REVIEW.md,OPEN
+XMR-CP-013,HIGH,"Cryptographic validity, policy freshness and product eligibility are conflated. Durability tests accept ATTESTATION_STALE as equivalent to green.",test_s11_gate_attestation_durability.py,OPEN
+XMR-CP-014,HIGH,"The alleged append-only ledger test is only a presence test and does not detect truncation, replacement or mutation of prior entries.",test_s11_gate_attestation_durability.py,OPEN
+XMR-CP-015,HIGH,"Core staged-tree tests use a lightweight injected BADVALUE gate, not the complete production gate and independent production oracle.",test_s11_control_plane_staged_tree_binding.py,OPEN
+XMR-CP-016,HIGH,Gate lifecycle registry covers only two phases; the complete phase contract is not fail-closed and the derived manifest is not authoritative.,S11_GATE_PHASE_REGISTRY.csv; gate_phase_manifest.csv; run_precommit_quality_gate.py,OPEN
+XMR-CP-017,HIGH,Design documentation contradicts implementation: detached materialized-tree gate is documented although the final code uses working-tree==index in the live repo.,S11_CONTROL_PLANE_VALIDATED_TREE_DESIGN.md; final run log,OPEN
+XMR-CP-018,HIGH,Red-team summaries claim closure while verification artifacts still contain open or partial findings; supersession and final evidence are inconsistent.,S11_CONTROL_PLANE_TARGETED_REDTEAM*.md/csv,OPEN
+XMR-CP-019,HIGH,The review bundle lacks the actual production V2 record and direct copies of two core scripts; the synthetic example has missing schema hashes.,BUNDLE_MANIFEST.csv; synthetic attestation,OPEN
+XMR-CP-020,HIGH,"Production-sensitive paths and behavior are controlled by inherited environment variables such as WPNO_CI_REPO, WPNO_ATTEST_DIR, WPNO_ATTEST_HMAC_KEY and gate settings.",scripts in diff,OPEN
+XMR-CP-021,HIGH,"Working-tree contents can mutate during the gate and be restored before the final index check, allowing a mixed-state validation; locks are only cooperative.",README_REVIEW.md; staged gate design,OPEN
+XMR-CP-022,HIGH,"commit-tree/update-ref bypass commit signing, commit-msg rules, ordinary hook side effects, session handoff and other process controls unless explicitly replicated.",README_REVIEW.md; broker,OPEN
+XMR-CP-023,HIGH,"Candidate registry uses dynamic HEAD and ad-hoc parsing/fallbacks; it is not an immutable, schema-validated promotion record.",PRODUCT_CANDIDATE_REGISTRY.yaml; scope guard,OPEN
+XMR-CP-024,MEDIUM,"Gate/test/schema hashes are truncated and omit registry, policy, toolchain and external-input state.",ci_gate diff; attestation schema,OPEN
+XMR-CP-025,MEDIUM,Absent-but-listed constitutional and schema artifacts reduce auditability and leave key rules embedded only in code/prose.,README_REVIEW.md,OPEN

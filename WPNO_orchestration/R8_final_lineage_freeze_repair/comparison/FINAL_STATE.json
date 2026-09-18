@@ -1,0 +1,30 @@
+{
+ "FINAL_STATE_AS_REQUIRED": true,
+ "L1-A31": {
+  "COMPARISON": "AWAITING_APPROVAL",
+  "RUN-A": "SEALED",
+  "RUN-B": "SEALED"
+ },
+ "MODE": "FROZEN",
+ "R9_absent": true,
+ "all_phase_states": {
+  "AWAITING_APPROVAL": 1,
+  "NOT_STARTED": 40,
+  "SEALED": 2
+ },
+ "approvals_bytes": 0,
+ "comparison_evidence_dir_exists": false,
+ "comparison_plan_sha256": "47f25f7d07023d9f18e27e0f65ea21fcc85382166983d5b9eff59dcb43b6e272",
+ "control_manifest_entries": 914,
+ "control_manifest_failing": [],
+ "control_manifest_verifies": true,
+ "freeze_ledger_outcomes": [
+  "PUBLISH_STARTED",
+  "FROZEN"
+ ],
+ "migration_ledger_destinations": [
+  "L1-A31/RUN-A",
+  "L1-A31/RUN-B"
+ ],
+ "schema": "wpno.r8.post-migration-final-state/1"
+}

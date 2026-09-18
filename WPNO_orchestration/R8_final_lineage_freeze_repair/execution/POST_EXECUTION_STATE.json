@@ -1,0 +1,40 @@
+{
+ "L1-A31": {
+  "COMPARISON": "EXECUTED",
+  "RUN-A": "SEALED",
+  "RUN-B": "SEALED"
+ },
+ "MODE": "FROZEN",
+ "all_phase_states": {
+  "EXECUTED": 1,
+  "NOT_STARTED": 40,
+  "SEALED": 2
+ },
+ "approval_rows": 1,
+ "comparison_attempt_state": "OPEN",
+ "control_manifest_entries": 914,
+ "control_manifest_failing": [],
+ "evidence_files": [
+  "evidence/L1-A31/COMPARISON/attempt-1/commands.jsonl",
+  "evidence/L1-A31/COMPARISON/attempt-1/stderr/L1-A31-COMPARISON-A1-E0001.txt",
+  "evidence/L1-A31/COMPARISON/attempt-1/stderr/L1-A31-COMPARISON-A1-E0002.txt",
+  "evidence/L1-A31/COMPARISON/attempt-1/stderr/L1-A31-COMPARISON-A1-E0003.txt",
+  "evidence/L1-A31/COMPARISON/attempt-1/stdout/L1-A31-COMPARISON-A1-E0001.txt",
+  "evidence/L1-A31/COMPARISON/attempt-1/stdout/L1-A31-COMPARISON-A1-E0002.txt",
+  "evidence/L1-A31/COMPARISON/attempt-1/stdout/L1-A31-COMPARISON-A1-E0003.txt"
+ ],
+ "frozen_manifest_verifies": true,
+ "new_paths_since_approval": 20,
+ "paths_outside_runtime_dirs": [
+  "automation/__pycache__",
+  "automation/__pycache__/__init__.cpython-314.pyc",
+  "automation/__pycache__/attempts.cpython-314.pyc",
+  "automation/__pycache__/hashing.cpython-314.pyc",
+  "automation/__pycache__/path_policy.cpython-314.pyc",
+  "automation/__pycache__/policy.cpython-314.pyc"
+ ],
+ "schema": "wpno.r8.comparison-post-execution/1",
+ "target_sha256_after": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42",
+ "target_sha256_before": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42",
+ "target_unchanged_by_execution": true
+}

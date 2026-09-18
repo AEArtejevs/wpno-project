@@ -1,0 +1,198 @@
+{
+  "audit_id": "L1-A19",
+  "run_phase": "COMPARISON",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Compare the sealed RUN-A and RUN-B results for L1-A19. The comparison reads sealed attempt evidence and computes nothing substantive itself: a comparison that recomputed an answer would be a third run, and a disagreement with it would be unattributable.",
+  "static_analysis": "RUN-A method: Python generation form - fold the first ten digits, produce the eleventh, compare. RUN-B method: Java verification form - fold all eleven digits, require the final intermediate to be 1. The two are different expressions of the same question, in different code, so a defect in one does not reproduce itself in the other. This phase reads only what those phases sealed, by their attempt manifests, and refuses to compare a phase whose seal does not verify.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PARSE_JSON_READONLY",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/progress.json"
+      },
+      "purpose": "Read the attempt index of both phases and select the accepted attempt of each. A superseded attempt is listed and not compared.",
+      "step_id": "collect_accepted_attempts",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A19/RUN-A/SEAL.json"
+      },
+      "purpose": "Bind the RUN-A seal that is being compared.",
+      "step_id": "compare_run_a_seal",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A19/RUN-B/SEAL.json"
+      },
+      "purpose": "Bind the RUN-B seal that is being compared.",
+      "step_id": "compare_run_b_seal",
+      "timeout_seconds": 120
+    }
+  ],
+  "target": {
+    "identity_evidence": "bindings/L1-A19.binding.json records productive_target_sha256 for the operator's own copy; the file on this machine hashes to the same value, so the two are the same bytes. Which copy is productive is L1-A20's question and is not decided here.",
+    "path": "/home/ubuntu/project/WPNO/anonymization/payload_scan.py",
+    "sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "state/progress.json",
+        "evidence/L1-A19/RUN-A/",
+        "evidence/L1-A19/RUN-B/"
+      ],
+      "allowed_writes": [
+        "evidence/L1-A19/COMPARISON/attempt-<n>/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A19 RUN=COMPARISON PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A19",
+      "candidate_template_identity": "L1-A19/COMPARISON/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": {
+        "run_a": "evidence/L1-A19/RUN-A/attempt-<n>/",
+        "run_b": "evidence/L1-A19/RUN-B/attempt-<n>/",
+        "selection": "the accepted attempt of each phase"
+      },
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A19/COMPARISON/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "none; every step is in-process",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "ARBITRARY_SHELL",
+        "CHANGE_PERMISSION",
+        "DATABASE_CONNECTION",
+        "DATABASE_WRITE",
+        "DELETE_SOURCE",
+        "DOCKER_BUILD",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_SOCKET_ACCESS",
+        "GIT_MUTATION",
+        "INSTALL_PACKAGE",
+        "LAUNCH_AGENT_MUTATION",
+        "MCP_MUTATION",
+        "MODIFY_SOURCE",
+        "N8N_MUTATION",
+        "NETWORK_REQUEST",
+        "NETWORK_UPLOAD",
+        "SERVICE_MUTATION"
+      ],
+      "forbidden_reads": [
+        "any unsealed or superseded attempt"
+      ],
+      "human_decisions": [],
+      "independent_oracle": "Neither run. The comparison's oracle is agreement itself: two independent methods answering the same inputs.",
+      "limitations": [
+        "The REF-03 ISO/IEC 7064 item is an eleven-page iTeh preview containing normative pages 1-5. It establishes that MOD 11,10 is the designated hybrid system with one check digit; it does not contain clauses 9 and 10 and must not be described as the complete ISO standard. The operational calculation is taken from the official ELSTER specification and corroborated by REF-04's independent implementation."
+      ],
+      "method": "read two sealed attempts and compare their recorded answers",
+      "notes": [
+        "What is compared: the per-input category assigned by each run over the same 34 vectors, and each run's agreement with the REF-04-derived reference answer"
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [
+        "REF-03",
+        "REF-04"
+      ],
+      "references": [
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-03_ELSTER_Pruefung_Steueridentifikationsnummer_2026-04-15.pdf",
+          "sha256": "f5f8a41beabb469851e26b47cdd4eb6641a9bdbc68c34a589edaa90631b37f41"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-03_ISO_IEC_7064_2003.pdf",
+          "sha256": "b88b0f84a0f1e121ff49a7640a62a4c9057e5cfedcaf790eff86c0fa5f1c31f8"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-03_BZSt_German_IdNr_Issuer_Specification.pdf",
+          "sha256": "b2ec9da8ae160d548d46eebebe0ef9ccfc9f9db204a25cea4ff3f04fc7609a0f"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-03_SOURCE_MAP.txt",
+          "sha256": "5dcd16b464c8d950f88f1ef78730379966df2d1d907f4d28db6dc0a4db9a9a0b"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-04_idnr.py",
+          "sha256": "406499181359159d39185b2703e32764c13be54c30834a7b0f172e68af76aa77"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-04_test_de_idnr.doctest",
+          "sha256": "95d71ea0dee4276908f2d32a1adf05c938164ecd836ee384dc4ffc7439a58ecd"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/corpora/R7_REF04_IDNR_VECTORS.jsonl",
+          "sha256": "6eba579879d929d0c6fe94ef05143cabca9d588a21ea33240e4e706f34e2bd5c"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/corpora/R7_REF04_IDNR_VECTORS.meta.json",
+          "sha256": "beba35ff571f55572c306fc4e10d5033bf51a4ba35ccb61e01e93b20c34e0d5a"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/manifest.json",
+          "sha256": "4c1e9a706a5ba2a3c6f25f7ffc37963efadbe529f907865f516982ce3b54f1b4"
+        }
+      ],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "COMPARISON",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": null,
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "check_id": "compared",
+      "compared": "the per-input category assigned by each run over the same 34 vectors, and each run's agreement with the REF-04-derived reference answer",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Do the two independent methods agree, input by input?",
+      "required_result": "Agreement is reported per input, not as a single score. The counts of agreement and disagreement are both reported.",
+      "why": "Two methods that agree corroborate each other. Two that disagree locate a defect in one of them, and which one is a further question this phase does not decide."
+    },
+    {
+      "check_id": "disagreement",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "What happens when the two runs disagree?",
+      "required_result": "A disagreement is a finding and is sealed as one. It is never resolved by preferring the run whose answer is more convenient.",
+      "verdict_effect": "A disagreement forbids PASS for this audit."
+    },
+    {
+      "check_id": "refusal",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "question": "What does this phase refuse to do?",
+      "refusal": "It refuses to compare when either phase has no accepted sealed attempt, when either seal does not verify against its own manifest, or when the two phases were bound to different targets.",
+      "superseded_attempts": "listed in the evidence and excluded from the comparison"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A04",
+  "binding_status": "TARGET_PARTIAL",
+  "logical_targets": [
+    "Table of contents versus actual generated document text"
+  ],
+  "candidate_paths": [
+    "/Users/martinotten/WPNO/authoring/AP16_export_with_toc_v4.py"
+  ],
+  "productive_target": null,
+  "productive_target_sha256": null,
+  "productive_target_evidence": [],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [],
+  "external_evidence_required": [],
+  "unresolved_questions": [
+    "Depends on L1-A03 target resolution.",
+    "Is the TOC a static list or a Word-resolved field?"
+  ],
+  "discovery_drift": [],
+  "source_evidence": [
+    {
+      "source_path": "/Users/martinotten/WPNO/authoring/AP16_export_with_toc_v4.py",
+      "sha256": "b204a8e5e9bd7a7489bd2d69c61242ec9da8c929186b4b3393599a3d120ebdb7",
+      "locator": "candidate only, pending L1-A03",
+      "evidence_type": "source",
+      "confidence": "LOW"
+    }
+  ],
+  "replications": 1,
+  "risk": "HIGH",
+  "execution_order": 24
+}

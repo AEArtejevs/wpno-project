@@ -1,0 +1,342 @@
+{
+  "by_origin": {
+    "DERIVED_FROM_REAL_BYTES": 2,
+    "REAL_BYTES_FROM_ACCEPTED_MATERIAL": 5,
+    "SYNTHETIC_STAND_IN": 25
+  },
+  "count": 32,
+  "fixtures": [
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A01/RUN1/output.docx",
+      "is_directory": false,
+      "note": "stands in for the first of the two generator runs this rehearsal does not perform",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN1/output.docx",
+      "sha256": "1f2642d0f19ffea7c8d4cf13928e3d3ac1f2898c89fd3512fd4a68afc04a64a2",
+      "size": 942
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A01/RUN2/output.docx",
+      "is_directory": false,
+      "note": "a byte-identical second run; whether the real generator is deterministic is the audit's question and is not decided here",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN2/output.docx",
+      "sha256": "1f2642d0f19ffea7c8d4cf13928e3d3ac1f2898c89fd3512fd4a68afc04a64a2",
+      "size": 942
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A01/controls/output_from_changed_input.docx",
+      "bytes_actually_differ": true,
+      "differs_from": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A01/RUN1/output.docx",
+      "differs_from_sha256": "1f2642d0f19ffea7c8d4cf13928e3d3ac1f2898c89fd3512fd4a68afc04a64a2",
+      "is_directory": false,
+      "note": "one paragraph altered, so the positive control has a difference to find",
+      "origin": "DERIVED_FROM_REAL_BYTES",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/controls/output_from_changed_input.docx",
+      "sha256": "3fcfe5c766a191308f31e5218e7d84d89b8ab98b414506f8b53fb254d6b28a8b",
+      "size": 948
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A01/controls/unchanged_a.docx",
+      "is_directory": false,
+      "note": "an identical pair; the control's outcome is substantive",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/controls/unchanged_a.docx",
+      "sha256": "ad67570722695b4c84d5dbf59f193231a138f30ba5dbbb8e14a4d3c9f6a266e2",
+      "size": 926
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A01/controls/unchanged_b.docx",
+      "is_directory": false,
+      "note": "an identical pair; the control's outcome is substantive",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/controls/unchanged_b.docx",
+      "sha256": "ad67570722695b4c84d5dbf59f193231a138f30ba5dbbb8e14a4d3c9f6a266e2",
+      "size": 926
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A02/fixtures/F1.docx",
+      "is_directory": false,
+      "note": "the unmodified document fixture the independent reader parses",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A02/RUN-A/fixtures/F1.docx",
+      "sha256": "b8140b623fd36f35571f1d8685a8165796aae3b1266bfadab6915a6bcd17d27d",
+      "size": 961
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A04/generated/T1.docx",
+      "is_directory": false,
+      "note": "a generated document carrying a real TOC field instruction, so the TOC extraction has a field to extract",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/generated/T1.docx",
+      "sha256": "745333542dd73b94f1dc4f04bfdf0875a7b21ada91e2f357ce7222f91c62fb0f",
+      "size": 1017
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A11/roster/SUPPLEMENT_MANIFEST.sha256",
+      "is_directory": false,
+      "note": "an exact copy of the REF-05 operator supplement manifest; the plan's expected_sha256 is really tested against it",
+      "origin": "REAL_BYTES_FROM_ACCEPTED_MATERIAL",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A11/RUN-A/roster/SUPPLEMENT_MANIFEST.sha256",
+      "sha256": "374e18e51923327a25ad7ad285ae708db9ea1b3d9845c085194ae813db2f0e23",
+      "size": 323
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A14/extracted/docProps/app.xml",
+      "is_directory": false,
+      "note": "extracted from references/REF-06_S01.docx; the reference is read and not modified",
+      "origin": "REAL_BYTES_FROM_ACCEPTED_MATERIAL",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A14/RUN-A/extracted/docProps/app.xml",
+      "sha256": "674c54a8156b112b257063cf750c4d97e88c76e3316066a7e34135ed34d3ba6f",
+      "size": 1053
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A16/cases/N1.docx",
+      "is_directory": false,
+      "note": "one of the five cases the phase builds; novelty against the real corpus is measured, the content is synthetic",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/N1.docx",
+      "sha256": "f3b721df96563e43504ec6096894829b13f2741f79488950b2299df559f8ae48",
+      "size": 953
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A16/cases/N2.docx",
+      "is_directory": false,
+      "note": "one of the five cases the phase builds; novelty against the real corpus is measured, the content is synthetic",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/N2.docx",
+      "sha256": "bbd99480c9013f351173551e8c21a458a5800b49c75b97ecbe69e5e218382421",
+      "size": 953
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A16/cases/N3.docx",
+      "is_directory": false,
+      "note": "one of the five cases the phase builds; novelty against the real corpus is measured, the content is synthetic",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/N3.docx",
+      "sha256": "0d595b6a7578f2f501a9cc6dfddd3d04522f497067b28e814028bb527c8e1411",
+      "size": 953
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A16/cases/N4.docx",
+      "is_directory": false,
+      "note": "one of the five cases the phase builds; novelty against the real corpus is measured, the content is synthetic",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/N4.docx",
+      "sha256": "fb7773c99761d47a3ec28438c229d2356cc27982dc39634fb8a7dca8d8c87d13",
+      "size": 953
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A16/cases/N5.docx",
+      "is_directory": false,
+      "note": "one of the five cases the phase builds; novelty against the real corpus is measured, the content is synthetic",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/N5.docx",
+      "sha256": "c9e7bbfa5439daec4f734e9d4c351669370a940a3b5cf05204032713bad0560c",
+      "size": 953
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A16/cases",
+      "is_directory": true,
+      "note": "the candidate directory the novelty measurement enumerates",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases",
+      "sha256": null,
+      "size": null
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A16/cases/novelty_controls/novel",
+      "is_directory": true,
+      "note": "a case known to be absent from the corpus; it must be reported novel or the measurement cannot recognise novelty",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/novelty_controls/novel",
+      "sha256": null,
+      "size": null
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A16/cases/novelty_controls/duplicate",
+      "is_directory": true,
+      "note": "a byte-identical copy of corpus member W1; it must be reported duplicate",
+      "origin": "REAL_BYTES_FROM_ACCEPTED_MATERIAL",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/novelty_controls/duplicate",
+      "sha256": null,
+      "size": null
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A16/cases/novelty_controls/renamed",
+      "is_directory": true,
+      "note": "corpus member W1 under a different filename; it must still be reported duplicate",
+      "origin": "REAL_BYTES_FROM_ACCEPTED_MATERIAL",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/novelty_controls/renamed",
+      "sha256": null,
+      "size": null
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A20/controls/identical_copy.py",
+      "is_directory": false,
+      "note": "a byte-for-byte copy of the real payload scanner; the positive control's equality is therefore a real equality",
+      "origin": "REAL_BYTES_FROM_ACCEPTED_MATERIAL",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A20/RUN-A/controls/identical_copy.py",
+      "sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b",
+      "size": 21564
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A20/controls/comment_changed.py",
+      "bytes_actually_differ": true,
+      "differs_from": "/home/ubuntu/project/WPNO/anonymization/payload_scan.py",
+      "differs_from_sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b",
+      "is_directory": false,
+      "note": "the same source with one comment appended: the raw bytes differ and the AST must not",
+      "origin": "DERIVED_FROM_REAL_BYTES",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A20/RUN-A/controls/comment_changed.py",
+      "sha256": "b952793cf523c23431bd61228edb271990e8b44cb703170766f492228d01bb6f",
+      "size": 21626
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A24/external_host/EXECUTION_PACKET.json",
+      "is_directory": false,
+      "note": "the execution packet is written for the live phase on the external host; this stands in so the step can parse something",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A24/RUN-A/external_host/EXECUTION_PACKET.json",
+      "sha256": "930966932b36876e45ba325da78e3792154b68d6dfc435095c4d98e6bdf8b8b2",
+      "size": 292
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A24/external_host/INTAKE_OUTSIDE.json",
+      "is_directory": false,
+      "note": "an intake record shaped like the real one; the control's substantive assertion is not expressible in the step, which is recorded in the control coverage record",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A24/RUN-A/external_host/INTAKE_OUTSIDE.json",
+      "sha256": "f09f6cff81bd7edd8e3fac402ad406d227ad2748c71b6cb41535e37db8059282",
+      "size": 171
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A24/external_host/EXTERNAL_DIR_PRE.sha256",
+      "is_directory": false,
+      "note": "pre and post manifests of the external directory, staged equal because the control asserts the external directory did not change; a test proves the control fails when they differ",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A24/RUN-A/external_host/EXTERNAL_DIR_PRE.sha256",
+      "sha256": "aa0b9684cb91b9ad9e311dd10a0047a13a535d61c6a93d63ec23fb65a666ce58",
+      "size": 51
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A24/external_host/EXTERNAL_DIR_POST.sha256",
+      "is_directory": false,
+      "note": "pre and post manifests of the external directory, staged equal because the control asserts the external directory did not change; a test proves the control fails when they differ",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A24/RUN-A/external_host/EXTERNAL_DIR_POST.sha256",
+      "sha256": "aa0b9684cb91b9ad9e311dd10a0047a13a535d61c6a93d63ec23fb65a666ce58",
+      "size": 51
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/_sealed_attempts/L1-A18/RUN-A/ATTEMPT_INDEX.json",
+      "is_directory": false,
+      "note": "a sealed synthetic attempt under the rehearsal root; the comparison step really hashes it, and it is not live evidence",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A18/RUN-A/ATTEMPT_INDEX.json",
+      "sha256": "fb103f94830b3d5e1c178f68a7eb790940881d1f22eb7d9c1f8a13813dcd532f",
+      "size": 227
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/_sealed_attempts/L1-A18/RUN-B/ATTEMPT_INDEX.json",
+      "is_directory": false,
+      "note": "a sealed synthetic attempt under the rehearsal root; the comparison step really hashes it, and it is not live evidence",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A18/RUN-B/ATTEMPT_INDEX.json",
+      "sha256": "32c7ad1bda6d09e609901ffa8db1a5dc22932dc050f338147d0b8d61556511f4",
+      "size": 227
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/_sealed_attempts/L1-A19/RUN-A/SEAL.json",
+      "is_directory": false,
+      "note": "a sealed synthetic attempt under the rehearsal root; the comparison step really hashes it, and it is not live evidence",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A19/RUN-A/SEAL.json",
+      "sha256": "39182d0eeb932fd0e6fe482ef16b6d7363af3d2e57534ab5ef316d16ff8c216b",
+      "size": 298
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/_sealed_attempts/L1-A19/RUN-B/SEAL.json",
+      "is_directory": false,
+      "note": "a sealed synthetic attempt under the rehearsal root; the comparison step really hashes it, and it is not live evidence",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A19/RUN-B/SEAL.json",
+      "sha256": "bd9d375ff753fb8fe522c90208af54338d0b8cf7d7e20b9fe5676eff7f7efc9a",
+      "size": 298
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/_sealed_attempts/L1-A31/RUN-A/ATTEMPT_INDEX.json",
+      "is_directory": false,
+      "note": "a sealed synthetic attempt under the rehearsal root; the comparison step really hashes it, and it is not live evidence",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A31/RUN-A/ATTEMPT_INDEX.json",
+      "sha256": "86ab0c845671cb68721bb12227419a467725517e7c3b66781afd8b805468ebf1",
+      "size": 227
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/_sealed_attempts/L1-A31/RUN-B/ATTEMPT_INDEX.json",
+      "is_directory": false,
+      "note": "a sealed synthetic attempt under the rehearsal root; the comparison step really hashes it, and it is not live evidence",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A31/RUN-B/ATTEMPT_INDEX.json",
+      "sha256": "5e315ec36ceb2a6707e82f9592c6f1f6dd9251acf3da746ee2addb0b4d0ce7a2",
+      "size": 227
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/_sealed_attempts/L1-A34/RUN-A/ATTEMPT_INDEX.json",
+      "is_directory": false,
+      "note": "a sealed synthetic attempt under the rehearsal root; the comparison step really hashes it, and it is not live evidence",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A34/RUN-A/ATTEMPT_INDEX.json",
+      "sha256": "175f2bc70fba8d7800fba2aab7b81922bbc22bda809bd3178dcd70cffadbeafd",
+      "size": 227
+    },
+    {
+      "actual_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/_sealed_attempts/L1-A34/RUN-B/ATTEMPT_INDEX.json",
+      "is_directory": false,
+      "note": "a sealed synthetic attempt under the rehearsal root; the comparison step really hashes it, and it is not live evidence",
+      "origin": "SYNTHETIC_STAND_IN",
+      "planned_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A34/RUN-B/ATTEMPT_INDEX.json",
+      "sha256": "d7af867976fba08fa65ed7d6535e6d87838d86d1a141ad8ec8e831cebb1ed258",
+      "size": 227
+    }
+  ],
+  "revision": "R8",
+  "rule": "every entry maps a path a plan names to the path the rehearsal actually reads; the executor records both sides on every step that uses one",
+  "schema": "wpno.level1.rehearsal-input-substitutions/1",
+  "staged_at_utc": "2026-08-28T14:27:51Z",
+  "substitutions": {
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A18/RUN-A/ATTEMPT_INDEX.json": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/_sealed_attempts/L1-A18/RUN-A/ATTEMPT_INDEX.json",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A18/RUN-B/ATTEMPT_INDEX.json": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/_sealed_attempts/L1-A18/RUN-B/ATTEMPT_INDEX.json",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A19/RUN-A/SEAL.json": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/_sealed_attempts/L1-A19/RUN-A/SEAL.json",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A19/RUN-B/SEAL.json": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/_sealed_attempts/L1-A19/RUN-B/SEAL.json",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A31/RUN-A/ATTEMPT_INDEX.json": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/_sealed_attempts/L1-A31/RUN-A/ATTEMPT_INDEX.json",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A31/RUN-B/ATTEMPT_INDEX.json": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/_sealed_attempts/L1-A31/RUN-B/ATTEMPT_INDEX.json",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A34/RUN-A/ATTEMPT_INDEX.json": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/_sealed_attempts/L1-A34/RUN-A/ATTEMPT_INDEX.json",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A34/RUN-B/ATTEMPT_INDEX.json": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/_sealed_attempts/L1-A34/RUN-B/ATTEMPT_INDEX.json",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN1/output.docx": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A01/RUN1/output.docx",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN2/output.docx": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A01/RUN2/output.docx",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/controls/output_from_changed_input.docx": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A01/controls/output_from_changed_input.docx",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/controls/unchanged_a.docx": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A01/controls/unchanged_a.docx",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/controls/unchanged_b.docx": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A01/controls/unchanged_b.docx",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A02/RUN-A/fixtures/F1.docx": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A02/fixtures/F1.docx",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A04/RUN-A/generated/T1.docx": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A04/generated/T1.docx",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A11/RUN-A/roster/SUPPLEMENT_MANIFEST.sha256": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A11/roster/SUPPLEMENT_MANIFEST.sha256",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A14/RUN-A/extracted/docProps/app.xml": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A14/extracted/docProps/app.xml",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A16/cases",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/N1.docx": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A16/cases/N1.docx",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/N2.docx": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A16/cases/N2.docx",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/N3.docx": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A16/cases/N3.docx",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/N4.docx": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A16/cases/N4.docx",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/N5.docx": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A16/cases/N5.docx",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/novelty_controls/duplicate": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A16/cases/novelty_controls/duplicate",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/novelty_controls/novel": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A16/cases/novelty_controls/novel",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A16/RUN-A/cases/novelty_controls/renamed": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A16/cases/novelty_controls/renamed",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A20/RUN-A/controls/comment_changed.py": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A20/controls/comment_changed.py",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A20/RUN-A/controls/identical_copy.py": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A20/controls/identical_copy.py",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A24/RUN-A/external_host/EXECUTION_PACKET.json": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A24/external_host/EXECUTION_PACKET.json",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A24/RUN-A/external_host/EXTERNAL_DIR_POST.sha256": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A24/external_host/EXTERNAL_DIR_POST.sha256",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A24/RUN-A/external_host/EXTERNAL_DIR_PRE.sha256": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A24/external_host/EXTERNAL_DIR_PRE.sha256",
+    "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A24/RUN-A/external_host/INTAKE_OUTSIDE.json": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/_rehearsal_r8/fixtures/inputs/L1-A24/external_host/INTAKE_OUTSIDE.json"
+  }
+}

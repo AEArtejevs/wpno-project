@@ -1,0 +1,28 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A35",
+  "binding_status": "EXTERNAL_EVIDENCE_REQUIRED",
+  "logical_targets": [
+    "Whether copying on 17.08 could have caused the damage"
+  ],
+  "candidate_paths": [],
+  "productive_target": null,
+  "productive_target_sha256": null,
+  "productive_target_evidence": [],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [],
+  "external_evidence_required": [
+    "REF-11"
+  ],
+  "unresolved_questions": [
+    "Source copy, destination copy and copy metadata are absent.",
+    "The coverage boundary depends on L1-A34."
+  ],
+  "discovery_drift": [],
+  "source_evidence": [],
+  "replications": 1,
+  "risk": "CRITICAL",
+  "execution_order": 35
+}

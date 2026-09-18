@@ -1,0 +1,4 @@
+{
+  "error": "MigrationError",
+  "message": "PACKET_ALREADY_CONSUMED: fb97facea18155e6b81fdc6e913e14c0b85f1658f5e238de0973cfac8e66df27 was applied at 2026-08-28T22:57:09Z. A migration is applied once; replaying one would duplicate imported evidence under a second attempt number."
+}

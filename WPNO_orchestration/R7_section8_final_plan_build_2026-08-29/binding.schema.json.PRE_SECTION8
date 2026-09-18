@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Level-1 target binding",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "audit_id", "binding_status", "logical_targets",
+               "candidate_paths", "productive_target",
+               "productive_target_sha256", "productive_target_evidence",
+               "execution_path_evidence", "test_candidates",
+               "related_components", "independent_reference_candidates",
+               "external_evidence_required", "unresolved_questions",
+               "discovery_drift", "source_evidence"],
+  "properties": {
+    "schema": {"const": "wpno.level1.binding/1"},
+    "audit_id": {"type": "string", "pattern": "^L1-A[0-3][0-9]$"},
+    "binding_status": {
+      "enum": ["TARGET_CONFIRMED", "TARGET_PARTIAL", "TARGET_UNRESOLVED",
+               "TARGET_MISSING", "EXTERNAL_EVIDENCE_REQUIRED"]
+    },
+    "logical_targets": {"type": "array", "items": {"type": "string"}},
+    "candidate_paths": {"type": "array", "items": {"type": "string", "pattern": "^/"}},
+    "productive_target": {"type": ["string", "null"]},
+    "productive_target_sha256": {"type": ["string", "null"],
+                                 "pattern": "^[0-9a-f]{64}$"},
+    "productive_target_evidence": {"type": "array", "items": {"type": "object",
+      "additionalProperties": true, "properties": {}}},
+    "execution_path_evidence": {"type": "array", "items": {"type": "object",
+      "additionalProperties": true, "properties": {}}},
+    "test_candidates": {"type": "array", "items": {"type": "string"}},
+    "related_components": {"type": "array", "items": {"type": "string"}},
+    "independent_reference_candidates": {"type": "array", "items": {"type": "string"}},
+    "external_evidence_required": {"type": "array", "items": {"type": "string"}},
+    "unresolved_questions": {"type": "array", "items": {"type": "string"}},
+    "discovery_drift": {"type": "array", "items": {"type": "string"}},
+    "source_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_path", "sha256", "locator", "evidence_type",
+                     "confidence"],
+        "properties": {
+          "source_path": {"type": "string", "pattern": "^/"},
+          "sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+          "locator": {"type": "string", "minLength": 1},
+          "evidence_type": {"enum": ["source", "config", "data", "artifact",
+                                     "documentation", "test", "export"]},
+          "confidence": {"enum": ["HIGH", "MEDIUM", "LOW"]}
+        }
+      }
+    },
+    "replications": {"type": "integer", "minimum": 1, "maximum": 2},
+    "risk": {"enum": ["CRITICAL", "HIGH", "MEDIUM", "LOW"]},
+    "execution_order": {"type": "integer", "minimum": 1, "maximum": 35}
+  }
+}

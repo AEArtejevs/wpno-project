@@ -1,0 +1,56 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A17",
+  "binding_status": "TARGET_CONFIRMED",
+  "logical_targets": [
+    "Production invocation path of the input filter"
+  ],
+  "candidate_paths": [
+    "/Users/martinotten/WPNO/ap18/AP18_eingangsfilter.py",
+    "/Users/martinotten/WPNO/gateway/WPNO_gateway.py",
+    "/Users/martinotten/WPNO/orchestrator/ap12_tool_loop.py"
+  ],
+  "productive_target": "/Users/martinotten/WPNO/ap18/AP18_eingangsfilter.py",
+  "productive_target_sha256": "e8ad639cbeb238b16985f240ed1045297c26a9202c603695b29f29a3ea74ffb3",
+  "productive_target_evidence": [
+    {
+      "claim": "File identity confirmed by name, symbol match and SHA-256.",
+      "note": "File identity is NOT production identity. No execution-path evidence establishes that this file is the copy invoked in production. See discovery_reconciliation/04_PRODUCTION_PATH_RECONCILIATION.md."
+    }
+  ],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [],
+  "external_evidence_required": [
+    "REF-14"
+  ],
+  "unresolved_questions": [],
+  "discovery_drift": [],
+  "source_evidence": [
+    {
+      "source_path": "/Users/martinotten/WPNO/ap18/AP18_eingangsfilter.py",
+      "sha256": "e8ad639cbeb238b16985f240ed1045297c26a9202c603695b29f29a3ea74ffb3",
+      "locator": "whole file",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/gateway/WPNO_gateway.py",
+      "sha256": "b122711bda90eecc60c8ad22ba92e73568c7b77dfcb28bc1942948f868bf87c0",
+      "locator": "candidate caller",
+      "evidence_type": "source",
+      "confidence": "MEDIUM"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/orchestrator/ap12_tool_loop.py",
+      "sha256": null,
+      "locator": "candidate caller",
+      "evidence_type": "source",
+      "confidence": "LOW"
+    }
+  ],
+  "replications": 1,
+  "risk": "CRITICAL",
+  "execution_order": 5
+}

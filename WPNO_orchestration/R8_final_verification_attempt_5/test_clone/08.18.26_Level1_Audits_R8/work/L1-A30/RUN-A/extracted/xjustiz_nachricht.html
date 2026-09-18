@@ -1,0 +1,485 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="de" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.xjustiz.de" xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Elektronisches Empfangsbekenntnis</title>
+        <style type="text/css">
+				
+					@media screen {
+
+						* {
+							margin: 0;
+							padding: 0;
+						}
+
+						html {
+							height: 100%;
+							box-sizing: border-box;
+							font-size: 100%;
+						}
+
+						body {
+							font-family: Arial, sans-serif;
+							font-size: 1rem;
+							font-weight: normal;
+							text-align: left;
+							color: #000;
+							background-color: #fff;
+							margin: 2em;
+							padding-bottom: 4em;
+						}
+						
+						main {
+							display: block; /* fuer IE9-11 noetig; jedoch keine Browser-Unterstuetzung mehr */
+						}
+
+						h1 {	
+							font-size: 2rem;
+							font-weight: bold;
+							text-align:	center;
+							margin-bottom: 1.25em;
+						}
+						
+						h2 {
+							font-size: 1.15rem;
+							font-weight: bold;
+							margin-top: 2em;
+						}
+						   
+						p {
+							margin-top: 1em;
+							margin-bottom: 1em;
+						}
+						
+						p.meldung {
+							font-size: 1.25rem;
+							font-weight: bold;
+						}
+						
+						p.titleKeinJS {
+							font-weight: bold; 
+							color: #D30000;
+						}
+
+						ul {
+							margin: 1em 0;
+							padding: 0 15px;
+						}
+						
+						li {
+							list-style-type: square;
+						}
+						
+						div {
+							margin: 1em 0;
+						}
+						
+						div.eebAblehnung {
+							display: inline-block;
+							margin: 0;
+							width: 34%;
+						}
+						
+						div.box {
+							display: block;
+							border-radius: 10px;
+							margin: 0 auto 2em auto;
+							padding: 5px 20px;
+						}
+						
+						div#hinweisBoxUpdateStylesheet {
+							/* nur StSh */
+							display: none;
+						}
+						
+						div.fehlerBox {
+							color: #c32e04;
+							border: 4px solid #c32e04;
+							max-width: 720px;
+						}
+						
+						div#fehlerBoxKeinJS {
+							display: block; /* in BrAnwg: ausgelagert! */
+							text-align: center;
+							margin: 0 auto 3em auto;
+							border: 2px solid silver;
+							border-radius: 10px;
+							padding: 1em;
+							max-width: 575px;
+						}
+
+						div.hinweisBox {
+							color: #c32e04; /* beige: #CC9933; */
+							border: 4px solid #c32e04; /* beige: #dfac20; */
+							max-width: 720px;
+						}
+						
+						.rahmen {
+							border:	2px solid;
+							padding: 10px;
+						}
+						
+						.fett {
+							font-weight: bold;
+						}
+						
+						.unterstrichen {
+							text-decoration: underline;
+						}
+						   
+						.kursiv { 
+							font-style: italic; /* i.d.R. als 'em' */
+						}
+						   
+						.abstandOben {
+							margin-top: 2em;
+						}
+						
+						.abstandUnten {
+							margin-bottom: 2em;
+						}
+						
+						.textFloatRight {
+							float: right;
+						}
+						
+						.textCenter {
+							text-align: center;
+						}
+						
+						.fehler {
+							color: #D30000;
+						}
+						
+						.hinweis {
+						}
+						   
+						.rot {
+							color: #D30000;
+						}
+						
+						table {  
+							padding: 10px; 
+							border-spacing: 0; 
+							border-collapse: collapse; 
+							border: 2px solid black;
+							empty-cells: show;
+							width: 100%;
+						}
+						
+						table th { 
+							border: 1px solid #000;
+							text-align: center;
+							padding: 5px 12px;  
+							background-color: #D3D3D3;
+						}
+				
+						table td { 
+							vertical-align: top; 
+							border: 1px solid #000;
+							padding: 5px 12px;		
+						}
+						
+						table th:first-child,
+						table td:first-child {
+							width: 3%;
+							text-align: center;
+						}
+						
+						table th:nth-child(2),
+						table td:nth-child(2) {
+							width: 20%;
+						}
+						
+						table th:nth-child(3),
+						table td:nth-child(3) {
+							width: 12%;
+							text-align: center;
+						}
+						
+						table th:nth-child(4),
+						table td:nth-child(4) {
+							-ms-hyphens: auto;
+							-moz-hyphens: auto;
+							-webkit-hyphens: auto;
+							hyphens: auto; 
+							word-break: break-all;
+						}
+						
+						.nobr,
+						.nobr_screen {
+							white-space: nowrap;
+						}
+						
+						.print {
+							display: none;
+						}
+						
+						/* HTML2PDF - in dieser Variante entfernt! */
+						
+					}
+						
+					@media print {
+						
+						* {
+							margin: 0;
+							padding: 0;
+							background-color: #fff;
+						}
+
+						html {
+							height: 100%;
+							box-sizing: border-box;
+							font-size: 100%;
+						}
+
+						body {
+							font-family: Arial, sans-serif;
+							font-size: 1rem;
+							font-weight: normal;
+							text-align: left;
+							color: #000;
+							background-color: #fff;
+							margin: 2em;
+							padding-bottom: 0em;
+						}
+						
+						main {
+							display: block; /* fuer IE9-11 noetig; jedoch keine Browser-Unterstuetzung mehr */
+						}
+
+						h1 {	
+							font-size: 2rem;
+							font-weight: bold;
+							text-align:	center;
+							margin-bottom: 1.25em;
+						}
+						
+						h2 {
+							font-size: 1.15rem;
+							font-weight: bold;
+							margin-top: 2em; /* in Br.Anwg: ausgelagert! */
+						}
+						   
+						p {
+							margin-top: 1em;
+							margin-bottom: 1em;
+						}
+						
+						p.meldung {
+							font-size: 1.25rem;
+							font-weight: bold;
+						}
+						
+						p.titleKeinJS {
+							font-weight: bold;
+							color: #D30000;
+						}
+						
+						ul {
+							margin: 1em 0;
+							padding: 0 15px;
+						}
+						
+						li {
+							list-style-type: square;
+						}
+						
+						div {
+							margin: 1em 0;
+						}
+						
+						div.eebAblehnung {
+							display: inline-block;
+							margin: 0;
+							width: 75%;
+						}
+						
+						div.box {
+							display: block;
+							border-radius: 10px;
+							margin: 0 auto 2em auto;
+							padding: 5px 15px;
+							max-width: 75%;
+						}
+						
+						div#hinweisBoxUpdateStylesheet {
+							/* nur StSh */
+							display: none;
+						}
+						
+						div.fehlerBox {
+							color: #c32e04;
+							border:	2px solid #c32e04;
+							background-color: #fff;
+						}
+						
+						div#fehlerBoxKeinJS {
+							display: block; / * in BrAnwg: ausgelagert! * /
+							text-align: center;
+							margin: 0 auto 3em auto;
+							border: 2px solid silver;
+							border-radius: 10px;
+							padding: 1em;
+							max-width: 75%;
+						}
+
+						div.hinweisBox {
+							color: #c32e04; /* beige: #CC9933; */
+							border: 2px solid #c32e04; /* beige: #dfac20; */
+							background-color: #fff;
+						}
+						
+						.rahmen {
+							border:	2px solid;
+							padding: 10px;
+						}
+						
+						.fett {
+							font-weight: bold;
+						}
+						
+						.unterstrichen {
+							text-decoration: underline;
+						}
+						   
+						.kursiv { 
+							font-style: italic; /* i.d.R. als 'em' */
+						}
+						   
+						.abstandOben,
+						.abstandObenPrint {
+							margin-top: 2em;
+						}
+						
+						.abstandUnten,
+						.abstandUntenPrint {
+							margin-bottom: 2em;
+						}
+						
+						.textFloatRight {
+							float: right;
+						}
+						
+						.textCenter {
+							text-align: center;
+						}
+						
+						.fehler {
+							color: #D30000;
+						}
+						
+						.hinweis {
+						}
+						   
+						.rot {
+							color: #D30000;
+						}
+						
+						table {  
+							padding: 10px; 
+							border-spacing: 0; 
+							border-collapse: collapse; 
+							border: 2px solid black;
+							empty-cells: show;
+							width: 100%;
+						}
+						
+						/* nur print */
+						table tr { 
+							page-break-inside: avoid;
+						}
+						
+						@page { 
+							 size: portrait; /* landscape */
+						}
+						/* /nur print */
+						
+						table th { 
+							position: unset;
+							border: 1px solid #000;
+							background-color: transparent; /* hellgrau: #D3D3D3; */
+							text-align: center;
+							padding: 5px 12px; 
+						}
+						
+						table td { 
+							border: 1px solid #000;
+							vertical-align: top; 
+							padding: 5px 12px;	
+						}
+
+						table th:first-child,
+						table td:first-child {
+							width: 12%;
+							text-align: center;
+						}
+						
+						table th:nth-child(2),
+						table td:nth-child(2) {
+							width: 30%;
+						}
+						
+						table th:nth-child(3),
+						table td:nth-child(3) {
+							width: 12%;
+							text-align: center;
+						}
+						
+						table th:first-child,
+						table td:first-child,
+						table th:nth-child(2),
+						table td:nth-child(2),
+						table th:nth-child(4),
+						table td:nth-child(4) {
+							-ms-hyphens: auto;
+							-moz-hyphens: auto;
+							-webkit-hyphens: auto;
+							hyphens: auto; 
+							word-break: break-all;
+						}
+						
+						.nobr {
+							white-space: nowrap; 
+						}
+						
+						.screen {
+							display: none !important;
+						}
+						
+					}
+				
+				</style>
+    </head>
+    <body>
+        <main>
+            <h1>Empfangsbekenntnis</h1>
+            <div class="box hinweisBox abstandUnten textCenter">
+                <p class="meldung">Hinweis:</p>
+                <p>
+                    Nachfolgend wird nur die <span class="unterstrichen">Aufforderung</span> zur Abgabe eines Empfangsbekenntnisses dargestellt, da kein r&uuml;cklaufendes eEB vorhanden ist.
+                </p>
+            </div>
+            <h2>Gesch&auml;ftszeichen:</h2>
+            <p>44/2022-R-0</p>
+            <p>Reinknecht, Achim (50670 K&ouml;ln) DE.BRAK.6aeb9a2c-b12e-45b0-92a9-e466ba908021.cd01</p>
+            <h2>In Sachen </h2>
+            <p>WPNO Wirtschaftspr&uuml;fungsgesellschaft PartGmbH gegen H&amp;R GmbH &amp; Co. KGaA u.a.</p>
+            <p>bin ich zur Entgegennahme legitimiert und habe heute als elektronische(s) Dokument(e) erhalten:</p>
+            <table class="abstandOben">
+                <thead>
+                    <tr>
+                        <th class="nobr">Nr</th><th class="nobr">Typ</th><th class="nobr_screen">Datum des Schreibens</th><th>Anzeigename</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4">Kein Schriftgutobjekt mit erforderlichem elektronischen Empfangsbekenntnis vorhanden!</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Zustellungsempf&auml;nger oder Zustellungsempf&auml;ngerin:</h2>
+            <p>Oberlandesgericht Hamm (Zustellungsempf&auml;nger/in)</p>
+        </main>
+    </body>
+</html>

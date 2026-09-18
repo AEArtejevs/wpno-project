@@ -1,0 +1,8 @@
+finding_id,gremium,severity,befund,fix,reproduziert_geschlossen
+CV3-A,Assurance,MEDIUM,"Attestation-Transplant: verify band nur an Tree, nicht an Commit/Parent",verify_attestation_v3 prueft created_commit_sha==commit + realen Parent,ja
+CV3-B,Assurance/Breaker,HIGH,Ledger nicht append-only (Truncation/Drop/Fabrikation),verify_ledger_chain rekonstruiert aus SIGNIERTEN Records + signierter Kopf-Anker (out-of-git),ja
+CV3-1,Breaker,CRITICAL,Pubkey-Substitution: verify vertraut jedem Repo-Pubkey,Fingerprint-Anker im getrennten Signer-Ort; Repo-Pubkey wird dagegen geprueft. PARTIAL: volles Pinning = Reviewer haelt Fingerprint out-of-band,ja (partiell; Rest operativ)
+CV3-2,Breaker,CRITICAL,Broker promotet aktive Branch (caller-gestellte Ref refs/heads/main),Broker akzeptiert NUR refs/candidates/* (ILLEGAL_REF_TARGET sonst),ja
+CV3-4,Breaker,HIGH,Scope-Guard umgehbar (neue/Unterordner/Praefix-Produktdatei),_is_product_path strukturell (check_006d_*/SPEC-Dir/Produkttests/VISUALIZATION-CSV),ja
+CV3-5,Breaker,HIGH,Scope-Guard caller-gestellte Baseline,Broker pinnt product_reference aus PRODUCT_CANDIDATE_REGISTRY,ja
+CV3-6,Breaker,HIGH,content_gate: CASE_SIG toter Code -> Klartext-Falldaten passieren,CASE_SIG jetzt in content_gate angewandt (Betrag/Datum/IBAN/Firmierung),ja

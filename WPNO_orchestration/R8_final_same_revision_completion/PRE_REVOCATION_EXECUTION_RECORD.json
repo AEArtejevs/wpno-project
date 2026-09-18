@@ -1,0 +1,335 @@
+{
+ "L1-A31_attempt_states": {
+  "COMPARISON": {
+   "1": "OPEN"
+  },
+  "RUN-A": {
+   "1": "SEALED"
+  },
+  "RUN-B": {
+   "1": "SEALED"
+  }
+ },
+ "L1-A31_phase_states": {
+  "COMPARISON": "EXECUTED",
+  "RUN-A": "SEALED",
+  "RUN-B": "SEALED"
+ },
+ "attempt_indexes": {
+  "RUN-A": "412bf564b2c584e8289c0ba8861f107f048eee4277f6f0b1c14bf77f07a94c1d",
+  "RUN-B": "b7cfb1cc25d8d97364b82ab92dd3d9f7cff518a321ea003e6c36af19aa6fe8e6"
+ },
+ "comparison_approval_recorded": [
+  {
+   "audit_id": "L1-A31",
+   "plan_sha256": "47f25f7d07023d9f18e27e0f65ea21fcc85382166983d5b9eff59dcb43b6e272",
+   "recorded_at": 1787959750.4279144,
+   "run_phase": "COMPARISON",
+   "target_sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+  }
+ ],
+ "comparison_origin": "executed in R8 under a consumed one-time approval; attempt OPEN and unsealed",
+ "epoch": "EXECUTION_EPOCH_1",
+ "evidence_files": [
+  {
+   "relative": "evidence/L1-A31/COMPARISON/attempt-1/commands.jsonl",
+   "sha256": "76b7cbaef0ea96803111ce64cabefcad54db2d05fd6f7686893c45fbc693e64c",
+   "size": 2292
+  },
+  {
+   "relative": "evidence/L1-A31/COMPARISON/attempt-1/stderr/L1-A31-COMPARISON-A1-E0001.txt",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  {
+   "relative": "evidence/L1-A31/COMPARISON/attempt-1/stderr/L1-A31-COMPARISON-A1-E0002.txt",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  {
+   "relative": "evidence/L1-A31/COMPARISON/attempt-1/stderr/L1-A31-COMPARISON-A1-E0003.txt",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  {
+   "relative": "evidence/L1-A31/COMPARISON/attempt-1/stdout/L1-A31-COMPARISON-A1-E0001.txt",
+   "sha256": "c4a38d1bacd387b8850d506d904a855165cb51aabcb09467e8fbc77887aa03c9",
+   "size": 305
+  },
+  {
+   "relative": "evidence/L1-A31/COMPARISON/attempt-1/stdout/L1-A31-COMPARISON-A1-E0002.txt",
+   "sha256": "ca64e7c2ad23421956e9ba7981bc83a1b1b96c6f1adab3f62916925767f44b52",
+   "size": 209
+  },
+  {
+   "relative": "evidence/L1-A31/COMPARISON/attempt-1/stdout/L1-A31-COMPARISON-A1-E0003.txt",
+   "sha256": "0b50e0b0cc75e18690b93ad10a3d86bbf629da61d0c50231422508a4d9fe111f",
+   "size": 209
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/ATTEMPT_INDEX.json",
+   "sha256": "412bf564b2c584e8289c0ba8861f107f048eee4277f6f0b1c14bf77f07a94c1d",
+   "size": 681
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/EVIDENCE_MANIFEST.sha256",
+   "sha256": "9bade28eab2ff0a06e849985a77c2ddd2f7d460425d8d4f828a907cf220fedc6",
+   "size": 3249
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/SEAL.json",
+   "sha256": "f7a7a4b203b8566698229deac378e695c9582448b0f048192fb3ac599e3b86ff",
+   "size": 287
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/commands.jsonl",
+   "sha256": "f85a6350252ffe414ef35c40469ce2c2e1f7faa090968f3601de478d22e764b6",
+   "size": 17859
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stderr/L1-A31-RUN-A-A1-E0001.txt",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stderr/L1-A31-RUN-A-A1-E0002.txt",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stderr/L1-A31-RUN-A-A1-E0003.txt",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stderr/L1-A31-RUN-A-A1-E0004.txt",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stderr/L1-A31-RUN-A-A1-E0005.txt",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stderr/L1-A31-RUN-A-A1-E0006.txt",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stderr/L1-A31-RUN-A-A1-E0007.txt",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stderr/L1-A31-RUN-A-A1-E0008.txt",
+   "sha256": "205a7ec13066bdd0f5fb4f84edb04ab02bc74d88e644210ad3f79b1c4c7da7bd",
+   "size": 267
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stderr/L1-A31-RUN-A-A1-E0009.txt",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stderr/L1-A31-RUN-A-A1-E0010.txt",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stderr/L1-A31-RUN-A-A1-E0011.txt",
+   "sha256": "25b50603c259a4e3172ed0f6315497daa374b9935c92d78abcd3d2e2dce2b97e",
+   "size": 28
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stderr/L1-A31-RUN-A-A1-E0012.txt",
+   "sha256": "25b50603c259a4e3172ed0f6315497daa374b9935c92d78abcd3d2e2dce2b97e",
+   "size": 28
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stderr/L1-A31-RUN-A-A1-E0013.txt",
+   "sha256": "c06719377afbdac4a619fbf1dd0c72dab1002577f70a1b9621535312559f1f00",
+   "size": 742
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stderr/L1-A31-RUN-A-A1-E0014.txt",
+   "sha256": "1021c7b19e3f60894e03a8c7593207215968e5844c7b07c31491dd9d8645c2ef",
+   "size": 306
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stderr/L1-A31-RUN-A-A1-E0015.txt",
+   "sha256": "25bc77c43e6b0e921ec493c2be1da752f3a49e2ac327966179a8648becbd452a",
+   "size": 258
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stderr/L1-A31-RUN-A-A1-E0016.txt",
+   "sha256": "911191037a62118b52ba9932ec21c9274b947095322f458d2a432b7560058215",
+   "size": 258
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stdout/L1-A31-RUN-A-A1-E0001.txt",
+   "sha256": "96cd069fae3934030a34906a6e463d0451a4e8220965f185f196738042a83f9d",
+   "size": 5280
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stdout/L1-A31-RUN-A-A1-E0002.txt",
+   "sha256": "aa7cc1c6797666148c0e00822ecaac8561c12e6ae2bdfdaf81fbbc0fed8bdac4",
+   "size": 5605
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stdout/L1-A31-RUN-A-A1-E0003.txt",
+   "sha256": "470265fd52772ac1ad1384b2124f100eddf551e7af929982072e1312c3c6ef9c",
+   "size": 5607
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stdout/L1-A31-RUN-A-A1-E0004.txt",
+   "sha256": "24283775a780f6501fc0c78ec56b8435d2bd3b0014f871bd68cbf8f31efa7216",
+   "size": 5982
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stdout/L1-A31-RUN-A-A1-E0005.txt",
+   "sha256": "3ad983f1ba32799e1a7759d51f069098610df30f183998d9e4f5500c59bf7137",
+   "size": 5854
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stdout/L1-A31-RUN-A-A1-E0006.txt",
+   "sha256": "c1bc882d7dc6e503e7828d402861c8974629edfd30b0471eb01d13c8e9f7745e",
+   "size": 5852
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stdout/L1-A31-RUN-A-A1-E0007.txt",
+   "sha256": "279fbda081e812355e347ac2edd8227ade4075b8ea79101845ee138f5b0b990b",
+   "size": 113
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stdout/L1-A31-RUN-A-A1-E0008.txt",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stdout/L1-A31-RUN-A-A1-E0009.txt",
+   "sha256": "ed3386483ca9f555ff598fbf74fce81f464f1a15394258d8edf1e1413e39aebc",
+   "size": 144
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stdout/L1-A31-RUN-A-A1-E0010.txt",
+   "sha256": "6f3bf2a38780f601492351ee117b5b551d237be416b375de9f896cd4139ba9aa",
+   "size": 149
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stdout/L1-A31-RUN-A-A1-E0011.txt",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stdout/L1-A31-RUN-A-A1-E0012.txt",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stdout/L1-A31-RUN-A-A1-E0013.txt",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stdout/L1-A31-RUN-A-A1-E0014.txt",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stdout/L1-A31-RUN-A-A1-E0015.txt",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-A/attempt-1/stdout/L1-A31-RUN-A-A1-E0016.txt",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-B/ATTEMPT_INDEX.json",
+   "sha256": "b7cfb1cc25d8d97364b82ab92dd3d9f7cff518a321ea003e6c36af19aa6fe8e6",
+   "size": 681
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-B/attempt-1/EVIDENCE_MANIFEST.sha256",
+   "sha256": "20d4ce5fd9780471e0839841fe6d3eb1031bdf0afa889e43f60ebba6ecf8d9b1",
+   "size": 477
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-B/attempt-1/SEAL.json",
+   "sha256": "ebedb95c451b9bf69ead5092eddbb97512df32de7c86de003f2f1a533c869f65",
+   "size": 286
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-B/attempt-1/commands.jsonl",
+   "sha256": "894315af4692223c0312c361ce3afed82827b0d9c7e745937c3d36c63c0e3ae2",
+   "size": 3146
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-B/attempt-1/stderr/L1-A31-RUN-B-A1-E0001.txt",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-B/attempt-1/stderr/L1-A31-RUN-B-A1-E0002.txt",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "size": 0
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-B/attempt-1/stdout/L1-A31-RUN-B-A1-E0001.txt",
+   "sha256": "dbaef3930712473b388fe57382362d76f9b284191218a7fd55bbbba82f50f624",
+   "size": 212
+  },
+  {
+   "relative": "evidence/L1-A31/RUN-B/attempt-1/stdout/L1-A31-RUN-B-A1-E0002.txt",
+   "sha256": "934c7644eba527b678c49d50778b67d1a3fae341cce72570798b912cad61c254",
+   "size": 217
+  }
+ ],
+ "migration_ledger": [
+  {
+   "destination": "L1-A31/RUN-A",
+   "files_imported": 35,
+   "imported_by_route": "import-sealed-predecessor-attempt",
+   "imported_utc": "2026-08-28T22:57:09Z",
+   "migration_packet_sha256": "fb97facea18155e6b81fdc6e913e14c0b85f1658f5e238de0973cfac8e66df27",
+   "predecessor_incident_disclosed": true,
+   "source_attempt_id": "L1-A31/RUN-A/attempt-1",
+   "source_evidence_manifest_sha256": "9bade28eab2ff0a06e849985a77c2ddd2f7d460425d8d4f828a907cf220fedc6",
+   "source_plan_sha256": "157b5bc02c01b9c025b312eb4aa9b6a341c2e4b565ff41e516c03520d4ad0bde",
+   "source_revision": "R7",
+   "source_seal_sha256": "f7a7a4b203b8566698229deac378e695c9582448b0f048192fb3ac599e3b86ff",
+   "source_target_sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42",
+   "source_verdict": "UNVERIFIED"
+  },
+  {
+   "destination": "L1-A31/RUN-B",
+   "files_imported": 7,
+   "imported_by_route": "import-sealed-predecessor-attempt",
+   "imported_utc": "2026-08-28T22:57:30Z",
+   "migration_packet_sha256": "9df287ceabcb681b367a787e9e1203ded6b88e5e1b1c2bdc1311183236c38a41",
+   "predecessor_incident_disclosed": true,
+   "source_attempt_id": "L1-A31/RUN-B/attempt-1",
+   "source_evidence_manifest_sha256": "20d4ce5fd9780471e0839841fe6d3eb1031bdf0afa889e43f60ebba6ecf8d9b1",
+   "source_plan_sha256": "65f59b4af174a95ce6781e63c443b13caa8d8ad627344a6ab2c2cca424285896",
+   "source_revision": "R7",
+   "source_seal_sha256": "ebedb95c451b9bf69ead5092eddbb97512df32de7c86de003f2f1a533c869f65",
+   "source_target_sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42",
+   "source_verdict": "UNVERIFIED"
+  }
+ ],
+ "raw_token_preserved": false,
+ "recorded_utc": "2026-08-29T00:21:32Z",
+ "results_files": [
+  {
+   "relative": "results/L1-A31/COMPARISON/attempt-1/plan.json",
+   "sha256": "47f25f7d07023d9f18e27e0f65ea21fcc85382166983d5b9eff59dcb43b6e272",
+   "size": 2591
+  }
+ ],
+ "run_a_origin": "imported predecessor attempt from R7, sealed, verdict UNVERIFIED",
+ "run_b_origin": "imported predecessor attempt from R7, sealed, verdict UNVERIFIED",
+ "schema": "wpno.r8.pre-revocation-execution-record/1",
+ "the_finding": "COMPARISON executed 3 of 3 planned steps with 0 failures and produced 3 hash-bound evidence records, but it did NOT measure the five substantive dimensions its own test_matrix names -- chain path validation outcome, CMS signature outcome, key-usage conformance determination, validation time used, anchor identity. Its steps parsed state/progress.json and hashed the two ATTEMPT_INDEX.json files. Every step reported NO_MACHINE_CHECKABLE_EXPECTATION, so the run could not have detected a disagreement between RUN-A and RUN-B, and its clean result is not evidence that none exists."
+}

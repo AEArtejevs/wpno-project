@@ -1,0 +1,55 @@
+{
+  "schema": "wpno.r7.targeted-readiness-reconciliation/1",
+  "date": "2026-08-27",
+  "mode": "TARGETED_READINESS_AND_PAGE_IDENTITY_RECONCILIATION",
+  "REF06_SOURCE_SHA256": "9f7ee8caebee9345b54dd535a2681789512f68dfc2e4bf7b0652c5cc48722675",
+  "WORD_STORED_PAGE_COUNT": 111,
+  "DISPLAYED_OR_RENDERED_PAGE_COUNT": 138,
+  "PAGE_COUNT_METHOD": "111: static docProps/app.xml. 138: prior independent visible-pagination parsing supplied for reconciliation; no installed deterministic Word-compatible local renderer was available. Static footer PAGE/NUMPAGES stored results are 1, not 138.",
+  "PAGE_COUNT_EXPLANATION": "Word extended-properties metadata stores 111 pages; the document visible pagination resolves to 138 pages. The DOCX has two sections, first-page and default footer relationships, PAGE and NUMPAGES fields, stale stored field results of 1, 109 lastRenderedPageBreak markers, and no settings.xml updateFields instruction. Pagination metadata and resolved display pagination can therefore diverge without changing file identity.",
+  "PAGE_COUNT_ROLE": "DESCRIPTIVE",
+  "PAGE_COUNT_RECORD_RECONCILED": "YES",
+  "REF06_STATUS": "ACCEPTED",
+  "L1_A14_READINESS": "READY",
+  "PRIOR_EVIDENCE_COMPLETION_READY_COUNT": "31/35",
+  "PRIOR_L1A14_REPAIR_READY_COUNT": "27/35",
+  "CURRENT_MEASURED_READY_COUNT": "31/35",
+  "COUNT_DISCREPANCY_CAUSE": "Four audits (L1-A12, L1-A17, L1-A19, L1-A21) had accepted evidence in operator intake but the L1-A14 repair remeasured the still-unimported R7 manifest and readiness record; importing and binding those four accepted evidence sets restores 31/35. L1-A23 remains blocked because current-server REF-14 is not actual-Mac evidence.",
+  "ACCEPTED_EVIDENCE_NOT_YET_IMPORTED_COUNT": 4,
+  "STALE_READINESS_RECORD_COUNT": 1,
+  "STALE_SUMMARY_COUNT": 1,
+  "GENUINE_EXTERNAL_MATERIAL_BLOCKERS": [
+    "L1-A23"
+  ],
+  "GENUINE_HUMAN_DECISION_GATES": [
+    "L1-A11",
+    "L1-A24",
+    "L1-A29"
+  ],
+  "L1_A23_MAC_EVIDENCE_STATUS": "NOT_PRESENT",
+  "L1_A23_MISSING_TRANSFER_PATH": "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/MAC_EVIDENCE",
+  "SHARED_CONTROLLER_EXECUTABLE_CHANGED": "NO",
+  "FULL_CONTROLLER_SUITE_RERUN": "NO",
+  "OLD_BUILD_MANIFEST_STATUS": "STALE",
+  "OLD_PRE_FREEZE_VERIFICATION_STATUS": "STALE",
+  "R7_MODIFIED": "YES",
+  "R7_FROZEN": "NO",
+  "LIVE_AUDIT_PHASE_ADVANCED": "NO",
+  "NEXT_REQUIRED_ACTION": "Transfer the complete, hash-valid Mac evidence package to /home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/MAC_EVIDENCE for focused L1-A23 binding and readiness validation.",
+  "FINAL_STATUS": "R7_READINESS_RECONCILED_NOT_YET_FREEZE_READY",
+  "classification_counts": {
+    "ACCEPTED_EVIDENCE_NOT_YET_IMPORTED": 4,
+    "STALE_READINESS_RECORD": 0,
+    "STALE_SUMMARY_COUNT": 0,
+    "MISSING_MAC_EVIDENCE_TRANSFER": 1,
+    "GENUINE_EXTERNAL_MATERIAL_BLOCKER": 0,
+    "GENUINE_HUMAN_DECISION_GATE": 3,
+    "SPECIFICATION_OR_BINDING_DEFECT": 0,
+    "OTHER_MEASURED_CAUSE": 27
+  },
+  "arithmetic": {
+    "total": 35,
+    "ready": 31,
+    "blocked": 4
+  }
+}

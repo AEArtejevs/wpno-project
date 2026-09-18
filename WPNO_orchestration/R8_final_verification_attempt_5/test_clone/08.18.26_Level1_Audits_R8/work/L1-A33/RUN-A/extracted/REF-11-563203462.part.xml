@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<soap:Envelope xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+	xmlns:osci="http://www.osci.de/2002/04/osci" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:xenc="http://www.w3.org/2001/04/xmlenc#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://schemas.xmlsoap.org/soap/envelope/ soapResponseToMediateDelivery.xsd http://www.w3.org/2000/09/xmldsig# oscisig.xsd http://www.w3.org/2001/04/xmlenc# oscienc.xsd">
+	<soap:Header>
+		<osci:ControlBlock xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+			xmlns:osci="http://www.osci.de/2002/04/osci" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+			xmlns:xenc="http://www.w3.org/2001/04/xmlenc#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			Id="controlblock" soap:actor="http://schemas.xmlsoap.org/soap/actor/next"
+			soap:mustUnderstand="1"></osci:ControlBlock>
+		<osci:responseToMediateDelivery
+			xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:osci="http://www.osci.de/2002/04/osci"
+			xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xenc="http://www.w3.org/2001/04/xmlenc#"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="responsetomediatedelivery"
+			soap:actor="http://schemas.xmlsoap.org/soap/actor/next"
+			soap:mustUnderstand="1">
+			<osci:Feedback>
+				<osci:Entry xml:lang="de">
+					<osci:Code>0801</osci:Code>
+					<osci:Text>Request executed, dialog continues to be open</osci:Text>
+				</osci:Entry>
+			</osci:Feedback>
+		</osci:responseToMediateDelivery>
+		<osci:NonIntermediaryCertificates
+			xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:osci="http://www.osci.de/2002/04/osci"
+			xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xenc="http://www.w3.org/2001/04/xmlenc#"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="nonintermediarycertificates"
+			soap:actor="http://www.w3.org/2001/12/soap-envelope/actor/none"
+			soap:mustUnderstand="1">
+			<osci:CipherCertificateOriginator
+				Id="originator_cipher">
+				<ds:X509Data>
+					<ds:X509Certificate>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</ds:X509Certificate>
+				</ds:X509Data>
+			</osci:CipherCertificateOriginator>
+			
+			<osci:CipherCertificateAddressee
+				Id="addressee_cipher">
+				<ds:X509Data>
+					<ds:X509Certificate>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</ds:X509Certificate>
+				</ds:X509Data>
+			</osci:CipherCertificateAddressee>
+			<osci:CipherCertificateOtherReader
+				Id="reader_cipher">
+				<ds:X509Data>
+					<ds:X509Certificate>MIIIJzCCBg+gAwIBAgIGAYwhjEvyMA0GCSqGSIb3DQEBCwUAMIGKMTAwLgYDVQQDDCdPYmVybGFuZGVzZ2VyaWNodCBIYW1tIChSZWNodHNwcmVjaHVuZykxHjAcBgNVBAoMFU9iZXJsYW5kZXNnZXJpY2h0ZSBOVzEpMCcGCSqGSIb3DQEJARYacG9zdHN0ZWxsZUBvbGctaGFtbS5ucncuZGUxCzAJBgNVBAYTAkRFMB4XDTIzMTEzMDE4NDE1MVoXDTI2MTEzMDE4NDQ1MVowgYoxMDAuBgNVBAMMJ09iZXJsYW5kZXNnZXJpY2h0IEhhbW0gKFJlY2h0c3ByZWNodW5nKTEeMBwGA1UECgwVT2JlcmxhbmRlc2dlcmljaHRlIE5XMSkwJwYJKoZIhvcNAQkBFhpwb3N0c3RlbGxlQG9sZy1oYW1tLm5ydy5kZTELMAkGA1UEBhMCREUwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQCG44LwqWfEkA/1aqRO3BpJZ2yCjDuhdCINGIPoOpm9441u8V9iy/u9ITP2vCkNPYT7ZE78rjCnHNjDsTDOCWiRulk82vBIMlPXVw42jacw05tfcpCr3sq2zbQG5t5ISh7icwUx/LgN2zLAyBmVHN2lIWmuTqBcWX7WZC8t7OD1s7L6m47qtLrqH+BPL1Z4ubUgNTzXt/mtFuilJfMvrUE/mOQEI59cTm/XorcsLuoNqHhNI06t1KwIMJv36PRRfFEsbFVz97MyAkGXGfnIqm3Hu8AQWMpcNMQthX4/9zv6tW155dRJ6Cqkbxyw05nDekD4bT4n7ifS1GjW9dnMnBtOri9ER+TdltaL9FcFz5aVT5DBHwROJ0aHSeQrrFpg3UIhrnHQGT2Nt3Ul9isy4dNb5hAlykTEzHaVG+464o0ZiPkV8ogC4b4z7aqKSqG6ozlsb17xgZSaKiyC4opLHDCFmERClz93Ygp1MDzgF7oOYUOKd+IL14VavFxZrJIcYizbGTgBlnpyQCSzwJqtMmh4Salzo31wt9uqKyrqwMUWmsyabT0BJGiXsJM7e0YObFZo9Y/5EUezrRh3PRk14YXRF0Zv1M2bNH+p1LgeHJ7TlRj92vjjjjehbIDJZ5XFPyVVYaKI9x5avypq9g60lDHA4arH27gzz/4w+srfrK0ILQIDAQABo4ICjzCCAoswDAYDVR0TAQH/BAIwADALBgNVHQ8EBAMCBeAwFgYDVR0lAQH/BAwwCgYIKwYBBQUHAwEwggIzBgNVHQ4EggIqBIICJjCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBAIbjgvCpZ8SQD/VqpE7cGklnbIKMO6F0Ig0Yg+g6mb3jjW7xX2LL+70hM/a8KQ09hPtkTvyuMKcc2MOxMM4JaJG6WTza8EgyU9dXDjaNpzDTm19ykKveyrbNtAbm3khKHuJzBTH8uA3bMsDIGZUc3aUhaa5OoFxZftZkLy3s4PWzsvqbjuq0uuof4E8vVni5tSA1PNe3+a0W6KUl8y+tQT+Y5AQjn1xOb9eitywu6g2oeE0jTq3UrAgwm/fo9FF8USxsVXP3szICQZcZ+ciqbce7wBBYylw0xC2Ffj/3O/q1bXnl1EnoKqRvHLDTmcN6QPhtPifuJ9LUaNb12cycG06uL0RH5N2W1ov0VwXPlpVPkMEfBE4nRodJ5CusWmDdQiGucdAZPY23dSX2KzLh01vmECXKRMTMdpUb7jrijRmI+RXyiALhvjPtqopKobqjOWxvXvGBlJoqLILiikscMIWYREKXP3diCnUwPOAXug5hQ4p34gvXhVq8XFmskhxiLNsZOAGWenJAJLPAmq0yaHhJqXOjfXC326orKurAxRaazJptPQEkaJewkzt7Rg5sVmj1j/kRR7OtGHc9GTXhhdEXRm/UzZs0f6nUuB4cntOVGP3a+OOON6FsgMlnlcU/JVVhooj3Hlq/Kmr2DrSUMcDhqsfbuDPP/jD6yt+srQgtAgMBAAEwHwYDVR0jBBgwFoAULDpcbqtYHF5M0Du3sHLssCccERkwDQYJKoZIhvcNAQELBQADggIBAEnvzt9NN7rQ66TyYAxWqYFuC93tke1tTV8pIe1ZE0KU8rzFeGQU7yAFc+QYVPMHxXtYS4TpjyHo1NnxwRLV0LPEZjbj/Ijk4Qba8MqCPAwUxRWfAg5Ucsr9kbYe9uMiW0cRYgjJpECuGS3e2vxDv5c3Ye0JlOa4ukNq0bD0LV8NA6BN5MV6i1krVSKM5UEa5tSEqEMN9cz4RBwl5e775FA4AfmNotO99hzLUy8HnpKoJENlc4B9KqN5+vow56+5HSeSrvUeft4IZaDd1LIebhfgniijnECgap/ZJ2sS4G/xdIgC1hFPYv5AGuIngt73K8Ew6pV6N2iSIxGer6IdB13Bir4qr+rVO18ZSh26QQBGVvc6DxnsWzWt3l4aahVA+WsiqlVF22WfRXTB02igSO1nfkXqZ2cwprJYHdOQyYRl9cL0aIXluXZnz1ba+JtYs9AayVYJlQo0+rJ3GUv2bXfSut3eS4fPiRXEiSF35LCbRGtcWqnXixtdxy5Q587P5uIYUVBgPk1+e2PLNF3Y67FJz+9OLDIoWOOIPr/HoOlOrQtwhUFHxCc84bdr6JnbJBhDssd32Qhj9QCcAqgOXIU3mvjPm4au2adeGOp1eaK2Sdyw1xojQQjlfreSfazumzx/mvqF7qoqxrTgEuMYyK0lCPmE2VrD7UmlJ0647p/A</ds:X509Certificate>
+				</ds:X509Data>
+			</osci:CipherCertificateOtherReader>
+				<osci:CipherCertificateOtherAuthor Id="author_cipher">
+	<ds:X509Data>
+		<ds:X509Certificate>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</ds:X509Certificate>
+	</ds:X509Data>
+</osci:CipherCertificateOtherAuthor>
+
+		</osci:NonIntermediaryCertificates>
+		<osci:responseToFetchGOV2_CE_PROCESSCARD
+			xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:osci="http://www.osci.de/2002/04/osci"
+			xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xenc="http://www.w3.org/2001/04/xmlenc#"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="responsetofetchdelivery"
+			soap:actor="http://schemas.xmlsoap.org/soap/actor/next"
+			soap:mustUnderstand="1">
+			<osci:Feedback>
+				<osci:Entry xml:lang="de">
+					<osci:Code>0801</osci:Code>
+					<osci:Text>Request executed, dialog continues to be open</osci:Text>
+				</osci:Entry>
+			</osci:Feedback>
+			<osci:fetchGOV2_CE_PROCESSCARD>
+				<osci:SelectionRule>
+					<osci:MessageId>NTYzMjAzNDYy</osci:MessageId>
+				</osci:SelectionRule>
+			</osci:fetchGOV2_CE_PROCESSCARD>
+			<osci:ProcessCardBundle>
+				<osci:MessageId>NTYzMjAzNDYy</osci:MessageId>
+				<osci:ProcessCard RecentModification="2015-10-13T17:09:29+02:00">
+					<osci:Creation>
+						<osci:Plain>2026-02-27T23:55:25.000+01:00</osci:Plain>
+					</osci:Creation>
+					<osci:Subject>Allgemeine Nachricht</osci:Subject>
+				</osci:ProcessCard>
+				
+			</osci:ProcessCardBundle>
+		</osci:responseToFetchGOV2_CE_PROCESSCARD>
+	</soap:Header>
+	<soap:Body xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+		xmlns:osci="http://www.osci.de/2002/04/osci" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+		xmlns:xenc="http://www.w3.org/2001/04/xmlenc#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		Id="body">
+		<osci:ContentPackage><osci:ContentContainer xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:osci="http://www.osci.de/2002/04/osci" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xenc="http://www.w3.org/2001/04/xmlenc#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="project_coco"><osci:Content xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:osci="http://www.osci.de/2002/04/osci" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xenc="http://www.w3.org/2001/04/xmlenc#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="Berufungsbegründung_O.pdf" href="cid:Berufungsbegründung_O.pdf"></osci:Content><osci:Content xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:osci="http://www.osci.de/2002/04/osci" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xenc="http://www.w3.org/2001/04/xmlenc#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="Berufungsbegründung_O.pdf.p7s" href="cid:Berufungsbegründung_O.pdf.p7s"></osci:Content><osci:Content xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:osci="http://www.osci.de/2002/04/osci" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xenc="http://www.w3.org/2001/04/xmlenc#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="xjustiz_nachricht.xml" href="cid:xjustiz_nachricht.xml"></osci:Content></osci:ContentContainer>
+<osci:ContentContainer xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:osci="http://www.osci.de/2002/04/osci" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xenc="http://www.w3.org/2001/04/xmlenc#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="vhn_coco"><osci:Content Id="vhn.xml" href="cid:vhn.xml"></osci:Content><osci:Content Id="vhn.xml.p7s" href="cid:vhn.xml.p7s"></osci:Content></osci:ContentContainer>
+</osci:ContentPackage>
+	</soap:Body>
+</soap:Envelope>

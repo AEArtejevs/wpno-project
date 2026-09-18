@@ -1,0 +1,13 @@
+feld,wert
+review_package_id,S11_CP_P0_GIT_OBJECT_BINDING
+product_commit,670e362 (NOT_ACCEPTED_L99_BLOCKED)
+control_plane_candidate_commit,<neuer Broker-Commit nach Phase 14>
+validated_tree_sha,"<= committed_tree, per Attestation V2>"
+attestation_sha,<v2 record>
+finding_ids,"RCK2-01 staged_blob, RCK2-02 toctou, RCK2-13 staged_remove, RCK2-22 gate_attestation_durability"
+test_ids,"S11-Control-Plane-Staged-Tree-Binding(10), Scope-Guard(5), Gate-Attestation-Durability(6)"
+attack_ids,Red Team 5 Gruppen (G1..G5) — Ergebnis siehe TARGETED_REDTEAM
+expected_invariants,committed_tree==validated_tree; TOCTOU-Abbruch bei Index/HEAD-Wechsel; Attestierung tree-gebunden+dauerhaft; HISTORICAL_REPLAY blockiert HEAD nicht
+open_questions,Vollstaendigkeit der Git-Mode/Submodule/LFS-Behandlung; Worktree-Materialisierung Performance; Lock-Robustheit unter echter Parallelitaet
+cross_model_dual_control_required,true (fuer jede spaetere reale S11-Entscheidung)
+status,CHATGPT_REVIEW_PENDING

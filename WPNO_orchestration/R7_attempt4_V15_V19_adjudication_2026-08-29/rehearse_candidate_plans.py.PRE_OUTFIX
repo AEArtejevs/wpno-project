@@ -1,0 +1,340 @@
+#!/usr/bin/env python3
+"""Rehearse every candidate live plan, with the exact argv builder.
+
+This is the check R6 did not have. Its pre-freeze readiness fixture exercised
+the operation catalogue generically and passed; the live L1-A31 plan then
+failed on a purpose, an epoch and a mutation fixture that the fixture had
+never executed. So this harness does not build its own parameters. It reads
+the plans, hands each step's params to `operation_catalog.build_argv` - the
+same function the controller calls - and runs the result.
+
+R7 change. The harness covered nine phases across three audits, named in the
+source. It now covers every phase the plan-coverage manifest lists, and the
+manifest is reconciled against the registry, so a phase that gained a plan
+without gaining a rehearsal is visible rather than absent.
+
+What is rehearsed and what is not, per step, with the reason recorded either
+way. A step is executed when every input it names exists and executing it is
+not itself the live audit. Otherwise its argv is built and recorded and the
+reason it was not run is stated. The four reasons are:
+
+  LIVE_PHASE_MATERIAL_NOT_STAGED   the step reads something the approved phase
+                                   creates - a sandbox copy of a target, a
+                                   generated document, an external-host intake
+                                   record. Building it here would be the live
+                                   preparation, not a rehearsal of it.
+
+  EXECUTING_WOULD_BE_THE_LIVE_PHASE   a COMPARISON step reads sealed evidence
+                                   of two phases that have not run.
+
+  OPERATOR_PERFORMED_ON_ANOTHER_HOST   the operation happens on the operator's
+                                   machine under an approval bound to an
+                                   execution packet. This controller never
+                                   launches it.
+
+  GIT_OPERATION_NOT_RUN_IN_THIS_SESSION   the orchestration that produced this
+                                   package is forbidden to use Git. The argv is
+                                   built and checked; the live phase runs it.
+
+A rehearsal that started a phase, recorded an approval, sealed anything or
+wrote under `results/`, `evidence/` or `logs/` would be the live run. The live
+state files are hashed before and after and byte identity is required.
+"""
+
+import json
+import os
+import subprocess
+import sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, ROOT)
+
+from automation import (hashing, mutation_fixtures, operation_catalog,  # noqa: E402
+                        path_policy, policy, schema_validation)
+
+PLANS = os.path.join(ROOT, "build", "candidate_plans_r7")
+COVERAGE = os.path.join(PLANS, "PLAN_COVERAGE_MANIFEST.json")
+OUTDIR = os.path.join(ROOT, "work", "_rehearsal_r7")
+
+# The live state a rehearsal must leave exactly as it found it.
+LIVE_STATE_FILES = (os.path.join("state", "progress.json"),
+                    os.path.join("state", "approvals.jsonl"),
+                    os.path.join("state", "transitions.jsonl"),
+                    os.path.join("state", "REVISION.json"),
+                    "MODE")
+
+NOT_RUN_LIVE_MATERIAL = "LIVE_PHASE_MATERIAL_NOT_STAGED"
+NOT_RUN_WOULD_BE_LIVE = "EXECUTING_WOULD_BE_THE_LIVE_PHASE"
+NOT_RUN_OPERATOR_HOST = "OPERATOR_PERFORMED_ON_ANOTHER_HOST"
+NOT_RUN_GIT = "GIT_OPERATION_NOT_RUN_IN_THIS_SESSION"
+
+GIT_OPERATIONS = {"GIT_STATUS_READONLY", "GIT_LOG_READONLY",
+                  "GIT_SHOW_READONLY"}
+
+# Params whose value is a path the step reads. A path named under a key not
+# listed here is not treated as an input, so a missing output path does not
+# make a step look unrunnable.
+INPUT_PARAM_KEYS = ("path", "cert", "cms", "content", "archive", "leaf",
+                    "anchor", "intermediates", "certfile", "script", "target",
+                    "rootdir", "left", "right", "repo", "export", "packet",
+                    "intake", "roster", "corpus", "cases", "text", "source")
+
+
+def run(argv, timeout):
+    return subprocess.run(  # noqa: S603 - argv list, shell=False
+        argv, shell=False, capture_output=True, timeout=timeout,
+        env=policy.base_environment(), cwd=ROOT, check=False)
+
+
+def matrix_for(plan):
+    by_step = {}
+    for entry in plan.get("test_matrix", []):
+        if "step_id" in entry:
+            by_step[entry["step_id"]] = entry
+    return by_step
+
+
+def step_inputs(step):
+    """The paths this step reads, as the catalogue would resolve them."""
+    params = step.get("params", {})
+    out = []
+    for key in INPUT_PARAM_KEYS:
+        value = params.get(key)
+        if isinstance(value, str) and value.startswith("/"):
+            out.append(value)
+    for value in params.get("args", []) or []:
+        if isinstance(value, str) and value.startswith("/"):
+            out.append(value)
+    return out
+
+
+def missing_inputs(step):
+    return [p for p in step_inputs(step) if not os.path.exists(p)]
+
+
+def judge(step, entry, proc):
+    """Did this step do what the plan said it would, and for the stated reason?"""
+    stderr = proc.stderr.decode("utf-8", "replace")
+    expected = entry.get("expected_exit_code") if entry else None
+    verdict = {"step_id": step["step_id"],
+               "control_role": step.get("control_role"),
+               "exit_code": proc.returncode,
+               "expected_exit_code": expected}
+
+    if expected is None:
+        verdict["result"] = "NO_EXPECTATION_STATED"
+        verdict["ok"] = proc.returncode == 0
+    elif expected == "NONZERO":
+        verdict["ok"] = proc.returncode != 0
+        verdict["result"] = ("FAILS_AS_DESIGNED" if verdict["ok"]
+                             else "DID_NOT_FAIL")
+    else:
+        verdict["ok"] = proc.returncode == expected
+        verdict["result"] = "AS_EXPECTED" if verdict["ok"] else "UNEXPECTED_EXIT"
+
+    # Only a reason stated in the harness's own vocabulary is asserted
+    # mechanically. A prose reason is for the reader and for the live audit,
+    # and asserting it by substring would be a check that passes on wording.
+    reason = (entry or {}).get("expected_failure_reason_canonical")
+    if reason:
+        present = mutation_fixtures.reason_is_present(stderr, reason)
+        verdict["expected_failure_reason_canonical"] = reason
+        verdict["failure_reason_observed"] = present
+        # A control that fails for the wrong reason has not been exercised.
+        # This is the assertion R6 did not make.
+        if not present:
+            verdict["ok"] = False
+            verdict["result"] = "FAILED_FOR_THE_WRONG_REASON"
+    elif (entry or {}).get("expected_failure_reason"):
+        verdict["expected_failure_reason_prose"] = \
+            entry["expected_failure_reason"]
+        verdict["failure_reason_asserted_mechanically"] = False
+    verdict["stderr_head"] = stderr[:400]
+    return verdict
+
+
+def rehearse_plan(audit_id, phase):
+    path = os.path.join(PLANS, audit_id, phase, "plan.json")
+    with open(path, encoding="utf-8") as fh:
+        raw = fh.read()
+    plan = schema_validation.parse_strict(raw)
+    schema_validation.validate_named(plan, "execution_plan.schema.json")
+    gated = operation_catalog.validate_plan_operations(plan)
+
+    report = {
+        "audit_id": audit_id,
+        "run_phase": phase,
+        "plan_path": os.path.relpath(path, ROOT),
+        "plan_sha256": hashing.sha256_text(raw),
+        "schema_valid": True,
+        "gated_operations": sorted(set(gated)),
+        "target_path": plan["target"]["path"],
+        "target_sha256_in_plan": plan["target"]["sha256"],
+        "target_sha256_on_disk": (hashing.sha256_file(plan["target"]["path"])
+                                  if os.path.isfile(plan["target"]["path"])
+                                  else None),
+        "steps": [],
+    }
+    report["target_identity_holds"] = (
+        report["target_sha256_in_plan"] == report["target_sha256_on_disk"])
+
+    by_step = matrix_for(plan)
+
+    for step in plan["steps"]:
+        name = step["operation"]
+        record = {"step_id": step["step_id"], "operation": name,
+                  "control_role": step.get("control_role")}
+
+        if name in operation_catalog.IN_PROCESS:
+            record["argv"] = None
+            record["note"] = "in-process; performed by the worker"
+            record["executed"] = False
+            record["not_executed_reason"] = "IN_PROCESS_NO_SUBPROCESS"
+            record["ok"] = True
+            report["steps"].append(record)
+            continue
+
+        if name in operation_catalog.OPERATOR_PERFORMED:
+            record["argv"] = None
+            record["executed"] = False
+            record["not_executed_reason"] = NOT_RUN_OPERATOR_HOST
+            record["note"] = (
+                "the operation has no argv on this machine; it is carried out "
+                "on the external host named in its execution packet and "
+                "returns a hash-bound intake record")
+            record["ok"] = True
+            report["steps"].append(record)
+            continue
+
+        try:
+            argv = operation_catalog.build_argv(name, step.get("params", {}))
+        except Exception as exc:                      # noqa: BLE001
+            record["ok"] = False
+            record["executed"] = False
+            record["argv_error"] = "%s: %s" % (type(exc).__name__, exc)
+            report["steps"].append(record)
+            continue
+        record["argv"] = argv
+        record["argv_built"] = True
+
+        if phase == "COMPARISON":
+            record["executed"] = False
+            record["not_executed_reason"] = NOT_RUN_WOULD_BE_LIVE
+            record["ok"] = True
+            report["steps"].append(record)
+            continue
+
+        if name in GIT_OPERATIONS:
+            record["executed"] = False
+            record["not_executed_reason"] = NOT_RUN_GIT
+            record["ok"] = True
+            report["steps"].append(record)
+            continue
+
+        absent = missing_inputs(step)
+        if absent:
+            record["executed"] = False
+            record["not_executed_reason"] = NOT_RUN_LIVE_MATERIAL
+            record["absent_inputs"] = [os.path.relpath(p, ROOT)
+                                       if p.startswith(ROOT) else p
+                                       for p in absent]
+            record["ok"] = True
+            report["steps"].append(record)
+            continue
+
+        proc = run(argv, step.get("timeout_seconds", 120))
+        record["executed"] = True
+        record.update(judge(step, by_step.get(step["step_id"]), proc))
+        report["steps"].append(record)
+
+    report["steps_total"] = len(report["steps"])
+    report["steps_executed"] = sum(1 for s in report["steps"]
+                                   if s.get("executed"))
+    report["steps_argv_built"] = sum(1 for s in report["steps"]
+                                     if s.get("argv") is not None)
+    report["ok"] = (report["target_identity_holds"]
+                    and all(s.get("ok") for s in report["steps"]))
+    return report
+
+
+def live_state_digests():
+    out = {}
+    for rel in LIVE_STATE_FILES:
+        full = os.path.join(ROOT, rel)
+        out[rel] = hashing.sha256_file(full) if os.path.isfile(full) else None
+    return out
+
+
+def required_phases():
+    with open(COVERAGE, encoding="utf-8") as fh:
+        coverage = json.load(fh)
+    return coverage, [(row["audit_id"], row["run_phase"])
+                      for row in coverage["plans"]]
+
+
+def main():
+    path_policy.ensure_dir(OUTDIR)
+    coverage, phases = required_phases()
+
+    for audit_id, phase in phases:
+        path_policy.ensure_dir(os.path.join(ROOT, "work", audit_id, phase))
+    path_policy.ensure_dir(os.path.join(
+        ROOT, "work", "L1-A31", "preparation_r7_2026-08-26", "outputs"))
+
+    before = live_state_digests()
+
+    reports = [rehearse_plan(audit_id, phase) for audit_id, phase in phases]
+
+    after = live_state_digests()
+    live_unchanged = before == after
+
+    out = os.path.join(OUTDIR, "REHEARSAL_REPORT.json")
+    payload = {
+        "schema": "wpno.level1.plan-rehearsal/2",
+        "revision": "R7",
+        "phases_rehearsed": len(reports),
+        "phases_required": coverage["REQUIRED_PLAN_COUNT"],
+        "all_pass_ready": all(r["ok"] for r in reports) and live_unchanged,
+        "live_state_before": before,
+        "live_state_after": after,
+        "LIVE_STATE_UNCHANGED": live_unchanged,
+        "steps_total": sum(r["steps_total"] for r in reports),
+        "steps_executed": sum(r["steps_executed"] for r in reports),
+        "not_executed_reasons": {
+            reason: sum(1 for r in reports for s in r["steps"]
+                        if s.get("not_executed_reason") == reason)
+            for reason in (NOT_RUN_LIVE_MATERIAL, NOT_RUN_WOULD_BE_LIVE,
+                           NOT_RUN_OPERATOR_HOST, NOT_RUN_GIT,
+                           "IN_PROCESS_NO_SUBPROCESS")},
+        "coverage_manifest_sha256": hashing.sha256_file(COVERAGE),
+        "reports": reports,
+    }
+    with open(path_policy.assert_writable(out), "w", encoding="utf-8") as fh:
+        json.dump(payload, fh, indent=2, sort_keys=True)
+        fh.write("\n")
+
+    print(json.dumps({
+        "rehearsal_report": os.path.relpath(out, ROOT),
+        "rehearsal_report_sha256": hashing.sha256_file(out),
+        "phases_rehearsed": payload["phases_rehearsed"],
+        "phases_required": payload["phases_required"],
+        "all_pass_ready": payload["all_pass_ready"],
+        "LIVE_STATE_UNCHANGED": live_unchanged,
+        "steps_total": payload["steps_total"],
+        "steps_executed": payload["steps_executed"],
+        "not_executed_reasons": payload["not_executed_reasons"],
+        "not_pass_ready": [
+            "%s/%s" % (r["audit_id"], r["run_phase"])
+            for r in reports if not r["ok"]],
+        "failing_steps": [
+            {"phase": "%s/%s" % (r["audit_id"], r["run_phase"]),
+             "step_id": s["step_id"],
+             "result": s.get("result") or s.get("argv_error"),
+             "stderr_head": s.get("stderr_head", "")[:200]}
+            for r in reports for s in r["steps"] if not s.get("ok")],
+    }, indent=2, sort_keys=True))
+    return 0 if payload["all_pass_ready"] else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -1,0 +1,34 @@
+{
+  "schema": "wpno.level1.root-cause/1",
+  "classification": "FROZEN_INVALID_SELF_MANIFEST_MODE_ORDERING_REGRESSION",
+  "revision_affected": "R5",
+  "predecessor_unaffected": "R4",
+  "defect": "CONTROL_MANIFEST.sha256 records the pre-freeze GENERATED_UNVERIFIED digest of MODE while the published MODE content is FROZEN. The frozen package therefore fails its own control manifest on exactly one entry.",
+  "measured": {
+    "r5_manifest_entries_total": 14160,
+    "r5_manifest_entries_ok": 14159,
+    "r5_manifest_entries_failed": 1,
+    "r5_failed_entry": "MODE",
+    "r5_mode_recorded_digest": "0dba1cc2928ed5a2a3259b8d9aa4188feb6b775c91d7eab990bb75fa49cd6eee",
+    "r5_mode_disk_digest": "67885f01edc72c2991b2ae9be04afc14a743b79c9d382262620be8ac154fa5fa",
+    "r5_mode_disk_content": "FROZEN",
+    "proof_recorded_digest_is_pre_freeze": "sha256 of the exact bytes 'GENERATED_UNVERIFIED\\n' equals 0dba1cc2928ed5a2a3259b8d9aa4188feb6b775c91d7eab990bb75fa49cd6eee",
+    "r5_manifest_contains_itself": false,
+    "r4_manifest_entries_total": 1915,
+    "r4_manifest_entries_ok": 1915,
+    "r4_manifest_entries_failed": 0,
+    "r4_mode_recorded_digest": "67885f01edc72c2991b2ae9be04afc14a743b79c9d382262620be8ac154fa5fa"
+  },
+  "regression_origin": {
+    "r4_writer": "08.18.26_Level1_Audits_R4/build/r4_freeze_v2.py",
+    "r4_publish_order": ["BASELINE_MANIFEST.json", "MODE=FROZEN", "CONTROL_MANIFEST.sha256", "verify_manifest", "state/PACKAGE_VERIFIED.json"],
+    "r4_outcome": "MODE was already FROZEN on disk when the manifest hashed it, so the manifest is self-consistent",
+    "r5_writer": "08.18.26_Level1_Audits_R5/automation/controller.py::cmd_freeze_level1",
+    "r5_publish_order": ["BASELINE_MANIFEST.json", "CONTROL_MANIFEST.sha256", "state/PACKAGE_VERIFIED.json", "MODE=FROZEN"],
+    "r5_outcome": "MODE was still GENERATED_UNVERIFIED on disk when the manifest hashed it from disk at controller.py:1239-1240",
+    "why_r5_moved_it": "publishing MODE last is a real safety property: the package must never visibly claim FROZEN before the other final artefacts exist. R5 gained that property and lost self-consistency.",
+    "correct_fix": "hash the FINAL-STATE file set from staged bytes, and still publish MODE last. Both properties hold at once. Reverting to the R4 order would restore self-consistency and reintroduce the premature-FROZEN window."
+  },
+  "why_no_test_caught_it": "No test in R5 executed the real controller freeze route to completion and then verified the produced CONTROL_MANIFEST from disk. automation/package_tests/test_r5_freeze_repair.py exercises the driver's refusals against the live package and asserts that no artefact was written; the success path was never run end to end, so the manifest it produces was never checked.",
+  "defect_line_reference": "automation/controller.py:1239-1240 (manifest hashed from disk) versus automation/controller.py:1263-1264 (MODE published afterwards)"
+}

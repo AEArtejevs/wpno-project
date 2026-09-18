@@ -1,0 +1,62 @@
+{
+ "published": [
+  {
+   "accepted_attempt": 1,
+   "aggregate_state": "SEALED",
+   "attempts": [
+    {
+     "attempt_id": "L1-A31/RUN-A/attempt-1",
+     "attempt_number": 1,
+     "classification": "SUBSTANTIVE_AUDIT_RESULT",
+     "plan_sha256": "157b5bc02c01b9c025b312eb4aa9b6a341c2e4b565ff41e516c03520d4ad0bde",
+     "root_cause_fingerprint": null,
+     "seal_sha256": "f7a7a4b203b8566698229deac378e695c9582448b0f048192fb3ac599e3b86ff",
+     "state": "SEALED",
+     "superseded": false,
+     "superseded_by": null,
+     "usable": true,
+     "verdict": "UNVERIFIED"
+    }
+   ],
+   "audit_id": "L1-A31",
+   "current_attempt": 1,
+   "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A31/RUN-A/ATTEMPT_INDEX.json",
+   "relative": "evidence/L1-A31/RUN-A/ATTEMPT_INDEX.json",
+   "run_phase": "RUN-A",
+   "schema": "wpno.level1.attempt-index/1",
+   "sha256": "412bf564b2c584e8289c0ba8861f107f048eee4277f6f0b1c14bf77f07a94c1d",
+   "under_evidence_runtime_dir": true
+  },
+  {
+   "accepted_attempt": 1,
+   "aggregate_state": "SEALED",
+   "attempts": [
+    {
+     "attempt_id": "L1-A31/RUN-B/attempt-1",
+     "attempt_number": 1,
+     "classification": "SUBSTANTIVE_AUDIT_RESULT",
+     "plan_sha256": "65f59b4af174a95ce6781e63c443b13caa8d8ad627344a6ab2c2cca424285896",
+     "root_cause_fingerprint": null,
+     "seal_sha256": "ebedb95c451b9bf69ead5092eddbb97512df32de7c86de003f2f1a533c869f65",
+     "state": "SEALED",
+     "superseded": false,
+     "superseded_by": null,
+     "usable": true,
+     "verdict": "UNVERIFIED"
+    }
+   ],
+   "audit_id": "L1-A31",
+   "current_attempt": 1,
+   "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A31/RUN-B/ATTEMPT_INDEX.json",
+   "relative": "evidence/L1-A31/RUN-B/ATTEMPT_INDEX.json",
+   "run_phase": "RUN-B",
+   "schema": "wpno.level1.attempt-index/1",
+   "sha256": "b7cfb1cc25d8d97364b82ab92dd3d9f7cff518a321ea003e6c36af19aa6fe8e6",
+   "under_evidence_runtime_dir": true
+  }
+ ],
+ "recorded_utc": "2026-08-28T23:28:32Z",
+ "route": "automation.attempts.write_attempt_index, the controller's own publisher, under the controller lock, driven by R8's own state/progress.json node",
+ "schema": "wpno.r8.attempt-index-publication/1",
+ "why": "the migration route imports a sealed attempt but never calls this function -- it is called only from cmd_finalize_current and cmd_prepare_retry -- so the phase-level index the COMPARISON plan binds was never published. The index is DERIVED from R8's state, not copied from R7: a copy would carry R7's attempt identifiers into R8's evidence."
+}

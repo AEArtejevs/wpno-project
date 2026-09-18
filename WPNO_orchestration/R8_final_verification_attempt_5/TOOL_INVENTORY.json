@@ -1,0 +1,306 @@
+{
+ "attempt": 5,
+ "attempt5_root": "/home/ubuntu/project/WPNO_orchestration/R8_final_verification_attempt_5",
+ "r8_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+ "roles_are_distinct": "VERIFICATION_INSTRUCTIONS, VERIFICATION_RUNNER and the verification RESULT are three different things. The result is not listed here; it is an output, bound by the freeze plan under role ATTEMPT5_VERIFICATION_RESULT.",
+ "schema": "wpno.r8.attempt5-tool-inventory/1",
+ "tool_count": 33,
+ "tools": [
+  {
+   "BOUND_BY": "R8_BUILD_MANIFEST + FREEZE_PLAN_ATTEMPT_2.bound_artifacts",
+   "MANIFEST_COVERED": true,
+   "PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/build_r8_build_manifest.py",
+   "REL": "build/build_r8_build_manifest.py",
+   "ROLE": "BUILD_MANIFEST_BUILDER",
+   "SHA256": "51c68fe2f8d6ad798ff10f09df4ad62ac563c7ae822fb720cc2e62894a20ba2b",
+   "SIZE": 7878
+  },
+  {
+   "BOUND_BY": "R8_BUILD_MANIFEST + FREEZE_PLAN_ATTEMPT_2.bound_artifacts",
+   "MANIFEST_COVERED": true,
+   "PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/build_r8_closure_record.py",
+   "REL": "build/build_r8_closure_record.py",
+   "ROLE": "CLOSURE_RECORD_BUILDER",
+   "SHA256": "72709006555250bcc5f6eb773b5b6f3976b5b41629c6780aacb7a6546b505dd6",
+   "SIZE": 12058
+  },
+  {
+   "BOUND_BY": "R8_BUILD_MANIFEST + FREEZE_PLAN_ATTEMPT_2.bound_artifacts",
+   "MANIFEST_COVERED": true,
+   "PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/control_expectations.py",
+   "REL": "build/control_expectations.py",
+   "ROLE": "CONTROL_EXPECTATION_BUILDER",
+   "SHA256": "c4f4dc9b76997024aa661137f53bb5a86baeb63e14e7d52c7983867b8cd90086",
+   "SIZE": 18618
+  },
+  {
+   "BOUND_BY": "R8_BUILD_MANIFEST + FREEZE_PLAN_ATTEMPT_2.bound_artifacts",
+   "MANIFEST_COVERED": true,
+   "PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/automation/freeze.py",
+   "REL": "automation/freeze.py",
+   "ROLE": "FREEZE_MODULE",
+   "SHA256": "ef874c59beede91b676caafbe4b14779a04c275487e5c015fe2df8c2fbd5457d",
+   "SIZE": 38228
+  },
+  {
+   "BOUND_BY": "FREEZE_PLAN_ATTEMPT_2.external_bound_artifacts",
+   "MANIFEST_COVERED": false,
+   "PATH": "/home/ubuntu/project/WPNO_orchestration/R8_final_verification_attempt_5/tools/build_r8_freeze_plan_attempt_2.py",
+   "ROLE": "FREEZE_PLAN_BUILDER",
+   "SHA256": "93aea8216a8b4dc1ae81025a178e3f40a74a337c8895f298f2f9e2dadf90108a",
+   "SIZE": 31170
+  },
+  {
+   "BOUND_BY": "FREEZE_PLAN_ATTEMPT_2.bound_artifacts_derivation.source_sha256",
+   "MANIFEST_COVERED": false,
+   "NOTE": "read by the attempt-2 builder for its bound list, so a transcription slip cannot drop a binding. Its stale attempt-3 verification constant and its own self-reference are removed and the removal is asserted. It is not executed as attempt 5's builder.",
+   "PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/freeze_plan_attempt_1/build_r8_freeze_plan.py",
+   "REL": "build/freeze_plan_attempt_1/build_r8_freeze_plan.py",
+   "ROLE": "FREEZE_PLAN_BUILDER_ATTEMPT_1_DERIVATION_SOURCE",
+   "SHA256": "2b40acb215ce62e11ed7bc077be8ed1142f18f70e4b98e311d7f6474489d875a",
+   "SIZE": 26807
+  },
+  {
+   "BOUND_BY": "FREEZE_PLAN_ATTEMPT_2.external_bound_artifacts",
+   "MANIFEST_COVERED": false,
+   "PATH": "/home/ubuntu/project/WPNO_orchestration/R8_final_verification_attempt_5/tools/validate_freeze_plan_attempt_2.py",
+   "ROLE": "FREEZE_PLAN_VALIDATOR",
+   "SHA256": "f2bb2bf507fc3d0cd6b6cdb202d44675cd9261ad897054091212667c1e33af3f",
+   "SIZE": 11759
+  },
+  {
+   "BOUND_BY": "R8_BUILD_MANIFEST + FREEZE_PLAN_ATTEMPT_2.bound_artifacts",
+   "MANIFEST_COVERED": true,
+   "PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/automation/controller.py",
+   "REL": "automation/controller.py",
+   "ROLE": "FREEZE_ROUTE_DRIVER",
+   "SHA256": "167b5cf6f43bdead8314c10d9296dd462e4622d3a01a9e3c9db9498a5c972a08",
+   "SIZE": 97093
+  },
+  {
+   "BOUND_BY": "FREEZE_PLAN_ATTEMPT_2.token_generator.source_sha256",
+   "MANIFEST_COVERED": true,
+   "NOTE": "the digest is over the exact source of the function, not over its module. The module's own digest is the FREEZE_MODULE row.",
+   "PATH": "automation/freeze.py::token_for",
+   "ROLE": "FREEZE_TOKEN_GENERATOR",
+   "SHA256": "1f9b38c4809cf59bbfd321e61940d4c0617e4fb5b2172a4aa7457a77db180360",
+   "SIZE": 546
+  },
+  {
+   "BOUND_BY": "R8_BUILD_MANIFEST + FREEZE_PLAN_ATTEMPT_2.bound_artifacts",
+   "MANIFEST_COVERED": true,
+   "PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/automation/hashing.py",
+   "REL": "automation/hashing.py",
+   "ROLE": "HASHING",
+   "SHA256": "fdf0ed1ba7f105eb88f46dc0bf47ad7778d9076d45f92938b6fc60aa3b2be369",
+   "SIZE": 3438
+  },
+  {
+   "BOUND_BY": "R8_BUILD_MANIFEST + FREEZE_PLAN_ATTEMPT_2.bound_artifacts",
+   "MANIFEST_COVERED": true,
+   "PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/automation/in_process_executor.py",
+   "REL": "automation/in_process_executor.py",
+   "ROLE": "IN_PROCESS_EXECUTOR",
+   "SHA256": "d4fb45186aa620f09e534dc4757a11259926439db0eef2c5b42496fa20835670",
+   "SIZE": 35388
+  },
+  {
+   "BOUND_BY": "R8_BUILD_MANIFEST + FREEZE_PLAN_ATTEMPT_2.bound_artifacts",
+   "MANIFEST_COVERED": true,
+   "PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/automation/in_process_ops.py",
+   "REL": "automation/in_process_ops.py",
+   "ROLE": "IN_PROCESS_OPS",
+   "SHA256": "1e39e3e0fa09d88411d4e2d634f463abf2cb68b32fe94de80ee7624d601a4f72",
+   "SIZE": 47646
+  },
+  {
+   "BOUND_BY": "R8_BUILD_MANIFEST + FREEZE_PLAN_ATTEMPT_2.bound_artifacts",
+   "MANIFEST_COVERED": true,
+   "PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/build_r8_measurement_records.py",
+   "REL": "build/build_r8_measurement_records.py",
+   "ROLE": "MEASUREMENT_RECORDS_BUILDER",
+   "SHA256": "84418d93b59bb4f174165608bdf49043c8b3928cbc3cb25ec1b0a64917b268e2",
+   "SIZE": 17383
+  },
+  {
+   "BOUND_BY": "R8_BUILD_MANIFEST + FREEZE_PLAN_ATTEMPT_2.bound_artifacts",
+   "MANIFEST_COVERED": true,
+   "PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/build_migration_plan.py",
+   "REL": "build/build_migration_plan.py",
+   "ROLE": "MIGRATION_PLAN_BUILDER",
+   "SHA256": "07a609197b8d38e4d14fcff5824d42a40c7a8c045c0951a0ab65e7f1f51cbb14",
+   "SIZE": 9007
+  },
+  {
+   "BOUND_BY": "R8_BUILD_MANIFEST + FREEZE_PLAN_ATTEMPT_2.bound_artifacts",
+   "MANIFEST_COVERED": true,
+   "PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/automation/migration.py",
+   "REL": "automation/migration.py",
+   "ROLE": "MIGRATION_ROUTE",
+   "SHA256": "65b3db95c3bf9d012195ee81c946f95bae08aea0cc7545134cf1f76d0d6ba93f",
+   "SIZE": 26264
+  },
+  {
+   "BOUND_BY": "R8_BUILD_MANIFEST + FREEZE_PLAN_ATTEMPT_2.bound_artifacts",
+   "MANIFEST_COVERED": true,
+   "PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/automation/operation_catalog.py",
+   "REL": "automation/operation_catalog.py",
+   "ROLE": "OPERATION_CATALOG",
+   "SHA256": "305c4e2b6cb8bcdda8818ffd5156e2043b8a04924a249a37d4b59df94c689858",
+   "SIZE": 20665
+  },
+  {
+   "BOUND_BY": "R8_BUILD_MANIFEST + FREEZE_PLAN_ATTEMPT_2.bound_artifacts",
+   "MANIFEST_COVERED": true,
+   "PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/automation/path_policy.py",
+   "REL": "automation/path_policy.py",
+   "ROLE": "PATH_POLICY",
+   "SHA256": "5955ff84d4f94c8903425eb48742008fe8b6fb4a9ee8d1b5c9722a82df18175a",
+   "SIZE": 11591
+  },
+  {
+   "BOUND_BY": "NOT_USED",
+   "MANIFEST_COVERED": false,
+   "NOTE": "attempt 4 used a wrapper, R8_in_process_execution_repair/attempt_4/run_freeze_plan_builder.py, to override the builder's stale VERIFICATION_DIR constant at run time. That wrapper determined which verification the plan bound and was not itself bound by the plan. Attempt 5 uses no wrapper: its builder carries no constant that needs overriding, and it is executed directly.",
+   "PATH": "NOT_USED",
+   "ROLE": "PLAN_RUNNER",
+   "SHA256": "NOT_USED",
+   "SIZE": 0
+  },
+  {
+   "BOUND_BY": "R8_BUILD_MANIFEST + FREEZE_PLAN_ATTEMPT_2.bound_artifacts",
+   "MANIFEST_COVERED": true,
+   "PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/automation/policy.py",
+   "REL": "automation/policy.py",
+   "ROLE": "POLICY_CONSTANTS",
+   "SHA256": "9b4f97e5aec7d49d35a80d5b60efe69b3263bfb6b064bd5d8f721cd58ca3e001",
+   "SIZE": 11325
+  },
+  {
+   "BOUND_BY": "R8_BUILD_MANIFEST + FREEZE_PLAN_ATTEMPT_2.bound_artifacts",
+   "MANIFEST_COVERED": true,
+   "PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/verify_predecessor_integrity.py",
+   "REL": "build/verify_predecessor_integrity.py",
+   "ROLE": "PREDECESSOR_INTEGRITY_VERIFIER",
+   "SHA256": "71c9d8856162f13a84400fba943e6e216c4378c6d0214afcb00b64e194b93c7a",
+   "SIZE": 6829
+  },
+  {
+   "BOUND_BY": "ENVIRONMENT",
+   "INVOKED_AS": "/usr/bin/python3",
+   "MANIFEST_COVERED": false,
+   "NOTE": "system executable; digest recorded for provenance. No artefact binds it and this row says so rather than leaving it implied.",
+   "PATH": "/usr/bin/python3.14",
+   "ROLE": "PYTHON_INTERPRETER",
+   "SHA256": "fb4160816672c8fe18f5bba68c7f471ffee0d2efe174f4b2c8937b854f9f5926",
+   "SIZE": 7477160
+  },
+  {
+   "BOUND_BY": "R8_BUILD_MANIFEST + FREEZE_PLAN_ATTEMPT_2.bound_artifacts",
+   "MANIFEST_COVERED": true,
+   "PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/rehearse_candidate_plans.py",
+   "REL": "build/rehearse_candidate_plans.py",
+   "ROLE": "REHEARSAL_HARNESS",
+   "SHA256": "ebe776a5ea858b819b8e1c745b93a2d82d418de898118c1d03ee0fd9908835d3",
+   "SIZE": 31531
+  },
+  {
+   "BOUND_BY": "R8_BUILD_MANIFEST + FREEZE_PLAN_ATTEMPT_2.bound_artifacts",
+   "MANIFEST_COVERED": true,
+   "PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/build_r8_resume_status.py",
+   "REL": "build/build_r8_resume_status.py",
+   "ROLE": "RESUME_STATUS_BUILDER",
+   "SHA256": "17ec4ee50dc40dcf1856df6943cabfa8aff9663ac2b2225c97d50f5c12c505c3",
+   "SIZE": 6305
+  },
+  {
+   "BOUND_BY": "ENVIRONMENT",
+   "INVOKED_AS": "/usr/bin/bash",
+   "MANIFEST_COVERED": false,
+   "NOTE": "system executable; digest recorded for provenance. No artefact binds it and this row says so rather than leaving it implied.",
+   "PATH": "/usr/bin/bash",
+   "ROLE": "SHELL",
+   "SHA256": "450c68376d14e5040d36cce58605c35b2211d244f3079297440dc9d602ee4994",
+   "SIZE": 1540520
+  },
+  {
+   "BOUND_BY": "R8_BUILD_MANIFEST + FREEZE_PLAN_ATTEMPT_2.bound_artifacts",
+   "MANIFEST_COVERED": true,
+   "PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/r8_static_safety_review.py",
+   "REL": "build/r8_static_safety_review.py",
+   "ROLE": "STATIC_SAFETY_REVIEWER",
+   "SHA256": "eba333a6a75cba8f7c9fd21c036909a170b666206f12ecebe4f850b93feb4231",
+   "SIZE": 37537
+  },
+  {
+   "BOUND_BY": "R8_BUILD_MANIFEST + FREEZE_PLAN_ATTEMPT_2.bound_artifacts",
+   "MANIFEST_COVERED": true,
+   "PATH": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/run_test_suites.py",
+   "REL": "build/run_test_suites.py",
+   "ROLE": "TEST_SUITE_RUNNER_NOT_USED_BY_ATTEMPT_5",
+   "SHA256": "ba031b51914fe147e668c8aebf8de5bb8a7666700ed47d4f6ffd4b156ae5514f",
+   "SIZE": 9109
+  },
+  {
+   "BOUND_BY": "ENVIRONMENT",
+   "INVOKED_AS": "/usr/bin/sha256sum",
+   "MANIFEST_COVERED": false,
+   "NOTE": "system executable; digest recorded for provenance. No artefact binds it and this row says so rather than leaving it implied.",
+   "PATH": "/usr/lib/cargo/bin/coreutils/sha256sum",
+   "ROLE": "TOKEN_HASH_EXECUTABLE_SHA256SUM",
+   "SHA256": "2e4dd474fd9105b5b8332e862d9c795fe6762c5c390a5d8ff03a8662e58db272",
+   "SIZE": 11356448
+  },
+  {
+   "BOUND_BY": "FREEZE_PLAN_ATTEMPT_2.external_bound_artifacts",
+   "MANIFEST_COVERED": false,
+   "PATH": "/home/ubuntu/project/WPNO_orchestration/R8_final_verification_attempt_5/tools/VERIFY_PROMPT_ATTEMPT_5.md",
+   "ROLE": "VERIFICATION_INSTRUCTIONS",
+   "SHA256": "961da5cc65afc652e1686f2c5131fbda6942d6176190c318a43aea2590ac8fca",
+   "SIZE": 18287
+  },
+  {
+   "BOUND_BY": "FREEZE_PLAN_ATTEMPT_2.external_bound_artifacts",
+   "MANIFEST_COVERED": false,
+   "PATH": "/home/ubuntu/project/WPNO_orchestration/R8_final_verification_attempt_5/tools/run_verification_attempt_5.sh",
+   "ROLE": "VERIFICATION_RUNNER",
+   "SHA256": "cbe0cfcab5e3a877dba812c48f6b867f9c5838d456bff001f2f85cae0d2a54ed",
+   "SIZE": 2592
+  },
+  {
+   "BOUND_BY": "ENVIRONMENT",
+   "INVOKED_AS": "codex",
+   "MANIFEST_COVERED": false,
+   "NOTE": "system executable; digest recorded for provenance. No artefact binds it and this row says so rather than leaving it implied.",
+   "PATH": "/home/ubuntu/.npm-global/lib/node_modules/@openai/codex/bin/codex.js",
+   "ROLE": "VERIFIER_EXECUTABLE_CODEX",
+   "SHA256": "134063e133f0b4244fa3b251acf973d4fe4b4aeeacbdc135211bf480f59f1477",
+   "SIZE": 7236
+  },
+  {
+   "BOUND_BY": "FREEZE_PLAN_ATTEMPT_2.external_bound_artifacts",
+   "MANIFEST_COVERED": false,
+   "PATH": "/home/ubuntu/project/WPNO_orchestration/R8_final_verification_attempt_5/tools/inventory_r8.py",
+   "ROLE": "VERIFIER_HELPER_INVENTORY",
+   "SHA256": "e812b219728d781efb68e96b70d273662f88f7f402a9190a265c04236f234e3e",
+   "SIZE": 3196
+  },
+  {
+   "BOUND_BY": "FREEZE_PLAN_ATTEMPT_2.external_bound_artifacts",
+   "MANIFEST_COVERED": false,
+   "PATH": "/home/ubuntu/project/WPNO_orchestration/R8_final_verification_attempt_5/tools/compare_inventories.py",
+   "ROLE": "VERIFIER_HELPER_INVENTORY_COMPARE",
+   "SHA256": "db87229a2432ec2fd52659073c152d860aa296de6ee25a40efd0304dd7b8fb60",
+   "SIZE": 3117
+  },
+  {
+   "BOUND_BY": "FREEZE_PLAN_ATTEMPT_2.external_bound_artifacts",
+   "MANIFEST_COVERED": false,
+   "PATH": "/home/ubuntu/project/WPNO_orchestration/R8_final_verification_attempt_5/tools/build_tool_inventory.py",
+   "ROLE": "VERIFIER_HELPER_TOOL_INVENTORY_BUILDER",
+   "SHA256": "dae7ea0d4248e5c32ec9850b51808a7b1d8657a49b53ba546d1da58a1458574a",
+   "SIZE": 9356
+  }
+ ],
+ "unidentified_tools": []
+}

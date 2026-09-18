@@ -1,0 +1,15 @@
+{
+  "audits_initialised": 35,
+  "initialised_at": 1787767516.6085374,
+  "level1_root": "/home/ubuntu/project/WPNO_orchestration/2026-08-26_three_audit_pass/freezefix_dev/fx_after/pkg",
+  "lineage_path": "lineage/R4_EXECUTION",
+  "mode_at_initialisation": "GENERATED_UNVERIFIED",
+  "phases_initialised": 43,
+  "platform": "UBUNTU",
+  "predecessor": "R4",
+  "predecessor_approvals_authority": "NONE. No approval token recorded against the predecessor authorises any phase of this revision. Every gated phase here requires a fresh human token bound to this revision's own plan.",
+  "predecessor_root": "/nonexistent",
+  "predecessor_state_disposition": "HISTORICAL_ONLY_PRESERVED_IN_LINEAGE_NOT_ACTIVE",
+  "revision": "R5",
+  "schema": "wpno.level1.revision/1"
+}

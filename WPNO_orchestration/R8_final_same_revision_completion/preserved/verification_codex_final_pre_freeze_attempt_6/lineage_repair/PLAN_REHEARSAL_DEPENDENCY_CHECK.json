@@ -1,0 +1,17 @@
+{
+ "CONCLUSION": "NO_DEPENDENCY. Neither the 43 candidate plans nor the rehearsal report references or binds this package's automation/controller.py or automation/freeze.py, and the rehearsal harness never enters the freeze branch. The repair is confined to cmd_freeze_level1's step-9 gate and the lineage declaration beside it, which no plan step and no rehearsal invocation reaches. Plans and rehearsals are carried forward on their existing hashes; rerunning 43 substantive rehearsals to reassure about a branch they never execute is the repetition the instruction forbids.",
+ "REGENERATION_REQUIRED": false,
+ "candidate_plan_dependencies": [],
+ "candidate_plans_examined": 43,
+ "changed_executables": {
+  "automation/controller.py": "3570204ae58c86bc7e2e4c9ff088c9f7f2131fcb7e7a03a0477f5bfa27f0588a",
+  "automation/freeze.py": "de8c76e4f7d139fa14b7b2cd879ccb321e1b5873ee955b6c3e22cf4c57a39df4"
+ },
+ "matching_rule": "anchored: R8-relative, or absolute under the R8 root, or an exact digest. A bare substring match reported a false dependency on R4 scan results.",
+ "rehearsal_harness_enters_the_freeze_branch": false,
+ "rehearsal_harness_imports_freeze": false,
+ "rehearsal_report_dependencies": [],
+ "rehearsal_report_r4_scan_mentions_of_freeze_py": 1,
+ "schema": "wpno.r8.lineage-repair-dependency-check/2",
+ "superseded_controller_digest": "167b5cf6f43bdead8314c10d9296dd462e4622d3a01a9e3c9db9498a5c972a08"
+}

@@ -1,0 +1,25 @@
+{
+ "schema": "wpno.r8.attempt5-sandbox-probe/1",
+ "purpose": "Prove the write barrier attempt 5 relies on is actually effective before relying on it. A barrier that has not been shown to stop anything is not a barrier, and a later count of zero writes would then be measuring nothing.",
+ "codex_version": "codex-cli 0.150.1",
+ "sandbox_mode": "workspace-write",
+ "workspace_root": "/home/ubuntu/project/WPNO_orchestration/R8_final_verification_attempt_5/temporary/probe_ws",
+ "arm_1_inside_workspace": {
+  "command": "echo INSIDE > $WORKSPACE/inside.txt",
+  "expected": "succeeds",
+  "observed_exit_status": 0,
+  "file_created": true,
+  "bytes": 7
+ },
+ "arm_2_outside_workspace": {
+  "command": "echo OUTSIDE > /home/ubuntu/project/WPNO_orchestration/R8_ATTEMPT5_SANDBOX_PROBE/PROBE.txt",
+  "expected": "refused",
+  "observed_exit_status": 1,
+  "observed_error": "/bin/bash: line 1: /home/ubuntu/project/WPNO_orchestration/R8_ATTEMPT5_SANDBOX_PROBE/PROBE.txt: Read-only file system",
+  "file_created": false
+ },
+ "both_arms_fired": true,
+ "conclusion": "Writes outside the codex workspace root are refused by the kernel-enforced sandbox, and writes inside it succeed. The probe target was chosen outside both the workspace root and TMPDIR so that neither grant could mask the refusal. R8 lies outside the attempt-5 workspace root and is therefore covered by the same refusal. This is enforcement, not detection; the pre/post inventory comparison remains the detection.",
+ "probe_target_not_in_r8": true,
+ "r8_untouched_by_this_probe": true
+}

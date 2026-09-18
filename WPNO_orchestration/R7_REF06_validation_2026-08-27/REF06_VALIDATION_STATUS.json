@@ -1,0 +1,22 @@
+{
+  "schema": "wpno.ref06.targeted-validation/1",
+  "validation_date": "2026-08-27",
+  "audit_id": "L1-A14",
+  "ref_id": "REF-06",
+  "mode": "TARGETED_REF06_ONLY",
+  "manifest_valid": true,
+  "three_way_byte_identity": true,
+  "docx_valid_ooxml": true,
+  "word_stored_page_count": 111,
+  "other_parser_or_renderer_page_count": null,
+  "total_citation_occurrences": 165,
+  "unique_citations": 64,
+  "l1_a14_requirement_satisfied": false,
+  "original_checker_input_supported": true,
+  "provenance_qualification": "Supplied provenance plus three-way byte identity supports, but does not conclusively prove, original-checker-input identity.",
+  "ref06_status": "PARTIAL",
+  "operator_manifest_updated": false,
+  "operator_manifest_update_reason": "Acceptance condition not met; existing manifest contains no REF-06 entry or lawful REF-06 status field.",
+  "r7_modified": false,
+  "next_required_action": "Supply the exact checker-input DOCX that independently enumerates to 82 total citation occurrences and 43 unique citations under the authoritative L1-A14 rule."
+}

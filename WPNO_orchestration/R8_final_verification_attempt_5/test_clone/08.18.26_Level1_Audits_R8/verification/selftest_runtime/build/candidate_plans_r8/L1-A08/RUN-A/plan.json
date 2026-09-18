@@ -1,0 +1,322 @@
+{
+  "audit_id": "L1-A08",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Design five edge cases that exist in no current test file, covering Unicode, punctuation, whitespace, line breaks and homoglyphs or mixed encoding; run them against the productive guard; record what it does. Each case is paired with its own negative counterpart.",
+  "static_analysis": "The guard is parsed, never imported, and its patterns are extracted so that each case can be aimed at a named pattern.\n\nThe binding records that the five edge cases do not exist and must be authored. They are authored here, and for each the plan records the case identifier, the exact bytes in hex where they are not printable, the vector it exercises, why it is not a renaming of an existing fixture, and the expected verdict with its reason. 'Not a renaming' is established by searching the existing test corpus for each case's bytes before it is accepted.\n\nPYTHON_SCRIPT_RUN_SANDBOX runs a script under work/ and nowhere else, so the approved phase first copies the guard to work/<audit>/RUN-A/sandbox/ and records the copy's digest beside the original's. The original in authoring/ is read and never written to. Where a rule has to be neutralised to attribute a rejection, it is neutralised in that copy and the neutralised line is recorded.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/authoring/AP17_output_guardrail_v3.py"
+      },
+      "purpose": "Extract the patterns each case is aimed at.",
+      "step_id": "parse_guard",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "COUNT_TEXT_MATCHES",
+      "params": {
+        "include_globs": [
+          "*.py",
+          "*.sh",
+          "*.yml",
+          "*.yaml",
+          "*.json",
+          "*.toml",
+          "*.cfg",
+          "*.ini",
+          "*.plist",
+          "Dockerfile*"
+        ],
+        "normal_form": "NFC",
+        "patterns": [
+          "AP17_make_poisoned_test_v3"
+        ],
+        "root": "/home/ubuntu/project/WPNO/authoring",
+        "word_boundary": true
+      },
+      "purpose": "Search the existing test corpus for each case's bytes. A case already present is a renaming and is replaced before the run.",
+      "step_id": "prove_cases_are_novel",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A08/RUN-A/cases/C1.md"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A08/RUN-A/sandbox/AP17_output_guardrail_v3.py"
+      },
+      "purpose": "C1 (UNICODE): the forbidden content expressed with a canonically equivalent but differently encoded sequence - a precomposed character against base plus combining mark",
+      "step_id": "run_case_c1",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A08/RUN-A/cases/C2.md"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A08/RUN-A/sandbox/AP17_output_guardrail_v3.py"
+      },
+      "purpose": "C2 (PUNCTUATION): the forbidden content interrupted by punctuation a human reads through - a soft hyphen, a zero-width joiner, a period between characters",
+      "step_id": "run_case_c2",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A08/RUN-A/cases/C3.md"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A08/RUN-A/sandbox/AP17_output_guardrail_v3.py"
+      },
+      "purpose": "C3 (WHITESPACE): non-breaking space, narrow no-break space and other whitespace a reader does not distinguish from a plain space",
+      "step_id": "run_case_c3",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A08/RUN-A/cases/C4.md"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A08/RUN-A/sandbox/AP17_output_guardrail_v3.py"
+      },
+      "purpose": "C4 (LINE_BREAKS): the forbidden content split across a line break, including CRLF",
+      "step_id": "run_case_c4",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A08/RUN-A/cases/C5.md"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A08/RUN-A/sandbox/AP17_output_guardrail_v3.py"
+      },
+      "purpose": "C5 (HOMOGLYPH_OR_MIXED_ENCODING): Latin characters replaced by visually identical characters from another script, or a mixed encoding",
+      "step_id": "run_case_c5",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--input",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A08/RUN-A/cases/BASE.md"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A08/RUN-A/sandbox/AP17_output_guardrail_v3.py"
+      },
+      "purpose": "The unmodified forbidden content must be detected. Every case is a variation on it, so if the base case is missed the five results are uninterpretable.",
+      "step_id": "positive_control_unmodified_forbidden_content",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--corpus",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A08/RUN-A/cases/negatives"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A08/RUN-A/sandbox/AP17_output_guardrail_v3.py"
+      },
+      "purpose": "Legitimate text containing the same characters in an innocent arrangement must not be detected. Each of the five vectors has its own negative counterpart.",
+      "step_id": "negative_control_innocent_arrangements",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--corpus",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A08/RUN-A/cases/specificity"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A08/RUN-A/sandbox/AP17_output_guardrail_v3.py"
+      },
+      "purpose": "For each case the guard detects, one character is altered so it should no longer match. It must not. This proves detection is specific rather than incidental.",
+      "step_id": "mutation_control_specificity",
+      "timeout_seconds": 300
+    }
+  ],
+  "target": {
+    "identity_evidence": "bindings records this path with this digest. Which guardrail version is productive is an open question in this audit's binding and a version suffix is excluded by rule from answering it.",
+    "path": "/home/ubuntu/project/WPNO/authoring/AP17_output_guardrail_v3.py",
+    "sha256": "dd60dc63437691082b821fe219a7599c1561c757214a0e38eac97367ab2a09ca"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "/home/ubuntu/project/WPNO/authoring/AP17_output_guardrail_v3.py",
+        "/home/ubuntu/project/WPNO/authoring"
+      ],
+      "allowed_writes": [
+        "work/L1-A08/RUN-A/",
+        "evidence/L1-A08/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A08 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A08",
+      "candidate_template_identity": "L1-A08/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A08/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "/usr/bin/python3 -I -B against a sandbox copy",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "ARBITRARY_SHELL",
+        "CHANGE_PERMISSION",
+        "DATABASE_CONNECTION",
+        "DATABASE_WRITE",
+        "DELETE_SOURCE",
+        "DOCKER_BUILD",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_SOCKET_ACCESS",
+        "GIT_MUTATION",
+        "INSTALL_PACKAGE",
+        "LAUNCH_AGENT_MUTATION",
+        "MCP_MUTATION",
+        "MODIFY_SOURCE",
+        "N8N_MUTATION",
+        "NETWORK_REQUEST",
+        "NETWORK_UPLOAD",
+        "SERVICE_MUTATION"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [],
+      "independent_oracle": "A human-readable rendering of each case plus an explicit statement of what a reader sees. The claim 'a reader would read this as the forbidden content' is the oracle, and it is stated per case rather than assumed.",
+      "limitations": [],
+      "method": "five authored edge cases, each with a negative counterpart",
+      "notes": [
+        "PYTHON_SCRIPT_RUN_SANDBOX runs a script under work/ and nowhere else, so the approved phase first copies the guard to work/<audit>/RUN-A/sandbox/ and records the copy's digest beside the original's. The original in authoring/ is read and never written to. Where a rule has to be neutralised to attribute a rejection, it is neutralised in that copy and the neutralised line is recorded.",
+        "The binding records that the five cases do not exist and must be authored. They are authored here and their novelty is proved by search, not asserted."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [],
+      "references": [],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": null,
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "cases": [
+        {
+          "case_id": "C1",
+          "description": "the forbidden content expressed with a canonically equivalent but differently encoded sequence - a precomposed character against base plus combining mark",
+          "vector": "UNICODE"
+        },
+        {
+          "case_id": "C2",
+          "description": "the forbidden content interrupted by punctuation a human reads through - a soft hyphen, a zero-width joiner, a period between characters",
+          "vector": "PUNCTUATION"
+        },
+        {
+          "case_id": "C3",
+          "description": "non-breaking space, narrow no-break space and other whitespace a reader does not distinguish from a plain space",
+          "vector": "WHITESPACE"
+        },
+        {
+          "case_id": "C4",
+          "description": "the forbidden content split across a line break, including CRLF",
+          "vector": "LINE_BREAKS"
+        },
+        {
+          "case_id": "C5",
+          "description": "Latin characters replaced by visually identical characters from another script, or a mixed encoding",
+          "vector": "HOMOGLYPH_OR_MIXED_ENCODING"
+        }
+      ],
+      "check_id": "five_cases_recorded",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Are the five cases fully specified?",
+      "required_result": "Per case: identifier, exact bytes in hex where not printable, the vector exercised, why it is not a renaming, and the expected verdict with its reason."
+    },
+    {
+      "check_id": "novelty_proved",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "question": "Is each case genuinely absent from the existing corpus?",
+      "required_result": "Established by searching the existing test corpus for each case's bytes. A case already present is replaced before the run.",
+      "step_id": "prove_cases_are_novel"
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": "NONZERO",
+      "expected_failure_reason": "the unmodified forbidden content",
+      "expected_result": "DETECTED",
+      "question": "Is the base forbidden content detected?",
+      "step_id": "positive_control_unmodified_forbidden_content",
+      "why": "Every case is a variation on the base. If the base is missed the five results mean nothing."
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_failure_reason": "the characters appear in an innocent arrangement; a detection here is a false positive and is reported as one",
+      "expected_result": "NO_DETECTIONS",
+      "one_per_vector": true,
+      "question": "Is innocent text using the same characters left alone?",
+      "step_id": "negative_control_innocent_arrangements"
+    },
+    {
+      "check_id": "mutation_control",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_result": "THE_ALTERED_CASES_ARE_NOT_DETECTED",
+      "expected_status": "COMPLETED_OUTCOME_IS_SUBSTANTIVE",
+      "fixture": "work/L1-A08/RUN-A/cases/specificity/",
+      "fixture_construction": "for each detected case, one character altered so the content should no longer match",
+      "proof_the_fixture_differs": "each altered case's SHA-256 differs from its original and the altered character is recorded",
+      "question": "Is detection specific or incidental?",
+      "step_id": "mutation_control_specificity",
+      "why": "Whether the altered cases stop matching is what the control measures. The guard's exit code has not been measured to encode that, and binding one would be an assumption.",
+      "zero_changed_results_is": "proof the detection is incidental, not a passing control"
+    }
+  ]
+}

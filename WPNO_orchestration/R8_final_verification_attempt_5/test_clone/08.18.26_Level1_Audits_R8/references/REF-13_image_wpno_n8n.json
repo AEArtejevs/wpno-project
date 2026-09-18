@@ -1,0 +1,92 @@
+[
+  {
+    "Architecture": "amd64",
+    "Comment": "buildkit.dockerfile.v0",
+    "Config": {
+      "Entrypoint": [
+        "tini",
+        "--",
+        "/docker-entrypoint.sh"
+      ],
+      "Env": [
+        "NODE_VERSION=24.16.0-r0",
+        "NPM_CONFIG_UPDATE_NOTIFIER=false",
+        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        "NODE_PATH=/usr/local/lib/node_modules",
+        "NODE_ENV=production",
+        "N8N_RELEASE_TYPE=stable",
+        "SHELL=/bin/sh"
+      ],
+      "ExposedPorts": {
+        "5678/tcp": {}
+      },
+      "Labels": {
+        "com.docker.dhi.chain-id": "sha256:a0b5026460379e1d27fb4919418d31ef65a3c98f4d373b16fe4e38855dc6883b",
+        "com.docker.dhi.compliance": "cis",
+        "com.docker.dhi.created": "2026-06-12T15:00:41Z",
+        "com.docker.dhi.date.end-of-life": "2028-04-30",
+        "com.docker.dhi.date.release": "2025-05-06",
+        "com.docker.dhi.definition": "image/node/alpine-3.24/24-dev",
+        "com.docker.dhi.distro": "alpine-3.24",
+        "com.docker.dhi.entitlement": "public",
+        "com.docker.dhi.flavor": "",
+        "com.docker.dhi.name": "dhi/node",
+        "com.docker.dhi.package-manager": "apk",
+        "com.docker.dhi.shell": "busybox",
+        "com.docker.dhi.title": "Node.js 24.x (dev)",
+        "com.docker.dhi.url": "https://dhi.io/catalog/node",
+        "com.docker.dhi.variant": "dev",
+        "com.docker.dhi.version": "24.16.0-alpine3.24-dev",
+        "org.opencontainers.image.description": "Workflow Automation Tool",
+        "org.opencontainers.image.source": "https://github.com/n8n-io/n8n",
+        "org.opencontainers.image.title": "n8n",
+        "org.opencontainers.image.url": "https://n8n.io",
+        "org.opencontainers.image.version": "2.30.4"
+      },
+      "User": "node",
+      "WorkingDir": "/home/node"
+    },
+    "Created": "2026-07-13T07:26:12.304797146Z",
+    "Descriptor": {
+      "digest": "sha256:d1606a508b1e426de07a98fa10f3758ef474b17590c6f181a0dd38c999f819d0",
+      "mediaType": "application/vnd.oci.image.index.v1+json",
+      "size": 1609
+    },
+    "Id": "sha256:d1606a508b1e426de07a98fa10f3758ef474b17590c6f181a0dd38c999f819d0",
+    "Identity": {
+      "Pull": [
+        {
+          "Repository": "docker.io/n8nio/n8n"
+        }
+      ]
+    },
+    "Metadata": {
+      "LastTagTime": "2026-07-15T05:18:29.523363529Z"
+    },
+    "Os": "linux",
+    "RepoDigests": [
+      "n8nio/n8n@sha256:d1606a508b1e426de07a98fa10f3758ef474b17590c6f181a0dd38c999f819d0"
+    ],
+    "RepoTags": [
+      "n8nio/n8n:latest"
+    ],
+    "RootFS": {
+      "Layers": [
+        "sha256:a017bf410d7b07a5bb66ec45e3a23d9dd6ddfdf50f2c0888b17c7198549f835a",
+        "sha256:8619cb052f1fe5e5a0b708668dd19212c7622684313bd27419750d8ab99b51cb",
+        "sha256:3339b63da2132943d1c77bc7b4ed5f8a515b2c0a0f76ac3450ce67135d3c4f42",
+        "sha256:23ece53d8953f40d02bf725ec85c427058cf2f25e4bf7b794dd4f63990c6f48e",
+        "sha256:1b5b3113e31ac3e0b80fadb60dd2dd27800074381e4d75a6aa67d168e178be8a",
+        "sha256:85f44bbef3547c083c75055d2e5b7b1965aed0446a390fdc1b67e469f500fa54",
+        "sha256:e6d0f73e32c9c35381a53ba180fd7cb5ee1157b0f9bf256d296a601d12ac0120",
+        "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "sha256:b008e27c182a7d20b5ac837e34728ae8b2b7b72d0e119cca4a857eae5d0a354a",
+        "sha256:8a10be66d64f6bab27134096a0dd5f30c3022b7eed461a8a6e00879894a178da",
+        "sha256:0d2623b49359afc878078fe6653870df8abac4a30e2f73e9ad56070edc82eb3b"
+      ],
+      "Type": "layers"
+    },
+    "Size": 377411933
+  }
+]

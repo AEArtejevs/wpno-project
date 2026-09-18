@@ -1,0 +1,395 @@
+{
+  "audit_id": "L1-A02",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Determine what verify_document actually asserts about a document, and whether a document that parses but is semantically wrong passes it. Nine fixtures, each a separate question, with the independent reader stating what the document contains.",
+  "static_analysis": "The verifier is parsed, never imported. Every assertion it makes is enumerated - what is compared, against what, and what causes a non-success return. Every try/except is recorded with what it swallows: an except that returns success is the defect this audit exists to find.\n\nThe return contract is recorded - exit code, boolean, exception, printed text - together with whether a caller could mistake one for another.\n\nWhether the check reads the document's XML parts or only opens the container is decided from the parse, and then which of these are checked at all: body text, heading text, heading order, heading hierarchy, table of contents, relationships, content types, document properties and part integrity.\n\nAll nine fixtures are synthetic and built inside the audit work directory. Never a client document.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/authoring/AP16_verify_document.py"
+      },
+      "purpose": "Enumerate assertions, exception handling and the return contract.",
+      "step_id": "parse_verifier",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--document",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A02/RUN-A/fixtures/F1.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A02/RUN-A/sandbox/AP16_verify_document.py"
+      },
+      "purpose": "F1: valid document. Expected: success.",
+      "step_id": "run_f1",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--document",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A02/RUN-A/fixtures/F2.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A02/RUN-A/sandbox/AP16_verify_document.py"
+      },
+      "purpose": "F2: missing file. Expected: a clear, distinguishable failure, not a crash.",
+      "step_id": "run_f2",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--document",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A02/RUN-A/fixtures/F3.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A02/RUN-A/sandbox/AP16_verify_document.py"
+      },
+      "purpose": "F3: empty file, 0 bytes. Expected: failure.",
+      "step_id": "run_f3",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--document",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A02/RUN-A/fixtures/F4.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A02/RUN-A/sandbox/AP16_verify_document.py"
+      },
+      "purpose": "F4: parseable but semantically wrong: valid OOXML, correct structure, body text replaced with unrelated content. Expected: open.",
+      "step_id": "run_f4",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--document",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A02/RUN-A/fixtures/F5.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A02/RUN-A/sandbox/AP16_verify_document.py"
+      },
+      "purpose": "F5: modified body: one sentence changed. Expected: open.",
+      "step_id": "run_f5",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--document",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A02/RUN-A/fixtures/F6.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A02/RUN-A/sandbox/AP16_verify_document.py"
+      },
+      "purpose": "F6: modified heading: one heading renamed. Expected: open.",
+      "step_id": "run_f6",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--document",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A02/RUN-A/fixtures/F7.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A02/RUN-A/sandbox/AP16_verify_document.py"
+      },
+      "purpose": "F7: damaged TOC: field retained, entries no longer matching headings. Expected: open.",
+      "step_id": "run_f7",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--document",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A02/RUN-A/fixtures/F8.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A02/RUN-A/sandbox/AP16_verify_document.py"
+      },
+      "purpose": "F8: broken relationship: an r:id referenced from document.xml with no matching entry in the .rels part. Expected: open.",
+      "step_id": "run_f8",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--document",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A02/RUN-A/fixtures/F9.docx"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A02/RUN-A/sandbox/AP16_verify_document.py"
+      },
+      "purpose": "F9: truncated document: the ZIP cut at 60 percent. Expected: open.",
+      "step_id": "run_f9",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "ORACLE",
+      "operation": "DOCX_PARSE_SANDBOX",
+      "params": {
+        "load_dtd": false,
+        "no_network": true,
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A02/RUN-A/fixtures/F1.docx",
+        "resolve_entities": false
+      },
+      "purpose": "Extract the heading list and body text directly from word/document.xml, with external entities and DTD disabled. The oracle states what the document contains; the target states what it claims.",
+      "step_id": "independent_reader",
+      "timeout_seconds": 300
+    }
+  ],
+  "target": {
+    "identity_evidence": "bindings/L1-A02.binding.json records this path with this digest and the file on disk hashes to the same value.",
+    "path": "/home/ubuntu/project/WPNO/authoring/AP16_verify_document.py",
+    "sha256": "98847c6034365703585d08828fe2ee363438ba8c2570a91a262af366407ee653"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "/home/ubuntu/project/WPNO/authoring/AP16_verify_document.py"
+      ],
+      "allowed_writes": [
+        "work/L1-A02/RUN-A/",
+        "evidence/L1-A02/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A02 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A02",
+      "candidate_template_identity": "L1-A02/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A02/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "/usr/bin/python3 -I -B against a sandbox copy",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "ARBITRARY_SHELL",
+        "CHANGE_PERMISSION",
+        "DATABASE_CONNECTION",
+        "DATABASE_WRITE",
+        "DELETE_SOURCE",
+        "DOCKER_BUILD",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_SOCKET_ACCESS",
+        "GIT_MUTATION",
+        "INSTALL_PACKAGE",
+        "LAUNCH_AGENT_MUTATION",
+        "MCP_MUTATION",
+        "MODIFY_SOURCE",
+        "N8N_MUTATION",
+        "NETWORK_REQUEST",
+        "NETWORK_UPLOAD",
+        "SERVICE_MUTATION"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [],
+      "independent_oracle": "The independent reader is written for this audit with zipfile and xml.etree, external entities and DTD disabled. It states what the document contains; the target states what it claims. The generator is never its own oracle, and a prior report under docs/ is not one either.",
+      "limitations": [],
+      "method": "nine-fixture matrix against an independent OOXML reader",
+      "notes": [
+        "All nine fixtures are synthetic. Never a client document."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [],
+      "references": [],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": "Production identity requires execution-path evidence: an import, an invocation in a script, a container command, a workflow node or a scheduler entry. Filename, version suffix, modification time, file size, documentation, comments and proximity to another file are excluded by rule. If production identity cannot be proven the answer is that it cannot be proven from this machine; no most-likely candidate is nominated.",
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "check_id": "what_is_asserted",
+      "checked_or_not": [
+        "body text",
+        "heading text",
+        "heading order",
+        "heading hierarchy",
+        "table of contents",
+        "relationships",
+        "content types",
+        "document properties",
+        "part integrity"
+      ],
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "What does the verifier actually assert?",
+      "required_result": "Each listed as checked or not checked.",
+      "step_id": "parse_verifier"
+    },
+    {
+      "check_id": "exception_handling",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Does any except return success?",
+      "required_result": "Every try/except recorded with what it swallows.",
+      "verdict_effect": "An except that returns success turns a failure into a pass and is the defect this audit exists to find."
+    },
+    {
+      "check_id": "fixture_matrix",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "fixtures": [
+        {
+          "description": "valid document",
+          "expected": "success",
+          "fixture_id": "F1"
+        },
+        {
+          "description": "missing file",
+          "expected": "a clear, distinguishable failure, not a crash",
+          "fixture_id": "F2"
+        },
+        {
+          "description": "empty file, 0 bytes",
+          "expected": "failure",
+          "fixture_id": "F3"
+        },
+        {
+          "description": "parseable but semantically wrong: valid OOXML, correct structure, body text replaced with unrelated content",
+          "expected": "open",
+          "fixture_id": "F4"
+        },
+        {
+          "description": "modified body: one sentence changed",
+          "expected": "open",
+          "fixture_id": "F5"
+        },
+        {
+          "description": "modified heading: one heading renamed",
+          "expected": "open",
+          "fixture_id": "F6"
+        },
+        {
+          "description": "damaged TOC: field retained, entries no longer matching headings",
+          "expected": "open",
+          "fixture_id": "F7"
+        },
+        {
+          "description": "broken relationship: an r:id referenced from document.xml with no matching entry in the .rels part",
+          "expected": "open",
+          "fixture_id": "F8"
+        },
+        {
+          "description": "truncated document: the ZIP cut at 60 percent",
+          "expected": "open",
+          "fixture_id": "F9"
+        }
+      ],
+      "question": "What does the verifier do with each fixture?",
+      "required_result": "One result per fixture, with the exit code and the semantic verdict recorded separately."
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_result": "SUCCESS",
+      "question": "Does a valid document pass?",
+      "step_id": "run_f1",
+      "why": "If a known-good document does not pass, the verifier is unusable and the rest of the matrix is uninterpretable."
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expected_exit_code": "NONZERO",
+      "expected_failure_reason": "the file has no content at all",
+      "expected_result": "FAILURE",
+      "question": "Does a zero-byte file fail?",
+      "step_id": "run_f3",
+      "verdict_effect": "A verifier that passes a zero-byte file has no content check at all."
+    },
+    {
+      "check_id": "mutation_control",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expected_result": "AT_LEAST_ONE_MUST_FAIL",
+      "fixture_construction": "F5 one sentence changed; F6 one heading renamed; F9 the ZIP cut at 60 percent",
+      "proof_the_fixture_differs": "each fixture's SHA-256 differs from F1's and the change is recorded",
+      "question": "Does any real change to the document cause a failure?",
+      "step_ids": [
+        "run_f5",
+        "run_f6",
+        "run_f9"
+      ],
+      "verdict_effect": "If a modified body, a renamed heading and a truncated container all pass, the verifier does not verify the document - it verifies that a file is there, and the audit says exactly that.",
+      "zero_changed_results_is": "the finding itself here, and it is reported as a finding about the verifier rather than as a failed control"
+    },
+    {
+      "check_id": "control_expectation_run_f5",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_status": "COMPLETED_OUTCOME_IS_SUBSTANTIVE",
+      "question": "What must this control step do for its measurement to count?",
+      "step_id": "run_f5",
+      "why": "The plan says 'Expected: open' for this fixture."
+    },
+    {
+      "check_id": "control_expectation_run_f6",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_status": "COMPLETED_OUTCOME_IS_SUBSTANTIVE",
+      "question": "What must this control step do for its measurement to count?",
+      "step_id": "run_f6",
+      "why": "The plan says 'Expected: open' for this fixture."
+    },
+    {
+      "check_id": "control_expectation_run_f9",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_status": "COMPLETED_OUTCOME_IS_SUBSTANTIVE",
+      "question": "What must this control step do for its measurement to count?",
+      "step_id": "run_f9",
+      "why": "The plan says 'Expected: open' for this fixture."
+    },
+    {
+      "check_id": "control_expectation_independent_reader",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_boolean": true,
+      "expected_exit_code": 0,
+      "question": "What must this control step do for its measurement to count?",
+      "step_id": "independent_reader",
+      "why": "The oracle must parse the document. What it finds in it is substantive."
+    }
+  ]
+}

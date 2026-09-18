@@ -1,0 +1,9 @@
+{
+  "file_count": 78,
+  "purpose": "Archive rotated backup worktree tarballs to operator local storage before human-authorized server deletion.",
+  "r4_or_r5_content": false,
+  "schema": "wpno.server-space-archive/1",
+  "server_files_deleted": false,
+  "source_path": "/home/ubuntu/project/wpno-secure-case-ledgers/p0_backup_restore/backup",
+  "total_bytes": 8399422791
+}

@@ -1,0 +1,841 @@
+{
+ "UNRESOLVED_KEY_LOOKUPS": 0,
+ "declared_lineage_artifacts": [
+  "lineage/R7_BASELINE_MANIFEST.json",
+  "lineage/R8_LINEAGE.sha256"
+ ],
+ "field_count": 102,
+ "fields": [
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "R7_UNIQUE_IN_PROCESS_PLAN_STEPS_REMEASURED",
+   "SAMPLE_VALUE": "165",
+   "SOURCE_FILE": "build/IN_PROCESS_COUNT_RECONCILIATION.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "R8_INVOCATIONS_PER_UNIQUE_STEP",
+   "SAMPLE_VALUE": "'1:1 for every step that ran; the executor is called once per plan step and never loops over inputs'",
+   "SOURCE_FILE": "build/IN_PROCESS_COUNT_RECONCILIATION.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "R8_IN_PROCESS_HANDLER_INVOCATIONS",
+   "SAMPLE_VALUE": "169",
+   "SOURCE_FILE": "build/IN_PROCESS_COUNT_RECONCILIATION.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "R8_TOTAL_PLAN_STEPS",
+   "SAMPLE_VALUE": "311",
+   "SOURCE_FILE": "build/IN_PROCESS_COUNT_RECONCILIATION.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "R8_UNIQUE_IN_PROCESS_PLAN_STEPS",
+   "SAMPLE_VALUE": "169",
+   "SOURCE_FILE": "build/IN_PROCESS_COUNT_RECONCILIATION.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "explanation",
+   "SAMPLE_VALUE": "<dict len 11>",
+   "SOURCE_FILE": "build/IN_PROCESS_COUNT_RECONCILIATION.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "r7_dirty_rehearsal",
+   "SAMPLE_VALUE": "<dict len 8>",
+   "SOURCE_FILE": "build/IN_PROCESS_COUNT_RECONCILIATION.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "revision",
+   "SAMPLE_VALUE": "'R8'",
+   "SOURCE_FILE": "build/IN_PROCESS_COUNT_RECONCILIATION.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "schema",
+   "SAMPLE_VALUE": "'wpno.level1.in-process-count-reconciliation/1'",
+   "SOURCE_FILE": "build/IN_PROCESS_COUNT_RECONCILIATION.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "steps",
+   "SAMPLE_VALUE": "<list len 311>",
+   "SOURCE_FILE": "build/IN_PROCESS_COUNT_RECONCILIATION.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "IN_PROCESS_HANDLER_INVOCATIONS",
+   "SAMPLE_VALUE": "169",
+   "SOURCE_FILE": "work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "IN_PROCESS_STEP_COUNT",
+   "SAMPLE_VALUE": "169",
+   "SOURCE_FILE": "work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "NOTE_ONLY_IN_PROCESS_STEPS",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "REQUIRED_IN_PROCESS_STEPS_WITHOUT_EVIDENCE",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "HOLLOW_PHASES",
+   "SAMPLE_VALUE": "<list len 0>",
+   "SOURCE_FILE": "work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "LIVE_STATE_UNCHANGED",
+   "SAMPLE_VALUE": "True",
+   "SOURCE_FILE": "work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "phases_rehearsed",
+   "SAMPLE_VALUE": "43",
+   "SOURCE_FILE": "work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "phases_required",
+   "SAMPLE_VALUE": "43",
+   "SOURCE_FILE": "work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "all_pass_ready",
+   "SAMPLE_VALUE": "True",
+   "SOURCE_FILE": "work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "reports",
+   "SAMPLE_VALUE": "<list len 43>",
+   "SOURCE_FILE": "work/_rehearsal_r8/REHEARSAL_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "REQUIRED_PLAN_COUNT",
+   "SAMPLE_VALUE": "43",
+   "SOURCE_FILE": "build/candidate_plans_r8/PLAN_COVERAGE_MANIFEST.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "CANDIDATE_PLAN_COUNT",
+   "SAMPLE_VALUE": "43",
+   "SOURCE_FILE": "build/candidate_plans_r8/PLAN_COVERAGE_MANIFEST.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "MISSING_PLAN_COUNT",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "build/candidate_plans_r8/PLAN_COVERAGE_MANIFEST.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "DUPLICATE_PLAN_COUNT",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "build/candidate_plans_r8/PLAN_COVERAGE_MANIFEST.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "UNKNOWN_PLAN_COUNT",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "build/candidate_plans_r8/PLAN_COVERAGE_MANIFEST.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "plans",
+   "SAMPLE_VALUE": "<list len 43>",
+   "SOURCE_FILE": "build/candidate_plans_r8/PLAN_COVERAGE_MANIFEST.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "CONTROL_ROLE_STEP_COUNT",
+   "SAMPLE_VALUE": "122",
+   "SOURCE_FILE": "build/CONTROL_EXPECTATION_COVERAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "CONTROL_STEPS_WITH_MACHINE_CHECKABLE_EXPECTATION",
+   "SAMPLE_VALUE": "'122/122'",
+   "SOURCE_FILE": "build/CONTROL_EXPECTATION_COVERAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "CONTROL_STEPS_WITHOUT_ENFORCED_EXPECTATION",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "build/CONTROL_EXPECTATION_COVERAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "schema",
+   "SAMPLE_VALUE": "'wpno.level1.test-suite-results/1'",
+   "SOURCE_FILE": "build/R8_TEST_SUITE_RESULTS.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "revision",
+   "SAMPLE_VALUE": "'R8'",
+   "SOURCE_FILE": "build/R8_TEST_SUITE_RESULTS.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "all_clean",
+   "SAMPLE_VALUE": "True",
+   "SOURCE_FILE": "build/R8_TEST_SUITE_RESULTS.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "suites",
+   "SAMPLE_VALUE": "<dict len 2>",
+   "SOURCE_FILE": "build/R8_TEST_SUITE_RESULTS.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$.suites.controller_suite",
+   "KEY_NAME": "ran",
+   "SAMPLE_VALUE": "503",
+   "SOURCE_FILE": "build/R8_TEST_SUITE_RESULTS.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.suites.controller_suite",
+   "KEY_NAME": "failures",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "build/R8_TEST_SUITE_RESULTS.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.suites.controller_suite",
+   "KEY_NAME": "errors",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "build/R8_TEST_SUITE_RESULTS.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.suites.controller_suite",
+   "KEY_NAME": "skips",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "build/R8_TEST_SUITE_RESULTS.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.suites.controller_suite",
+   "KEY_NAME": "clean",
+   "SAMPLE_VALUE": "True",
+   "SOURCE_FILE": "build/R8_TEST_SUITE_RESULTS.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$.suites.controller_suite",
+   "KEY_NAME": "measurement",
+   "SAMPLE_VALUE": "'RUN'",
+   "SOURCE_FILE": "build/R8_TEST_SUITE_RESULTS.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.suites.package_suite",
+   "KEY_NAME": "ran",
+   "SAMPLE_VALUE": "405",
+   "SOURCE_FILE": "build/R8_TEST_SUITE_RESULTS.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.suites.package_suite",
+   "KEY_NAME": "failures",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "build/R8_TEST_SUITE_RESULTS.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.suites.package_suite",
+   "KEY_NAME": "errors",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "build/R8_TEST_SUITE_RESULTS.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.suites.package_suite",
+   "KEY_NAME": "skips",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "build/R8_TEST_SUITE_RESULTS.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.suites.package_suite",
+   "KEY_NAME": "clean",
+   "SAMPLE_VALUE": "True",
+   "SOURCE_FILE": "build/R8_TEST_SUITE_RESULTS.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$.suites.package_suite",
+   "KEY_NAME": "measurement",
+   "SAMPLE_VALUE": "'RUN'",
+   "SOURCE_FILE": "build/R8_TEST_SUITE_RESULTS.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "reviewed_file_count",
+   "SAMPLE_VALUE": "49",
+   "SOURCE_FILE": "build/R8_STATIC_SAFETY_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "finding_count",
+   "SAMPLE_VALUE": "0",
+   "SOURCE_FILE": "build/R8_STATIC_SAFETY_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "findings",
+   "SAMPLE_VALUE": "<list len 0>",
+   "SOURCE_FILE": "build/R8_STATIC_SAFETY_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "clean",
+   "SAMPLE_VALUE": "True",
+   "SOURCE_FILE": "build/R8_STATIC_SAFETY_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "unpermitted_changes",
+   "SAMPLE_VALUE": "<list len 0>",
+   "SOURCE_FILE": "build/R8_STATIC_SAFETY_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "predecessor_root",
+   "SAMPLE_VALUE": "'/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7'",
+   "SOURCE_FILE": "build/R8_STATIC_SAFETY_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "predecessor_unchanged",
+   "SAMPLE_VALUE": "<dict len 4>",
+   "SOURCE_FILE": "build/R8_STATIC_SAFETY_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "r4_unchanged",
+   "SAMPLE_VALUE": "<dict len 4>",
+   "SOURCE_FILE": "build/R8_STATIC_SAFETY_REPORT.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "refused_freeze_attempt_2",
+   "SAMPLE_VALUE": "<dict len 7>",
+   "SOURCE_FILE": "build/R8_FINAL_PRE_FREEZE_CLOSURE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "lineage_binding_defect",
+   "SAMPLE_VALUE": "<dict len 6>",
+   "SOURCE_FILE": "build/R8_FINAL_PRE_FREEZE_CLOSURE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "tests",
+   "SAMPLE_VALUE": "<dict len 2>",
+   "SOURCE_FILE": "build/R8_FINAL_PRE_FREEZE_CLOSURE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "static_safety",
+   "SAMPLE_VALUE": "<dict len 4>",
+   "SOURCE_FILE": "build/R8_FINAL_PRE_FREEZE_CLOSURE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "rehearsal",
+   "SAMPLE_VALUE": "<dict len 10>",
+   "SOURCE_FILE": "build/R8_FINAL_PRE_FREEZE_CLOSURE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "controls",
+   "SAMPLE_VALUE": "<dict len 4>",
+   "SOURCE_FILE": "build/R8_FINAL_PRE_FREEZE_CLOSURE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "live_execution",
+   "SAMPLE_VALUE": "'None. No R8 phase has been executed and none may be until after R8 is frozen and the migration packet is applied.'",
+   "SOURCE_FILE": "build/R8_FINAL_PRE_FREEZE_CLOSURE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.lineage_binding_defect",
+   "KEY_NAME": "gate_checks_per_artefact",
+   "SAMPLE_VALUE": "<list len 6>",
+   "SOURCE_FILE": "build/R8_FINAL_PRE_FREEZE_CLOSURE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$.lineage_binding_defect",
+   "KEY_NAME": "regression",
+   "SAMPLE_VALUE": "<dict len 5>",
+   "SOURCE_FILE": "build/R8_FINAL_PRE_FREEZE_CLOSURE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$.lineage_binding_defect",
+   "KEY_NAME": "repair",
+   "SAMPLE_VALUE": "\"all lineage-path string surgery removed. The required artefacts are declared as data in automation/freeze.py -- PACK...",
+   "SOURCE_FILE": "build/R8_FINAL_PRE_FREEZE_CLOSURE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.lineage_binding_defect",
+   "KEY_NAME": "required_artifacts",
+   "SAMPLE_VALUE": "<list len 2>",
+   "SOURCE_FILE": "build/R8_FINAL_PRE_FREEZE_CLOSURE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$.lineage_binding_defect",
+   "KEY_NAME": "what_it_was",
+   "SAMPLE_VALUE": "\"the freeze gate derived the artefact it required by string surgery on a module constant: 'lineage/%s_MANIFEST.sha256...",
+   "SOURCE_FILE": "build/R8_FINAL_PRE_FREEZE_CLOSURE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.lineage_binding_defect",
+   "KEY_NAME": "why_nothing_caught_it",
+   "SAMPLE_VALUE": "\"test_freeze_order_regression runs the real freeze route end to end, but built its fixture by COPYING that same expre...",
+   "SOURCE_FILE": "build/R8_FINAL_PRE_FREEZE_CLOSURE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "R7_BYTES_NOT_DUPLICATED",
+   "SAMPLE_VALUE": "614178940",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "chain",
+   "SAMPLE_VALUE": "<list len 5>",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "incident_record",
+   "SAMPLE_VALUE": "<dict len 4>",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "inheritance_method",
+   "SAMPLE_VALUE": "'hash-bound reference. R8 records the predecessor roots, their snapshot digests and their control-manifest verificati...",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "migratable_r7_attempts",
+   "SAMPLE_VALUE": "<list len 2>",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "non_migratable_r7_attempts",
+   "SAMPLE_VALUE": "<dict len 1>",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "predecessor",
+   "SAMPLE_VALUE": "'R7'",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "predecessors",
+   "SAMPLE_VALUE": "<dict len 3>",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "r7",
+   "SAMPLE_VALUE": "<dict len 16>",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "r7_attempts",
+   "SAMPLE_VALUE": "<dict len 3>",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "recorded_at_utc",
+   "SAMPLE_VALUE": "'2026-08-28T13:22:16Z'",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "revision",
+   "SAMPLE_VALUE": "'R8'",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "schema",
+   "SAMPLE_VALUE": "'wpno.level1.lineage-compact/1'",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "baseline_manifest_sha256",
+   "SAMPLE_VALUE": "'0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d'",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "build_id",
+   "SAMPLE_VALUE": "'L1BUILD-R7-2026-08-26-UBUNTU-PHASE-ATTEMPT-MODEL'",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "continuous_post_freeze_immutability",
+   "SAMPLE_VALUE": "False",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "control_manifest",
+   "SAMPLE_VALUE": "<dict len 7>",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "current_bytes_restored_to_frozen_manifest",
+   "SAMPLE_VALUE": "True",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "files",
+   "SAMPLE_VALUE": "16153",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "int"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "frozen_state_summary",
+   "SAMPLE_VALUE": "<dict len 7>",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "inherited_lineage_tree",
+   "SAMPLE_VALUE": "<dict len 6>",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "mode_on_disk",
+   "SAMPLE_VALUE": "'FROZEN'",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "post_freeze_modification_incident",
+   "SAMPLE_VALUE": "'RECORDED'",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "r7_own_record_said_no_successor_permitted",
+   "SAMPLE_VALUE": "True",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "revision_record",
+   "SAMPLE_VALUE": "<dict len 13>",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "dict"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "root",
+   "SAMPLE_VALUE": "'/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7'",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "snapshot_sha256",
+   "SAMPLE_VALUE": "'f84ac00a0ce66a0e786494295a2574de413ae6e359fea762ce4fa4b399102a3f'",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "symlinks",
+   "SAMPLE_VALUE": "<list len 0>",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$.r7",
+   "KEY_NAME": "why_r8_exists_anyway",
+   "SAMPLE_VALUE": "\"R7's inventory records final_revision true and successor_permitted false. The human authorised R8 on 2026-08-28 afte...",
+   "SOURCE_FILE": "lineage/R8_LINEAGE.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "applied_before_freeze",
+   "SAMPLE_VALUE": "False",
+   "SOURCE_FILE": "build/migration_plan_r7_to_r8/MIGRATION_PLAN.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "bool"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "route_module_sha256",
+   "SAMPLE_VALUE": "'65b3db95c3bf9d012195ee81c946f95bae08aea0cc7545134cf1f76d0d6ba93f'",
+   "SOURCE_FILE": "build/migration_plan_r7_to_r8/MIGRATION_PLAN.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "str"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "migratable_attempts",
+   "SAMPLE_VALUE": "<list len 2>",
+   "SOURCE_FILE": "build/migration_plan_r7_to_r8/MIGRATION_PLAN.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "excluded_attempts",
+   "SAMPLE_VALUE": "<list len 1>",
+   "SOURCE_FILE": "build/migration_plan_r7_to_r8/MIGRATION_PLAN.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "$",
+   "KEY_NAME": "post_freeze_resume_sequence",
+   "SAMPLE_VALUE": "<list len 10>",
+   "SOURCE_FILE": "build/migration_plan_r7_to_r8/MIGRATION_PLAN.json",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "list"
+  },
+  {
+   "JSON_PATH": "PACKAGE_LINEAGE_MODEL.artifacts[*].rel",
+   "KEY_NAME": "lineage/R7_BASELINE_MANIFEST.json",
+   "SAMPLE_VALUE": "0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d",
+   "SOURCE_FILE": "automation/freeze.py",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "path"
+  },
+  {
+   "JSON_PATH": "PACKAGE_LINEAGE_MODEL.artifacts[*].rel",
+   "KEY_NAME": "lineage/R8_LINEAGE.sha256",
+   "SAMPLE_VALUE": "eb26a89a718f7384449827638623762b6e70ece0679810e170d7f98448d1f926",
+   "SOURCE_FILE": "automation/freeze.py",
+   "VALUE_PRESENT": true,
+   "VALUE_TYPE": "path"
+  }
+ ],
+ "r8_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+ "rule": "every key a check names appears here with VALUE_PRESENT true. No fallback, no alias.",
+ "schema": "wpno.r8.lineage-repair-schema-map/1",
+ "source_digests": {
+  "build/CONTROL_EXPECTATION_COVERAGE.json": "53c1998bee4bb65f96cb0a746c664f8bee6656ba7c06365ac790df7a620f891e",
+  "build/IN_PROCESS_COUNT_RECONCILIATION.json": "1450107c54936e3a90151b666e9f75d7a9dd765a21cf926a6325ee01183fc124",
+  "build/R8_FINAL_PRE_FREEZE_CLOSURE.json": "8625a8c856d016aeb9216568f2b5c5fbe026a21db1873b851a3293ebfff990f3",
+  "build/R8_STATIC_SAFETY_REPORT.json": "f241e03ba020394ed1f479addc151afe5c5abe0505f424fd23890a5027b9dfa2",
+  "build/R8_TEST_SUITE_RESULTS.json": "7b11533e916bbe7748b2bd612f8ae952c11c846c00c7a3015c6a68137f75dea5",
+  "build/candidate_plans_r8/PLAN_COVERAGE_MANIFEST.json": "0de8b726edc5de9248d8983edecd7b22841e3eda03d0ce317d6b853610b1ad3c",
+  "build/migration_plan_r7_to_r8/MIGRATION_PLAN.json": "805a5e34b2f703b94c80c5789db1498c8395796c2da27617cfdd50cf61a7b82b",
+  "lineage/R8_LINEAGE.json": "c4c12173f877dc5f998a4f24a5661a87cfdf356ab3ea8558786d9f7716f467cc",
+  "work/_rehearsal_r8/REHEARSAL_REPORT.json": "3c34ac822fe02875a0d1a3b5b59afd89e4245e07978f6b5036f06fb77089b80e"
+ },
+ "unresolved": []
+}

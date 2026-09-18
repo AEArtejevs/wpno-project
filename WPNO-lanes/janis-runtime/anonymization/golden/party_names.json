@@ -1,0 +1,10 @@
+{
+  "_warnung": "TESTLISTE — nur fuer den Golden-Set-Lauf im Ordner golden/. Enthaelt KEINE echten Mandatsnamen und darf die produktive party_names.json nicht ueberschreiben.",
+  "names": [
+    "Hansen & Reimers GmbH",
+    "Latham & Watkins",
+    "Bernd Osterloh",
+    "Ingrid Waldkirch",
+    "Nordsee Beteiligungs AG"
+  ]
+}

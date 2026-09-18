@@ -1,0 +1,12 @@
+[
+  {
+    "Destination": "/var/lib/postgresql/data",
+    "Driver": "local",
+    "Mode": "rw",
+    "Name": "postgres_wpno_pgdata",
+    "Propagation": "",
+    "RW": true,
+    "Source": "/var/lib/docker/volumes/postgres_wpno_pgdata/_data",
+    "Type": "volume"
+  }
+]

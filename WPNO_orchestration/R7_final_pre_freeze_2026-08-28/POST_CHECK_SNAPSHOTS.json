@@ -1,0 +1,26 @@
+{
+  "R4": {
+    "files": 2238,
+    "root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R4",
+    "snapshot_sha256": "4d8ab234a553b158c55341b5f6f6284fddab4b643949288d57697ca638781430",
+    "symlinks": []
+  },
+  "R5": {
+    "files": 14439,
+    "root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R5",
+    "snapshot_sha256": "191902e7e7626099e0c149d46ed105bc691820186173021fd1001cf4856a556e",
+    "symlinks": []
+  },
+  "R6": {
+    "files": 15153,
+    "root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R6",
+    "snapshot_sha256": "aa3650f456343e5ade7e662d011d483df69cc6cf6f77097d36d6356eb7c56026",
+    "symlinks": []
+  },
+  "R7": {
+    "files": 15850,
+    "root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7",
+    "snapshot_sha256": "3675dbba162ab170ab0704da7fca9dd620655c4cfb6ebb120eaaa4e7c9160f50",
+    "symlinks": []
+  }
+}

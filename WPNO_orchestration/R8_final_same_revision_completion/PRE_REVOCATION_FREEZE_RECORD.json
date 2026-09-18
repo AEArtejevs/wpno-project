@@ -1,0 +1,43 @@
+{
+ "baseline_manifest_sha256": "0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d",
+ "bound_artifacts": 211,
+ "control_manifest_entries": 914,
+ "control_manifest_sha256": "62deca0b61f2810bf73bbb9b336cb52761e5ab773334e78a4285921aab2fba65",
+ "discovery_baseline_members": 26,
+ "freeze_attempt_number": 3,
+ "freeze_ledger": [
+  {
+   "attempt_number": 3,
+   "outcome": "PUBLISH_STARTED",
+   "recorded_at": null,
+   "token_sha256": "23776f5a22b253e96ae1b9e9ba98bb5bde27d8eddc6c883a4b43f1fd3f8b1dee"
+  },
+  {
+   "attempt_number": 3,
+   "outcome": "FROZEN",
+   "recorded_at": null,
+   "token_sha256": "23776f5a22b253e96ae1b9e9ba98bb5bde27d8eddc6c883a4b43f1fd3f8b1dee"
+  }
+ ],
+ "freeze_plan_path": "build/freeze_plan_attempt_3/FREEZE_PLAN_R8_ATTEMPT_3.json",
+ "freeze_plan_sha256": "19c16de22e04f3d1539f7c8c6ff438ee4cfeb192d49af78555af9d95a771b282",
+ "freeze_token_sha256_only": [
+  "23776f5a22b253e96ae1b9e9ba98bb5bde27d8eddc6c883a4b43f1fd3f8b1dee"
+ ],
+ "freeze_was_valid_when_created": true,
+ "mode_at_record": "FROZEN",
+ "package_sha256_bound_by_plan": "f7e181a21c902a401c55cd9f97d50c55711fbcef6c5fdf16845ab94bc8db95bb",
+ "package_verified_frozen_at_utc": "2026-08-28T22:52:50Z",
+ "package_verified_sha256": "a1d0ddbc433c45cb6354ec11336ef6585e20a66811cf4db6ee3861aa01eeb707",
+ "predecessor_lineage_required": [
+  "lineage/R7_BASELINE_MANIFEST.json",
+  "lineage/R8_LINEAGE.sha256"
+ ],
+ "project_baseline_members": 33,
+ "raw_token_preserved": false,
+ "recorded_utc": "2026-08-29T00:21:32Z",
+ "schema": "wpno.r8.pre-revocation-freeze-record/1",
+ "verification_directory": "verification_codex_final_pre_freeze_attempt_6",
+ "verification_result_sha256_bound_by_plan": "b16ee28273c6fcc2577a9bcfd957f1e90fd6e6a496bf83b82ebfbc611bcf493a",
+ "why_being_revoked": "the frozen specification left 'the purpose in question' for EKU undefined; the frozen L1-A31 RUN-A and RUN-B plans produced no explicit machine-checkable key-usage or EKU determination; and the frozen COMPARISON plan hashed two attempt indexes instead of comparing the five substantive dimensions its own test_matrix names. None of that is repairable without changing manifest-covered bytes, and R8 is the final revision."
+}

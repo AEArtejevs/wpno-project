@@ -1,0 +1,29 @@
+{
+  "schema": "wpno.r7.ref05-coverage/1",
+  "ref_id": "REF-05",
+  "status": "ACCEPTED",
+  "official_source_url": "https://www.bundesgerichtshof.de/DE/DasGericht/Geschaeftsverteilung/Geschaeftsverteilungsplan2026/Praesidiumsbeschluesse2026/praesidiumsbeschluesse2026_node.html",
+  "page_title": "Der Bundesgerichtshof - Das Gericht : Geschäftsverteilungsplan 2026 : Präsidiumsbeschlüsse 2026",
+  "year": 2026,
+  "capture_generated_local": "2026-08-28T00:15:49+02:00",
+  "capture_generated_utc": "2026-08-27T22:15:49Z",
+  "coverage_through": "2026-08-27",
+  "coverage_basis": "The saved official BGH annual page states that the individual Presidium decisions for the 2026 business-distribution plan are listed there and was generated after the end of 2026-08-27 in the source jurisdiction.",
+  "listed_decision_dates": [
+    "2026-01-27",
+    "2026-02-24",
+    "2026-04-28",
+    "2026-06-17",
+    "2026-07-07",
+    "2026-08-11"
+  ],
+  "latest_listed_decision": "2026-08-11",
+  "decision_in_delta_interval": false,
+  "current_pdf_link": "https://www.bundesgerichtshof.de/SharedDocs/Downloads/DE/DasGericht/GeschaeftsvertPDF/2026/aenderungenGeschaeftsverteilung2026.html?nn=372306",
+  "current_pdf_sha256": "da9f847e6532bfacfc6f3a8f55edba9c3ad5f346b2242f5918668c938e7b6d18",
+  "current_pdf_matches_prior": true,
+  "supplement_manifest_sha256": "374e18e51923327a25ad7ad285ae708db9ea1b3d9845c085194ae813db2f0e23",
+  "supplement_root": "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/REF-05/R7_REF05_SUPPLEMENT",
+  "prior_partial_closure_report": "/home/ubuntu/project/WPNO_orchestration/R7_L1-A11_BGH_decision_closure_2026-08-28/L1_A11_CLOSURE_REPORT.md",
+  "prior_partial_closure_status": "SUPERSEDED_FOR_COVERAGE_ONLY"
+}

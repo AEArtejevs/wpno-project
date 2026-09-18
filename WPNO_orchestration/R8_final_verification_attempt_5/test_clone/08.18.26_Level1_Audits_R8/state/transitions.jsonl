@@ -1,0 +1,1 @@
+{"audit_id": "PACKAGE", "binding": {"phases_initialised": 43, "predecessor": "R7", "revision": "R8"}, "from_state": "NOT_STARTED", "pid": 563572, "recorded_at": 1787924363.6241002, "route": "init-revision", "run_phase": "REVISION", "schema": "wpno.level1.transition/1", "to_state": "NOT_STARTED"}

@@ -1,0 +1,38 @@
+{
+ "BLOCKING_COUNT": 0,
+ "NO_CONCURRENT_WRITER": true,
+ "blocking_writable_descriptors": [],
+ "measurement_limit": "Descriptors held by processes of another uid are not readable without privilege. Those pids are counted above, not assumed empty. The pre/post inventory of the root is the independent check that closes this gap after the fact.",
+ "method": "/proc/<pid>/fd + /proc/<pid>/fdinfo + /proc/<pid>/exe",
+ "open_descriptors_below_root": [],
+ "pgrep_used": false,
+ "pids_with_readable_fd_table": 24,
+ "pids_with_unreadable_fd_table": 117,
+ "root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+ "schema": "wpno.r8.lineage-writer-inspection/1",
+ "this_pid": 711933,
+ "this_uid": 1000,
+ "unreadable_pids_by_uid": [
+  0,
+  100,
+  983,
+  988,
+  989,
+  995,
+  998,
+  1000,
+  1001
+ ],
+ "unreadable_same_uid": [
+  {
+   "name": "(sd-pam)",
+   "pid": 1519,
+   "uid": 1000
+  },
+  {
+   "name": "sshd-session",
+   "pid": 687466,
+   "uid": 1000
+  }
+ ]
+}

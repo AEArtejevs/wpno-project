@@ -1,0 +1,12 @@
+{
+  "decoded_as": "utf-8",
+  "parsed": true,
+  "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/progress.json",
+  "sha256": "0250b50b5a043a7ac30317980975ce7df18c7630626f927cf9c524c2b20fdbfd",
+  "shape": "object",
+  "size": 2,
+  "top_level_keys": [
+    "audits",
+    "halt_critical"
+  ]
+}

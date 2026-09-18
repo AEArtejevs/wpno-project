@@ -1,0 +1,12 @@
+{
+  "audit_id": "L1-A24",
+  "host": "SYNTHETIC_REHEARSAL_HOST_NOT_A_REAL_INTAKE",
+  "launch_directories": [
+    "outside_project",
+    "inside_project",
+    "sibling_directory"
+  ],
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_packet/1",
+  "synthetic_rehearsal_fixture": true
+}

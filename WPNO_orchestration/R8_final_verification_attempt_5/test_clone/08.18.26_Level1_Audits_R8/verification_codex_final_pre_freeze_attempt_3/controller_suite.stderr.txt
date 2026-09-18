@@ -1,0 +1,8 @@
+......................................................................................................................................................................./home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/verification/selftest_runtime/automation/tests/test_l1a31_plan_correction.py:213: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/verification/selftest_runtime/automation/tests/support/synthetic_chain.py' mode='r' encoding='utf-8'>
+  source = io.open(synthetic_chain.__file__, encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+................................................................................................................................................................................................................................................................................................................................................
+----------------------------------------------------------------------
+Ran 503 tests in 14.594s
+
+OK

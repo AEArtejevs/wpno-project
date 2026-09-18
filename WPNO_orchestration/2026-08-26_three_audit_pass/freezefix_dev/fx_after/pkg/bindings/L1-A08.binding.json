@@ -1,0 +1,35 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A08",
+  "binding_status": "TARGET_PARTIAL",
+  "logical_targets": [
+    "Five independently designed output-guard edge cases"
+  ],
+  "candidate_paths": [
+    "/Users/martinotten/WPNO/authoring/AP17_output_guardrail_v3.py"
+  ],
+  "productive_target": null,
+  "productive_target_sha256": null,
+  "productive_target_evidence": [],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [],
+  "external_evidence_required": [],
+  "unresolved_questions": [
+    "The five edge cases do not exist and must be authored."
+  ],
+  "discovery_drift": [],
+  "source_evidence": [
+    {
+      "source_path": "/Users/martinotten/WPNO/authoring/AP17_output_guardrail_v3.py",
+      "sha256": "dd60dc63437691082b821fe219a7599c1561c757214a0e38eac97367ab2a09ca",
+      "locator": "whole file",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    }
+  ],
+  "replications": 1,
+  "risk": "HIGH",
+  "execution_order": 12
+}

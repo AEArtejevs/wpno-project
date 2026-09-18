@@ -1,0 +1,38 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A02",
+  "binding_status": "TARGET_CONFIRMED",
+  "logical_targets": [
+    "verify_document semantic verification versus existence-only check"
+  ],
+  "candidate_paths": [
+    "/Users/martinotten/WPNO/authoring/AP16_verify_document.py"
+  ],
+  "productive_target": "/Users/martinotten/WPNO/authoring/AP16_verify_document.py",
+  "productive_target_sha256": "98847c6034365703585d08828fe2ee363438ba8c2570a91a262af366407ee653",
+  "productive_target_evidence": [
+    {
+      "claim": "File identity confirmed by name, symbol match and SHA-256.",
+      "note": "File identity is NOT production identity. No execution-path evidence establishes that this file is the copy invoked in production. See discovery_reconciliation/04_PRODUCTION_PATH_RECONCILIATION.md."
+    }
+  ],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [],
+  "external_evidence_required": [],
+  "unresolved_questions": [],
+  "discovery_drift": [],
+  "source_evidence": [
+    {
+      "source_path": "/Users/martinotten/WPNO/authoring/AP16_verify_document.py",
+      "sha256": "98847c6034365703585d08828fe2ee363438ba8c2570a91a262af366407ee653",
+      "locator": "whole file",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    }
+  ],
+  "replications": 1,
+  "risk": "HIGH",
+  "execution_order": 22
+}

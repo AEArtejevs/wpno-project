@@ -1,0 +1,5 @@
+finding_id,beschreibung,reproduced_before_fix,independent_negative_test,candidate_tree_evidence,commit_tree_evidence,attestation_evidence,finding_closed
+RCK2-01,staged-blob: Guards lasen Working Tree statt Index,true,true (test_01_staged_tree_gate_reads_index / test_04_staged_blob_attack_blocked),true (git write-tree materialisiert),true (commit-tree==tree0),true (V2 tree-gebunden),true
+RCK2-02,TOCTOU: keine Bindung Pruefung<->Commit-Tree,true,true (test_05_toctou_index_mutation_aborts + Broker validated_tree==tree0 + update-ref CAS),true,true,true,true
+RCK2-13,staged-remove: Datei nach add aus Worktree entfernt,true,true (RT-G1-A8b + Index autoritativ),true,true,true,true
+RCK2-22,Gate-Attestierung nicht dauerhaft/recheck-protocol stale,true,true (test_02_historical_not_turned_red + Gate-Phase-Registry + DEMOTABLE_PHASES),n/a,"true (Attestierung tree-gebunden, HMAC)",true,true

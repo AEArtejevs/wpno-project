@@ -1,0 +1,11 @@
+REPOSITORY                     TAG           DIGEST                                                                    IMAGE ID                                                                  CREATED        SIZE
+langfuse/langfuse              3             sha256:8de94f6ab67c1eec49356e07db34b835d2da553526c0366b91c3ef653f4bdd4a   sha256:8de94f6ab67c1eec49356e07db34b835d2da553526c0366b91c3ef653f4bdd4a   6 weeks ago    1.5GB
+langfuse/langfuse-worker       3             sha256:2a5027341d3b1eacfbfee15d8c22353eab036027715f1981e621909141bd9f86   sha256:2a5027341d3b1eacfbfee15d8c22353eab036027715f1981e621909141bd9f86   6 weeks ago    1.67GB
+redis                          7             sha256:a8f08480e1f88f2647fed492d1178c06abb0d0c1fbf02c682a61e2f483fb3954   sha256:a8f08480e1f88f2647fed492d1178c06abb0d0c1fbf02c682a61e2f483fb3954   6 weeks ago    170MB
+postgres                       16            sha256:eb4759788a2182f08257135e61a34f2cfc3c2914079f3465d64ee62350f4d081   sha256:eb4759788a2182f08257135e61a34f2cfc3c2914079f3465d64ee62350f4d081   6 weeks ago    642MB
+postgres                       17            sha256:ebba4f4de37f08f138f97c1443c987a435e783177afedcc4aaf2da1930fbc37a   sha256:ebba4f4de37f08f138f97c1443c987a435e783177afedcc4aaf2da1930fbc37a   6 weeks ago    645MB
+n8nio/n8n                      latest        sha256:d1606a508b1e426de07a98fa10f3758ef474b17590c6f181a0dd38c999f819d0   sha256:d1606a508b1e426de07a98fa10f3758ef474b17590c6f181a0dd38c999f819d0   6 weeks ago    2.47GB
+cgr.dev/chainguard/minio       latest        sha256:8230f06574280781ea6ad45e27962db60175b18e4a43dd54c19012feb5438174   sha256:8230f06574280781ea6ad45e27962db60175b18e4a43dd54c19012feb5438174   6 weeks ago    236MB
+ghcr.io/berriai/litellm        main-latest   sha256:2fdd90b14e3d9244ce297f418b983d8cfd90ba6e72a10a8ddb30f7cf64852390   sha256:2fdd90b14e3d9244ce297f418b983d8cfd90ba6e72a10a8ddb30f7cf64852390   6 weeks ago    1.52GB
+clickhouse/clickhouse-server   latest        sha256:1d1f6508eba2dccce2cee9913907c5f7766327debc57a6b1991f2c9e3176c163   sha256:1d1f6508eba2dccce2cee9913907c5f7766327debc57a6b1991f2c9e3176c163   2 months ago   1.22GB
+curlimages/curl                latest        sha256:7c12af72ceb38b7432ab85e1a265cff6ae58e06f95539d539b654f2cfa64bb13   sha256:7c12af72ceb38b7432ab85e1a265cff6ae58e06f95539d539b654f2cfa64bb13   2 months ago   35.3MB

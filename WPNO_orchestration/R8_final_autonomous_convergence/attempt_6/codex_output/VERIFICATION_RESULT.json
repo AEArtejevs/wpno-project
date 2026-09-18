@@ -1,0 +1,338 @@
+{
+ "attempt": 6,
+ "items": [
+  {
+   "claim": "control manifest",
+   "id": 1,
+   "measured": {
+    "entries": 1915,
+    "malformed": [],
+    "manifest": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R4/CONTROL_MANIFEST.sha256",
+    "manifest_sha256": "4b9d44f256975f7211dc37dbd382d8c3737b02abd1211fec3ea1fe78a1f1cb9f",
+    "mismatches": []
+   },
+   "pass": true,
+   "root": "R4"
+  },
+  {
+   "claim": "control manifest",
+   "id": 2,
+   "measured": {
+    "entries": 14160,
+    "malformed": [],
+    "manifest": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R5/CONTROL_MANIFEST.sha256",
+    "manifest_sha256": "55e702a63e074bf34cdbedb441fcdf9ec3db9356e2d58da80d23a2aceea98176",
+    "mismatches": [
+     [
+      "MODE",
+      "MODE"
+     ]
+    ]
+   },
+   "pass": true,
+   "root": "R5"
+  },
+  {
+   "claim": "control manifest",
+   "id": 3,
+   "measured": {
+    "entries": 14781,
+    "malformed": [],
+    "manifest": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R6/CONTROL_MANIFEST.sha256",
+    "manifest_sha256": "759a7b86c4ca688fda95e467b211504fbde0b9f8528be68e94c9803bec6e989f",
+    "mismatches": []
+   },
+   "pass": true,
+   "root": "R6"
+  },
+  {
+   "claim": "control manifest",
+   "id": 4,
+   "measured": {
+    "entries": 15804,
+    "malformed": [],
+    "manifest": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/CONTROL_MANIFEST.sha256",
+    "manifest_sha256": "005e3e890f7ebea0202101c918aa2dc2794b82c9ff8d8c27318ed9f9e15beb57",
+    "mismatches": []
+   },
+   "pass": true,
+   "root": "R7"
+  },
+  {
+   "claim": "R7 incident disclosure",
+   "id": 5,
+   "measured": {
+    "incident": {
+     "entries": 15,
+     "malformed": [],
+     "manifest": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R7_POST_FREEZE_INCIDENT/INCIDENT_MANIFEST.sha256",
+     "manifest_sha256": "6d3ab746e0f221a7d83d055c81356f7dd013976a4c94f04cb4cc66fa7a5f8ab6",
+     "mismatches": []
+    },
+    "other_claim_files": [
+     "lineage/R7_POST_FREEZE_INCIDENT/R7_RESTORATION_RECORD.json",
+     "verification_codex_final_pre_freeze_attempt_4/VERIFY_PROMPT.md",
+     "build/build_r8_closure_record.py",
+     "build/R8_FINAL_PRE_FREEZE_CLOSURE.json",
+     "build/freeze_plan_attempt_1/build_r8_freeze_plan.py",
+     "build/freeze_plan_attempt_1/FREEZE_PLAN_R8_ATTEMPT_1.json",
+     "verification_codex_final_pre_freeze_attempt_3/VERIFY_PROMPT.md",
+     "verification_codex_final_pre_freeze_attempt_1/finalize.py",
+     "verification_codex_final_pre_freeze_attempt_2/verify.py",
+     "verification_codex_final_pre_freeze_attempt_2/VERIFY_PROMPT.md"
+    ],
+    "r7": {
+     "baseline_manifest_sha256": "0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d",
+     "build_id": "L1BUILD-R7-2026-08-26-UBUNTU-PHASE-ATTEMPT-MODEL",
+     "continuous_post_freeze_immutability": false,
+     "control_manifest": {
+      "entries": 15804,
+      "exit_code": 0,
+      "manifest_path": "08.18.26_Level1_Audits_R7/CONTROL_MANIFEST.sha256",
+      "manifest_sha256": "005e3e890f7ebea0202101c918aa2dc2794b82c9ff8d8c27318ed9f9e15beb57",
+      "mismatching": 0,
+      "mismatching_paths": [],
+      "ok": 15804
+     },
+     "current_bytes_restored_to_frozen_manifest": true,
+     "files": 16153,
+     "frozen_state_summary": {
+      "approval_records": 3,
+      "audits": 35,
+      "audits_with_a_started_phase": {},
+      "frozen_at_utc": "2026-08-28T09:14:39Z",
+      "halt_critical": null,
+      "mode": "FROZEN",
+      "phases_with_recorded_state": 0
+     },
+     "inherited_lineage_tree": {
+      "inventory_record": "08.18.26_Level1_Audits_R7/lineage/R4_R5_R6_R7_INVENTORY.json",
+      "inventory_sha256": "fffd263a2dee529447b4514483dbbbf32ceef5a06ed3cd2d46bffe1243747dfe",
+      "note": "R7's own lineage carries a full physical copy of R6, which carries R5, which carries R4. R8 does not copy it. The chain is verified by re-measuring each predecessor at its own root.",
+      "path": "08.18.26_Level1_Audits_R7/lineage",
+      "predecessor_integrity_record": "08.18.26_Level1_Audits_R7/lineage/PREDECESSOR_INTEGRITY.json",
+      "predecessor_integrity_sha256": "357818157c717b65a9e4a74cb051054e0186db9c53534cb81d05e11ec6c5f794"
+     },
+     "mode_on_disk": "FROZEN",
+     "post_freeze_modification_incident": "RECORDED",
+     "r7_own_record_said_no_successor_permitted": true,
+     "revision_record": {
+      "audits_initialised": 35,
+      "initialised_at": 1787781433.342558,
+      "level1_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7",
+      "lineage_path": "lineage/R6_EXECUTION",
+      "mode_at_initialisation": "GENERATED_UNVERIFIED",
+      "phases_initialised": 43,
+      "platform": "UBUNTU",
+      "predecessor": "R6",
+      "predecessor_approvals_authority": "NONE. No approval token recorded against the predecessor authorises any phase of this revision. Every gated phase here requires a fresh human token bound to this revision's own plan.",
+      "predecessor_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R6",
+      "predecessor_state_disposition": "HISTORICAL_ONLY_PRESERVED_IN_LINEAGE_NOT_ACTIVE",
+      "revision": "R7",
+      "schema": "wpno.level1.revision/1"
+     },
+     "root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7",
+     "snapshot_sha256": "f84ac00a0ce66a0e786494295a2574de413ae6e359fea762ce4fa4b399102a3f",
+     "symlinks": [],
+     "why_r8_exists_anyway": "R7's inventory records final_revision true and successor_permitted false. The human authorised R8 on 2026-08-28 after the frozen execution-engine defect was measured: the frozen controller performed no IN_PROCESS operation at all. That defect cannot be repaired inside a frozen revision, and it was already attempted in place once -- which is the incident this lineage carries."
+    }
+   },
+   "pass": true,
+   "root": "ORIGINAL"
+  },
+  {
+   "claim": "lineage compactness and generation roots",
+   "id": 6,
+   "measured": {
+    "full_copies": [],
+    "generation_roots": {
+     "R4": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/lineage/R6_EXECUTION/lineage/R5_EXECUTION/lineage/R4_EXECUTION",
+     "R5": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/lineage/R6_EXECUTION/lineage/R5_EXECUTION",
+     "R6": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/lineage/R6_EXECUTION",
+     "R7": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7",
+     "R8": "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_6_658748"
+    },
+    "r6_execution_exists": false
+   },
+   "pass": true,
+   "root": "ORIGINAL"
+  },
+  {
+   "claim": "no active R7/R8 shared inode",
+   "id": 7,
+   "measured": {
+    "shared": []
+   },
+   "pass": true,
+   "root": "ORIGINAL"
+  },
+  {
+   "claim": "both callers invoke executor",
+   "id": 8,
+   "measured": {
+    "automation/controller.py": 2,
+    "build/rehearse_candidate_plans.py": 1
+   },
+   "pass": true,
+   "root": "ORIGINAL"
+  },
+  {
+   "claim": "no live note-only operation",
+   "id": 9,
+   "measured": [
+    {
+     "classification": "fixture_or_lineage",
+     "line": 6,
+     "path": "lineage/R7_POST_FREEZE_INCIDENT/dirty_repair_files/automation/in_process_ops.py",
+     "text": "\"in-process; performed by the worker\" and continued to the next step. There"
+    },
+    {
+     "classification": "fixture_or_lineage",
+     "line": 772,
+     "path": "lineage/R7_POST_FREEZE_INCIDENT/dirty_repair_files/automation/controller.py",
+     "text": "\"in-process; performed by the worker\"})"
+    },
+    {
+     "classification": "quoted_defect_comment_or_docstring",
+     "line": 6,
+     "path": "automation/in_process_ops.py",
+     "text": "\"in-process; performed by the worker\" and continued to the next step. There"
+    },
+    {
+     "classification": "guard_or_test",
+     "line": 363,
+     "path": "automation/migration.py",
+     "text": "if \"performed by the worker\" in note:"
+    },
+    {
+     "classification": "quoted_defect_comment_or_docstring",
+     "line": 6,
+     "path": "automation/in_process_executor.py",
+     "text": "controller appended the note \"in-process; performed by the worker\" and moved"
+    },
+    {
+     "classification": "quoted_defect_comment_or_docstring",
+     "line": 798,
+     "path": "automation/controller.py",
+     "text": "\"note\": \"in-process; performed by the worker\"})"
+    },
+    {
+     "classification": "guard_or_test",
+     "line": 324,
+     "path": "automation/package_tests/test_r8_migration.py",
+     "text": "\"note\": \"in-process; performed by the worker\"}) + \"\\n\")"
+    },
+    {
+     "classification": "fixture_or_lineage",
+     "line": 414,
+     "path": "automation/tests/fixtures/r3_control_plane/automation/controller.py",
+     "text": "\"note\": \"in-process; performed by the worker\"})"
+    },
+    {
+     "classification": "FINDING",
+     "line": 6,
+     "path": "verification/selftest_runtime/automation/in_process_ops.py",
+     "text": "\"in-process; performed by the worker\" and continued to the next step. There"
+    },
+    {
+     "classification": "FINDING",
+     "line": 363,
+     "path": "verification/selftest_runtime/automation/migration.py",
+     "text": "if \"performed by the worker\" in note:"
+    },
+    {
+     "classification": "FINDING",
+     "line": 6,
+     "path": "verification/selftest_runtime/automation/in_process_executor.py",
+     "text": "controller appended the note \"in-process; performed by the worker\" and moved"
+    },
+    {
+     "classification": "FINDING",
+     "line": 798,
+     "path": "verification/selftest_runtime/automation/controller.py",
+     "text": "\"note\": \"in-process; performed by the worker\"})"
+    },
+    {
+     "classification": "fixture_or_lineage",
+     "line": 414,
+     "path": "verification/selftest_runtime/automation/tests/fixtures/r3_control_plane/automation/controller.py",
+     "text": "\"note\": \"in-process; performed by the worker\"})"
+    },
+    {
+     "classification": "FINDING",
+     "line": 86,
+     "path": "verification_codex_final_pre_freeze_attempt_1/verify.py",
+     "text": "if 'performed by the worker' in line and not any(a<=no<=b for a,b in docspans): phrase.append(f'{rel}:{no}')"
+    },
+    {
+     "classification": "FINDING",
+     "line": 120,
+     "path": "verification_codex_final_pre_freeze_attempt_2/verify.py",
+     "text": "if \"performed by the worker\" not in src: continue"
+    },
+    {
+     "classification": "FINDING",
+     "line": 124,
+     "path": "verification_codex_final_pre_freeze_attempt_2/verify.py",
+     "text": "if isinstance(n,(ast.Assign,ast.AnnAssign,ast.AugAssign,ast.Return,ast.Call)) and \"performed by the worker\" in ast.get_source_segment(src,n): bad_note.append(f\"{rel}:{n.lineno}\")"
+    }
+   ],
+   "pass": false,
+   "root": "ORIGINAL"
+  },
+  {
+   "claim": "build manifest structural and byte verification",
+   "id": 27,
+   "measured": {
+    "entries": 724,
+    "malformed": [],
+    "manifest": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/build/R8_BUILD_MANIFEST.sha256",
+    "manifest_sha256": "6dfd1af689754be61f2ea6ef77f01d2e5bdb8929ef8c0799e15db203755b945a",
+    "mismatches": []
+   },
+   "pass": true,
+   "root": "ORIGINAL"
+  },
+  {
+   "claim": "724-file manifest fold unchanged",
+   "id": 31,
+   "measured": {
+    "after": "e7d3d32e70b9782c0da9d04be31ba68b4f1ace29ddae4fbbe2495b5e565b97eb",
+    "before": "e7d3d32e70b9782c0da9d04be31ba68b4f1ace29ddae4fbbe2495b5e565b97eb"
+   },
+   "pass": true,
+   "root": "ORIGINAL"
+  },
+  {
+   "claim": "full metadata write isolation",
+   "id": 32,
+   "measured": {
+    "R8 contents changed": 0,
+    "R8 modes changed": 0,
+    "R8 mtimes changed": 0,
+    "R8 paths added": 0,
+    "R8 paths removed": 0,
+    "R8 paths written": 0,
+    "R8 symlink targets changed": 0,
+    "entry_count_after": 1362,
+    "entry_count_before": 1362
+   },
+   "pass": true,
+   "root": "ORIGINAL"
+  }
+ ],
+ "manifest_entries_verified": 724,
+ "manifest_sha256_verified": "6dfd1af689754be61f2ea6ef77f01d2e5bdb8929ef8c0799e15db203755b945a",
+ "overall_pass": false,
+ "package_unchanged_by_this_verification": true,
+ "r8_paths_written_during_attempt_6": 0,
+ "revision": "R8",
+ "schema": "wpno.level1.codex-verification/1",
+ "stage": "PRE_FREEZE_FINAL",
+ "status": "VERIFICATION_FAIL_PRE_FREEZE_R8_FINAL",
+ "unresolved_findings": [
+  "Item 9: [{'path': 'lineage/R7_POST_FREEZE_INCIDENT/dirty_repair_files/automation/in_process_ops.py', 'line': 6, 'classification': 'fixture_or_lineage', 'text': '\"in-process; performed by the worker\" and continued to the next step. There'}, {'path': 'lineage/R7_POST_FREEZE_INCIDENT/dirty_repair_files/automation/controller.py', 'line': 772, 'classification': 'fixture_or_lineage', 'text': '\"in-process; performed by the worker\"})'}, {'path': 'automation/in_process_ops.py', 'line': 6, 'classification': 'quoted_defect_comment_or_docstring', 'text': '\"in-process; performed by the worker\" and continued to the next step. There'}, {'path': 'automation/migration.py', 'line': 363, 'classification': 'guard_or_test', 'text': 'if \"performed by the worker\" in note:'}, {'path': 'automation/in_process_executor.py', 'line': 6, 'classification': 'quoted_defect_comment_or_docstring', 'text': 'controller appended the note \"in-process; performed by the worker\" and moved'}, {'path': 'automation/controller.py', 'line': 798, 'classification': 'quoted_defect_comment_or_docstring', 'text': '\"note\": \"in-process; performed by the worker\"})'}, {'path': 'automation/package_tests/test_r8_migration.py', 'line': 324, 'classification': 'guard_or_test', 'text': '\"note\": \"in-process; performed by the worker\"}) + \"\\\\n\")'}, {'path': 'automation/tests/fixtures/r3_control_plane/automation/controller.py', 'line': 414, 'classification': 'fixture_or_lineage', 'text': '\"note\": \"in-process; performed by the worker\"})'}, {'path': 'verification/selftest_runtime/automation/in_process_ops.py', 'line': 6, 'classification': 'FINDING', 'text': '\"in-process; performed by the worker\" and continued to the next step. There'}, {'path': 'verification/selftest_runtime/automation/migration.py', 'line': 363, 'classification': 'FINDING', 'text': 'if \"performed by the worker\" in note:'}, {'path': 'verification/selftest_runtime/automation/in_process_executor.py', 'line': 6, 'classification': 'FINDING', 'text': 'controller appended the note \"in-process; performed by the worker\" and moved'}, {'path': 'verification/selftest_runtime/automation/controller.py', 'line': 798, 'classification': 'FINDING', 'text': '\"note\": \"in-process; performed by the worker\"})'}, {'path': 'verification/selftest_runtime/automation/tests/fixtures/r3_control_plane/automation/controller.py', 'line': 414, 'classification': 'fixture_or_lineage', 'text': '\"note\": \"in-process; performed by the worker\"})'}, {'path': 'verification_codex_final_pre_freeze_attempt_1/verify.py', 'line': 86, 'classification': 'FINDING', 'text': \"if 'performed by the worker' in line and not any(a<=no<=b for a,b in docspans): phrase.append(f'{rel}:{no}')\"}, {'path': 'verification_codex_final_pre_freeze_attempt_2/verify.py', 'line': 120, 'classification': 'FINDING', 'text': 'if \"performed by the worker\" not in src: continue'}, {'path': 'verification_codex_final_pre_freeze_attempt_2/verify.py', 'line': 124, 'classification': 'FINDING', 'text': 'if isinstance(n,(ast.Assign,ast.AnnAssign,ast.AugAssign,ast.Return,ast.Call)) and \"performed by the worker\" in ast.get_source_segment(src,n): bad_note.append(f\"{rel}:{n.lineno}\")'}]"
+ ],
+ "verified_utc": "2026-08-28T19:07:13.290011+00:00",
+ "write_isolation_instrument_proven_live": false
+}

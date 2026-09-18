@@ -1,0 +1,291 @@
+{
+  "audit_id": "L1-A24",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Establish which instruction files are actually in force when the tool is launched from a directory outside PROJECT_ROOT on the operator's Mac, and record the version that produced that behaviour. The launch happens on the Mac, under the operator's hand, against a directory the operator has approved. This controller does not launch it and never writes to that directory.",
+  "static_analysis": "This audit asks a question about a machine this controller does not run on. The approved external working directory is /Users/martinotten/Downloads, which is a path on the operator's Mac and does not exist on this Ubuntu host. It is deliberately not checked for existence here: a check that failed would be a fact about Ubuntu and not about the Mac, and substituting an Ubuntu directory would answer a different question under this audit's name.\n\nThe operation is CLAUDE_LOAD_BEHAVIOUR_TEST, which the catalogue classifies GATED and OPERATOR_PERFORMED. It has no argv on this machine. The controller writes an execution packet fixing the host, the operating system, the directory, the invocation, the environment redirection and the directory's pre-run manifest; the packet is hashed and its digest forms part of the approval. What returns is an intake record, admitted by automation.external_host_evidence.validate_intake only if it answers that packet: same host, same operating system, same directory, same invocation, a packet digest that was issued, timestamps that do not precede the packet, well-formed digests for stdout, stderr and the post-run manifest, and an approval that has not already been spent.\n\nHOME, TMPDIR and every cache and configuration output are redirected below work/L1-A24/<RUN-ID>/, and the environment actually handed to the process is recorded verbatim rather than described.\n\nThe mutation control available here is the write-topology control: a file created inside the redirected TMPDIR must appear below the audit's work directory and nowhere else, and the external directory's manifest must be unchanged between the pre-run and post-run captures. Mutating the loading behaviour itself is not available, because it would require modifying user configuration, which is forbidden.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/CLAUDE.md"
+      },
+      "purpose": "Bind the project instruction file whose participation is in question.",
+      "step_id": "hash_project_instruction_file",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PARSE_JSON_READONLY",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A24/RUN-A/external_host/EXECUTION_PACKET.json"
+      },
+      "purpose": "Read back the execution packet the controller wrote for this phase and bind its digest, so the approval and the intake refer to the same authorisation.",
+      "step_id": "write_execution_packet",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "CLAUDE_LOAD_BEHAVIOUR_TEST",
+      "params": {
+        "canonical_directory": "/Users/martinotten/Downloads",
+        "host_class": "OPERATOR_MAC",
+        "intake": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A24/RUN-A/external_host/INTAKE_OUTSIDE.json",
+        "packet": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A24/RUN-A/external_host/EXECUTION_PACKET.json"
+      },
+      "purpose": "The operator launches from the approved external directory on the Mac and returns an intake record. The controller does not launch this.",
+      "step_id": "external_launch_outside_project",
+      "timeout_seconds": 900
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "CLAUDE_LOAD_BEHAVIOUR_TEST",
+      "params": {
+        "canonical_directory": "/Users/martinotten/WPNO",
+        "host_class": "OPERATOR_MAC",
+        "intake": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A24/RUN-A/external_host/INTAKE_INSIDE.json",
+        "packet": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A24/RUN-A/external_host/EXECUTION_PACKET_INSIDE.json"
+      },
+      "purpose": "The same launch from inside PROJECT_ROOT on the same machine. The project instruction file must be in force; if it is not even there, the method is measuring something else.",
+      "step_id": "external_launch_inside_project",
+      "timeout_seconds": 900
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "CLAUDE_LOAD_BEHAVIOUR_TEST",
+      "params": {
+        "canonical_directory": "/Users/martinotten/WPNO_sibling",
+        "host_class": "OPERATOR_MAC",
+        "intake": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A24/RUN-A/external_host/INTAKE_SIBLING.json",
+        "packet": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A24/RUN-A/external_host/EXECUTION_PACKET_SIBLING.json"
+      },
+      "purpose": "A sibling of PROJECT_ROOT, to separate 'outside the project' from 'outside the home directory'.",
+      "step_id": "external_launch_sibling_directory",
+      "timeout_seconds": 900
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "PARSE_JSON_READONLY",
+      "params": {
+        "expect_absent": "a_file_that_cannot_apply",
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A24/RUN-A/external_host/INTAKE_OUTSIDE.json"
+      },
+      "purpose": "From the external directory, a file that certainly cannot apply must not be reported as loaded. The intake's loaded-instruction evidence is checked for its absence.",
+      "step_id": "negative_control_impossible_file",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "COMPARE_HASHES",
+      "params": {
+        "algorithms": [
+          "sha256"
+        ],
+        "left": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A24/RUN-A/external_host/EXTERNAL_DIR_PRE.sha256",
+        "right": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A24/RUN-A/external_host/EXTERNAL_DIR_POST.sha256"
+      },
+      "purpose": "Compare the external directory's pre-run and post-run manifests. A file created inside the redirected TMPDIR must appear below the audit's work directory and the external directory must be unchanged. This proves the redirection is in force rather than assumed.",
+      "step_id": "mutation_control_write_topology",
+      "timeout_seconds": 300
+    }
+  ],
+  "target": {
+    "identity_evidence": "bindings/L1-A23.binding.json records productive_target_sha256 for the operator's own copy and the file on this machine hashes to the same value, so the two are the same bytes. File identity is not production identity. The second candidate, /Users/martinotten/.claude/CLAUDE.md, is a Mac path and is absent here by construction; whether it participates in loading is precisely the runtime question this audit exists to answer.",
+    "path": "/home/ubuntu/project/WPNO/CLAUDE.md",
+    "sha256": "f6734d0d0f7a25933a87efeec89cfdb2ba97f79956a546c13de9a94fac3d1ef8"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "/home/ubuntu/project/WPNO/CLAUDE.md",
+        "references/REF-14_*",
+        "work/L1-A24/RUN-A/external_host/"
+      ],
+      "allowed_writes": [
+        "work/L1-A24/RUN-A/",
+        "evidence/L1-A24/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A24 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A24",
+      "candidate_template_identity": "L1-A24/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A24/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "none on this machine. The invocation runs on the external host and is fixed by the execution packet.",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "NETWORK_REQUEST",
+        "SERVICE_MUTATION",
+        "LAUNCH_AGENT_MUTATION"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [
+        "The operator approved /Users/martinotten/Downloads as the external working directory. The decision is recorded in bindings/L1-A24.binding.json as a test candidate and is not re-decided here. The operator is asserting that the directory may be used, which is why the directory itself is part of the approval and not merely a parameter."
+      ],
+      "independent_oracle": "The session's observable state, the documented precedence rules for the recorded version, and the two filesystem manifests of the external directory. The model's recollection of what it loaded is not evidence.",
+      "limitations": [
+        "The approved external working directory /Users/martinotten/Downloads is a path on the operator's Mac. It does not exist on this Ubuntu host and is not claimed to. No Ubuntu directory is substituted for it.",
+        "Nothing in this plan asserts that the Mac launch has happened. Until an intake record is admitted, the runtime question is unanswered and the phase's verdict is BLOCKED, not PASS.",
+        "Mutation of the loading behaviour itself is not available: it would require modifying user configuration, which is forbidden. The write-topology control is the mutation control that is available."
+      ],
+      "method": "operator-performed external-host launch on the operator's Mac, with hash-bound evidence intake",
+      "notes": [
+        "The controller never writes to the external directory. It compares two manifests the operator produced of it.",
+        "CLAUDE_LOAD_BEHAVIOUR_TEST is GATED and OPERATOR_PERFORMED: the catalogue refuses to build an argv for it, and the controller records it as performed elsewhere rather than launching it."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [
+        "REF-14"
+      ],
+      "references": [
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-14_MAC_REALITY.json",
+          "sha256": "8c4c580db8d191a95e1ecc913da1c5acf70373433411d170b33769501a28063e"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-14_MAC_MANIFEST.sha256",
+          "sha256": "5d5606a071b91e9dbd3c225fe3e6dd9525012d9211d02bd942b9954e61853a33"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/manifest.json",
+          "sha256": "4c1e9a706a5ba2a3c6f25f7ffc37963efadbe529f907865f516982ce3b54f1b4"
+        }
+      ],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": "Production identity requires execution-path evidence: an import, an invocation in a script, a container command, a workflow node or a scheduler entry. Filename, version suffix, modification time, file size, documentation, comments and proximity to another file are excluded by rule. If production identity cannot be proven the answer is that it cannot be proven from this machine; no most-likely candidate is nominated.",
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "check_id": "external_host_binding",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "intake_must_carry": [
+        "packet_sha256",
+        "host_identity",
+        "operating_system",
+        "canonical_directory",
+        "invocation",
+        "tool_version",
+        "started_utc",
+        "finished_utc",
+        "stdout_sha256",
+        "stderr_sha256",
+        "post_run_directory_manifest_sha256",
+        "loaded_instruction_evidence",
+        "operator_identity"
+      ],
+      "packet_binds": [
+        "audit_id",
+        "run_phase",
+        "host_identity",
+        "operating_system",
+        "canonical_directory",
+        "invocation",
+        "environment_redirection",
+        "pre_run_directory_manifest_sha256",
+        "expected_global_instruction_path",
+        "expected_project_instruction_condition",
+        "source_host_sha256",
+        "issued_utc"
+      ],
+      "question": "What exactly is the operator authorised to do?",
+      "refusals": [
+        "a different host",
+        "a different operating system",
+        "a different directory",
+        "a different invocation",
+        "an unissued packet digest",
+        "a missing pre or post manifest",
+        "a malformed digest",
+        "evidence timestamped before the packet was issued",
+        "a chronology in which the run finished before it started",
+        "a packet digest that has already been answered"
+      ],
+      "required_result": "Every refusal is a refusal, not a warning. An intake that fails any of them is not admitted and the phase has no result.",
+      "step_id": "write_execution_packet"
+    },
+    {
+      "check_id": "loaded_instruction_files",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "method_requirement": "read from the session's own state, not from the model self-reporting from memory",
+      "not_yet_established": "No launch has occurred. This is what the approved phase will establish.",
+      "question": "Which instruction files are in force, and in what order?",
+      "required_result": "Per launch directory: which files loaded, in what precedence, whether the project file participated, and which part of the run produced the observation.",
+      "step_id": "external_launch_outside_project"
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_result": "PROJECT_INSTRUCTION_FILE_IN_FORCE",
+      "expected_status": "OPERATOR_ACTION",
+      "question": "From inside PROJECT_ROOT, is the project file in force?",
+      "step_id": "external_launch_inside_project",
+      "why": "If it is not in force even from inside the project, the test method is measuring something else and the external result is uninterpretable."
+    },
+    {
+      "check_id": "negative_control",
+      "corrected_annotation": "An earlier revision of this table recorded that the control's assertion was not expressible by its step. That was wrong, and it was wrong in the direction that matters: it described a real check as an absent one. The step does carry `expect_absent: \"a_file_that_cannot_apply\"`, and PARSE_JSON_READONLY enforces it -- the handler fails the operation if the string is present anywhere in the document text. The assertion is therefore machine-checked, and the expectation below adds that the record must also parse.",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_boolean": true,
+      "expected_exit_code": 0,
+      "expected_failure_reason": "the file cannot apply from that directory under the recorded precedence rules",
+      "expected_result": "NOT_REPORTED_AS_LOADED",
+      "question": "Is a file that cannot apply reported as loaded?",
+      "step_id": "negative_control_impossible_file",
+      "why": "The intake record must parse, and `expect_absent` is enforced by the handler: an impossible file reported as loaded fails the operation rather than being noted."
+    },
+    {
+      "check_id": "mutation_control_write_topology",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_exit_code": 0,
+      "expected_hash_relation": "EQUAL",
+      "expected_result": "FILE_APPEARS_BELOW_THE_AUDIT_WORK_DIRECTORY_AND_THE_EXTERNAL_DIRECTORY_MANIFEST_IS_UNCHANGED",
+      "fixture": "a file created inside the redirected TMPDIR during the run",
+      "proof_the_fixture_differs": "the file exists below work/L1-A24/RUN-A/ after the run and did not before",
+      "question": "Is the redirection in force, or merely assumed?",
+      "step_id": "mutation_control_write_topology",
+      "verdict_effect": "A changed external-directory manifest is a finding that the run wrote outside its sandbox, and forbids PASS.",
+      "why": "The external directory's pre-run and post-run manifests must be equal: the redirection is in force exactly when the external directory did not change.",
+      "zero_changed_results_is": "a measurement error: if nothing was written anywhere, the control did not exercise the redirection"
+    },
+    {
+      "check_id": "no_claim_of_execution",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "question": "Does this plan claim the Mac audit has run?",
+      "required_result": "No. Rehearsal exercises packet construction, intake binding, hash validation, mismatch refusal and replay refusal against a synthetic local fixture. It does not claim the real Mac launch occurred, and a rehearsal result is never a live result."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "accepted_attempt": 1,
+  "attempts": [
+    1
+  ],
+  "audit_id": "L1-A31",
+  "run_phase": "RUN-B",
+  "seal_sha256": "2afc3b3768e8321815c3b369a0b2234bfe0a3a021a993006c78555bfecc1b799",
+  "synthetic_rehearsal_fixture": true
+}

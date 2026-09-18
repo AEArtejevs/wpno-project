@@ -1,0 +1,4 @@
+{
+  "error": "FreezeError",
+  "message": "FREEZE_ALREADY_DONE: MODE is FROZEN"
+}

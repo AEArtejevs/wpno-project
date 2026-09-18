@@ -1,0 +1,31 @@
+{
+  "audit_id": "L1-A31",
+  "run_phase": "COMPARISON",
+  "attempt_number": 1,
+  "state": "AWAITING_APPROVAL",
+  "resumed_from": null,
+  "transitions": [
+    {
+      "from": "NOT_STARTED",
+      "to": "PLANNING"
+    },
+    {
+      "from": "PLANNING",
+      "to": "PLAN_READY"
+    },
+    {
+      "from": "PLAN_READY",
+      "to": "AWAITING_APPROVAL"
+    }
+  ],
+  "plan_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/results/L1-A31/COMPARISON/attempt-1/plan.json",
+  "plan_sha256": "47f25f7d07023d9f18e27e0f65ea21fcc85382166983d5b9eff59dcb43b6e272",
+  "target_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip",
+  "target_sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42",
+  "approval_recorded": false,
+  "operations_executed": 0,
+  "required_human_approval_token": "<REDACTED: printed to the operator once; not recorded>",
+  "next_step": "A human supplies the token above, verbatim and quoted, to `controller record-approval --token '<token>'`. prepare-execution does not approve and does not execute."
+}
+
+<REDACTED: the approval token is printed to the operator once and is not recorded>

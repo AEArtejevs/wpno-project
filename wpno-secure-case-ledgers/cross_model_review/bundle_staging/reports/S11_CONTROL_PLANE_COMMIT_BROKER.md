@@ -1,0 +1,3 @@
+# Control-Plane — Validated Commit Broker
+
+`scripts/s11_validated_commit.py` ist der EINZIGE autorisierte Pfad fuer attestierte Commits. Ablauf: repo-scoped exklusiver Lock -> parent0=HEAD, tree0=git write-tree -> Gate gegen materialisierten tree0 -> TOCTOU-Re-Check (tree1==tree0 UND parent1==parent0) -> `git commit-tree tree0 -p parent0` -> `git update-ref <ref> <commit> <parent0>` (atomarer Compare-and-Swap) -> Verifikation `commit^{tree} == tree0` -> `write_attestation_v2`. Damit gilt zwingend committed_tree==validated_tree; Index-/HEAD-Wechsel zwischen Pruefung und Commit brechen ab (CANDIDATE_TREE_CHANGED/PARENT_CHANGED). Kein --no-verify, kein Remote, kein Push.

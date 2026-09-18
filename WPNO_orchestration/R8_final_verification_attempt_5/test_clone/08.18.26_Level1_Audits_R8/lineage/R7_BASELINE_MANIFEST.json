@@ -1,0 +1,280 @@
+{
+  "discovery_files": [
+    {
+      "path": "00_DISCOVERY_SUMMARY.md",
+      "sha256": "c6ae06d362474b16dc7846efd021b808d7cfcc74f6812e385c1c9eb1530756e1"
+    },
+    {
+      "path": "01_SYSTEM_INVENTORY.md",
+      "sha256": "06591c797892ebe081339a6eca4fc9021571f37adb297dc6203ff69f76c6b31c"
+    },
+    {
+      "path": "02_FILE_INVENTORY.csv",
+      "sha256": "895d5fb2c35e9dbeb405434c00f2af1342154a31aa7c5ca74dae057a0db3e1e3"
+    },
+    {
+      "path": "03_REPOSITORY_INVENTORY.md",
+      "sha256": "cfde9700f03b3760b8aa88c54bb2eeb7b0ea9ebf7866297b910201d8a5aaf394"
+    },
+    {
+      "path": "04_DEPENDENCY_GRAPH.md",
+      "sha256": "f7460a9afd351ab6db0666b70db56f988273c3f49377673866a6b83e9180ed79"
+    },
+    {
+      "path": "05_EXECUTION_GRAPH.md",
+      "sha256": "9a34c03a40a990e0be7a6f59cc79db81e229df4736ab6a8a69166876a95e00d8"
+    },
+    {
+      "path": "06_PRODUCTION_PATH.md",
+      "sha256": "aa17296b5e79f3719c7df9a250aa102fbbbdb0941905a2d8aa23b426756a8b99"
+    },
+    {
+      "path": "07_TEST_INVENTORY.md",
+      "sha256": "39300c41e85f76cc3c3bc71695e33df1de0f5bd61c27393f3a2d6c522314d5dc"
+    },
+    {
+      "path": "08_UNRUN_TESTS.md",
+      "sha256": "32653197054f5ea519ab8465c30f736cfee5ab30f6f87cff0d65e1c70b818b5f"
+    },
+    {
+      "path": "09_DOCKER_INVENTORY.md",
+      "sha256": "5b330e0b970d21316d97c4eb7ae9beb5920edb2fe03558481c7a190b47edd0e4"
+    },
+    {
+      "path": "10_MCP_INVENTORY.md",
+      "sha256": "ef38859ffe76f1deaba831368d7a073d72c43863605d209a783be288ec673be4"
+    },
+    {
+      "path": "11_N8N_INVENTORY.md",
+      "sha256": "73d8f1f953304142e027f3b9bd53338c81be83f8cd681ea54300cb42fc0ab772"
+    },
+    {
+      "path": "12_DATABASE_INVENTORY.md",
+      "sha256": "be6ef7ffa8aded839abd1989650cee37a98e92932724556e778fc64b1f86544b"
+    },
+    {
+      "path": "13_CONFIG_INVENTORY.md",
+      "sha256": "8fab78cf0b1de442dac91d70a3d222f8a20dcdf62cf807a97123c5468b75af70"
+    },
+    {
+      "path": "14_ENVIRONMENT_VARIABLES.md",
+      "sha256": "7fe8fb4f166db21ef68924be9ecb10d4600aec778d847f3ed973e7bd1bb447db"
+    },
+    {
+      "path": "15_SECURITY_COMPONENTS.md",
+      "sha256": "7b52496ca3d7db696d620231820463ed4b0c4873e1b2d4bced845131d6ad842f"
+    },
+    {
+      "path": "16_DOCUMENTATION_VS_REALITY.md",
+      "sha256": "5a2623e618fc9add4bc5af04fda3568468e7681891a78f178e2afd8fc4358257"
+    },
+    {
+      "path": "17_BACKUP_INVENTORY.md",
+      "sha256": "87b78ed69de11945de659b56e640d151dca484cb95483c7c161f39a12cac11ba"
+    },
+    {
+      "path": "18_HASH_INVENTORY.csv",
+      "sha256": "b341d75d91df29fed0806a7efca25ecd63c00388752a2176d3c1cd8de84145f4"
+    },
+    {
+      "path": "19_UNKNOWN_COMPONENTS.md",
+      "sha256": "3f4e0e2792cd7f5aee863fc8371876c51ac542ebc887b26d2cbc3674c32291c9"
+    },
+    {
+      "path": "20_ORPHAN_COMPONENTS.md",
+      "sha256": "7a785e20c729bd7c45a60d2a3648bb73bc08b144557bf9fe254c3e98190ddb92"
+    },
+    {
+      "path": "21_CRITICAL_COMPONENTS.md",
+      "sha256": "c1a96baf96a0b266cd95471b6919a7926e9da925fc1833137f85e31d11da2ea3"
+    },
+    {
+      "path": "22_DISCOVERY_COVERAGE.md",
+      "sha256": "7c5e6421de92f6afad83d8e141220fa7c79c00ef3eea1832ebca4835ca0a8488"
+    },
+    {
+      "path": "23_SYSTEM_MAP.md",
+      "sha256": "4007df87db70b74c4a62fb84f447460989be63524a9a9e422a5d592f4687cf6e"
+    },
+    {
+      "path": "24_DISCOVERY_COMMAND_LOG.md",
+      "sha256": "cf427f3f0b204c069a7d63560ea609b1b324f3b543e695e1bfd49f4d8ab09754"
+    },
+    {
+      "path": "run_discovery.py",
+      "sha256": "0cef1e1e62c61a002bdd777a8025701ac9b04d5906ac678583472aae847c0974"
+    }
+  ],
+  "project_files": [
+    {
+      "path": ".gitignore",
+      "sha256": "f937a76469c6f90762ad9341370aff240f3b719672b8222cebafcff34641576b",
+      "state": "FILE"
+    },
+    {
+      "path": "CLAUDE.md",
+      "sha256": "f6734d0d0f7a25933a87efeec89cfdb2ba97f79956a546c13de9a94fac3d1ef8",
+      "state": "FILE"
+    },
+    {
+      "path": "anonymization/golden/payload_scan.py",
+      "sha256": "ab29a4fa3e972f865f0f3dfb10887888a0464922070454e02584a34a4c54ba0a",
+      "state": "FILE"
+    },
+    {
+      "path": "anonymization/golden/payload_scan_golden_test.py",
+      "sha256": "dc83acf66bdb9aab18f03efaa1b292c1f9a6b1f405439ecc4dd928fd069960b0",
+      "state": "FILE"
+    },
+    {
+      "path": "anonymization/payload_scan.py",
+      "sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b",
+      "state": "FILE"
+    },
+    {
+      "path": "anonymization/payload_scan.py.ALT.2026-08-05.bak",
+      "sha256": "7ca517779fbd05a1bf8381b57edac3a15c2b6ccbe00dd06b8dfcc9950cf2aca3",
+      "state": "FILE"
+    },
+    {
+      "path": "ap18/AP18_eingangsfilter.py",
+      "sha256": "e8ad639cbeb238b16985f240ed1045297c26a9202c603695b29f29a3ea74ffb3",
+      "state": "FILE"
+    },
+    {
+      "path": "ap18/AP18_erzeuge_testkorpus_docx.py",
+      "sha256": "a0a0378783c360626d57cd19075a4a820b21f777a9344789541c04e73beabef1",
+      "state": "FILE"
+    },
+    {
+      "path": "ap18/AP18_test_injection.py",
+      "sha256": "f01e65bc9eff2efec3cac2f55ef5238ea5a28139fec2080e6004816c7181eb9d",
+      "state": "FILE"
+    },
+    {
+      "path": "authoring/AP16_assemble_long_document.py",
+      "sha256": "4bcde78f0220eaf07a70c6a9ba20c98d66ee4d65f38a998762c30c9bd5b09932",
+      "state": "FILE"
+    },
+    {
+      "path": "authoring/AP16_export_with_toc.py",
+      "sha256": "e618eb151eb674fe435a967fed7b6e696ac75fbde390db828bd1c99c14e22f0c",
+      "state": "FILE"
+    },
+    {
+      "path": "authoring/AP16_export_with_toc_v2.py",
+      "sha256": "12e6da3ec6289523fc9d8118db8583b8a9ef7649b825a09cd4b26e44f24e6eee",
+      "state": "FILE"
+    },
+    {
+      "path": "authoring/AP16_export_with_toc_v4.py",
+      "sha256": "b204a8e5e9bd7a7489bd2d69c61242ec9da8c929186b4b3393599a3d120ebdb7",
+      "state": "FILE"
+    },
+    {
+      "path": "authoring/AP16_verify_document.py",
+      "sha256": "98847c6034365703585d08828fe2ee363438ba8c2570a91a262af366407ee653",
+      "state": "FILE"
+    },
+    {
+      "path": "authoring/AP17_make_poisoned_test_v3.py",
+      "sha256": "a379a344ebc8423cbfd5d50f3eb8e485bd83f1689d9a69ffc5eb2ef90140866f",
+      "state": "FILE"
+    },
+    {
+      "path": "authoring/AP17_output_guardrail_VERALTET.py.txt",
+      "sha256": "555ee5164da201864833506a7f9f6f61885f18ff506b1ed4f5f6cddd70f37d37",
+      "state": "FILE"
+    },
+    {
+      "path": "authoring/AP17_output_guardrail_v2_VERALTET.py.txt",
+      "sha256": "5f6b3dd78dcb76a924d5961dfc2cfafbc91eccd76ac6f2e0cef22d43b3d8a6d8",
+      "state": "FILE"
+    },
+    {
+      "path": "authoring/AP17_output_guardrail_v3.py",
+      "sha256": "dd60dc63437691082b821fe219a7599c1561c757214a0e38eac97367ab2a09ca",
+      "state": "FILE"
+    },
+    {
+      "path": "authoring/AP17_report.md",
+      "sha256": "ce6abefd74c5859622b7c7592d00616b18934741f0dc74bc72bc0ff3cfa106b5",
+      "state": "FILE"
+    },
+    {
+      "path": "authoring/AP17_report_poisoned.md",
+      "sha256": "6667a1e0ed0a2fca0d4cdd8dde6a0ecd034492b4e3297719467249dcc42044a8",
+      "state": "FILE"
+    },
+    {
+      "path": "authoring/AP17_report_v2.md",
+      "sha256": "51b74993388c22bcdf1e15d90781bffc5b8efda69d5d17dc0c1caa7b6dbb363c",
+      "state": "FILE"
+    },
+    {
+      "path": "authoring/AP18_referenzpruefung.py",
+      "sha256": "f5eb5a9cbeb37cada9186ba305b9a307ea40e3012ca0e2e6dd0b2560f4352d74",
+      "state": "FILE"
+    },
+    {
+      "path": "authoring/AP18_referenzpruefung_test.py",
+      "sha256": "5bfc3fa48809d3c55f4287928987dd2e58982af558ddad8941fc5d8f6775b071",
+      "state": "FILE"
+    },
+    {
+      "path": "authoring/bgh_referenz.json",
+      "sha256": "d2451fa5720643cceb84605538a7979709ef90a44de4770e7aee06cc33579880",
+      "state": "FILE"
+    },
+    {
+      "path": "docker/litellm/Dockerfile",
+      "sha256": "05fbf2c570ce65d64fdd7e62920293bda8a1c0cc13c5d2d64961bfabf072692a",
+      "state": "FILE"
+    },
+    {
+      "path": "docker/litellm/custom_callback.py",
+      "sha256": "6c83c40064c1727d0753bcaa6230314c2a4510858427542cfa5bd1ef2231b44b",
+      "state": "FILE"
+    },
+    {
+      "path": "docker/litellm/docker-compose.yml",
+      "sha256": "cdd162fa4145c4617f8c71956cc570c50e1c9a4a1da69007b6cbd2c034281329",
+      "state": "FILE"
+    },
+    {
+      "path": "docker/litellm/payload_scan.py",
+      "sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b",
+      "state": "FILE"
+    },
+    {
+      "path": "docker/litellm/payload_scan.py.ALT.2026-08-05.bak",
+      "sha256": "7ca517779fbd05a1bf8381b57edac3a15c2b6ccbe00dd06b8dfcc9950cf2aca3",
+      "state": "FILE"
+    },
+    {
+      "path": "docs/Test_07.28.26/AP-03/logs/payload_scan.py.before_F-AP03",
+      "sha256": "9f466036804d49d0e986d111ea253046dec15e3c8fee2482e42c7ff349744f77",
+      "state": "FILE"
+    },
+    {
+      "path": "gateway/WPNO_gateway.py",
+      "sha256": "b122711bda90eecc60c8ad22ba92e73568c7b77dfcb28bc1942948f868bf87c0",
+      "state": "FILE"
+    },
+    {
+      "path": "orchestrator/ap12_tool_loop.py",
+      "sha256": "351ff8cd6971f1c15247a3eed3e46495e03af7c40b38db1b5572c9bdf9d72d82",
+      "state": "FILE"
+    },
+    {
+      "path": "pytest.ini",
+      "sha256": "3259aae6b1feea94c78ee30440a63e82f2e4d5a4caa5a291820307c83323f227",
+      "state": "FILE"
+    }
+  ],
+  "schema": "wpno.level1.baseline-manifest/1",
+  "scope": {
+    "audited_sources": "All PROJECT_ROOT candidate_paths and source_evidence source_path values named in bindings; duplicates removed; presence state captured at freeze time.",
+    "discovery": "Every regular non-symlink file under DISCOVERY_ROOT."
+  }
+}

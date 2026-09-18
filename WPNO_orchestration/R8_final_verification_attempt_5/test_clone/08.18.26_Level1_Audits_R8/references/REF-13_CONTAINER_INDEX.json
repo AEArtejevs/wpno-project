@@ -1,0 +1,26 @@
+[
+  {
+    "container_id": "089559a9cb9c59039e11f8f941a606c219ecd8878dd997ed474c5870dfa6c55f",
+    "container_name": "wpno_litellm",
+    "image_id": "sha256:2fdd90b14e3d9244ce297f418b983d8cfd90ba6e72a10a8ddb30f7cf64852390",
+    "status": "exited"
+  },
+  {
+    "container_id": "a76c285d9ccc682e18ef92fa002c284defadefda1f1e5e7b722d058f9b01dc8a",
+    "container_name": "wpno_n8n",
+    "image_id": "sha256:d1606a508b1e426de07a98fa10f3758ef474b17590c6f181a0dd38c999f819d0",
+    "status": "exited"
+  },
+  {
+    "container_id": "ba1a26ba78ae152fd3273745f98063b2ce38f20534a0c7a7121d38dcd851958b",
+    "container_name": "wpno_postgres",
+    "image_id": "sha256:eb4759788a2182f08257135e61a34f2cfc3c2914079f3465d64ee62350f4d081",
+    "status": "exited"
+  },
+  {
+    "container_id": "c1e78f1702029c151b58ad88189bc747549fc03bbb1c65f851eee451a7670023",
+    "container_name": "wpno_redis",
+    "image_id": "sha256:a8f08480e1f88f2647fed492d1178c06abb0d0c1fbf02c682a61e2f483fb3954",
+    "status": "exited"
+  }
+]

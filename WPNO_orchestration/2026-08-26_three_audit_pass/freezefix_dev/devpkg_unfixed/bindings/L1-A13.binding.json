@@ -1,0 +1,36 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A13",
+  "binding_status": "TARGET_PARTIAL",
+  "logical_targets": [
+    "Fabricated citation blocking"
+  ],
+  "candidate_paths": [
+    "/Users/martinotten/WPNO/authoring/AP18_referenzpruefung.py"
+  ],
+  "productive_target": null,
+  "productive_target_sha256": null,
+  "productive_target_evidence": [],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [],
+  "external_evidence_required": [],
+  "unresolved_questions": [
+    "The five mandatory fabricated citations must be constructed as fixtures.",
+    "Does the checker have a distinct output state for 'not examined'?"
+  ],
+  "discovery_drift": [],
+  "source_evidence": [
+    {
+      "source_path": "/Users/martinotten/WPNO/authoring/AP18_referenzpruefung.py",
+      "sha256": "f5eb5a9cbeb37cada9186ba305b9a307ea40e3012ca0e2e6dd0b2560f4352d74",
+      "locator": "senat_plausibel and citation parsing",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    }
+  ],
+  "replications": 1,
+  "risk": "CRITICAL",
+  "execution_order": 17
+}

@@ -1,0 +1,297 @@
+{
+  "audit_id": "L1-A12",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Measure the checker's true positives, false positives, true negatives and false negatives against the operator-supplied corpus with independent labels, and identify the specific patterns that are overbroad. All four counts are reported; never a single score.",
+  "static_analysis": "No module under PROJECT_ROOT is imported. The checker's pattern set is extracted by AST so that every false positive can be attributed to a named pattern rather than to the checker as a whole.\n\nREF-07 supplies the corpus and the independent labels. The labels were produced without running the checker, and REF-07_label_derivation.json records how - the checker may never label its own evaluation corpus, because a corpus labelled by the tool under test agrees with it by construction.\n\nThe corpus origin, document count, total length and per-document hashes are recorded before any measurement, so that a later disagreement can be located in a document rather than in a total.\n\nThe corpus is a gzipped tar archive of 22 SGML members, not a ZIP. Its members are enumerated with TAR_LIST, which reads the archive in-process. ARCHIVE_EXTRACT_SANDBOX is not used here: it invokes unzip, and unzip on a tarball reports that the end-of-central-directory signature was not found - a failure about the tool's format assumption that says nothing about the corpus. The pre-freeze rehearsal executed the step and found exactly that, which is why the operation is TAR_LIST.\n\nExtraction into work/L1-A12/RUN-A/corpus/ is preparation the approved phase performs, as with every other sandbox copy in this package.\n\nPYTHON_SCRIPT_RUN_SANDBOX runs a script under work/ and nowhere else, so the approved phase first copies the checker to work/<audit>/RUN-A/sandbox/ and records the copy's digest beside the original's. The original in authoring/ is read and never written to.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/authoring/AP18_referenzpruefung.py"
+      },
+      "purpose": "Extract the pattern set, so false positives can be attributed per pattern.",
+      "step_id": "parse_checker_patterns",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-07_reuters21578.tar.gz"
+      },
+      "purpose": "Verify the corpus against references/manifest.json.",
+      "step_id": "verify_corpus_digest",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PARSE_JSON_READONLY",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-07_collection_inventory.json"
+      },
+      "purpose": "Corpus origin, document count, total length and per-document hashes, recorded before measurement.",
+      "step_id": "read_collection_inventory",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "ORACLE",
+      "operation": "PARSE_JSON_READONLY",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-07_label_derivation.json"
+      },
+      "purpose": "How the independent labels were produced, and by what, recorded as the oracle's provenance.",
+      "step_id": "read_label_derivation",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "TAR_LIST",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-07_reuters21578.tar.gz"
+      },
+      "purpose": "Enumerate the archive's members without extracting, and reconcile them against the collection inventory's recorded member list.",
+      "step_id": "list_corpus_members",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--corpus",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A12/RUN-A/corpus",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A12/RUN-A/checker_output.json"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A12/RUN-A/sandbox/AP18_referenzpruefung.py"
+      },
+      "purpose": "Run the checker over the corpus and record raw output.",
+      "step_id": "run_checker_over_corpus",
+      "timeout_seconds": 900
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--corpus",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A12/RUN-A/controls/known_form"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A12/RUN-A/sandbox/AP18_referenzpruefung.py"
+      },
+      "purpose": "A document containing a citation of a form the checker is known to handle must yield a true positive.",
+      "step_id": "positive_control_known_form_citation",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--corpus",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A12/RUN-A/controls/no_citation"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A12/RUN-A/sandbox/AP18_referenzpruefung.py"
+      },
+      "purpose": "A document containing no citation at all must yield no hits. Hits here mean the pattern set matches ordinary prose.",
+      "step_id": "negative_control_no_citation",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--corpus",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A12/RUN-A/corpus",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A12/RUN-A/narrowed_output.json"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A12/RUN-A/sandbox/AP18_referenzpruefung_narrowed.py"
+      },
+      "purpose": "One overbroad pattern narrowed in a sandbox copy: the false-positive count attributed to it must fall. This proves the attribution is correct.",
+      "step_id": "mutation_control_narrow_one_pattern",
+      "timeout_seconds": 900
+    }
+  ],
+  "target": {
+    "identity_evidence": "The binding records this path as a candidate with this digest. It is bound as the anchor; which copy is productive is L1-A10's question and a filename does not answer it.",
+    "path": "/home/ubuntu/project/WPNO/authoring/AP18_referenzpruefung.py",
+    "sha256": "f5eb5a9cbeb37cada9186ba305b9a307ea40e3012ca0e2e6dd0b2560f4352d74"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "/home/ubuntu/project/WPNO/authoring/AP18_referenzpruefung.py",
+        "references/REF-07_*"
+      ],
+      "allowed_writes": [
+        "work/L1-A12/RUN-A/",
+        "evidence/L1-A12/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A12 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A12",
+      "candidate_template_identity": "L1-A12/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A12/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "/usr/bin/python3 -I -B against a sandbox copy; /usr/bin/unzip for extraction",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "ARBITRARY_SHELL",
+        "CHANGE_PERMISSION",
+        "DATABASE_CONNECTION",
+        "DATABASE_WRITE",
+        "DELETE_SOURCE",
+        "DOCKER_BUILD",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_SOCKET_ACCESS",
+        "GIT_MUTATION",
+        "INSTALL_PACKAGE",
+        "LAUNCH_AGENT_MUTATION",
+        "MCP_MUTATION",
+        "MODIFY_SOURCE",
+        "N8N_MUTATION",
+        "NETWORK_REQUEST",
+        "NETWORK_UPLOAD",
+        "SERVICE_MUTATION"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [],
+      "independent_oracle": "The independent labels in REF-07, produced without the checker. The checker may never label its own evaluation corpus.",
+      "limitations": [
+        "REF-07 is a general news corpus, not a corpus of German legal writing. It measures whether the pattern set fires on ordinary prose; it does not measure recall over the citation forms a legal document would contain, and the result is reported with that scope stated.",
+        "The labels are independent of the checker by construction, and REF-07_label_derivation.json records how they were produced."
+      ],
+      "method": "confusion matrix against independently labelled corpus",
+      "notes": [
+        "PYTHON_SCRIPT_RUN_SANDBOX runs a script under work/ and nowhere else, so the approved phase first copies the checker to work/<audit>/RUN-A/sandbox/ and records the copy's digest beside the original's. The original in authoring/ is read and never written to."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [
+        "REF-07"
+      ],
+      "references": [
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-07_reuters21578.tar.gz",
+          "sha256": "3bae43c9b14e387f76a61b6d82bf98a4fb5d3ef99ef7e7075ff2ccbcf59f9d30"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-07_labels.jsonl",
+          "sha256": "7f7a026a53d2b18913502b8403ce025ce567f60b744799464e07fc54aefc2f93"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-07_collection_inventory.json",
+          "sha256": "bab73ceb754921e6e7a01e625918e492821d21f81c5c1e01a67376eb97e6a9c7"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-07_label_derivation.json",
+          "sha256": "9f4677499acceb1317f4ca472805864d2017ff87a49f5433927094d7fd878746"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-07_MANIFEST.sha256",
+          "sha256": "c0d833f3569b4c29676a29016a19a42556b4934ee619e0aef4193921eade2f95"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/manifest.json",
+          "sha256": "4c1e9a706a5ba2a3c6f25f7ffc37963efadbe529f907865f516982ce3b54f1b4"
+        }
+      ],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": null,
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "archive_members_expected": 32,
+      "check_id": "confusion_matrix",
+      "corpus_recorded": "origin, document count, total length and per-document hashes",
+      "document_count_expected": 21578,
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "What are the four counts?",
+      "required_result": "TP, FP, TN and FN, all four reported. Never a single score: a single number cannot distinguish an overbroad pattern set from an incomplete one.",
+      "sgm_members_expected": 22,
+      "step_id": "run_checker_over_corpus"
+    },
+    {
+      "check_id": "false_positive_attribution",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Which pattern produced each false positive?",
+      "required_result": "Every false positive attributed to a named pattern. An unattributed false positive is not yet a finding about any pattern.",
+      "step_id": "parse_checker_patterns"
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_result": "TRUE_POSITIVE",
+      "question": "Does a handled citation form yield a true positive?",
+      "step_id": "positive_control_known_form_citation"
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_failure_reason": "the document contains no citation; hits here mean the pattern set matches ordinary prose",
+      "expected_result": "ZERO_HITS",
+      "question": "Does prose with no citation yield no hits?",
+      "step_id": "negative_control_no_citation"
+    },
+    {
+      "check_id": "mutation_control",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_result": "THE_ATTRIBUTED_FALSE_POSITIVE_COUNT_FALLS",
+      "expected_status": "COMPLETED_OUTCOME_IS_SUBSTANTIVE",
+      "fixture": "work/L1-A12/RUN-A/sandbox/AP18_referenzpruefung_narrowed.py",
+      "fixture_construction": "the sandbox copy with one overbroad pattern narrowed and nothing else changed",
+      "proof_the_fixture_differs": "its SHA-256 differs from the sandbox copy's and the narrowed pattern is recorded before and after",
+      "question": "Is the false-positive attribution correct?",
+      "step_id": "mutation_control_narrow_one_pattern",
+      "why": "Whether the attributed false-positive count falls is read from the narrowed run's output.",
+      "zero_changed_results_is": "proof the attribution was wrong, not a passing control"
+    },
+    {
+      "check_id": "control_expectation_read_label_derivation",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_boolean": true,
+      "expected_exit_code": 0,
+      "question": "What must this control step do for its measurement to count?",
+      "step_id": "read_label_derivation",
+      "why": "The oracle's provenance record must parse."
+    }
+  ]
+}

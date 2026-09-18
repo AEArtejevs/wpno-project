@@ -1,0 +1,438 @@
+{
+ "INSTALL_VALID": true,
+ "byte_mismatches": [],
+ "installed": [
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/VERIFY_PROMPT.md",
+   "INSTALLED_SHA256": "9c5357fb350e2e759b48499a6e7b9c4c23566dc258da922c7e7cdeb6cb413a55",
+   "ROLE": "FINAL_VERIFICATION_INSTRUCTIONS",
+   "SIZE": 19510,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/VERIFY_PROMPT_LINEAGE_FINAL.md",
+   "SOURCE_SHA256": "9c5357fb350e2e759b48499a6e7b9c4c23566dc258da922c7e7cdeb6cb413a55"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/run_lineage_verification.sh",
+   "INSTALLED_SHA256": "a2a988815efe640de7de19d69e06994e4f9a3b1056e63c21918e97bd022d85f5",
+   "ROLE": "VERIFICATION_RUNNER",
+   "SIZE": 3379,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/run_lineage_verification.sh",
+   "SOURCE_SHA256": "a2a988815efe640de7de19d69e06994e4f9a3b1056e63c21918e97bd022d85f5"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/VERIFIER_SCHEMA_MAP.json",
+   "INSTALLED_SHA256": "a58d76a0d55a3ba6ca059e10e12a43d544b784aff1942fbda1f3f757a7653461",
+   "ROLE": "SCHEMA_MAP",
+   "SIZE": 23790,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/VERIFIER_SCHEMA_MAP.json",
+   "SOURCE_SHA256": "a58d76a0d55a3ba6ca059e10e12a43d544b784aff1942fbda1f3f757a7653461"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/TOOL_INVENTORY.json",
+   "INSTALLED_SHA256": "72dba7109af7d556c9183eab24d6d3829114302dada353c8741da89b059194b1",
+   "ROLE": "TOOL_INVENTORY",
+   "SIZE": 14563,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/TOOL_INVENTORY.json",
+   "SOURCE_SHA256": "72dba7109af7d556c9183eab24d6d3829114302dada353c8741da89b059194b1"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/helpers/build_lineage_schema_map.py",
+   "INSTALLED_SHA256": "f21e62727886b0400c34189fa82f23097ef60d52194195f4c9f4e7e6e4c3f190",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 6546,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/build_lineage_schema_map.py",
+   "SOURCE_SHA256": "f21e62727886b0400c34189fa82f23097ef60d52194195f4c9f4e7e6e4c3f190"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/helpers/build_tool_inventory.py",
+   "INSTALLED_SHA256": "f466c49bf4db914705f62ad857dc425d213e8418fd915107f557be5fa3dcb52d",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 10795,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/build_tool_inventory.py",
+   "SOURCE_SHA256": "f466c49bf4db914705f62ad857dc425d213e8418fd915107f557be5fa3dcb52d"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/helpers/fixed_target_check.py",
+   "INSTALLED_SHA256": "0e1a2317af0714f28e07d4aa58bc51ba8aa2fc3ec84d192014ccf5569bbfe1a9",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 7929,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/fixed_target_check.py",
+   "SOURCE_SHA256": "0e1a2317af0714f28e07d4aa58bc51ba8aa2fc3ec84d192014ccf5569bbfe1a9"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/helpers/install_verification.py",
+   "INSTALLED_SHA256": "afd22dab5bc54e33117269f60c1f24b55eb03c075184760af24bafe72191dde7",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 7444,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/install_verification.py",
+   "SOURCE_SHA256": "afd22dab5bc54e33117269f60c1f24b55eb03c075184760af24bafe72191dde7"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/helpers/inventory_r8.py",
+   "INSTALLED_SHA256": "f091a105ccb4fbd8dd508a50e9328c841eeafdca62c84db22848a985c76b1a59",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 3195,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/inventory_r8.py",
+   "SOURCE_SHA256": "f091a105ccb4fbd8dd508a50e9328c841eeafdca62c84db22848a985c76b1a59"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/helpers/compare_inventories.py",
+   "INSTALLED_SHA256": "62eaf61acd9af308e4eb91869c54a5f88c3c77604449ae2a8aa0d9c2279637e2",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 3116,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/compare_inventories.py",
+   "SOURCE_SHA256": "62eaf61acd9af308e4eb91869c54a5f88c3c77604449ae2a8aa0d9c2279637e2"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/helpers/measure_path.py",
+   "INSTALLED_SHA256": "282e62794045d6c1d2f6cc49ed2efd9aa26bdfb49dd84ca1086fc550024ea535",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 4652,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/measure_path.py",
+   "SOURCE_SHA256": "282e62794045d6c1d2f6cc49ed2efd9aa26bdfb49dd84ca1086fc550024ea535"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/helpers/inspect_writers.py",
+   "INSTALLED_SHA256": "4dc539cafa3d6f909cb94017425d4f25bd60681f6fa4af17f9bf7cbf1fd1e2b0",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 4951,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/inspect_writers.py",
+   "SOURCE_SHA256": "4dc539cafa3d6f909cb94017425d4f25bd60681f6fa4af17f9bf7cbf1fd1e2b0"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/helpers/preflight_clone.py",
+   "INSTALLED_SHA256": "96f043d35c5e7f9296adf9d641a45e09f88851d1dd3b46e52f822defd8eab7fc",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 8589,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/preflight_clone.py",
+   "SOURCE_SHA256": "96f043d35c5e7f9296adf9d641a45e09f88851d1dd3b46e52f822defd8eab7fc"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/helpers/make_clone.sh",
+   "INSTALLED_SHA256": "b2de81126c9165b5ae49bc46469432a2cc9aeb2365b8ac093c62ef86bb3c8897",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 1430,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/make_clone.sh",
+   "SOURCE_SHA256": "b2de81126c9165b5ae49bc46469432a2cc9aeb2365b8ac093c62ef86bb3c8897"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/helpers/run_package_suite.py",
+   "INSTALLED_SHA256": "53580905bba7a9720fd6e34320d5395bca0ae39dab10f60dce05755d6d93c4b2",
+   "ROLE": "VERIFIER_HELPER",
+   "SIZE": 8479,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/tools/run_package_suite.py",
+   "SOURCE_SHA256": "53580905bba7a9720fd6e34320d5395bca0ae39dab10f60dce05755d6d93c4b2"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/preflight/PREFLIGHT.json",
+   "INSTALLED_SHA256": "3f39afde57797dd15040fbac9782379eac3f043bf7ef9100adb57031b7358f6e",
+   "ROLE": "PREFLIGHT_EVIDENCE",
+   "SIZE": 3128,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/preflight/PREFLIGHT.json",
+   "SOURCE_SHA256": "3f39afde57797dd15040fbac9782379eac3f043bf7ef9100adb57031b7358f6e"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/preflight/FIXED_TARGET_PRE_VERIFY.json",
+   "INSTALLED_SHA256": "94acb4b095ebf8be322cc0c34643798c6814eaa5bd463065d504335ad324e2a0",
+   "ROLE": "PREFLIGHT_EVIDENCE",
+   "SIZE": 2349,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/preflight/FIXED_TARGET_PRE_VERIFY.json",
+   "SOURCE_SHA256": "94acb4b095ebf8be322cc0c34643798c6814eaa5bd463065d504335ad324e2a0"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/preflight/FIXED_TARGET_POST.json",
+   "INSTALLED_SHA256": "94acb4b095ebf8be322cc0c34643798c6814eaa5bd463065d504335ad324e2a0",
+   "ROLE": "PREFLIGHT_EVIDENCE",
+   "SIZE": 2349,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/preflight/FIXED_TARGET_POST.json",
+   "SOURCE_SHA256": "94acb4b095ebf8be322cc0c34643798c6814eaa5bd463065d504335ad324e2a0"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/preflight/WRITER_INSPECTION_PRE.json",
+   "INSTALLED_SHA256": "1311619892745e33167db30c5513001dbc599a98f4ebadefad41649007c774b2",
+   "ROLE": "PREFLIGHT_EVIDENCE",
+   "SIZE": 957,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/preflight/WRITER_INSPECTION_PRE.json",
+   "SOURCE_SHA256": "1311619892745e33167db30c5513001dbc599a98f4ebadefad41649007c774b2"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/preflight/WRITER_INSPECTION_POST.json",
+   "INSTALLED_SHA256": "53e8a75660eb59ca86006d9e818c8bd64c9d1b7c42734d913c5a42a802ee6f59",
+   "ROLE": "PREFLIGHT_EVIDENCE",
+   "SIZE": 957,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/preflight/WRITER_INSPECTION_POST.json",
+   "SOURCE_SHA256": "53e8a75660eb59ca86006d9e818c8bd64c9d1b7c42734d913c5a42a802ee6f59"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/preflight/COMPARE_ORIGINAL_VS_CLONE_INITIAL.json",
+   "INSTALLED_SHA256": "8da2a801eaebd3f13f19b8f1e95625f9ed79ed3fb9ebf92cd172f91538ed3f41",
+   "ROLE": "PREFLIGHT_EVIDENCE",
+   "SIZE": 916,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/preflight/COMPARE_ORIGINAL_VS_CLONE_INITIAL.json",
+   "SOURCE_SHA256": "8da2a801eaebd3f13f19b8f1e95625f9ed79ed3fb9ebf92cd172f91538ed3f41"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/preflight/SANDBOX_PROBE_RECORD.json",
+   "INSTALLED_SHA256": "d0aba05763d13c2dd73419ae243547d13e6733d4a15d1d3d690b762fd32b7639",
+   "ROLE": "WRITE_BARRIER_PROOF",
+   "SIZE": 1860,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/logs/SANDBOX_PROBE_RECORD.json",
+   "SOURCE_SHA256": "d0aba05763d13c2dd73419ae243547d13e6733d4a15d1d3d690b762fd32b7639"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/write_isolation/INVENTORY_PRE.json",
+   "INSTALLED_SHA256": "6fde4acacf3daeb97c69adb56eaecfee9a93e21bd46201b7aced431ef95348d5",
+   "ROLE": "WRITE_ISOLATION_EVIDENCE",
+   "SIZE": 470823,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/inventory/INVENTORY_PRE.json",
+   "SOURCE_SHA256": "6fde4acacf3daeb97c69adb56eaecfee9a93e21bd46201b7aced431ef95348d5"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/write_isolation/INVENTORY_POST.json",
+   "INSTALLED_SHA256": "6fde4acacf3daeb97c69adb56eaecfee9a93e21bd46201b7aced431ef95348d5",
+   "ROLE": "WRITE_ISOLATION_EVIDENCE",
+   "SIZE": 470823,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/inventory/INVENTORY_POST.json",
+   "SOURCE_SHA256": "6fde4acacf3daeb97c69adb56eaecfee9a93e21bd46201b7aced431ef95348d5"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/write_isolation/COMPARE_PRE_VS_POST.json",
+   "INSTALLED_SHA256": "95b50a8a5ac45de3cfb15a944930807e88c174fbff56493bbec95bf7e5bbc83e",
+   "ROLE": "WRITE_ISOLATION_EVIDENCE",
+   "SIZE": 901,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/inventory/COMPARE_PRE_VS_POST.json",
+   "SOURCE_SHA256": "95b50a8a5ac45de3cfb15a944930807e88c174fbff56493bbec95bf7e5bbc83e"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/lineage_repair/PLAN_REHEARSAL_DEPENDENCY_CHECK.json",
+   "INSTALLED_SHA256": "78f4b61241e2708b6fefa9ae2e99fae1adbefcdca98ef90f74a52a5d730ac97f",
+   "ROLE": "LINEAGE_REPAIR_EVIDENCE",
+   "SIZE": 1416,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/evidence/PLAN_REHEARSAL_DEPENDENCY_CHECK.json",
+   "SOURCE_SHA256": "78f4b61241e2708b6fefa9ae2e99fae1adbefcdca98ef90f74a52a5d730ac97f"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/lineage_repair/CARRIED_FORWARD_FIGURES.json",
+   "INSTALLED_SHA256": "d84e8ca7a08bcf8b9a783dbadd4ff0071eb1589ce14c457deaf8699abfd581ff",
+   "ROLE": "LINEAGE_REPAIR_EVIDENCE",
+   "SIZE": 1663,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/evidence/CARRIED_FORWARD_FIGURES.json",
+   "SOURCE_SHA256": "d84e8ca7a08bcf8b9a783dbadd4ff0071eb1589ce14c457deaf8699abfd581ff"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/lineage_repair/MANIFEST_RECONCILIATION.json",
+   "INSTALLED_SHA256": "605c84465e0163f318af91895a58590a4d52acdbf2e9bc9e6bf2c31b04a22561",
+   "ROLE": "LINEAGE_REPAIR_EVIDENCE",
+   "SIZE": 380,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/evidence/MANIFEST_RECONCILIATION.json",
+   "SOURCE_SHA256": "605c84465e0163f318af91895a58590a4d52acdbf2e9bc9e6bf2c31b04a22561"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/lineage_repair/PACKAGE_SUITE_TWO_PASS.json",
+   "INSTALLED_SHA256": "54bc504984200adf2bcc9dbb4126ad917056bf41b9699a06a29d3c49d01fffe7",
+   "ROLE": "LINEAGE_REPAIR_EVIDENCE",
+   "SIZE": 4024,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/evidence/PACKAGE_SUITE_TWO_PASS.json",
+   "SOURCE_SHA256": "54bc504984200adf2bcc9dbb4126ad917056bf41b9699a06a29d3c49d01fffe7"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/lineage_repair/REFUSAL_ROOT_HASHES.sha256",
+   "INSTALLED_SHA256": "d6a9315546116821ac1f1d2712924c7c9fa73bd024a42eb83378fb5e2dede768",
+   "ROLE": "LINEAGE_REPAIR_EVIDENCE",
+   "SIZE": 1398,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/evidence/REFUSAL_ROOT_HASHES.sha256",
+   "SOURCE_SHA256": "d6a9315546116821ac1f1d2712924c7c9fa73bd024a42eb83378fb5e2dede768"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/refused_attempt_2/COMPARE_BEFORE_VS_AFTER_REFUSAL.json",
+   "INSTALLED_SHA256": "56dfb455b25f7af168cb4aea8c7a1d62c97c04e3167659376812be1e686d0497",
+   "ROLE": "REFUSED_FREEZE_ATTEMPT_2_EVIDENCE",
+   "SIZE": 1042,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/freeze_execution/COMPARE_BEFORE_VS_AFTER_REFUSAL.json",
+   "SOURCE_SHA256": "56dfb455b25f7af168cb4aea8c7a1d62c97c04e3167659376812be1e686d0497"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/refused_attempt_2/FIXED_TARGET_AFTER_REFUSAL.json",
+   "INSTALLED_SHA256": "a136d4bf826b8c79cee78e8a772dd3d14cb278a0fe7b2049e317a6a306343a2c",
+   "ROLE": "REFUSED_FREEZE_ATTEMPT_2_EVIDENCE",
+   "SIZE": 2349,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/freeze_execution/FIXED_TARGET_AFTER_REFUSAL.json",
+   "SOURCE_SHA256": "a136d4bf826b8c79cee78e8a772dd3d14cb278a0fe7b2049e317a6a306343a2c"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/refused_attempt_2/INVENTORY_AFTER_REFUSAL.json",
+   "INSTALLED_SHA256": "7aac8dc7f5e9e2d2924a3041eb71211e45f7de5fbaa7bb5bb3e6267dd33d2986",
+   "ROLE": "REFUSED_FREEZE_ATTEMPT_2_EVIDENCE",
+   "SIZE": 469427,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/freeze_execution/INVENTORY_AFTER_REFUSAL.json",
+   "SOURCE_SHA256": "7aac8dc7f5e9e2d2924a3041eb71211e45f7de5fbaa7bb5bb3e6267dd33d2986"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/refused_attempt_2/INVENTORY_BEFORE_FREEZE.json",
+   "INSTALLED_SHA256": "4597091ac6cf8460cd103168fbdbd505a84a3194d5f757d7768bd8025b228a36",
+   "ROLE": "REFUSED_FREEZE_ATTEMPT_2_EVIDENCE",
+   "SIZE": 469427,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/freeze_execution/INVENTORY_BEFORE_FREEZE.json",
+   "SOURCE_SHA256": "4597091ac6cf8460cd103168fbdbd505a84a3194d5f757d7768bd8025b228a36"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/refused_attempt_2/R8_FREEZE_REFUSAL_INCIDENT.md",
+   "INSTALLED_SHA256": "e593e9610df4c1b0eeecbdf77f1c1d542f7d4c52e5c24ba9337805f70c7e2f97",
+   "ROLE": "REFUSED_FREEZE_ATTEMPT_2_EVIDENCE",
+   "SIZE": 7255,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/freeze_execution/R8_FREEZE_REFUSAL_INCIDENT.md",
+   "SOURCE_SHA256": "e593e9610df4c1b0eeecbdf77f1c1d542f7d4c52e5c24ba9337805f70c7e2f97"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/refused_attempt_2/WRITER_INSPECTION_BEFORE_FREEZE.json",
+   "INSTALLED_SHA256": "edc5d2cb47bdaa17a22e347de876276f1d6f6340e138959e74238c4b5b484c20",
+   "ROLE": "REFUSED_FREEZE_ATTEMPT_2_EVIDENCE",
+   "SIZE": 1024,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/freeze_execution/WRITER_INSPECTION_BEFORE_FREEZE.json",
+   "SOURCE_SHA256": "edc5d2cb47bdaa17a22e347de876276f1d6f6340e138959e74238c4b5b484c20"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/refused_attempt_2/freeze.stderr.txt",
+   "INSTALLED_SHA256": "e3e50743b28aa18e5943333eb38c7d698f0befbf584ee8fb7e75c2fe9a02d68a",
+   "ROLE": "REFUSED_FREEZE_ATTEMPT_2_EVIDENCE",
+   "SIZE": 146,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/freeze_execution/freeze.stderr.txt",
+   "SOURCE_SHA256": "e3e50743b28aa18e5943333eb38c7d698f0befbf584ee8fb7e75c2fe9a02d68a"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/refused_attempt_2/freeze.stdout.txt",
+   "INSTALLED_SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "ROLE": "REFUSED_FREEZE_ATTEMPT_2_EVIDENCE",
+   "SIZE": 0,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_delta_closure/freeze_execution/freeze.stdout.txt",
+   "SOURCE_SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/COMMAND_LOG.jsonl",
+   "INSTALLED_SHA256": "82730d60279a34e3d3873aedae506876540cb4e04fe3d750ad924f7cf5e2f7cf",
+   "ROLE": "VERIFICATION_EVIDENCE",
+   "SIZE": 283973,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/codex_output/COMMAND_LOG.jsonl",
+   "SOURCE_SHA256": "82730d60279a34e3d3873aedae506876540cb4e04fe3d750ad924f7cf5e2f7cf"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/INVENTORY_COMPARE.json",
+   "INSTALLED_SHA256": "41a41d24abca8aaab56462c82efdaa7c3d235309f3b50cbb59ebeafd69e46168",
+   "ROLE": "VERIFICATION_EVIDENCE",
+   "SIZE": 761,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/codex_output/INVENTORY_COMPARE.json",
+   "SOURCE_SHA256": "41a41d24abca8aaab56462c82efdaa7c3d235309f3b50cbb59ebeafd69e46168"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/INVENTORY_POST.json",
+   "INSTALLED_SHA256": "6fde4acacf3daeb97c69adb56eaecfee9a93e21bd46201b7aced431ef95348d5",
+   "ROLE": "VERIFICATION_EVIDENCE",
+   "SIZE": 470823,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/codex_output/INVENTORY_POST.json",
+   "SOURCE_SHA256": "6fde4acacf3daeb97c69adb56eaecfee9a93e21bd46201b7aced431ef95348d5"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/ITEM_RESULTS.jsonl",
+   "INSTALLED_SHA256": "c6b570aa36acf53535ab8544af4e7f4d33043f7128704c62b8b86881b36d4ede",
+   "ROLE": "VERIFICATION_EVIDENCE",
+   "SIZE": 24281,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/codex_output/ITEM_RESULTS.jsonl",
+   "SOURCE_SHA256": "c6b570aa36acf53535ab8544af4e7f4d33043f7128704c62b8b86881b36d4ede"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/MEASUREMENTS.json",
+   "INSTALLED_SHA256": "78152dd7517c76cedd21cb184625c5914a7cda059ad05fdcb6adbb6267c75a95",
+   "ROLE": "VERIFICATION_EVIDENCE",
+   "SIZE": 26070,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/codex_output/MEASUREMENTS.json",
+   "SOURCE_SHA256": "78152dd7517c76cedd21cb184625c5914a7cda059ad05fdcb6adbb6267c75a95"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/VERIFICATION_MANIFEST.sha256",
+   "INSTALLED_SHA256": "283844d063a55304237c6cd78cac14e63b652ad7f2334c3867b69ab35ee5b03e",
+   "ROLE": "VERIFICATION_EVIDENCE",
+   "SIZE": 702,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/codex_output/VERIFICATION_MANIFEST.sha256",
+   "SOURCE_SHA256": "283844d063a55304237c6cd78cac14e63b652ad7f2334c3867b69ab35ee5b03e"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/VERIFICATION_REPORT.md",
+   "INSTALLED_SHA256": "35c9c13e0be44167899fc28687ea3d59b9506ea725dc1aaa17ba7946b8cf5aeb",
+   "ROLE": "VERIFICATION_EVIDENCE",
+   "SIZE": 4660,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/codex_output/VERIFICATION_REPORT.md",
+   "SOURCE_SHA256": "35c9c13e0be44167899fc28687ea3d59b9506ea725dc1aaa17ba7946b8cf5aeb"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/VERIFICATION_RESULT.json",
+   "INSTALLED_SHA256": "b16ee28273c6fcc2577a9bcfd957f1e90fd6e6a496bf83b82ebfbc611bcf493a",
+   "ROLE": "VERIFICATION_EVIDENCE",
+   "SIZE": 33891,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/codex_output/VERIFICATION_RESULT.json",
+   "SOURCE_SHA256": "b16ee28273c6fcc2577a9bcfd957f1e90fd6e6a496bf83b82ebfbc611bcf493a"
+  },
+  {
+   "BYTES_EQUAL": true,
+   "INSTALLED": "verification_codex_final_pre_freeze_attempt_6/WRITER_INSPECTION_POST.json",
+   "INSTALLED_SHA256": "73898789be030749efcdd4c7f9ce716262c7ffa8c32532ecf123ec13d462aae6",
+   "ROLE": "VERIFICATION_EVIDENCE",
+   "SIZE": 752,
+   "SOURCE": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/codex_output/WRITER_INSPECTION_POST.json",
+   "SOURCE_SHA256": "73898789be030749efcdd4c7f9ce716262c7ffa8c32532ecf123ec13d462aae6"
+  }
+ ],
+ "installed_count": 47,
+ "manifest_excluded_by": "build/build_r8_build_manifest.py is_post_manifest_artefact, matched on the first path component",
+ "paths_created_in_r8": 47,
+ "paths_created_outside_the_excluded_directory": [],
+ "paths_removed_from_r8": [],
+ "r8_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+ "schema": "wpno.r8.lineage-repair-verification-install/1",
+ "verification_attempt_number": 6,
+ "verification_directory": "verification_codex_final_pre_freeze_attempt_6"
+}

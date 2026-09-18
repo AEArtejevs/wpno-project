@@ -1,0 +1,17 @@
+{
+ "BLOCKING_COUNT": 0,
+ "NO_CONCURRENT_WRITER": true,
+ "blocking_writable_descriptors": [],
+ "measurement_limit": "Descriptors held by processes of another uid are not readable without privilege. Those pids are counted above, not assumed empty. The pre/post inventory of the root is the independent check that closes this gap after the fact.",
+ "method": "/proc/<pid>/fd + /proc/<pid>/fdinfo + /proc/<pid>/exe",
+ "open_descriptors_below_root": [],
+ "pgrep_used": false,
+ "pids_with_readable_fd_table": 2,
+ "pids_with_unreadable_fd_table": 0,
+ "root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+ "schema": "wpno.r8.lineage-writer-inspection/1",
+ "this_pid": 2,
+ "this_uid": 1000,
+ "unreadable_pids_by_uid": [],
+ "unreadable_same_uid": []
+}

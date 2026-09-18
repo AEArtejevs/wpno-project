@@ -1,0 +1,67 @@
+REF-12 OPERATOR DEFINITION AND EXPECTED-HASH PROVENANCE
+
+Audit:
+L1-A29 — Independent 376 hash remeasurement
+
+Operator definition:
+For L1-A29, the identifier "376" refers to the exact artefact:
+
+376_DKB MH.docx
+
+Artefact type:
+Microsoft Word OOXML document containing a Deutsche Kreditbank AG
+Steuerbescheinigung for Milchhof Alt Sührkow GmbH.
+
+Original source path on Martin's Mac:
+/Users/martinotten/Desktop/Milchhof_Entpackt/376-379_Kaspertr.Steurbescheinigung MH/376_DKB MH.docx
+
+Historical identity evidence:
+A historical Claude inventory record located on Martin's Mac records:
+
+nr = 376
+title = 376_DKB MH
+
+Historical record path:
+/Users/martinotten/.claude/projects/-Users-martinotten/c697b5e1-cad4-4dce-ac62-5df72aea2143/subagents/workflows/wf_00f6e50d-bac/agent-a46bb7f65f7ae91b6.jsonl
+
+Expected SHA-256:
+0b8403982880761b1e2bc31d8c15b756fad0fe12259d55d1611323a4e768b3ca
+
+Expected-hash provenance:
+The expected SHA-256 was measured from the original source-path file on
+Martin's Mac with:
+
+shasum -a 256 "376_DKB MH.docx"
+
+The Mac measurement occurred before the file was transferred to the Ubuntu
+operator-intake directory. This record documents that earlier measurement; it
+does not claim that this text file itself existed on the Mac before transfer.
+
+Source-host measured size:
+52412 bytes
+
+Source-host recorded modification time:
+2026-03-17 13:59:17 local Mac time
+
+Chain of custody:
+1. The artefact was located at the stated source path on Martin's Mac.
+2. Its SHA-256 was measured on Martin's Mac before transfer.
+3. The artefact was copied unchanged from Martin's Mac to the operator.
+4. The artefact was copied unchanged into the Ubuntu REF-12 intake directory.
+5. The Ubuntu intake SHA-256 was compared with and matched the earlier
+   source-host SHA-256 before this statement was written.
+
+Limitation:
+No older standalone historical SHA-256 manifest was located. The expected
+comparison value is the operator-supplied source-host measurement made before
+the server-side audit remeasurement.
+
+Operator:
+Andris
+
+Recorded UTC:
+2026-08-27T20:36:52Z
+
+Operator confirmation:
+I confirm that "376" identifies the artefact stated above and that the
+chain-of-custody and expected-hash information in this record is accurate.

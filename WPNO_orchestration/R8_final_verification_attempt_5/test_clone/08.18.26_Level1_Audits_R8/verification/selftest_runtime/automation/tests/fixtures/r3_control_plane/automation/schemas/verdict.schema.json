@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Final verdict for one audit phase",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["audit_id", "run_phase", "verdict", "target_sha256_before",
+               "target_sha256_after", "controls", "self_critique",
+               "disproof_attempt"],
+  "properties": {
+    "audit_id": {"type": "string", "pattern": "^L1-A[0-3][0-9]$"},
+    "run_phase": {"enum": ["RUN-A", "RUN-B", "COMPARISON"]},
+    "verdict": {"enum": ["PASS", "PASS_WITH_WARNINGS", "FAIL", "BLOCKED",
+                         "UNVERIFIED", "ERROR", "CONTAMINATED"]},
+    "target_sha256_before": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "target_sha256_after": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["positive", "negative", "mutation", "independent_oracle"],
+      "properties": {
+        "positive": {"enum": ["PASSED", "FAILED", "NOT_APPLICABLE", "NOT_RUN"]},
+        "negative": {"enum": ["PASSED", "FAILED", "NOT_APPLICABLE", "NOT_RUN"]},
+        "mutation": {"enum": ["PASSED", "FAILED", "NOT_APPLICABLE", "NOT_RUN"]},
+        "independent_oracle": {"enum": ["USED", "NOT_AVAILABLE", "NOT_APPLICABLE"]}
+      }
+    },
+    "unresolved_evidence": {"type": "array", "items": {"type": "string"}},
+    "self_critique": {"type": "string", "minLength": 1},
+    "disproof_attempt": {"type": "string", "minLength": 1},
+    "critical_finding_ids": {"type": "array", "items": {"type": "string"}}
+  }
+}

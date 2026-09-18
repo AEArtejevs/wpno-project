@@ -1,0 +1,4 @@
+{
+  "error": "ControllerError",
+  "message": "FREEZE_LINEAGE_UNBOUND: the plan does not bind lineage/R7_BASELINE_MANIFEST.json_MANIFEST.sha256"
+}

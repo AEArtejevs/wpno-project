@@ -1,0 +1,772 @@
+{
+  "agreeing_with_reference": 26,
+  "disagreeing_with_reference": 8,
+  "formula_source": "REF-03 official ELSTER specification; the REF-03 ISO item is an eleven-page preview without the operational clauses and is not the source of the calculation",
+  "method": "python ISO/IEC 7064 MOD 11,10 generation form: fold the first ten digits, produce the eleventh, compare",
+  "results": [
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": 9,
+        "check_digit_correct": true,
+        "compacted": "36574261809",
+        "computed_check_digit": 9,
+        "deciding_rule": "ALL_RULES_SATISFIED",
+        "input_is_string": true,
+        "leading_zero": false,
+        "length": 11,
+        "repetition_counts": [
+          2
+        ],
+        "result": "VALID",
+        "structurally_valid": true
+      },
+      "agrees": true,
+      "expected_result": "VALID",
+      "expected_result_provenance": "REF-04_DOCUMENTED",
+      "raw": "36 574 261 809",
+      "scope": "REF04_DOCUMENTED"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": 0,
+        "check_digit_correct": false,
+        "compacted": "36574261890",
+        "computed_check_digit": 2,
+        "deciding_rule": "MOD_11_10",
+        "input_is_string": true,
+        "leading_zero": false,
+        "length": 11,
+        "repetition_counts": [
+          2
+        ],
+        "result": "INVALID_CHECKSUM",
+        "structurally_valid": true
+      },
+      "agrees": true,
+      "expected_result": "INVALID_CHECKSUM",
+      "expected_result_provenance": "REF-04_DOCUMENTED",
+      "raw": "36574261890",
+      "scope": "REF04_DOCUMENTED"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": 6,
+        "check_digit_correct": true,
+        "compacted": "36554266806",
+        "computed_check_digit": 6,
+        "deciding_rule": "ALL_RULES_SATISFIED",
+        "input_is_string": true,
+        "leading_zero": false,
+        "length": 11,
+        "repetition_counts": [
+          2,
+          3
+        ],
+        "result": "VALID",
+        "structurally_valid": true
+      },
+      "agrees": false,
+      "expected_result": "INVALID_FORMAT_REPETITION",
+      "expected_result_provenance": "REF-04_DOCUMENTED",
+      "raw": "36554266806",
+      "scope": "REF04_DOCUMENTED"
+    },
+    {
+      "actual": {
+        "all_digits": null,
+        "carried_check_digit": null,
+        "check_digit_correct": null,
+        "compacted": "116574261809",
+        "computed_check_digit": null,
+        "deciding_rule": "LENGTH",
+        "input_is_string": true,
+        "leading_zero": null,
+        "length": 12,
+        "repetition_counts": null,
+        "result": "INVALID_LENGTH",
+        "structurally_valid": null
+      },
+      "agrees": true,
+      "expected_result": "INVALID_LENGTH",
+      "expected_result_provenance": "REF-04_DOCUMENTED",
+      "raw": "116574261809",
+      "scope": "REF04_DOCUMENTED"
+    },
+    {
+      "actual": {
+        "all_digits": false,
+        "carried_check_digit": null,
+        "check_digit_correct": null,
+        "compacted": "A6574261809",
+        "computed_check_digit": null,
+        "deciding_rule": "NON_DIGIT",
+        "input_is_string": true,
+        "leading_zero": null,
+        "length": 11,
+        "repetition_counts": null,
+        "result": "INVALID_FORMAT_NON_DIGIT",
+        "structurally_valid": null
+      },
+      "agrees": true,
+      "expected_result": "INVALID_FORMAT_NON_DIGIT",
+      "expected_result_provenance": "REF-04_DOCUMENTED",
+      "raw": "A6574261809",
+      "scope": "REF04_DOCUMENTED"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": null,
+        "check_digit_correct": null,
+        "compacted": "01234567896",
+        "computed_check_digit": null,
+        "deciding_rule": "LEADING_ZERO",
+        "input_is_string": true,
+        "leading_zero": true,
+        "length": 11,
+        "repetition_counts": null,
+        "result": "INVALID_FORMAT_LEADING_ZERO",
+        "structurally_valid": null
+      },
+      "agrees": true,
+      "expected_result": "INVALID_FORMAT_LEADING_ZERO",
+      "expected_result_provenance": "REF-04_DOCUMENTED",
+      "raw": "01234567896",
+      "scope": "REF04_DOCUMENTED"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": 3,
+        "check_digit_correct": true,
+        "compacted": "12345678903",
+        "computed_check_digit": 3,
+        "deciding_rule": "ALL_RULES_SATISFIED",
+        "input_is_string": true,
+        "leading_zero": false,
+        "length": 11,
+        "repetition_counts": [],
+        "result": "VALID",
+        "structurally_valid": true
+      },
+      "agrees": false,
+      "expected_result": "INVALID_FORMAT_REPETITION",
+      "expected_result_provenance": "REF-04_DOCUMENTED",
+      "raw": "1234567890 3",
+      "scope": "REF04_DOCUMENTED"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": 0,
+        "check_digit_correct": true,
+        "compacted": "11234567890",
+        "computed_check_digit": 0,
+        "deciding_rule": "ALL_RULES_SATISFIED",
+        "input_is_string": true,
+        "leading_zero": false,
+        "length": 11,
+        "repetition_counts": [
+          2
+        ],
+        "result": "VALID",
+        "structurally_valid": true
+      },
+      "agrees": true,
+      "expected_result": "VALID",
+      "expected_result_provenance": "REF-04_DOCUMENTED",
+      "raw": "1123456789 0",
+      "scope": "REF04_DOCUMENTED"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": 6,
+        "check_digit_correct": true,
+        "compacted": "11123456786",
+        "computed_check_digit": 6,
+        "deciding_rule": "ALL_RULES_SATISFIED",
+        "input_is_string": true,
+        "leading_zero": false,
+        "length": 11,
+        "repetition_counts": [
+          3
+        ],
+        "result": "VALID",
+        "structurally_valid": true
+      },
+      "agrees": true,
+      "expected_result": "VALID",
+      "expected_result_provenance": "REF-04_DOCUMENTED",
+      "raw": "1112345678 6",
+      "scope": "REF04_DOCUMENTED"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": 8,
+        "check_digit_correct": true,
+        "compacted": "11112345678",
+        "computed_check_digit": 8,
+        "deciding_rule": "ALL_RULES_SATISFIED",
+        "input_is_string": true,
+        "leading_zero": false,
+        "length": 11,
+        "repetition_counts": [
+          4
+        ],
+        "result": "VALID",
+        "structurally_valid": true
+      },
+      "agrees": false,
+      "expected_result": "INVALID_FORMAT_REPETITION",
+      "expected_result_provenance": "REF-04_DOCUMENTED",
+      "raw": "1111234567 8",
+      "scope": "REF04_DOCUMENTED"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": 5,
+        "check_digit_correct": true,
+        "compacted": "11223456785",
+        "computed_check_digit": 5,
+        "deciding_rule": "ALL_RULES_SATISFIED",
+        "input_is_string": true,
+        "leading_zero": false,
+        "length": 11,
+        "repetition_counts": [
+          2,
+          2
+        ],
+        "result": "VALID",
+        "structurally_valid": true
+      },
+      "agrees": false,
+      "expected_result": "INVALID_FORMAT_REPETITION",
+      "expected_result_provenance": "REF-04_DOCUMENTED",
+      "raw": "1122345678 5",
+      "scope": "REF04_DOCUMENTED"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": 0,
+        "check_digit_correct": false,
+        "compacted": "36574261800",
+        "computed_check_digit": 9,
+        "deciding_rule": "MOD_11_10",
+        "input_is_string": true,
+        "leading_zero": false,
+        "length": 11,
+        "repetition_counts": [
+          2
+        ],
+        "result": "INVALID_CHECKSUM",
+        "structurally_valid": true
+      },
+      "agrees": true,
+      "expected_result": "INVALID_CHECKSUM",
+      "expected_result_provenance": "DERIVED_BY_RULE_FROM_REF-04",
+      "raw": "36574261800",
+      "scope": "CHECK_DIGIT_PLUS_ONE"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": 1,
+        "check_digit_correct": false,
+        "compacted": "11234567891",
+        "computed_check_digit": 0,
+        "deciding_rule": "MOD_11_10",
+        "input_is_string": true,
+        "leading_zero": false,
+        "length": 11,
+        "repetition_counts": [
+          2
+        ],
+        "result": "INVALID_CHECKSUM",
+        "structurally_valid": true
+      },
+      "agrees": true,
+      "expected_result": "INVALID_CHECKSUM",
+      "expected_result_provenance": "DERIVED_BY_RULE_FROM_REF-04",
+      "raw": "11234567891",
+      "scope": "CHECK_DIGIT_PLUS_ONE"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": 7,
+        "check_digit_correct": false,
+        "compacted": "11123456787",
+        "computed_check_digit": 6,
+        "deciding_rule": "MOD_11_10",
+        "input_is_string": true,
+        "leading_zero": false,
+        "length": 11,
+        "repetition_counts": [
+          3
+        ],
+        "result": "INVALID_CHECKSUM",
+        "structurally_valid": true
+      },
+      "agrees": true,
+      "expected_result": "INVALID_CHECKSUM",
+      "expected_result_provenance": "DERIVED_BY_RULE_FROM_REF-04",
+      "raw": "11123456787",
+      "scope": "CHECK_DIGIT_PLUS_ONE"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": 3,
+        "check_digit_correct": true,
+        "compacted": "12345678903",
+        "computed_check_digit": 3,
+        "deciding_rule": "ALL_RULES_SATISFIED",
+        "input_is_string": true,
+        "leading_zero": false,
+        "length": 11,
+        "repetition_counts": [],
+        "result": "VALID",
+        "structurally_valid": true
+      },
+      "agrees": false,
+      "expected_result": "INVALID_FORMAT_REPETITION",
+      "expected_result_provenance": "DERIVED_BY_RULE_FROM_REF-04",
+      "raw": "12345678903",
+      "scope": "REPETITION_VIOLATED_CHECK_DIGIT_CORRECT"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": 8,
+        "check_digit_correct": true,
+        "compacted": "11112345678",
+        "computed_check_digit": 8,
+        "deciding_rule": "ALL_RULES_SATISFIED",
+        "input_is_string": true,
+        "leading_zero": false,
+        "length": 11,
+        "repetition_counts": [
+          4
+        ],
+        "result": "VALID",
+        "structurally_valid": true
+      },
+      "agrees": false,
+      "expected_result": "INVALID_FORMAT_REPETITION",
+      "expected_result_provenance": "DERIVED_BY_RULE_FROM_REF-04",
+      "raw": "11112345678",
+      "scope": "REPETITION_VIOLATED_CHECK_DIGIT_CORRECT"
+    },
+    {
+      "actual": {
+        "all_digits": null,
+        "carried_check_digit": null,
+        "check_digit_correct": null,
+        "compacted": "3657426180",
+        "computed_check_digit": null,
+        "deciding_rule": "LENGTH",
+        "input_is_string": true,
+        "leading_zero": null,
+        "length": 10,
+        "repetition_counts": null,
+        "result": "INVALID_LENGTH",
+        "structurally_valid": null
+      },
+      "agrees": true,
+      "expected_result": "INVALID_LENGTH",
+      "expected_result_provenance": "DERIVED_BY_RULE_FROM_REF-04",
+      "raw": "3657426180",
+      "scope": "WRONG_LENGTH_10"
+    },
+    {
+      "actual": {
+        "all_digits": null,
+        "carried_check_digit": null,
+        "check_digit_correct": null,
+        "compacted": "365742618090",
+        "computed_check_digit": null,
+        "deciding_rule": "LENGTH",
+        "input_is_string": true,
+        "leading_zero": null,
+        "length": 12,
+        "repetition_counts": null,
+        "result": "INVALID_LENGTH",
+        "structurally_valid": null
+      },
+      "agrees": true,
+      "expected_result": "INVALID_LENGTH",
+      "expected_result_provenance": "DERIVED_BY_RULE_FROM_REF-04",
+      "raw": "365742618090",
+      "scope": "WRONG_LENGTH_12"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": 9,
+        "check_digit_correct": true,
+        "compacted": "36574261809",
+        "computed_check_digit": 9,
+        "deciding_rule": "ALL_RULES_SATISFIED",
+        "input_is_string": true,
+        "leading_zero": false,
+        "length": 11,
+        "repetition_counts": [
+          2
+        ],
+        "result": "VALID",
+        "structurally_valid": true
+      },
+      "agrees": true,
+      "expected_result": "VALID",
+      "expected_result_provenance": "DERIVED_BY_RULE_FROM_REF-04",
+      "raw": "36-574-261-809",
+      "scope": "SEPARATORS_HYPHEN"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": 9,
+        "check_digit_correct": true,
+        "compacted": "36574261809",
+        "computed_check_digit": 9,
+        "deciding_rule": "ALL_RULES_SATISFIED",
+        "input_is_string": true,
+        "leading_zero": false,
+        "length": 11,
+        "repetition_counts": [
+          2
+        ],
+        "result": "VALID",
+        "structurally_valid": true
+      },
+      "agrees": true,
+      "expected_result": "VALID",
+      "expected_result_provenance": "DERIVED_BY_RULE_FROM_REF-04",
+      "raw": "36.574.261.809",
+      "scope": "SEPARATORS_DOT"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": 9,
+        "check_digit_correct": true,
+        "compacted": "36574261809",
+        "computed_check_digit": 9,
+        "deciding_rule": "ALL_RULES_SATISFIED",
+        "input_is_string": true,
+        "leading_zero": false,
+        "length": 11,
+        "repetition_counts": [
+          2
+        ],
+        "result": "VALID",
+        "structurally_valid": true
+      },
+      "agrees": true,
+      "expected_result": "VALID",
+      "expected_result_provenance": "DERIVED_BY_RULE_FROM_REF-04",
+      "raw": "36/574/261/809",
+      "scope": "SEPARATORS_SLASH"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": 9,
+        "check_digit_correct": true,
+        "compacted": "36574261809",
+        "computed_check_digit": 9,
+        "deciding_rule": "ALL_RULES_SATISFIED",
+        "input_is_string": true,
+        "leading_zero": false,
+        "length": 11,
+        "repetition_counts": [
+          2
+        ],
+        "result": "VALID",
+        "structurally_valid": true
+      },
+      "agrees": true,
+      "expected_result": "VALID",
+      "expected_result_provenance": "DERIVED_BY_RULE_FROM_REF-04",
+      "raw": "36,574,261,809",
+      "scope": "SEPARATORS_COMMA"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": 9,
+        "check_digit_correct": true,
+        "compacted": "36574261809",
+        "computed_check_digit": 9,
+        "deciding_rule": "ALL_RULES_SATISFIED",
+        "input_is_string": true,
+        "leading_zero": false,
+        "length": 11,
+        "repetition_counts": [
+          2
+        ],
+        "result": "VALID",
+        "structurally_valid": true
+      },
+      "agrees": true,
+      "expected_result": "VALID",
+      "expected_result_provenance": "DERIVED_BY_RULE_FROM_REF-04",
+      "raw": "  36574261809  ",
+      "scope": "SURROUNDING_WHITESPACE"
+    },
+    {
+      "actual": {
+        "all_digits": null,
+        "carried_check_digit": null,
+        "check_digit_correct": null,
+        "compacted": "SteuerID36574261809",
+        "computed_check_digit": null,
+        "deciding_rule": "LENGTH",
+        "input_is_string": true,
+        "leading_zero": null,
+        "length": 19,
+        "repetition_counts": null,
+        "result": "INVALID_LENGTH",
+        "structurally_valid": null
+      },
+      "agrees": true,
+      "expected_result": "INVALID_LENGTH",
+      "expected_result_provenance": "DERIVED_BY_RULE_FROM_REF-04",
+      "raw": "Steuer-ID 36574261809",
+      "scope": "LEADING_TEXT"
+    },
+    {
+      "actual": {
+        "all_digits": null,
+        "carried_check_digit": null,
+        "check_digit_correct": null,
+        "compacted": "36574261809istdieNummer",
+        "computed_check_digit": null,
+        "deciding_rule": "LENGTH",
+        "input_is_string": true,
+        "leading_zero": null,
+        "length": 23,
+        "repetition_counts": null,
+        "result": "INVALID_LENGTH",
+        "structurally_valid": null
+      },
+      "agrees": true,
+      "expected_result": "INVALID_LENGTH",
+      "expected_result_provenance": "DERIVED_BY_RULE_FROM_REF-04",
+      "raw": "36574261809 ist die Nummer",
+      "scope": "TRAILING_TEXT"
+    },
+    {
+      "actual": {
+        "all_digits": null,
+        "carried_check_digit": null,
+        "check_digit_correct": null,
+        "compacted": "",
+        "computed_check_digit": null,
+        "deciding_rule": "LENGTH",
+        "input_is_string": true,
+        "leading_zero": null,
+        "length": 0,
+        "repetition_counts": null,
+        "result": "INVALID_LENGTH",
+        "structurally_valid": null
+      },
+      "agrees": true,
+      "expected_result": "INVALID_LENGTH",
+      "expected_result_provenance": "DERIVED_BY_RULE_FROM_REF-04",
+      "raw": "",
+      "scope": "EMPTY_INPUT"
+    },
+    {
+      "actual": {
+        "all_digits": null,
+        "carried_check_digit": null,
+        "check_digit_correct": null,
+        "compacted": null,
+        "computed_check_digit": null,
+        "deciding_rule": "NOT_A_STRING",
+        "input_is_string": false,
+        "leading_zero": null,
+        "length": null,
+        "repetition_counts": null,
+        "result": "INVALID_NOT_A_STRING",
+        "structurally_valid": null
+      },
+      "agrees": true,
+      "expected_result": "INVALID_NOT_A_STRING",
+      "expected_result_provenance": "DERIVED_BY_RULE_FROM_REF-04",
+      "raw": null,
+      "scope": "NONE_INPUT"
+    },
+    {
+      "actual": {
+        "all_digits": null,
+        "carried_check_digit": null,
+        "check_digit_correct": null,
+        "compacted": "3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333",
+        "computed_check_digit": null,
+        "deciding_rule": "LENGTH",
+        "input_is_string": true,
+        "leading_zero": null,
+        "length": 4000,
+        "repetition_counts": null,
+        "result": "INVALID_LENGTH",
+        "structurally_valid": null
+      },
+      "agrees": true,
+      "expected_result": "INVALID_LENGTH",
+      "expected_result_provenance": "DERIVED_BY_RULE_FROM_REF-04",
+      "raw": "3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333",
+      "scope": "VERY_LONG_INPUT"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": 1,
+        "check_digit_correct": false,
+        "compacted": "11111111111",
+        "computed_check_digit": 9,
+        "deciding_rule": "MOD_11_10",
+        "input_is_string": true,
+        "leading_zero": false,
+        "length": 11,
+        "repetition_counts": [
+          10
+        ],
+        "result": "INVALID_CHECKSUM",
+        "structurally_valid": true
+      },
+      "agrees": false,
+      "expected_result": "INVALID_FORMAT_REPETITION",
+      "expected_result_provenance": "DERIVED_BY_RULE_FROM_REF-04",
+      "raw": "11111111111",
+      "scope": "ALL_IDENTICAL_DIGITS"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": 6,
+        "check_digit_correct": true,
+        "compacted": "11123456786",
+        "computed_check_digit": 6,
+        "deciding_rule": "ALL_RULES_SATISFIED",
+        "input_is_string": true,
+        "leading_zero": false,
+        "length": 11,
+        "repetition_counts": [
+          3
+        ],
+        "result": "VALID",
+        "structurally_valid": true
+      },
+      "agrees": true,
+      "expected_result": "VALID",
+      "expected_result_provenance": "DERIVED_BY_RULE_FROM_REF-04",
+      "raw": "11123456786",
+      "scope": "MAX_ALLOWED_REPETITION"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": 0,
+        "check_digit_correct": true,
+        "compacted": "11234567890",
+        "computed_check_digit": 0,
+        "deciding_rule": "ALL_RULES_SATISFIED",
+        "input_is_string": true,
+        "leading_zero": false,
+        "length": 11,
+        "repetition_counts": [
+          2
+        ],
+        "result": "VALID",
+        "structurally_valid": true
+      },
+      "agrees": true,
+      "expected_result": "VALID",
+      "expected_result_provenance": "DERIVED_BY_RULE_FROM_REF-04",
+      "raw": "11234567890",
+      "scope": "CHECK_DIGIT_COMPUTES_TO_ZERO"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": null,
+        "check_digit_correct": null,
+        "compacted": "01123456789",
+        "computed_check_digit": null,
+        "deciding_rule": "LEADING_ZERO",
+        "input_is_string": true,
+        "leading_zero": true,
+        "length": 11,
+        "repetition_counts": null,
+        "result": "INVALID_FORMAT_LEADING_ZERO",
+        "structurally_valid": null
+      },
+      "agrees": true,
+      "expected_result": "INVALID_FORMAT_LEADING_ZERO",
+      "expected_result_provenance": "DERIVED_BY_RULE_FROM_REF-04",
+      "raw": "01123456789",
+      "scope": "LEADING_ZERO"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": 8,
+        "check_digit_correct": false,
+        "compacted": "85073003328",
+        "computed_check_digit": 7,
+        "deciding_rule": "MOD_11_10",
+        "input_is_string": true,
+        "leading_zero": false,
+        "length": 11,
+        "repetition_counts": [
+          3,
+          3
+        ],
+        "result": "INVALID_CHECKSUM",
+        "structurally_valid": true
+      },
+      "agrees": false,
+      "expected_result": "INVALID_FORMAT_REPETITION",
+      "expected_result_provenance": "DERIVED_BY_RULE_FROM_REF-04",
+      "raw": "85073003328",
+      "scope": "FOREIGN_SCHEME_SAME_LENGTH"
+    },
+    {
+      "actual": {
+        "all_digits": true,
+        "carried_check_digit": 3,
+        "check_digit_correct": false,
+        "compacted": "36574261803",
+        "computed_check_digit": 9,
+        "deciding_rule": "MOD_11_10",
+        "input_is_string": true,
+        "leading_zero": false,
+        "length": 11,
+        "repetition_counts": [
+          2
+        ],
+        "result": "INVALID_CHECKSUM",
+        "structurally_valid": true
+      },
+      "agrees": true,
+      "expected_result": "INVALID_CHECKSUM",
+      "expected_result_provenance": "DERIVED_BY_RULE_FROM_REF-04",
+      "raw": "36574261803",
+      "scope": "OTHER_ISO7064_VARIANT"
+    }
+  ],
+  "sabotage": "repetition",
+  "schema": "wpno.level1.a19-run-a/1",
+  "total_inputs_answered": 34,
+  "vectors_path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/corpora/R7_REF04_IDNR_VECTORS.jsonl",
+  "vectors_sha256": "6eba579879d929d0c6fe94ef05143cabca9d588a21ea33240e4e706f34e2bd5c"
+}

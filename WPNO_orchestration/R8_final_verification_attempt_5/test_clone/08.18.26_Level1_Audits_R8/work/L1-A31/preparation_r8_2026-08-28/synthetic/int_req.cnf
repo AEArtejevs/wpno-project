@@ -1,0 +1,7 @@
+[req]
+distinguished_name=dn
+prompt=no
+[dn]
+C=ZZ
+O=WPNO R5 Synthetic Control
+CN=R5 Synthetic Intermediate

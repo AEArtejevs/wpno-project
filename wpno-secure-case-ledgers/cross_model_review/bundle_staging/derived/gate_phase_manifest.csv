@@ -1,0 +1,3 @@
+phase_id,lifecycle_status,reason,demotable_in_code
+S11-Control-Plane-Scope-Guard,ACTIVE_CURRENT,"Zustands-/scope-bewusster Nachfolger: prueft ueber PRODUCT_CANDIDATE_REGISTRY, dass der aktuelle Lauf keine Produkt-Fach",False
+S11-PS861-006D-Recheck-Protocol,HISTORICAL_REPLAY,Invariante 'kein Produktdiff seit 9a50f7e' wurde vom SANKTIONIERTEN 670e362-Allowlist-Hardening bewusst superseded; als ,True

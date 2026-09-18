@@ -1,0 +1,27 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A27",
+  "binding_status": "EXTERNAL_EVIDENCE_REQUIRED",
+  "logical_targets": [
+    "Independent ZIP hash remeasurement"
+  ],
+  "candidate_paths": [],
+  "productive_target": null,
+  "productive_target_sha256": null,
+  "productive_target_evidence": [],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [],
+  "external_evidence_required": [
+    "REF-11"
+  ],
+  "unresolved_questions": [
+    "The archive is not identified."
+  ],
+  "discovery_drift": [],
+  "source_evidence": [],
+  "replications": 1,
+  "risk": "HIGH",
+  "execution_order": 29
+}

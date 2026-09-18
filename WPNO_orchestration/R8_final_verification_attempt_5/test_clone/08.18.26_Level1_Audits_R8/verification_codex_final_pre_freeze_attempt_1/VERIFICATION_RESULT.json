@@ -1,0 +1,201 @@
+{
+  "schema": "wpno.level1.codex-verification/1",
+  "revision": "R8",
+  "stage": "PRE_FREEZE_FINAL",
+  "verified_utc": "2026-08-28T15:31:48Z",
+  "items": [
+    {
+      "id": 1,
+      "claim": "R4 control manifest verifies with zero mismatches.",
+      "measured": "entries=1915, mismatches=0, malformed=0, duplicates=0",
+      "pass": true
+    },
+    {
+      "id": 2,
+      "claim": "R5 control manifest has exactly one mismatch, MODE, with the stated old and current values.",
+      "measured": "entries=14160, mismatches=['MODE'], MODE=FROZEN, recorded=0dba1cc2928ed5a2a3259b8d9aa4188feb6b775c91d7eab990bb75fa49cd6eee, expected_generated_digest=0dba1cc2928ed5a2a3259b8d9aa4188feb6b775c91d7eab990bb75fa49cd6eee, malformed=0, duplicates=0",
+      "pass": true
+    },
+    {
+      "id": 3,
+      "claim": "R6 control manifest verifies with zero mismatches.",
+      "measured": "entries=14781, mismatches=0, malformed=0, duplicates=0",
+      "pass": true
+    },
+    {
+      "id": 4,
+      "claim": "R7 control manifest has 15804 entries and zero mismatches.",
+      "measured": "entries=15804, mismatches=0, malformed=0, duplicates=0",
+      "pass": true
+    },
+    {
+      "id": 5,
+      "claim": "R8 discloses and verifies the R7 post-freeze incident without claiming continuous immutability.",
+      "measured": "incident_manifests=[('DIRTY_REPAIR_FILES.sha256', 4, 0, 0, 0), ('INCIDENT_MANIFEST.sha256', 15, 0, 0, 0)]; disclosure_keys=['R7_BYTES_NOT_DUPLICATED', 'chain', 'incident_record', 'inheritance_method', 'migratable_r7_attempts', 'non_migratable_r7_attempts', 'predecessor', 'predecessors', 'r7', 'r7_attempts', 'recorded_at_utc', 'revision', 'schema']",
+      "pass": false
+    },
+    {
+      "id": 6,
+      "claim": "R8 compact lineage has no full predecessor copy and resolves R4 through R8.",
+      "measured": "R6_EXECUTION_absent=True; resolved={'R5': '/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/lineage/R6_EXECUTION/lineage/R5_EXECUTION', 'R6': '/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/lineage/R6_EXECUTION', 'R7': '/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7', 'R8': '/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8'}; resolver_errors={'R4': \"no state/REVISION.json at /home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/lineage/R6_EXECUTION/lineage/R5_EXECUTION/lineage/R4_EXECUTION; the lineage chain from /home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8 visited ['R8', 'R7', 'R6', 'R5'] and could not reach R4\"}",
+      "pass": false
+    },
+    {
+      "id": 7,
+      "claim": "No same-path active R8/R7 files share an inode.",
+      "measured": "active same-path files compared=327, shared_inodes=[] (total 0)",
+      "pass": true
+    },
+    {
+      "id": 8,
+      "claim": "One executor is called by controller and rehearsal harness.",
+      "measured": "call-site occurrences={'automation/controller.py': 2, 'build/rehearse_candidate_plans.py': 1}; executor module=automation/in_process_executor.py",
+      "pass": true
+    },
+    {
+      "id": 9,
+      "claim": "No live note-only in-process implementation remains.",
+      "measured": "non-docstring live occurrences=['automation/migration.py:363', 'automation/package_tests/test_r8_migration.py:324', 'verification/selftest_runtime/automation/migration.py:363', 'verification/selftest_runtime/automation/tests/fixtures/r3_control_plane/automation/controller.py:414', 'verification_codex_final_pre_freeze_attempt_1/verify.py:86']",
+      "pass": false
+    },
+    {
+      "id": 10,
+      "claim": "IN_PROCESS catalog, handlers, and argument schemas agree and self-check passes.",
+      "measured": "catalog=18, handlers=18, schemas=18, deltas={cat-handler:[], handler-cat:[], cat-schema:[], schema-cat:[]}, self_check={'catalogued': ['COMPARE_BINARY_FILES', 'COMPARE_HASHES', 'COUNT_TEXT_MATCHES', 'DATABASE_EVIDENCE_IMPORT', 'DOCKER_METADATA_IMPORT', 'DOCX_PARSE_SANDBOX', 'LIST_DIRECTORY', 'MIME_EXTRACT_XML_PART_SANDBOX', 'PARSE_CSV_READONLY', 'PARSE_JSON_READONLY', 'PROVE_SET_NOVELTY', 'PYTHON_AST_PARSE', 'READ_FILE_RANGE', 'SHA256_FILE', 'STAT_FILE', 'TAR_LIST', 'XML_PARSE_SANDBOX', 'ZIP_LIST'], 'handled': ['COMPARE_BINARY_FILES', 'COMPARE_HASHES', 'COUNT_TEXT_MATCHES', 'DATABASE_EVIDENCE_IMPORT', 'DOCKER_METADATA_IMPORT', 'DOCX_PARSE_SANDBOX', 'LIST_DIRECTORY', 'MIME_EXTRACT_XML_PART_SANDBOX', 'PARSE_CSV_READONLY', 'PARSE_JSON_READONLY', 'PROVE_SET_NOVELTY', 'PYTHON_AST_PARSE', 'READ_FILE_RANGE', 'SHA256_FILE', 'STAT_FILE', 'TAR_LIST', 'XML_PARSE_SANDBOX', 'ZIP_LIST'], 'schemad': ['COMPARE_BINARY_FILES', 'COMPARE_HASHES', 'COUNT_TEXT_MATCHES', 'DATABASE_EVIDENCE_IMPORT', 'DOCKER_METADATA_IMPORT', 'DOCX_PARSE_SANDBOX', 'LIST_DIRECTORY', 'MIME_EXTRACT_XML_PART_SANDBOX', 'PARSE_CSV_READONLY', 'PARSE_JSON_READONLY', 'PROVE_SET_NOVELTY', 'PYTHON_AST_PARSE', 'READ_FILE_RANGE', 'SHA256_FILE', 'STAT_FILE', 'TAR_LIST', 'XML_PARSE_SANDBOX', 'ZIP_LIST'], 'catalogued_without_handler': [], 'catalogued_without_schema': [], 'handler_without_schema': [], 'schema_without_handler': [], 'ok': True}",
+      "pass": true
+    },
+    {
+      "id": 11,
+      "claim": "L1-A16 uses the repaired seven-entry corpus novelty proof and three novelty controls rehearsed AS_EXPECTED.",
+      "measured": "operation=PROVE_SET_NOVELTY, reference_root=/home/ubuntu/project/WPNO/ap18/korpus_docx, expected entries=7, novelty_controls=[('positive_control_novel_case_accepted', 'AS_EXPECTED'), ('negative_control_duplicate_rejected', 'AS_EXPECTED'), ('negative_control_renamed_duplicate_rejected', 'AS_EXPECTED')]",
+      "pass": true
+    },
+    {
+      "id": 12,
+      "claim": "Reported repair findings are resolved: no degenerate unhashed COMPARE_HASHES and all step reads are declared.",
+      "measured": "degenerate_unhashed_compare_hashes=[]; independently rejected read paths=[] (total 0)",
+      "pass": true
+    },
+    {
+      "id": 13,
+      "claim": "L1-A21 negative control is boundary-counted and expects zero.",
+      "measured": "operation=COUNT_TEXT_MATCHES, word_boundary=True, plan_expected_count=None, rehearsal_result=AS_EXPECTED",
+      "pass": true
+    },
+    {
+      "id": 14,
+      "claim": "L1-A33 MIME reference is unchanged from R7 and is extracted to work before parsing.",
+      "measured": "prefix=b'MIME-Version:', R8_sha256=8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a, R7_sha256=8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a, extraction_out=/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A33/RUN-A/extracted/REF-11-563203462.part.xml, parse_path=/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A33/RUN-A/extracted/REF-11-563203462.part.xml",
+      "pass": true
+    },
+    {
+      "id": 15,
+      "claim": "All control-role steps have machine-checkable expectations; coverage is 122/122.",
+      "measured": "rederived_control_steps=122, unenforced=[('L1-A01', 'RUN-A', 'mutation_control_pin_nondeterminism'), ('L1-A02', 'RUN-A', 'run_f1'), ('L1-A02', 'RUN-A', 'run_f3'), ('L1-A02', 'RUN-A', 'run_f5'), ('L1-A02', 'RUN-A', 'run_f6'), ('L1-A02', 'RUN-A', 'run_f9'), ('L1-A04', 'RUN-A', 'generate_t1'), ('L1-A04', 'RUN-A', 'generate_t2'), ('L1-A04', 'RUN-A', 'generate_t4'), ('L1-A04', 'RUN-A', 'generate_t6'), ('L1-A04', 'RUN-A', 'negative_control_no_headings'), ('L1-A05', 'RUN-A', 'positive_control_single_rule_violation'), ('L1-A05', 'RUN-A', 'negative_control_clean_input'), ('L1-A05', 'RUN-A', 'mutation_control_neutralise_the_rule'), ('L1-A06', 'RUN-A', 'count_rules_evaluated'), ('L1-A06', 'RUN-A', 'positive_control_known_bad_still_rejected'), ('L1-A06', 'RUN-A', 'negative_control_known_good_accepted'), ('L1-A06', 'RUN-A', 'mutation_control_bad_token_inserted'), ('L1-A07', 'RUN-A', 'positive_control_each_rule_detects_its_input'), ('L1-A07', 'RUN-A', 'negative_control_known_good_clean_in_v1'), ('L1-A07', 'RUN-A', 'mutation_control_shared_rule_neutralised'), ('L1-A08', 'RUN-A', 'positive_control_unmodified_forbidden_content'), ('L1-A08', 'RUN-A', 'negative_control_innocent_arrangements'), ('L1-A08', 'RUN-A', 'mutation_control_specificity'), ('L1-A09', 'RUN-A', 'positive_control_pattern_matches_own_literal'), ('L1-A09', 'RUN-A', 'negative_control_disjoint_string'), ('L1-A09', 'RUN-A', 'mutation_control_boundary_removed'), ('L1-A11', 'RUN-A', 'positive_control_matched_entry'), ('L1-A11', 'RUN-A', 'negative_control_fabricated_name'), ('L1-A11', 'RUN-A', 'mutation_control_one_character'), ('L1-A12', 'RUN-A', 'positive_control_known_form_citation'), ('L1-A12', 'RUN-A', 'negative_control_no_citation'), ('L1-A12', 'RUN-A', 'mutation_control_narrow_one_pattern'), ('L1-A13', 'RUN-A', 'positive_control_real_wellformed_citation'), ('L1-A13', 'RUN-A', 'negative_control_prose_without_citations'), ('L1-A13', 'RUN-A', 'mutation_control_outside_senate_set'), ('L1-A14', 'RUN-A', 'independent_citation_enumeration'), ('L1-A14', 'RUN-A', 'positive_control_seeded_citation'), ('L1-A14', 'RUN-A', 'negative_control_no_citations'), ('L1-A14', 'RUN-A', 'mutation_control_removed_citation'), ('L1-A15', 'RUN-A', 'positive_control_failing_assertion'), ('L1-A15', 'RUN-A', 'negative_control_unmutated_tree'), ('L1-A15', 'RUN-A', 'mutation_control_inverted_detection'), ('L1-A16', 'RUN-A', 'positive_control_plain_instruction'), ('L1-A16', 'RUN-A', 'negative_control_clean_structural_forms'), ('L1-A16', 'RUN-A', 'mutation_control_payload_altered'), ('L1-A22', 'RUN-A', 'positive_control_trivial_test_collected'), ('L1-A22', 'RUN-A', 'negative_control_unmatched_name'), ('L1-A22', 'RUN-A', 'mutation_control_golden_diverges'), ('L1-A24', 'RUN-A', 'external_launch_inside_project'), ('L1-A25', 'RUN-A', 'positive_control_untracked_is_removed'), ('L1-A25', 'RUN-A', 'negative_control_tracked_survives'), ('L1-A25', 'RUN-A', 'mutation_control_state_change'), ('L1-A26', 'RUN-A', 'run_positive_examples'), ('L1-A26', 'RUN-A', 'run_negative_examples'), ('L1-A26', 'RUN-A', 'mutation_control_neutralise_rule')]; coverage summary={control_role_steps:None, enforced:None, unenforced:None}",
+      "pass": false
+    },
+    {
+      "id": 16,
+      "claim": "Migration plan migrates only L1-A31 RUN-A/RUN-B, excludes COMPARISON for the stated reason, and was not applied.",
+      "measured": "phase references=['L1-A31/RUN-A', 'L1-A31/RUN-B'], applied_before_freeze=False, exclusion_reason_present=True",
+      "pass": false
+    },
+    {
+      "id": 17,
+      "claim": "R7 L1-A31 COMPARISON is EXECUTED, unsealed, and has zero evidence files.",
+      "measured": "progress contains EXECUTED=True, result_seal_present=False, evidence_files=0",
+      "pass": true
+    },
+    {
+      "id": 18,
+      "claim": "Controller suite passes in verification/selftest_runtime.",
+      "measured": "exit=0, unittest={'ran': 503, 'failures': 0, 'errors': 0, 'skips': 0, 'unexpected_successes': 0}; logs written in verifier output",
+      "pass": true
+    },
+    {
+      "id": 19,
+      "claim": "Package suite passes at R8 root.",
+      "measured": "exit=1, unittest={'ran': 361, 'failures': 1, 'errors': 0, 'skips': 0, 'unexpected_successes': 0}; logs written in verifier output",
+      "pass": false
+    },
+    {
+      "id": 20,
+      "claim": "Static safety review reports zero findings.",
+      "measured": "exit=0, finding_count=0, clean=True",
+      "pass": true
+    },
+    {
+      "id": 21,
+      "claim": "Exactly 43 complete, schema-valid known plans exist.",
+      "measured": "plan_files=43, coverage missing=[], duplicates=[], unknown=[], schema_valid_reports=43",
+      "pass": true
+    },
+    {
+      "id": 22,
+      "claim": "Exactly 43 rehearsals are PASS_READY.",
+      "measured": "rehearsal reports=43, PASS_READY=43, aggregate=43/43",
+      "pass": true
+    },
+    {
+      "id": 23,
+      "claim": "No required in-process step lacks evidence and no note-only step remains.",
+      "measured": "REQUIRED_IN_PROCESS_STEPS_WITHOUT_EVIDENCE=0, NOTE_ONLY_IN_PROCESS_STEPS=0",
+      "pass": true
+    },
+    {
+      "id": 24,
+      "claim": "No rehearsal phase is hollow.",
+      "measured": "HOLLOW_PHASES=[]",
+      "pass": true
+    },
+    {
+      "id": 25,
+      "claim": "Active state is 43/43 NOT_STARTED across 35 audits.",
+      "measured": "phase_status_count=0, status_counts={}, audits=35",
+      "pass": false
+    },
+    {
+      "id": 26,
+      "claim": "There are zero approvals/results/evidence and no raw token in state.",
+      "measured": "approvals=0, result_files=0, evidence_files=0, state_files_with_raw_token=[]",
+      "pass": true
+    },
+    {
+      "id": 27,
+      "claim": "R8 build manifest is complete, matching, unique, and well formed in builder scope.",
+      "measured": "entries=723, mismatches=5, malformed=0, duplicates=0, unlisted_in_scope=['build/R8_CHANGED_FILES.sha256'] (total 1), listed_not_physical=['build/R7_CHANGED_FILES.sha256'] (total 1)",
+      "pass": false
+    },
+    {
+      "id": 28,
+      "claim": "Freeze configuration is R8-consistent and predecessor baseline construction runs.",
+      "measured": "PACKAGE_REVISION=R8, PREDECESSOR_BASELINE_REL=lineage/R7_BASELINE_MANIFEST.json, resolved=/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R7_BASELINE_MANIFEST.json, inside_R8=True, baseline_entries=4, provenance=returned",
+      "pass": true
+    },
+    {
+      "id": 29,
+      "claim": "No sibling R9 directory exists.",
+      "measured": "path=/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R9, exists=False",
+      "pass": true
+    },
+    {
+      "id": 30,
+      "claim": "Transitions contain only init-revision; no live phase ran.",
+      "measured": "transition_count=1, events=[None]",
+      "pass": false
+    }
+  ],
+  "overall_pass": false,
+  "unresolved_findings": [
+    "Item 5: incident_manifests=[('DIRTY_REPAIR_FILES.sha256', 4, 0, 0, 0), ('INCIDENT_MANIFEST.sha256', 15, 0, 0, 0)]; disclosure_keys=['R7_BYTES_NOT_DUPLICATED', 'chain', 'incident_record', 'inheritance_method', 'migratable_r7_attempts', 'non_migratable_r7_attempts', 'predecessor', 'predecessors', 'r7', 'r7_attempts', 'recorded_at_utc', 'revision', 'schema']",
+    "Item 6: R6_EXECUTION_absent=True; resolved={'R5': '/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/lineage/R6_EXECUTION/lineage/R5_EXECUTION', 'R6': '/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/lineage/R6_EXECUTION', 'R7': '/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7', 'R8': '/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8'}; resolver_errors={'R4': \"no state/REVISION.json at /home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/lineage/R6_EXECUTION/lineage/R5_EXECUTION/lineage/R4_EXECUTION; the lineage chain from /home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8 visited ['R8', 'R7', 'R6', 'R5'] and could not reach R4\"}",
+    "Item 9: non-docstring live occurrences=['automation/migration.py:363', 'automation/package_tests/test_r8_migration.py:324', 'verification/selftest_runtime/automation/migration.py:363', 'verification/selftest_runtime/automation/tests/fixtures/r3_control_plane/automation/controller.py:414', 'verification_codex_final_pre_freeze_attempt_1/verify.py:86']",
+    "Item 15: rederived_control_steps=122, unenforced=[('L1-A01', 'RUN-A', 'mutation_control_pin_nondeterminism'), ('L1-A02', 'RUN-A', 'run_f1'), ('L1-A02', 'RUN-A', 'run_f3'), ('L1-A02', 'RUN-A', 'run_f5'), ('L1-A02', 'RUN-A', 'run_f6'), ('L1-A02', 'RUN-A', 'run_f9'), ('L1-A04', 'RUN-A', 'generate_t1'), ('L1-A04', 'RUN-A', 'generate_t2'), ('L1-A04', 'RUN-A', 'generate_t4'), ('L1-A04', 'RUN-A', 'generate_t6'), ('L1-A04', 'RUN-A', 'negative_control_no_headings'), ('L1-A05', 'RUN-A', 'positive_control_single_rule_violation'), ('L1-A05', 'RUN-A', 'negative_control_clean_input'), ('L1-A05', 'RUN-A', 'mutation_control_neutralise_the_rule'), ('L1-A06', 'RUN-A', 'count_rules_evaluated'), ('L1-A06', 'RUN-A', 'positive_control_known_bad_still_rejected'), ('L1-A06', 'RUN-A', 'negative_control_known_good_accepted'), ('L1-A06', 'RUN-A', 'mutation_control_bad_token_inserted'), ('L1-A07', 'RUN-A', 'positive_control_each_rule_detects_its_input'), ('L1-A07', 'RUN-A', 'negative_control_known_good_clean_in_v1'), ('L1-A07', 'RUN-A', 'mutation_control_shared_rule_neutralised'), ('L1-A08', 'RUN-A', 'positive_control_unmodified_forbidden_content'), ('L1-A08', 'RUN-A', 'negative_control_innocent_arrangements'), ('L1-A08', 'RUN-A', 'mutation_control_specificity'), ('L1-A09', 'RUN-A', 'positive_control_pattern_matches_own_literal'), ('L1-A09', 'RUN-A', 'negative_control_disjoint_string'), ('L1-A09', 'RUN-A', 'mutation_control_boundary_removed'), ('L1-A11', 'RUN-A', 'positive_control_matched_entry'), ('L1-A11', 'RUN-A', 'negative_control_fabricated_name'), ('L1-A11', 'RUN-A', 'mutation_control_one_character'), ('L1-A12', 'RUN-A', 'positive_control_known_form_citation'), ('L1-A12', 'RUN-A', 'negative_control_no_citation'), ('L1-A12', 'RUN-A', 'mutation_control_narrow_one_pattern'), ('L1-A13', 'RUN-A', 'positive_control_real_wellformed_citation'), ('L1-A13', 'RUN-A', 'negative_control_prose_without_citations'), ('L1-A13', 'RUN-A', 'mutation_control_outside_senate_set'), ('L1-A14', 'RUN-A', 'independent_citation_enumeration'), ('L1-A14', 'RUN-A', 'positive_control_seeded_citation'), ('L1-A14', 'RUN-A', 'negative_control_no_citations'), ('L1-A14', 'RUN-A', 'mutation_control_removed_citation'), ('L1-A15', 'RUN-A', 'positive_control_failing_assertion'), ('L1-A15', 'RUN-A', 'negative_control_unmutated_tree'), ('L1-A15', 'RUN-A', 'mutation_control_inverted_detection'), ('L1-A16', 'RUN-A', 'positive_control_plain_instruction'), ('L1-A16', 'RUN-A', 'negative_control_clean_structural_forms'), ('L1-A16', 'RUN-A', 'mutation_control_payload_altered'), ('L1-A22', 'RUN-A', 'positive_control_trivial_test_collected'), ('L1-A22', 'RUN-A', 'negative_control_unmatched_name'), ('L1-A22', 'RUN-A', 'mutation_control_golden_diverges'), ('L1-A24', 'RUN-A', 'external_launch_inside_project'), ('L1-A25', 'RUN-A', 'positive_control_untracked_is_removed'), ('L1-A25', 'RUN-A', 'negative_control_tracked_survives'), ('L1-A25', 'RUN-A', 'mutation_control_state_change'), ('L1-A26', 'RUN-A', 'run_positive_examples'), ('L1-A26', 'RUN-A', 'run_negative_examples'), ('L1-A26', 'RUN-A', 'mutation_control_neutralise_rule')]; coverage summary={control_role_steps:None, enforced:None, unenforced:None}",
+    "Item 16: phase references=['L1-A31/RUN-A', 'L1-A31/RUN-B'], applied_before_freeze=False, exclusion_reason_present=True",
+    "Item 19: exit=1, unittest={'ran': 361, 'failures': 1, 'errors': 0, 'skips': 0, 'unexpected_successes': 0}; logs written in verifier output",
+    "Item 25: phase_status_count=0, status_counts={}, audits=35",
+    "Item 27: entries=723, mismatches=5, malformed=0, duplicates=0, unlisted_in_scope=['build/R8_CHANGED_FILES.sha256'] (total 1), listed_not_physical=['build/R7_CHANGED_FILES.sha256'] (total 1)",
+    "Item 30: transition_count=1, events=[None]"
+  ],
+  "status": "VERIFICATION_FAIL_PRE_FREEZE_R8_FINAL"
+}

@@ -1,0 +1,143 @@
+{
+  "audit_id": "L1-A34",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Full verification of vhn.xml.p7s: CMS structure, signer identity mapping, the signature over the exact detached content, and the chain to the REF-08 anchor at the claimed signing time, with the DER anchor staged to PEM through the sanctioned route and with positive, negative and mutation controls.",
+  "static_analysis": "REF-08's SAFE Root CA anchor is supplied in DER. `-CAfile` reads PEM, and the catalogue refuses a DER anchor by inspecting the file's first bytes rather than its name. The anchor is therefore staged to PEM under work/ by trust_material.stage_der_anchor_as_pem, which records both digests and refuses to write into references/. The reference itself is never replaced.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-08-safe-root-ca-2017.der"
+      },
+      "purpose": "Record the DER anchor's identity before staging. The staged PEM must re-encode to this exact DER.",
+      "step_id": "stage_der_anchor",
+      "timeout_seconds": 60
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "OPENSSL_PARSE_CERT",
+      "params": {
+        "cert": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/staged_anchors/vhn_root_from_der.pem"
+      },
+      "purpose": "Facts and fingerprint of the staged PEM anchor.",
+      "step_id": "parse_staged_anchor",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "OPENSSL_VERIFY_CMS",
+      "params": {
+        "anchor": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/root.pem",
+        "attime": 1787927885,
+        "binary": true,
+        "certfile": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/intermediate.pem",
+        "cms": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/content.p7s",
+        "content": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/content.bin",
+        "inform": "DER",
+        "out": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/outputs/a34_synthetic_positive.bin",
+        "purpose": "smimesign"
+      },
+      "purpose": "A detached CMS known valid by construction.",
+      "step_id": "synthetic_cms_positive",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "OPENSSL_VERIFY_CMS",
+      "params": {
+        "anchor": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/root.pem",
+        "attime": 1787927885,
+        "binary": true,
+        "certfile": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/intermediate.pem",
+        "cms": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/content.p7s",
+        "content": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/wrong_content.bin",
+        "inform": "DER",
+        "out": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/outputs/a34_synthetic_wrong.bin",
+        "purpose": "smimesign"
+      },
+      "purpose": "Unrelated content must not verify.",
+      "step_id": "synthetic_cms_wrong_content",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "OPENSSL_VERIFY_CMS",
+      "params": {
+        "anchor": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/root.pem",
+        "attime": 1787927885,
+        "binary": true,
+        "certfile": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/intermediate.pem",
+        "cms": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/content.p7s",
+        "content": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/content_one_byte_mutated.bin",
+        "inform": "DER",
+        "out": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/outputs/a34_synthetic_mutated.bin",
+        "purpose": "smimesign"
+      },
+      "purpose": "One byte of the content must break the digest.",
+      "step_id": "synthetic_cms_mutated_content",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "OPENSSL_VERIFY_CMS",
+      "params": {
+        "anchor": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/staged_anchors/vhn_root_from_der.pem",
+        "attime": 1772232925,
+        "binary": true,
+        "certfile": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_intermediate_selected_manual_pem.pem",
+        "cms": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn.xml.p7s",
+        "content": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn-covered-content.xml",
+        "inform": "DER",
+        "out": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/outputs/a34_vhn_verified.bin",
+        "purpose": "any"
+      },
+      "purpose": "The audit's own question, against the anchor staged from REF-08's DER.",
+      "step_id": "vhn_cms_against_staged_anchor",
+      "timeout_seconds": 120
+    }
+  ],
+  "target": {
+    "identity_evidence": "bound by references/manifest.json as REF-11",
+    "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn.xml.p7s",
+    "sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a"
+  },
+  "test_matrix": [
+    {
+      "der_to_pem_staging": {
+        "re_encoded_der_must_equal_source_der": true,
+        "reference_modified": false,
+        "route": "trust_material.stage_der_anchor_as_pem",
+        "source": "references/REF-08-safe-root-ca-2017.der",
+        "staged": "work/L1-A31/preparation_r8_2026-08-28/staged_anchors/vhn_root_from_der.pem"
+      }
+    },
+    {
+      "expected_exit_code": 0,
+      "required_result": "PASS",
+      "step_id": "synthetic_cms_positive"
+    },
+    {
+      "expected_exit_code": "NONZERO",
+      "expected_failure_reason": "CONTENT_DIGEST_FAILURE",
+      "required_result": "FAILS_AS_DESIGNED",
+      "step_id": "synthetic_cms_wrong_content"
+    },
+    {
+      "expected_exit_code": "NONZERO",
+      "expected_failure_reason": "CONTENT_DIGEST_FAILURE",
+      "required_result": "FAILS_AS_DESIGNED",
+      "step_id": "synthetic_cms_mutated_content"
+    },
+    {
+      "expected_exit_code": 0,
+      "step_id": "vhn_cms_against_staged_anchor",
+      "validation_time": "2026-02-27T22:55:25Z",
+      "validation_time_epoch": 1772232925
+    },
+    {
+      "revocation": "NOT_ASSESSED_OFFLINE"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+ "IMPORT_VERIFIED": true,
+ "L1-A31_phase_states": {
+  "COMPARISON": "NOT_STARTED",
+  "RUN-A": "SEALED",
+  "RUN-B": "SEALED"
+ },
+ "MODE": "FROZEN",
+ "all_phase_states": {
+  "NOT_STARTED": 41,
+  "SEALED": 2
+ },
+ "comparison_evidence_absent": true,
+ "migration_ledger_destinations": [
+  "L1-A31/RUN-A",
+  "L1-A31/RUN-B"
+ ],
+ "migration_ledger_rows": 2,
+ "phases": {
+  "COMPARISON": {
+   "attempts": {},
+   "evidence_dir_exists": false
+  },
+  "RUN-A": {
+   "attempts": {
+    "attempt-1": {
+     "EVIDENCE_MANIFEST_VERIFIES": true,
+     "bad": 0,
+     "entries": 33,
+     "file_count": 5,
+     "manifest_present": true,
+     "manifest_sha256": "9bade28eab2ff0a06e849985a77c2ddd2f7d460425d8d4f828a907cf220fedc6",
+     "mismatched": [],
+     "missing": [],
+     "ok": 33,
+     "seal_keys": [
+      "attempt_id",
+      "attempt_number",
+      "audit_id",
+      "file_count",
+      "manifest_sha256",
+      "run_phase",
+      "sealed_at",
+      "verdict"
+     ],
+     "seal_names_the_manifest": true,
+     "seal_present": true,
+     "seal_sha256": "f7a7a4b203b8566698229deac378e695c9582448b0f048192fb3ac599e3b86ff",
+     "seal_verdict": "UNVERIFIED"
+    }
+   },
+   "evidence_dir_exists": true
+  },
+  "RUN-B": {
+   "attempts": {
+    "attempt-1": {
+     "EVIDENCE_MANIFEST_VERIFIES": true,
+     "bad": 0,
+     "entries": 5,
+     "file_count": 5,
+     "manifest_present": true,
+     "manifest_sha256": "20d4ce5fd9780471e0839841fe6d3eb1031bdf0afa889e43f60ebba6ecf8d9b1",
+     "mismatched": [],
+     "missing": [],
+     "ok": 5,
+     "seal_keys": [
+      "attempt_id",
+      "attempt_number",
+      "audit_id",
+      "file_count",
+      "manifest_sha256",
+      "run_phase",
+      "sealed_at",
+      "verdict"
+     ],
+     "seal_names_the_manifest": true,
+     "seal_present": true,
+     "seal_sha256": "ebedb95c451b9bf69ead5092eddbb97512df32de7c86de003f2f1a533c869f65",
+     "seal_verdict": "UNVERIFIED"
+    }
+   },
+   "evidence_dir_exists": true
+  }
+ },
+ "schema": "wpno.r8.imported-state-verification/2"
+}

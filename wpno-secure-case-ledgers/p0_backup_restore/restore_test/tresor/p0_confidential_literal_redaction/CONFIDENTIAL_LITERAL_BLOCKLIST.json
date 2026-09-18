@@ -1,0 +1,20 @@
+{
+ "schema": 1,
+ "entries": [
+  {
+   "id": "CONF_LITERAL_001",
+   "category": "ORTSFRAGMENT_MANDATSBEZUG",
+   "pattern": "Sührkow"
+  },
+  {
+   "id": "CONF_LITERAL_002",
+   "category": "SHARED_DRIVE_ID",
+   "pattern": "0AKQ2BXq5Y6L8Uk9PVA"
+  },
+  {
+   "id": "CONF_LITERAL_003",
+   "category": "DRIVE_FILE_ID",
+   "pattern": "1AmIWKu9Oze2oKyuKUn8uwZOHvRttxn0EEHq_IFqL1iY"
+  }
+ ]
+}

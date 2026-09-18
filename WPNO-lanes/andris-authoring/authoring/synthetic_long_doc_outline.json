@@ -1,0 +1,45 @@
+{
+  "_hinweis": "SYNTHETISCHE Testdaten fuer AP-16, kein echter Mandatsbezug. Simuliert die Struktur eines langen Schriftsatzes.",
+  "rubrum": {
+    "gericht": "Landgericht Musterstadt",
+    "aktenzeichen": "12 O 345/26",
+    "klaeger": "Muster GmbH, vertreten durch den Geschaeftsfuehrer Max Beispiel, Klaegerin",
+    "beklagte": "Beispiel AG, vertreten durch den Vorstand Erika Test, Beklagte",
+    "prozessbevollmaechtigte_klaeger": "Rechtsanwaelte Beispiel & Partner",
+    "prozessbevollmaechtigte_beklagte": "Rechtsanwaelte Demo & Kollegen",
+    "streitgegenstand": "wegen Zahlung aus Liefervertrag"
+  },
+  "antraege": [
+    "die Beklagte zu verurteilen, an die Klaegerin 100.000,00 EUR nebst Zinsen in Hoehe von 5 Prozentpunkten ueber dem Basiszinssatz seit dem 01.01.2025 zu zahlen,",
+    "die Kosten des Rechtsstreits der Beklagten aufzuerlegen."
+  ],
+  "sections": [
+    {"level": 1, "heading": "A. Einleitung und Ueberblick",
+     "paragraphs": ["Die Klaegerin begehrt von der Beklagten die Zahlung eines offenen Kaufpreises aus einem Liefervertrag ueber Industriekomponenten. Die nachfolgend verwendeten Daten dienen ausschliesslich der Demonstration der Schriftsatzvorlage (AP-16) und haben keinen Bezug zu einem realen Mandat."]},
+    {"level": 1, "heading": "B. Sachverhalt", "paragraphs": []},
+    {"level": 2, "heading": "I. Vertragsabschluss",
+     "paragraphs": ["Die Muster GmbH und die Beispiel AG schlossen am 15.10.2024 einen schriftlichen Liefervertrag ueber die Lieferung von Standard-Industriekomponenten im Gesamtwert von 100.000,00 EUR (Anlage K1)."]},
+    {"level": 2, "heading": "II. Lieferung und Rechnungsstellung",
+     "paragraphs": ["Die Lieferung erfolgte planmaessig zum 30.11.2024. Die Klaegerin stellte der Beklagten am 01.12.2024 eine Rechnung ueber 100.000,00 EUR mit Zahlungsziel bis zum 31.12.2024 (Anlage K2)."]},
+    {"level": 2, "heading": "III. Zahlungsverzug der Beklagten",
+     "paragraphs": ["Bis zum 31.12.2024 ging keine Zahlung ein. Auch nach schriftlicher Mahnung vom 10.01.2025 (Anlage K3) blieb die Forderung unbeglichen."]},
+    {"level": 1, "heading": "C. Rechtliche Wuerdigung", "paragraphs": []},
+    {"level": 2, "heading": "I. Anspruchsgrundlage",
+     "paragraphs": ["Die Klaegerin stuetzt ihren Zahlungsanspruch auf den zwischen den Parteien geschlossenen Liefervertrag (Anlage K1)."]},
+    {"level": 2, "heading": "II. Faelligkeit und Verzug",
+     "paragraphs": ["Der Anspruch ist seit dem 31.12.2024 faellig; die Beklagte befindet sich aufgrund der Mahnung vom 10.01.2025 (Anlage K3) seit dem 11.01.2025 in Verzug."]},
+    {"level": 2, "heading": "III. Hoehe des Zahlungsanspruchs",
+     "paragraphs": ["Der geltend gemachte Zinsanspruch folgt aus gesetzlichen Verzugszinsen bei Entgeltforderungen zwischen Unternehmen. Zur Berechnung wird auf das beigefuegte Zinsschreiben verwiesen (Anlage K4)."]},
+    {"level": 1, "heading": "D. Beweisangebote",
+     "paragraphs": ["Fuer den vorstehenden Sachvortrag wird Beweis angetreten durch die in Bezug genommenen Anlagen K1 bis K4 sowie durch Zeugenbeweis (Anlage K5, Zeugenliste)."]},
+    {"level": 1, "heading": "E. Kosten und Nebenentscheidungen",
+     "paragraphs": ["Die Kostenentscheidung folgt aus dem Ausgang des Rechtsstreits."]}
+  ],
+  "anlagen_definitionen": {
+    "K1": "Muster-Liefervertrag vom 15.10.2024 (Testdokument)",
+    "K2": "Musterrechnung der Klaegerin vom 01.12.2024 (Testdokument)",
+    "K3": "Musterschreiben Mahnung vom 10.01.2025 (Testdokument)",
+    "K4": "Muster-Zinsschreiben (Testdokument)",
+    "K5": "Muster-Zeugenliste (Testdokument)"
+  }
+}

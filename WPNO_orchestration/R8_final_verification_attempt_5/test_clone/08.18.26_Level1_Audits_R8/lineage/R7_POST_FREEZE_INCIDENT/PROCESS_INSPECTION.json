@@ -1,0 +1,30 @@
+{
+  "candidate_processes": [
+    {
+      "cmdline_head": "/bin/bash -c source /home/ubuntu/.claude/shell-snapshots/snapshot-bash-1787873616814-zxzxnk.sh 2>/dev/null || true && shopt -u extglob 2>/dev/null || true && { \\builtin unalias -- 'unsetenv'; \\builtin",
+      "cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7",
+      "cwd_inside_r7": true,
+      "exe": "/usr/bin/bash",
+      "exe_basename": "bash",
+      "is_this_claude_session_shell": true,
+      "open_files_inside_r7": [],
+      "pid": 543767
+    },
+    {
+      "cmdline_head": "python3 - /home/ubuntu/project/WPNO_orchestration/R7_post_freeze_in_place_repair_incident_2026-08-28 /home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7 543767",
+      "cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7",
+      "cwd_inside_r7": true,
+      "exe": "/usr/bin/python3.14",
+      "exe_basename": "python3.14",
+      "is_this_claude_session_shell": false,
+      "open_files_inside_r7": [],
+      "pid": 543770
+    }
+  ],
+  "inspected_at_utc": "2026-08-28T12:20:54Z",
+  "method": "/proc/<pid>/exe basename plus /proc/<pid>/fd realpath; pgrep -f was not used because a pattern match on a command line matches the inspecting command itself (CLAUDE.md section 10)",
+  "r7_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7",
+  "schema": "wpno.incident.process_inspection/1",
+  "self_pid": 543767,
+  "writers_into_r7": []
+}

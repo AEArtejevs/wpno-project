@@ -1,0 +1,232 @@
+{
+  "files": [
+    {
+      "redacted_file": "REF-13_CONTAINER_INDEX.json",
+      "redacted_sha256": "9a27a8e16b71a5fac39b3822f3264f87a48a0d65998d6760de1349ab7b019845",
+      "redaction_count": 0,
+      "source_file": "REF-13_CONTAINER_INDEX.json",
+      "source_sha256": "496245439cec08bb81472e05a6ab1cf087a0cc43b3941433604834b426e17638"
+    },
+    {
+      "redacted_file": "REF-13_all_containers.txt",
+      "redacted_sha256": "8727e2912481e44d2a03f83ad79ff2a168315d613afb2a6d8303d1ec95246602",
+      "redaction_count": 0,
+      "source_file": "REF-13_all_containers.txt",
+      "source_sha256": "351d063e3850ba5b88e78d715ec8b5b64b51351ea1a158543bd2acfe97404e14"
+    },
+    {
+      "redacted_file": "REF-13_container_wpno_litellm.json",
+      "redacted_sha256": "fc1fa17077c691223ef0e3e6408ce85fde2ad917918346951e0ceb01a170ec74",
+      "redaction_count": 4,
+      "source_file": "REF-13_container_wpno_litellm.json",
+      "source_sha256": "dd2259e764ce67b8be38850473fef2a582b5546ef3bd0aa64768e088f3000435"
+    },
+    {
+      "redacted_file": "REF-13_container_wpno_n8n.json",
+      "redacted_sha256": "633911e59d818dea2981a2a31affcc9b6761b8d207b2e24821268109211149e6",
+      "redaction_count": 1,
+      "source_file": "REF-13_container_wpno_n8n.json",
+      "source_sha256": "43c3d36b3e42be24d4d557a8fc91b36605f27099c7bdc33b6b5450bddd7b9e3f"
+    },
+    {
+      "redacted_file": "REF-13_container_wpno_postgres.json",
+      "redacted_sha256": "d0bbb003019cbd4769e7c5dca8c4ebbea25eece4a8bc6e95e415796650f08502",
+      "redaction_count": 1,
+      "source_file": "REF-13_container_wpno_postgres.json",
+      "source_sha256": "6022a38a8e883dd9b50939b76a0fb6047e6e6fd47ccea71d5125fb16d2688892"
+    },
+    {
+      "redacted_file": "REF-13_container_wpno_redis.json",
+      "redacted_sha256": "a8116435aaaafd8da72967616ebcd18dece40e541ce537b9f7dea1a3628d94cf",
+      "redaction_count": 0,
+      "source_file": "REF-13_container_wpno_redis.json",
+      "source_sha256": "df261bb86f1aff11db15e75a6d5e54313da19f6cf670bfe48b00d3bdd33f99ea"
+    },
+    {
+      "redacted_file": "REF-13_docker_context.txt",
+      "redacted_sha256": "75270b95abcf0516180e80ce1a2b6f98e42b13765c38de5239be80925439ba63",
+      "redaction_count": 0,
+      "source_file": "REF-13_docker_context.txt",
+      "source_sha256": "08d34a7d0d6173276b86f3da17a6b4db7df625f5654ec8574e85220649bfc49d"
+    },
+    {
+      "redacted_file": "REF-13_docker_context_inspect.json",
+      "redacted_sha256": "2d834c5d7982b49d54ba0ecd5ced33a1b425f98ff3f2243d29b3eebb915d390e",
+      "redaction_count": 0,
+      "source_file": "REF-13_docker_context_inspect.json",
+      "source_sha256": "a87290a947cb6a70275d268667c25279ed3d916a6c44dd97e2c69dd88659986e"
+    },
+    {
+      "redacted_file": "REF-13_docker_info.txt",
+      "redacted_sha256": "0b3a5db6fbd4e2bdf50b94127c104fa10d95cd2cb3e60e66f83e90504666fc7d",
+      "redaction_count": 0,
+      "source_file": "REF-13_docker_info.txt",
+      "source_sha256": "e515a63b5342f61283e024c82927bf0924a8ca0e7fe8a8c76de8b791de78dac4"
+    },
+    {
+      "redacted_file": "REF-13_docker_version.txt",
+      "redacted_sha256": "ec273e6865f1fc7298a273cefccaa8d268571f671d89d28eaf7b3b8df97c335f",
+      "redaction_count": 0,
+      "source_file": "REF-13_docker_version.txt",
+      "source_sha256": "a934272097fff1fc5e3aab9515c25d2d8ae2d692c6988fe89ca48f709684b5a2"
+    },
+    {
+      "redacted_file": "REF-13_image_digests.txt",
+      "redacted_sha256": "edc1238246aeafd0e912f0edc1c53f637113f1c600649209ce6e0207c1592883",
+      "redaction_count": 0,
+      "source_file": "REF-13_image_digests.txt",
+      "source_sha256": "c7a0409016628263a569a7a2a89bc8833a24e2229a0c7bf628f2f8ec24407d12"
+    },
+    {
+      "redacted_file": "REF-13_image_history_wpno_litellm.txt",
+      "redacted_sha256": "2733ab7a81746d303efb7da2e713ea7fd9e54b3dbbf2ba5733fd9b6d42ee9949",
+      "redaction_count": 0,
+      "source_file": "REF-13_image_history_wpno_litellm.txt",
+      "source_sha256": "ec6f4a757159b53c7c20253278d06a4e7bf9e1376d6fbae0d749892431206623"
+    },
+    {
+      "redacted_file": "REF-13_image_history_wpno_n8n.txt",
+      "redacted_sha256": "11f20fdad9b8ccf126d64ec39f74e2432118084302d291e38c090df2e634a0eb",
+      "redaction_count": 0,
+      "source_file": "REF-13_image_history_wpno_n8n.txt",
+      "source_sha256": "83cce4aac85d150c99c13d03867281a848783749546ef4643cb9feb2fb629db8"
+    },
+    {
+      "redacted_file": "REF-13_image_history_wpno_postgres.txt",
+      "redacted_sha256": "7496adb2d9b0c7295469fc7eb6ca0c55d1eddf4bea71fe309c2e44a34f6305cc",
+      "redaction_count": 0,
+      "source_file": "REF-13_image_history_wpno_postgres.txt",
+      "source_sha256": "f42c92e9a618bf64a854703d36ef15b6b9c9bf4fdba76e57fbe77035bde0ad2e"
+    },
+    {
+      "redacted_file": "REF-13_image_history_wpno_redis.txt",
+      "redacted_sha256": "4f3179d9038976039b64b431d9537564ae3ea8ea4b66e8151e9e5e1ab22556c1",
+      "redaction_count": 0,
+      "source_file": "REF-13_image_history_wpno_redis.txt",
+      "source_sha256": "1d560d480bcb098f398346f04905c47556d26e8ff48a7b549b068be85a2f7f44"
+    },
+    {
+      "redacted_file": "REF-13_image_wpno_litellm.json",
+      "redacted_sha256": "89a2015a6144c760162063cb1d69acadd3c952b7a4c5244b9485fcf78fecc481",
+      "redaction_count": 0,
+      "source_file": "REF-13_image_wpno_litellm.json",
+      "source_sha256": "e688b357302f50a1a719dc8b91a0c7f9924fd55301e7c264f1aaa9a1ae18324f"
+    },
+    {
+      "redacted_file": "REF-13_image_wpno_n8n.json",
+      "redacted_sha256": "c3090e13f6dbb6ca69578a0f93261631ee5ec2d67e2ec33f36a9b2ee5f77c0c5",
+      "redaction_count": 0,
+      "source_file": "REF-13_image_wpno_n8n.json",
+      "source_sha256": "f3cd21e1495d15b97e8ba6724eb906bbf5f7b92974d3a68e3f1c81dd838c4c32"
+    },
+    {
+      "redacted_file": "REF-13_image_wpno_postgres.json",
+      "redacted_sha256": "c536096dd93b8ac563bb345a741f23e240f75d36a77df80cc45234f590ef35e2",
+      "redaction_count": 0,
+      "source_file": "REF-13_image_wpno_postgres.json",
+      "source_sha256": "4142b7654a092ec96e0871695bfdc0b6dc422195521c27f2204c3dee0a822654"
+    },
+    {
+      "redacted_file": "REF-13_image_wpno_redis.json",
+      "redacted_sha256": "51a939ad09f496fe801db14bb22e6d25f8fb5799f6d10c5a573a269a8f1eca15",
+      "redaction_count": 0,
+      "source_file": "REF-13_image_wpno_redis.json",
+      "source_sha256": "dca94e7927e5fd7fd3e6491c47d6529fa08bd2429a484809bf5bd3fe9d6a4dd2"
+    },
+    {
+      "redacted_file": "REF-13_labels_wpno_litellm.json",
+      "redacted_sha256": "2d22cc235e90374b16a531a815c7fa09c59fbc9c4998626224cb438d1ed02195",
+      "redaction_count": 0,
+      "source_file": "REF-13_labels_wpno_litellm.json",
+      "source_sha256": "aa0c2f6b27df2346cd9e3d6062b92e84fd3c1cabd82959c3f7a68f3cab660c7e"
+    },
+    {
+      "redacted_file": "REF-13_labels_wpno_n8n.json",
+      "redacted_sha256": "fcc8f06a1457b4d1a6437ea3546ce107b8469b746eb90af8adf47727baa90f2c",
+      "redaction_count": 0,
+      "source_file": "REF-13_labels_wpno_n8n.json",
+      "source_sha256": "193eacccfda75fc8a0977ff87c90ff9d769099a473522e96db99aa33ba194ce7"
+    },
+    {
+      "redacted_file": "REF-13_labels_wpno_postgres.json",
+      "redacted_sha256": "dca069a72d6a3e2814379dc76acb2641f92452dad42247d7ae94926f3d0ec16c",
+      "redaction_count": 0,
+      "source_file": "REF-13_labels_wpno_postgres.json",
+      "source_sha256": "bd26b656bfb37d20c9f05d16a583ff860b0afe36c27c244548af5a5084a13f68"
+    },
+    {
+      "redacted_file": "REF-13_labels_wpno_redis.json",
+      "redacted_sha256": "074d91b5f939717fc04b285b3c367ae4c623ad8c9969903c5c433980d4f006ea",
+      "redaction_count": 0,
+      "source_file": "REF-13_labels_wpno_redis.json",
+      "source_sha256": "910bb89ee5eeb85be643ef407f8dbba1177ec42d4b3c1b3f80ec4646e25fa963"
+    },
+    {
+      "redacted_file": "REF-13_mounts_wpno_litellm.json",
+      "redacted_sha256": "d2eafacf3001e5fd075fea6b087dde5176481f19b94962e20f8219fd292cfd4f",
+      "redaction_count": 0,
+      "source_file": "REF-13_mounts_wpno_litellm.json",
+      "source_sha256": "bd8984b7edbf467f7a7b945c3d39208bc55ccef0e9b4a32f0a35171a5d32f592"
+    },
+    {
+      "redacted_file": "REF-13_mounts_wpno_n8n.json",
+      "redacted_sha256": "585b21e933d48934605bdf0663a965a7e991b011b1e802661dd31623776d218d",
+      "redaction_count": 0,
+      "source_file": "REF-13_mounts_wpno_n8n.json",
+      "source_sha256": "e1b78c5221ad7a8bcb7defe6fd8b7a42dc01e921ae29e6726e5ef8b355e515f5"
+    },
+    {
+      "redacted_file": "REF-13_mounts_wpno_postgres.json",
+      "redacted_sha256": "0cc709fe835a12e1fee319107fdae89bc0ac074257ed4b83704ffa7956b71a9c",
+      "redaction_count": 0,
+      "source_file": "REF-13_mounts_wpno_postgres.json",
+      "source_sha256": "8455414d0337dd927e57d5e5e28d8b4e496385ef904a515ae3d691477f29e783"
+    },
+    {
+      "redacted_file": "REF-13_mounts_wpno_redis.json",
+      "redacted_sha256": "debd9c473b9dc3c8434e74322ea1a72eceaf06bc9631158a8b779a2481057343",
+      "redaction_count": 0,
+      "source_file": "REF-13_mounts_wpno_redis.json",
+      "source_sha256": "ae50fde4e76849291374e7bef12a774cd7b70cd1654344906144fc34eb4fdc6c"
+    },
+    {
+      "redacted_file": "REF-13_summary_wpno_litellm.txt",
+      "redacted_sha256": "cd829e55866bfc79e0c9582bf70a6cc3242dbf23390c766b7670e232c674c87d",
+      "redaction_count": 0,
+      "source_file": "REF-13_summary_wpno_litellm.txt",
+      "source_sha256": "a8b2b29ac3e1792c7c85536ada16d4f6fc77b9645c882ca54aa6c40c7c5a8bc5"
+    },
+    {
+      "redacted_file": "REF-13_summary_wpno_n8n.txt",
+      "redacted_sha256": "4172115d16179154e9024e54cd3520b23f35f28ff2e4a642b4db72b6cf97b23a",
+      "redaction_count": 0,
+      "source_file": "REF-13_summary_wpno_n8n.txt",
+      "source_sha256": "5c432164016fea6035c77e7af86b7970fd1739a5e73258de2385b4ccb911e4f9"
+    },
+    {
+      "redacted_file": "REF-13_summary_wpno_postgres.txt",
+      "redacted_sha256": "c38332ef0f99acc60989a84bb3b76347e5b46e5158d83bd5f77662220ca7157f",
+      "redaction_count": 0,
+      "source_file": "REF-13_summary_wpno_postgres.txt",
+      "source_sha256": "273ddb6b9c38d6cafcbc889aa5205e204bda13fb9940e06873046c5531b3c7b8"
+    },
+    {
+      "redacted_file": "REF-13_summary_wpno_redis.txt",
+      "redacted_sha256": "c22a31285240bd5ebff44752e3c5ab8f386bd54ac6d066bc3029196b32fdd478",
+      "redaction_count": 0,
+      "source_file": "REF-13_summary_wpno_redis.txt",
+      "source_sha256": "ad7c994b6ca2db14b796cd762e0e5e649d160e19128d041aa99996500ff97a45"
+    },
+    {
+      "redacted_file": "REF-13_SOURCE_RAW_MANIFEST.sha256.txt",
+      "redacted_sha256": "73010cf2bd153ea8cf9ed2c1e592b9ed6e41c87700cd9f6c6f3f4cbdd98bdfa5",
+      "redaction_count": 0,
+      "source_file": "REF-13_MANIFEST.sha256",
+      "source_sha256": "0f243fb7a28f8ee15eeafc7bb1cfb1e8b9a084f516f0582df00d9f0bd5b7e60a"
+    }
+  ],
+  "raw_classification": "RESTRICTED_OPERATOR_EVIDENCE",
+  "raw_files_modified": 0,
+  "schema": "wpno.r7.ref13-redaction/1",
+  "secret_values_printed": 0
+}

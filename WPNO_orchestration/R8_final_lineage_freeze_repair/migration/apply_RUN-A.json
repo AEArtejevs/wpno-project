@@ -1,0 +1,73 @@
+{
+  "files": 35,
+  "findings": [
+    {
+      "check": "packet_unconsumed",
+      "migration_packet_sha256": "fb97facea18155e6b81fdc6e913e14c0b85f1658f5e238de0973cfac8e66df27",
+      "ok": true
+    },
+    {
+      "check": "no_approval_token_imported",
+      "ok": true,
+      "scanned": "values only; a key naming a token is a declaration about one, not one"
+    },
+    {
+      "check": "active_revision_is_frozen",
+      "mode": "FROZEN",
+      "ok": true
+    },
+    {
+      "check": "revision_identity",
+      "destination": "R8",
+      "ok": true,
+      "predecessor": "R7"
+    },
+    {
+      "check": "source_control_manifest",
+      "ok": true,
+      "verified": "15804/15804"
+    },
+    {
+      "check": "source_incident_disclosed",
+      "ok": true,
+      "record": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R7_POST_FREEZE_INCIDENT/INCIDENT_MANIFEST.sha256"
+    },
+    {
+      "check": "source_attempt_evidence",
+      "entries_verified": 33,
+      "ok": true
+    },
+    {
+      "check": "source_bindings_stable",
+      "ok": true,
+      "references": 5
+    },
+    {
+      "check": "source_execution_was_real",
+      "ok": true,
+      "operation_records": 16,
+      "required_steps": 16
+    },
+    {
+      "check": "destination_is_empty",
+      "ok": true,
+      "phase": "L1-A31/RUN-A"
+    }
+  ],
+  "imported": true,
+  "ledger": {
+    "destination": "L1-A31/RUN-A",
+    "files_imported": 35,
+    "imported_by_route": "import-sealed-predecessor-attempt",
+    "imported_utc": "2026-08-28T22:57:09Z",
+    "migration_packet_sha256": "fb97facea18155e6b81fdc6e913e14c0b85f1658f5e238de0973cfac8e66df27",
+    "predecessor_incident_disclosed": true,
+    "source_attempt_id": "L1-A31/RUN-A/attempt-1",
+    "source_evidence_manifest_sha256": "9bade28eab2ff0a06e849985a77c2ddd2f7d460425d8d4f828a907cf220fedc6",
+    "source_plan_sha256": "157b5bc02c01b9c025b312eb4aa9b6a341c2e4b565ff41e516c03520d4ad0bde",
+    "source_revision": "R7",
+    "source_seal_sha256": "f7a7a4b203b8566698229deac378e695c9582448b0f048192fb3ac599e3b86ff",
+    "source_target_sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42",
+    "source_verdict": "UNVERIFIED"
+  }
+}

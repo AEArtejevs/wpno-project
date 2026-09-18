@@ -1,0 +1,133 @@
+{
+  "schema": "wpno.level1.r7-final-pre-freeze-convergence/1",
+  "mode": "R7_FINAL_PRE_FREEZE_CONVERGENCE",
+  "recorded_at_utc": "2026-08-28",
+  "outcome": "STOP_BEFORE_FRESH_CODEX_VERIFICATION",
+  "final_status": "NOT_PASS_NOT_FROZEN",
+  "reason_code": "INTERNAL_PRE_FREEZE_DEFECT",
+  "reason": "V10 cannot be satisfied. 34 of the 43 required exact candidate plans do not exist. The freeze was not attempted, no token was generated, no token was recorded and no token was consumed.",
+  "r8_created": "NO",
+  "live_audit_phases_started": 0,
+  "writes_into_R4_R5_R6_R7": 0,
+
+  "verified_this_invocation": {
+    "scope": {
+      "AUDITS_TOTAL": 35,
+      "REQUIRED_PHASE_TOTAL": 43,
+      "phase_totals_by_kind": {"RUN-A": 35, "RUN-B": 4, "COMPARISON": 4},
+      "derivation": "31 audits with replications=1 give 1 phase each; 4 audits with replications=2 give RUN-A, RUN-B and COMPARISON each. 31 + 12 = 43.",
+      "dual_method_audits": ["L1-A18", "L1-A19", "L1-A31", "L1-A34"],
+      "STOP_LEVEL1_SCOPE_CONTRADICTION": false
+    },
+    "predecessors_unchanged": {
+      "R4": {"files": 2238, "snapshot_sha256": "4d8ab234a553b158c55341b5f6f6284fddab4b643949288d57697ca638781430", "matches_recorded": true},
+      "R5": {"files": 14439, "snapshot_sha256": "191902e7e7626099e0c149d46ed105bc691820186173021fd1001cf4856a556e", "matches_recorded": true},
+      "R6": {"files": 15153, "snapshot_sha256": "aa3650f456343e5ade7e662d011d483df69cc6cf6f77097d36d6356eb7c56026", "matches_recorded": true},
+      "method": "deterministic whole-tree snapshot, the method lineage/R6_LINEAGE_CLASSIFICATION.json records, taken before and after this session",
+      "symlinks_found": 0
+    },
+    "r7_unmodified_by_this_session": {
+      "pre_write_snapshot_sha256": "3675dbba162ab170ab0704da7fca9dd620655c4cfb6ebb120eaaa4e7c9160f50",
+      "post_check_snapshot_sha256": "3675dbba162ab170ab0704da7fca9dd620655c4cfb6ebb120eaaa4e7c9160f50",
+      "files": 15850,
+      "identical": true,
+      "pycache_files_created": 0
+    },
+    "live_state": {
+      "MODE": "GENERATED_UNVERIFIED",
+      "phase_records": 43,
+      "states": {"NOT_STARTED": 43},
+      "verdict_keys_present": 0,
+      "result_keys_present": 0,
+      "approval_keys_present": 0,
+      "approvals_jsonl_bytes": 0,
+      "transitions": 1,
+      "results_evidence_logs": "all three directories empty",
+      "freeze_artefacts_present": [],
+      "freeze_plan_directories_present": [],
+      "freeze_token_recorded": false,
+      "freeze_token_consumed": false
+    },
+    "readiness": {
+      "AUDITS_TOTAL": 35,
+      "AUDITS_READY_FOR_PLANNING": 35,
+      "AUDITS_BLOCKED": 0,
+      "MISSING_ITEM_COUNT": 0,
+      "semantics": "READY_FOR_PLANNING is measured by build/all_level1_scope/measure_all_level1_readiness.py and means the audit's inputs and references are ready so that a plan can be built. It does not assert that a plan exists. The same record carries candidate_plans_present per phase."
+    },
+    "accepted_references": {
+      "ref_ids": ["REF-01","REF-02","REF-03","REF-04","REF-05","REF-06","REF-07","REF-08","REF-09","REF-11","REF-12","REF-13","REF-14"],
+      "manifest_json_records": 25,
+      "manifest_json_hash_mismatches": 0,
+      "zero_byte_accepted_files": 0,
+      "symlinked_accepted_files": 0,
+      "per_ref_manifests_verified": ["REF-03 4/4","REF-07 6/6","REF-12 2/2","REF-13_REDACTED 34/34","REF-14_MAC 4/4","REF-14 14/14"],
+      "REF-13_SOURCE_RAW_MANIFEST": "31 of 31 listed source digests equal the source_sha256 values in REF-13_REDACTION_MANIFEST.json. The on-disk bytes differ from the raw manifest because all 32 files were redacted before intake; all 32 on-disk files equal their redacted_sha256. This is the documented redaction delta, not drift.",
+      "measurement_tool_correction": "A first pass reported REF-07 and REF-14 as having missing files. The resolver, not the package, was wrong: intake stores each upstream filename under a REF-NN_ prefix while the manifest lists the upstream name. Re-run with prefix-aware resolution, both manifests verify completely."
+    },
+    "executable_change_status": {
+      "SHARED_CONTROLLER_EXECUTABLE_CHANGED": "NO",
+      "FULL_CONTROLLER_SUITE_RERUN": "NO",
+      "package_executables_changed_after_static_safety_anchor": 0,
+      "static_safety_anchor_utc": "2026-08-27T07:47:34Z",
+      "why_reuse_is_lawful": "No file under automation/, build/, tools/ or run_audit_module.py has an mtime later than the static-safety report that bound it. The four .py files changed after that anchor are all under references/ and are reference input artefacts, not package executables."
+    },
+    "candidate_plan_delta": {
+      "existing_plans": 9,
+      "existing_plans_affected_by_the_recent_changes": 0,
+      "evidence": "For all nine plans the plan bytes still hash to the value the rehearsal recorded, and each plan's bound target still hashes to the value the plan states. None of the changed files is a dependency of L1-A18, L1-A31 or L1-A34.",
+      "rehearsal_reuse_is_lawful": true,
+      "rehearsal_record": "work/_rehearsal_r7/REHEARSAL_REPORT.json, 9 phases, all_pass_ready true"
+    }
+  },
+
+  "blocking_finding": {
+    "id": "FPF-001",
+    "classification": "INTERNAL_PRE_FREEZE_DEFECT",
+    "path": "08.18.26_Level1_Audits_R7/build/candidate_plans_r7/",
+    "measurement": "9 of 43 required exact candidate plans exist. 34 are absent.",
+    "measured_from": "build/all_level1_scope/R7_ALL35_INPUT_READINESS.json field candidate_plans_present, and a direct directory walk. Both give 9.",
+    "present": ["L1-A18/RUN-A","L1-A18/RUN-B","L1-A18/COMPARISON","L1-A31/RUN-A","L1-A31/RUN-B","L1-A31/COMPARISON","L1-A34/RUN-A","L1-A34/RUN-B","L1-A34/COMPARISON"],
+    "absent_count": 34,
+    "absent": ["L1-A19/RUN-A","L1-A19/RUN-B","L1-A19/COMPARISON","L1-A01/RUN-A","L1-A02/RUN-A","L1-A03/RUN-A","L1-A04/RUN-A","L1-A05/RUN-A","L1-A06/RUN-A","L1-A07/RUN-A","L1-A08/RUN-A","L1-A09/RUN-A","L1-A10/RUN-A","L1-A11/RUN-A","L1-A12/RUN-A","L1-A13/RUN-A","L1-A14/RUN-A","L1-A15/RUN-A","L1-A16/RUN-A","L1-A17/RUN-A","L1-A20/RUN-A","L1-A21/RUN-A","L1-A22/RUN-A","L1-A23/RUN-A","L1-A24/RUN-A","L1-A25/RUN-A","L1-A26/RUN-A","L1-A27/RUN-A","L1-A28/RUN-A","L1-A29/RUN-A","L1-A30/RUN-A","L1-A32/RUN-A","L1-A33/RUN-A","L1-A35/RUN-A"],
+    "why_it_blocks_V10": "V10 requires that all required candidate plans exist and bind current dependencies. 34 do not exist.",
+    "why_it_blocks_the_freeze_itself": "automation/freeze.py sets MUTABLE_SUBDIRS = (state, results, evidence, work, logs). build/ is not among them, so build/candidate_plans_r7/ is inside the frozen CONTROL_MANIFEST. A plan file added after the freeze would make the frozen package fail its own control manifest. The 34 plans therefore have to exist before the freeze, not after it.",
+    "corroborating_package_record": "build/resume_r7/R7_RESUME_STATUS.json records section_8_candidate_plans_for_all_43_phases as NOT DONE, with the reason that external material was missing at that time. That material gate has since closed: readiness is now 35/35 with 0 missing items. Section 8 is now unblocked and still not done.",
+    "internally_repairable_before_freeze": true,
+    "requires_executable_bytes_to_change": "YES for the two builders. build/build_candidate_plans.py is written for nine named phases across three audits, and build/rehearse_candidate_plans.py hard-codes the same three audits and a BUILD_ONLY set of three COMPARISON phases. Both have to cover 43 phases.",
+    "not_attempted_here_because": "Constructing 34 exact live plans is the substantive Section 8 build, not a delta repair. Each plan fixes what the approved live audit will execute against real client material: target identification, independent oracle, positive, negative and mutation controls, expected exit codes and expected failure reasons, and staged fixtures that do not yet exist for these audits. Producing them unrehearsed and declaring them PASS_READY would be the exact failure this revision exists to prevent."
+  },
+
+  "secondary_findings": [
+    {
+      "id": "FPF-002",
+      "classification": "INTERNAL_PRE_FREEZE_DEFECT",
+      "path": "08.18.26_Level1_Audits_R7/build/R7_BUILD_MANIFEST.sha256",
+      "measurement": "The live build manifest does not verify against the package. 15504 entries listed; 72 files present in scope and not listed; 6 listed entries hash differently on disk.",
+      "unlisted_in_scope": 72,
+      "unlisted_groups": ["references/REF-03 (5)","references/REF-04 (2)","references/REF-07 (7)","references/REF-12 (3)","references/REF-13 (37)","references/REF-14 (18)"],
+      "hash_mismatch": ["bindings/L1-A14.binding.json","bindings/L1-A23.binding.json","bindings/L1-A29.binding.json","build/all_level1_scope/R7_LEVEL1_35_AUDIT_SCOPE.json","build/all_level1_scope/R7_LEVEL1_35_AUDIT_SCOPE.md","prompts/L1-A14.md"],
+      "reconciliation": "15850 physical files = 15504 listed + 206 __pycache__ + 67 under excluded top-level directories + 1 manifest self-exclusion + 72 unlisted. The 72 is the shortfall.",
+      "cause": "The manifest was last written at 2026-08-27T23:23:27Z, but build/resume_r7/build_r7_build_manifest.py preserves a SUPERSEDED_<stamp> copy on every run and no copy carrying that stamp exists. The two copies on disk are stamped 074734Z and 155036Z. The 23:23 write was therefore not a full regeneration by the documented generator, which is why files added at 16:12 and later were never enumerated.",
+      "internally_repairable_before_freeze": true,
+      "requires_executable_bytes_to_change": "YES, one addition. The generator excludes only work, state, results, evidence, logs, __pycache__ and itself. Section 8 additionally requires that transient verifier output directories and the freeze-plan files be excluded by explicit documented rule, so verification_codex_final_pre_freeze_attempt_* and build/freeze_plan_attempt_* need named exclusions before the manifest is generated.",
+      "not_repaired_here_because": "A manifest regenerated now is superseded again by the 34 plan files of FPF-001. It is generated once, over the final bytes, after FPF-001 closes."
+    },
+    {
+      "id": "FPF-003",
+      "classification": "RECORD_INCONSISTENCY_NOT_DRIFT",
+      "path": "08.18.26_Level1_Audits_R7/build/resume_r7/R7_RESUME_STATUS.json",
+      "measurement": "The record names build/R7_BUILD_MANIFEST.SUPERSEDED_2026-08-27T074524Z.sha256. No file with that stamp exists; the file on disk is stamped 074734Z.",
+      "impact": "A dangling path in a status record. It binds nothing and gates nothing. The record is stale in substance as well: it states AUDITS_BLOCKED 8 and AUDITS_READY_FOR_PLANNING 27, against the current 0 and 35.",
+      "internally_repairable_before_freeze": true,
+      "requires_executable_bytes_to_change": "NO"
+    }
+  ],
+
+  "not_done_and_why": {
+    "section_8_final_build_manifest": "NOT GENERATED. Its input is the final package bytes, and FPF-001 changes them.",
+    "section_9_fresh_codex_final_pre_freeze_verification": "NOT LAUNCHED. Its stated pass condition includes V10, which cannot hold while 34 candidate plans are absent. Launching it would spend a fresh verification to rediscover a defect already measured here.",
+    "section_11_final_freeze_plan": "NOT CREATED. Its precondition is VERIFICATION_PASS_PRE_FREEZE_R7_FINAL.",
+    "section_12_freeze_token": "NOT GENERATED, NOT RECORDED, NOT CONSUMED."
+  }
+}

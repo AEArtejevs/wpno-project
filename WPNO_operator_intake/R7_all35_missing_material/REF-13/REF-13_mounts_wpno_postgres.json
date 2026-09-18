@@ -1,0 +1,1 @@
+[{"Type":"volume","Name":"postgres_wpno_pgdata","Source":"/var/lib/docker/volumes/postgres_wpno_pgdata/_data","Destination":"/var/lib/postgresql/data","Driver":"local","Mode":"rw","RW":true,"Propagation":""}]

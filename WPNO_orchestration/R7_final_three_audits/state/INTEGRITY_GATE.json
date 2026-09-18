@@ -1,0 +1,50 @@
+{
+  "schema": "wpno.r7.integrity_gate/1",
+  "checked_at_utc": "2026-08-26T21:50:00Z",
+  "process_gate": {
+    "other_active_writer_to_R4_R5_R6_R7": false,
+    "observed_writers": "only this Claude Code session (pid 231560); no codex, no audit python, no java, no openssl process held a handle on any revision root",
+    "processes_killed": 0
+  },
+  "disk_gate": {
+    "required_free_gib": 2,
+    "observed_free": "6.7G on /dev/root",
+    "result": "PASS"
+  },
+  "r7_absent_gate": {
+    "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7",
+    "exists": false,
+    "is_symlink": false,
+    "result": "PASS"
+  },
+  "predecessor_snapshots": {
+    "R4_PRE_manifest_sha256": "4d8ab234a553b158c55341b5f6f6284fddab4b643949288d57697ca638781430",
+    "R4_files": 2238,
+    "R5_PRE_manifest_sha256": "191902e7e7626099e0c149d46ed105bc691820186173021fd1001cf4856a556e",
+    "R5_files": 14439,
+    "R6_PRE_manifest_sha256": "aa3650f456343e5ade7e662d011d483df69cc6cf6f77097d36d6356eb7c56026",
+    "R6_files": 15153
+  },
+  "predecessor_control_integrity": {
+    "R4": {"mode": "FROZEN", "entries": 1915, "ok": 1915, "missing": 0, "mismatch": 0, "classification": "FROZEN_CONTROL_MANIFEST_FULLY_VERIFIED"},
+    "R5": {"mode": "FROZEN", "entries": 14160, "ok": 14159, "missing": 0, "mismatch": 1, "mismatching_paths": ["MODE"], "classification": "FROZEN_WITH_KNOWN_MANIFEST_PUBLICATION_ORDER_DEFECT_MODE_ONLY", "explanation": "CONTROL_MANIFEST.sha256 records MODE=0dba1cc2928ed5a2a3259b8d9aa4188feb6b775c91d7eab990bb75fa49cd6eee which is sha256 of 'GENERATED_UNVERIFIED\\n'; MODE on disk is 67885f01edc72c2991b2ae9be04afc14a743b79c9d382262620be8ac154fa5fa = sha256 of 'FROZEN\\n'. The manifest was generated before the freeze flip. This is the known R5 freeze-order defect that R6 repaired by publishing MODE before hashing. It is historical and was not introduced by this run.", "not_a_predecessor_change": true},
+    "R6": {"mode": "FROZEN", "entries": 14781, "ok": 14781, "missing": 0, "mismatch": 0, "classification": "FROZEN_CONTROL_MANIFEST_FULLY_VERIFIED_INCLUDING_MODE"}
+  },
+  "r6_sealed_error_gate": {
+    "audit_id": "L1-A31",
+    "run_phase": "RUN-A",
+    "state": "SEALED",
+    "verdict": "ERROR",
+    "evidence_manifest_path": "evidence/L1-A31/RUN-A/EVIDENCE_MANIFEST.sha256",
+    "evidence_manifest_sha256_observed": "4a185eefb4f4221419a6cc7e53c2fe9b59c721c2def2bbb26864752013c1a85e",
+    "evidence_manifest_sha256_expected": "4a185eefb4f4221419a6cc7e53c2fe9b59c721c2def2bbb26864752013c1a85e",
+    "seal_sha256_observed": "fcfeb8947fdb9c2bf01e6d0007a7adddbf4f5ec5138a78580e2dead622323edc",
+    "seal_sha256_expected": "fcfeb8947fdb9c2bf01e6d0007a7adddbf4f5ec5138a78580e2dead622323edc",
+    "both_match": true,
+    "RUN-B": "NOT_STARTED",
+    "COMPARISON": "NOT_STARTED",
+    "result": "PASS"
+  },
+  "r6_classification": "SUPERSEDED_AFTER_SEALED_INTERNAL_PLAN_ERROR_AND_NO_ATTEMPT_RETRY_MODEL",
+  "gate_result": "PASS_PROCEED_TO_R7_CREATION"
+}

@@ -1,0 +1,59 @@
+{
+  "applied": false,
+  "findings": [
+    {
+      "check": "packet_unconsumed",
+      "migration_packet_sha256": "fb97facea18155e6b81fdc6e913e14c0b85f1658f5e238de0973cfac8e66df27",
+      "ok": true
+    },
+    {
+      "check": "no_approval_token_imported",
+      "ok": true,
+      "scanned": "values only; a key naming a token is a declaration about one, not one"
+    },
+    {
+      "check": "active_revision_is_frozen",
+      "mode": "FROZEN",
+      "ok": true
+    },
+    {
+      "check": "revision_identity",
+      "destination": "R8",
+      "ok": true,
+      "predecessor": "R7"
+    },
+    {
+      "check": "source_control_manifest",
+      "ok": true,
+      "verified": "15804/15804"
+    },
+    {
+      "check": "source_incident_disclosed",
+      "ok": true,
+      "record": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/lineage/R7_POST_FREEZE_INCIDENT/INCIDENT_MANIFEST.sha256"
+    },
+    {
+      "check": "source_attempt_evidence",
+      "entries_verified": 33,
+      "ok": true
+    },
+    {
+      "check": "source_bindings_stable",
+      "ok": true,
+      "references": 5
+    },
+    {
+      "check": "source_execution_was_real",
+      "ok": true,
+      "operation_records": 16,
+      "required_steps": 16
+    },
+    {
+      "check": "destination_is_empty",
+      "ok": true,
+      "phase": "L1-A31/RUN-A"
+    }
+  ],
+  "migration_packet_sha256": "fb97facea18155e6b81fdc6e913e14c0b85f1658f5e238de0973cfac8e66df27",
+  "verified": true
+}

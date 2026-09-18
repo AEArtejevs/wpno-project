@@ -1,0 +1,116 @@
+{
+  "active_state": {
+    "approvals": 0,
+    "audits": 35,
+    "evidence_files": 0,
+    "phase_states": {
+      "NOT_STARTED": 43
+    },
+    "results_files": 0
+  },
+  "controls": {
+    "control_role_steps": 122,
+    "coverage_sha256": "53c1998bee4bb65f96cb0a746c664f8bee6656ba7c06365ac790df7a620f891e",
+    "machine_checkable": "122/122",
+    "unenforced": 0
+  },
+  "execution_engine": {
+    "callers": [
+      "automation/controller.py",
+      "build/rehearse_candidate_plans.py"
+    ],
+    "note_only_branches_remaining": 0,
+    "one_implementation": "the live controller and the rehearsal harness both call in_process_executor.execute, so they cannot disagree about what an in-process step is -- which is how the defect survived its own pre-freeze rehearsal",
+    "operations_sha256": "1e39e3e0fa09d88411d4e2d634f463abf2cb68b32fe94de80ee7624d601a4f72",
+    "shared_executor": "automation/in_process_executor.py",
+    "shared_executor_sha256": "d4fb45186aa620f09e534dc4757a11259926439db0eef2c5b42496fa20835670"
+  },
+  "in_process_count_reconciliation": {
+    "r7_unique_in_process_plan_steps": 165,
+    "r8_handler_invocations": 169,
+    "r8_unique_in_process_plan_steps": 169,
+    "record_sha256": "1450107c54936e3a90151b666e9f75d7a9dd765a21cf926a6325ee01183fc124",
+    "unexplained_difference": 0
+  },
+  "lineage": {
+    "method": "hash-bound reference. R8 records the predecessor roots, their snapshot digests and their control-manifest verification results, and re-measures them in place. No predecessor tree is copied into R8 and no hardlink joins an active R7 file to an active R8 file.",
+    "r7_bytes_not_duplicated": 614178940,
+    "r7_continuous_post_freeze_immutability": false,
+    "r7_control_manifest": "15804/15804",
+    "r7_incident_disclosed": true,
+    "record_sha256": "c4c12173f877dc5f998a4f24a5661a87cfdf356ab3ea8558786d9f7716f467cc"
+  },
+  "live_execution": "None. No R8 phase has been executed and none may be until after R8 is frozen and the migration packet is applied.",
+  "migration": {
+    "applied_before_freeze": false,
+    "excluded": {
+      "L1-A31/COMPARISON": "EXECUTED_UNSEALED_ZERO_EVIDENCE_FROZEN_CONTROLLER_DEFECT"
+    },
+    "migratable": [
+      "L1-A31/RUN-A",
+      "L1-A31/RUN-B"
+    ],
+    "plan_sha256": "805a5e34b2f703b94c80c5789db1498c8395796c2da27617cfdd50cf61a7b82b",
+    "route_sha256": "65b3db95c3bf9d012195ee81c946f95bae08aea0cc7545134cf1f76d0d6ba93f"
+  },
+  "mode": "GENERATED_UNVERIFIED",
+  "not_yet_done_before_freeze": [
+    "the final R8 build manifest",
+    "the fresh independent Codex verification",
+    "the final R8 freeze plan and its token"
+  ],
+  "plans": {
+    "coverage_manifest_sha256": "0de8b726edc5de9248d8983edecd7b22841e3eda03d0ce317d6b853610b1ad3c",
+    "duplicate": 0,
+    "missing": 0,
+    "present": 43,
+    "required": 43,
+    "unknown": 0
+  },
+  "predecessor": "R7",
+  "recorded_utc": "2026-08-28T16:07:11Z",
+  "rehearsal": {
+    "actually_executed_steps": 213,
+    "hollow_phases": [],
+    "in_process_handler_invocations": 169,
+    "in_process_steps": 169,
+    "live_state_unchanged": true,
+    "note_only_in_process_steps": 0,
+    "phases_pass_ready": "43/43",
+    "planned_steps": 311,
+    "report_sha256": "3c34ac822fe02875a0d1a3b5b59afd89e4245e07978f6b5036f06fb77089b80e",
+    "required_in_process_steps_without_evidence": 0
+  },
+  "repairs": {
+    "L1-A16": "prove_cases_are_novel bound COMPARE_HASHES to two directories and raised IsADirectoryError; it had never run in any revision because R7 deferred it for a missing input. It now uses PROVE_SET_NOVELTY against ap18/korpus_docx, the corpus the specification names, per case by content digest, with three controls proving a novel case is accepted, a duplicate is rejected, and a renamed duplicate is still rejected.",
+    "L1-A21": "a negative control applied PARSE_JSON_READONLY to a plain-text docker listing; the parser refused before the assertion was evaluated. It now counts the marker with COUNT_TEXT_MATCHES and expects zero.",
+    "L1-A32_and_L1-A35_validation_time": "five OPENSSL_VERIFY_CMS steps carried a hardcoded -attime literal that predated R8's freshly staged synthetic chain, so every one failed 'certificate is not yet valid'. The epoch is now derived from the staging record.",
+    "L1-A33": "REF-11-563203462.xml is a MIME multipart entity, not XML at byte zero. The intended part is extracted into work/ and parsed there; the reference is unchanged.",
+    "freeze_predecessor_baseline": "freeze.py read its predecessor baseline from a physical lineage tree R8 does not carry, so the freeze path could not build a baseline at all. R8 carries the predecessor's baseline itself, 12 KiB, digest-bound in the lineage record.",
+    "self_comparisons": "six steps passed the same path as both operands of COMPARE_HASHES and were equal by construction. Three now compare against the CMS-emitted copy of the content, and all six bind expected_sha256, so each can fail.",
+    "under_declared_allowance": "L1-A17's envelope declared three subdirectories while its specification requires a project-wide search. The envelope was corrected, and the allowance is now enforced as a gate rather than recorded as a finding."
+  },
+  "revision": "R8",
+  "schema": "wpno.level1.final-closure/1",
+  "static_safety": {
+    "clean": true,
+    "findings": 0,
+    "predecessor_unchanged": true,
+    "report_sha256": "61446dc1df04ca9989fef794d0bea5bf326c8acf45def6e669e8ad4681405c7f"
+  },
+  "tests": {
+    "controller_suite": {
+      "errors": 0,
+      "failures": 0,
+      "ran": 503,
+      "skips": 0
+    },
+    "package_suite": {
+      "errors": 0,
+      "failures": 0,
+      "ran": 361,
+      "skips": 0
+    }
+  },
+  "why_r8_exists": "R7's frozen controller performed no IN_PROCESS operation. Its execute path appended the note 'in-process; performed by the worker' and continued; there was no worker. 165 of 307 plan steps were skipped silently, twelve phases consisted entirely of such steps, and L1-A31 COMPARISON entered EXECUTED with zero evidence files. The pre-freeze rehearsal shared the blind spot, recording executed=false and ok=true together, so 43/43 PASS_READY and six Codex verifications did not detect it. A defect in a frozen executable cannot be repaired inside the frozen revision."
+}

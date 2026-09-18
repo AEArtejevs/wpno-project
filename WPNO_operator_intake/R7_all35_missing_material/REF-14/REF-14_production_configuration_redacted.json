@@ -1,0 +1,20 @@
+{
+  "REF14_L1_A17_STATUS": "ACCEPTED_CURRENT_SERVER_CONFIGURATION_WITH_HISTORICAL_IDENTITY_NOT_PROVEN",
+  "REF14_L1_A23_STATUS": "PARTIAL_ACTUAL_MAC_EVIDENCE_ABSENT",
+  "controls": {
+    "claude_config_loading_paths": "Project CLAUDE.md is current-server evidence only; actual Mac ~/.claude/CLAUDE.md and runtime resolution require operator Mac capture.",
+    "enabled_disabled_controls": "retained in redacted configuration",
+    "environment_references": "retained by name; values not captured"
+  },
+  "invocation_path": {
+    "callback": "/app/custom_callback.py",
+    "command": "retained in redacted source and REF-13 derivative",
+    "container": "wpno_litellm",
+    "entrypoint": "from REF-13 container evidence and current Compose/config package",
+    "mcp_registry": "/app/mcp.registry.json",
+    "payload_scan": "/app/payload_scan.py",
+    "tool_registry_gate": "/app/tool_registry_gate.py",
+    "working_directory": "retained in REF-13 derivative"
+  },
+  "schema": "wpno.r7.ref14-production-configuration/1"
+}

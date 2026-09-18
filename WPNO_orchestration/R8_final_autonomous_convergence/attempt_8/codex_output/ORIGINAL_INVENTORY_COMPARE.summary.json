@@ -1,0 +1,14 @@
+{
+ "EQUAL": true,
+ "compare_record_sha256": "b4f844cc93782c03c68c7708db9e46b640f8a91bccbfb144e89362a6acc36327",
+ "contents_changed": 0,
+ "gid_changed": 0,
+ "modes_changed": 0,
+ "mtimes_changed": 0,
+ "paths_added": 0,
+ "paths_differing": 0,
+ "paths_removed": 0,
+ "symlink_targets_changed": 0,
+ "uid_changed": 0,
+ "written_paths": 0
+}

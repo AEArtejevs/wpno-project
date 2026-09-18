@@ -1,0 +1,2513 @@
+{
+  "CONTROL_ROLE_STEP_COUNT": 122,
+  "CONTROL_STEPS_WITHOUT_ENFORCED_EXPECTATION": 0,
+  "CONTROL_STEPS_WITH_EXPECTED_REASON_WHERE_REQUIRED": "44/74",
+  "CONTROL_STEPS_WITH_MACHINE_CHECKABLE_EXPECTATION": "122/122",
+  "NOT_WEAKENED": "No control's expectation was loosened to make a rehearsal pass. Where the plan leaves an outcome open, the expectation demands that the step really ran rather than asserting an outcome the audit has not measured.",
+  "R7_55_ADJUDICATED": "41 of the 55 already declared an expectation in prose that no harness could evaluate; 14 declared none at all. All 55 now carry an operation-appropriate machine-checkable expectation from build/control_expectations.py, and the remaining 64 control steps kept the expected_exit_code they already had.",
+  "R7_STEPS_WITH_CONTROL_ROLE_AND_NO_DECLARED_EXIT_CODE": 55,
+  "controls": [
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A01",
+      "CONTROL_ROLE": "ORACLE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "ZIP_LIST",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "independent_container_read",
+      "WHY": "An oracle that cannot read the container is an infrastructure failure, not a finding. The entry list it returns is substantive."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A01",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_hash_relation"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COMPARE_HASHES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "positive_control_known_input_difference",
+      "WHY": "A difference was introduced deliberately. If the digests match, the comparison is not reading both operands."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A01",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_status"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": "nothing was changed between the two runs, so a difference cannot be input variation",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COMPARE_HASHES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "negative_control_same_input_twice",
+      "WHY": "This is what separates nondeterminism from input variation."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A01",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_status"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "mutation_control_pin_nondeterminism",
+      "WHY": "The plan states both outcomes as informative: deterministic means environmental, still varying means in the code."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A02",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "run_f1",
+      "WHY": "If a known-good document does not pass, the verifier is unusable and the rest of the matrix is uninterpretable."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A02",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "the file has no content at all",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "run_f3",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A02",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_status"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "run_f5",
+      "WHY": "The plan says 'Expected: open' for this fixture."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A02",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_status"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "run_f6",
+      "WHY": "The plan says 'Expected: open' for this fixture."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A02",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_status"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "run_f9",
+      "WHY": "The plan says 'Expected: open' for this fixture."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A02",
+      "CONTROL_ROLE": "ORACLE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_boolean"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "DOCX_PARSE_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "independent_reader",
+      "WHY": "The oracle must parse the document. What it finds in it is substantive."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A03",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_minimum_count"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COUNT_TEXT_MATCHES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "positive_control_unique_string",
+      "WHY": "Absence is only a result once the search is shown to work."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A03",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_count"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": "the identifier does not occur anywhere in the tree",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COUNT_TEXT_MATCHES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "negative_control_absent_identifier",
+      "WHY": "ZERO_HITS, as the plan states. The scan must complete and find nothing; an exit code alone could not tell that apart from never having scanned."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A04",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "generate_t1",
+      "WHY": "If the baseline disagrees, the extractor is wrong and must be fixed before anything else is interpreted."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A04",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "generate_t2",
+      "WHY": "This generates the mutated fixture the later checks read. Generation must succeed; what the document then contains is substantive."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A04",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "generate_t4",
+      "WHY": "As generate_t2."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A04",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "generate_t6",
+      "WHY": "As generate_t2."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A04",
+      "CONTROL_ROLE": "ORACLE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_boolean"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "DOCX_PARSE_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "extract_real_headings",
+      "WHY": "The oracle must parse the generated document."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A04",
+      "CONTROL_ROLE": "ORACLE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_boolean"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "DOCX_PARSE_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "extract_toc_entries",
+      "WHY": "The oracle must parse the generated document."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A04",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "there are no headings to list; entries here would mean the comparison manufactures them",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "negative_control_no_headings",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A05",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "the one rule the input was built to violate",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "positive_control_single_rule_violation",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A05",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "none expected; a rejection here would mean the guard rejects everything and its rejection of the bad input carries no information",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "negative_control_clean_input",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A05",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "mutation_control_neutralise_the_rule",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A06",
+      "CONTROL_ROLE": "ORACLE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "count_rules_evaluated",
+      "WHY": "The instrumented copy must run. The plan is explicit that zero rules with exit 0 is a FAIL, so the count is the finding and is not bound here."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A06",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "the known-bad content the guard is built to reject",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "positive_control_known_bad_still_rejected",
+      "WHY": "This is the single most important control here. Without it, acceptance of the good input is indistinguishable from the guard doing nothing."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A06",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "negative_control_known_good_accepted",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A06",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "the inserted known-bad token",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "mutation_control_bad_token_inserted",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A07",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "positive_control_each_rule_detects_its_input",
+      "WHY": "If v1 misses its own rule's input, the corpus is wrong and every downstream comparison is uninterpretable."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A07",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "legitimate content matches no v1 rule; detections here are the baseline false-positive rate and must be recorded before v3 is judged",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "negative_control_known_good_clean_in_v1",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A07",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "mutation_control_shared_rule_neutralised",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A08",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "the unmodified forbidden content",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "positive_control_unmodified_forbidden_content",
+      "WHY": "Every case is a variation on the base. If the base is missed the five results mean nothing."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A08",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "the characters appear in an innocent arrangement; a detection here is a false positive and is reported as one",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "negative_control_innocent_arrangements",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A08",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_status"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "mutation_control_specificity",
+      "WHY": "Whether the altered cases stop matching is what the control measures. The guard's exit code has not been measured to encode that, and binding one would be an assumption."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A09",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "positive_control_pattern_matches_own_literal",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A09",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "the string shares no substring with the pattern; a match here would mean the harness reports matches indiscriminately",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "negative_control_disjoint_string",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A09",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "mutation_control_boundary_removed",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A10",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_minimum_count"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COUNT_TEXT_MATCHES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "positive_control_unique_string",
+      "WHY": "A string known to be present must be found at least once."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A10",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_count"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": "the identifier does not occur in the tree",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COUNT_TEXT_MATCHES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "negative_control_absent_identifier",
+      "WHY": "ZERO_HITS, as the plan states."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A11",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "positive_control_matched_entry",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A11",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "the name exists in no official roster because it was invented for this control",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "negative_control_fabricated_name",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A11",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_status"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "mutation_control_one_character",
+      "WHY": "Whether the altered entry moves from matched to differing is the measurement; it is read from the comparison output, not from an exit code."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A12",
+      "CONTROL_ROLE": "ORACLE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_boolean"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PARSE_JSON_READONLY",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "read_label_derivation",
+      "WHY": "The oracle's provenance record must parse."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A12",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "positive_control_known_form_citation",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A12",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "the document contains no citation; hits here mean the pattern set matches ordinary prose",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "negative_control_no_citation",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A12",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_status"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "mutation_control_narrow_one_pattern",
+      "WHY": "Whether the attributed false-positive count falls is read from the narrowed run's output."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A13",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "positive_control_real_wellformed_citation",
+      "WHY": "This is what proves the checker is evaluating at all."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A13",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "there is no citation to examine; verdicts here would mean the checker is matching ordinary prose",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "negative_control_prose_without_citations",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A13",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_status"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "mutation_control_outside_senate_set",
+      "WHY": "The control distinguishes 'passed' from 'never examined', which is a distinction in the output and not in the exit code."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A14",
+      "CONTROL_ROLE": "ORACLE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_boolean"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "DOCX_PARSE_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "parse_document_xml",
+      "WHY": "The oracle must parse word/document.xml."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A14",
+      "CONTROL_ROLE": "ORACLE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "independent_citation_enumeration",
+      "WHY": "The independent enumeration must run. Its counts are the oracle's answer and are substantive."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A14",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "positive_control_seeded_citation",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A14",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "the text contains no citation; a nonzero count would mean the method matches ordinary prose",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "negative_control_no_citations",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A14",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_status"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "mutation_control_removed_citation",
+      "WHY": "The count must fall by exactly one, which is read from the counts file the run writes."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A15",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "the deliberately failing assertion",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTEST_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "positive_control_failing_assertion",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A15",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "none expected; a failure here would make the mutation result unattributable",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTEST_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "negative_control_unmutated_tree",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A15",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "the inverted detection condition",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTEST_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "mutation_control_inverted_detection",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A16",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_count",
+        "expected_boolean"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PROVE_SET_NOVELTY",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "positive_control_novel_case_accepted",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A16",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_count",
+        "expected_boolean"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "byte-identical to a reference entry; the candidate is the corpus member it was copied from",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PROVE_SET_NOVELTY",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "negative_control_duplicate_rejected",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A16",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_count",
+        "expected_boolean"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "a different filename does not make it a different document; the comparison is on content digest and never on the name",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PROVE_SET_NOVELTY",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "negative_control_renamed_duplicate_rejected",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A16",
+      "CONTROL_ROLE": "ORACLE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_boolean"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "DOCX_PARSE_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "independent_rendered_text",
+      "WHY": "The oracle must parse the case document."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A16",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "the plain instruction text",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "positive_control_plain_instruction",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A16",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "the documents carry the structure without the payload; a detection here would mean the filter flags structure rather than content",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "negative_control_clean_structural_forms",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A16",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_status"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "mutation_control_payload_altered",
+      "WHY": "As L1-A08's specificity control."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A17",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_minimum_count"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COUNT_TEXT_MATCHES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "positive_control_known_invocation",
+      "WHY": "Absence is only a result once the search is shown to work."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A17",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_count"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": "the identifier does not occur in the tree",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COUNT_TEXT_MATCHES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "negative_control_absent_identifier",
+      "WHY": "ZERO_HITS, as the plan states."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A18",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "AUDIT_MODULE_RUN",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "sabotage_control",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A19",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "AUDIT_MODULE_RUN",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "sabotage_modulus",
+      "WHY": "If nothing changes, the validator is not on the measured path."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A19",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "AUDIT_MODULE_RUN",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "sabotage_repetition_rule",
+      "WHY": "The two sabotages break the two dimensions independently, which is what shows they are two."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A20",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_boolean",
+        "expected_difference_count"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COMPARE_BINARY_FILES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "positive_control_identical_pair",
+      "WHY": "EQUAL_AT_EVERY_LEVEL. Two copies known to be identical must compare identical and differ in zero bytes."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A20",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_boolean"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": "the two copies are different files",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COMPARE_BINARY_FILES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "negative_control_differing_pair",
+      "WHY": "UNEQUAL_AT_THE_RAW_LEVEL. The comparison must complete and report the two files as not identical."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A20",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_boolean"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_AST_PARSE",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "mutation_control_comment_only",
+      "WHY": "The AST of a copy differing only in a comment must parse. Whether the ASTs are equal is compared downstream."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A21",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_boolean"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PARSE_JSON_READONLY",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "positive_control_export_names_expected_service",
+      "WHY": "The index must parse, and `expect_contains` is enforced by the handler, which fails the operation if the name is absent."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A21",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_count"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": "the export is scoped to this project's containers; a non-zero count names the foreign container found",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COUNT_TEXT_MATCHES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "negative_control_export_is_not_another_project",
+      "WHY": "R8 repair. The step now counts the foreign-project marker in the plain-text listing instead of handing it to a JSON parser that refused it before the assertion was reached."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A22",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTEST_COLLECT_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "positive_control_trivial_test_collected",
+      "WHY": "If a trivial test is not collected either, the cause is the run and not the golden file."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A22",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": "the filename matches no configured collection pattern",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTEST_COLLECT_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "negative_control_unmatched_name",
+      "WHY": "A file matching no collection pattern must not be collected, and pytest does not exit 0 when it collects nothing. The exit code is asserted rather than the wording of the message."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A22",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "the golden copy no longer matches the live copy",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTEST_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "mutation_control_golden_diverges",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A23",
+      "CONTROL_ROLE": "ORACLE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_boolean"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PARSE_JSON_READONLY",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "read_mac_reality",
+      "WHY": "The operator-produced Mac evidence must parse."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A23",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_boolean"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "STAT_FILE",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "positive_control_true_claim",
+      "WHY": "CONFIRMED: a path constructed true by this audit must be reported as existing."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A23",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_boolean"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": "the path does not exist; the claim was constructed false by this audit",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "STAT_FILE",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "negative_control_false_claim",
+      "WHY": "A method that can only confirm is not a comparison."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A24",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_status"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "CLAUDE_LOAD_BEHAVIOUR_TEST",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "external_launch_inside_project",
+      "WHY": "If it is not in force even from inside the project, the test method is measuring something else and the external result is uninterpretable."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A24",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_boolean"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": "the file cannot apply from that directory under the recorded precedence rules",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PARSE_JSON_READONLY",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "negative_control_impossible_file",
+      "WHY": "The intake record must parse, and `expect_absent` is enforced by the handler: an impossible file reported as loaded fails the operation rather than being noted."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A24",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_hash_relation"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COMPARE_HASHES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "mutation_control_write_topology",
+      "WHY": "The external directory's pre-run and post-run manifests must be equal: the redirection is in force exactly when the external directory did not change."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A25",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "positive_control_untracked_is_removed",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A25",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "git clean does not remove tracked files; a removal here would mean the reproduction is not faithful",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "negative_control_tracked_survives",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A25",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "mutation_control_state_change",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A26",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "run_positive_examples",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A26",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "the negative example does not instantiate the class; a detection here is a false positive and is reported as one",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "run_negative_examples",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A26",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": false,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "mutation_control_neutralise_rule",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A27",
+      "CONTROL_ROLE": "ORACLE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COMPARE_HASHES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "hash_method_2_streaming",
+      "WHY": "A disagreement means one method is not reading the raw bytes, and it must be resolved before anything else is interpreted."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A27",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "SHA256_FILE",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "positive_control_known_hash",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A27",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_hash_relation"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": "the two inputs are different files",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COMPARE_HASHES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "negative_control_two_files_differ",
+      "WHY": "DIGESTS_DIFFER. Equality would mean the comparison is not reading both operands, which is what the plan already says."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A27",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_boolean"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COMPARE_BINARY_FILES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "mutation_control_one_byte",
+      "WHY": "One deliberately altered byte must make the archives compare as not identical. Zero detected differences is a measurement error, not a pass -- CLAUDE.md section 6."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A28",
+      "CONTROL_ROLE": "ORACLE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": "left and right name the same path, so `equal` is true by construction. No outcome expectation is bound to it, because a control that cannot fail is not a control. Outside the two plan repairs authorised for R8; recorded for the human.",
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COMPARE_HASHES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "recalculate_digest_independently",
+      "WHY": "The recalculation must complete."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A28",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "SHA256_FILE",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "positive_control_known_digest",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A28",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_hash_relation"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": "the two inputs are different content",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COMPARE_HASHES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "negative_control_different_input",
+      "WHY": "DIGESTS_DIFFER, as the plan states."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A28",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_boolean"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COMPARE_BINARY_FILES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "mutation_control_content_byte",
+      "WHY": "One altered content byte must change the comparison."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A29",
+      "CONTROL_ROLE": "ORACLE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COMPARE_HASHES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "hash_method_2_streaming",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A29",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "SHA256_FILE",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "positive_control_known_hash",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A29",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_hash_relation"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": "the two inputs are different files",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COMPARE_HASHES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "negative_control_two_files_differ",
+      "WHY": "DIGESTS_DIFFER, as the plan states."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A29",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_boolean"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COMPARE_BINARY_FILES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "mutation_control_one_byte",
+      "WHY": "One altered byte must be detected."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A30",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "ZIP_LIST",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "positive_control_archive_with_metadata",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A30",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "no such entry exists in this archive; a detection here would mean the matcher matches everything",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "ZIP_LIST",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "negative_control_archive_without_metadata",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A30",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_minimum_count"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "ZIP_LIST",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "mutation_control_added_entry",
+      "WHY": "The archive with the added entry must list at least one entry. Which of them is the AppleDouble entry is counted downstream; ZIP_LIST's own count is of all entries, so binding an exact number here would assert something the operation does not measure."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A31",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "OPENSSL_VERIFY_CERT_CHAIN",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "synthetic_chain_positive",
+      "WHY": "if this fails, nothing below is evidence of anything"
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A31",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "CHAIN_INCOMPLETE",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "OPENSSL_VERIFY_CERT_CHAIN",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "synthetic_chain_missing_anchor",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A31",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "CERT_SIGNATURE_FAILURE",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "OPENSSL_VERIFY_CERT_CHAIN",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "mutated_vhn_leaf_signature",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A31",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "PARSE_REFUSAL",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "OPENSSL_VERIFY_CERT_CHAIN",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "unparseable_vhn_leaf",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A31",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "CONTENT_DIGEST_FAILURE",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "OPENSSL_VERIFY_CMS",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "wrong_vhn_content",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A31",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "CONTENT_DIGEST_FAILURE",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "OPENSSL_VERIFY_CMS",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "mutated_vhn_content",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A32",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "OPENSSL_VERIFY_CMS",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "positive_control_two_signers",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A32",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "no second signer exists; reporting two would mean the enumeration invents entries",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "OPENSSL_VERIFY_CMS",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "negative_control_one_signer",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A32",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_failure_reason_canonical"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "CONTENT_DIGEST_FAILURE",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "OPENSSL_VERIFY_CMS",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "mutation_control_second_signature_corrupted",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A33",
+      "CONTROL_ROLE": "ORACLE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": "left and right name the same path, as in L1-A28. No outcome expectation is bound. Recorded for the human.",
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COMPARE_HASHES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "declared_versus_actual",
+      "WHY": "The comparison must complete."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A33",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COMPARE_HASHES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "positive_control_agreeing_entry",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A33",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_boolean"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": "the entry's bytes no longer match its declaration",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COMPARE_BINARY_FILES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "negative_control_altered_entry",
+      "WHY": "MISMATCH_REPORTED: the altered entry must not compare equal."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A33",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_boolean"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COMPARE_BINARY_FILES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "mutation_control_altered_declaration",
+      "WHY": "A comparison that only reacts to content changes is reading the declaration and echoing it back."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A34",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "OPENSSL_VERIFY_CMS",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "synthetic_cms_positive",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A34",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "CONTENT_DIGEST_FAILURE",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "OPENSSL_VERIFY_CMS",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "synthetic_cms_wrong_content",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A34",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "CONTENT_DIGEST_FAILURE",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "OPENSSL_VERIFY_CMS",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "synthetic_cms_mutated_content",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A35",
+      "CONTROL_ROLE": "POSITIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_boolean",
+        "expected_difference_count"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COMPARE_BINARY_FILES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "positive_control_byte_preserving_copy",
+      "WHY": "EQUAL_AT_EVERY_LAYER, as the plan states."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A35",
+      "CONTROL_ROLE": "NEGATIVE",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_boolean"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "build/control_expectations.py",
+      "EXPECTED_FAILURE_REASON": "recompression rewrites the container, not the content",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "COMPARE_BINARY_FILES",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": "AS_EXPECTED",
+      "REHEARSAL_STATUS": "EXECUTED",
+      "STEP_ID": "negative_control_recompressing_copy",
+      "WHY": "CONTAINER_LAYER_DIFFERS: recompression rewrites the container, so the two containers must not compare identical."
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A35",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code",
+        "expected_failure_reason_canonical"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": "CONTENT_DIGEST_FAILURE",
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "OPENSSL_VERIFY_CMS",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "mutation_control_inside_coverage",
+      "WHY": null
+    },
+    {
+      "ASSERTION_NOT_EXPRESSIBLE_IN_STEP": null,
+      "AUDIT_ID": "L1-A35",
+      "CONTROL_ROLE": "MUTATION",
+      "DECLARED_EXPECTATIONS": [
+        "expected_exit_code"
+      ],
+      "DEGENERATE_OPERANDS": null,
+      "EXPECTATION_SOURCE": "plan specification",
+      "EXPECTED_FAILURE_REASON": null,
+      "MACHINE_CHECKABLE": true,
+      "OPERATION": "OPENSSL_VERIFY_CMS",
+      "PHASE": "RUN-A",
+      "READS_OUTSIDE_DECLARED_ALLOWANCE": [],
+      "REHEARSAL_EXECUTED": true,
+      "REHEARSAL_EXPECTATION_RESULT": null,
+      "REHEARSAL_STATUS": null,
+      "STEP_ID": "mutation_control_outside_coverage",
+      "WHY": "Together with the step above, this is the demonstration that the coverage boundary is real and correctly located. Either alone proves nothing about where the boundary lies."
+    }
+  ],
+  "findings_for_the_human": {
+    "assertion_not_expressible_in_step": [],
+    "degenerate_operands": [
+      {
+        "audit_id": "L1-A28",
+        "note": "left and right name the same path, so `equal` is true by construction. No outcome expectation is bound to it, because a control that cannot fail is not a control. Outside the two plan repairs authorised for R8; recorded for the human.",
+        "step_id": "recalculate_digest_independently"
+      },
+      {
+        "audit_id": "L1-A33",
+        "note": "left and right name the same path, as in L1-A28. No outcome expectation is bound. Recorded for the human.",
+        "step_id": "declared_versus_actual"
+      }
+    ],
+    "steps_reading_outside_their_plan_declared_allowance": []
+  },
+  "revision": "R8",
+  "schema": "wpno.level1.control-expectation-coverage/1"
+}

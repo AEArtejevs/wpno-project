@@ -1,0 +1,48 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A11",
+  "binding_status": "EXTERNAL_EVIDENCE_REQUIRED",
+  "logical_targets": [
+    "BGH_REGISTER completeness versus an independent official roster"
+  ],
+  "candidate_paths": [
+    "/Users/martinotten/WPNO/authoring/AP18_referenzpruefung.py",
+    "/Users/martinotten/WPNO/authoring/bgh_referenz.json"
+  ],
+  "productive_target": null,
+  "productive_target_sha256": null,
+  "productive_target_evidence": [],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [
+    "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/REF-05/REF-05_BGH_Geschaeftsverteilungsplan_2026.pdf",
+    "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/REF-05/REF-05_BGH_Praesidiumsbeschluesse_2026.pdf",
+    "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/REF-05/R7_REF05_SUPPLEMENT/REF-05_BGH_OFFICIAL_PAGE_2026.html",
+    "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/REF-05/R7_REF05_SUPPLEMENT/REF-05_BGH_PRAESIDIUMSBESCHLUESSE_2026_CURRENT.pdf"
+  ],
+  "external_evidence_required": [
+    "REF-05"
+  ],
+  "unresolved_questions": [],
+  "discovery_drift": [],
+  "source_evidence": [
+    {
+      "source_path": "/Users/martinotten/WPNO/authoring/AP18_referenzpruefung.py",
+      "sha256": "f5eb5a9cbeb37cada9186ba305b9a307ea40e3012ca0e2e6dd0b2560f4352d74",
+      "locator": "BGH_REGISTER definition",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/authoring/bgh_referenz.json",
+      "sha256": "d2451fa5720643cceb84605538a7979709ef90a44de4770e7aee06cc33579880",
+      "locator": "project reference data — NOT an oracle",
+      "evidence_type": "data",
+      "confidence": "HIGH"
+    }
+  ],
+  "replications": 1,
+  "risk": "HIGH",
+  "execution_order": 15
+}

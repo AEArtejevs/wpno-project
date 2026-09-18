@@ -1,0 +1,90 @@
+{
+ "EFFECTIVE_FAILURES": 0,
+ "EFFECTIVE_PASSED": 405,
+ "SUITE_CLEAN": true,
+ "clone": "/home/ubuntu/project/WPNO/.r8_lineage_verify_clone_711053",
+ "errors": 0,
+ "pass_a_exit_code": 0,
+ "pass_a_in_clone": {
+  "errors": 0,
+  "expected_failures": 0,
+  "failures": 1,
+  "ran": 405,
+  "skips": 0,
+  "unexpected_successes": 0
+ },
+ "pass_a_stderr_tail": [
+  "FAIL: test_no_plan_in_the_package_names_an_unconfined_output (automation.package_tests.test_r7_rehearsal_output_paths.OutputsStayInsideTheWorkArea.test_no_plan_in_the_package_names_an_unconfined_output)",
+  "----------------------------------------------------------------------",
+  "Traceback (most recent call last):",
+  "  File \"/home/ubuntu/project/WPNO/.r8_lineage_verify_clone_711053/automation/package_tests/test_r7_rehearsal_output_paths.py\", line 133, in test_no_plan_in_the_package_names_an_unconfined_output",
+  "    self.assertEqual(",
+  "    ~~~~~~~~~~~~~~~~^",
+  "        self.h.unconfined_outputs(step), [],",
+  "        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+  "        \"%s/%s step %r writes outside work/\"",
+  "        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+  "        % (audit_id, phase, step[\"step_id\"]))",
+  "        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+  "AssertionError: Lists differ: ['/home/ubuntu/project/WPNO/08.18.26_Level[43 chars]ocx'] != []",
+  "",
+  "First list contains 1 additional elements.",
+  "First extra element 0:",
+  "'/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN1/output.docx'",
+  "",
+  "- ['/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN1/output.docx']",
+  "+ [] : L1-A01/RUN-A step 'run1' writes outside work/",
+  "",
+  "----------------------------------------------------------------------",
+  "Ran 405 tests in 152.696s",
+  "",
+  "FAILED (failures=1)"
+ ],
+ "pass_b_in_situ": [
+  {
+   "CLASSIFICATION": "RELOCATION_ARTEFACT_RESOLVED_IN_SITU",
+   "in_situ_passed": true,
+   "in_situ_result": {
+    "detail": [],
+    "errors": 0,
+    "failures": 0,
+    "ran": 1,
+    "skips": 0
+   },
+   "in_situ_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+   "in_situ_wrote_nothing": true,
+   "inventory_after": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/temporary/insitu_after_automation.package_tests.test_r7_rehearsal_output_paths.OutputsStayInsideTheWorkArea.test_no_plan_in_the_package_names_an_unconfined_output.json",
+   "inventory_before": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/temporary/insitu_before_automation.package_tests.test_r7_rehearsal_output_paths.OutputsStayInsideTheWorkArea.test_no_plan_in_the_package_names_an_unconfined_output.json",
+   "inventory_compare": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair/temporary/insitu_compare_automation.package_tests.test_r7_rehearsal_output_paths.OutputsStayInsideTheWorkArea.test_no_plan_in_the_package_names_an_unconfined_output.json",
+   "inventory_delta": {
+    "contents_changed": 0,
+    "gid_changed": 0,
+    "modes_changed": 0,
+    "mtimes_changed": 0,
+    "paths_added": 0,
+    "paths_differing": 0,
+    "paths_removed": 0,
+    "symlink_targets_changed": 0,
+    "uid_changed": 0
+   },
+   "pass_a_outcome": "FAILURE",
+   "pass_a_trace_tail": [
+    "First list contains 1 additional elements.",
+    "First extra element 0:",
+    "'/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN1/output.docx'",
+    "",
+    "- ['/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN1/output.docx']",
+    "+ [] : L1-A01/RUN-A step 'run1' writes outside work/"
+   ],
+   "test_id": "automation.package_tests.test_r7_rehearsal_output_paths.OutputsStayInsideTheWorkArea.test_no_plan_in_the_package_names_an_unconfined_output"
+  }
+ ],
+ "r8_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+ "schema": "wpno.r8.delta-package-suite/1",
+ "skips": 0,
+ "tests_failing_in_clone": 1,
+ "tests_resolved_in_situ": 1,
+ "tests_run": 405,
+ "tests_unresolved": 0,
+ "unresolved": []
+}

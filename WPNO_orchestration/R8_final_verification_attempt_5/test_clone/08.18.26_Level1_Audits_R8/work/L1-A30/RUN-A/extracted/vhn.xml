@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<VHN Version="2.0" xsi:noNamespaceSchemaLocation="vhn.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Fachlich>
+        <Absender>
+            <Nutzer_ID>DE.BRAK.6aeb9a2c-b12e-45b0-92a9-e466ba908021.cd01</Nutzer_ID>
+            <Titel></Titel>
+            <Vorname>Achim</Vorname>
+            <Name>Reinknecht</Name>
+            <Strasse>Blumenthalstr.</Strasse>
+            <Hausnummer>21</Hausnummer>
+            <Postleitzahl>50670</Postleitzahl>
+            <Ort>Köln</Ort>
+            <Bundesland></Bundesland>
+            <Land>DE</Land>
+        </Absender>
+        <EGVP_Rollenwerte>egvp_bea</EGVP_Rollenwerte>
+        <Sicherer_Uebermittlungsweg>ja</Sicherer_Uebermittlungsweg>
+        <Dokument Algorithm="SHA256">
+            <Hashwert>MJpMfQzs34q/epcgD2zjFSn4TdZ3UkFEl4wwRKpaiac=</Hashwert>
+        </Dokument>
+        <Dokument Algorithm="SHA256">
+            <Hashwert>QgieG/l25uR46hdiTrNSOUlLPzVWrxAJLokW1dbZLMg=</Hashwert>
+        </Dokument>
+        <Dokument Algorithm="SHA256">
+            <Hashwert>QoejeDyuyNqbbgwW+Go9XjY6NCU0J+yjEWFZ533Qeno=</Hashwert>
+        </Dokument>
+    </Fachlich>
+    <Technisch>
+        <HerstellerInformation>
+            <Name_des_Produkts_und_Softwareversion>beA-Client (Client-Security) 4.2.0.0</Name_des_Produkts_und_Softwareversion>
+            <Hersteller_des_Produkts>Bundesrechtsanwaltskammer</Hersteller_des_Produkts>
+            <Registrierungs_ID>0017.0001.0001.020902</Registrierungs_ID>
+        </HerstellerInformation>
+        <HerstellerInformation>
+            <Name_des_Produkts_und_Softwareversion>beA-Webanwendung 4.2.5.554</Name_des_Produkts_und_Softwareversion>
+            <Hersteller_des_Produkts>Bundesrechtsanwaltskammer</Hersteller_des_Produkts>
+            <Registrierungs_ID>0017.0001.0001.020902</Registrierungs_ID>
+        </HerstellerInformation>
+    </Technisch>
+</VHN>

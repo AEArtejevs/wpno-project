@@ -1,0 +1,7 @@
+Name=/wpno_litellm
+Status=exited
+Created=2026-07-15T15:59:36.004777485Z
+ImageID=sha256:2fdd90b14e3d9244ce297f418b983d8cfd90ba6e72a10a8ddb30f7cf64852390
+WorkingDir=/app
+Entrypoint=["docker/prod_entrypoint.sh"]
+Cmd=["--config","/app/config.yaml","--port","4000"]

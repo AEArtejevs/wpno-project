@@ -1,0 +1,22 @@
+{
+  "attestation_version": 2,
+  "ticket_id": "SYNTHETIC_EXAMPLE",
+  "gate_run_id": "synthetic",
+  "parent_commit": null,
+  "validated_tree_sha": "c3e71410a224e943d5e971d1576cd0a5cb559b82",
+  "created_commit_sha": "d9af9fac1f915b96b3d763f887f95370e9fa687a",
+  "created_commit_tree_sha": "c3e71410a224e943d5e971d1576cd0a5cb559b82",
+  "tree_match": true,
+  "gate_code_hash": "98d4a9851d0fabc0",
+  "test_manifest_hash": "7f47d0bf70385379",
+  "schema_hashes": {
+    "validator": "missing",
+    "schema": "missing"
+  },
+  "result": "GREEN",
+  "test_mode": false,
+  "gatecode_review": false,
+  "created_at_utc": 1783889390,
+  "status": "ATTESTED_GREEN_FOR_EXACT_TREE",
+  "record_hmac": "d70e3301fff7d0a5f376339c1772161cab76766161b632d2fd848070ffcde062"
+}

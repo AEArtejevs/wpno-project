@@ -1,0 +1,40 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A23",
+  "binding_status": "TARGET_CONFIRMED",
+  "logical_targets": [
+    "CLAUDE.md rules versus actual Mac reality"
+  ],
+  "candidate_paths": [
+    "/Users/martinotten/WPNO/CLAUDE.md"
+  ],
+  "productive_target": "/Users/martinotten/WPNO/CLAUDE.md",
+  "productive_target_sha256": "f6734d0d0f7a25933a87efeec89cfdb2ba97f79956a546c13de9a94fac3d1ef8",
+  "productive_target_evidence": [
+    {
+      "claim": "File identity confirmed by name, symbol match and SHA-256.",
+      "note": "File identity is NOT production identity. No execution-path evidence establishes that this file is the copy invoked in production. See discovery_reconciliation/04_PRODUCTION_PATH_RECONCILIATION.md."
+    }
+  ],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [],
+  "external_evidence_required": [
+    "REF-14"
+  ],
+  "unresolved_questions": [],
+  "discovery_drift": [],
+  "source_evidence": [
+    {
+      "source_path": "/Users/martinotten/WPNO/CLAUDE.md",
+      "sha256": "f6734d0d0f7a25933a87efeec89cfdb2ba97f79956a546c13de9a94fac3d1ef8",
+      "locator": "11 sections; § 8 'Diese Maschine' lines 98–131 is the primary factual surface",
+      "evidence_type": "documentation",
+      "confidence": "HIGH"
+    }
+  ],
+  "replications": 1,
+  "risk": "MEDIUM",
+  "execution_order": 25
+}

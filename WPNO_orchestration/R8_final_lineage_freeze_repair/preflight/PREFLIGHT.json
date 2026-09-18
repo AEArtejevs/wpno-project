@@ -1,0 +1,92 @@
+{
+ "PREFLIGHT_PASS": true,
+ "checks": {
+  "1_manifest_covered_clone_matches_r8": {
+   "PASS": true,
+   "digest_mismatched_in_clone": [],
+   "manifest_entries": 728,
+   "missing_in_clone": []
+  },
+  "2_paths_json_resolves": {
+   "PASS": true,
+   "declared": {
+    "discovery_root": "../08.18.26_Discovery",
+    "level1_root": ".",
+    "project_root": ".."
+   },
+   "discovery_root_exists": true,
+   "expected": {
+    "discovery_root": "/home/ubuntu/project/WPNO/08.18.26_Discovery",
+    "level1_root": "/home/ubuntu/project/WPNO/.r8_lineage_verify_clone_711053",
+    "project_root": "/home/ubuntu/project/WPNO"
+   },
+   "resolved": {
+    "discovery_root": "/home/ubuntu/project/WPNO/08.18.26_Discovery",
+    "level1_root": "/home/ubuntu/project/WPNO/.r8_lineage_verify_clone_711053",
+    "project_root": "/home/ubuntu/project/WPNO"
+   }
+  },
+  "3_predecessors_are_siblings": {
+   "PASS": true,
+   "clone_parent": "/home/ubuntu/project/WPNO",
+   "siblings": {
+    "R4": {
+     "is_dir": true,
+     "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R4"
+    },
+    "R5": {
+     "is_dir": true,
+     "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R5"
+    },
+    "R6": {
+     "is_dir": true,
+     "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R6"
+    },
+    "R7": {
+     "is_dir": true,
+     "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7"
+    }
+   }
+  },
+  "4_project_gitignore_present": {
+   "PASS": true,
+   "is_file": true,
+   "path": "/home/ubuntu/project/WPNO/.gitignore",
+   "sha256": "f937a76469c6f90762ad9341370aff240f3b719672b8222cebafcff34641576b"
+  },
+  "5_clone_writable": {
+   "PASS": true,
+   "clone_root_mtime_ns_after_restore": 1787948767013349870,
+   "clone_root_mtime_ns_before_probe": 1787948767013349870,
+   "clone_root_mtime_restored": true,
+   "error": null,
+   "probe_path": "/home/ubuntu/project/WPNO/.r8_lineage_verify_clone_711053/.preflight_write_probe",
+   "restoration_note": "the probe necessarily moves the clone root's mtime; it is put back so the clone-versus-R8 comparison measures the copy and not this check's own footprint",
+   "wrote_and_removed": true
+  },
+  "6_r8_outside_writable_workspace": {
+   "PASS": true,
+   "clone": "/home/ubuntu/project/WPNO/.r8_lineage_verify_clone_711053",
+   "r8_inside_a_writable_root": false,
+   "r8_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+   "workspace": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair"
+  },
+  "7_no_hardlink_between_clone_and_active_r7_r8": {
+   "PASS": true,
+   "clone_files_with_nlink_gt_1": 0,
+   "shared_inodes_with_r7_or_r8": []
+  },
+  "8_clone_name_outside_revision_glob": {
+   "PASS": true,
+   "clone_basename": ".r8_lineage_verify_clone_711053",
+   "hidden": true,
+   "matches_revision_glob": false
+  }
+ },
+ "clone": "/home/ubuntu/project/WPNO/.r8_lineage_verify_clone_711053",
+ "failed_checks": [],
+ "project_root": "/home/ubuntu/project/WPNO",
+ "r8_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+ "schema": "wpno.r8.lineage-preflight/1",
+ "workspace": "/home/ubuntu/project/WPNO_orchestration/R8_final_lineage_freeze_repair"
+}

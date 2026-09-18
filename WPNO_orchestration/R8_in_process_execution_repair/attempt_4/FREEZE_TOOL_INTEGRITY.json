@@ -1,0 +1,103 @@
+{
+  "note": "the freeze-plan builder is deliberately outside the final manifest: it lives in build/freeze_plan_attempt_1/, the freeze-plan directory the manifest excludes because both it and the plan it writes are created after the manifest exists. Its digest is recorded here and is bound into the plan and the token.",
+  "recorded_before_verification": true,
+  "schema": "wpno.r8.freeze-tool-integrity/1",
+  "tools": {
+    "build_manifest_builder": {
+      "inside_final_manifest": true,
+      "path": "build/build_r8_build_manifest.py",
+      "sha256": "51c68fe2f8d6ad798ff10f09df4ad62ac563c7ae822fb720cc2e62894a20ba2b",
+      "size": 7878
+    },
+    "closure_record_builder": {
+      "inside_final_manifest": true,
+      "path": "build/build_r8_closure_record.py",
+      "sha256": "72709006555250bcc5f6eb773b5b6f3976b5b41629c6780aacb7a6546b505dd6",
+      "size": 12058
+    },
+    "controller": {
+      "inside_final_manifest": true,
+      "path": "automation/controller.py",
+      "sha256": "167b5cf6f43bdead8314c10d9296dd462e4622d3a01a9e3c9db9498a5c972a08",
+      "size": 97093
+    },
+    "freeze_module_and_token_generator": {
+      "inside_final_manifest": true,
+      "path": "automation/freeze.py",
+      "sha256": "ef874c59beede91b676caafbe4b14779a04c275487e5c015fe2df8c2fbd5457d",
+      "size": 38228
+    },
+    "freeze_plan_builder": {
+      "inside_final_manifest": false,
+      "path": "build/freeze_plan_attempt_1/build_r8_freeze_plan.py",
+      "sha256": "2b40acb215ce62e11ed7bc077be8ed1142f18f70e4b98e311d7f6474489d875a",
+      "size": 26807
+    },
+    "freeze_token_generator_function": {
+      "inside_final_manifest": true,
+      "source_bytes": 546,
+      "source_sha256": "1f9b38c4809cf59bbfd321e61940d4c0617e4fb5b2172a4aa7457a77db180360",
+      "symbol": "automation.freeze.token_for"
+    },
+    "in_process_executor": {
+      "inside_final_manifest": true,
+      "path": "automation/in_process_executor.py",
+      "sha256": "d4fb45186aa620f09e534dc4757a11259926439db0eef2c5b42496fa20835670",
+      "size": 35388
+    },
+    "in_process_ops": {
+      "inside_final_manifest": true,
+      "path": "automation/in_process_ops.py",
+      "sha256": "1e39e3e0fa09d88411d4e2d634f463abf2cb68b32fe94de80ee7624d601a4f72",
+      "size": 47646
+    },
+    "measurement_records_builder": {
+      "inside_final_manifest": true,
+      "path": "build/build_r8_measurement_records.py",
+      "sha256": "84418d93b59bb4f174165608bdf49043c8b3928cbc3cb25ec1b0a64917b268e2",
+      "size": 17383
+    },
+    "migration_plan_builder": {
+      "inside_final_manifest": true,
+      "path": "build/build_migration_plan.py",
+      "sha256": "07a609197b8d38e4d14fcff5824d42a40c7a8c045c0951a0ab65e7f1f51cbb14",
+      "size": 9007
+    },
+    "migration_route": {
+      "inside_final_manifest": true,
+      "path": "automation/migration.py",
+      "sha256": "65b3db95c3bf9d012195ee81c946f95bae08aea0cc7545134cf1f76d0d6ba93f",
+      "size": 26264
+    },
+    "rehearsal_harness": {
+      "inside_final_manifest": true,
+      "path": "build/rehearse_candidate_plans.py",
+      "sha256": "ebe776a5ea858b819b8e1c745b93a2d82d418de898118c1d03ee0fd9908835d3",
+      "size": 31531
+    },
+    "resume_status_builder": {
+      "inside_final_manifest": true,
+      "path": "build/build_r8_resume_status.py",
+      "sha256": "17ec4ee50dc40dcf1856df6943cabfa8aff9663ac2b2225c97d50f5c12c505c3",
+      "size": 6305
+    },
+    "selftest_replica_builder": {
+      "inside_final_manifest": true,
+      "path": "build/build_r8_selftest_replica.py",
+      "sha256": "026ead9ef9511ca17410239ecbff6d3552653dea3d48c934cb09d173b1a9c812",
+      "size": 2458
+    },
+    "static_safety_review": {
+      "inside_final_manifest": true,
+      "path": "build/r8_static_safety_review.py",
+      "sha256": "eba333a6a75cba8f7c9fd21c036909a170b666206f12ecebe4f850b93feb4231",
+      "size": 37537
+    },
+    "verification_runner_run_test_suites": {
+      "inside_final_manifest": true,
+      "path": "build/run_test_suites.py",
+      "sha256": "ba031b51914fe147e668c8aebf8de5bb8a7666700ed47d4f6ffd4b156ae5514f",
+      "size": 9109
+    }
+  }
+}

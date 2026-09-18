@@ -1,0 +1,54 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A03",
+  "binding_status": "TARGET_PARTIAL",
+  "logical_targets": [
+    "export_with_toc version set and productive-version identification"
+  ],
+  "candidate_paths": [
+    "/Users/martinotten/WPNO/authoring/AP16_export_with_toc.py",
+    "/Users/martinotten/WPNO/authoring/AP16_export_with_toc_v2.py",
+    "/Users/martinotten/WPNO/authoring/AP16_export_with_toc_v4.py"
+  ],
+  "productive_target": null,
+  "productive_target_sha256": null,
+  "productive_target_evidence": [],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [],
+  "external_evidence_required": [],
+  "unresolved_questions": [
+    "Which exporter version is productive? No caller found in-tree.",
+    "Did AP16_export_with_toc_v3.py ever exist?"
+  ],
+  "discovery_drift": [
+    "D-01"
+  ],
+  "source_evidence": [
+    {
+      "source_path": "/Users/martinotten/WPNO/authoring/AP16_export_with_toc.py",
+      "sha256": "e618eb151eb674fe435a967fed7b6e696ac75fbde390db828bd1c99c14e22f0c",
+      "locator": "whole file",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/authoring/AP16_export_with_toc_v2.py",
+      "sha256": "12e6da3ec6289523fc9d8118db8583b8a9ef7649b825a09cd4b26e44f24e6eee",
+      "locator": "whole file",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    },
+    {
+      "source_path": "/Users/martinotten/WPNO/authoring/AP16_export_with_toc_v4.py",
+      "sha256": "b204a8e5e9bd7a7489bd2d69c61242ec9da8c929186b4b3393599a3d120ebdb7",
+      "locator": "whole file",
+      "evidence_type": "source",
+      "confidence": "HIGH"
+    }
+  ],
+  "replications": 1,
+  "risk": "HIGH",
+  "execution_order": 23
+}

@@ -1,0 +1,396 @@
+{
+  "added_files": [
+    "automation/in_process_executor.py",
+    "automation/in_process_ops.py",
+    "automation/migration.py",
+    "automation/package_tests/test_r8_migration.py",
+    "build/build_migration_plan.py",
+    "build/build_r8_build_manifest.py",
+    "build/build_r8_closure_record.py",
+    "build/build_r8_measurement_records.py",
+    "build/build_r8_resume_status.py",
+    "build/build_r8_selftest_replica.py",
+    "build/control_expectations.py",
+    "build/freeze_plan_attempt_1/build_r8_freeze_plan.py",
+    "build/r8_static_safety_review.py",
+    "build/stage_r8_rehearsal_inputs.py",
+    "build/tree_snapshot.py",
+    "build/validate_status_record.py"
+  ],
+  "changed_files": [
+    "automation/controller.py",
+    "automation/freeze.py",
+    "automation/operation_catalog.py",
+    "automation/package_tests/__init__.py",
+    "automation/package_tests/test_r5_freeze_repair.py",
+    "automation/package_tests/test_r7_freeze_baseline.py",
+    "automation/package_tests/test_r7_initialisation.py",
+    "automation/package_tests/test_r7_rehearsal_output_paths.py",
+    "automation/package_tests/test_r7_section8_plans.py",
+    "automation/package_tests/test_r7_section8_records.py",
+    "automation/policy.py",
+    "automation/tests/test_attempt_model.py",
+    "automation/tests/test_l1a31_plan_correction.py",
+    "build/all_level1_scope/build_all_level1_scope.py",
+    "build/all_level1_scope/measure_all_level1_readiness.py",
+    "build/build_all_candidate_plans.py",
+    "build/build_candidate_plans.py",
+    "build/candidate_plan_specs.py",
+    "build/derive_a19_vectors.py",
+    "build/plan_library.py",
+    "build/rehearse_candidate_plans.py",
+    "build/run_test_suites.py",
+    "build/stage_l1a31_material.py",
+    "build/stage_rehearsal_fixtures.py"
+  ],
+  "changed_files_manifest_sha256": "39310d24d48978384d655a9b1b6164be0b21bd851d32b714b00d3e2f8cf27923",
+  "clean": true,
+  "control_modules": {
+    "automation/__init__.py": {
+      "change_permitted": false,
+      "identical": true,
+      "r4_sha256": "7d42b1cfacf5c2a348cdaaba7313c2c91b83e12635a4fa7b94c9529186d48ecb",
+      "r5_sha256": "7d42b1cfacf5c2a348cdaaba7313c2c91b83e12635a4fa7b94c9529186d48ecb",
+      "reason": null
+    },
+    "automation/a18_run_a.py": {
+      "change_permitted": false,
+      "identical": true,
+      "r4_sha256": "dff753cbc8e103184614bf9bc0fbfdc183a7323957538d70cf39117ffed45705",
+      "r5_sha256": "dff753cbc8e103184614bf9bc0fbfdc183a7323957538d70cf39117ffed45705",
+      "reason": null
+    },
+    "automation/a18_run_a_cli.py": {
+      "change_permitted": false,
+      "identical": true,
+      "r4_sha256": "73c9294f621fca62b5fb295494edc43e58fa2c086e4694f659860e160097a5d1",
+      "r5_sha256": "73c9294f621fca62b5fb295494edc43e58fa2c086e4694f659860e160097a5d1",
+      "reason": null
+    },
+    "automation/a18_run_b.py": {
+      "change_permitted": false,
+      "identical": true,
+      "r4_sha256": "1418e732fb870a8020434c065029008a055d71db381837fcfe1737a17a809f1f",
+      "r5_sha256": "1418e732fb870a8020434c065029008a055d71db381837fcfe1737a17a809f1f",
+      "reason": null
+    },
+    "automation/a18_run_b_cli.py": {
+      "change_permitted": false,
+      "identical": true,
+      "r4_sha256": "348ef8460823e2290be86b4b1392bf42a31f2cabc7bbe63341da04ab28c08ee2",
+      "r5_sha256": "348ef8460823e2290be86b4b1392bf42a31f2cabc7bbe63341da04ab28c08ee2",
+      "reason": null
+    },
+    "automation/a19_run_a.py": {
+      "change_permitted": false,
+      "identical": true,
+      "r4_sha256": "8facdab607990d38b2139507543f3427709ba38f56828e19882169ebfaa316f0",
+      "r5_sha256": "8facdab607990d38b2139507543f3427709ba38f56828e19882169ebfaa316f0",
+      "reason": null
+    },
+    "automation/a19_run_a_cli.py": {
+      "change_permitted": false,
+      "identical": true,
+      "r4_sha256": "4b15e2caf927d3ddb43ace8fc2f7960fa374a18b6e0c2a225dd88dfb4f08260e",
+      "r5_sha256": "4b15e2caf927d3ddb43ace8fc2f7960fa374a18b6e0c2a225dd88dfb4f08260e",
+      "reason": null
+    },
+    "automation/a19_run_b.py": {
+      "change_permitted": false,
+      "identical": true,
+      "r4_sha256": "7386eec4ba262d96d23e70e9cc9a6ba87f81e3bee0dc8a2e83b52f5077bfb275",
+      "r5_sha256": "7386eec4ba262d96d23e70e9cc9a6ba87f81e3bee0dc8a2e83b52f5077bfb275",
+      "reason": null
+    },
+    "automation/a19_run_b_cli.py": {
+      "change_permitted": false,
+      "identical": true,
+      "r4_sha256": "041e3d9b9f3ee2d501159cc229b4a7db8de0a76a5eb3c972fdf591f229c57dfa",
+      "r5_sha256": "041e3d9b9f3ee2d501159cc229b4a7db8de0a76a5eb3c972fdf591f229c57dfa",
+      "reason": null
+    },
+    "automation/attempts.py": {
+      "change_permitted": false,
+      "identical": true,
+      "r4_sha256": "0e94344c65bb547e11f8c41be36b3a366d6f01aeb43c9938ce06ace806aecf38",
+      "r5_sha256": "0e94344c65bb547e11f8c41be36b3a366d6f01aeb43c9938ce06ace806aecf38",
+      "reason": null
+    },
+    "automation/audit_context.py": {
+      "change_permitted": false,
+      "identical": true,
+      "r4_sha256": "2080b15707617d3dddd5947f6a6e9950edd86392369eee8a4cc9c38cdb56346d",
+      "r5_sha256": "2080b15707617d3dddd5947f6a6e9950edd86392369eee8a4cc9c38cdb56346d",
+      "reason": null
+    },
+    "automation/codex_adapter.py": {
+      "change_permitted": false,
+      "identical": true,
+      "r4_sha256": "de6368b783f032784d2f3181099bcadf873043fe63208c98e90ee87ec26c4e9c",
+      "r5_sha256": "de6368b783f032784d2f3181099bcadf873043fe63208c98e90ee87ec26c4e9c",
+      "reason": null
+    },
+    "automation/controller.py": {
+      "change_permitted": true,
+      "identical": false,
+      "r4_sha256": "aff9bc25271e76eda7999b3000bde6479253bf691a7c3bf5508c74a561991f06",
+      "r5_sha256": "167b5cf6f43bdead8314c10d9296dd462e4622d3a01a9e3c9db9498a5c972a08",
+      "reason": "R7 section 7: the phase-attempt model \u2014 prepare-retry, show-attempts, comparison-inputs, attempt-aware execution, and a finalize-current that classifies the attempt and places the phase. Section 8: the freeze route's predecessor-lineage binding key is derived from the freeze module's own constant instead of the literal lineage/R5_EXECUTION_MANIFEST.sha256, which had gone stale twice."
+    },
+    "automation/evidence.py": {
+      "change_permitted": true,
+      "identical": true,
+      "r4_sha256": "9c16e9080a0d3c7627c990e56c22ad37d994bedf53f0faf0319174e8210535c4",
+      "r5_sha256": "9c16e9080a0d3c7627c990e56c22ad37d994bedf53f0faf0319174e8210535c4",
+      "reason": "R7 section 7: the recorder is addressed by attempt, and an evidence id carries the attempt number so two attempts cannot produce the same id in two sealed manifests. The sealing logic is unchanged."
+    },
+    "automation/external_host_evidence.py": {
+      "change_permitted": false,
+      "identical": true,
+      "r4_sha256": "918a7689fa4d21b22ddca99cf752f0c13686cb9b8f18db3def94fbd07f37c846",
+      "r5_sha256": "918a7689fa4d21b22ddca99cf752f0c13686cb9b8f18db3def94fbd07f37c846",
+      "reason": null
+    },
+    "automation/freeze.py": {
+      "change_permitted": true,
+      "identical": false,
+      "r4_sha256": "d5d4ad48e62de0dc81494d9cc648c516911c2602d52d95c837f2c565bb0e1571",
+      "r5_sha256": "ef874c59beede91b676caafbe4b14779a04c275487e5c015fe2df8c2fbd5457d",
+      "reason": "R7: PACKAGE_REVISION and PREDECESSOR_BASELINE_REL re-pinned from R6 to R7 and from lineage/R5_EXECUTION to lineage/R6_EXECUTION."
+    },
+    "automation/hashing.py": {
+      "change_permitted": false,
+      "identical": true,
+      "r4_sha256": "fdf0ed1ba7f105eb88f46dc0bf47ad7778d9076d45f92938b6fc60aa3b2be369",
+      "r5_sha256": "fdf0ed1ba7f105eb88f46dc0bf47ad7778d9076d45f92938b6fc60aa3b2be369",
+      "reason": null
+    },
+    "automation/independent_cms.py": {
+      "change_permitted": false,
+      "identical": true,
+      "r4_sha256": "69f92170ebea32213d0bc2c9fe5035681b6340260f16b3165c763c35ae952b65",
+      "r5_sha256": "69f92170ebea32213d0bc2c9fe5035681b6340260f16b3165c763c35ae952b65",
+      "reason": null
+    },
+    "automation/independent_cms_cli.py": {
+      "change_permitted": false,
+      "identical": true,
+      "r4_sha256": "633132f191ce524e3e1bf983231d76a5f3f8ac5079f8b00f3bb049affff591eb",
+      "r5_sha256": "633132f191ce524e3e1bf983231d76a5f3f8ac5079f8b00f3bb049affff591eb",
+      "reason": null
+    },
+    "automation/locking.py": {
+      "change_permitted": false,
+      "identical": true,
+      "r4_sha256": "67f8dfdf9318a4362be647b6d77ba5d9dc652dcf329bfdd3d2c368f1ebb16121",
+      "r5_sha256": "67f8dfdf9318a4362be647b6d77ba5d9dc652dcf329bfdd3d2c368f1ebb16121",
+      "reason": null
+    },
+    "automation/mutation_fixtures.py": {
+      "change_permitted": false,
+      "identical": true,
+      "r4_sha256": "a09b8acbb78bd350b7cd77247211bb75700e778180c6a82e567fdb7c6b39a74f",
+      "r5_sha256": "a09b8acbb78bd350b7cd77247211bb75700e778180c6a82e567fdb7c6b39a74f",
+      "reason": null
+    },
+    "automation/operation_catalog.py": {
+      "change_permitted": true,
+      "identical": false,
+      "r4_sha256": "5c08386b2d2a528f55dcbabf4f5940f6250632ccd7d19a37d0b9c41ed3b54a7e",
+      "r5_sha256": "305c4e2b6cb8bcdda8818ffd5156e2043b8a04924a249a37d4b59df94c689858",
+      "reason": "R7 section 9: AUDIT_MODULE_RUN, so a phase can run a frozen second implementation without executing code from work/, which the freeze does not cover."
+    },
+    "automation/path_policy.py": {
+      "change_permitted": true,
+      "identical": true,
+      "r4_sha256": "5955ff84d4f94c8903425eb48742008fe8b6fb4a9ee8d1b5c9722a82df18175a",
+      "r5_sha256": "5955ff84d4f94c8903425eb48742008fe8b6fb4a9ee8d1b5c9722a82df18175a",
+      "reason": "R7 section 7: attempt-scoped results, work and evidence directories, constructed in one place so a plan, its work and its seal cannot drift apart."
+    },
+    "automation/policy.py": {
+      "change_permitted": true,
+      "identical": false,
+      "r4_sha256": "a86bbb004b0c86c10b6890f55b2d04fac827aa8b5c61b5383aa28d089070f109",
+      "r5_sha256": "9b4f97e5aec7d49d35a80d5b60efe69b3263bfb6b064bd5d8f721cd58ca3e001",
+      "reason": "R7 section 4: the attempt ceilings \u2014 MAX_ATTEMPTS_PER_PHASE, MAX_REPAIRS_PER_ROOT_CAUSE, MAX_DISTINCT_INTERNAL_REPAIRS, MAX_REVISION_ESCALATIONS_AFTER_R7 \u2014 and FINAL_REVISION."
+    },
+    "automation/redaction.py": {
+      "change_permitted": false,
+      "identical": true,
+      "r4_sha256": "6cf6c7421dd0f220da9d182e71f23b65db80db5ed2e5268009da10e6005ba806",
+      "r5_sha256": "6cf6c7421dd0f220da9d182e71f23b65db80db5ed2e5268009da10e6005ba806",
+      "reason": null
+    },
+    "automation/schema_validation.py": {
+      "change_permitted": false,
+      "identical": true,
+      "r4_sha256": "5fe32872adddd29f375f5fac4a13365d06f0f4b2775756a92ea175897948967c",
+      "r5_sha256": "5fe32872adddd29f375f5fac4a13365d06f0f4b2775756a92ea175897948967c",
+      "reason": null
+    },
+    "automation/state_machine.py": {
+      "change_permitted": true,
+      "identical": true,
+      "r4_sha256": "213c21defb8ded8bb9f037bd5d8d7acf7db22efc28e2bcbe2162b6106ae4fe8f",
+      "r5_sha256": "213c21defb8ded8bb9f037bd5d8d7acf7db22efc28e2bcbe2162b6106ae4fe8f",
+      "reason": "R7 section 7: two aggregate states added, RETRYABLE_INTERNAL_ERROR and BLOCKED_FOR_EXTERNAL_MATERIAL, so that sealing an attempt no longer necessarily seals the phase. Nothing was removed and no terminal state gained an exit."
+    },
+    "automation/trust_material.py": {
+      "change_permitted": false,
+      "identical": true,
+      "r4_sha256": "419e4bcf768704e61682ca0132a79fc833f32b977fee903b874fab60c6db3684",
+      "r5_sha256": "419e4bcf768704e61682ca0132a79fc833f32b977fee903b874fab60c6db3684",
+      "reason": null
+    }
+  },
+  "finding_count": 0,
+  "findings": [],
+  "identical_files": [
+    "automation/__init__.py",
+    "automation/a18_run_a.py",
+    "automation/a18_run_a_cli.py",
+    "automation/a18_run_b.py",
+    "automation/a18_run_b_cli.py",
+    "automation/a19_run_a.py",
+    "automation/a19_run_a_cli.py",
+    "automation/a19_run_b.py",
+    "automation/a19_run_b_cli.py",
+    "automation/attempts.py",
+    "automation/audit_context.py",
+    "automation/codex_adapter.py",
+    "automation/evidence.py",
+    "automation/external_host_evidence.py",
+    "automation/hashing.py",
+    "automation/independent_cms.py",
+    "automation/independent_cms_cli.py",
+    "automation/locking.py",
+    "automation/mutation_fixtures.py",
+    "automation/package_tests/test_freeze_order_regression.py",
+    "automation/package_tests/test_r5_a18_validators.py",
+    "automation/package_tests/test_r5_a34_der_staging.py",
+    "automation/package_tests/test_r5_independent_cms.py",
+    "automation/package_tests/test_r5_initialisation.py",
+    "automation/package_tests/test_r5_ref01_ref02.py",
+    "automation/package_tests/test_r6_initialisation.py",
+    "automation/path_policy.py",
+    "automation/redaction.py",
+    "automation/schema_validation.py",
+    "automation/state_machine.py",
+    "automation/tests/__init__.py",
+    "automation/tests/support/__init__.py",
+    "automation/tests/support/synthetic_chain.py",
+    "automation/tests/test_approval_gate.py",
+    "automation/tests/test_codex_adapter.py",
+    "automation/tests/test_evidence_sealing.py",
+    "automation/tests/test_external_host_evidence.py",
+    "automation/tests/test_freeze_plan_binding.py",
+    "automation/tests/test_manifest_integrity.py",
+    "automation/tests/test_operation_catalog.py",
+    "automation/tests/test_path_policy.py",
+    "automation/tests/test_prepare_execution.py",
+    "automation/tests/test_prompt_injection.py",
+    "automation/tests/test_r5_a31_harness.py",
+    "automation/tests/test_r5_run_b_isolation.py",
+    "automation/tests/test_redaction.py",
+    "automation/tests/test_replication_isolation.py",
+    "automation/tests/test_source_integrity.py",
+    "automation/tests/test_state_machine.py",
+    "automation/trust_material.py",
+    "build/verify_predecessor_integrity.py",
+    "run_audit_module.py"
+  ],
+  "java_and_shell_files": [
+    "tools/a18_run_b/src/WpnoIbanValidateRunB.java",
+    "tools/a19_run_b/src/WpnoIdnrValidateRunB.java",
+    "tools/cms_verifier/src/WpnoCmsVerify.java"
+  ],
+  "package_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+  "permitted_additions": {
+    "automation/a18_run_a_cli.py": "R7: frozen command-line entry for L1-A18 RUN-A, including the sabotage control, so the plan runs frozen code rather than a script under work/.",
+    "automation/a18_run_b_cli.py": "R7: frozen command-line entry for L1-A18 RUN-B. No validation logic.",
+    "automation/attempts.py": "R7 section 7: the phase-attempt model \u2014 classification, immutability, retry admission and comparison inputs.",
+    "automation/independent_cms_cli.py": "R7: frozen command-line entry for the independent CMS verifier.",
+    "automation/mutation_fixtures.py": "R7 section 8 (F3): mutation and negative-control fixtures built at the layer each claims, and proved before they are returned.",
+    "automation/package_tests/test_r7_initialisation.py": "R7 sections 5 and 6: predecessor integrity, lineage, fresh active state, and the preservation of R6's failed attempt.",
+    "automation/tests/test_attempt_model.py": "R7 section 7: attempt transitions, replay, immutability, substantive-fail terminality, external-material resumption, limits.",
+    "automation/tests/test_l1a31_plan_correction.py": "R7 section 8: F1 purpose, F2 epoch, F3 mutation fixture and F4 controls-fail-for-the-stated-reason, each reproduced then repaired.",
+    "build/all_level1_scope/build_all_level1_scope.py": "R7 Section 5: derives the 35-audit scope from the registry, bindings, prompts and the controller's own phase rule, and reports any contradiction between them rather than reconciling it.",
+    "build/all_level1_scope/measure_all_level1_readiness.py": "R7 Section 7: measures target and reference readiness for all 35 audits and names every missing item a human must supply.",
+    "build/build_candidate_plans.py": "R7 section 9: the exact candidate live plans for all nine phases.",
+    "build/build_r8_selftest_replica.py": "rebuilds the isolated test replica",
+    "build/r8_static_safety_review.py": "this review",
+    "build/rehearse_candidate_plans.py": "R7 section 9: runs those plans through the exact argv builder and checks every control against its stated failure reason.",
+    "build/resume_r7/build_r7_build_manifest.py": "R7 Section 3: regenerates R7_BUILD_MANIFEST.sha256 in its established scope, preserves the prior manifest as superseded evidence, and accounts for every added, removed and changed entry.",
+    "build/resume_r7/tree_snapshot.py": "R7 Section 1: the deterministic whole-tree snapshot used to re-measure R4, R5 and R6 against the digests lineage recorded, before and after this revision wrote anything.",
+    "build/stage_l1a31_material.py": "R7 section 8: carries R6's staged certificates forward by digest, cross-checks each against the operator-supplied official material, and rebuilds the control fixtures.",
+    "run_audit_module.py": "R7: the launcher AUDIT_MODULE_RUN invokes, at the package root so that -I isolation and a frozen import path hold at once. Static imports and a literal dispatch table; no dynamic module loading."
+  },
+  "permitted_changes": {
+    "automation/controller.py": "R7 section 7: the phase-attempt model \u2014 prepare-retry, show-attempts, comparison-inputs, attempt-aware execution, and a finalize-current that classifies the attempt and places the phase. Section 8: the freeze route's predecessor-lineage binding key is derived from the freeze module's own constant instead of the literal lineage/R5_EXECUTION_MANIFEST.sha256, which had gone stale twice.",
+    "automation/evidence.py": "R7 section 7: the recorder is addressed by attempt, and an evidence id carries the attempt number so two attempts cannot produce the same id in two sealed manifests. The sealing logic is unchanged.",
+    "automation/freeze.py": "R7: PACKAGE_REVISION and PREDECESSOR_BASELINE_REL re-pinned from R6 to R7 and from lineage/R5_EXECUTION to lineage/R6_EXECUTION.",
+    "automation/operation_catalog.py": "R7 section 9: AUDIT_MODULE_RUN, so a phase can run a frozen second implementation without executing code from work/, which the freeze does not cover.",
+    "automation/package_tests/__init__.py": "R7: generation_root, which resolves a revision's own package root through the lineage chain by reading state/REVISION.json rather than by assuming a directory name.",
+    "automation/package_tests/test_freeze_order_regression.py": "R7 C9: the module's two subprocess.run calls now state shell=False, a bounded timeout, an explicit environment and a fixed cwd, and the external sha256sum -c check runs the absolute binary instead of whatever PATH resolved. A SubprocessDisciplineOfThisModule class asserts the four requirements about the module's own source. No assertion, fixture, expected exit code or freeze behaviour changed.",
+    "automation/package_tests/test_r5_freeze_repair.py": "R7: three cases that had been unreachable since R5 \u2014 they reached FREEZE_REVISION_MISMATCH on a hardcoded \"R5\" before exercising the rule each was written for. Revision, platform and the predecessor lineage directory now come from the freeze module's own constants, and the attempt-1 supersession case, which was R5-specific and no longer exists in the code, is replaced by the freeze-ledger replay rule that does.",
+    "automation/package_tests/test_r5_initialisation.py": "R7: R5's assertions are made at R5's generation root, and R5's identity is read from its own revision record instead of from its directory name.",
+    "automation/package_tests/test_r6_initialisation.py": "R7: four assertions describing a freshly initialised revision moved to test_r7_initialisation.py, where they are true; what replaces them pins R6's actual history \u2014 one phase prepared, approved, executed and sealed ERROR, with the three wrong parameters still legible in its plan.",
+    "automation/path_policy.py": "R7 section 7: attempt-scoped results, work and evidence directories, constructed in one place so a plan, its work and its seal cannot drift apart.",
+    "automation/policy.py": "R7 section 4: the attempt ceilings \u2014 MAX_ATTEMPTS_PER_PHASE, MAX_REPAIRS_PER_ROOT_CAUSE, MAX_DISTINCT_INTERNAL_REPAIRS, MAX_REVISION_ESCALATIONS_AFTER_R7 \u2014 and FINAL_REVISION.",
+    "automation/state_machine.py": "R7 section 7: two aggregate states added, RETRYABLE_INTERNAL_ERROR and BLOCKED_FOR_EXTERNAL_MATERIAL, so that sealing an attempt no longer necessarily seals the phase. Nothing was removed and no terminal state gained an exit.",
+    "automation/tests/test_evidence_sealing.py": "R7: the isolated-replica guard its sibling module has carried since R4. Without it these tests created and deleted evidence directories in whatever package they were run from.",
+    "automation/tests/test_prepare_execution.py": "R7: the fixture writes its plan at the attempt-1 path the controller now owns. Every assertion is unchanged."
+  },
+  "platform": "UBUNTU",
+  "predecessor_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7",
+  "predecessor_unchanged": {
+    "checkpoints": {
+      "BASELINE_MANIFEST.json": {
+        "actual": "0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d",
+        "expected": "0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d",
+        "identical": true
+      },
+      "CONTROL_MANIFEST.sha256": {
+        "actual": "005e3e890f7ebea0202101c918aa2dc2794b82c9ff8d8c27318ed9f9e15beb57",
+        "expected": "005e3e890f7ebea0202101c918aa2dc2794b82c9ff8d8c27318ed9f9e15beb57",
+        "identical": true
+      },
+      "state/PACKAGE_VERIFIED.json": {
+        "actual": "1f6f410dd93069da124566f86af6a1d58dfb949d5d2ce7f79432f9bc1e766670",
+        "expected": "1f6f410dd93069da124566f86af6a1d58dfb949d5d2ce7f79432f9bc1e766670",
+        "identical": true
+      }
+    },
+    "file_count": 16153,
+    "file_count_expected": 16153,
+    "unchanged": true
+  },
+  "r4_unchanged": {
+    "checkpoints": {
+      "BASELINE_MANIFEST.json": {
+        "actual": "0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d",
+        "expected": "0e8b18f04d55897b30a1b047cb3af2cbfe6ddbd9be0cb0e201373ddf943e0d7d",
+        "identical": true
+      },
+      "CONTROL_MANIFEST.sha256": {
+        "actual": "005e3e890f7ebea0202101c918aa2dc2794b82c9ff8d8c27318ed9f9e15beb57",
+        "expected": "005e3e890f7ebea0202101c918aa2dc2794b82c9ff8d8c27318ed9f9e15beb57",
+        "identical": true
+      },
+      "state/PACKAGE_VERIFIED.json": {
+        "actual": "1f6f410dd93069da124566f86af6a1d58dfb949d5d2ce7f79432f9bc1e766670",
+        "expected": "1f6f410dd93069da124566f86af6a1d58dfb949d5d2ce7f79432f9bc1e766670",
+        "identical": true
+      }
+    },
+    "file_count": 16153,
+    "file_count_expected": 16153,
+    "unchanged": true
+  },
+  "reviewed_at_utc": "2026-08-28T16:48:22Z",
+  "reviewed_file_count": 43,
+  "revision": "R8",
+  "schema": "wpno.level1.static-safety-report/1",
+  "subprocess_sweep_file_count": 92,
+  "unpermitted_changes": []
+}

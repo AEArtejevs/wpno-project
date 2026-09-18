@@ -1,0 +1,104 @@
+{
+  "audit_id": "L1-A31",
+  "run_phase": "RUN-B",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Independent verification of both REF-11 detached CMS objects and their certificate chains using the JDK PKIX CertPathValidator and Bouncy Castle 1.85, with no OpenSSL in the call path and no shared trust store. Same target, same references, same validation times, different implementation.",
+  "static_analysis": "RUN-B receives the audit id, the target and reference digests, the validation times, its own method and its own controls, plus the fact that RUN-A is sealed and whether its seal is intact. It receives no RUN-A finding, verdict, self-critique or disproof, and no path that points at one; policy.RUN_B_ALLOWED_KEYS is an allowlist and the isolation check covers results/, evidence/ and work/ for this audit.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "AUDIT_MODULE_RUN",
+      "params": {
+        "args": [
+          "--cms",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn.xml.p7s",
+          "--content",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn-covered-content.xml",
+          "--leaf",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_leaf_from_sealed_p7s_parse_evidence.pem",
+          "--intermediate",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_intermediate_selected_manual_pem.pem",
+          "--root",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_root.pem",
+          "--validation-time",
+          "1772232925",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/RUN-B/a31_independent_vhn.json"
+        ],
+        "module": "automation.independent_cms_cli"
+      },
+      "purpose": "JDK PKIX and Bouncy Castle verify the VHN CMS and chain at the same stated time.",
+      "step_id": "independent_vhn_cms",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "AUDIT_MODULE_RUN",
+      "params": {
+        "args": [
+          "--cms",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-berufungsbegruendung-O.pdf.p7s",
+          "--content",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-berufungsbegruendung-O.pdf",
+          "--leaf",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/document_leaf_from_sealed_p7s_parse_evidence.pem",
+          "--intermediate",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/document_intermediate.pem",
+          "--root",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/document_root.pem",
+          "--validation-time",
+          "1772232897",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/RUN-B/a31_independent_document.json"
+        ],
+        "module": "automation.independent_cms_cli"
+      },
+      "purpose": "The same, for the document chain.",
+      "step_id": "independent_document_cms",
+      "timeout_seconds": 300
+    }
+  ],
+  "target": {
+    "identity_evidence": "bound by references/manifest.json; identical digest to the one RUN-A was bound to, which is what makes the two comparable",
+    "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip",
+    "sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+  },
+  "test_matrix": [
+    {
+      "independence": {
+        "language": "Java 21, not C",
+        "library": "Bouncy Castle 1.85, not OpenSSL 3.5.5",
+        "path_engine": "JDK PKIX CertPathValidator, not X509_verify_cert",
+        "shared_code": "none",
+        "shared_trust_store": "none"
+      }
+    },
+    {
+      "isolation": {
+        "run_a_conclusions_supplied": false,
+        "run_a_paths_supplied": false,
+        "supplied": [
+          "audit_id",
+          "independent_method",
+          "phase_sequencing",
+          "required_controls",
+          "run_a_seal_integrity",
+          "target_path",
+          "target_sha256",
+          "validation_time"
+        ]
+      }
+    },
+    {
+      "expected_exit_code": 0,
+      "step_id": "independent_vhn_cms"
+    },
+    {
+      "expected_exit_code": 0,
+      "step_id": "independent_document_cms"
+    },
+    {
+      "revocation": "NOT_ASSESSED_OFFLINE"
+    }
+  ]
+}

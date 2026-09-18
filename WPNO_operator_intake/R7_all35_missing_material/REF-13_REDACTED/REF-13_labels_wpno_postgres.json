@@ -1,0 +1,12 @@
+{
+  "com.docker.compose.config-hash": "222687172858b2691b81f1401f480caa1938b46325064abfa5a91b2c68e8326e",
+  "com.docker.compose.container-number": "1",
+  "com.docker.compose.depends_on": "",
+  "com.docker.compose.image": "sha256:eb4759788a2182f08257135e61a34f2cfc3c2914079f3465d64ee62350f4d081",
+  "com.docker.compose.oneoff": "False",
+  "com.docker.compose.project": "postgres",
+  "com.docker.compose.project.config_files": "C:\\WPNO\\docker\\postgres\\docker-compose.yml",
+  "com.docker.compose.project.working_dir": "C:\\WPNO\\docker\\postgres",
+  "com.docker.compose.service": "postgres",
+  "com.docker.compose.version": "5.2.0"
+}

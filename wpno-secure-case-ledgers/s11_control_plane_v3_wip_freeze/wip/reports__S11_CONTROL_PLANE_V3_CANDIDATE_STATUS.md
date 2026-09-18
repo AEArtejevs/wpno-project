@@ -1,0 +1,3 @@
+# Control-Plane V3 — Kandidatenstatus
+
+Hoechster zulaessiger Status: **CONTROL_PLANE_V3_CANDIDATE_PENDING_CHATGPT_REVIEW**. NICHT: FINAL_GREEN, QUALITY_CONFIRMED, PRODUCT_BASELINE_CONFIRMED, PRODUCT_WORK_ALLOWED, L99_READY, COURT_READY. Der V3-Kandidat liegt auf einer CANDIDATE-REF (refs/candidates/s11-control-plane-v3), NICHT auf der aktiven Branch. Attestierung Ed25519-signiert, hashverkettet, getrennte Statusachsen. Register: 9 CLOSED, 8 PARTIAL, 2 CARRIED von 19 konkreten Findings; ChatGPTs verbatim 25-Register in Stufe A abzugleichen. Keine Selbstfreigabe, keine Cross-Model-Freigabe, keine Produktarbeit.

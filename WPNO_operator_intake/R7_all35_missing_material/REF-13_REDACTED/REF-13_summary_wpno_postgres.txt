@@ -1,0 +1,7 @@
+Name=/wpno_postgres
+Status=exited
+Created=2026-07-14T19:53:08.726848285Z
+ImageID=sha256:eb4759788a2182f08257135e61a34f2cfc3c2914079f3465d64ee62350f4d081
+WorkingDir=
+Entrypoint=["docker-entrypoint.sh"]
+Cmd=["postgres"]

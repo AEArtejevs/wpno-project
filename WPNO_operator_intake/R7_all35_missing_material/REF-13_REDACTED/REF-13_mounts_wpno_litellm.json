@@ -1,0 +1,50 @@
+[
+  {
+    "Destination": "/app/custom_callback.py",
+    "Mode": "rw",
+    "Propagation": "rprivate",
+    "RW": true,
+    "Source": "C:\\WPNO\\docker\\litellm\\custom_callback.py",
+    "Type": "bind"
+  },
+  {
+    "Destination": "/app/ledger.db",
+    "Mode": "rw",
+    "Propagation": "rprivate",
+    "RW": true,
+    "Source": "C:\\WPNO\\docker\\litellm\\ledger.db",
+    "Type": "bind"
+  },
+  {
+    "Destination": "/app/mcp.registry.json",
+    "Mode": "rw",
+    "Propagation": "rprivate",
+    "RW": true,
+    "Source": "C:\\WPNO\\docker\\litellm\\mcp.registry.json",
+    "Type": "bind"
+  },
+  {
+    "Destination": "/app/payload_scan.py",
+    "Mode": "rw",
+    "Propagation": "rprivate",
+    "RW": true,
+    "Source": "C:\\WPNO\\docker\\litellm\\payload_scan.py",
+    "Type": "bind"
+  },
+  {
+    "Destination": "/app/tool_registry_gate.py",
+    "Mode": "rw",
+    "Propagation": "rprivate",
+    "RW": true,
+    "Source": "C:\\WPNO\\docker\\litellm\\tool_registry_gate.py",
+    "Type": "bind"
+  },
+  {
+    "Destination": "/app/config.yaml",
+    "Mode": "rw",
+    "Propagation": "rprivate",
+    "RW": true,
+    "Source": "C:\\WPNO\\docker\\litellm\\config.yaml",
+    "Type": "bind"
+  }
+]

@@ -1,0 +1,28 @@
+L1-A24 human decision template
+
+Do not approve a launch directory without human review.
+
+Candidate: /Users/martinotten
+Evidence sources: 34
+Human decision: ACCEPT / REJECT / NEEDS_MORE_REVIEW
+Reason:
+
+Candidate: /Users/martinotten/wpno-wiki-dav-insolvenzrecht
+Evidence sources: 9
+Human decision: ACCEPT / REJECT / NEEDS_MORE_REVIEW
+Reason:
+
+Candidate: /Users/martinotten/Downloads
+Evidence sources: 7
+Human decision: ACCEPT / REJECT / NEEDS_MORE_REVIEW
+Reason:
+
+Candidate: /Users/martinotten/wpno-llm-wiki
+Evidence sources: 2
+Human decision: ACCEPT / REJECT / NEEDS_MORE_REVIEW
+Reason:
+
+Candidate: /Users/martinotten/wpno-llm-wiki-dryrun
+Evidence sources: 2
+Human decision: ACCEPT / REJECT / NEEDS_MORE_REVIEW
+Reason:

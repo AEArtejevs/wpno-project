@@ -1,0 +1,4093 @@
+{
+  "AUDITS_BLOCKED": 0,
+  "AUDITS_READY_FOR_PLANNING": 35,
+  "AUDITS_TOTAL": 35,
+  "MISSING_ITEM_COUNT": 0,
+  "accepted_reference_ids": [
+    "REF-01",
+    "REF-02",
+    "REF-03",
+    "REF-04",
+    "REF-05",
+    "REF-06",
+    "REF-07",
+    "REF-08",
+    "REF-09",
+    "REF-11",
+    "REF-12",
+    "REF-13",
+    "REF-14"
+  ],
+  "audits": [
+    {
+      "audit_id": "L1-A31",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "COMPARISON": true,
+        "RUN-A": true,
+        "RUN-B": true
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "OPENSSL_PARSE_CERT",
+            "OPENSSL_VERIFY_CERT_CHAIN",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "BOUND_AND_REHEARSED",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "BOUND_AND_REHEARSED",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A31",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A31",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "BOUND_AND_REHEARSED",
+          "specified_in_prompt": true
+        },
+        "references": [
+          {
+            "absence_consequence": "UNVERIFIED_TRUST_CHAIN",
+            "accepted_at_intake": true,
+            "manifest_records": 4,
+            "named_by": [
+              "binding",
+              "prompt"
+            ],
+            "physical_file_count": 4,
+            "physical_files": [
+              {
+                "bytes": 64,
+                "file": "references/REF-08-TL-DE.sha2",
+                "sha256": "97367e808eeabdef3ba800995056b2019868d4e0c531bdf0cfae3db1a3f7e5f9"
+              },
+              {
+                "bytes": 5355449,
+                "file": "references/REF-08-TL-DE.xml",
+                "sha256": "93d0a212a03ede4411d6d9ebb54b886c013a4a2f48aa666b7c493ca3b13a4549"
+              },
+              {
+                "bytes": 1743,
+                "file": "references/REF-08-bnotk-root-ca-2017.crt",
+                "sha256": "8a03cce7ad27669a687b16c5e15a4eb9e853b38fe7d7b6e849e8a12ef1e5ba50"
+              },
+              {
+                "bytes": 1533,
+                "file": "references/REF-08-safe-root-ca-2017.der",
+                "sha256": "1abddfa573cf1dcd5a75f164bc828e6d4177c448849535912eed3c7825bfc9fc"
+              }
+            ],
+            "ref_id": "REF-08",
+            "role": "Trust anchor certificate(s) for the signing chain",
+            "specified_in_package": true,
+          "state": "PRESENT_AND_HASHED"
+          },
+          {
+            "absence_consequence": "UNVERIFIED_TRUST_CHAIN",
+            "accepted_at_intake": true,
+            "manifest_records": 2,
+            "named_by": [
+              "binding",
+              "prompt"
+            ],
+            "physical_file_count": 2,
+            "physical_files": [
+              {
+                "bytes": 2130,
+                "file": "references/REF-09-bea-vhn-ca-2017.pem",
+                "sha256": "55cbcb2b1c367b7e01c3cfff38663edbf23409f7c2dfd8222529133562007b17"
+              },
+              {
+                "bytes": 1745,
+                "file": "references/REF-09-bnotk-rqsigt-ca-2020.cer",
+                "sha256": "9bca87c417df1e33391ee76f277119e892395a7eb9d90592bb2fb3746c76fb68"
+              }
+            ],
+            "ref_id": "REF-09",
+            "role": "Intermediate certificates",
+            "specified_in_package": true,
+            "state": "PRESENT_AND_HASHED"
+          },
+          {
+            "absence_consequence": "revocation reported as `NOT_ASSESSED_OFFLINE`, not as \"not revoked\"",
+            "accepted_at_intake": false,
+            "manifest_records": 0,
+            "named_by": [
+              "binding",
+              "prompt"
+            ],
+            "physical_file_count": 0,
+            "physical_files": [],
+            "ref_id": "REF-10",
+            "role": "CRL or OCSP evidence, if revocation is to be assessed",
+            "specified_in_package": true,
+            "state": "ABSENT_BUT_SPECIFICATION_HANDLES_ABSENCE"
+          },
+          {
+            "absence_consequence": "BLOCKED",
+            "accepted_at_intake": true,
+            "manifest_records": 7,
+            "named_by": [
+              "binding",
+              "prompt"
+            ],
+            "physical_file_count": 7,
+            "physical_files": [
+              {
+                "bytes": 16237,
+                "file": "references/REF-11-563203462.xml",
+                "sha256": "8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a"
+              },
+              {
+                "bytes": 4096,
+                "file": "references/REF-11-berufungsbegruendung-O.pdf",
+                "sha256": "42089e1bf976e6e478ea17624eb35239494b3f3556af10092e8916d5d6d92cc8"
+              },
+              {
+                "bytes": 3102,
+                "file": "references/REF-11-berufungsbegruendung-O.pdf.p7s",
+                "sha256": "4287a3783caec8da9b6e0c16f86a3d5e363a34253427eca3116159e77dd07a7a"
+              },
+              {
+                "bytes": 577811,
+                "file": "references/REF-11-original-mail-attachment.zip",
+                "sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+              },
+              {
+                "bytes": 1924,
+                "file": "references/REF-11-vhn-covered-content.xml",
+                "sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23"
+              },
+              {
+                "bytes": 2396,
+                "file": "references/REF-11-vhn.xml.p7s",
+                "sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a"
+              },
+              {
+                "bytes": 4154,
+                "file": "references/REF-11-xjustiz_nachricht.xml",
+                "sha256": "309a4c7d0cecdf8abf7a97200f6ce31529f84dd677524144978c3044aa5a89a7"
+              }
+            ],
+            "ref_id": "REF-11",
+            "role": "The original beA/OSCI artefacts: the ZIP archive, `563203462.xml`, `vhn.xml.p7s`, the signed content, and the 17.08 source and destination copies",
+            "specified_in_package": true,
+            "state": "PRESENT_AND_HASHED"
+          }
+        ],
+        "target_identity": {
+          "binding_state": "NO_PRODUCTIVE_TARGET_IN_BINDING",
+          "binding_status": "EXTERNAL_EVIDENCE_REQUIRED",
+          "candidate_paths_declared": 0,
+          "candidate_paths_present": 0,
+          "expected_sha256": null,
+          "measured_sha256": null,
+          "path": null,
+          "state": "TARGET_SUPPLIED_BY_REFERENCES",
+          "target_reference_ids": [
+            "REF-08",
+            "REF-09",
+            "REF-10",
+            "REF-11"
+          ],
+          "verified": true
+        },
+        "validation_time": {
+          "required": true,
+          "state": "BOUND_IN_CANDIDATE_PLAN"
+        }
+      },
+      "controller_order": 1,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A",
+        "RUN-B",
+        "COMPARISON"
+      ]
+    },
+    {
+      "audit_id": "L1-A34",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "COMPARISON": true,
+        "RUN-A": true,
+        "RUN-B": true
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "OPENSSL_PARSE_CERT",
+            "OPENSSL_VERIFY_CERT_CHAIN",
+            "OPENSSL_VERIFY_CMS",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "BOUND_AND_REHEARSED",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "BOUND_AND_REHEARSED",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A34",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A34",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "BOUND_AND_REHEARSED",
+          "specified_in_prompt": true
+        },
+        "references": [
+          {
+            "absence_consequence": "UNVERIFIED_TRUST_CHAIN",
+            "accepted_at_intake": true,
+            "manifest_records": 4,
+            "named_by": [
+              "binding"
+            ],
+            "physical_file_count": 4,
+            "physical_files": [
+              {
+                "bytes": 64,
+                "file": "references/REF-08-TL-DE.sha2",
+                "sha256": "97367e808eeabdef3ba800995056b2019868d4e0c531bdf0cfae3db1a3f7e5f9"
+              },
+              {
+                "bytes": 5355449,
+                "file": "references/REF-08-TL-DE.xml",
+                "sha256": "93d0a212a03ede4411d6d9ebb54b886c013a4a2f48aa666b7c493ca3b13a4549"
+              },
+              {
+                "bytes": 1743,
+                "file": "references/REF-08-bnotk-root-ca-2017.crt",
+                "sha256": "8a03cce7ad27669a687b16c5e15a4eb9e853b38fe7d7b6e849e8a12ef1e5ba50"
+              },
+              {
+                "bytes": 1533,
+                "file": "references/REF-08-safe-root-ca-2017.der",
+                "sha256": "1abddfa573cf1dcd5a75f164bc828e6d4177c448849535912eed3c7825bfc9fc"
+              }
+            ],
+            "ref_id": "REF-08",
+            "role": "Trust anchor certificate(s) for the signing chain",
+            "specified_in_package": true,
+            "state": "PRESENT_AND_HASHED"
+          },
+          {
+            "absence_consequence": "UNVERIFIED_TRUST_CHAIN",
+            "accepted_at_intake": true,
+            "manifest_records": 2,
+            "named_by": [
+              "binding"
+            ],
+            "physical_file_count": 2,
+            "physical_files": [
+              {
+                "bytes": 2130,
+                "file": "references/REF-09-bea-vhn-ca-2017.pem",
+                "sha256": "55cbcb2b1c367b7e01c3cfff38663edbf23409f7c2dfd8222529133562007b17"
+              },
+              {
+                "bytes": 1745,
+                "file": "references/REF-09-bnotk-rqsigt-ca-2020.cer",
+                "sha256": "9bca87c417df1e33391ee76f277119e892395a7eb9d90592bb2fb3746c76fb68"
+              }
+            ],
+            "ref_id": "REF-09",
+            "role": "Intermediate certificates",
+            "specified_in_package": true,
+            "state": "PRESENT_AND_HASHED"
+          },
+          {
+            "absence_consequence": "BLOCKED",
+            "accepted_at_intake": true,
+            "manifest_records": 7,
+            "named_by": [
+              "binding",
+              "prompt"
+            ],
+            "physical_file_count": 7,
+            "physical_files": [
+              {
+                "bytes": 16237,
+                "file": "references/REF-11-563203462.xml",
+                "sha256": "8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a"
+              },
+              {
+                "bytes": 4096,
+                "file": "references/REF-11-berufungsbegruendung-O.pdf",
+                "sha256": "42089e1bf976e6e478ea17624eb35239494b3f3556af10092e8916d5d6d92cc8"
+              },
+              {
+                "bytes": 3102,
+                "file": "references/REF-11-berufungsbegruendung-O.pdf.p7s",
+                "sha256": "4287a3783caec8da9b6e0c16f86a3d5e363a34253427eca3116159e77dd07a7a"
+              },
+              {
+                "bytes": 577811,
+                "file": "references/REF-11-original-mail-attachment.zip",
+                "sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+              },
+              {
+                "bytes": 1924,
+                "file": "references/REF-11-vhn-covered-content.xml",
+                "sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23"
+              },
+              {
+                "bytes": 2396,
+                "file": "references/REF-11-vhn.xml.p7s",
+                "sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a"
+              },
+              {
+                "bytes": 4154,
+                "file": "references/REF-11-xjustiz_nachricht.xml",
+                "sha256": "309a4c7d0cecdf8abf7a97200f6ce31529f84dd677524144978c3044aa5a89a7"
+              }
+            ],
+            "ref_id": "REF-11",
+            "role": "The original beA/OSCI artefacts: the ZIP archive, `563203462.xml`, `vhn.xml.p7s`, the signed content, and the 17.08 source and destination copies",
+            "specified_in_package": true,
+            "state": "PRESENT_AND_HASHED"
+          }
+        ],
+        "target_identity": {
+          "binding_state": "NO_PRODUCTIVE_TARGET_IN_BINDING",
+          "binding_status": "EXTERNAL_EVIDENCE_REQUIRED",
+          "candidate_paths_declared": 0,
+          "candidate_paths_present": 0,
+          "expected_sha256": null,
+          "measured_sha256": null,
+          "path": null,
+          "state": "TARGET_SUPPLIED_BY_REFERENCES",
+          "target_reference_ids": [
+            "REF-08",
+            "REF-09",
+            "REF-11"
+          ],
+          "verified": true
+        },
+        "validation_time": {
+          "required": true,
+          "state": "BOUND_IN_CANDIDATE_PLAN"
+        }
+      },
+      "controller_order": 2,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A",
+        "RUN-B",
+        "COMPARISON"
+      ]
+    },
+    {
+      "audit_id": "L1-A18",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "COMPARISON": true,
+        "RUN-A": true,
+        "RUN-B": true
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "PYTHON_SCRIPT_RUN_SANDBOX",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "BOUND_AND_REHEARSED",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "BOUND_AND_REHEARSED",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A18",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A18",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "BOUND_AND_REHEARSED",
+          "specified_in_prompt": true
+        },
+        "references": [
+          {
+            "absence_consequence": "BLOCKED",
+            "accepted_at_intake": true,
+            "manifest_records": 2,
+            "named_by": [
+              "binding",
+              "prompt"
+            ],
+            "physical_file_count": 2,
+            "physical_files": [
+              {
+                "bytes": 1652033,
+                "file": "references/REF-01-swift-iban-registry-release-102.pdf",
+                "sha256": "e5b0e447e91db94259c5222caa3f9b7f45db4dcbbe61fb99a09cb331a1cb4675"
+              },
+              {
+                "bytes": 34834,
+                "file": "references/REF-01-swift-iban-registry-release-102.txt",
+                "sha256": "a98aae4d7b59544973415491accb1345cb449bfd75a67c8bc704fbe6e161c303"
+              }
+            ],
+            "ref_id": "REF-01",
+            "role": "IBAN specification and country registry (lengths, BBAN structure per country)",
+            "specified_in_package": true,
+            "state": "PRESENT_AND_HASHED"
+          },
+          {
+            "absence_consequence": "BLOCKED",
+            "accepted_at_intake": true,
+            "manifest_records": 1,
+            "named_by": [
+              "binding",
+              "prompt"
+            ],
+            "physical_file_count": 1,
+            "physical_files": [
+              {
+                "bytes": 1819556,
+                "file": "references/REF-02-python-stdnum-2.2.zip",
+                "sha256": "12b08a74c96478fa3c86c63721d531b3e07d233a2dd27ebea9c8df38f841622e"
+              }
+            ],
+            "ref_id": "REF-02",
+            "role": "Independent known-valid and known-invalid IBAN test vectors for \u2265 6 countries",
+            "specified_in_package": true,
+            "state": "PRESENT_AND_HASHED"
+          }
+        ],
+        "target_identity": {
+          "binding_state": "TARGET_PRESENT_HASH_MATCHES",
+          "binding_status": "TARGET_CONFIRMED",
+          "candidate_paths_declared": 3,
+          "candidate_paths_present": 3,
+          "expected_sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b",
+          "measured_sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b",
+          "path": "/home/ubuntu/project/WPNO/anonymization/payload_scan.py",
+          "state": "TARGET_CONFIRMED_HASH_MATCHES",
+          "target_reference_ids": [
+            "REF-01",
+            "REF-02"
+          ],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 3,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A",
+        "RUN-B",
+        "COMPARISON"
+      ]
+    },
+    {
+      "audit_id": "L1-A19",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "COMPARISON": false,
+        "RUN-A": false,
+        "RUN-B": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "PYTHON_SCRIPT_RUN_SANDBOX",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A19",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A19",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [
+          {
+            "absence_consequence": "BLOCKED_SCHEME_IDENTITY_UNCERTAIN",
+            "accepted_at_intake": true,
+            "manifest_records": 1,
+            "named_by": [
+              "binding",
+              "prompt"
+            ],
+            "physical_file_count": 5,
+            "physical_files": [
+              {
+                "bytes": 338888,
+                "file": "references/REF-03_BZSt_German_IdNr_Issuer_Specification.pdf",
+                "sha256": "b2ec9da8ae160d548d46eebebe0ef9ccfc9f9db204a25cea4ff3f04fc7609a0f"
+              },
+              {
+                "bytes": 1221897,
+                "file": "references/REF-03_ELSTER_Pruefung_Steueridentifikationsnummer_2026-04-15.pdf",
+                "sha256": "f5f8a41beabb469851e26b47cdd4eb6641a9bdbc68c34a589edaa90631b37f41"
+              },
+              {
+                "bytes": 855717,
+                "file": "references/REF-03_ISO_IEC_7064_2003.pdf",
+                "sha256": "b88b0f84a0f1e121ff49a7640a62a4c9057e5cfedcaf790eff86c0fa5f1c31f8"
+              },
+              {
+                "bytes": 430,
+                "file": "references/REF-03_MANIFEST.sha256",
+                "sha256": "337ae74a124e4d4ce312e62390ef61ec4123c28100797def7ebeb2c17b8e89d4"
+              },
+              {
+                "bytes": 1259,
+                "file": "references/REF-03_SOURCE_MAP.txt",
+                "sha256": "5dcd16b464c8d950f88f1ef78730379966df2d1d907f4d28db6dc0a4db9a9a0b"
+              }
+            ],
+            "ref_id": "REF-03",
+            "role": "Official ISO 7064 formula for the exact tax-ID scheme, once the scheme is identified",
+            "specified_in_package": true,
+            "state": "PRESENT_AND_HASHED"
+          },
+          {
+            "absence_consequence": "BLOCKED",
+            "accepted_at_intake": true,
+            "manifest_records": 1,
+            "named_by": [
+              "binding",
+              "prompt"
+            ],
+            "physical_file_count": 2,
+            "physical_files": [
+              {
+                "bytes": 3268,
+                "file": "references/REF-04_idnr.py",
+                "sha256": "406499181359159d39185b2703e32764c13be54c30834a7b0f172e68af76aa77"
+              },
+              {
+                "bytes": 2225,
+                "file": "references/REF-04_test_de_idnr.doctest",
+                "sha256": "95d71ea0dee4276908f2d32a1adf05c938164ecd836ee384dc4ffc7439a58ecd"
+              }
+            ],
+            "ref_id": "REF-04",
+            "role": "Independent check-digit test vectors for that scheme",
+            "specified_in_package": true,
+            "state": "PRESENT_AND_HASHED"
+          }
+        ],
+        "target_identity": {
+          "binding_state": "TARGET_PRESENT_HASH_MATCHES",
+          "binding_status": "TARGET_CONFIRMED",
+          "candidate_paths_declared": 3,
+          "candidate_paths_present": 3,
+          "expected_sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b",
+          "measured_sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b",
+          "path": "/home/ubuntu/project/WPNO/anonymization/payload_scan.py",
+          "state": "TARGET_CONFIRMED_HASH_MATCHES",
+          "target_reference_ids": [
+            "REF-03",
+            "REF-04"
+          ],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 4,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A",
+        "RUN-B",
+        "COMPARISON"
+      ]
+    },
+    {
+      "audit_id": "L1-A17",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "DATABASE_EVIDENCE_IMPORT",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A17",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A17",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [
+          {
+            "absence_consequence": "UNVERIFIED",
+            "accepted_at_intake": true,
+            "manifest_records": 1,
+            "named_by": [
+              "binding"
+            ],
+            "physical_file_count": 15,
+            "physical_files": [
+              {
+                "bytes": 1394,
+                "file": "references/REF-14_MANIFEST.sha256",
+                "sha256": "ff306651928bf10279ef472c38fc982771e298ed4f11fba7508a5db4dcc2c7e3"
+              },
+              {
+                "bytes": 549,
+                "file": "references/REF-14_capture_method.txt",
+                "sha256": "a9b6fd9f58154c54fce6011cdd1e7f95d74b5f670397cfda4164caf1f928ab3b"
+              },
+              {
+                "bytes": 4519,
+                "file": "references/REF-14_current_server_file_manifest.json",
+                "sha256": "e8f0cd1f310a9eed5533a9fd1d70a67ddd812b54432710d35713f81823e5c0f3"
+              },
+              {
+                "bytes": 241,
+                "file": "references/REF-14_docker__litellm__Dockerfile",
+                "sha256": "05fbf2c570ce65d64fdd7e62920293bda8a1c0cc13c5d2d64961bfabf072692a"
+              },
+              {
+                "bytes": 3605,
+                "file": "references/REF-14_docker__litellm__config.yaml",
+                "sha256": "f5dd86718491faec1b054f602fd24b807ca90f46475810fa963a0967b366e655"
+              },
+              {
+                "bytes": 6209,
+                "file": "references/REF-14_docker__litellm__custom_callback.py",
+                "sha256": "7512ef4493c9f9651ebdd89326a291cf831d08f1f0924af19f88459991e33384"
+              },
+              {
+                "bytes": 760,
+                "file": "references/REF-14_docker__litellm__docker-compose.yml",
+                "sha256": "cdd162fa4145c4617f8c71956cc570c50e1c9a4a1da69007b6cbd2c034281329"
+              },
+              {
+                "bytes": 21564,
+                "file": "references/REF-14_docker__litellm__payload_scan.py",
+                "sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b"
+              },
+              {
+                "bytes": 2354,
+                "file": "references/REF-14_docker__litellm__tool_registry_gate.py",
+                "sha256": "96dbde61dc20fa90d2a9cb6c1562a4877128c12811631684d5840758f5662347"
+              },
+              {
+                "bytes": 2408,
+                "file": "references/REF-14_docker__n8n__docker-compose.yml",
+                "sha256": "508b5ef17641f34d5e3d97218a94d660632d96d4ef4162ef214914c00ccb55e3"
+              },
+              {
+                "bytes": 350,
+                "file": "references/REF-14_docker__postgres__docker-compose.yml",
+                "sha256": "013491b4f669f03568d3cdbd7e17f14ad872ce975ee3ab406940b4db3d4b4462"
+              },
+              {
+                "bytes": 7505,
+                "file": "references/REF-14_mcp__mcp.registry.json",
+                "sha256": "7550fca2cbbc37cb32415de8623b4689b85ea830cb4e2bb8290f9fe97e67e212"
+              },
+              {
+                "bytes": 1021,
+                "file": "references/REF-14_production_configuration_redacted.json",
+                "sha256": "df9ed8112e396ed85faeaca79cda51f7f2867d5ac02822fd7d390e6758eb630c"
+              },
+              {
+                "bytes": 4673,
+                "file": "references/REF-14_production_crosswalk.json",
+                "sha256": "7c08313957f3e3f3ac89b779ba2f3ba2bb263aae40fe3f4ab5002858c1a35411"
+              },
+              {
+                "bytes": 4276,
+                "file": "references/REF-14_redaction_manifest.json",
+                "sha256": "2f7a47bb0a93d24db1e7c429d7c316cec80c5dd200d1fae424d02bad0c1d263f"
+              }
+            ],
+            "ref_id": "REF-14",
+            "role": "Production configuration export where static files are insufficient, redacted",
+            "specified_in_package": true,
+            "state": "PRESENT_AND_HASHED"
+          }
+        ],
+        "target_identity": {
+          "binding_state": "TARGET_PRESENT_HASH_MATCHES",
+          "binding_status": "TARGET_CONFIRMED",
+          "candidate_paths_declared": 3,
+          "candidate_paths_present": 3,
+          "expected_sha256": "e8ad639cbeb238b16985f240ed1045297c26a9202c603695b29f29a3ea74ffb3",
+          "measured_sha256": "e8ad639cbeb238b16985f240ed1045297c26a9202c603695b29f29a3ea74ffb3",
+          "path": "/home/ubuntu/project/WPNO/ap18/AP18_eingangsfilter.py",
+          "state": "TARGET_CONFIRMED_HASH_MATCHES",
+          "target_reference_ids": [
+            "REF-14"
+          ],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 5,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A20",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "DOCKER_METADATA_IMPORT",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A20",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A20",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [],
+        "target_identity": {
+          "binding_state": "TARGET_PRESENT_HASH_MATCHES",
+          "binding_status": "TARGET_CONFIRMED",
+          "candidate_paths_declared": 6,
+          "candidate_paths_present": 6,
+          "expected_sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b",
+          "measured_sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b",
+          "path": "/home/ubuntu/project/WPNO/anonymization/payload_scan.py",
+          "state": "TARGET_CONFIRMED_HASH_MATCHES",
+          "target_reference_ids": [],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 6,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A21",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "DOCKER_METADATA_IMPORT",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A21",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A21",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [
+          {
+            "absence_consequence": "UNVERIFIED_DOCKER_PRODUCTIVE_COPY",
+            "accepted_at_intake": true,
+            "manifest_records": 1,
+            "named_by": [
+              "binding",
+              "prompt"
+            ],
+            "physical_file_count": 35,
+            "physical_files": [
+              {
+                "bytes": 994,
+                "file": "references/REF-13_CONTAINER_INDEX.json",
+                "sha256": "9a27a8e16b71a5fac39b3822f3264f87a48a0d65998d6760de1349ab7b019845"
+              },
+              {
+                "bytes": 3301,
+                "file": "references/REF-13_REDACTED_MANIFEST.sha256",
+                "sha256": "3974e31db485e6e82632d61d3c7c693ba12dbd6443790fa7d4f080bc8abf9deb"
+              },
+              {
+                "bytes": 10921,
+                "file": "references/REF-13_REDACTION_MANIFEST.json",
+                "sha256": "54361fb78163fca7fef3e3bef568ee06062d9a715b22d3c6d575e6f7c60dc7d4"
+              },
+              {
+                "bytes": 665,
+                "file": "references/REF-13_REDACTION_REVIEW.json",
+                "sha256": "716246a2c7d627fe503a73de51d2408be3be2c33b5427930cb1381e3f00f5ec1"
+              },
+              {
+                "bytes": 3005,
+                "file": "references/REF-13_SOURCE_RAW_MANIFEST.sha256.txt",
+                "sha256": "73010cf2bd153ea8cf9ed2c1e592b9ed6e41c87700cd9f6c6f3f4cbdd98bdfa5"
+              },
+              {
+                "bytes": 5449,
+                "file": "references/REF-13_all_containers.txt",
+                "sha256": "8727e2912481e44d2a03f83ad79ff2a168315d613afb2a6d8303d1ec95246602"
+              },
+              {
+                "bytes": 9496,
+                "file": "references/REF-13_container_wpno_litellm.json",
+                "sha256": "fc1fa17077c691223ef0e3e6408ce85fde2ad917918346951e0ceb01a170ec74"
+              },
+              {
+                "bytes": 8234,
+                "file": "references/REF-13_container_wpno_n8n.json",
+                "sha256": "633911e59d818dea2981a2a31affcc9b6761b8d207b2e24821268109211149e6"
+              },
+              {
+                "bytes": 7790,
+                "file": "references/REF-13_container_wpno_postgres.json",
+                "sha256": "d0bbb003019cbd4769e7c5dca8c4ebbea25eece4a8bc6e95e415796650f08502"
+              },
+              {
+                "bytes": 7474,
+                "file": "references/REF-13_container_wpno_redis.json",
+                "sha256": "a8116435aaaafd8da72967616ebcd18dece40e541ce537b9f7dea1a3628d94cf"
+              },
+              {
+                "bytes": 14,
+                "file": "references/REF-13_docker_context.txt",
+                "sha256": "75270b95abcf0516180e80ce1a2b6f98e42b13765c38de5239be80925439ba63"
+              },
+              {
+                "bytes": 738,
+                "file": "references/REF-13_docker_context_inspect.json",
+                "sha256": "2d834c5d7982b49d54ba0ecd5ced33a1b425f98ff3f2243d29b3eebb915d390e"
+              },
+              {
+                "bytes": 3599,
+                "file": "references/REF-13_docker_info.txt",
+                "sha256": "0b3a5db6fbd4e2bdf50b94127c104fa10d95cd2cb3e60e66f83e90504666fc7d"
+              },
+              {
+                "bytes": 756,
+                "file": "references/REF-13_docker_version.txt",
+                "sha256": "ec273e6865f1fc7298a273cefccaa8d268571f671d89d28eaf7b3b8df97c335f"
+              },
+              {
+                "bytes": 2358,
+                "file": "references/REF-13_image_digests.txt",
+                "sha256": "edc1238246aeafd0e912f0edc1c53f637113f1c600649209ce6e0207c1592883"
+              },
+              {
+                "bytes": 7243,
+                "file": "references/REF-13_image_history_wpno_litellm.txt",
+                "sha256": "2733ab7a81746d303efb7da2e713ea7fd9e54b3dbbf2ba5733fd9b6d42ee9949"
+              },
+              {
+                "bytes": 15629,
+                "file": "references/REF-13_image_history_wpno_n8n.txt",
+                "sha256": "11f20fdad9b8ccf126d64ec39f74e2432118084302d291e38c090df2e634a0eb"
+              },
+              {
+                "bytes": 52111,
+                "file": "references/REF-13_image_history_wpno_postgres.txt",
+                "sha256": "7496adb2d9b0c7295469fc7eb6ca0c55d1eddf4bea71fe309c2e44a34f6305cc"
+              },
+              {
+                "bytes": 36296,
+                "file": "references/REF-13_image_history_wpno_redis.txt",
+                "sha256": "4f3179d9038976039b64b431d9537564ae3ea8ea4b66e8151e9e5e1ab22556c1"
+              },
+              {
+                "bytes": 3844,
+                "file": "references/REF-13_image_wpno_litellm.json",
+                "sha256": "89a2015a6144c760162063cb1d69acadd3c952b7a4c5244b9485fcf78fecc481"
+              },
+              {
+                "bytes": 3647,
+                "file": "references/REF-13_image_wpno_n8n.json",
+                "sha256": "c3090e13f6dbb6ca69578a0f93261631ee5ec2d67e2ec33f36a9b2ee5f77c0c5"
+              },
+              {
+                "bytes": 2622,
+                "file": "references/REF-13_image_wpno_postgres.json",
+                "sha256": "c536096dd93b8ac563bb345a741f23e240f75d36a77df80cc45234f590ef35e2"
+              },
+              {
+                "bytes": 1857,
+                "file": "references/REF-13_image_wpno_redis.json",
+                "sha256": "51a939ad09f496fe801db14bb22e6d25f8fb5799f6d10c5a573a269a8f1eca15"
+              },
+              {
+                "bytes": 1298,
+                "file": "references/REF-13_labels_wpno_litellm.json",
+                "sha256": "2d22cc235e90374b16a531a815c7fa09c59fbc9c4998626224cb438d1ed02195"
+              },
+              {
+                "bytes": 1678,
+                "file": "references/REF-13_labels_wpno_n8n.json",
+                "sha256": "fcc8f06a1457b4d1a6437ea3546ce107b8469b746eb90af8adf47727baa90f2c"
+              },
+              {
+                "bytes": 635,
+                "file": "references/REF-13_labels_wpno_postgres.json",
+                "sha256": "dca069a72d6a3e2814379dc76acb2641f92452dad42247d7ae94926f3d0ec16c"
+              },
+              {
+                "bytes": 629,
+                "file": "references/REF-13_labels_wpno_redis.json",
+                "sha256": "074d91b5f939717fc04b285b3c367ae4c623ad8c9969903c5c433980d4f006ea"
+              },
+              {
+                "bytes": 1181,
+                "file": "references/REF-13_mounts_wpno_litellm.json",
+                "sha256": "d2eafacf3001e5fd075fea6b087dde5176481f19b94962e20f8219fd292cfd4f"
+              },
+              {
+                "bytes": 219,
+                "file": "references/REF-13_mounts_wpno_n8n.json",
+                "sha256": "585b21e933d48934605bdf0663a965a7e991b011b1e802661dd31623776d218d"
+              },
+              {
+                "bytes": 264,
+                "file": "references/REF-13_mounts_wpno_postgres.json",
+                "sha256": "0cc709fe835a12e1fee319107fdae89bc0ac074257ed4b83704ffa7956b71a9c"
+              },
+              {
+                "bytes": 331,
+                "file": "references/REF-13_mounts_wpno_redis.json",
+                "sha256": "debd9c473b9dc3c8434e74322ea1a72eceaf06bc9631158a8b779a2481057343"
+              },
+              {
+                "bytes": 261,
+                "file": "references/REF-13_summary_wpno_litellm.txt",
+                "sha256": "cd829e55866bfc79e0c9582bf70a6cc3242dbf23390c766b7670e232c674c87d"
+              },
+              {
+                "bytes": 228,
+                "file": "references/REF-13_summary_wpno_n8n.txt",
+                "sha256": "4172115d16179154e9024e54cd3520b23f35f28ff2e4a642b4db72b6cf97b23a"
+              },
+              {
+                "bytes": 218,
+                "file": "references/REF-13_summary_wpno_postgres.txt",
+                "sha256": "c38332ef0f99acc60989a84bb3b76347e5b46e5158d83bd5f77662220ca7157f"
+              },
+              {
+                "bytes": 224,
+                "file": "references/REF-13_summary_wpno_redis.txt",
+                "sha256": "c22a31285240bd5ebff44752e3c5ab8f386bd54ac6d066bc3029196b32fdd478"
+              }
+            ],
+            "ref_id": "REF-13",
+            "role": "Docker metadata export: image ID, image digest, image and container creation timestamps, mounts, entrypoint, command, build-context evidence",
+            "specified_in_package": true,
+            "state": "PRESENT_AND_HASHED"
+          }
+        ],
+        "target_identity": {
+          "binding_state": "NO_PRODUCTIVE_TARGET_IN_BINDING",
+          "binding_status": "TARGET_UNRESOLVED",
+          "candidate_paths_declared": 4,
+          "candidate_paths_present": 4,
+          "expected_sha256": null,
+          "measured_sha256": null,
+          "path": null,
+          "state": "TARGET_CANDIDATES_ALL_PRESENT",
+          "target_reference_ids": [
+            "REF-13"
+          ],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 7,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A22",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTEST_COLLECT_SANDBOX",
+            "PYTEST_RUN_SANDBOX",
+            "PYTHON_AST_PARSE",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A22",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A22",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [],
+        "target_identity": {
+          "binding_state": "TARGET_PRESENT_HASH_MATCHES",
+          "binding_status": "TARGET_CONFIRMED",
+          "candidate_paths_declared": 3,
+          "candidate_paths_present": 3,
+          "expected_sha256": "3259aae6b1feea94c78ee30440a63e82f2e4d5a4caa5a291820307c83323f227",
+          "measured_sha256": "3259aae6b1feea94c78ee30440a63e82f2e4d5a4caa5a291820307c83323f227",
+          "path": "/home/ubuntu/project/WPNO/pytest.ini",
+          "state": "TARGET_CONFIRMED_HASH_MATCHES",
+          "target_reference_ids": [],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 8,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A05",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "PYTHON_SCRIPT_RUN_SANDBOX",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A05",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A05",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [],
+        "target_identity": {
+          "binding_state": "TARGET_PRESENT_HASH_MATCHES",
+          "binding_status": "TARGET_CONFIRMED",
+          "candidate_paths_declared": 3,
+          "candidate_paths_present": 3,
+          "expected_sha256": "dd60dc63437691082b821fe219a7599c1561c757214a0e38eac97367ab2a09ca",
+          "measured_sha256": "dd60dc63437691082b821fe219a7599c1561c757214a0e38eac97367ab2a09ca",
+          "path": "/home/ubuntu/project/WPNO/authoring/AP17_output_guardrail_v3.py",
+          "state": "TARGET_CONFIRMED_HASH_MATCHES",
+          "target_reference_ids": [],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 9,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A06",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "PYTHON_SCRIPT_RUN_SANDBOX",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A06",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A06",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [],
+        "target_identity": {
+          "binding_state": "TARGET_PRESENT_HASH_MATCHES",
+          "binding_status": "TARGET_CONFIRMED",
+          "candidate_paths_declared": 3,
+          "candidate_paths_present": 3,
+          "expected_sha256": "dd60dc63437691082b821fe219a7599c1561c757214a0e38eac97367ab2a09ca",
+          "measured_sha256": "dd60dc63437691082b821fe219a7599c1561c757214a0e38eac97367ab2a09ca",
+          "path": "/home/ubuntu/project/WPNO/authoring/AP17_output_guardrail_v3.py",
+          "state": "TARGET_CONFIRMED_HASH_MATCHES",
+          "target_reference_ids": [],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 10,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A07",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "PYTHON_SCRIPT_RUN_SANDBOX",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A07",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A07",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [],
+        "target_identity": {
+          "binding_state": "TARGET_PRESENT_HASH_MATCHES",
+          "binding_status": "TARGET_CONFIRMED",
+          "candidate_paths_declared": 3,
+          "candidate_paths_present": 3,
+          "expected_sha256": "555ee5164da201864833506a7f9f6f61885f18ff506b1ed4f5f6cddd70f37d37",
+          "measured_sha256": "555ee5164da201864833506a7f9f6f61885f18ff506b1ed4f5f6cddd70f37d37",
+          "path": "/home/ubuntu/project/WPNO/authoring/AP17_output_guardrail_VERALTET.py.txt",
+          "state": "TARGET_CONFIRMED_HASH_MATCHES",
+          "target_reference_ids": [],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 11,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A08",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "PYTHON_SCRIPT_RUN_SANDBOX",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A08",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A08",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [],
+        "target_identity": {
+          "binding_state": "NO_PRODUCTIVE_TARGET_IN_BINDING",
+          "binding_status": "TARGET_PARTIAL",
+          "candidate_paths_declared": 1,
+          "candidate_paths_present": 1,
+          "expected_sha256": null,
+          "measured_sha256": null,
+          "path": null,
+          "state": "TARGET_CANDIDATES_ALL_PRESENT",
+          "target_reference_ids": [],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 12,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A09",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "PYTHON_SCRIPT_RUN_SANDBOX",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A09",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A09",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [],
+        "target_identity": {
+          "binding_state": "NO_PRODUCTIVE_TARGET_IN_BINDING",
+          "binding_status": "TARGET_PARTIAL",
+          "candidate_paths_declared": 2,
+          "candidate_paths_present": 2,
+          "expected_sha256": null,
+          "measured_sha256": null,
+          "path": null,
+          "state": "TARGET_CANDIDATES_ALL_PRESENT",
+          "target_reference_ids": [],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 13,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A10",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A10",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A10",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [],
+        "target_identity": {
+          "binding_state": "NO_PRODUCTIVE_TARGET_IN_BINDING",
+          "binding_status": "TARGET_PARTIAL",
+          "candidate_paths_declared": 3,
+          "candidate_paths_present": 3,
+          "expected_sha256": null,
+          "measured_sha256": null,
+          "path": null,
+          "state": "TARGET_CANDIDATES_ALL_PRESENT",
+          "target_reference_ids": [],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 14,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A11",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "PYTHON_SCRIPT_RUN_SANDBOX",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "XML_PARSE_SANDBOX",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A11",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A11",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [
+          {
+            "absence_consequence": "BLOCKED_MISSING_OFFICIAL_REFERENCE",
+            "accepted_at_intake": true,
+            "manifest_records": 3,
+            "named_by": [
+              "binding",
+              "prompt"
+            ],
+            "physical_file_count": 3,
+            "physical_files": [
+              {
+                "bytes": 176344,
+                "file": "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/REF-05/R7_REF05_SUPPLEMENT/REF-05_BGH_OFFICIAL_PAGE_2026.html",
+                "sha256": "e6dfe17c4dc185796c5d0d0114b2236967f8ff053275962b304db6e7f3035229"
+              },
+              {
+                "bytes": 900744,
+                "file": "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/REF-05/R7_REF05_SUPPLEMENT/REF-05_BGH_PRAESIDIUMSBESCHLUESSE_2026_CURRENT.pdf",
+                "sha256": "da9f847e6532bfacfc6f3a8f55edba9c3ad5f346b2242f5918668c938e7b6d18"
+              },
+              {
+                "bytes": 2030,
+                "file": "/home/ubuntu/project/WPNO_operator_intake/R7_all35_missing_material/REF-05/R7_REF05_SUPPLEMENT/REF-05_OFFICIAL_CAPTURE_PROVENANCE.txt",
+                "sha256": "58631914cf3ceeec867d5caf9dc27000915245fc2af125a534b01f8a200dd8e1"
+              }
+            ],
+            "ref_id": "REF-05",
+            "role": "Official BGH roster covering the period the register claims",
+            "specified_in_package": true,
+            "state": "PRESENT_AND_HASHED"
+          }
+        ],
+        "target_identity": {
+          "binding_state": "NO_PRODUCTIVE_TARGET_IN_BINDING",
+          "binding_status": "EXTERNAL_EVIDENCE_REQUIRED",
+          "candidate_paths_declared": 2,
+          "candidate_paths_present": 2,
+          "expected_sha256": null,
+          "measured_sha256": null,
+          "path": null,
+          "state": "TARGET_CANDIDATES_ALL_PRESENT",
+          "target_reference_ids": [
+            "REF-05"
+          ],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 15,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A12",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "DOCX_PARSE_SANDBOX",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "PYTHON_SCRIPT_RUN_SANDBOX",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A12",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A12",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [
+          {
+            "absence_consequence": "UNVERIFIED",
+            "accepted_at_intake": true,
+            "manifest_records": 1,
+            "named_by": [
+              "binding",
+              "prompt"
+            ],
+            "physical_file_count": 7,
+            "physical_files": [
+              {
+                "bytes": 527,
+                "file": "references/REF-07_MANIFEST.sha256",
+                "sha256": "c0d833f3569b4c29676a29016a19a42556b4934ee619e0aef4193921eade2f95"
+              },
+              {
+                "bytes": 36388,
+                "file": "references/REF-07_README.txt",
+                "sha256": "eb669045dd883c56cb5a96da1848c3380bc6371894c5663709a46776e3262a96"
+              },
+              {
+                "bytes": 2071,
+                "file": "references/REF-07_collection_inventory.json",
+                "sha256": "bab73ceb754921e6e7a01e625918e492821d21f81c5c1e01a67376eb97e6a9c7"
+              },
+              {
+                "bytes": 701,
+                "file": "references/REF-07_label_derivation.json",
+                "sha256": "9f4677499acceb1317f4ca472805864d2017ff87a49f5433927094d7fd878746"
+              },
+              {
+                "bytes": 8159580,
+                "file": "references/REF-07_labels.jsonl",
+                "sha256": "7f7a026a53d2b18913502b8403ce025ce567f60b744799464e07fc54aefc2f93"
+              },
+              {
+                "bytes": 831,
+                "file": "references/REF-07_reuters21578.html",
+                "sha256": "ba7fcb3e75a813b893fb5d13782296b373c57c42661a3e0f6d19574497dcc17f"
+              },
+              {
+                "bytes": 8150596,
+                "file": "references/REF-07_reuters21578.tar.gz",
+                "sha256": "3bae43c9b14e387f76a61b6d82bf98a4fb5d3ef99ef7e7075ff2ccbcf59f9d30"
+              }
+            ],
+            "ref_id": "REF-07",
+            "role": "A real article corpus with independent labels",
+            "specified_in_package": true,
+            "state": "PRESENT_AND_HASHED"
+          }
+        ],
+        "target_identity": {
+          "binding_state": "NO_PRODUCTIVE_TARGET_IN_BINDING",
+          "binding_status": "TARGET_PARTIAL",
+          "candidate_paths_declared": 1,
+          "candidate_paths_present": 1,
+          "expected_sha256": null,
+          "measured_sha256": null,
+          "path": null,
+          "state": "TARGET_CANDIDATES_ALL_PRESENT",
+          "target_reference_ids": [
+            "REF-07"
+          ],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 16,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A13",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "PYTHON_SCRIPT_RUN_SANDBOX",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A13",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A13",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [],
+        "target_identity": {
+          "binding_state": "NO_PRODUCTIVE_TARGET_IN_BINDING",
+          "binding_status": "TARGET_PARTIAL",
+          "candidate_paths_declared": 1,
+          "candidate_paths_present": 1,
+          "expected_sha256": null,
+          "measured_sha256": null,
+          "path": null,
+          "state": "TARGET_CANDIDATES_ALL_PRESENT",
+          "target_reference_ids": [],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 17,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A14",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "ARCHIVE_EXTRACT_SANDBOX",
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "DOCX_PARSE_SANDBOX",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "PYTHON_SCRIPT_RUN_SANDBOX",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "XML_PARSE_SANDBOX",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A14",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A14",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [
+          {
+            "absence_consequence": "BLOCKED",
+            "accepted_at_intake": true,
+            "manifest_records": 1,
+            "named_by": [
+              "binding",
+              "prompt"
+            ],
+            "physical_file_count": 1,
+            "physical_files": [
+              {
+                "bytes": 206491,
+                "file": "references/REF-06_S01.docx",
+                "sha256": "9f7ee8caebee9345b54dd535a2681789512f68dfc2e4bf7b0652c5cc48722675"
+              }
+            ],
+            "ref_id": "REF-06",
+            "role": "Recovered original checker input: SHA-256 `9f7ee8caebee9345b54dd535a2681789512f68dfc2e4bf7b0652c5cc48722675`, Word stored page count 111, 165 citation occurrences, 64 unique citations under the unchanged authoritative rule; 82/43 is `SUPERSEDED_UNSUPPORTED_EXPECTATION`",
+            "specified_in_package": true,
+            "state": "PRESENT_AND_HASHED"
+          }
+        ],
+        "target_identity": {
+          "binding_state": "NO_PRODUCTIVE_TARGET_IN_BINDING",
+          "binding_status": "EXTERNAL_EVIDENCE_REQUIRED",
+          "candidate_paths_declared": 1,
+          "candidate_paths_present": 1,
+          "expected_sha256": null,
+          "measured_sha256": null,
+          "path": null,
+          "state": "TARGET_CANDIDATES_ALL_PRESENT",
+          "target_reference_ids": [
+            "REF-06"
+          ],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 18,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A15",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTEST_COLLECT_SANDBOX",
+            "PYTEST_RUN_SANDBOX",
+            "PYTHON_AST_PARSE",
+            "PYTHON_SCRIPT_RUN_SANDBOX",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A15",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A15",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [],
+        "target_identity": {
+          "binding_state": "TARGET_PRESENT_HASH_MATCHES",
+          "binding_status": "TARGET_CONFIRMED",
+          "candidate_paths_declared": 3,
+          "candidate_paths_present": 3,
+          "expected_sha256": "f01e65bc9eff2efec3cac2f55ef5238ea5a28139fec2080e6004816c7181eb9d",
+          "measured_sha256": "f01e65bc9eff2efec3cac2f55ef5238ea5a28139fec2080e6004816c7181eb9d",
+          "path": "/home/ubuntu/project/WPNO/ap18/AP18_test_injection.py",
+          "state": "TARGET_CONFIRMED_HASH_MATCHES",
+          "target_reference_ids": [],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 19,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A16",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "DOCX_PARSE_SANDBOX",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "PYTHON_SCRIPT_RUN_SANDBOX",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "XML_PARSE_SANDBOX",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A16",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A16",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [],
+        "target_identity": {
+          "binding_state": "NO_PRODUCTIVE_TARGET_IN_BINDING",
+          "binding_status": "TARGET_PARTIAL",
+          "candidate_paths_declared": 2,
+          "candidate_paths_present": 2,
+          "expected_sha256": null,
+          "measured_sha256": null,
+          "path": null,
+          "state": "TARGET_CANDIDATES_ALL_PRESENT",
+          "target_reference_ids": [],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 20,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A01",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "ARCHIVE_EXTRACT_SANDBOX",
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "DOCX_PARSE_SANDBOX",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "PYTHON_SCRIPT_RUN_SANDBOX",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A01",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A01",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [],
+        "target_identity": {
+          "binding_state": "TARGET_PRESENT_HASH_MATCHES",
+          "binding_status": "TARGET_CONFIRMED",
+          "candidate_paths_declared": 1,
+          "candidate_paths_present": 1,
+          "expected_sha256": "4bcde78f0220eaf07a70c6a9ba20c98d66ee4d65f38a998762c30c9bd5b09932",
+          "measured_sha256": "4bcde78f0220eaf07a70c6a9ba20c98d66ee4d65f38a998762c30c9bd5b09932",
+          "path": "/home/ubuntu/project/WPNO/authoring/AP16_assemble_long_document.py",
+          "state": "TARGET_CONFIRMED_HASH_MATCHES",
+          "target_reference_ids": [],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 21,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A02",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "ARCHIVE_EXTRACT_SANDBOX",
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "DOCX_PARSE_SANDBOX",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "PYTHON_SCRIPT_RUN_SANDBOX",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "XML_PARSE_SANDBOX",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A02",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A02",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [],
+        "target_identity": {
+          "binding_state": "TARGET_PRESENT_HASH_MATCHES",
+          "binding_status": "TARGET_CONFIRMED",
+          "candidate_paths_declared": 1,
+          "candidate_paths_present": 1,
+          "expected_sha256": "98847c6034365703585d08828fe2ee363438ba8c2570a91a262af366407ee653",
+          "measured_sha256": "98847c6034365703585d08828fe2ee363438ba8c2570a91a262af366407ee653",
+          "path": "/home/ubuntu/project/WPNO/authoring/AP16_verify_document.py",
+          "state": "TARGET_CONFIRMED_HASH_MATCHES",
+          "target_reference_ids": [],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 22,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A03",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A03",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A03",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [],
+        "target_identity": {
+          "binding_state": "NO_PRODUCTIVE_TARGET_IN_BINDING",
+          "binding_status": "TARGET_PARTIAL",
+          "candidate_paths_declared": 3,
+          "candidate_paths_present": 3,
+          "expected_sha256": null,
+          "measured_sha256": null,
+          "path": null,
+          "state": "TARGET_CANDIDATES_ALL_PRESENT",
+          "target_reference_ids": [],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 23,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A04",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "ARCHIVE_EXTRACT_SANDBOX",
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "DOCX_PARSE_SANDBOX",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "PYTHON_SCRIPT_RUN_SANDBOX",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "XML_PARSE_SANDBOX",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A04",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A04",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [],
+        "target_identity": {
+          "binding_state": "NO_PRODUCTIVE_TARGET_IN_BINDING",
+          "binding_status": "TARGET_PARTIAL",
+          "candidate_paths_declared": 1,
+          "candidate_paths_present": 1,
+          "expected_sha256": null,
+          "measured_sha256": null,
+          "path": null,
+          "state": "TARGET_CANDIDATES_ALL_PRESENT",
+          "target_reference_ids": [],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 24,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A23",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A23",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A23",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [
+          {
+            "absence_consequence": "UNVERIFIED",
+            "accepted_at_intake": true,
+            "manifest_records": 2,
+            "named_by": [
+              "binding"
+            ],
+            "physical_file_count": 20,
+            "physical_files": [
+              {
+                "bytes": 1394,
+                "file": "references/REF-14_MANIFEST.sha256",
+                "sha256": "ff306651928bf10279ef472c38fc982771e298ed4f11fba7508a5db4dcc2c7e3"
+              },
+              {
+                "bytes": 549,
+                "file": "references/REF-14_capture_method.txt",
+                "sha256": "a9b6fd9f58154c54fce6011cdd1e7f95d74b5f670397cfda4164caf1f928ab3b"
+              },
+              {
+                "bytes": 4519,
+                "file": "references/REF-14_current_server_file_manifest.json",
+                "sha256": "e8f0cd1f310a9eed5533a9fd1d70a67ddd812b54432710d35713f81823e5c0f3"
+              },
+              {
+                "bytes": 241,
+                "file": "references/REF-14_docker__litellm__Dockerfile",
+                "sha256": "05fbf2c570ce65d64fdd7e62920293bda8a1c0cc13c5d2d64961bfabf072692a"
+              },
+              {
+                "bytes": 3605,
+                "file": "references/REF-14_docker__litellm__config.yaml",
+                "sha256": "f5dd86718491faec1b054f602fd24b807ca90f46475810fa963a0967b366e655"
+              },
+              {
+                "bytes": 6209,
+                "file": "references/REF-14_docker__litellm__custom_callback.py",
+                "sha256": "7512ef4493c9f9651ebdd89326a291cf831d08f1f0924af19f88459991e33384"
+              },
+              {
+                "bytes": 760,
+                "file": "references/REF-14_docker__litellm__docker-compose.yml",
+                "sha256": "cdd162fa4145c4617f8c71956cc570c50e1c9a4a1da69007b6cbd2c034281329"
+              },
+              {
+                "bytes": 21564,
+                "file": "references/REF-14_docker__litellm__payload_scan.py",
+                "sha256": "99b9e18bde4ff88c271362c4ccdc34e526d043cefea7a35d1b060d5fba25153b"
+              },
+              {
+                "bytes": 2354,
+                "file": "references/REF-14_docker__litellm__tool_registry_gate.py",
+                "sha256": "96dbde61dc20fa90d2a9cb6c1562a4877128c12811631684d5840758f5662347"
+              },
+              {
+                "bytes": 2408,
+                "file": "references/REF-14_docker__n8n__docker-compose.yml",
+                "sha256": "508b5ef17641f34d5e3d97218a94d660632d96d4ef4162ef214914c00ccb55e3"
+              },
+              {
+                "bytes": 350,
+                "file": "references/REF-14_docker__postgres__docker-compose.yml",
+                "sha256": "013491b4f669f03568d3cdbd7e17f14ad872ce975ee3ab406940b4db3d4b4462"
+              },
+              {
+                "bytes": 7505,
+                "file": "references/REF-14_mcp__mcp.registry.json",
+                "sha256": "7550fca2cbbc37cb32415de8623b4689b85ea830cb4e2bb8290f9fe97e67e212"
+              },
+              {
+                "bytes": 1021,
+                "file": "references/REF-14_production_configuration_redacted.json",
+                "sha256": "df9ed8112e396ed85faeaca79cda51f7f2867d5ac02822fd7d390e6758eb630c"
+              },
+              {
+                "bytes": 4673,
+                "file": "references/REF-14_production_crosswalk.json",
+                "sha256": "7c08313957f3e3f3ac89b779ba2f3ba2bb263aae40fe3f4ab5002858c1a35411"
+              },
+              {
+                "bytes": 4276,
+                "file": "references/REF-14_redaction_manifest.json",
+                "sha256": "2f7a47bb0a93d24db1e7c429d7c316cec80c5dd200d1fae424d02bad0c1d263f"
+              },
+              {
+                "bytes": 716,
+                "file": "references/REF-14_MAC_EVIDENCE_SEARCH_REPORT.md",
+                "sha256": "e3de9ec10b9436a1e974966587bf02f61120927bd224d708f897a735d6a7cae3"
+              },
+              {
+                "bytes": 857,
+                "file": "references/REF-14_MAC_EVIDENCE_STATUS.json",
+                "sha256": "7a4d1d1922847cd59a7da9a853a31a03ff463d3e6d96ca55193804ba4a267c74"
+              },
+              {
+                "bytes": 233300,
+                "file": "references/REF-14_MAC_REALITY.json",
+                "sha256": "8c4c580db8d191a95e1ecc913da1c5acf70373433411d170b33769501a28063e"
+              },
+              {
+                "bytes": 8866,
+                "file": "references/REF-14_MAC_REALITY.md",
+                "sha256": "49959d08f4a3d3eb5222b9e781896e751803faea0d36cc5a3ad6401f6c13165a"
+              },
+              {
+                "bytes": 379,
+                "file": "references/REF-14_MAC_MANIFEST.sha256",
+                "sha256": "5d5606a071b91e9dbd3c225fe3e6dd9525012d9211d02bd942b9954e61853a33"
+              }
+            ],
+            "ref_id": "REF-14",
+            "role": "Production configuration export where static files are insufficient, redacted",
+            "specified_in_package": true,
+            "state": "PRESENT_CURRENT_SERVER_AND_ACCEPTED_MAC_REALITY"
+          }
+        ],
+        "target_identity": {
+          "binding_state": "TARGET_PRESENT_HASH_MATCHES",
+          "binding_status": "TARGET_CONFIRMED",
+          "candidate_paths_declared": 1,
+          "candidate_paths_present": 1,
+          "expected_sha256": "f6734d0d0f7a25933a87efeec89cfdb2ba97f79956a546c13de9a94fac3d1ef8",
+          "measured_sha256": "f6734d0d0f7a25933a87efeec89cfdb2ba97f79956a546c13de9a94fac3d1ef8",
+          "path": "/home/ubuntu/project/WPNO/CLAUDE.md",
+          "state": "TARGET_CONFIRMED_HASH_MATCHES",
+          "target_reference_ids": [
+            "REF-14"
+          ],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 25,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A24",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "CLAUDE_LOAD_BEHAVIOUR_TEST",
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A24",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A24",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [],
+        "target_identity": {
+          "binding_state": "EXTERNAL_LAUNCH_DIRECTORY_OPERATOR_APPROVED",
+          "binding_status": "TARGET_PARTIAL",
+          "candidate_paths_declared": 2,
+          "candidate_paths_present": 1,
+          "expected_sha256": null,
+          "measured_sha256": null,
+          "path": null,
+          "state": "EXTERNAL_LAUNCH_DIRECTORY_PREVIOUSLY_MEASURED_AND_BOUND",
+          "target_reference_ids": [],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 26,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A25",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A25",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A25",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [],
+        "target_identity": {
+          "binding_state": "TARGET_PRESENT_HASH_MATCHES",
+          "binding_status": "TARGET_CONFIRMED",
+          "candidate_paths_declared": 2,
+          "candidate_paths_present": 2,
+          "expected_sha256": "f6734d0d0f7a25933a87efeec89cfdb2ba97f79956a546c13de9a94fac3d1ef8",
+          "measured_sha256": "f6734d0d0f7a25933a87efeec89cfdb2ba97f79956a546c13de9a94fac3d1ef8",
+          "path": "/home/ubuntu/project/WPNO/CLAUDE.md",
+          "state": "TARGET_CONFIRMED_HASH_MATCHES",
+          "target_reference_ids": [],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 27,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A26",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "PYTHON_SCRIPT_RUN_SANDBOX",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A26",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A26",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [],
+        "target_identity": {
+          "binding_state": "TARGET_PRESENT_HASH_MATCHES",
+          "binding_status": "TARGET_CONFIRMED",
+          "candidate_paths_declared": 1,
+          "candidate_paths_present": 1,
+          "expected_sha256": "f6734d0d0f7a25933a87efeec89cfdb2ba97f79956a546c13de9a94fac3d1ef8",
+          "measured_sha256": "f6734d0d0f7a25933a87efeec89cfdb2ba97f79956a546c13de9a94fac3d1ef8",
+          "path": "/home/ubuntu/project/WPNO/CLAUDE.md",
+          "state": "TARGET_CONFIRMED_HASH_MATCHES",
+          "target_reference_ids": [],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 28,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A27",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "ARCHIVE_EXTRACT_SANDBOX",
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A27",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A27",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [
+          {
+            "absence_consequence": "BLOCKED",
+            "accepted_at_intake": true,
+            "manifest_records": 7,
+            "named_by": [
+              "binding",
+              "prompt"
+            ],
+            "physical_file_count": 7,
+            "physical_files": [
+              {
+                "bytes": 16237,
+                "file": "references/REF-11-563203462.xml",
+                "sha256": "8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a"
+              },
+              {
+                "bytes": 4096,
+                "file": "references/REF-11-berufungsbegruendung-O.pdf",
+                "sha256": "42089e1bf976e6e478ea17624eb35239494b3f3556af10092e8916d5d6d92cc8"
+              },
+              {
+                "bytes": 3102,
+                "file": "references/REF-11-berufungsbegruendung-O.pdf.p7s",
+                "sha256": "4287a3783caec8da9b6e0c16f86a3d5e363a34253427eca3116159e77dd07a7a"
+              },
+              {
+                "bytes": 577811,
+                "file": "references/REF-11-original-mail-attachment.zip",
+                "sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+              },
+              {
+                "bytes": 1924,
+                "file": "references/REF-11-vhn-covered-content.xml",
+                "sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23"
+              },
+              {
+                "bytes": 2396,
+                "file": "references/REF-11-vhn.xml.p7s",
+                "sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a"
+              },
+              {
+                "bytes": 4154,
+                "file": "references/REF-11-xjustiz_nachricht.xml",
+                "sha256": "309a4c7d0cecdf8abf7a97200f6ce31529f84dd677524144978c3044aa5a89a7"
+              }
+            ],
+            "ref_id": "REF-11",
+            "role": "The original beA/OSCI artefacts: the ZIP archive, `563203462.xml`, `vhn.xml.p7s`, the signed content, and the 17.08 source and destination copies",
+            "specified_in_package": true,
+            "state": "PRESENT_AND_HASHED"
+          }
+        ],
+        "target_identity": {
+          "binding_state": "NO_PRODUCTIVE_TARGET_IN_BINDING",
+          "binding_status": "EXTERNAL_EVIDENCE_REQUIRED",
+          "candidate_paths_declared": 0,
+          "candidate_paths_present": 0,
+          "expected_sha256": null,
+          "measured_sha256": null,
+          "path": null,
+          "state": "TARGET_SUPPLIED_BY_REFERENCES",
+          "target_reference_ids": [
+            "REF-11"
+          ],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 29,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A28",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "OPENSSL_PARSE_CERT",
+            "OPENSSL_VERIFY_CMS",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A28",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A28",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [
+          {
+            "absence_consequence": "BLOCKED",
+            "accepted_at_intake": true,
+            "manifest_records": 7,
+            "named_by": [
+              "binding",
+              "prompt"
+            ],
+            "physical_file_count": 7,
+            "physical_files": [
+              {
+                "bytes": 16237,
+                "file": "references/REF-11-563203462.xml",
+                "sha256": "8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a"
+              },
+              {
+                "bytes": 4096,
+                "file": "references/REF-11-berufungsbegruendung-O.pdf",
+                "sha256": "42089e1bf976e6e478ea17624eb35239494b3f3556af10092e8916d5d6d92cc8"
+              },
+              {
+                "bytes": 3102,
+                "file": "references/REF-11-berufungsbegruendung-O.pdf.p7s",
+                "sha256": "4287a3783caec8da9b6e0c16f86a3d5e363a34253427eca3116159e77dd07a7a"
+              },
+              {
+                "bytes": 577811,
+                "file": "references/REF-11-original-mail-attachment.zip",
+                "sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+              },
+              {
+                "bytes": 1924,
+                "file": "references/REF-11-vhn-covered-content.xml",
+                "sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23"
+              },
+              {
+                "bytes": 2396,
+                "file": "references/REF-11-vhn.xml.p7s",
+                "sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a"
+              },
+              {
+                "bytes": 4154,
+                "file": "references/REF-11-xjustiz_nachricht.xml",
+                "sha256": "309a4c7d0cecdf8abf7a97200f6ce31529f84dd677524144978c3044aa5a89a7"
+              }
+            ],
+            "ref_id": "REF-11",
+            "role": "The original beA/OSCI artefacts: the ZIP archive, `563203462.xml`, `vhn.xml.p7s`, the signed content, and the 17.08 source and destination copies",
+            "specified_in_package": true,
+            "state": "PRESENT_AND_HASHED"
+          }
+        ],
+        "target_identity": {
+          "binding_state": "NO_PRODUCTIVE_TARGET_IN_BINDING",
+          "binding_status": "EXTERNAL_EVIDENCE_REQUIRED",
+          "candidate_paths_declared": 0,
+          "candidate_paths_present": 0,
+          "expected_sha256": null,
+          "measured_sha256": null,
+          "path": null,
+          "state": "TARGET_SUPPLIED_BY_REFERENCES",
+          "target_reference_ids": [
+            "REF-11"
+          ],
+          "verified": true
+        },
+        "validation_time": {
+          "required": true,
+          "state": "NOT_YET_SELECTED_NO_CANDIDATE_PLAN"
+        }
+      },
+      "controller_order": 30,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A29",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "BOUND_AND_REHEARSED_PRIOR_HASH_BOUND_CLOSURE",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "BOUND_AND_REHEARSED_PRIOR_HASH_BOUND_CLOSURE",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A29",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A29",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "BOUND_AND_REHEARSED_PRIOR_HASH_BOUND_CLOSURE",
+          "specified_in_prompt": true
+        },
+        "references": [
+          {
+            "absence_consequence": "BLOCKED",
+            "accepted_at_intake": true,
+            "manifest_records": 7,
+            "named_by": [
+              "binding"
+            ],
+            "physical_file_count": 7,
+            "physical_files": [
+              {
+                "bytes": 16237,
+                "file": "references/REF-11-563203462.xml",
+                "sha256": "8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a"
+              },
+              {
+                "bytes": 4096,
+                "file": "references/REF-11-berufungsbegruendung-O.pdf",
+                "sha256": "42089e1bf976e6e478ea17624eb35239494b3f3556af10092e8916d5d6d92cc8"
+              },
+              {
+                "bytes": 3102,
+                "file": "references/REF-11-berufungsbegruendung-O.pdf.p7s",
+                "sha256": "4287a3783caec8da9b6e0c16f86a3d5e363a34253427eca3116159e77dd07a7a"
+              },
+              {
+                "bytes": 577811,
+                "file": "references/REF-11-original-mail-attachment.zip",
+                "sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+              },
+              {
+                "bytes": 1924,
+                "file": "references/REF-11-vhn-covered-content.xml",
+                "sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23"
+              },
+              {
+                "bytes": 2396,
+                "file": "references/REF-11-vhn.xml.p7s",
+                "sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a"
+              },
+              {
+                "bytes": 4154,
+                "file": "references/REF-11-xjustiz_nachricht.xml",
+                "sha256": "309a4c7d0cecdf8abf7a97200f6ce31529f84dd677524144978c3044aa5a89a7"
+              }
+            ],
+            "ref_id": "REF-11",
+            "role": "The original beA/OSCI artefacts: the ZIP archive, `563203462.xml`, `vhn.xml.p7s`, the signed content, and the 17.08 source and destination copies",
+            "specified_in_package": true,
+            "state": "PRESENT_AND_HASHED"
+          },
+          {
+            "absence_consequence": "BLOCKED_376_TARGET_UNIDENTIFIED",
+            "accepted_at_intake": true,
+            "manifest_records": 1,
+            "named_by": [
+              "binding",
+              "prompt"
+            ],
+            "physical_file_count": 3,
+            "physical_files": [
+              {
+                "bytes": 52412,
+                "file": "references/REF-12/376_DKB MH.docx",
+                "sha256": "0b8403982880761b1e2bc31d8c15b756fad0fe12259d55d1611323a4e768b3ca"
+              },
+              {
+                "bytes": 179,
+                "file": "references/REF-12/REF-12_MANIFEST.sha256",
+                "sha256": "78526f9660f43bb10c003a1bbee8361607a214fb3056562dda742f549a388f62"
+              },
+              {
+                "bytes": 2237,
+                "file": "references/REF-12/REF-12_OPERATOR_PROVENANCE.txt",
+                "sha256": "bf1391ab358f724e88c9016488d2d3b9e598d1283c49eb177c9e320d6f5bbe78"
+              }
+            ],
+            "ref_id": "REF-12",
+            "role": "A definition of what `376` refers to, plus the artefact itself",
+            "specified_in_package": true,
+            "state": "PRESENT_AND_HASHED"
+          }
+        ],
+        "target_identity": {
+          "binding_state": "TARGET_CONFIRMED_FROM_OPERATOR_STATEMENT_AND_HASH_BOUND_REFERENCE",
+          "binding_status": "TARGET_CONFIRMED",
+          "candidate_paths_declared": 1,
+          "candidate_paths_present": 1,
+          "expected_sha256": "0b8403982880761b1e2bc31d8c15b756fad0fe12259d55d1611323a4e768b3ca",
+          "measured_sha256": "0b8403982880761b1e2bc31d8c15b756fad0fe12259d55d1611323a4e768b3ca",
+          "path": "references/REF-12/376_DKB MH.docx",
+          "state": "TARGET_PRESENT_HASH_MATCHED_OPERATOR_EXPECTED_VALUE",
+          "target_reference_ids": [
+            "REF-11",
+            "REF-12"
+          ],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 31,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A30",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "ARCHIVE_EXTRACT_SANDBOX",
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A30",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A30",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [
+          {
+            "absence_consequence": "BLOCKED",
+            "accepted_at_intake": true,
+            "manifest_records": 7,
+            "named_by": [
+              "binding",
+              "prompt"
+            ],
+            "physical_file_count": 7,
+            "physical_files": [
+              {
+                "bytes": 16237,
+                "file": "references/REF-11-563203462.xml",
+                "sha256": "8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a"
+              },
+              {
+                "bytes": 4096,
+                "file": "references/REF-11-berufungsbegruendung-O.pdf",
+                "sha256": "42089e1bf976e6e478ea17624eb35239494b3f3556af10092e8916d5d6d92cc8"
+              },
+              {
+                "bytes": 3102,
+                "file": "references/REF-11-berufungsbegruendung-O.pdf.p7s",
+                "sha256": "4287a3783caec8da9b6e0c16f86a3d5e363a34253427eca3116159e77dd07a7a"
+              },
+              {
+                "bytes": 577811,
+                "file": "references/REF-11-original-mail-attachment.zip",
+                "sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+              },
+              {
+                "bytes": 1924,
+                "file": "references/REF-11-vhn-covered-content.xml",
+                "sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23"
+              },
+              {
+                "bytes": 2396,
+                "file": "references/REF-11-vhn.xml.p7s",
+                "sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a"
+              },
+              {
+                "bytes": 4154,
+                "file": "references/REF-11-xjustiz_nachricht.xml",
+                "sha256": "309a4c7d0cecdf8abf7a97200f6ce31529f84dd677524144978c3044aa5a89a7"
+              }
+            ],
+            "ref_id": "REF-11",
+            "role": "The original beA/OSCI artefacts: the ZIP archive, `563203462.xml`, `vhn.xml.p7s`, the signed content, and the 17.08 source and destination copies",
+            "specified_in_package": true,
+            "state": "PRESENT_AND_HASHED"
+          }
+        ],
+        "target_identity": {
+          "binding_state": "NO_PRODUCTIVE_TARGET_IN_BINDING",
+          "binding_status": "EXTERNAL_EVIDENCE_REQUIRED",
+          "candidate_paths_declared": 0,
+          "candidate_paths_present": 0,
+          "expected_sha256": null,
+          "measured_sha256": null,
+          "path": null,
+          "state": "TARGET_SUPPLIED_BY_REFERENCES",
+          "target_reference_ids": [
+            "REF-11"
+          ],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 32,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A32",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "OPENSSL_PARSE_CERT",
+            "OPENSSL_VERIFY_CMS",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A32",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A32",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [
+          {
+            "absence_consequence": "BLOCKED",
+            "accepted_at_intake": true,
+            "manifest_records": 7,
+            "named_by": [
+              "binding",
+              "prompt"
+            ],
+            "physical_file_count": 7,
+            "physical_files": [
+              {
+                "bytes": 16237,
+                "file": "references/REF-11-563203462.xml",
+                "sha256": "8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a"
+              },
+              {
+                "bytes": 4096,
+                "file": "references/REF-11-berufungsbegruendung-O.pdf",
+                "sha256": "42089e1bf976e6e478ea17624eb35239494b3f3556af10092e8916d5d6d92cc8"
+              },
+              {
+                "bytes": 3102,
+                "file": "references/REF-11-berufungsbegruendung-O.pdf.p7s",
+                "sha256": "4287a3783caec8da9b6e0c16f86a3d5e363a34253427eca3116159e77dd07a7a"
+              },
+              {
+                "bytes": 577811,
+                "file": "references/REF-11-original-mail-attachment.zip",
+                "sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+              },
+              {
+                "bytes": 1924,
+                "file": "references/REF-11-vhn-covered-content.xml",
+                "sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23"
+              },
+              {
+                "bytes": 2396,
+                "file": "references/REF-11-vhn.xml.p7s",
+                "sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a"
+              },
+              {
+                "bytes": 4154,
+                "file": "references/REF-11-xjustiz_nachricht.xml",
+                "sha256": "309a4c7d0cecdf8abf7a97200f6ce31529f84dd677524144978c3044aa5a89a7"
+              }
+            ],
+            "ref_id": "REF-11",
+            "role": "The original beA/OSCI artefacts: the ZIP archive, `563203462.xml`, `vhn.xml.p7s`, the signed content, and the 17.08 source and destination copies",
+            "specified_in_package": true,
+            "state": "PRESENT_AND_HASHED"
+          }
+        ],
+        "target_identity": {
+          "binding_state": "NO_PRODUCTIVE_TARGET_IN_BINDING",
+          "binding_status": "EXTERNAL_EVIDENCE_REQUIRED",
+          "candidate_paths_declared": 0,
+          "candidate_paths_present": 0,
+          "expected_sha256": null,
+          "measured_sha256": null,
+          "path": null,
+          "state": "TARGET_SUPPLIED_BY_REFERENCES",
+          "target_reference_ids": [
+            "REF-11"
+          ],
+          "verified": true
+        },
+        "validation_time": {
+          "required": true,
+          "state": "NOT_YET_SELECTED_NO_CANDIDATE_PLAN"
+        }
+      },
+      "controller_order": 33,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A33",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "ARCHIVE_EXTRACT_SANDBOX",
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "XML_PARSE_SANDBOX",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A33",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A33",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [
+          {
+            "absence_consequence": "BLOCKED",
+            "accepted_at_intake": true,
+            "manifest_records": 7,
+            "named_by": [
+              "binding",
+              "prompt"
+            ],
+            "physical_file_count": 7,
+            "physical_files": [
+              {
+                "bytes": 16237,
+                "file": "references/REF-11-563203462.xml",
+                "sha256": "8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a"
+              },
+              {
+                "bytes": 4096,
+                "file": "references/REF-11-berufungsbegruendung-O.pdf",
+                "sha256": "42089e1bf976e6e478ea17624eb35239494b3f3556af10092e8916d5d6d92cc8"
+              },
+              {
+                "bytes": 3102,
+                "file": "references/REF-11-berufungsbegruendung-O.pdf.p7s",
+                "sha256": "4287a3783caec8da9b6e0c16f86a3d5e363a34253427eca3116159e77dd07a7a"
+              },
+              {
+                "bytes": 577811,
+                "file": "references/REF-11-original-mail-attachment.zip",
+                "sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+              },
+              {
+                "bytes": 1924,
+                "file": "references/REF-11-vhn-covered-content.xml",
+                "sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23"
+              },
+              {
+                "bytes": 2396,
+                "file": "references/REF-11-vhn.xml.p7s",
+                "sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a"
+              },
+              {
+                "bytes": 4154,
+                "file": "references/REF-11-xjustiz_nachricht.xml",
+                "sha256": "309a4c7d0cecdf8abf7a97200f6ce31529f84dd677524144978c3044aa5a89a7"
+              }
+            ],
+            "ref_id": "REF-11",
+            "role": "The original beA/OSCI artefacts: the ZIP archive, `563203462.xml`, `vhn.xml.p7s`, the signed content, and the 17.08 source and destination copies",
+            "specified_in_package": true,
+            "state": "PRESENT_AND_HASHED"
+          }
+        ],
+        "target_identity": {
+          "binding_state": "NO_PRODUCTIVE_TARGET_IN_BINDING",
+          "binding_status": "EXTERNAL_EVIDENCE_REQUIRED",
+          "candidate_paths_declared": 0,
+          "candidate_paths_present": 0,
+          "expected_sha256": null,
+          "measured_sha256": null,
+          "path": null,
+          "state": "TARGET_SUPPLIED_BY_REFERENCES",
+          "target_reference_ids": [
+            "REF-11"
+          ],
+          "verified": true
+        },
+        "validation_time": {
+          "required": false,
+          "state": "NOT_REQUIRED"
+        }
+      },
+      "controller_order": 34,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    },
+    {
+      "audit_id": "L1-A35",
+      "blocking_reasons": [],
+      "candidate_plans_present": {
+        "RUN-A": false
+      },
+      "checks": {
+        "method_available": {
+          "not_in_catalogue": [],
+          "operations_named": [
+            "ARCHIVE_EXTRACT_SANDBOX",
+            "COMPARE_BINARY_FILES",
+            "COMPARE_HASHES",
+            "COUNT_TEXT_MATCHES",
+            "FILE_TYPE",
+            "GIT_LOG_READONLY",
+            "GIT_SHOW_READONLY",
+            "GIT_STATUS_READONLY",
+            "LIST_DIRECTORY",
+            "OPENSSL_VERIFY_CMS",
+            "PARSE_CSV_READONLY",
+            "PARSE_JSON_READONLY",
+            "PYTHON_AST_PARSE",
+            "READ_FILE_RANGE",
+            "SHA256_FILE",
+            "STAT_FILE",
+            "TAR_LIST",
+            "ZIP_LIST"
+          ],
+          "verified": true
+        },
+        "mutation_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "negative_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "no_silent_substitution": {
+          "mismatches": [],
+          "verified": true
+        },
+        "output_boundary": {
+          "evidence_exists_already": false,
+          "evidence_path": "evidence/L1-A35",
+          "lawful_under_path_policy": true,
+          "results_exists_already": false,
+          "results_path": "results/L1-A35",
+          "verified": true
+        },
+        "positive_control": {
+          "input_state": "NOT_MEASURABLE_UNTIL_A_CANDIDATE_PLAN_EXISTS",
+          "specified_in_prompt": true
+        },
+        "references": [
+          {
+            "absence_consequence": "BLOCKED",
+            "accepted_at_intake": true,
+            "manifest_records": 7,
+            "named_by": [
+              "binding",
+              "prompt"
+            ],
+            "physical_file_count": 7,
+            "physical_files": [
+              {
+                "bytes": 16237,
+                "file": "references/REF-11-563203462.xml",
+                "sha256": "8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a"
+              },
+              {
+                "bytes": 4096,
+                "file": "references/REF-11-berufungsbegruendung-O.pdf",
+                "sha256": "42089e1bf976e6e478ea17624eb35239494b3f3556af10092e8916d5d6d92cc8"
+              },
+              {
+                "bytes": 3102,
+                "file": "references/REF-11-berufungsbegruendung-O.pdf.p7s",
+                "sha256": "4287a3783caec8da9b6e0c16f86a3d5e363a34253427eca3116159e77dd07a7a"
+              },
+              {
+                "bytes": 577811,
+                "file": "references/REF-11-original-mail-attachment.zip",
+                "sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+              },
+              {
+                "bytes": 1924,
+                "file": "references/REF-11-vhn-covered-content.xml",
+                "sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23"
+              },
+              {
+                "bytes": 2396,
+                "file": "references/REF-11-vhn.xml.p7s",
+                "sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a"
+              },
+              {
+                "bytes": 4154,
+                "file": "references/REF-11-xjustiz_nachricht.xml",
+                "sha256": "309a4c7d0cecdf8abf7a97200f6ce31529f84dd677524144978c3044aa5a89a7"
+              }
+            ],
+            "ref_id": "REF-11",
+            "role": "The original beA/OSCI artefacts: the ZIP archive, `563203462.xml`, `vhn.xml.p7s`, the signed content, and the 17.08 source and destination copies",
+            "specified_in_package": true,
+            "state": "PRESENT_AND_HASHED"
+          }
+        ],
+        "target_identity": {
+          "binding_state": "NO_PRODUCTIVE_TARGET_IN_BINDING",
+          "binding_status": "EXTERNAL_EVIDENCE_REQUIRED",
+          "candidate_paths_declared": 0,
+          "candidate_paths_present": 0,
+          "expected_sha256": null,
+          "measured_sha256": null,
+          "path": null,
+          "state": "TARGET_SUPPLIED_BY_REFERENCES",
+          "target_reference_ids": [
+            "REF-11"
+          ],
+          "verified": true
+        },
+        "validation_time": {
+          "required": true,
+          "state": "NOT_YET_SELECTED_NO_CANDIDATE_PLAN"
+        }
+      },
+      "controller_order": 35,
+      "readiness": "READY_FOR_PLANNING",
+      "required_phases": [
+        "RUN-A"
+      ]
+    }
+  ],
+  "missing_external_material": [],
+  "platform": "UBUNTU",
+  "references_manifest_sha256": "4c1e9a706a5ba2a3c6f25f7ffc37963efadbe529f907865f516982ce3b54f1b4",
+  "revision": "R7",
+  "schema": "wpno.level1.all35-readiness/1",
+  "scope_sha256": "8af7fc52fdb6c9f95d22cf4c0a568f54b17104d4b7f3cf77524c9a797a6afeb8"
+}

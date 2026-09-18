@@ -1,0 +1,28 @@
+{
+  "schema": "wpno.level1.binding/1",
+  "audit_id": "L1-A29",
+  "binding_status": "TARGET_MISSING",
+  "logical_targets": [
+    "Independent 376 hash remeasurement"
+  ],
+  "candidate_paths": [],
+  "productive_target": null,
+  "productive_target_sha256": null,
+  "productive_target_evidence": [],
+  "execution_path_evidence": [],
+  "test_candidates": [],
+  "related_components": [],
+  "independent_reference_candidates": [],
+  "external_evidence_required": [
+    "REF-12",
+    "REF-11"
+  ],
+  "unresolved_questions": [
+    "The referent of '376' is undefined on this machine."
+  ],
+  "discovery_drift": [],
+  "source_evidence": [],
+  "replications": 1,
+  "risk": "HIGH",
+  "execution_order": 31
+}

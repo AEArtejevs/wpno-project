@@ -1,0 +1,63 @@
+{
+  "archive_members": [
+    "README.txt",
+    "all-exchanges-strings.lc.txt",
+    "all-orgs-strings.lc.txt",
+    "all-people-strings.lc.txt",
+    "all-places-strings.lc.txt",
+    "all-topics-strings.lc.txt",
+    "cat-descriptions_120396.txt",
+    "feldman-cia-worldfactbook-data.txt",
+    "lewis.dtd",
+    "reut2-000.sgm",
+    "reut2-001.sgm",
+    "reut2-002.sgm",
+    "reut2-003.sgm",
+    "reut2-004.sgm",
+    "reut2-005.sgm",
+    "reut2-006.sgm",
+    "reut2-007.sgm",
+    "reut2-008.sgm",
+    "reut2-009.sgm",
+    "reut2-010.sgm",
+    "reut2-011.sgm",
+    "reut2-012.sgm",
+    "reut2-013.sgm",
+    "reut2-014.sgm",
+    "reut2-015.sgm",
+    "reut2-016.sgm",
+    "reut2-017.sgm",
+    "reut2-018.sgm",
+    "reut2-019.sgm",
+    "reut2-020.sgm",
+    "reut2-021.sgm"
+  ],
+  "archive_sha256": "3bae43c9b14e387f76a61b6d82bf98a4fb5d3ef99ef7e7075ff2ccbcf59f9d30",
+  "document_count": 21578,
+  "duplicate_newid": 0,
+  "labels_invented": 0,
+  "missing_newid": 0,
+  "move_byte_identity": [
+    {
+      "byte_identity": "PROVEN",
+      "file": "README.txt",
+      "post_move_sha256": "eb669045dd883c56cb5a96da1848c3380bc6371894c5663709a46776e3262a96",
+      "pre_move_sha256": "eb669045dd883c56cb5a96da1848c3380bc6371894c5663709a46776e3262a96"
+    },
+    {
+      "byte_identity": "PROVEN",
+      "file": "reuters21578.html",
+      "post_move_sha256": "ba7fcb3e75a813b893fb5d13782296b373c57c42661a3e0f6d19574497dcc17f",
+      "pre_move_sha256": "ba7fcb3e75a813b893fb5d13782296b373c57c42661a3e0f6d19574497dcc17f"
+    },
+    {
+      "byte_identity": "PROVEN",
+      "file": "reuters21578.tar.gz",
+      "post_move_sha256": "3bae43c9b14e387f76a61b6d82bf98a4fb5d3ef99ef7e7075ff2ccbcf59f9d30",
+      "pre_move_sha256": "3bae43c9b14e387f76a61b6d82bf98a4fb5d3ef99ef7e7075ff2ccbcf59f9d30"
+    }
+  ],
+  "research_use_copyright_limitation": "Reuters-21578 Distribution 1.0 remains subject to the research-use and copyright limitations stated in the supplied README.txt; inclusion here grants no additional rights.",
+  "schema": "wpno.r7.ref07-collection-inventory/1",
+  "sgm_file_count": 22
+}

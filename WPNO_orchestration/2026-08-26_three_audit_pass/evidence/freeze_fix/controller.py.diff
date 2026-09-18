@@ -1,0 +1,173 @@
+--- /home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R5/automation/controller.py	2026-08-26 16:11:20.736004238 +0000
++++ /home/ubuntu/project/WPNO_orchestration/2026-08-26_three_audit_pass/freezefix_dev/automation_fixed/controller.py	2026-08-26 18:05:08.826868405 +0000
+@@ -1146,11 +1146,22 @@
+ 
+ 
+ def _freeze_write(path, text):
+-    """Write one freeze artefact and prove the bytes landed."""
++    """Write one freeze artefact atomically and prove the bytes landed.
++
++    Written to a temporary file beside the destination, flushed to the disk,
++    and renamed into place. A reader therefore never sees a half-written
++    artefact, and an interruption leaves either the previous file or the
++    complete new one - never a truncated one that would hash to nothing
++    anybody expects.
++    """
+     canonical = path_policy.assert_writable(path)
+     path_policy.ensure_dir(os.path.dirname(canonical))
+-    with io.open(canonical, "w", encoding="utf-8") as handle:
++    temporary = canonical + ".freeze-tmp"
++    with io.open(temporary, "w", encoding="utf-8") as handle:
+         handle.write(text)
++        handle.flush()
++        os.fsync(handle.fileno())
++    os.replace(temporary, canonical)
+     written = hashing.sha256_file(canonical)
+     expected = hashing.sha256_text(text)
+     if written != expected:
+@@ -1231,16 +1242,26 @@
+                 % lineage_key)
+ 
+         # =============== nothing above this line writes =================
+-        written = {}
+-        _, written["BASELINE_MANIFEST.json"] = _freeze_write(
+-            os.path.join(root, "BASELINE_MANIFEST.json"),
+-            freeze.serialize_baseline(baseline))
+-
+-        manifest = {rel: freeze.sha256_file(os.path.join(root, rel))
+-                    for rel in freeze.control_plane_files(root)}
+-        _, written["CONTROL_MANIFEST.sha256"] = _freeze_write(
+-            os.path.join(root, "CONTROL_MANIFEST.sha256"),
+-            "".join("%s  %s\n" % (manifest[r], r) for r in sorted(manifest)))
++        #
++        # Staging. Every byte this freeze will publish is computed before
++        # anything is published, so the control manifest can be built against
++        # the package's final state rather than its current one. That is what
++        # lets MODE be published last and still be recorded correctly - the
++        # two requirements R5 could not hold at the same time.
++        baseline_text = freeze.serialize_baseline(baseline)
++        mode_text = policy.MODE_FROZEN + "\n"
++
++        staged = {"BASELINE_MANIFEST.json": baseline_text, "MODE": mode_text}
++        manifest = freeze.final_state_manifest(root, staged)
++        manifest_text = freeze.serialize_manifest(manifest)
++        staged[freeze.CONTROL_MANIFEST_REL] = manifest_text
++
++        if freeze.sha256_text(mode_text) != manifest.get("MODE"):
++            raise ControllerError(
++                "FREEZE_STAGING_INCONSISTENT: the manifest does not record the "
++                "final MODE bytes. This is the R5 regression and the freeze "
++                "stops here rather than publishing a package that fails its "
++                "own manifest.")
+ 
+         verified = {
+             "schema": "wpno.level1.package-verified/1",
+@@ -1254,29 +1275,77 @@
+             "baseline_preview_sha256": plan["baseline_preview_sha256"],
+             "baseline_provenance": provenance,
+             "control_manifest_entries": len(manifest),
++            "control_manifest_covers_mode": True,
++            "manifest_generation": "FINAL_STATE_STAGED_BYTES",
++            "publication_order": ["BASELINE_MANIFEST.json",
++                                  "CONTROL_MANIFEST.sha256",
++                                  "state/PACKAGE_VERIFIED.json",
++                                  "MODE"],
+             "independence_limitation": plan.get("independence_limitation"),
+         }
+-        _, written["state/PACKAGE_VERIFIED.json"] = _freeze_write(
+-            os.path.join(STATE_DIR, "PACKAGE_VERIFIED.json"),
+-            json.dumps(verified, indent=2, sort_keys=True) + "\n")
++        verified_text = json.dumps(verified, indent=2, sort_keys=True) + "\n"
++        staged["state/PACKAGE_VERIFIED.json"] = verified_text
++
++        # The attempt is recorded as started before the first byte is
++        # published. It burns the token either way: an attempt that got as far
++        # as writing must not be retried under the same approval, whatever
++        # happens next. Nothing is recorded as successful yet.
++        freeze.append_attempt(FREEZE_LEDGER_PATH, args.token, plan,
++                              plan_sha256, "PUBLISH_STARTED", stamp)
+ 
+-        _, written["MODE"] = _freeze_write(mode_path,
+-                                           policy.MODE_FROZEN + "\n")
++        # Publication, MODE last. Until MODE lands the package still reads
++        # GENERATED_UNVERIFIED, so a failure part way through leaves a package
++        # that is visibly unfinished rather than one that falsely claims to be
++        # frozen.
++        order = ("BASELINE_MANIFEST.json", freeze.CONTROL_MANIFEST_REL,
++                 "state/PACKAGE_VERIFIED.json", "MODE")
++        written = {}
++        try:
++            for rel in order:
++                destination = (mode_path if rel == "MODE"
++                               else os.path.join(root, *rel.split("/")))
++                _, written[rel] = _freeze_write(destination, staged[rel])
++        except Exception as exc:
++            freeze.append_attempt(
++                FREEZE_LEDGER_PATH, args.token, plan, plan_sha256,
++                "FAILED_DURING_PUBLICATION", stamp)
++            raise ControllerError(
++                "FREEZE_PUBLICATION_FAILED after %r: %s. MODE is %r. The "
++                "attempt is recorded as failed and this approval is spent; a "
++                "further attempt needs a new plan and a new token."
++                % (sorted(written), exc, _read_mode()))
++
++        # --- post-publication verification, against the real package -----
++        #
++        # Not a re-read of what was just written - that only proves the write
++        # landed, which is what R5 checked and why R5 reported a frozen
++        # package that was not one. This verifies the published manifest
++        # against the published files, the same question `sha256sum -c` asks.
++        report = freeze.verify_manifest_from_disk(root)
++        current_mode = _read_mode()
++        healthy = (report["failed_count"] == 0
++                   and report["missing_count"] == 0
++                   and report["unlisted_count"] == 0
++                   and report["mode_entry_ok"]
++                   and current_mode == policy.MODE_FROZEN)
++        if not healthy:
++            freeze.append_attempt(
++                FREEZE_LEDGER_PATH, args.token, plan, plan_sha256,
++                "FAILED_POST_PUBLICATION_VERIFICATION", stamp)
++            raise ControllerError(
++                "FREEZE_POST_VERIFICATION_FAILED: %s. The package is NOT "
++                "valid frozen evidence and is not reported as frozen. It is "
++                "preserved as it stands for root-cause work; a repair belongs "
++                "in a successor revision, never in this one."
++                % json.dumps({"failed": report["failed"][:5],
++                              "missing": report["missing"][:5],
++                              "unlisted": report["unlisted"][:5],
++                              "mode_entry_ok": report["mode_entry_ok"],
++                              "mode": current_mode}, sort_keys=True))
+ 
+         freeze.append_attempt(FREEZE_LEDGER_PATH, args.token, plan,
+                               plan_sha256, "FROZEN", stamp)
+ 
+-        # --- 12. re-verify every artefact from disk ---------------------
+-        for rel, digest in sorted(written.items()):
+-            actual = freeze.sha256_file(os.path.join(root, rel))
+-            if actual != digest:
+-                raise ControllerError(
+-                    "FREEZE_ARTEFACT_UNVERIFIED_AFTER_WRITE: %s is %s, "
+-                    "wrote %s" % (rel, actual, digest))
+-        with io.open(mode_path, encoding="utf-8") as handle:
+-            if handle.read().strip() != policy.MODE_FROZEN:
+-                raise ControllerError("FREEZE_MODE_NOT_SET")
+-
+         print(json.dumps({
+             "frozen": True,
+             "revision": freeze.R5_REVISION,
+@@ -1285,6 +1354,14 @@
+             "artefacts": written,
+             "project_baseline_count": len(baseline["project_files"]),
+             "discovery_baseline_count": len(baseline["discovery_files"]),
++            "control_manifest_verified_from_disk": {
++                "entries": report["entries"],
++                "ok": report["ok"],
++                "failed": report["failed_count"],
++                "missing": report["missing_count"],
++                "unlisted": report["unlisted_count"],
++                "mode_entry_ok": report["mode_entry_ok"],
++            },
+         }, indent=2, sort_keys=True))
+         return 0
+ 

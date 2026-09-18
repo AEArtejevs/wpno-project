@@ -1,0 +1,6 @@
+CN=vertrauenswuerdiger Herkunftsnachweis beA, serialNumber=00001, OU=besonderes Anwaltspostfach, O=Bundesrechtsanwaltskammer, L=Berlin, ST=Berlin, C=DE
+error 7 at 0 depth lookup: certificate signature failure
+error /home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7/work/L1-A31/preparation_r7_2026-08-26/controls/vhn_leaf_der_signature_mutated.pem: verification failed
+40F7C1A34D770000:error:02000086:rsa routines:ossl_rsa_verify_PKCS1_PSS_mgf1:last octet invalid:../crypto/rsa/rsa_pss.c:103:
+40F7C1A34D770000:error:1C880004:Provider routines:rsa_verify_directly:RSA lib:../providers/implementations/signature/rsa_sig.c:1078:
+40F7C1A34D770000:error:06880006:asn1 encoding routines:ASN1_item_verify_ctx:EVP lib:../crypto/asn1/a_verify.c:219:

@@ -1,0 +1,105 @@
+{
+ "FIXED_TARGET_UNCHANGED": true,
+ "checks": {
+  "active_phases": {
+   "PASS": true,
+   "expected": {
+    "phases": 43,
+    "states": {
+     "NOT_STARTED": 43
+    }
+   },
+   "measured": {
+    "audits": 35,
+    "phases": 43,
+    "states": {
+     "NOT_STARTED": 43
+    }
+   }
+  },
+  "approvals_results_evidence": {
+   "PASS": true,
+   "expected": {
+    "approvals_bytes": 0,
+    "evidence": 0,
+    "results": 0
+   },
+   "measured": {
+    "approvals_bytes": 0,
+    "evidence": 0,
+    "results": 0
+   }
+  },
+  "build_manifest": {
+   "PASS": true,
+   "expected": {
+    "bad": 0,
+    "entries": 728,
+    "manifest_sha256": "f7e181a21c902a401c55cd9f97d50c55711fbcef6c5fdf16845ab94bc8db95bb",
+    "ok": 728
+   },
+   "measured": {
+    "bad": 0,
+    "duplicates": [],
+    "entries": 728,
+    "malformed": [],
+    "manifest_sha256": "f7e181a21c902a401c55cd9f97d50c55711fbcef6c5fdf16845ab94bc8db95bb",
+    "mismatched": [],
+    "missing": [],
+    "ok": 728
+   }
+  },
+  "migration_packet": {
+   "PASS": true,
+   "expected": "VALID / BOUND / UNCONSUMED",
+   "measured": {
+    "applied_before_freeze": false,
+    "consumed": false,
+    "excluded": [
+     "L1-A31/COMPARISON"
+    ],
+    "migratable": [
+     "L1-A31/RUN-A",
+     "L1-A31/RUN-B"
+    ],
+    "plan_sha256_actual": "805a5e34b2f703b94c80c5789db1498c8395796c2da27617cfdd50cf61a7b82b",
+    "plan_sha256_declared": "805a5e34b2f703b94c80c5789db1498c8395796c2da27617cfdd50cf61a7b82b",
+    "route_module_sha256_actual": "65b3db95c3bf9d012195ee81c946f95bae08aea0cc7545134cf1f76d0d6ba93f",
+    "route_module_sha256_declared": "65b3db95c3bf9d012195ee81c946f95bae08aea0cc7545134cf1f76d0d6ba93f"
+   }
+  },
+  "mode": {
+   "PASS": true,
+   "expected": "GENERATED_UNVERIFIED",
+   "measured": "GENERATED_UNVERIFIED"
+  },
+  "no_freeze_attempt_recorded": {
+   "PASS": true,
+   "expected": false,
+   "measured": false
+  },
+  "r7_control_manifest": {
+   "PASS": true,
+   "expected": {
+    "bad": 0,
+    "entries": 15804,
+    "ok": 15804
+   },
+   "measured": {
+    "bad": 0,
+    "entries": 15804,
+    "mismatched": [],
+    "ok": 15804
+   }
+  },
+  "r9_absent": {
+   "PASS": true,
+   "expected": false,
+   "measured": false
+  }
+ },
+ "failed": [],
+ "r7_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R7",
+ "r8_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+ "schema": "wpno.r8.delta-fixed-target/1"
+}

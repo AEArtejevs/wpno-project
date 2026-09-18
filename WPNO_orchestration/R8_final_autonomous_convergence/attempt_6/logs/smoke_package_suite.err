@@ -1,0 +1,26 @@
+======================================================================
+FAIL: test_no_plan_in_the_package_names_an_unconfined_output (automation.package_tests.test_r7_rehearsal_output_paths.OutputsStayInsideTheWorkArea.test_no_plan_in_the_package_names_an_unconfined_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/ubuntu/project/WPNO/.r8_verify_clone_attempt_6_651472/automation/package_tests/test_r7_rehearsal_output_paths.py", line 133, in test_no_plan_in_the_package_names_an_unconfined_output
+    self.assertEqual(
+    ~~~~~~~~~~~~~~~~^
+        self.h.unconfined_outputs(step), [],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "%s/%s step %r writes outside work/"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        % (audit_id, phase, step["step_id"]))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['/home/ubuntu/project/WPNO/08.18.26_Level[43 chars]ocx'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN1/output.docx'
+
+- ['/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A01/RUN-A/RUN1/output.docx']
++ [] : L1-A01/RUN-A step 'run1' writes outside work/
+
+----------------------------------------------------------------------
+Ran 361 tests in 114.493s
+
+FAILED (failures=1)

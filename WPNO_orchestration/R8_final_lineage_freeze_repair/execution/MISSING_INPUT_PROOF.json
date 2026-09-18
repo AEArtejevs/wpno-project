@@ -1,0 +1,54 @@
+{
+ "EXECUTION_WOULD_FAIL": true,
+ "schema": "wpno.r8.comparison-input-proof/1",
+ "steps": [
+  {
+   "handler_outcome": "RETURNED",
+   "has_handler": true,
+   "in_process": true,
+   "operation": "PARSE_JSON_READONLY",
+   "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/progress.json",
+   "path_exists": true,
+   "result_keys": [
+    "decoded_as",
+    "parsed",
+    "path",
+    "sha256",
+    "shape",
+    "size",
+    "top_level_keys"
+   ],
+   "step_id": "collect_accepted_attempts"
+  },
+  {
+   "error": "[Errno 2] No such file or directory: '/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A31/RUN-A/ATTEMPT_INDEX.json'",
+   "error_type": "FileNotFoundError",
+   "handler_outcome": "RAISED",
+   "has_handler": true,
+   "in_process": true,
+   "operation": "SHA256_FILE",
+   "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A31/RUN-A/ATTEMPT_INDEX.json",
+   "path_exists": false,
+   "step_id": "compare_run_a_seal"
+  },
+  {
+   "error": "[Errno 2] No such file or directory: '/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A31/RUN-B/ATTEMPT_INDEX.json'",
+   "error_type": "FileNotFoundError",
+   "handler_outcome": "RAISED",
+   "has_handler": true,
+   "in_process": true,
+   "operation": "SHA256_FILE",
+   "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A31/RUN-B/ATTEMPT_INDEX.json",
+   "path_exists": false,
+   "step_id": "compare_run_b_seal"
+  }
+ ],
+ "steps_that_would_raise": [
+  "compare_run_a_seal",
+  "compare_run_b_seal"
+ ],
+ "steps_whose_input_is_absent": [
+  "compare_run_a_seal",
+  "compare_run_b_seal"
+ ]
+}

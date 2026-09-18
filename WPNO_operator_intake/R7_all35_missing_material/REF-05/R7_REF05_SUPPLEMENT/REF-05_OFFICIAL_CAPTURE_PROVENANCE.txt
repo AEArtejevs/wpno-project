@@ -1,0 +1,53 @@
+REF-05 OFFICIAL BGH SUPPLEMENTAL CAPTURE
+
+Purpose:
+Close only the previously unresolved L1-A11 documentary coverage interval
+2026-08-19 through 2026-08-27.
+
+Official source:
+Bundesgerichtshof — Geschäftsverteilungsplan 2026 —
+Präsidiumsbeschlüsse 2026.
+
+Official canonical URL:
+https://www.bundesgerichtshof.de/DE/DasGericht/Geschaeftsverteilung/Geschaeftsverteilungsplan2026/Praesidiumsbeschluesse2026/praesidiumsbeschluesse2026_node.html
+
+Saved official HTML:
+REF-05_BGH_OFFICIAL_PAGE_2026.html
+
+Saved official linked PDF:
+REF-05_BGH_PRAESIDIUMSBESCHLUESSE_2026_CURRENT.pdf
+
+HTML SHA-256:
+e6dfe17c4dc185796c5d0d0114b2236967f8ff053275962b304db6e7f3035229
+
+PDF SHA-256:
+da9f847e6532bfacfc6f3a8f55edba9c3ad5f346b2242f5918668c938e7b6d18
+
+HTML-embedded BGH page-generation timestamp:
+Fri Aug 28 00:15:49 CEST 2026
+
+Observed official-page facts requiring independent audit verification:
+- the page identifies itself as Präsidiumsbeschlüsse 2026;
+- it states that the individual Präsidium decisions for the 2026
+  Geschäftsverteilungsplan are listed there;
+- the latest listed decision is 11 August 2026;
+- the corresponding BGH document is dated 18 August 2026;
+- the saved official page was generated after 2026-08-27;
+- the linked current PDF is byte-identical to the previously accepted
+  Präsidiumsbeschlüsse PDF.
+
+Existing human decision:
+The operator period/provenance decision already exists under:
+HUMAN_DECISIONS/L1-A11/
+It is not repeated or replaced by this supplemental record.
+
+Limitation:
+The saved HTML contains browser-extension-injected markup. Such extension
+markup is not BGH evidence and must be ignored. Substantive verification must
+use the BGH canonical URL, BGH title/navigation, official decision list,
+official linked PDF information and BGH page-generation timestamp.
+
+This provenance record does not itself force the L1-A11 conclusion.
+The focused L1-A11 delta verifier must independently determine whether the
+official saved page establishes complete publication coverage through
+2026-08-27.

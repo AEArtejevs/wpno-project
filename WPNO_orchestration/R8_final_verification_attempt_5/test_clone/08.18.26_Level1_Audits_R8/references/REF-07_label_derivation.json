@@ -1,0 +1,17 @@
+{
+  "TOPICS_attribute_used_as_label": false,
+  "checker_under_test_used": false,
+  "copyright_limitation_preserved": true,
+  "labels_invented": 0,
+  "method": "Deterministic byte parsing of each <REUTERS> record in the 22 archive SGML members; labels are only <D> values inside TOPICS, PLACES, PEOPLE, ORGS, and EXCHANGES elements.",
+  "record_order": "numeric NEWID, then source member",
+  "requirements": {
+    "DOCUMENT_COUNT": 21578,
+    "DUPLICATE_NEWID": 0,
+    "LABELS_INVENTED": 0,
+    "MISSING_NEWID": 0,
+    "SGM_FILE_COUNT": 22
+  },
+  "schema": "wpno.r7.ref07-label-derivation/1",
+  "source_record_hash_scope": "Exact bytes from opening <REUTERS...> through closing </REUTERS> inclusive"
+}

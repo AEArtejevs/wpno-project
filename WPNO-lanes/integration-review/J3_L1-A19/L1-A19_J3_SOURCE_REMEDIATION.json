@@ -1,0 +1,79 @@
+{
+  "schema": "wpno.level1.source_remediation_receipt/1",
+  "audit_id": "L1-A19",
+  "section": "J3",
+  "date": "2026-09-01",
+  "classification": "SEPARATE_SOURCE_REMEDIATION_NOT_AUDIT_VERDICT",
+  "scope": "Enforce the official German IdNr leading-zero and first-ten-digit repetition rules while preserving MOD 11,10 behavior and prior J1/J2 regressions.",
+  "authorization_basis": "The user directed implementation and focused re-audit of repaired sections one by one and explicitly directed continuation to the other high-probability sections.",
+  "historical_finding": "L1-A19-RUN-A-F01",
+  "backup": {
+    "path": "/home/ubuntu/project/WPNO-lanes/integration-review/J3_L1-A19/before",
+    "recoverable": true,
+    "scanner_sha256": "4cd1beae37c346644c1c290b6d241d04279bc1144fd6d96eeb933fdf43e340d0",
+    "golden_wrapper_sha256": "c87a23d9e0cedfbdc0d360d56c78e81e2a9cfc70d9859f75720e5fa64622da14"
+  },
+  "changes": [
+    {
+      "path": "/home/ubuntu/project/WPNO/anonymization/payload_scan.py",
+      "before_sha256": "4cd1beae37c346644c1c290b6d241d04279bc1144fd6d96eeb933fdf43e340d0",
+      "after_sha256": "006ea6a7c2e7312810a4851a3915e3f47a455787056c01b789a6b9b5e2f1225c",
+      "change": "Reject a leading zero and require exactly one repeated digit occurring two or three times among the first ten digits before applying the unchanged MOD 11,10 calculation."
+    },
+    {
+      "path": "/home/ubuntu/project/WPNO/docker/litellm/payload_scan.py",
+      "before_sha256": "4cd1beae37c346644c1c290b6d241d04279bc1144fd6d96eeb933fdf43e340d0",
+      "after_sha256": "006ea6a7c2e7312810a4851a3915e3f47a455787056c01b789a6b9b5e2f1225c",
+      "change": "Apply the same minimal validator change; active scanner copies remain byte-identical."
+    },
+    {
+      "path": "/home/ubuntu/project/WPNO/anonymization/test_tax_id_validation.py",
+      "before": "ABSENT",
+      "after_sha256": "444f98cb65a566c16383787f34b843305c5d45bf50228b3500e9a33f211e17be",
+      "change": "Add three conventional assertion groups for valid, structurally invalid, leading-zero, and wrong-checksum values."
+    },
+    {
+      "path": "/home/ubuntu/project/WPNO/anonymization/test_payload_golden.py",
+      "before_sha256": "c87a23d9e0cedfbdc0d360d56c78e81e2a9cfc70d9859f75720e5fa64622da14",
+      "after_sha256": "f1acf1629ea3c6655034f48495f60868bf0e8c070bf9cc5bcd1f4e6fd3802168",
+      "change": "Correct only the temporary golden-test Steuer-ID generator so its generated positive controls satisfy the official repetition rule; the historical golden program remains unchanged."
+    }
+  ],
+  "red_phase": {
+    "runtime": "/usr/bin/python3 standard-library assertion runner",
+    "passed": 1,
+    "failed": 2,
+    "failed_groups": [
+      "checksum-valid but structurally invalid values were detected as valid",
+      "leading-zero value was detected as valid"
+    ],
+    "source_modified": false
+  },
+  "preintegration_quality_gate": {
+    "initial_observation": "The corrected validator caused the unchanged J1 golden generator to produce 20 structurally invalid positive controls, so the golden positive test failed while the allow-all mutation still passed.",
+    "resolution": "Integrated the already reviewed J3 test-only generator correction from the Janis receipt, without changing the historical golden program.",
+    "final_j1_j2_j3_assertion_groups_passed": 10,
+    "final_j1_j2_j3_assertion_groups_failed": 0,
+    "mutation_result": "Removing the new leading-zero/repetition guard recreated exactly two J3 assertion-group failures while official structurally valid controls still passed."
+  },
+  "postintegration_validation": {
+    "active_scanners_byte_identical": true,
+    "changed_python_asts_valid": 4,
+    "scanner_lines": 496,
+    "j1_j2_j3_assertion_groups_passed": 10,
+    "j1_j2_j3_assertion_groups_failed": 0,
+    "packages_installed": false,
+    "network_used": false,
+    "git_used": false,
+    "docker_or_service_started": false,
+    "sealed_r9_evidence_intact": 63,
+    "sealed_r10_evidence_intact": 1,
+    "sealed_r11_evidence_intact": 5,
+    "tampered_attempts": 0
+  },
+  "limitations": [
+    "This receipt is remediation validation, not a controller-sealed L1-A19 audit verdict.",
+    "The current scanner hash supersedes R11's hash-bound L1-A18 target; R11 remains immutable historical evidence, and the L1-A19 audit must retain L1-A18 regressions as controls.",
+    "No live Docker container, service restart, external deployment identity, or overall WPNO status was tested."
+  ]
+}

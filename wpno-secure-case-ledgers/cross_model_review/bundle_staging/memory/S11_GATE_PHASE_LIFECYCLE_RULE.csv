@@ -1,0 +1,7 @@
+regel,inhalt
+R1,historische Tests bleiben erhalten (Replay gegen eigene Baseline)
+R2,historischer Test blockiert HEAD nicht
+R3,aktuelle Phase ist state-/scope-aware
+R4,keine feste Commit-ID als globale HEAD-Regel
+R5,keine stille Deaktivierung; Supersession+Ersatz+Grund
+R6,Attestierung append-only + tree-gebunden

@@ -1,0 +1,519 @@
+2026-08-16 20:00:03.798 INFO  de.governikus.vibilia.best.BeStProject.<init>(BeStProject.java:87)                                   : 
+2026-08-16 20:00:03.804 INFO  de.governikus.vibilia.best.BeStProject.<init>(BeStProject.java:88)                                   : +++++++++++++++++++++++++ Information +++++++++++++++++++++++++
+2026-08-16 20:00:03.805 INFO  de.governikus.vibilia.best.BeStProject.<init>(BeStProject.java:89)                                   : +++
+2026-08-16 20:00:03.807 INFO  de.governikus.vibilia.best.BeStProject.<init>(BeStProject.java:90)                                   : +++ COM Vibilia beSt Edition
+2026-08-16 20:00:03.808 INFO  de.governikus.vibilia.best.BeStProject.<init>(BeStProject.java:91)                                   : +++ CVS-Tag/Version: 2.7.1
+2026-08-16 20:00:03.808 INFO  de.governikus.vibilia.best.BeStProject.<init>(BeStProject.java:92)                                   : +++
+2026-08-16 20:00:03.808 INFO  de.governikus.vibilia.best.BeStProject.<init>(BeStProject.java:93)                                   : +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2026-08-16 20:00:03.808 INFO  de.governikus.vibilia.best.BeStProject.<init>(BeStProject.java:94)                                   : 
+2026-08-16 20:00:03.822 INFO  de.bos_bremen.govello.model.GovelloStarter.start(GovelloStarter.java:69)                             : Project: de.governikus.vibilia.best.BeStProject@2df79033
+2026-08-16 20:00:03.829 INFO  de.bos_bremen.govello.view.ApplicationView.start(ApplicationView.java:103)                           : loading ... 
+2026-08-16 20:00:03.851 WARN  java.logging/sun.util.logging.internal.LoggingProviderImpl$JULWrapper.log(Unknown Source)            : Unsupported JavaFX configuration: classes were loaded from 'unnamed module @32464a14'
+2026-08-16 20:00:04.287 INFO  de.bos_bremen.gc.GUIProject.init(GUIProject.java:76)                                                 : 
+2026-08-16 20:00:04.330 INFO  de.governikus.utils.secutils.SecurityUtils.logCheckResult(SecurityUtils.java:464)                    : Checking DocumentBuilderFactory for XXE prevention: passed.
+2026-08-16 20:00:04.335 INFO  de.governikus.utils.secutils.SecurityUtils.logCheckResult(SecurityUtils.java:464)                    : Checking SAXParserFactory for XXE prevention: passed.
+2026-08-16 20:00:04.336 INFO  de.governikus.utils.secutils.SecurityUtils.logCheckResult(SecurityUtils.java:464)                    : Checking XMLReader for XXE prevention: passed.
+2026-08-16 20:00:04.366 INFO  de.governikus.utils.secutils.SecurityUtils.logCheckResult(SecurityUtils.java:464)                    : Checking XMLInputFactory for XXE prevention: passed.
+2026-08-16 20:00:04.384 INFO  de.governikus.utils.secutils.SecurityUtils.logCheckResult(SecurityUtils.java:464)                    : Checking SchemaFactory for external schema access prevention: passed.
+2026-08-16 20:00:04.652 INFO  de.bos_bremen.gc.Application.init(Application.java:110)                                              : Project ID: 99010101 -> file: 99010101.xml -> valid? true
+2026-08-16 20:00:04.652 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:169)                                      : 
+2026-08-16 20:00:04.653 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:170)                                      : +++++++++++++++++++++++++ Information +++++++++++++++++++++++++
+2026-08-16 20:00:04.653 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:171)                                      : +++
+2026-08-16 20:00:04.653 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:172)                                      : +++ Governikus COM Vibilia
+2026-08-16 20:00:04.653 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:173)                                      : +++ Version: 10.18.3
+2026-08-16 20:00:04.653 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:174)                                      : +++
+2026-08-16 20:00:04.653 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:180)                                      : +++ MCARD : OCF
+2026-08-16 20:00:04.653 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:181)                                      : +++ Version : 3.3.1
+2026-08-16 20:00:04.654 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:182)                                      : +++
+2026-08-16 20:00:04.654 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:186)                                      : +++ Governikus Crypto Provider: BC
+2026-08-16 20:00:04.654 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:187)                                      : +++ Version : BouncyCastle Security Provider v1.84
+2026-08-16 20:00:04.655 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:188)                                      : +++
+2026-08-16 20:00:04.655 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:191)                                      : +++ AppConfig(appName=beSt_justiz, appTitle=besonderes Steuerberaterpostfach (beSt), appAboutUrl=http://www.steuerberaterplattform-bstbk.de/, versionUrl=https://appl.governikus-asp.de/update/best/best.xml, registrationId=0001.0008.0001.040200)
+2026-08-16 20:00:04.655 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:192)                                      : +++
+2026-08-16 20:00:04.656 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:196)                                      : +++ POBoxConfig(osciManagerUrl=null)
+2026-08-16 20:00:04.656 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:197)                                      : +++
+2026-08-16 20:00:04.657 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:202)                                      : +++ MessageConfig(justice=true, beBPo=false, minSignatureLevel=no, maxCount=1000, maxSize=200)
+2026-08-16 20:00:04.657 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:203)                                      : +++
+2026-08-16 20:00:04.667 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:213)                                      : +++ SafeConfig(roleID=egvp_best, roles=[egvp_bea, egvp_bebpo, egvp_behoerde, egvp_ben, egvp_best, egvp_ebo, egvp_justiz, buerger_hin, buerger_rueck, ozg_postfach], idProviderX509CertificateUrl=https://safe-sts.prod.bstbk-steuerberaterplattform.de/SAFE-IdProvider/IdProviderX509Certificate, attributeServiceUrl=https://vas.bnotk.de/SAFE-Attribute/AttributeServiceNoSTS, provisioningServiceUrl=null, selfProvisioningServiceUrl=null, idProviderUsernamePasswordUrl=https://safe-sts.prod.bstbk-steuerberaterplattform.de/SAFE-IdProvider/IdProviderUsernamePassword)
+2026-08-16 20:00:04.667 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:214)                                      : +++
+2026-08-16 20:00:04.668 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:227)                                      : +++ CertificateValidationServer(name=cvs.prod.bstbk-best.de, uri=https://cvs.prod.bstbk-best.de/CertificateValidationServer/cvs)
+2026-08-16 20:00:04.668 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:229)                                      : +++
+2026-08-16 20:00:04.668 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:235)                                      : +++ SecurityProvider: BC version 1.84
+2026-08-16 20:00:04.668 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:235)                                      : +++ SecurityProvider: OCF version 3.3.1
+2026-08-16 20:00:04.668 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:235)                                      : +++ SecurityProvider: SUN version 17
+2026-08-16 20:00:04.668 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:235)                                      : +++ SecurityProvider: SunRsaSign version 17
+2026-08-16 20:00:04.668 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:235)                                      : +++ SecurityProvider: SunEC version 17
+2026-08-16 20:00:04.669 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:235)                                      : +++ SecurityProvider: SunJSSE version 17
+2026-08-16 20:00:04.669 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:235)                                      : +++ SecurityProvider: SunJCE version 17
+2026-08-16 20:00:04.669 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:235)                                      : +++ SecurityProvider: SunJGSS version 17
+2026-08-16 20:00:04.669 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:235)                                      : +++ SecurityProvider: SunSASL version 17
+2026-08-16 20:00:04.670 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:235)                                      : +++ SecurityProvider: XMLDSig version 17
+2026-08-16 20:00:04.670 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:235)                                      : +++ SecurityProvider: SunPCSC version 17
+2026-08-16 20:00:04.670 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:235)                                      : +++ SecurityProvider: JdkLDAP version 17
+2026-08-16 20:00:04.670 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:235)                                      : +++ SecurityProvider: JdkSASL version 17
+2026-08-16 20:00:04.670 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:235)                                      : +++ SecurityProvider: Apple version 17
+2026-08-16 20:00:04.671 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:235)                                      : +++ SecurityProvider: SunPKCS11 version 17
+2026-08-16 20:00:04.671 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:237)                                      : +++
+2026-08-16 20:00:04.671 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:238)                                      : +++ os.arch: x86_64
+2026-08-16 20:00:04.673 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:239)                                      : +++ os.name: Mac OS X
+2026-08-16 20:00:04.674 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:240)                                      : +++
+2026-08-16 20:00:04.674 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:241)                                      : +++ Available processors (cores): 8
+2026-08-16 20:00:04.674 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:242)                                      : +++ maxMemory in JVM: 2048 MB
+2026-08-16 20:00:04.674 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:243)                                      : +++
+2026-08-16 20:00:04.675 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:244)                                      : +++ java.version: 17.0.18
+2026-08-16 20:00:04.675 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:245)                                      : +++ java vm name: OpenJDK 64-Bit Server VM
+2026-08-16 20:00:04.675 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:246)                                      : +++ java.home: /private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/PlugIns/temurin-17.jre/Contents/Home
+2026-08-16 20:00:04.675 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:247)                                      : +++ java.class.path: :/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/jaxb-api-2.3.1.jar:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/js-22.3.2.jar:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/jaxb-runtime-2.3.6.jar:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/gov-updater-application.jar:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/gov-updater-client.jar:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/gov-updater-schema.jar:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/jakarta.activation-api-1.2.2.jar:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/istack-commons-runtime-3.0.12.jar:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/gov-updater-best.jar:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/truffle-api-22.3.2.jar:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/graal-sdk-22.3.2.jar:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/icu4j-71.1.jar:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/js-scriptengine-22.3.2.jar:/private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/Java/regex-22.3.2.jar
+2026-08-16 20:00:04.675 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:248)                                      : +++ java.library.path: /private/var/folders/2c/25_zr1_16zb92741j7r34qcr0000gn/T/AppTranslocation/8EE10AD6-2CE1-4BE6-9251-3893EBCDE675/d/COM Vibilia beSt.app/Contents/MacOS
+2026-08-16 20:00:04.676 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:249)                                      : +++
+2026-08-16 20:00:04.676 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:250)                                      : +++ user.name: martinotten
+2026-08-16 20:00:04.676 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:251)                                      : +++ user.home: /Users/martinotten
+2026-08-16 20:00:04.676 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:252)                                      : +++ user.dir: /Users/martinotten
+2026-08-16 20:00:04.676 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:254)                                      : +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2026-08-16 20:00:04.676 INFO  de.bos_bremen.gc.config.Config.logInformations(Config.java:255)                                      : 
+2026-08-16 20:00:05.154 INFO  de.bos_bremen.govello.view.ApplicationView.initModel(ApplicationView.java:143)                       : load vibilia_best.properties
+2026-08-16 20:00:05.155 INFO  de.bos_bremen.govello.view.ApplicationView.initModel(ApplicationView.java:169)                       : File: /Users/martinotten/osci_governikus
+2026-08-16 20:00:05.155 INFO  de.bos_bremen.govello.view.ApplicationView.initProject(ApplicationView.java:117)                     : osci-folder: /Users/martinotten/osci_governikus
+2026-08-16 20:00:07.894 INFO  de.bos_bremen.govello.communication.GovelloTransportConfiguration.readSystemSettings(GovelloTransportConfiguration.java:198) : 
+2026-08-16 20:00:07.896 INFO  de.bos_bremen.govello.communication.GovelloTransportConfiguration.readApplicationProperties(GovelloTransportConfiguration.java:158) : ApplicationKey.USE_PROXY? false
+2026-08-16 20:00:07.896 INFO  de.bos_bremen.govello.communication.GovelloTransportConfiguration.readApplicationProperties(GovelloTransportConfiguration.java:171) : Proxy host: null
+2026-08-16 20:00:07.897 INFO  de.bos_bremen.govello.communication.GovelloTransportConfiguration.readApplicationProperties(GovelloTransportConfiguration.java:172) : Proxy port: null
+2026-08-16 20:00:07.911 INFO  de.bos_bremen.govello.communication.GovelloTransportConfiguration.readApplicationProperties(GovelloTransportConfiguration.java:175) : Proxy username: null
+2026-08-16 20:00:07.912 WARN  de.bos_bremen.govello.utilities.prop.ProtectedProperties.setUnsafe(ProtectedProperties.java:144)     : Protected properties are set unsafe and will not be saved to a file
+2026-08-16 20:00:07.913 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.<init>(AppProxySelector.java:35)          : 
+2026-08-16 20:00:08.466 INFO  de.bos_bremen.govello.communication.GovelloTransportConfiguration.readSystemSettings(GovelloTransportConfiguration.java:236) : Cannot run program "reg": error=2, No such file or directory
+2026-08-16 20:00:08.555 INFO  de.governikus.gcf.safe.Utils.getTrustManagers(Utils.java:354)                                        : cacerts.size:144
+2026-08-16 20:00:08.982 INFO  de.governikus.gcf.safe.Utils.getTrustManagers(Utils.java:359)                                        : size:4
+2026-08-16 20:00:08.983 INFO  de.governikus.gcf.safe.Utils.getTrustManagers(Utils.java:364)                                        : add alias CN=D-TRUST EV Root CA 2 2023,O=D-Trust GmbH,C=DE
+2026-08-16 20:00:08.983 INFO  de.governikus.gcf.safe.Utils.getTrustManagers(Utils.java:364)                                        : add alias CN=D-TRUST BR Root CA 2 2023,O=D-Trust GmbH,C=DE
+2026-08-16 20:00:08.983 INFO  de.governikus.gcf.safe.Utils.getTrustManagers(Utils.java:364)                                        : add alias CN=DigiCert Trusted Root G4,OU=www.digicert.com,O=DigiCert Inc,C=US
+2026-08-16 20:00:08.984 INFO  de.governikus.gcf.safe.Utils.getTrustManagers(Utils.java:364)                                        : add alias CN=DigiCert TLS RSA4096 Root G5,O=DigiCert\, Inc.,C=US
+2026-08-16 20:00:09.012 INFO  de.bos_bremen.govello.communication.NetworkSettings.<init>(NetworkSettings.java:47)                  : 
+2026-08-16 20:00:09.056 INFO  de.bos_bremen.govello.action.updater.ApplicationUpdater.handle(ApplicationUpdater.java:29)           : Application is up-to-date
+2026-08-16 20:00:09.057 INFO  de.bos_bremen.govello.action.help.HelpUpdater.handle(HelpUpdater.java:34)                            : 
+2026-08-16 20:00:09.102 INFO  de.bos_bremen.govello.action.help.HelpUpdater.updateHelp(HelpUpdater.java:99)                        : nothing to do
+2026-08-16 20:00:09.193 INFO  de.bos_bremen.govello.action.MessageAutoMove.checkEnabled(MessageAutoMove.java:150)                  : 
+2026-08-16 20:00:44.649 INFO  de.bos_bremen.govello.model.ApplicationModel.start(ApplicationModel.java:863)                        : po box count : 1
+2026-08-16 20:00:44.657 INFO  de.bos_bremen.govello.action.pobox.POBoxOpen.handle(POBoxOpen.java:64)                               : set active pobox
+2026-08-16 20:00:44.661 INFO  de.bos_bremen.govello.model.pobox.POBoxModel.verify(POBoxModel.java:1182)                            : verify
+2026-08-16 20:00:44.667 INFO  de.bos_bremen.govello.model.pobox.POBoxKeyModel.verifyPKCS12(POBoxKeyModel.java:819)                 : 
+2026-08-16 20:00:45.700 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-16 20:00:45.703 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-16 20:00:48.319 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-16 20:00:48.321 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-16 22:00:45.899 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-16 22:00:45.925 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-16 22:00:46.366 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-16 22:00:46.367 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-17 00:00:45.922 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-17 00:00:45.940 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-17 00:00:46.305 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-17 00:00:46.306 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-17 02:00:45.990 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-17 02:00:46.006 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-17 02:00:46.419 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-17 02:00:46.420 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-17 04:00:46.044 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-17 04:00:46.059 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-17 04:00:46.425 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-17 04:00:46.425 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-17 06:00:46.074 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-17 06:00:46.094 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-17 06:00:46.437 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-17 06:00:46.438 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-17 08:00:46.146 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-17 08:00:46.170 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-17 08:00:46.514 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-17 08:00:46.514 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-17 10:00:46.197 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-17 10:00:46.215 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-17 10:00:46.582 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-17 10:00:46.583 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-17 12:00:46.263 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-17 12:00:46.282 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-17 12:00:46.683 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-17 12:00:46.683 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-17 14:00:46.360 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-17 14:00:46.384 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-17 14:00:46.778 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-17 14:00:46.779 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-17 16:00:46.434 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-17 16:00:46.447 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-17 16:00:46.805 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-17 16:00:46.805 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-17 18:00:46.502 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-17 18:00:46.531 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-17 18:00:47.118 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-17 18:00:47.118 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-17 20:00:46.564 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-17 20:00:46.595 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-17 20:00:46.967 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-17 20:00:46.967 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-17 22:00:46.716 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-17 22:00:46.730 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-17 22:00:47.071 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-17 22:00:47.071 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-18 00:00:46.785 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-18 00:00:46.793 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-18 00:00:47.167 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-18 00:00:47.171 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-18 02:00:46.755 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-18 02:00:46.788 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-18 02:00:47.197 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-18 02:00:47.197 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-18 04:00:46.787 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-18 04:00:46.802 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-18 04:00:47.165 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-18 04:00:47.165 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-18 06:00:46.845 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-18 06:00:46.861 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-18 06:00:47.237 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-18 06:00:47.238 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-18 08:00:46.946 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-18 08:00:46.955 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-18 08:00:47.251 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-18 08:00:47.252 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-18 10:00:47.046 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-18 10:00:47.071 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-18 10:00:47.434 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-18 10:00:47.435 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-18 12:00:47.123 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-18 12:00:47.141 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-18 12:00:47.475 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-18 12:00:47.475 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-18 14:00:47.165 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-18 14:00:47.172 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-18 14:00:47.578 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-18 14:00:47.579 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-18 16:00:47.230 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-18 16:00:47.247 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-18 16:00:47.651 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-18 16:00:47.651 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-18 18:00:47.348 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-18 18:00:47.362 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-18 18:00:48.739 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-18 18:00:48.744 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-18 20:00:48.209 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-18 20:00:48.228 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-18 20:00:53.012 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-18 20:00:53.012 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-18 22:00:47.410 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-18 22:00:47.428 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-18 22:00:48.328 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-18 22:00:48.329 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-19 00:00:47.463 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-19 00:00:47.479 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-19 00:00:47.847 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-19 00:00:47.848 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-19 02:00:47.495 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-19 02:00:47.516 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-19 02:00:47.859 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-19 02:00:47.859 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-19 04:00:47.548 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-19 04:00:47.561 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-19 04:00:47.902 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-19 04:00:47.903 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-19 06:00:47.591 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-19 06:00:47.607 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-19 06:00:47.947 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-19 06:00:47.948 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-19 08:00:47.721 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-19 08:00:47.730 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-19 08:00:48.592 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-19 08:00:48.593 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-19 10:00:47.753 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-19 10:00:47.772 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-19 10:00:48.117 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-19 10:00:48.117 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-19 12:00:47.893 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-19 12:00:47.910 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-19 12:00:50.420 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-19 12:00:50.421 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-19 14:00:47.828 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-19 14:00:47.849 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-19 14:00:48.204 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-19 14:00:48.205 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-19 16:00:48.000 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-19 16:00:48.020 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-19 16:00:48.749 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-19 16:00:48.750 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-19 18:00:48.062 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-19 18:00:48.071 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-19 18:00:49.163 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-19 18:00:49.165 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-19 20:00:49.869 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-19 20:00:49.888 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-19 20:01:01.826 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-19 20:01:01.840 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-19 22:00:48.183 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-19 22:00:48.224 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-19 22:00:48.620 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-19 22:00:48.621 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-20 00:00:48.179 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-20 00:00:48.200 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-20 00:00:48.571 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-20 00:00:48.571 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-20 02:00:48.262 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-20 02:00:48.285 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-20 02:00:48.779 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-20 02:00:48.787 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-20 04:00:48.281 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-20 04:00:48.301 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-20 04:00:48.663 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-20 04:00:48.664 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-20 06:00:48.344 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-20 06:00:48.365 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-20 06:00:48.773 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-20 06:00:48.773 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-20 08:00:48.411 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-20 08:00:48.428 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-20 08:00:49.088 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-20 08:00:49.089 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-20 10:00:48.534 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-20 10:00:48.554 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-20 10:00:49.051 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-20 10:00:49.054 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-20 12:00:48.868 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-20 12:00:48.894 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-20 12:00:52.072 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-20 12:00:52.073 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-20 14:00:48.692 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-20 14:00:48.715 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-20 14:00:49.994 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-20 14:00:49.995 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-20 16:00:50.659 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-20 16:00:50.673 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-20 16:00:51.458 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-20 16:00:51.460 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-20 18:00:48.751 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-20 18:00:48.762 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-20 18:00:49.382 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-20 18:00:49.384 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-20 20:00:49.136 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-20 20:00:49.150 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-20 20:00:58.497 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-20 20:00:58.497 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-20 22:00:49.167 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-20 22:00:49.189 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-20 22:00:50.730 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-20 22:00:50.733 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-21 00:00:48.937 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-21 00:00:48.971 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-21 00:00:49.340 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-21 00:00:49.341 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-21 02:00:48.926 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-21 02:00:48.932 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-21 02:00:49.293 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-21 02:00:49.293 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-21 04:00:49.002 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-21 04:00:49.015 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-21 04:00:49.373 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-21 04:00:49.373 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-21 06:00:49.046 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-21 06:00:49.062 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-21 06:00:49.477 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-21 06:00:49.477 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-21 08:00:49.086 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-21 08:00:49.118 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-21 08:00:49.448 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-21 08:00:49.449 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-21 10:00:49.240 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-21 10:00:49.248 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-21 10:00:49.609 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-21 10:00:49.624 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-21 12:00:49.259 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-21 12:00:49.276 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-21 12:00:49.725 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-21 12:00:49.725 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-21 14:00:49.303 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-21 14:00:49.324 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-21 14:00:49.705 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-21 14:00:49.705 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-21 16:00:49.416 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-21 16:00:49.470 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-21 16:00:50.264 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-21 16:00:50.264 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-21 18:00:51.456 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-21 18:00:51.469 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-21 18:00:52.129 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-21 18:00:52.130 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-21 20:00:49.567 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-21 20:00:49.584 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-21 20:00:50.028 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-21 20:00:50.028 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-21 22:00:49.581 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-21 22:00:49.595 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-21 22:00:49.981 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-21 22:00:49.982 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-22 00:00:49.702 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-22 00:00:49.723 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-22 00:00:50.084 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-22 00:00:50.085 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-22 02:00:49.684 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-22 02:00:49.692 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-22 02:00:50.132 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-22 02:00:50.133 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-22 04:00:49.758 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-22 04:00:49.787 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-22 04:00:50.151 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-22 04:00:50.152 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-22 06:00:49.788 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-22 06:00:49.796 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-22 06:00:50.188 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-22 06:00:50.189 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-22 08:00:49.814 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-22 08:00:49.820 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-22 08:00:50.123 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-22 08:00:50.124 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-22 10:00:49.881 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-22 10:00:49.894 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-22 10:00:51.048 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-22 10:00:51.048 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-22 12:00:49.990 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-22 12:00:50.005 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-22 12:00:50.382 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-22 12:00:50.383 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-22 14:00:50.010 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-22 14:00:50.047 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-22 14:00:59.308 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-22 14:00:59.314 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-22 16:00:57.065 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-22 16:00:57.097 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-22 16:00:57.416 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-22 16:00:57.416 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-22 18:00:50.104 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-22 18:00:50.124 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-22 18:00:50.571 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-22 18:00:50.575 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-22 20:00:50.239 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-22 20:00:50.266 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-22 20:00:50.609 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-22 20:00:50.611 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-22 22:16:33.768 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-22 22:16:33.782 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-22 22:16:34.906 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-22 22:16:34.907 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-23 03:15:49.482 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-23 03:15:49.490 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-23 03:15:49.871 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-23 03:15:49.871 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-23 06:12:09.433 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-23 06:12:09.441 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-23 06:12:09.839 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-23 06:12:09.839 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-23 08:27:35.603 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-23 08:27:35.610 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-23 08:27:36.002 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-23 08:27:36.002 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-24 09:14:44.925 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-24 09:14:44.941 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-24 09:14:45.344 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-24 09:14:45.344 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-24 11:14:45.123 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-24 11:14:45.143 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-24 11:14:45.279 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-24 11:14:45.279 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-24 13:14:45.097 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-24 13:14:45.104 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-24 13:14:45.224 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-24 13:14:45.224 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-24 15:14:45.163 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-24 15:14:45.180 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-24 15:14:45.313 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-24 15:14:45.314 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-24 17:14:45.186 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-24 17:14:45.200 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-24 17:14:45.313 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-24 17:14:45.313 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-24 20:39:55.460 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-24 20:39:55.467 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-24 20:39:55.595 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-24 20:39:55.595 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-24 22:39:55.486 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-24 22:39:55.494 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-24 22:39:55.612 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-24 22:39:55.612 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-25 00:59:46.805 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-25 00:59:46.831 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-25 00:59:46.967 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-25 00:59:46.967 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-25 02:59:46.814 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-25 02:59:46.832 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-25 02:59:46.957 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-25 02:59:46.957 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-25 04:59:46.832 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-25 04:59:46.843 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-25 04:59:46.960 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-25 04:59:46.960 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-25 06:59:46.888 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-25 06:59:46.902 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-25 06:59:47.015 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-25 06:59:47.015 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-25 08:59:46.990 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-25 08:59:46.996 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-25 08:59:47.080 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-25 08:59:47.081 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-25 10:59:47.091 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-25 10:59:47.108 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-25 10:59:47.257 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-25 10:59:47.259 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-25 12:59:47.110 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-25 12:59:47.115 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-25 12:59:47.213 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-25 12:59:47.215 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-25 14:59:47.658 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-25 14:59:47.674 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-25 14:59:48.042 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-25 14:59:48.043 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-25 15:09:51.611 INFO  de.bos_bremen.govello.model.pobox.POBoxKeyModel.verifyPKCS12(POBoxKeyModel.java:836)                 : 
+de.bos_bremen.gov2.jca_provider.VerifyPINInputCancelledException: 0 - Der Vorgang wurde abgebrochen.
+	at de.bos_bremen.govello.model.pobox.POBoxKeyModel.loadKeyStore(POBoxKeyModel.java:608)
+	at de.bos_bremen.govello.model.pobox.POBoxKeyModel.verifyPKCS12(POBoxKeyModel.java:832)
+	at de.bos_bremen.govello.model.pobox.POBoxKeyModel.verify(POBoxKeyModel.java:158)
+	at de.bos_bremen.govello.model.pobox.POBoxModel.verify(POBoxModel.java:1193)
+	at de.bos_bremen.govello.model.ApplicationModel.setActivePOBox(ApplicationModel.java:732)
+	at de.bos_bremen.govello.action.pobox.POBoxOpen.handle(POBoxOpen.java:65)
+	at de.bos_bremen.govello.model.ApplicationModel.start(ApplicationModel.java:870)
+	at de.bos_bremen.govello.view.ApplicationView.showMainStage(ApplicationView.java:275)
+	at de.bos_bremen.govello.view.ApplicationView$1.lambda$call$0(ApplicationView.java:305)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$10(PlatformImpl.java:456)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at com.sun.javafx.application.PlatformImpl.lambda$runLater$11(PlatformImpl.java:455)
+	at com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+2026-08-25 15:09:51.732 WARN  de.bos_bremen.govello.model.ApplicationModel.setActivePOBox(ApplicationModel.java:734)               : Pobox couldn't be verified, so it can't be opened
+2026-08-25 16:59:47.340 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-25 16:59:47.359 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-25 16:59:47.551 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-25 16:59:47.552 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-25 18:59:48.860 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-25 18:59:48.885 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-25 18:59:53.532 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-25 18:59:53.533 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-25 20:59:47.475 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-25 20:59:47.507 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-25 20:59:47.758 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-25 20:59:47.759 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-25 22:59:47.572 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-25 22:59:47.588 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-25 22:59:47.894 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-25 22:59:47.894 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-26 02:32:03.357 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-26 02:32:03.385 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-26 02:32:03.684 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-26 02:32:03.685 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-26 04:32:03.333 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-26 04:32:03.351 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-26 04:32:03.582 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-26 04:32:03.583 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-26 06:32:03.420 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-26 06:32:03.434 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-26 06:32:03.659 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-26 06:32:03.659 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-26 08:32:03.486 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-26 08:32:03.503 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-26 08:32:03.797 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-26 08:32:03.800 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410
+2026-08-26 10:32:03.494 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : https://appl.governikus-asp.de/update/best/best.xml DIRECT
+2026-08-26 10:32:03.570 INFO  de.bos_bremen.govello.communication.proxy.AppProxySelector.select(AppProxySelector.java:76)          : socket://appl.governikus-asp.de:443 DIRECT
+2026-08-26 10:32:03.860 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:53)                    : local : 2710
+2026-08-26 10:32:03.861 INFO  de.governikus.vibilia.best.action.BeStUpdateCheck.handle(BeStUpdateCheck.java:54)                    : remote: 2410

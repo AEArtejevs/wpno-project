@@ -1,0 +1,175 @@
+{
+  "ACTUALLY_EXECUTED_STEP_COUNT": 3,
+  "DEFERRED_STEP_COUNT": 0,
+  "EVIDENCE_RECORD_COUNT": 3,
+  "FAILED_STEP_COUNT": 0,
+  "OPERATOR_ACTION_STEP_COUNT": 0,
+  "PLANNED_STEP_COUNT": 3,
+  "SKIPPED_STEP_COUNT": 0,
+  "attempt_number": 1,
+  "executed": 3,
+  "outcomes": [
+    {
+      "actual_failure_reason": null,
+      "actual_outcome": {
+        "exit_code": 0
+      },
+      "allowed_reads_enforcement": "NOT_DECLARED_BY_PLAN",
+      "allowed_writes_enforcement": null,
+      "argv": [],
+      "argv_note": "no argv: no process is launched. A reconstructed command line for an operation that never ran a command would be a plausible artefact of a thing that did not happen.",
+      "control_role": "MEASUREMENT",
+      "declared_expectations": [],
+      "duration_ms": 0,
+      "ended_utc": "2026-08-28T23:29:18Z",
+      "error_artifact": null,
+      "evidence_id": "L1-A31-COMPARISON-A1-E0001",
+      "executed": true,
+      "exit_code": 0,
+      "expectation_result": "NO_MACHINE_CHECKABLE_EXPECTATION",
+      "expectation_satisfied": null,
+      "expectations_evaluated": [],
+      "expected_failure_reason": null,
+      "expected_outcome": null,
+      "in_process": true,
+      "input_paths": [
+        "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/progress.json"
+      ],
+      "input_sha256": {
+        "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/progress.json": "0250b50b5a043a7ac30317980975ce7df18c7630626f927cf9c524c2b20fdbfd"
+      },
+      "operation": "PARSE_JSON_READONLY",
+      "output_paths": [],
+      "output_sha256": {},
+      "path_substitutions": {},
+      "reads_outside_declared_allowance": [],
+      "result_artifact": {
+        "decoded_as": "utf-8",
+        "parsed": true,
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/progress.json",
+        "sha256": "0250b50b5a043a7ac30317980975ce7df18c7630626f927cf9c524c2b20fdbfd",
+        "shape": "object",
+        "size": 2,
+        "top_level_keys": [
+          "audits",
+          "halt_critical"
+        ]
+      },
+      "result_truncated": false,
+      "started_utc": "2026-08-28T23:29:18Z",
+      "status": "EXECUTED",
+      "stderr_truncated": false,
+      "stdout_truncated": false,
+      "step_id": "collect_accepted_attempts",
+      "structured_arguments": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/state/progress.json"
+      },
+      "timed_out": false,
+      "writes_outside_declared_allowance": []
+    },
+    {
+      "actual_failure_reason": null,
+      "actual_outcome": {
+        "exit_code": 0
+      },
+      "allowed_reads_enforcement": "NOT_DECLARED_BY_PLAN",
+      "allowed_writes_enforcement": null,
+      "argv": [],
+      "argv_note": "no argv: no process is launched. A reconstructed command line for an operation that never ran a command would be a plausible artefact of a thing that did not happen.",
+      "control_role": "MEASUREMENT",
+      "declared_expectations": [],
+      "duration_ms": 0,
+      "ended_utc": "2026-08-28T23:29:18Z",
+      "error_artifact": null,
+      "evidence_id": "L1-A31-COMPARISON-A1-E0002",
+      "executed": true,
+      "exit_code": 0,
+      "expectation_result": "NO_MACHINE_CHECKABLE_EXPECTATION",
+      "expectation_satisfied": null,
+      "expectations_evaluated": [],
+      "expected_failure_reason": null,
+      "expected_outcome": null,
+      "in_process": true,
+      "input_paths": [
+        "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A31/RUN-A/ATTEMPT_INDEX.json"
+      ],
+      "input_sha256": {
+        "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A31/RUN-A/ATTEMPT_INDEX.json": "412bf564b2c584e8289c0ba8861f107f048eee4277f6f0b1c14bf77f07a94c1d"
+      },
+      "operation": "SHA256_FILE",
+      "output_paths": [],
+      "output_sha256": {},
+      "path_substitutions": {},
+      "reads_outside_declared_allowance": [],
+      "result_artifact": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A31/RUN-A/ATTEMPT_INDEX.json",
+        "sha256": "412bf564b2c584e8289c0ba8861f107f048eee4277f6f0b1c14bf77f07a94c1d",
+        "size_bytes": 681
+      },
+      "result_truncated": false,
+      "started_utc": "2026-08-28T23:29:18Z",
+      "status": "EXECUTED",
+      "stderr_truncated": false,
+      "stdout_truncated": false,
+      "step_id": "compare_run_a_seal",
+      "structured_arguments": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A31/RUN-A/ATTEMPT_INDEX.json"
+      },
+      "timed_out": false,
+      "writes_outside_declared_allowance": []
+    },
+    {
+      "actual_failure_reason": null,
+      "actual_outcome": {
+        "exit_code": 0
+      },
+      "allowed_reads_enforcement": "NOT_DECLARED_BY_PLAN",
+      "allowed_writes_enforcement": null,
+      "argv": [],
+      "argv_note": "no argv: no process is launched. A reconstructed command line for an operation that never ran a command would be a plausible artefact of a thing that did not happen.",
+      "control_role": "MEASUREMENT",
+      "declared_expectations": [],
+      "duration_ms": 0,
+      "ended_utc": "2026-08-28T23:29:18Z",
+      "error_artifact": null,
+      "evidence_id": "L1-A31-COMPARISON-A1-E0003",
+      "executed": true,
+      "exit_code": 0,
+      "expectation_result": "NO_MACHINE_CHECKABLE_EXPECTATION",
+      "expectation_satisfied": null,
+      "expectations_evaluated": [],
+      "expected_failure_reason": null,
+      "expected_outcome": null,
+      "in_process": true,
+      "input_paths": [
+        "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A31/RUN-B/ATTEMPT_INDEX.json"
+      ],
+      "input_sha256": {
+        "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A31/RUN-B/ATTEMPT_INDEX.json": "b7cfb1cc25d8d97364b82ab92dd3d9f7cff518a321ea003e6c36af19aa6fe8e6"
+      },
+      "operation": "SHA256_FILE",
+      "output_paths": [],
+      "output_sha256": {},
+      "path_substitutions": {},
+      "reads_outside_declared_allowance": [],
+      "result_artifact": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A31/RUN-B/ATTEMPT_INDEX.json",
+        "sha256": "b7cfb1cc25d8d97364b82ab92dd3d9f7cff518a321ea003e6c36af19aa6fe8e6",
+        "size_bytes": 681
+      },
+      "result_truncated": false,
+      "started_utc": "2026-08-28T23:29:18Z",
+      "status": "EXECUTED",
+      "stderr_truncated": false,
+      "stdout_truncated": false,
+      "step_id": "compare_run_b_seal",
+      "structured_arguments": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/evidence/L1-A31/RUN-B/ATTEMPT_INDEX.json"
+      },
+      "timed_out": false,
+      "writes_outside_declared_allowance": []
+    }
+  ],
+  "target_sha256_after": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42",
+  "target_sha256_before": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+}

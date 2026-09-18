@@ -1,0 +1,295 @@
+{
+  "audit_id": "L1-A11",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Compare the register the checker relies on against the operator-supplied official roster, and identify missing entries, obsolete entries, spelling and normalisation differences, and role or date validity mismatches. The roster is the only admissible oracle.",
+  "static_analysis": "No module under PROJECT_ROOT is imported. The register the checker relies on is read as data, and the checker itself is parsed to establish which register it reads and how it normalises names before comparing them - a comparison that does not state its normalisation is not a comparison.\n\nWhat REF-05 is, exactly. The artefact accepted into this package is references/REF-05_COVERAGE.json, a coverage record. It binds the saved official BGH annual page and the current annual PDF, records the six listed 2026 Presidium decision dates, and establishes publication coverage through 2026-08-27 with no decision falling in the delta interval. It carries the SHA-256 of the operator-supplied supplement manifest.\n\nThe roster document bytes themselves are not in the package. They are in the operator intake area at the supplement root the coverage record names, which is outside this package's read roots: automation.path_policy admits PROJECT_ROOT, DISCOVERY_ROOT and LEVEL1_ROOT and refuses everything else, so no step here can reach them directly. The approved phase's preparation stages the roster into work/L1-A11/RUN-A/roster/ and verifies the staged bytes against the bound supplement manifest digest before any comparison runs. If that staging has not happened, or the staged bytes do not verify, the phase is BLOCKED_MISSING_OFFICIAL_REFERENCE and no comparison is attempted - a four-set comparison against a roster that was never read would produce four empty sets and look like agreement.\n\nREF-05 was accepted as a focused official-coverage delta record rather than as a complete roster of every senate and every period. A comparison outside what the coverage record states is reported as outside coverage rather than as a missing entry: a name absent from material that never claimed to list it is not an absence.\n\nbgh_referenz.json is not an oracle here: it is one side of the comparison. Neither is model knowledge, and the network is never reached.\n\nPYTHON_SCRIPT_RUN_SANDBOX runs a script under work/ and nowhere else, so the approved phase first copies the checker to work/<audit>/RUN-A/sandbox/ and records the copy's digest beside the original's. The original in authoring/ is read and never written to.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_AST_PARSE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/authoring/AP18_referenzpruefung.py"
+      },
+      "purpose": "Establish which register the checker reads and how it normalises names. Parse, do not import.",
+      "step_id": "parse_checker",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PARSE_JSON_READONLY",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/authoring/bgh_referenz.json"
+      },
+      "purpose": "Read the register as data. It is one side of the comparison, never the arbiter.",
+      "step_id": "read_register",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-05_COVERAGE.json"
+      },
+      "purpose": "Verify the accepted REF-05 coverage record against references/manifest.json before it is used.",
+      "step_id": "verify_coverage_record_digest",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PARSE_JSON_READONLY",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-05_COVERAGE.json"
+      },
+      "purpose": "Read what the accepted official material covers, and the supplement manifest digest the staged roster must verify against, before any absence is called an absence.",
+      "step_id": "read_coverage_record",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "COMPARE_HASHES",
+      "params": {
+        "algorithms": [
+          "sha256"
+        ],
+        "expected_sha256": "374e18e51923327a25ad7ad285ae708db9ea1b3d9845c085194ae813db2f0e23",
+        "left": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A11/RUN-A/roster/SUPPLEMENT_MANIFEST.sha256",
+        "right": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A11/RUN-A/roster/SUPPLEMENT_MANIFEST.sha256"
+      },
+      "purpose": "Verify the staged roster against the supplement manifest digest the coverage record binds. A roster that does not verify is not read.",
+      "step_id": "verify_staged_roster",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--register",
+          "/home/ubuntu/project/WPNO/authoring/bgh_referenz.json",
+          "--roster",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A11/RUN-A/roster",
+          "--coverage",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-05_COVERAGE.json",
+          "--out",
+          "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A11/RUN-A/four_sets.json"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A11/RUN-A/sandbox/compare_register.py"
+      },
+      "purpose": "Present in both; in the register only, which is obsolete; in the roster only, which is missing; and present in both but differing in spelling, normalisation, role or date validity.",
+      "step_id": "compute_four_sets",
+      "timeout_seconds": 600
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--case",
+          "known-matched"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A11/RUN-A/sandbox/compare_register.py"
+      },
+      "purpose": "An entry known to be in both must be reported as matched. This proves the comparison can see agreement.",
+      "step_id": "positive_control_matched_entry",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--case",
+          "fabricated-name"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A11/RUN-A/sandbox/compare_register.py"
+      },
+      "purpose": "A fabricated name inserted into the comparison input must be reported as present-in-register-only. This proves the comparison can see disagreement.",
+      "step_id": "negative_control_fabricated_name",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "PYTHON_SCRIPT_RUN_SANDBOX",
+      "params": {
+        "args": [
+          "--case",
+          "one-character-altered"
+        ],
+        "script": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A11/RUN-A/sandbox/compare_register.py"
+      },
+      "purpose": "One character of a matched entry altered: it must move from the matched set to the differing set rather than silently staying matched.",
+      "step_id": "mutation_control_one_character",
+      "timeout_seconds": 300
+    }
+  ],
+  "target": {
+    "identity_evidence": "The binding records this path as a candidate with this digest. It is bound as the anchor; which copy is productive is L1-A10's question and a filename does not answer it.",
+    "path": "/home/ubuntu/project/WPNO/authoring/AP18_referenzpruefung.py",
+    "sha256": "f5eb5a9cbeb37cada9186ba305b9a307ea40e3012ca0e2e6dd0b2560f4352d74"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "/home/ubuntu/project/WPNO/authoring/AP18_referenzpruefung.py",
+        "/home/ubuntu/project/WPNO/authoring/bgh_referenz.json",
+        "references/REF-05_COVERAGE.json",
+        "work/L1-A11/RUN-A/roster/"
+      ],
+      "allowed_writes": [
+        "work/L1-A11/RUN-A/",
+        "evidence/L1-A11/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A11 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A11",
+      "candidate_template_identity": "L1-A11/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A11/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "/usr/bin/python3 -I -B against a sandbox copy",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "NETWORK_REQUEST"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [
+        "The operator settled the REF-05 period question and accepted the official-coverage closure recorded in references/REF-05_COVERAGE.json, with the six listed 2026 Presidium decision dates and coverage through 2026-08-27. That decision is not re-opened here."
+      ],
+      "independent_oracle": "The operator-supplied official roster bound by REF-05 and nothing else. Neither the register, nor bgh_referenz.json, nor any docs/ report, nor model knowledge.",
+      "limitations": [
+        "The artefact accepted into this package is the coverage record references/REF-05_COVERAGE.json, not the roster document. The record establishes publication coverage through 2026-08-27 and binds the supplement manifest digest; it does not itself enumerate senate membership.",
+        "The roster bytes are in the operator intake area, outside the read roots automation.path_policy admits. They are staged into work/L1-A11/RUN-A/roster/ by the approved phase's preparation and verified against the bound supplement manifest digest. Unstaged or unverified, the phase is BLOCKED_MISSING_OFFICIAL_REFERENCE.",
+        "REF-05 was accepted as a focused official-coverage delta record, not as a complete roster of every senate and every period. A comparison outside that coverage is reported as outside coverage, never as a missing entry.",
+        "Browser-extension-injected markup in the saved HTML is excluded from evidence. Only BGH page content, the canonical URL, the annual list, the official PDF link and the BGH generation marker are relied upon."
+      ],
+      "method": "four-set comparison against the official roster",
+      "notes": [
+        "PYTHON_SCRIPT_RUN_SANDBOX runs a script under work/ and nowhere else, so the approved phase first copies the checker to work/<audit>/RUN-A/sandbox/ and records the copy's digest beside the original's. The original in authoring/ is read and never written to.",
+        "No step reaches the operator intake area directly; path_policy refuses it and the plan does not try."
+      ],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [
+        "REF-05"
+      ],
+      "references": [
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-05_COVERAGE.json",
+          "sha256": "b9c3febc10f6f059579e86bf986775a007c633d4e76fa197e16db7a40cb89923"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/manifest.json",
+          "sha256": "4c1e9a706a5ba2a3c6f25f7ffc37963efadbe529f907865f516982ce3b54f1b4"
+        }
+      ],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": null,
+      "trust_mode": null,
+      "validation_time": null
+    },
+    {
+      "check_id": "roster_available_and_verified",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_sha256": "374e18e51923327a25ad7ad285ae708db9ea1b3d9845c085194ae813db2f0e23",
+      "question": "Is the roster staged and does it verify?",
+      "required_result": "The staged bytes verify against the supplement manifest digest the coverage record binds.",
+      "step_id": "verify_staged_roster",
+      "verdict_effect": "If they do not, the phase is BLOCKED_MISSING_OFFICIAL_REFERENCE and no comparison runs. Four empty sets would look like agreement."
+    },
+    {
+      "check_id": "four_sets",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "How do the register and the roster differ?",
+      "required_result": "Four sets, each enumerated, never a single score.",
+      "sets": [
+        "present in both",
+        "register only (obsolete)",
+        "roster only (missing)",
+        "both but differing in spelling, normalisation, role or date validity"
+      ],
+      "step_id": "compute_four_sets"
+    },
+    {
+      "check_id": "normalisation_stated",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "question": "How were names normalised before comparison?",
+      "required_result": "Stated explicitly, including Unicode normal form. A comparison whose normalisation is unstated cannot be reproduced.",
+      "step_id": "parse_checker"
+    },
+    {
+      "check_id": "coverage_boundary_respected",
+      "coverage_through": "2026-08-27",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "listed_decision_dates": [
+        "2026-01-27",
+        "2026-02-24",
+        "2026-04-28",
+        "2026-06-17",
+        "2026-07-07",
+        "2026-08-11"
+      ],
+      "question": "Is every absence inside the roster's coverage?",
+      "required_result": "Each reported absence is inside what the coverage record says the material covers. Anything outside is labelled OUTSIDE_ACCEPTED_COVERAGE.",
+      "step_id": "read_coverage_record"
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_result": "THE_KNOWN_ENTRY_IS_REPORTED_MATCHED",
+      "question": "Can the comparison see agreement?",
+      "step_id": "positive_control_matched_entry"
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_failure_reason": "the name exists in no official roster because it was invented for this control",
+      "expected_result": "REPORTED_AS_PRESENT_IN_REGISTER_ONLY",
+      "fixture": "a fabricated name inserted into the comparison input",
+      "question": "Can the comparison see disagreement?",
+      "step_id": "negative_control_fabricated_name"
+    },
+    {
+      "check_id": "mutation_control",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expectation_source": "build/control_expectations.py",
+      "expected_result": "MOVES_FROM_MATCHED_TO_DIFFERING",
+      "expected_status": "COMPLETED_OUTCOME_IS_SUBSTANTIVE",
+      "fixture": "a matched entry with one character altered",
+      "proof_the_fixture_differs": "the altered string differs from the original and both are recorded",
+      "question": "Does a one-character change move an entry between sets?",
+      "step_id": "mutation_control_one_character",
+      "why": "Whether the altered entry moves from matched to differing is the measurement; it is read from the comparison output, not from an exit code.",
+      "zero_changed_results_is": "proof that the comparison normalises the difference away silently, not a passing control"
+    }
+  ]
+}

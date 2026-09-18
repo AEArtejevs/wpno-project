@@ -1,0 +1,153 @@
+{
+  "R8_CREATED": "NO",
+  "defects_found_by_the_build_itself": [
+    {
+      "id": "FPF-001",
+      "status": "RESOLVED",
+      "what": "34 of 43 candidate plans did not exist"
+    },
+    {
+      "id": "FPF-002",
+      "status": "RESOLVED",
+      "what": "the build manifest was stale by 72 files and 6 digests"
+    },
+    {
+      "id": "FPF-003",
+      "status": "RESOLVED",
+      "what": "the resume record named a superseded manifest that was never written"
+    },
+    {
+      "found_by": "the controller unit suite in the isolated replica",
+      "id": "FPF-004",
+      "status": "RESOLVED",
+      "what": "two bindings carried closure fields the schema did not name"
+    },
+    {
+      "found_by": "the pre-freeze rehearsal executing the step",
+      "id": "FPF-005",
+      "status": "RESOLVED",
+      "what": "L1-A12 pointed an unzip-based operation at a gzipped tar corpus"
+    },
+    {
+      "found_by": "the fixture stager's own control check",
+      "id": "FPF-006",
+      "status": "RESOLVED",
+      "what": "the L1-A32 mutation fixture broke DER framing, so its control failed on an ASN.1 parse error rather than on the signature"
+    },
+    {
+      "found_by": "a draft finding of attempt 1",
+      "id": "FPF-007",
+      "status": "RESOLVED",
+      "what": "the L1-A19 RUN-B plan denied reading RUN-A paths by spelling them out"
+    },
+    {
+      "found_by": "a draft finding of attempt 2",
+      "id": "FPF-010",
+      "status": "RESOLVED",
+      "what": "nothing asserted that the freeze mechanism produces a populated baseline"
+    }
+  ],
+  "drift_after_the_pass": {
+    "current_manifest_entries": 15752,
+    "current_manifest_sha256": "4fa47432bf98a960676e4de16d04176436cc664a2fdad6302463638a12088d66",
+    "current_manifest_verifies_entry_by_entry": true,
+    "entries_added": [
+      "build/R7_BUILD_MANIFEST.SUPERSEDED_2026-08-28T023817Z.sha256"
+    ],
+    "entries_changed": [
+      "lineage/PREDECESSOR_INTEGRITY.json"
+    ],
+    "entries_removed": [],
+    "substantive_state_unchanged": true,
+    "verified_manifest_entries": 15751,
+    "verified_manifest_preserved_at": "build/R7_BUILD_MANIFEST.SUPERSEDED_2026-08-28T023817Z.sha256",
+    "verified_manifest_sha256": "102387065b9bf60b292fcf77a8e5a0fcefebef8594cb0ed7421057004c1bcccb",
+    "what_changed_inside_the_changed_entry": "recorded_at_utc only. Every measured digest, every file count and ALL_PREDECESSORS_UNCHANGED are identical. That is a description of the difference, not a reason to treat two different digests as one."
+  },
+  "final_state": {
+    "MODE": "GENERATED_UNVERIFIED",
+    "approvals": 0,
+    "candidate_plans": "43/43",
+    "evidence_seals": 0,
+    "final_closure_record_sha256": "5f3b63213a48b2cfb8d1ed8d48c68d69e0d3c8dede0974a5f051514837190a4a",
+    "live_phases": "43 NOT_STARTED",
+    "package_suite": "312 passed, 0 failures, 0 errors, 0 skips",
+    "predecessors_unchanged": true,
+    "r6_verified_per_file": "15153/15153",
+    "rehearsal_pass_ready": "43/43",
+    "results": 0,
+    "static_safety_findings": 0,
+    "unit_suite": "503 passed, 0 failures, 0 errors, 0 skips"
+  },
+  "freeze_plan_created": false,
+  "freeze_token_generated": false,
+  "human_decision_required": "MAX_FINAL_CODEX_ATTEMPTS=3 is spent and attempt 3 passed. The package then drifted by two manifest entries because of a tool I re-ran. One further fresh verification against the current bytes would close it; that is a fourth attempt and is outside the authorised budget, so it is your decision, not mine. The alternative is to accept the recorded evidence that the drift is a timestamp and a preserved copy of the verified manifest itself.",
+  "my_own_errors": [
+    {
+      "corrected_by": "reading every result file again by mtime and content",
+      "detail": "The wait loop fired when VERIFICATION_RESULT.json first appeared, not when the verifier exited. Each attempt revised its result afterwards. Attempts 1 and 3 were read as failures while both finally passed, and repairs were made against draft findings the verifier itself retracted.",
+      "error": "read intermediate drafts as final results",
+      "harm": "None to the package. The four changes made in response to draft findings - the RUN-B plan prose, the predecessor-integrity record, the freeze-baseline tests and the brief - are all improvements that the final results then passed. The cost was work, not correctness."
+    },
+    {
+      "corrected_by": "not proceeding to the freeze plan",
+      "detail": "verify_predecessor_integrity.py rewrites its own record's recorded_at_utc on every run. Re-running it after attempt 3 passed changed lineage/PREDECESSOR_INTEGRITY.json, and regenerating the build manifest then changed the manifest digest.",
+      "error": "changed the package after it had passed verification",
+      "harm": "The freeze plan would bind a manifest the verification never measured. That is why no freeze plan and no token were produced."
+    }
+  ],
+  "outcome": "STOP_PACKAGE_DRIFTED_AFTER_THE_PASSING_VERIFICATION",
+  "real_defects_the_final_results_reported_and_the_repairs": [
+    {
+      "attempt": 2,
+      "id": "FPF-008",
+      "item": "V17",
+      "repair": "static safety re-run last, after every executable edit; the editing order is now fixed",
+      "verified_fixed_by": "attempt 3, V17 PASS",
+      "what": "build/build_final_closure_record.py was edited after the static-safety run covering it"
+    },
+    {
+      "attempt": 2,
+      "id": "FPF-009",
+      "item": "V19",
+      "repair": "the correction records the timestamp stamp and the form, not the name",
+      "verified_fixed_by": "attempt 3, V19 PASS",
+      "what": "the FPF-003 correction re-created a dangling path by writing the wrong path out in full"
+    }
+  ],
+  "schema": "wpno.level1.section8-final-disposition/2",
+  "section_8_build": "COMPLETE",
+  "verification_attempts": {
+    "attempt_1": {
+      "findings": 0,
+      "items_failed": [],
+      "items_passed": 20,
+      "path": "verification_codex_final_pre_freeze_attempt_1",
+      "result": "VERIFICATION_PASS_PRE_FREEZE_R7_FINAL",
+      "result_sha256": "56822d0e6411641f7feb2063368d221f0d87fd2385b1f3f369d439f07d240cba",
+      "result_written_utc": "2026-08-28T01:45:26Z"
+    },
+    "attempt_2": {
+      "findings": 2,
+      "items_failed": [
+        "V17",
+        "V19"
+      ],
+      "items_passed": 18,
+      "path": "verification_codex_final_pre_freeze_attempt_2",
+      "result": "VERIFICATION_FAIL_PRE_FREEZE_R7_FINAL",
+      "result_sha256": "0e144b15b346879c98bbb7befdbdba908b49099c7ec9a4fde92c84f8fafc7443",
+      "result_written_utc": "2026-08-28T02:07:48Z"
+    },
+    "attempt_3": {
+      "findings": 0,
+      "items_failed": [],
+      "items_passed": 20,
+      "path": "verification_codex_final_pre_freeze_attempt_3",
+      "result": "VERIFICATION_PASS_PRE_FREEZE_R7_FINAL",
+      "result_sha256": "4a07b59c65716bf26655f89c518862b98783c48ee923799b4ebedd147ed3794d",
+      "result_written_utc": "2026-08-28T02:35:45Z"
+    }
+  },
+  "verification_outcome": "Attempt 3 returned VERIFICATION_PASS_PRE_FREEZE_R7_FINAL on all twenty items with zero findings, against build manifest 102387065b9bf60b292fcf77a8e5a0fcefebef8594cb0ed7421057004c1bcccb."
+}

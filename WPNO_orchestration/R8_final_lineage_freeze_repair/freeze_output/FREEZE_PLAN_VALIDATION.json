@@ -1,0 +1,319 @@
+{
+ "VALID": true,
+ "attempt_number": 3,
+ "bound_artifacts": 211,
+ "bound_artifacts_matched": 211,
+ "checks": [
+  {
+   "check": "route_loader_accepts_plan",
+   "measured": "load_package_freeze_plan ok",
+   "pass": true
+  },
+  {
+   "check": "plan_digest_agrees_with_route_loader",
+   "measured": {
+    "freeze.load": "19c16de22e04f3d1539f7c8c6ff438ee4cfeb192d49af78555af9d95a771b282",
+    "validator": "19c16de22e04f3d1539f7c8c6ff438ee4cfeb192d49af78555af9d95a771b282"
+   },
+   "pass": true
+  },
+  {
+   "check": "assert_package_plan_shape",
+   "measured": "ok",
+   "pass": true
+  },
+  {
+   "check": "attempt_number_is_3",
+   "measured": 3,
+   "pass": true
+  },
+  {
+   "check": "plan_is_not_an_earlier_attempt",
+   "measured": 3,
+   "pass": true
+  },
+  {
+   "check": "earlier_plans_preserved",
+   "measured": "attempts 1 and 2 not overwritten",
+   "pass": true
+  },
+  {
+   "check": "no_r7_finality_statement",
+   "measured": "absent",
+   "pass": true
+  },
+  {
+   "check": "plan_declares_r8_final",
+   "measured": {
+    "final_revision": true,
+    "successor_permitted": false
+   },
+   "pass": true
+  },
+  {
+   "check": "package_root_key_names_r8",
+   "measured": {
+    "r7_root_present": false,
+    "r8_root": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8"
+   },
+   "pass": true
+  },
+  {
+   "check": "verification_dir_is_not_a_stale_attempt_3_or_4_constant",
+   "measured": "verification_codex_final_pre_freeze_attempt_6",
+   "pass": true
+  },
+  {
+   "check": "verification_dir_is_the_highest_numbered_on_disk",
+   "measured": "verification_codex_final_pre_freeze_attempt_6",
+   "pass": true
+  },
+  {
+   "check": "bound_artifacts_match_disk_route_function",
+   "measured": "211/211 MATCH",
+   "pass": true
+  },
+  {
+   "check": "bound_artifacts_rehashed_independently",
+   "measured": {
+    "count": 211,
+    "mismatched": []
+   },
+   "pass": true
+  },
+  {
+   "check": "required_roles_bound",
+   "measured": {
+    "absent": []
+   },
+   "pass": true
+  },
+  {
+   "check": "builder_binds_itself",
+   "measured": "build/freeze_plan_attempt_3/build_r8_freeze_plan_attempt_3.py",
+   "pass": true
+  },
+  {
+   "check": "validator_is_bound",
+   "measured": "build/freeze_plan_attempt_3/validate_freeze_plan_attempt_3.py",
+   "pass": true
+  },
+  {
+   "check": "every_installed_verification_file_is_bound",
+   "measured": {
+    "files": 49,
+    "unbound": []
+   },
+   "pass": true
+  },
+  {
+   "check": "verification_result_not_identified_as_a_verifier",
+   "measured": {
+    "UNIDENTIFIED_TOOLS": 0,
+    "offenders": []
+   },
+   "pass": true
+  },
+  {
+   "check": "lineage_artifacts_declared_not_derived",
+   "measured": [
+    "lineage/R7_BASELINE_MANIFEST.json",
+    "lineage/R8_LINEAGE.sha256"
+   ],
+   "pass": true
+  },
+  {
+   "check": "plan_binds_every_declared_lineage_artefact",
+   "measured": [],
+   "pass": true
+  },
+  {
+   "check": "assert_lineage_bound_accepts_this_plan",
+   "measured": "the controller's own gate, run here against the same plan",
+   "pass": true
+  },
+  {
+   "check": "plan_records_the_lineage_model",
+   "measured": [
+    "lineage/R7_BASELINE_MANIFEST.json",
+    "lineage/R8_LINEAGE.sha256"
+   ],
+   "pass": true
+  },
+  {
+   "check": "the_impossible_derived_path_is_not_bound",
+   "measured": "absent",
+   "pass": true
+  },
+  {
+   "check": "token_generator_function_digest_matches",
+   "measured": "1f9b38c4809cf59bbfd321e61940d4c0617e4fb5b2172a4aa7457a77db180360",
+   "pass": true
+  },
+  {
+   "check": "token_generator_module_digest_matches",
+   "measured": "de8c76e4f7d139fa14b7b2cd879ccb321e1b5873ee955b6c3e22cf4c57a39df4",
+   "pass": true
+  },
+  {
+   "check": "plan_wrapper_declared",
+   "measured": "NOT_USED",
+   "pass": true
+  },
+  {
+   "check": "package_sha256_is_the_live_manifest",
+   "measured": "f7e181a21c902a401c55cd9f97d50c55711fbcef6c5fdf16845ab94bc8db95bb",
+   "pass": true
+  },
+  {
+   "check": "manifest_has_entries",
+   "measured": 728,
+   "pass": true
+  },
+  {
+   "check": "manifest_no_malformed_lines",
+   "measured": [],
+   "pass": true
+  },
+  {
+   "check": "manifest_no_duplicate_paths",
+   "measured": [],
+   "pass": true
+  },
+  {
+   "check": "manifest_every_entry_present_and_matching",
+   "measured": {
+    "absent": [],
+    "entries": 728,
+    "mismatched": []
+   },
+   "pass": true
+  },
+  {
+   "check": "verification_status_pass",
+   "measured": "VERIFICATION_PASS_PRE_FREEZE_R8_FINAL",
+   "pass": true
+  },
+  {
+   "check": "verification_overall_pass",
+   "measured": true,
+   "pass": true
+  },
+  {
+   "check": "verification_no_unresolved_findings",
+   "measured": [],
+   "pass": true
+  },
+  {
+   "check": "verification_result_digest_bound",
+   "measured": "b16ee28273c6fcc2577a9bcfd957f1e90fd6e6a496bf83b82ebfbc611bcf493a",
+   "pass": true
+  },
+  {
+   "check": "assert_baseline_matches_plan",
+   "measured": {
+    "discovery_members": 26,
+    "project_members": 33
+   },
+   "pass": true
+  },
+  {
+   "check": "baselines_are_nonempty",
+   "measured": {
+    "discovery": 26,
+    "project": 33
+   },
+   "pass": true
+  },
+  {
+   "check": "live_state_43_not_started",
+   "measured": {
+    "records": 43,
+    "states": {
+     "NOT_STARTED": 43
+    }
+   },
+   "pass": true
+  },
+  {
+   "check": "no_approvals",
+   "measured": 0,
+   "pass": true
+  },
+  {
+   "check": "no_results",
+   "measured": 0,
+   "pass": true
+  },
+  {
+   "check": "no_evidence",
+   "measured": 0,
+   "pass": true
+  },
+  {
+   "check": "no_freeze_attempt_recorded",
+   "measured": 0,
+   "pass": true
+  },
+  {
+   "check": "migration_packet_unconsumed",
+   "measured": "unconsumed",
+   "pass": true
+  },
+  {
+   "check": "mode_is_generated_unverified",
+   "measured": "GENERATED_UNVERIFIED",
+   "pass": true
+  },
+  {
+   "check": "r9_absent",
+   "measured": "absent",
+   "pass": true
+  },
+  {
+   "check": "token_binds_plan",
+   "measured": "assert_token_binds_plan ok",
+   "pass": true
+  },
+  {
+   "check": "token_is_five_fields",
+   "measured": 5,
+   "pass": true
+  },
+  {
+   "check": "token_has_no_trailing_newline",
+   "measured": true,
+   "pass": true
+  },
+  {
+   "check": "token_hash_methods_agree",
+   "measured": {
+    "python_hashlib": "23776f5a22b253e96ae1b9e9ba98bb5bde27d8eddc6c883a4b43f1fd3f8b1dee",
+    "sha256sum": "23776f5a22b253e96ae1b9e9ba98bb5bde27d8eddc6c883a4b43f1fd3f8b1dee"
+   },
+   "pass": true
+  },
+  {
+   "check": "token_differs_from_every_earlier_attempt",
+   "measured": {
+    "earlier": [
+     "47cf40be29089257bd08dfef738fdb966009c46c7cd21add5c5400167d9c0d44",
+     "176f6fbb05f959e6e223fa50756aa06b7d6daf3988d095dc0e2eec4587733560",
+     "47cf40be29089257bd08dfef738fdb966009c46c7cd21add5c5400167d9c0d44",
+     "176f6fbb05f959e6e223fa50756aa06b7d6daf3988d095dc0e2eec4587733560"
+    ],
+    "this": "23776f5a22b253e96ae1b9e9ba98bb5bde27d8eddc6c883a4b43f1fd3f8b1dee"
+   },
+   "pass": true
+  }
+ ],
+ "checks_passed": 50,
+ "checks_total": 50,
+ "plan_path": "build/freeze_plan_attempt_3/FREEZE_PLAN_R8_ATTEMPT_3.json",
+ "plan_sha256": "19c16de22e04f3d1539f7c8c6ff438ee4cfeb192d49af78555af9d95a771b282",
+ "schema": "wpno.r8.lineage-repair-freeze-plan-validation/1",
+ "token_recorded_here": false,
+ "token_sha256_python": "23776f5a22b253e96ae1b9e9ba98bb5bde27d8eddc6c883a4b43f1fd3f8b1dee",
+ "token_sha256_sha256sum": "23776f5a22b253e96ae1b9e9ba98bb5bde27d8eddc6c883a4b43f1fd3f8b1dee",
+ "verification_path": "verification_codex_final_pre_freeze_attempt_6"
+}

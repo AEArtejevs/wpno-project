@@ -1,0 +1,23 @@
+{
+  "accepted_attempt": 1,
+  "aggregate_state": "SEALED",
+  "attempts": [
+    {
+      "attempt_id": "L1-A31/RUN-B/attempt-1",
+      "attempt_number": 1,
+      "classification": "SUBSTANTIVE_AUDIT_RESULT",
+      "plan_sha256": "65f59b4af174a95ce6781e63c443b13caa8d8ad627344a6ab2c2cca424285896",
+      "root_cause_fingerprint": null,
+      "seal_sha256": "ebedb95c451b9bf69ead5092eddbb97512df32de7c86de003f2f1a533c869f65",
+      "state": "SEALED",
+      "superseded": false,
+      "superseded_by": null,
+      "usable": true,
+      "verdict": "UNVERIFIED"
+    }
+  ],
+  "audit_id": "L1-A31",
+  "current_attempt": 1,
+  "run_phase": "RUN-B",
+  "schema": "wpno.level1.attempt-index/1"
+}

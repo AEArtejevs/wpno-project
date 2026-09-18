@@ -1,0 +1,267 @@
+{
+  "audit_id": "L1-A32",
+  "run_phase": "RUN-A",
+  "schema": "wpno.level1.execution_plan/1",
+  "scope": "Enumerate every SignerInfo in the CMS structure, record the count explicitly before anything else, map each signer to a carried certificate, verify each signer independently, and record countersignatures and timestamp tokens as what they are rather than as signers. No aggregate is reported: a structure with three signers gets three results.",
+  "static_analysis": "No module under PROJECT_ROOT is imported. The CMS object is located in references/ as REF-11 and digest-checked against references/manifest.json.\n\nThe SignerInfo count is recorded first, because it is the fact this audit exists to establish and everything else is a per-signer elaboration of it. For each: the signer identifier as issuer and serial or subject key identifier, the digest algorithm, the signature algorithm, the complete signed attribute set and the messageDigest value. The certificates carried in the structure are enumerated and each SignerInfo is mapped to one; a SignerInfo with no matching certificate is a finding and is recorded as one rather than skipped.\n\nNo suppression flag is used anywhere. Any parse-only result is marked PARSE_ONLY_NOT_VERIFICATION.\n\nPreparation the approved phase performs: build a synthetic two-signer CMS structure and a one-signer structure under work/L1-A32/RUN-A/synthetic/, and a copy of the two-signer structure with the second signature corrupted.",
+  "steps": [
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "SHA256_FILE",
+      "params": {
+        "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn.xml.p7s"
+      },
+      "purpose": "Bind the structure being enumerated.",
+      "step_id": "hash_cms",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "OPENSSL_PARSE_CERT",
+      "params": {
+        "cert": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_leaf_from_sealed_p7s_parse_evidence.pem"
+      },
+      "purpose": "Read a certificate carried in the structure, to map signers onto certificates. PARSE_ONLY_NOT_VERIFICATION.",
+      "step_id": "parse_carried_certificate",
+      "timeout_seconds": 120
+    },
+    {
+      "control_role": "MEASUREMENT",
+      "operation": "OPENSSL_VERIFY_CMS",
+      "params": {
+        "anchor": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/staged_anchors/vhn_root_from_der.pem",
+        "attime": 1772232925,
+        "certfile": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/certs/vhn_intermediate_selected_manual_pem.pem",
+        "cms": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn.xml.p7s",
+        "content": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn-covered-content.xml",
+        "out": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A32/RUN-A/outputs/signer_1_verified.bin",
+        "purpose": "any"
+      },
+      "purpose": "Verify the first signer in its own right, with its own argv, exit code and result. No aggregate.",
+      "step_id": "verify_signer_1",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "POSITIVE",
+      "operation": "OPENSSL_VERIFY_CMS",
+      "params": {
+        "anchor": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/root.pem",
+        "attime": 1787927885,
+        "cms": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A32/RUN-A/synthetic/two_signer.p7s",
+        "content": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/content.bin",
+        "out": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A32/RUN-A/outputs/two_signer_positive.bin",
+        "purpose": "any"
+      },
+      "purpose": "A synthetic structure known to carry two valid signers. The enumeration must find two and verify both; finding one would mean it stops at index zero.",
+      "step_id": "positive_control_two_signers",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "NEGATIVE",
+      "operation": "OPENSSL_VERIFY_CMS",
+      "params": {
+        "anchor": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/root.pem",
+        "attime": 1787927885,
+        "cms": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A32/RUN-A/synthetic/one_signer.p7s",
+        "content": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/content.bin",
+        "out": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A32/RUN-A/outputs/one_signer_negative.bin",
+        "purpose": "any"
+      },
+      "purpose": "A synthetic structure with exactly one signer. The method must report exactly one, not two.",
+      "step_id": "negative_control_one_signer",
+      "timeout_seconds": 300
+    },
+    {
+      "control_role": "MUTATION",
+      "operation": "OPENSSL_VERIFY_CMS",
+      "params": {
+        "anchor": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/root.pem",
+        "attime": 1787927885,
+        "cms": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A32/RUN-A/synthetic/two_signer_second_corrupt.p7s",
+        "content": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A31/preparation_r8_2026-08-28/synthetic/content.bin",
+        "out": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/work/L1-A32/RUN-A/outputs/two_signer_mutation.bin",
+        "purpose": "any"
+      },
+      "purpose": "The two-signer structure with the second signature corrupted. The first must still verify and the second must fail. An overall success here proves the enumeration stops at the first signer.",
+      "step_id": "mutation_control_second_signature_corrupted",
+      "timeout_seconds": 300
+    }
+  ],
+  "target": {
+    "identity_evidence": "references/manifest.json binds this CMS object as REF-11",
+    "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn.xml.p7s",
+    "sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a"
+  },
+  "test_matrix": [
+    {
+      "allowed_reads": [
+        "references/REF-11-*",
+        "work/L1-A31/preparation_r8_2026-08-28/"
+      ],
+      "allowed_writes": [
+        "work/L1-A32/RUN-A/",
+        "evidence/L1-A32/RUN-A/"
+      ],
+      "approval_token_binding": {
+        "format": "APPROVE-EXECUTION L1-A32 RUN=RUN-A PLAN-SHA256=<64_HEX> TARGET-SHA256=<64_HEX> RUN-ONCE",
+        "one_time": true,
+        "recorded_never_reproduced_in_a_report": true,
+        "void_on_plan_change": true,
+        "void_on_target_change": true
+      },
+      "attempt_model": "Attempt numbers are assigned by the controller at preparation. This candidate binds no attempt number: a plan that named one would be claiming a history it does not have.",
+      "audit_id": "L1-A32",
+      "candidate_template_identity": "L1-A32/RUN-A/plan.json",
+      "check_id": "PLAN_BINDING",
+      "comparison_inputs": null,
+      "environment": "automation.policy.base_environment(); no inherited environment, no PYTHONPATH, no user site directory",
+      "evidence_paths": {
+        "attempt_evidence_dir": "evidence/L1-A32/RUN-A/attempt-<n>/",
+        "commands": "commands.jsonl",
+        "manifest": "EVIDENCE_MANIFEST.sha256",
+        "seal": "SEAL.json",
+        "stderr": "stderr/",
+        "stdout": "stdout/"
+      },
+      "evidence_sealing": "Every operation's complete stdout and stderr are written to disk, manifested and sealed. A report excerpt is marked as an excerpt and points at the complete file.",
+      "executable": "/usr/bin/openssl",
+      "expectation_classes": {
+        "INFRASTRUCTURE_EXPECTATION": "What the harness must do for the measurement to mean anything. Failure here is ERROR, not a finding.",
+        "MUTATION_CONTROL_EXPECTATION": "A deliberate change that must change the answer. Zero changed results is a measurement error, not a pass.",
+        "NEGATIVE_CONTROL_EXPECTATION": "A case that must fail, for a stated reason. A nonzero exit alone is not the oracle: the reason is asserted too.",
+        "SUBSTANTIVE_EXPECTATION": "What the target is expected to do. Its outcome is the audit's finding and is not predetermined here."
+      },
+      "fixed_cwd": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8",
+      "forbidden_operations": [
+        "ARBITRARY_SHELL",
+        "CHANGE_PERMISSION",
+        "DATABASE_CONNECTION",
+        "DATABASE_WRITE",
+        "DELETE_SOURCE",
+        "DOCKER_BUILD",
+        "DOCKER_EXEC",
+        "DOCKER_RUN",
+        "DOCKER_SOCKET_ACCESS",
+        "GIT_MUTATION",
+        "INSTALL_PACKAGE",
+        "LAUNCH_AGENT_MUTATION",
+        "MCP_MUTATION",
+        "MODIFY_SOURCE",
+        "N8N_MUTATION",
+        "NETWORK_REQUEST",
+        "NETWORK_UPLOAD",
+        "SERVICE_MUTATION"
+      ],
+      "forbidden_reads": [],
+      "human_decisions": [],
+      "independent_oracle": "The ASN.1 structure read directly, plus synthetic structures with a known signer count.",
+      "limitations": [
+        "REF-11 is operator-supplied material. Its chain of custody is the operator's statement recorded in references/manifest.json. Hash identity against that record is what is verified here; it is not proof of how the bytes came to exist before intake, and is not reported as such.",
+        "Revocation is not assessed offline. Where a signer verifies, that is reported together with the explicit statement that revocation was not checked, never as a clean verification."
+      ],
+      "method": "per-signer enumeration and independent verification",
+      "notes": [],
+      "operation_catalogue": "automation.operation_catalog; every operation below is classified there and its argv is built by operation_catalog.build_argv",
+      "output_limit": "automation.policy.MAX_OUTPUT_BYTES",
+      "plan_schema": "wpno.level1.execution_plan/1",
+      "question": "What is this phase bound to, and what may it read, write and run?",
+      "reference_ids": [
+        "REF-11"
+      ],
+      "references": [
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-original-mail-attachment.zip",
+          "sha256": "023541aa0974ed9ab8b7d7df05c619aacf77c8915413efb7a36032aab3545e42"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn.xml.p7s",
+          "sha256": "7659bb5edbb0b258ef3fd3d8fe960f760c6f737dc3ffb248a4450115f732540a"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-vhn-covered-content.xml",
+          "sha256": "5c0113ca9b77a85429d78d0499e1b5e8f02fcdf7ef0d316898aa9598ca7d1c23"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/REF-11-563203462.xml",
+          "sha256": "8f47eae6b3088b35fdfd2578a4c84079bccc44b3ce24dfa730d8ba304c123d7a"
+        },
+        {
+          "path": "/home/ubuntu/project/WPNO/08.18.26_Level1_Audits_R8/references/manifest.json",
+          "sha256": "4c1e9a706a5ba2a3c6f25f7ffc37963efadbe529f907865f516982ce3b54f1b4"
+        }
+      ],
+      "retry_classification": "A failed attempt is superseded, never overwritten. A retry needs a fresh token, a fresh plan digest and a root-cause fingerprint that differs from the attempt it supersedes.",
+      "revision": "R8",
+      "run_phase": "RUN-A",
+      "source_hash_before_and_after": "The controller hashes the target before the first operation and after the last. A change in either direction is CONTAMINATED and no result is sealed.",
+      "substantive_failure_classification": "A substantive failure is a finding about the target and is sealed as one. An infrastructure failure is a defect in this plan or harness and is classified ERROR, never reported as a finding about the target.",
+      "target_identification_rule": null,
+      "trust_mode": "-purpose any, with -no-CAfile, -no-CApath and -no-CAstore. No suppression flag is used anywhere; a suppression flag would make a failure look like a success.",
+      "validation_time": "1772232925 (2026-02-27T22:55:25Z) for the operator-supplied CMS object; the synthetic chain's own staged validation time for the synthetic signer-count controls, whose control CA is valid from 2026-08-26."
+    },
+    {
+      "check_id": "signer_count",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "How many SignerInfo entries does the structure carry?",
+      "recorded_before": "any verification is attempted",
+      "required_result": "An explicit count. This is the fact the audit exists to establish."
+    },
+    {
+      "check_id": "per_signer_results",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "never_reported_as": "an aggregate. A single overall result hides which signer failed.",
+      "question": "What is the result for each signer, separately?",
+      "required_result": "One argv, one exit code and one result per signer. The summary states how many verified.",
+      "revocation": "NOT_ASSESSED_OFFLINE, stated explicitly",
+      "step_id": "verify_signer_1"
+    },
+    {
+      "check_id": "signer_to_certificate_mapping",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "expected_exit_code": 0,
+      "question": "Does each signer map to a carried certificate?",
+      "required_result": "Each mapping is recorded. A SignerInfo with no matching certificate is a finding.",
+      "step_id": "parse_carried_certificate"
+    },
+    {
+      "check_id": "countersignatures_and_timestamps",
+      "expectation_class": "SUBSTANTIVE_EXPECTATION",
+      "question": "Are countersignatures and timestamp tokens present?",
+      "required_result": "Recorded as countersignatures and timestamp tokens, not as signers. For each token the authority, the time and whether it was verified are recorded, and verifying the token is treated as a separate question from verifying the signature it covers."
+    },
+    {
+      "check_id": "positive_control",
+      "expectation_class": "INFRASTRUCTURE_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_result": "TWO_SIGNERS_FOUND_BOTH_VERIFY",
+      "fixture": "work/L1-A32/RUN-A/synthetic/two_signer.p7s",
+      "fixture_construction": "a synthetic detached CMS over content.bin signed twice under the synthetic root",
+      "question": "Does the enumeration find both signers of a two-signer structure?",
+      "step_id": "positive_control_two_signers"
+    },
+    {
+      "check_id": "negative_control",
+      "expectation_class": "NEGATIVE_CONTROL_EXPECTATION",
+      "expected_exit_code": 0,
+      "expected_failure_reason": "no second signer exists; reporting two would mean the enumeration invents entries",
+      "expected_result": "EXACTLY_ONE_SIGNER_FOUND",
+      "question": "Does it report exactly one for a one-signer structure?",
+      "step_id": "negative_control_one_signer"
+    },
+    {
+      "check_id": "mutation_control",
+      "expectation_class": "MUTATION_CONTROL_EXPECTATION",
+      "expected_exit_code": "NONZERO",
+      "expected_failure_reason": "the second signature does not verify over the content it covers",
+      "expected_failure_reason_canonical": "CONTENT_DIGEST_FAILURE",
+      "expected_result": "FIRST_SIGNER_VERIFIES_SECOND_FAILS",
+      "fixture": "work/L1-A32/RUN-A/synthetic/two_signer_second_corrupt.p7s",
+      "fixture_construction": "the two-signer structure with bytes of the second signature altered",
+      "proof_the_fixture_differs": "its SHA-256 differs from the two-signer positive fixture's",
+      "question": "Does a corrupted second signature surface as such?",
+      "step_id": "mutation_control_second_signature_corrupted",
+      "verdict_effect": "An overall success here would prove the enumeration stops at index zero, which is the defect this audit exists to detect.",
+      "why_the_canonical_reason_matters": "A run of bytes altered at an arbitrary offset would break the DER framing instead, and OpenSSL would report a wrong tag from the ASN.1 decoder before checking any signature. That failure is indistinguishable from this one by exit code alone, which is why the reason is asserted and not just the exit status."
+    }
+  ]
+}

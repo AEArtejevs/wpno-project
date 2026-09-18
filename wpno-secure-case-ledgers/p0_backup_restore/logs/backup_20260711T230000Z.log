@@ -1,0 +1,4 @@
+P0-G Backup 20260711T230000Z | HEAD=ed862a41a786 | commits(all refs)=401
+bundle verify rc=0
+Tresor-Dateien inventarisiert: 97
+MANIFEST_SHA256=83fd7d2b2b749ce5dc12df3ac62eccd162f0539d37a6b3b0e487299af31e08f4

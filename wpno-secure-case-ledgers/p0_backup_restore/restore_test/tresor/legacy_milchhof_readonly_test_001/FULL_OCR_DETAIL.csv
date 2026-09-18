@@ -1,0 +1,15 @@
+masked_pdf_id,ocr_done,pages,pages_ocred,text_chars,chars_per_page,quality,ocr_tool,error,duplicate_status,human_review_required,text_path_offgit,ocr_text_sha256,capped
+PDF_002,yes,1,1,1209,1209,gut,tesseract 5.5.2 deu+eng @200dpi,,-,yes,ocr_full/PDF_002.txt,8f321dce3a0a33db0af9256cf8e1a3006740b8b8c71a47ab2f60a1d1462e20e2,no
+PDF_015,yes,1,1,1209,1209,gut,tesseract 5.5.2 deu+eng @200dpi,,-,yes,ocr_full/PDF_015.txt,8f321dce3a0a33db0af9256cf8e1a3006740b8b8c71a47ab2f60a1d1462e20e2,no
+PDF_012,yes,7,7,10584,1512,gut,tesseract 5.5.2 deu+eng @200dpi,,-,yes,ocr_full/PDF_012.txt,23b903ad58451a02e1c0efefd2d460af8c3bdcbe62e4a4f7e309757a574266e1,no
+PDF_008,yes,30,25,44072,1763,gut,tesseract 5.5.2 deu+eng @200dpi,,-,yes,ocr_full/PDF_008.txt,1adce23559e06e344a47cb9061b67bb733233080726313fe3e5a119d6cc22bf0,yes (25/30)
+PDF_025,no,,,,,-,tesseract 5.5.2 deu+eng @200dpi,,DUPLICATE_OCR_SKIPPED_MASTER_AVAILABLE,yes,,,no
+PDF_021,yes,5,5,6028,1206,gut,tesseract 5.5.2 deu+eng @200dpi,,-,yes,ocr_full/PDF_021.txt,3015a447d0d142c83c1994c44f01768a7c4d9572305dda55757f98f8cac35dc5,no
+PDF_019,no,,,,,-,tesseract 5.5.2 deu+eng @200dpi,,DUPLICATE_OCR_SKIPPED_MASTER_AVAILABLE,yes,,,no
+PDF_005,yes,16,16,25746,1609,gut,tesseract 5.5.2 deu+eng @200dpi,,-,yes,ocr_full/PDF_005.txt,994f1b6fb4ed010a43c5233e99b4b1620c42b740aa1347de6778905cd5237cff,no
+PDF_014,no,,,,,-,tesseract 5.5.2 deu+eng @200dpi,,DUPLICATE_OCR_SKIPPED_MASTER_AVAILABLE,yes,,,no
+PDF_023,no,,,,,-,tesseract 5.5.2 deu+eng @200dpi,,DUPLICATE_OCR_SKIPPED_MASTER_AVAILABLE,yes,,,no
+PDF_006,yes,9,9,48400,5378,gut,tesseract 5.5.2 deu+eng @200dpi,,-,yes,ocr_full/PDF_006.txt,f885f38b792e485f5840db884fcbd565502bbd275df096d4e6af3ff3adc8cc5b,no
+PDF_017,yes,16,16,29457,1841,gut,tesseract 5.5.2 deu+eng @200dpi,,-,yes,ocr_full/PDF_017.txt,e4553c2e2ddf87541b00888e235f41a9c6f6ff36d68951185c7c186dcdf9d654,no
+PDF_003,yes,12,12,14267,1189,gut,tesseract 5.5.2 deu+eng @200dpi,,-,yes,ocr_full/PDF_003.txt,1f57a7af08c08f21318f14e6eec1aa9073f5d59768a8745661dcdfefbaebbdbf,no
+PDF_020,no,,,,,-,tesseract 5.5.2 deu+eng @200dpi,,DUPLICATE_OCR_SKIPPED_MASTER_AVAILABLE,yes,,,no

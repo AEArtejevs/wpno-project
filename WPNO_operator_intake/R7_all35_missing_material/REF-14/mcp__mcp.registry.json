@@ -1,0 +1,324 @@
+{
+  "servers": {
+    "db-mcp": {
+      "cmd": "wpno-db-mcp --readonly-user",
+      "egress": "local",
+      "scopes": [
+        "stufe1_lokal",
+        "recherche_extern",
+        "all"
+      ],
+      "tools": {
+        "query_sql": {
+          "input_schema": {
+            "properties": {
+              "akte_id": {
+                "type": "string"
+              },
+              "sql": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "sql"
+            ],
+            "type": "object"
+          },
+          "requires_anon": false
+        }
+      },
+      "transport": "stdio"
+    },
+    "filesystem-mcp": {
+      "cmd": "npx -y @modelcontextprotocol/server-filesystem '/Users/martinotten/WPNO/test_akte'",
+      "egress": "local",
+      "scopes": [
+        "stufe1_lokal",
+        "recherche_extern",
+        "all"
+      ],
+      "tools": {
+        "list_dir": {
+          "input_schema": {
+            "properties": {
+              "path": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ],
+            "type": "object"
+          },
+          "requires_anon": false
+        },
+        "read_file": {
+          "input_schema": {
+            "properties": {
+              "path": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ],
+            "type": "object"
+          },
+          "requires_anon": false
+        },
+        "write_output": {
+          "input_schema": {
+            "properties": {
+              "content": {
+                "type": "string"
+              },
+              "path": {
+                "description": "nur unterhalb 06_Ausgabe_final erlaubt (K6)",
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "content"
+            ],
+            "type": "object"
+          },
+          "requires_anon": false
+        }
+      },
+      "transport": "stdio"
+    },
+    "libra-mcp": {
+      "cmd": "/opt/homebrew/bin/python3.11 '/Users/martinotten/Library/Application Support/Claude/mcp/libra/server.py'",
+      "egress": "local",
+      "scopes": [
+        "stufe1_lokal",
+        "recherche_extern",
+        "all"
+      ],
+      "tools": {
+        "archiv_search": {
+          "input_schema": {
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ],
+            "type": "object"
+          },
+          "requires_anon": false
+        },
+        "fetch_bfh_decision": {
+          "input_schema": {
+            "properties": {
+              "az": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "az"
+            ],
+            "type": "object"
+          },
+          "requires_anon": false
+        },
+        "health_check": {
+          "input_schema": {
+            "properties": {},
+            "type": "object"
+          },
+          "requires_anon": false
+        },
+        "ki_anonymize": {
+          "input_schema": {
+            "properties": {
+              "profile": {
+                "enum": [
+                  "person_ort",
+                  "voll"
+                ],
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "text",
+              "profile"
+            ],
+            "type": "object"
+          },
+          "requires_anon": false
+        },
+        "ki_ask_rag": {
+          "input_schema": {
+            "properties": {
+              "akte_id": {
+                "type": "string"
+              },
+              "query": {
+                "type": "string"
+              },
+              "top_k": {
+                "default": 8,
+                "type": "integer"
+              }
+            },
+            "required": [
+              "query",
+              "akte_id"
+            ],
+            "type": "object"
+          },
+          "requires_anon": false
+        },
+        "ki_graphrag_search": {
+          "input_schema": {
+            "properties": {
+              "akte_id": {
+                "type": "string"
+              },
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query",
+              "akte_id"
+            ],
+            "type": "object"
+          },
+          "requires_anon": false
+        },
+        "ki_visual_rag": {
+          "input_schema": {
+            "properties": {
+              "akte_id": {
+                "type": "string"
+              },
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query",
+              "akte_id"
+            ],
+            "type": "object"
+          },
+          "requires_anon": false
+        },
+        "search_bfh": {
+          "input_schema": {
+            "properties": {
+              "jahr_bis": {
+                "type": "integer"
+              },
+              "jahr_von": {
+                "type": "integer"
+              },
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query",
+              "jahr_von",
+              "jahr_bis"
+            ],
+            "type": "object"
+          },
+          "requires_anon": false
+        },
+        "search_courts": {
+          "input_schema": {
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ],
+            "type": "object"
+          },
+          "requires_anon": false
+        },
+        "search_legislation": {
+          "input_schema": {
+            "properties": {
+              "query": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "query"
+            ],
+            "type": "object"
+          },
+          "requires_anon": false
+        }
+      },
+      "transport": "stdio"
+    },
+    "playwright-mcp": {
+      "egress": "extern",
+      "scopes": [
+        "recherche_extern",
+        "all"
+      ],
+      "tools": {
+        "fetch_page": {
+          "input_schema": {
+            "properties": {
+              "url": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "url"
+            ],
+            "type": "object"
+          },
+          "requires_anon": true
+        }
+      },
+      "transport": "http",
+      "url": "http://playwright-mcp:3100"
+    },
+    "python-sandbox-mcp": {
+      "cmd": "wpno-python-sandbox --no-network --timeout 60",
+      "egress": "local",
+      "scopes": [
+        "stufe1_lokal",
+        "recherche_extern",
+        "all"
+      ],
+      "tools": {
+        "run_python": {
+          "input_schema": {
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "timeout_s": {
+                "default": 60,
+                "type": "integer"
+              }
+            },
+            "required": [
+              "code"
+            ],
+            "type": "object"
+          },
+          "requires_anon": false
+        }
+      },
+      "transport": "stdio"
+    }
+  }
+}
